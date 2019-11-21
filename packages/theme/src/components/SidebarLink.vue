@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:14:48
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 17:14:38
+ * @LastEditTime: 2019-11-21 23:37:16
  * @Description: 侧边栏链接
  *
  * 添加了图标支持
@@ -71,6 +71,8 @@ const renderExternal = (h, to, text) =>
   );
 
 export default {
+  name: 'SidebarLink',
+
   functional: true,
 
   props: {
@@ -78,10 +80,8 @@ export default {
       type: Object,
       default: () => ({})
     },
-    sidebarDepth: {
-      type: Number,
-      default: 0
-    }
+    // eslint-disable-next-line vue/require-default-prop
+    sidebarDepth: Number
   },
 
   // eslint-disable-next-line max-lines-per-function

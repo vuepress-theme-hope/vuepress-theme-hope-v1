@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 11:10:01
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 14:29:01
+ * @LastEditTime: 2019-11-21 23:38:30
  * @Description: 侧边栏分组链接
  *
  * 添加了图标支持
@@ -66,10 +66,8 @@ export default {
     },
     open: Boolean,
     collapsable: Boolean,
-    depth: {
-      type: Number,
-      default: 0
-    }
+    // eslint-disable-next-line vue/require-default-prop
+    depth: Number
   },
 
   computed: {

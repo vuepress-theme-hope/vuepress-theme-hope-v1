@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 00:29:40
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 20:47:43
+ * @LastEditTime: 2019-11-21 23:08:30
  * @Description: 导航栏
  *
  * 添加全屏按钮，添加导航栏阴影
@@ -130,6 +130,9 @@ $navbar-horizontal-padding = 1.5rem
     .search-box
       flex 0 0 auto
       vertical-align top
+
+      input
+        border-radius 0.25em
 
 @media (max-width: $MQMobile)
   .navbar

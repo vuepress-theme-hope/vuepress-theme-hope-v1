@@ -136,6 +136,9 @@ rules:
   strict:
     - off
 
+  vue/require-default-prop:
+    - warn
+
   vue/html-self-closing:
     - error
     - html:
