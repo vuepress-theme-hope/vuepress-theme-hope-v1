@@ -1,27 +1,31 @@
 # Changelog
 
-# [0.1.0-beta.11](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.10...v0.1.0-beta.11) (2019-11-16)
+## [0.1.0-beta.12](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.11...v0.1.0-beta.12) (2019-11-21)
+
+### Features
+
+* add time for Pageinfo, bug fixes ([6933faa](https://github.com/Mister-Hope/vuepress-theme-hope/commit/6933faab001abe1a13dedec8c42d5832c71451a1))
+
+## [0.1.0-beta.11](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.10...v0.1.0-beta.11) (2019-11-16)
 
 ### Bug Fixes
 
 * **components:** fix footer config not working ([3ea8722](https://github.com/Mister-Hope/vuepress-theme-hope/commit/3ea8722c7a4fdaf49d01d10387667b3a8ff21c88))
 
-# [0.1.0-beta.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.8...v0.1.0-beta.10) (2019-11-13)
+## [0.1.0-beta.10](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.8...v0.1.0-beta.10) (2019-11-13)
 
 ### Features
 
 * add markdown enhance plugin ([fc9a0b4](https://github.com/Mister-Hope/vuepress-theme-hope/commit/fc9a0b4db8ded429e47b8f4d1f2241ac7cef2fc0))
 * approve docs ([35f17b9](https://github.com/Mister-Hope/vuepress-theme-hope/commit/35f17b9fd274ed2ebc62218d4588c85b54346141))
 
-# Changelog
-
-# [0.1.0-beta.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.7...v0.1.0-beta.8) (2019-11-11)
+## [0.1.0-beta.8](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.7...v0.1.0-beta.8) (2019-11-11)
 
 ### Features
 
 * make components a sperate plugin ([8332020](https://github.com/Mister-Hope/vuepress-theme-hope/commit/833202063dad61f8061d9f8b2cceed043d0fb405))
 
-# [0.1.0-beta.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.4...v0.1.0-beta.7) (2019-11-08)
+## [0.1.0-beta.7](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.4...v0.1.0-beta.7) (2019-11-08)
 
 ### Bug Fixes
 
@@ -36,19 +40,19 @@
 * add test ([a03bf3d](https://github.com/Mister-Hope/vuepress-theme-hope/commit/a03bf3d473727e4f4427429d640137ce596fc389))
 * use yarn ([be3c187](https://github.com/Mister-Hope/vuepress-theme-hope/commit/be3c187d7d32d48025cd96570be608b43b607bcd))
 
-# [0.1.0-beta.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.3...v0.1.0-beta.4) (2019-11-07)
+## [0.1.0-beta.4](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.3...v0.1.0-beta.4) (2019-11-07)
 
 ### Bug Fixes
 
 * **theme-color:** cannot change themeColor ([4452a06](https://github.com/Mister-Hope/vuepress-theme-hope/commit/4452a06f3d02180194490363d0ba5b932133f380))
 
-# [0.1.0-beta.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.2...v0.1.0-beta.3) (2019-11-07)
+## [0.1.0-beta.3](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.2...v0.1.0-beta.3) (2019-11-07)
 
 ### Bug Fixes
 
 * **theme-color:** rename vue component ([9e24df1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/9e24df1dd3c6d8e1ef2f79a37dc186a736fb879f))
 
-# [0.1.0-beta.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.1...v0.1.0-beta.2) (2019-11-07)
+## [0.1.0-beta.2](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.1...v0.1.0-beta.2) (2019-11-07)
 
 ### Bug Fixes
 
