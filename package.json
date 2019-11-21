@@ -17,6 +17,7 @@
     "packages:list": "lerna ls -l",
     "packages:diff": "lerna diff",
     "packages:changed": "lerna changed",
+    "check-updates": "lerna exec -- ncu",
     "lint": "npm run lint:check --fix",
     "lint:check": "eslint --ext .js --ext .vue packages/",
     "comment-docs:serve": "yarn workspace comment-docs serve",
@@ -37,18 +38,19 @@
     "share-utils:test": "yarn workspace @mr-hope/vuepress-shared-utils test",
     "theme-test:serve": "yarn workspace test serve",
     "theme-test:clean-serve": "yarn workspace test clean-serve",
-    "theme-test:build": "yarn workspace test build"
+    "theme-test:build": "yarn workspace test build",
+    "build:all": "lerna run build --parallel"
   },
   "devDependencies": {
-    "@vue/eslint-config-prettier": "^5.0.0",
-    "conventional-changelog-cli": "^2.0.27",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "conventional-changelog-cli": "^2.0.28",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.0.1",
-    "husky": "^3.0.9",
-    "lerna": "^3.18.4",
+    "husky": "^3.1.0",
+    "lerna": "^3.19.0",
     "lint-staged": "^9.4.3",
     "prettier": "1.19.1"
   },
