@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 19:04:30
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-11 17:53:14
+ * @LastEditTime: 2019-11-22 20:45:42
  * @Description: 路径导航
 -->
 <template>
@@ -13,13 +13,12 @@
         :key="item.url"
         :class="{'is-active': config.length -1 === index}"
       >
-        <a @click="$router.push(item.url)">
-          <div
-            v-if="item.icon && $themeConfig.breadcrumbIcon !== false"
-            :class="`iconfont ${iconPrefix}${item.icon}`"
-          />
-          <div class="title" v-text="item.title" />
-        </a>
+        <a
+          class="iconfont"
+          :class="item.icon && $themeConfig.breadcrumbIcon !== false? `${iconPrefix}${item.icon}`:''"
+          @click="$router.push(item.url)"
+          v-text="item.title"
+        />
       </li>
     </ul>
   </nav>
@@ -119,15 +118,14 @@ export default {
 </script>
 <style lang="stylus">
 @require '~@vuepress/theme-default/styles/wrapper.styl'
-@require '~@vuepress/theme-default/styles/config.styl'
 
 // 修正标题的上边距
-{$contentClass}:not(.custom)
+.theme-default-content:not(.custom)
   > *:first-child
     margin-top 0
 
 h1, h2, h3, h4, h5, h6
-  {$contentClass}:not(.custom) &:first-child
+  .theme-default-content:not(.custom) &:first-child
     margin-top 0.5rem - $navbarHeight !important
     padding-top $navbarHeight + 1rem !important
 
@@ -152,49 +150,45 @@ h1, h2, h3, h4, h5, h6
     font-size 14px
 
   @media (max-width: $MQMobileNarrow)
-    font-size 13px
+    font-size 12.8px
 
   &.disable
     padding-bottom 1.3em
 
-.breadcrumb ul
-  list-style none
-  padding-left 0px
-  align-items flex-start
-  display flex
-  flex-wrap wrap
-  justify-content flex-start
+  ul
+    list-style none
+    padding-left 0px
+    align-items flex-start
+    display flex
+    flex-wrap wrap
+    justify-content flex-start
 
-.breadcrumb li
-  align-items center
-  display flex
+    li
+      align-items center
+      display flex
 
-  &:first-child a
-    padding-left 0
+      &:first-child a
+        padding-left 0
 
-  &:last-child a
-    padding-right 0
+      &:last-child a
+        padding-right 0
 
-.breadcrumb li+li::before
-  color #b5b5b5
-  content '\0002f'
+      &.is-active a
+        color #7a7a7a
+        cursor default
+        pointer-events none
 
-.breadcrumb a
-  align-items center
-  display flex
-  justify-content center
-  padding 0 0.5em
+      a
+        padding 0 0.5em
 
-  .title:hover
-    cursor pointer
-    text-decoration underline
+        &:before
+          margin-right 0.25em
 
-.breadcrumb li.is-active a
-  color #7a7a7a
-  cursor default
-  pointer-events none
+        &:hover
+          cursor pointer
+          text-decoration underline
 
-.breadcrumb .iconfont
-  margin-left 2px
-  margin-right 2px
+    li+li::before
+      color #b5b5b5
+      content '\0002f'
 </style>

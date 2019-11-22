@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-07 00:29:40
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-21 23:08:30
+ * @LastEditTime: 2019-11-22 19:39:17
  * @Description: 导航栏
  *
  * 添加全屏按钮，添加导航栏阴影
@@ -99,7 +99,6 @@ $navbar-horizontal-padding = 1.5rem
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
-  box-shadow 0 1px 6px 0 rgba(32, 33, 36, 0.28)
 
   a, span, img
     display inline-block
@@ -111,7 +110,7 @@ $navbar-horizontal-padding = 1.5rem
     vertical-align top
 
   .site-name
-    font-size 1.2rem
+    font-size 1.3rem
     font-weight 600
     color $textColor
     position relative
@@ -130,9 +129,6 @@ $navbar-horizontal-padding = 1.5rem
     .search-box
       flex 0 0 auto
       vertical-align top
-
-      input
-        border-radius 0.25em
 
 @media (max-width: $MQMobile)
   .navbar

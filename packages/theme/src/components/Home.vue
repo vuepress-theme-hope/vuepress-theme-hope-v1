@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-13 13:59:35
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 12:55:43
+ * @LastEditTime: 2019-11-22 19:41:39
  * @Description: 主页
 -->
 <template>
@@ -127,19 +127,9 @@ export default {
     justify-content space-between
 
   .feature
-    width calc(1 / 3 - 5rem)
-    padding 0 1.5%
-    transition all 0.5s
     flex-grow 1
     flex-basis 30%
     max-width 30%
-
-    &.link
-      cursor pointer
-
-    &:hover
-      transform scale(1.05)
-      box-shadow 1px 1px 6px 0 rgba(32, 33, 36, 0.28)
 
     h2
       font-size 1.4rem
@@ -147,9 +137,6 @@ export default {
       border-bottom none
       padding-bottom 0
       color lighten($textColor, 10%)
-
-    &.link h2:hover
-      color $accentColor
 
     p
       color lighten($textColor, 25%)
@@ -166,9 +153,7 @@ export default {
       flex-direction column
 
     .feature
-      align-items stretch
-      width calc(100% - 5rem)
-      max-width calc(100% - 5rem)
+      max-width 100%
       padding 0 2.5rem
 
 @media (max-width: $MQMobileNarrow)

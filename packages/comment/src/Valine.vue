@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-09 23:40:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-11 17:54:43
+ * @LastEditTime: 2019-11-22 20:45:19
  * @Description: Valine 评论插件
 -->
 <template>
@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@require '~@vuepress/theme-default/styles/wrapper.styl'
+@require '~@mr-hope/vuepress-shared-utils/src/styles/wrapper.styl'
 
 .page
   .valine-wrapper

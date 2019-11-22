@@ -2,36 +2,35 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 22:56:10
+ * @LastEditTime: 2019-11-22 22:07:11
  * @Description: 主题颜色选择
 -->
 <template>
   <div class="theme-options">
-    <ul v-if="theme.colorList && theme.colorList.length !== 0" class="color-theme-options">
+    <ul v-if="theme.colorList && theme.colorList.length !== 0" class="themecolor-select">
+      <label for="themecolor-select" v-text="`${text.themeColor}:`" />
       <li>
         <a class="default-theme" href="#" @click.prevent="setTheme()" />
       </li>
       <li v-for="color in theme.colorList" :key="color">
-        <a
-          :class="`${color}-theme`"
-          :style="{background: theme.picker[color]}"
-          href="#"
-          @click.prevent="setTheme(color)"
-        />
+        <a :style="{background: theme.picker[color]}" href="#" @click.prevent="setTheme(color)" />
       </li>
     </ul>
-    <div v-if="theme.allowNightmode" class="dark-theme-options toggle-option">
-      <label for="dark-theme-toggle">{{ text }}:&nbsp;</label>
-      <input id="dark-theme-toggle" v-model="darkTheme" type="checkbox" @change="toggleDarkTheme" />
+    <div v-if="theme.allowNightmode" class="nightmode-toggle">
+      <label class="desc" for="nightmode-toggle" v-text="`${text.nightmode}:`" />
+      <NightmodeSwitch :nightmode-enable="nightmodeEnable" @nightmode-toggle="toggleNightmode" />
     </div>
   </div>
 </template>
 
 <script>
 /* global THEME_COLOR_OPTIONS */
+import NightmodeSwitch from './NightmodeSwitch.vue';
 
 export default {
   name: 'ThemeOptions',
+
+  components: { NightmodeSwitch },
 
   data: () => ({
     options: THEME_COLOR_OPTIONS,
@@ -43,15 +42,21 @@ export default {
       orange: '#fb9b5f'
     },
     localeText: {
-      'zh-CN': '开启夜间模式',
-      'en-US': 'Nightmode Status'
+      'zh-CN': {
+        themeColor: '主题色',
+        nightmode: '夜间模式'
+      },
+      'en-US': {
+        themeColor: 'Theme Color',
+        nightmode: 'Nightmode Status'
+      }
     },
-    darkTheme: 'false'
+    nightmodeEnable: false
   }),
 
   computed: {
     text() {
-      return this.localeText[this.$lang] || 'Nightmode Status';
+      return this.localeText[this.$lang] || this.localeText['en-US'];
     }
   },
 
@@ -70,17 +75,17 @@ export default {
     /** 获得类列表 */
     const classes = document.body.classList;
 
-    this.darkTheme = nightmode === 'true';
+    this.nightmodeEnable = nightmode === 'true';
     if (nightmode === 'true') classes.add('theme-night');
     if (theme) this.setTheme(theme);
   },
 
   methods: {
     /** 切换夜间模式 */
-    toggleDarkTheme() {
+    toggleNightmode(nightmodeEnable) {
       const classes = document.body.classList;
 
-      if (this.darkTheme) {
+      if (nightmodeEnable) {
         const oldColor = [...classes];
 
         classes.value = '';
@@ -90,13 +95,16 @@ export default {
         });
       } else classes.remove('theme-night');
 
-      localStorage.setItem('nightmode', this.darkTheme);
+      this.nightmodeEnable = nightmodeEnable;
+      localStorage.setItem('nightmode', nightmodeEnable);
     },
 
     /** 设置主题 */
     setTheme(theme, moveClass = true) {
       const classes = document.body.classList;
-      const themes = this.theme.colorList.map(colorTheme => `theme-${colorTheme}`);
+      const themes = this.theme.colorList.map(
+        colorTheme => `theme-${colorTheme}`
+      );
 
       if (!theme) {
         if (moveClass) localStorage.removeItem('theme');
@@ -122,33 +130,30 @@ export default {
 </script>
 
 <style lang="stylus">
-.color-theme-options
+.themecolor-select
   display flex
   justify-content space-around
 
+  label
+    padding-right 0.5em
+
   li
-    width 33%
-    text-align center
+    &:first-child
+      margin-right 0.5em
 
     a
       width 15px
       height 15px
       border-radius 2px
+      margin 0 2px
 
       &.default-theme
         background-color $accentColor
 
-      &.blue-theme
-        background-color $blueAccentColor
-
-      &.red-theme
-        background-color $redAccentColor
-
-.toggle-option
+.nightmode-toggle
   display flex
-  justify-content space-between
   align-items center
 
-  label
-    padding-right 0.25em
+  .desc
+    padding-right 0.5em
 </style>

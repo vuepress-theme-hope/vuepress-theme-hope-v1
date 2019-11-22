@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/screen-full#readme",
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/master/packages/screen-full#readme",
   "dependencies": {
     "screenfull": "5.0.0"
   }

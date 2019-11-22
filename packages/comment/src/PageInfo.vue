@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-10 09:51:24
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-21 23:12:57
+ * @LastEditTime: 2019-11-22 20:08:19
  * @Description: 页面信息
 -->
 <template>
@@ -151,12 +151,15 @@ export default {
   methods: {
     // 获得评论并根据数量显示火热图标
     getCount() {
-      const count = document.querySelector(
+      const countElement = document.querySelector(
         '.leancloud_visitors .leancloud-visitors-count'
-      ).textContent;
+      );
 
-      if (count && !isNaN(Number(count))) this.count = count;
-      else
+      if (countElement) {
+        const count = countElement.textContent;
+
+        if (count && !isNaN(Number(count))) this.count = count;
+      } else
         setTimeout(() => {
           this.getCount();
         }, 500);

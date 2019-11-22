@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 18:24:11
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 20:52:29
+ * @LastEditTime: 2019-11-22 19:44:55
  * @Description: 下拉链接列表
  *
  * 和原版相比增加了图标，并对下拉列表的样式调整增加了阴影。
@@ -227,7 +227,8 @@ export default {
       right 0
       background-color #fff
       padding 0.6rem 0
-      box-shadow 0 4px 20px 0 rgba(0, 0, 0, 0.2)
+      border 1px solid #ddd
+      border-bottom-color #ccc
       text-align left
       border-radius 0.25rem
       white-space nowrap
