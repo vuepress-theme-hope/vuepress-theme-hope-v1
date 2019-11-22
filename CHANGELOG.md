@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-beta.13](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.12...v0.1.0-beta.13) (2019-11-22)
+
+### Features
+
+* improve some style([73384d1](https://github.com/Mister-Hope/vuepress-theme-hope/commit/73384d11a5776d73e8ba7df9c91ca6330febbff3))
+
 ## [0.1.0-beta.12](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.11...v0.1.0-beta.12) (2019-11-21)
 
 ### Features
