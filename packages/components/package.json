@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/components#readme"
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/components#readme",
+  "dependencies": {
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.13"
+  }
 }
