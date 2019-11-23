@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 20:45:09
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-22 22:07:11
+ * @LastEditTime: 2019-11-23 12:34:15
  * @Description: 主题颜色选择
 -->
 <template>
@@ -17,7 +17,11 @@
       </li>
     </ul>
     <div v-if="theme.allowNightmode" class="nightmode-toggle">
-      <label class="desc" for="nightmode-toggle" v-text="`${text.nightmode}:`" />
+      <label
+        class="desc"
+        for="nightmode-toggle"
+        v-text="nightmodeEnable?text.nightmode[1]:text.nightmode[0]"
+      />
       <NightmodeSwitch :nightmode-enable="nightmodeEnable" @nightmode-toggle="toggleNightmode" />
     </div>
   </div>
@@ -44,11 +48,11 @@ export default {
     localeText: {
       'zh-CN': {
         themeColor: '主题色',
-        nightmode: '夜间模式'
+        nightmode: ['日间模式', '夜间模式']
       },
       'en-US': {
         themeColor: 'Theme Color',
-        nightmode: 'Nightmode Status'
+        nightmode: ['Daymode', 'Nightmode']
       }
     },
     nightmodeEnable: false
@@ -96,7 +100,7 @@ export default {
       } else classes.remove('theme-night');
 
       this.nightmodeEnable = nightmodeEnable;
-      localStorage.setItem('nightmode', nightmodeEnable);
+      localStorage.setItem('nightmode', String(nightmodeEnable));
     },
 
     /** 设置主题 */

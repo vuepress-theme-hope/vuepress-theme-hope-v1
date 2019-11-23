@@ -4,7 +4,7 @@
       id="toggle--daynight"
       class="toggle--checkbox"
       type="checkbox"
-      :value="daymodeEnable"
+      :checked="daymodeEnable"
       @click="toggleNightmode"
     />
     <label class="toggle--btn" for="toggle--daynight">
