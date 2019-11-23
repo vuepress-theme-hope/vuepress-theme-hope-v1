@@ -181,9 +181,15 @@ export function groupHeaders(headers) {
 }
 
 export function resolveNavLinkItem(linkItem) {
-  return Object.assign(linkItem, {
-    type: linkItem.items && linkItem.items.length ? 'links' : 'link'
-  })
+  if (linkItem.items && linkItem.prefix)
+    linkItem.items.map(item => {
+      item.link = linkItem.prefix + item.link;
+    });
+  linkItem.type = linkItem.items && linkItem.items.length ? 'links' : 'link';
+
+  delete linkItem.prefix;
+
+  return linkItem;
 }
 
 /**

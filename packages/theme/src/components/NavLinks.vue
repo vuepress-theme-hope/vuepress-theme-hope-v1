@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 17:25:18
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-07 12:59:03
+ * @LastEditTime: 2019-11-23 12:59:32
  * @Description: 导航栏链接块
  *
  * 自主选择是否显示 Github 库
@@ -32,7 +32,7 @@
 <script>
 import DropdownLink from '@theme/components/DropdownLink.vue';
 import NavLink from '@theme/components/NavLink.vue';
-import { resolveNavLinkItem } from '@parent-theme/util';
+import { resolveNavLinkItem } from '@theme/util';
 
 export default {
   components: { NavLink, DropdownLink },

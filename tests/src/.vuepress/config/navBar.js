@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-11 12:43:31
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-08 21:03:11
+ * @LastEditTime: 2019-11-23 12:58:18
  * @Description: 导航栏配置
  */
 
@@ -12,9 +12,10 @@ module.exports = {
     {
       text: '测试',
       icon: 'infofill',
+      prefix: '/test/',
       items: [
-        { text: '测试列表', link: '/test/', icon: 'debug' },
-        { text: '页脚测试', link: '/test/footer/', icon: 'footer' }
+        { text: '测试列表', link: '', icon: 'debug' },
+        { text: '页脚测试', link: 'footer/', icon: 'footer' }
       ]
     },
     {
