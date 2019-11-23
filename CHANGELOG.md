@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-beta.17](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.16...v0.1.0-beta.17) (2019-11-23)
+
+### Bug Fixes
+
+* **theme:** fix navbar prefix issue ([071fa66](https://github.com/Mister-Hope/vuepress-theme-hope/commit/071fa6653cd446d2a90d9bb127deff970beb0322))
+
 ## [0.1.0-beta.16](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.15...v0.1.0-beta.16) (2019-11-23)
 
 ### Features
