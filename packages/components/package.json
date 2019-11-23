@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-components",
-  "version": "0.1.0-beta.14",
+  "version": "0.1.0-beta.15",
   "description": "components plugin for vuepress-theme-hope",
   "main": "src/index.js",
   "publishConfig": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/packages/components#readme",
   "dependencies": {
-    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.14"
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.15"
   }
 }
