@@ -2,21 +2,26 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-22 23:43:27
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-10-25 14:17:40
+ * @LastEditTime: 2019-11-23 21:25:38
  * @Description: 插件配置
  */
+import { i18n } from '@mr-hope/vuepress-shared-utils';
 
+// eslint-disable-next-line max-lines-per-function
 module.exports = (option, ctx) => {
+  /** amrkdown 配置 */
   const markdownOption = option || ctx.themeConfig.markdown || {};
-  const { baseLang } = ctx.themeConfig;
-
-  const tipTitle = { '/zh/': '提示', '/en/': 'Tips' };
-  const warningTitle = { '/zh/': '注意', '/en/': 'Note' };
-  const dangerTitle = { '/zh/': '警告', '/en/': 'Warning' };
+  /** 多语言标题配置 */
+  const titleConfig = i18n.config.container;
+  /** 主目录语言 */
+  const baseLang =
+    markdownOption.baseLang || ctx.themeConfig.baseLang || 'zh-CN';
+  /** 主目录语言对应路径 */
+  const baseLangPath = i18n.lang2path[baseLang];
 
   /** 处理标题 */
-  const resolveTitle = (config, mainLang = 'zh') => {
-    config['/'] = config[`/${mainLang}/`];
+  const resolveTitle = config => {
+    config['/'] = config[baseLangPath];
 
     return config;
   };
@@ -27,21 +32,21 @@ module.exports = (option, ctx) => {
       'container',
       {
         type: 'tip',
-        defaultTitle: resolveTitle(tipTitle, baseLang)
+        defaultTitle: resolveTitle(titleConfig.tip)
       }
     ],
     [
       'container',
       {
         type: 'warning',
-        defaultTitle: resolveTitle(warningTitle, baseLang)
+        defaultTitle: resolveTitle(titleConfig.warning)
       }
     ],
     [
       'container',
       {
         type: 'danger',
-        defaultTitle: resolveTitle(dangerTitle, baseLang)
+        defaultTitle: resolveTitle(titleConfig.danger)
       }
     ],
 

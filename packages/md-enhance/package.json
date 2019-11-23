@@ -24,6 +24,7 @@
   },
   "homepage": "https://vuepress-md-enhance.mrhope.site/",
   "dependencies": {
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.17",
     "flowchart.js": "^1.12.3",
     "vuepress-plugin-container": "^2.1.1",
     "vuepress-plugin-mathjax": "^1.2.8"

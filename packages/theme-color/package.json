@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Mister-Hope/vuepress-theme-hope/issues"
   },
-  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/master/packages/theme-color#readme"
+  "homepage": "https://github.com/Mister-Hope/vuepress-theme-hope/tree/master/packages/theme-color#readme",
+  "dependencies": {
+    "@mr-hope/vuepress-shared-utils": "^0.1.0-beta.17"
+  }
 }

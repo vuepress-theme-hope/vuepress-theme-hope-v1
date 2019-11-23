@@ -36,9 +36,7 @@ export default {
     const preset = presets[this.preset];
 
     if (!preset) {
-      console.warn(
-        `[vuepress-plugin-flowchart] Unknown preset: ${this.preset}`
-      );
+      console.warn(`[md-enhance:flowchart] Unknown preset: ${this.preset}`);
       return;
     }
 

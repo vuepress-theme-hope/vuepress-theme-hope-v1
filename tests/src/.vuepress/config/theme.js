@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-09-20 19:39:33
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-10 14:31:47
+ * @LastEditTime: 2019-11-23 21:04:48
  * @Description: 主题配置文件
  */
 const navBarConfig = require('./navBar');
@@ -51,9 +51,6 @@ module.exports = {
 
   /** repo地址 */
   repo: 'https://github.com/mister-hope/vuepress-theme-hope',
-
-  /** 编辑链接 */
-  editLinks: false,
 
   /** 自定义仓库链接文字 */
   repoLabel: 'Github',
