@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.1.0-beta.15](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.14...v0.1.0-beta.15) (2019-11-23)
+
+### Bug Fixes
+
+* **theme-color:** fix nightmode switch problem ([da8322b](https://github.com/Mister-Hope/vuepress-theme-hope/commit/da8322bb3a47930aba2a9adf9888881255b20855))
+
 ## [0.1.0-beta.13](https://github.com/Mister-Hope/vuepress-theme-hope/compare/v0.1.0-beta.12...v0.1.0-beta.13) (2019-11-22)
 
 ### Features
