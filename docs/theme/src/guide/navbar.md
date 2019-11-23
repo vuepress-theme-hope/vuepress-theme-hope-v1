@@ -4,6 +4,10 @@ icon: nav
 
 # 导航栏
 
+## 前缀支持
+
+主题配置中的 NavBarItem 新增 `prefix` 字段，填入即可为子菜单添加前缀。
+
 ## 图标支持
 
 主题配置中的 NavBarItem 新增 `icon` 字段，填入对应图标的 FontClass 即可显示对应图标。
@@ -18,9 +22,12 @@ module.exports = {
       { text: '指南', link: '/guide/', icon: 'creativefill' },
       { text: '配置', link: '/api/', icon: 'code' },
       {
-        text: '基础', icon: 'infofill', items: [
-          { text: 'Markdown', link: '/basic/markdown', icon: 'markdown' },
-          { text: 'Vuepress', link: '/basic/vuepress/', icon: 'vue' }
+        text: '基础',
+        icon: 'infofill',
+        prefix: '/basic/',
+        items: [
+          { text: 'Markdown', link: 'markdown', icon: 'markdown' },
+          { text: 'Vuepress', link: 'vuepress/', icon: 'vue' }
         ]
       }
     ],

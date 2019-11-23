@@ -180,16 +180,25 @@ export function groupHeaders(headers) {
   return headers.filter(h => h.level === 2)
 }
 
-export function resolveNavLinkItem(linkItem) {
-  if (linkItem.items && linkItem.prefix)
-    linkItem.items.map(item => {
-      item.link = linkItem.prefix + item.link;
+export function resolveNavLinkItem(navbarLink, beforeprefix = '') {
+  const prefix = beforeprefix + (navbarLink.prefix || '');
+
+  const navbarItem = Object.assign({}, navbarLink);
+
+  if (prefix) {
+    if (navbarItem.link !== undefined)
+      navbarItem.link = prefix + navbarItem.link;
+    delete navbarItem.prefix;
+  }
+
+  if (navbarItem.items && navbarItem.items.length) {
+    Object.assign(navbarItem, {
+      type: 'links',
+      items: navbarItem.items.map(item => resolveNavLinkItem(item, prefix))
     });
-  linkItem.type = linkItem.items && linkItem.items.length ? 'links' : 'link';
+  } else navbarItem.type = 'link';
 
-  delete linkItem.prefix;
-
-  return linkItem;
+  return navbarItem;
 }
 
 /**

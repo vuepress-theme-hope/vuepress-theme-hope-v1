@@ -2,7 +2,7 @@
  * @Author: Mr.Hope
  * @Date: 2019-10-08 17:25:18
  * @LastEditors: Mr.Hope
- * @LastEditTime: 2019-11-23 12:59:32
+ * @LastEditTime: 2019-11-23 15:46:41
  * @Description: 导航栏链接块
  *
  * 自主选择是否显示 Github 库
@@ -78,11 +78,7 @@ export default {
     },
 
     userLinks() {
-      return (this.nav || []).map(link =>
-        Object.assign(resolveNavLinkItem(link), {
-          items: (link.items || []).map(resolveNavLinkItem)
-        })
-      );
+      return (this.nav || []).map(link => resolveNavLinkItem(link));
     },
 
     repoLink() {

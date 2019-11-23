@@ -4,6 +4,10 @@ icon: nav
 
 # NavBar
 
+## Prefix support
+
+The NavBarItem in the theme configuration adds a `prefix` field. It can add a path prefix for all the items under it.
+
 ## Icon support
 
 The NavBarItem in the theme configuration adds a `icon` field. Fill in the FontClass of the icon, then the navbar will display the icon.
@@ -18,9 +22,12 @@ module.exports = {
       { text: 'Guide', link: '/en/guide/', icon: 'creativefill' },
       { text: 'Config', link: '/en/api/', icon: 'code' },
       {
-        text: 'Basic', icon: 'infofill', items: [
-          { text: 'Markdown', link: '/en/basic/markdown/', icon: 'markdown' },
-          { text: 'Vuepress', link: '/en/basic/vuepress/', icon: 'vue' }
+        text: 'Basic',
+        icon: 'infofill',
+        prefix: '/en/basic/',
+        items: [
+          { text: 'Markdown', link: 'markdown/', icon: 'markdown' },
+          { text: 'Vuepress', link: 'muepress/', icon: 'vue' }
         ]
       }
     ],
