@@ -55,7 +55,7 @@
     "flowchart.js": "^1.17.0",
     "katex": "^0.15.1",
     "lodash.debounce": "^4.0.8",
-    "mermaid": "^8.13.7",
+    "mermaid": "^8.13.8",
     "reveal.js": "^4.2.1",
     "vuepress-plugin-container": "^2.1.5"
   }
