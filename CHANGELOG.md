@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.22.0...v1.23.0) (2022-01-04)
+
+### Features
+
+- add pt-BR language support ([#1325](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1325)) ([891b29d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/891b29d5cc9775d3858cd3cb6c2a692d6dcc9ba6))
+- add zh-TW language support ([#1344](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1344)) ([586b0c6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/586b0c6d7a6d6c8a3f0d05cd34d3da55ef9e0cb8))
+
 ## [1.22.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.21.0...v1.22.0) (2021-12-23)
 
 ### Bug Fixes
