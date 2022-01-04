@@ -86,7 +86,7 @@ export const release = async (): Promise<void> => {
     stdio: "inherit",
   });
 
-  const taobaoSpinner = ora("Syncing npm.taobao.org").start();
+  const taobaoSpinner = ora("Syncing npmmirror.com").start();
 
   await sync();
   taobaoSpinner.succeed();

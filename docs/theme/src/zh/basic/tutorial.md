@@ -33,7 +33,7 @@ category: Get Started
   ```sh
   npm i -g yarn
 
-  yarn config set registry https://registry.npm.taobao.org
+  yarn config set registry https://registry.npmmirror.com
   ```
 
 ## 创建模板
