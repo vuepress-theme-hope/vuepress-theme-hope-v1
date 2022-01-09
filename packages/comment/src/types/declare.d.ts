@@ -139,7 +139,7 @@ declare module "valine" {
     /**
      * 是否启用昵称框自动获取 QQ 昵称和 QQ 头像
      *
-     * Whether fetch QQ nickname and avator when inputing QQ number
+     * Whether fetch QQ nickname and avatar when inputing QQ number
      *
      * @default false
      */

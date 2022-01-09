@@ -50,7 +50,7 @@ export type BlogOptions = {
   /**
    * 博主头像，应为绝对路径
    *
-   * Blogger avator, must be an absolute path
+   * Blogger avatar, must be an absolute path
    */
   avatar?: string;
 
