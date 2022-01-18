@@ -3,26 +3,6 @@ import type { PageInfoI18nConfig } from "../types";
 
 /** Muti language config for Page Info */
 export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
-  "/zh/": {
-    author: "作者🖊",
-    time: "写作日期📅",
-    origin: "原创💡",
-    views: "访问量🔢",
-    category: "分类🌈",
-    tag: "标签🏷",
-    readingTime: "阅读时间⌛",
-    words: "字数🔠",
-  },
-  "/tw/": {
-    author: "作者🖊",
-    time: "寫作日期📅",
-    origin: "原創💡",
-    views: "訪問量🔢",
-    category: "分類🌈",
-    tag: "標籤🏷",
-    readingTime: "閱讀時間⌛",
-    words: "字數🔠",
-  },
   "/en/": {
     author: "Author🖊",
     time: "Writing Date📅",
@@ -33,6 +13,29 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
     readingTime: "Reading Time⌛",
     words: "Words🔠",
   },
+
+  "/zh/": {
+    author: "作者🖊",
+    time: "写作日期📅",
+    origin: "原创💡",
+    views: "访问量🔢",
+    category: "分类🌈",
+    tag: "标签🏷",
+    readingTime: "阅读时间⌛",
+    words: "字数🔠",
+  },
+
+  "/tw/": {
+    author: "作者🖊",
+    time: "寫作日期📅",
+    origin: "原創💡",
+    views: "訪問量🔢",
+    category: "分類🌈",
+    tag: "標籤🏷",
+    readingTime: "閱讀時間⌛",
+    words: "字數🔠",
+  },
+
   "/de/": {
     author: "Autor🖊",
     time: "Datum📅",
@@ -43,6 +46,7 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
     readingTime: "Lesezeit⌛",
     words: "Wörter🔠",
   },
+
   "/vi/": {
     author: "Người viết🖊",
     time: "Ngày viết📅",
@@ -53,6 +57,7 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
     readingTime: "Thời gian đọc⌛",
     words: "Words🔠",
   },
+
   "/uk/": {
     author: "Автор🖊",
     time: "Дата написання📅",
@@ -63,6 +68,7 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
     readingTime: "Час читання⌛",
     words: "Слова🔠",
   },
+
   "/ru/": {
     author: "Автор🖊",
     time: "Дата написания📅",
@@ -73,6 +79,7 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
     readingTime: "Время чтения⌛",
     words: "Слова🔠",
   },
+
   "/br/": {
     author: "Autor🖊",
     time: "Escrito em📅",
@@ -86,18 +93,25 @@ export const pageInfoI18n: Record<HopeLangPath, PageInfoI18nConfig> = {
 };
 
 export const valineI18n: Record<HopeLangPath, string> = {
-  "/zh/": "请留言。(填写邮箱可在被回复时收到邮件提醒)",
-  "/tw/": "請留言。(填寫信箱可在被回覆時收到郵件提醒)",
   "/en/":
     "Write a comment here (Fill in the email address to receive an email notification when being replied)",
+
+  "/zh/": "请留言。(填写邮箱可在被回复时收到邮件提醒)",
+
+  "/tw/": "請留言。(填寫信箱可在被回覆時收到郵件提醒)",
+
   "/de/":
     "Schreibe ein Kommentar (Geben Sie die E-Mail-Adresse ein, um eine E-Mail-Benachrichtigung zu erhalten, wenn Sie geantwortet werden)",
+
   "/vi/":
     "Để lại bình luận (Điền địa chỉ email để nhận email thông báo khi được trả lời)",
+
   "/uk/":
     "Напишіть тут коментар (введіть адресу електронної пошти, щоб отримувати сповіщення електронною поштою, коли буде відповідь)",
+
   "/ru/":
     "Напишите здесь комментарий (введите адрес электронной почты, чтобы получать уведомление по электронной почте при ответе)",
+
   "/br/":
     "Escreva um comentário aqui (preencha com o endereço de email para receber notificações quando tiver alguma resposta)",
 };

@@ -4,7 +4,7 @@ import type { PhowoSwipeI18n } from "../types";
 export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
   "/zh/": {
     close: "关闭",
-    fullsreen: "切换全屏",
+    fullscreen: "切换全屏",
     share: "分享",
     zoom: "缩放",
     prev: "上一个 (左箭头)",
@@ -36,7 +36,7 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
 
   "/tw/": {
     close: "關閉",
-    fullsreen: "切換全屏",
+    fullscreen: "切換全屏",
     share: "分享",
     zoom: "縮放",
     prev: "上一個 (左箭頭)",
@@ -68,7 +68,7 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
 
   "/en/": {
     close: "Close",
-    fullsreen: "Switch to full screen",
+    fullscreen: "Switch to full screen",
     share: "Share",
     zoom: "Zoom in/out",
     prev: "Prev (Arrow Left)",
@@ -100,7 +100,7 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
 
   "/de/": {
     close: "Schließen",
-    fullsreen: "Toggle fullscreen",
+    fullscreen: "Toggle fullscreen",
     share: "Teilen",
     zoom: "Rein / rauszoomen",
     prev: "Zurück (Pfeil links)",
@@ -132,7 +132,7 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
 
   "/vi/": {
     close: "Đóng",
-    fullsreen: "Bật chế độ toàn màn hình",
+    fullscreen: "Bật chế độ toàn màn hình",
     share: "Chia sẻ",
     zoom: "Phóng to / thu nhỏ",
     prev: "Trước (Mũi tên trái)",
@@ -164,7 +164,7 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
 
   "/uk/": {
     close: "Закрити",
-    fullsreen: "Перейти на повний екран",
+    fullscreen: "Перейти на повний екран",
     share: "Поділіться",
     zoom: "Збільшити/Зменшити",
     prev: "Попередня (Стрілка вліво)",
@@ -196,7 +196,7 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
 
   "/ru/": {
     close: "Закрыть",
-    fullsreen: "Переключиться на полный экран",
+    fullscreen: "Переключиться на полный экран",
     share: "Поделиться",
     zoom: "Увеличить/Уменьшить",
     prev: "Предыдущая (Стрелка влево)",
@@ -227,7 +227,7 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
   },
   "/br/": {
     close: "Fechar",
-    fullsreen: "Alternar para tela cheia",
+    fullscreen: "Alternar para tela cheia",
     share: "Compartilhar",
     zoom: "Aproximar mais/menos",
     prev: "Anterior (Seta Esquerda)",

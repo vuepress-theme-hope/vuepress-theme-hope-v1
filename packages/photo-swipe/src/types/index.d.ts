@@ -5,7 +5,7 @@ export interface PhowoSwipeI18n {
   /** 关闭 */
   close: string;
   /** 全屏 */
-  fullsreen: string;
+  fullscreen: string;
   /** 分享 */
   share: string;
   /** 缩放 */
