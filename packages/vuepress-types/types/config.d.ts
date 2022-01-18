@@ -5,7 +5,7 @@ import type { Markdown } from "./markdown";
 import type { PluginOptionAPI } from "./plugin";
 import MarkdownItAnchor = require("markdown-it-anchor");
 
-export interface I18nConfig extends Record<string, any> {
+export interface LocaleData extends Record<string, any> {
   /** 当前语言代码 */
   lang?: string;
   /** 当前语言下的标题 */
@@ -14,12 +14,19 @@ export interface I18nConfig extends Record<string, any> {
   description?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface ThemeLocaleData extends LocaleData {}
+
 export interface LocaleConfig {
-  [key: string]: I18nConfig;
+  [key: string]: LocaleData;
+}
+
+export interface ThemeLocaleConfig {
+  [key: string]: ThemeLocaleData;
 }
 
 export interface ThemeConfig extends Record<string, any> {
-  locales?: LocaleConfig;
+  locales?: ThemeLocaleConfig;
 }
 
 export interface MarkdownItToc {

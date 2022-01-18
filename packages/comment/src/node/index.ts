@@ -1,33 +1,44 @@
-import { getRootLangPath } from "@mr-hope/vuepress-shared";
+import { getLocales } from "@mr-hope/vuepress-shared";
 import { resolve } from "path";
-import { pageInfoI18n, valineI18n } from "./i18n";
+import { pageInfoLocales, walineLocales, valineLocales } from "./locales";
 
-import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
-import type { CommentOptions, PageInfoI18nConfig } from "../types";
+import type { CommentOptions } from "../types";
 import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
 
 const commentPlugin: Plugin<CommentOptions> = (options, context) => {
   const { themeConfig } = context;
-  const rootLangPath = getRootLangPath(context);
-  const pageInfoI18nConfig =
-    pageInfoI18n as PluginI18nConvert<PageInfoI18nConfig>;
-  const valineI18nConfig = valineI18n as PluginI18nConvert<string>;
-
-  pageInfoI18nConfig["/"] = pageInfoI18nConfig[rootLangPath];
-  valineI18nConfig["/"] = valineI18nConfig[rootLangPath];
-
   const commentOptions: CommentOptions =
     Object.keys(options).length > 0
       ? options
       : themeConfig.comment || { type: "disable" };
 
+  const userPageInfoLocales = getLocales(
+    context,
+    pageInfoLocales,
+    commentOptions.pageInfoLocales
+  );
+  const userWalineLocales =
+    commentOptions.type === "waline"
+      ? getLocales(context, walineLocales, commentOptions.walineLocales)
+      : {};
+  const userValineLocales =
+    commentOptions.type === "valine"
+      ? getLocales(context, valineLocales, commentOptions.valineLocales)
+      : {};
+
+  // remove locales so that they won't be injected in client twice
+  delete commentOptions.pageInfoLocales;
+  if ("walineLocales" in commentOptions) delete commentOptions.walineLocales;
+  if ("valineLocales" in commentOptions) delete commentOptions.valineLocales;
+
   const config: PluginOptionAPI = {
     name: "comment",
 
-    define: () => ({
+    define: (): Record<string, unknown> => ({
       COMMENT_OPTIONS: commentOptions,
-      PAGE_INFO_I18N: pageInfoI18nConfig,
-      VALINE_I18N: valineI18nConfig,
+      PAGE_INFO_LOCALES: userPageInfoLocales,
+      WALINE_LOCALES: userWalineLocales,
+      VALINE_LOCALES: userValineLocales,
     }),
 
     alias: {

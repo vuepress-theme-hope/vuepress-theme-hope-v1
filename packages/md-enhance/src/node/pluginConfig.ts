@@ -1,33 +1,39 @@
-import { getRootLangPath } from "@mr-hope/vuepress-shared";
+import { getLocales } from "@mr-hope/vuepress-shared";
 import { codeDemoRender } from "./markdown-it/code-demo";
-import { i18n } from "./i18n";
+import { markdownEnhanceLocales } from "./locales";
 
-import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
 import type { Context, PluginConfig } from "@mr-hope/vuepress-types";
-import type { MarkdownEnhanceOptions } from "../types";
+import type { MarkdownContainerName, MarkdownEnhanceOptions } from "../types";
 
 export const pluginConfig = (
-  markdownOption: MarkdownEnhanceOptions,
+  markdownOptions: MarkdownEnhanceOptions,
   context: Context
 ): PluginConfig[] => {
-  const rootLangPath = getRootLangPath(context);
+  const containers: MarkdownContainerName[] = [
+    "info",
+    "tip",
+    "warning",
+    "danger",
+  ];
 
-  const resolveConfig = (
-    titleConfig: PluginI18nConvert<string>
-  ): PluginI18nConvert<string> => {
-    titleConfig["/"] = titleConfig[rootLangPath];
+  const locales = getLocales(
+    context,
+    markdownEnhanceLocales,
+    markdownOptions.locales
+  );
 
-    return titleConfig;
-  };
+  const getContainterLocale = (
+    key: MarkdownContainerName
+  ): Record<string, string> =>
+    Object.fromEntries(
+      Object.keys(locales).map((path) => [path, locales[path][key]])
+    );
 
   const config: PluginConfig[] = [
-    ["container", { type: "info", defaultTitle: resolveConfig(i18n.info) }],
-    ["container", { type: "tip", defaultTitle: resolveConfig(i18n.tip) }],
-    [
+    ...containers.map<PluginConfig>((type) => [
       "container",
-      { type: "warning", defaultTitle: resolveConfig(i18n.warning) },
-    ],
-    ["container", { type: "danger", defaultTitle: resolveConfig(i18n.danger) }],
+      { type, defaultTitle: getContainterLocale(type) },
+    ]),
     [
       "container",
       {
@@ -41,7 +47,7 @@ export const pluginConfig = (
     ],
   ];
 
-  if (markdownOption.align || markdownOption.enableAll)
+  if (markdownOptions.align || markdownOptions.enableAll)
     config.push(
       ["container", { type: "left", defaultTitle: "" }],
       ["container", { type: "center", defaultTitle: "" }],
@@ -49,7 +55,7 @@ export const pluginConfig = (
       ["container", { type: "justify", defaultTitle: "" }]
     );
 
-  if (markdownOption.demo || markdownOption.enableAll)
+  if (markdownOptions.demo || markdownOptions.enableAll)
     config.push(["container", { type: "demo", render: codeDemoRender }]);
 
   return config;

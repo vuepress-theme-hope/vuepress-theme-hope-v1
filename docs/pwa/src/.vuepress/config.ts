@@ -10,6 +10,7 @@ export default hope.config({
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
+      lang: "zh-CN",
       title: "PWA 支持",
       description: "一个强大的 PWA 插件",
     },

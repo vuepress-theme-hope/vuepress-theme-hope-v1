@@ -1,6 +1,6 @@
 import Vue from "vue";
 import WordIcon from "./icons/WordIcon.vue";
-import { pageInfoI18n, readingTimeI18n } from "./define";
+import { pageInfoLocales, readingTimeLocales } from "./define";
 
 export default Vue.extend({
   name: "ReadTimeInfo",
@@ -9,13 +9,13 @@ export default Vue.extend({
 
   computed: {
     words(): string {
-      const word = readingTimeI18n[this.$localePath || "/"].word;
+      const word = readingTimeLocales[this.$localePath || "/"].word;
 
       return word.replace("$word", this.$page.readingTime.words.toString());
     },
 
     hint(): string {
-      return pageInfoI18n[this.$localePath || "/"].words;
+      return pageInfoLocales[this.$localePath || "/"].words;
     },
   },
 });

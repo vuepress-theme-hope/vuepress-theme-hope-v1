@@ -10,6 +10,7 @@ export default hope.config({
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
+      lang: "zh-CN",
       title: "图片预览",
       description: "VuePress 的图片预览插件",
     },

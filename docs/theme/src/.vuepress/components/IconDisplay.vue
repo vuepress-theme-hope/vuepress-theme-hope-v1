@@ -15,7 +15,7 @@
 <script>
 import axios from "axios";
 import Message from "@mr-hope/vuepress-plugin-copy-code/lib/client/message";
-import { i18n } from "@mr-hope/vuepress-plugin-copy-code/lib/node/i18n";
+import { copyCodeLocales } from "@mr-hope/vuepress-plugin-copy-code/lib/node/locales";
 
 let message;
 
@@ -67,7 +67,9 @@ export default {
       textAreaElement.select();
       document.execCommand("copy");
 
-      message.pop((i18n[this.$localePath] || i18n["/en/"]).copy);
+      message.pop(
+        (copyCodeLocales[this.$localePath] || copyCodeLocales["/en/"]).copy
+      );
 
       document.body.removeChild(textAreaElement);
 

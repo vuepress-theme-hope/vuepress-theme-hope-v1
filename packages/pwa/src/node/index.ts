@@ -1,37 +1,33 @@
 import { resolve } from "path";
-import { getRootLangPath } from "@mr-hope/vuepress-shared";
-import { i18n } from "./i18n";
+import { getLocales } from "@mr-hope/vuepress-shared";
 import { injectLinkstoHead } from "./injectHead";
 import { getManifest, genManifest } from "./genManifest";
 import { genServiceWorker } from "./genServiceWorker";
+import { pwaLocales } from "./locales";
 
-import type { PluginI18nConvert } from "@mr-hope/vuepress-shared";
 import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
-import type { PWAI18NConfig, PWAOptions } from "../types";
+import type { PWAOptions } from "../types";
 
 const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
   const { base, themeConfig } = context;
-  const pwaI18nConfig = i18n as PluginI18nConvert<PWAI18NConfig>;
-  const pwaOption =
+  const pwaOptions =
     Object.keys(options).length > 0 ? options : themeConfig.pwa || {};
-
-  pwaI18nConfig["/"] = pwaI18nConfig[getRootLangPath(context)];
 
   const config: PluginOptionAPI = {
     name: "pwa",
 
-    define: () => ({
-      PWA_I18N: pwaI18nConfig,
+    define: (): Record<string, unknown> => ({
+      PWA_LOCALES: getLocales(context, pwaLocales, pwaOptions.locales),
       SW_BASE_URL: base || "/",
     }),
 
-    globalUIComponents: [pwaOption.popupComponent || "SWUpdatePopup"],
+    globalUIComponents: [pwaOptions.popupComponent || "SWUpdatePopup"],
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
     beforeDevServer(app) {
       app.get(`${base || "/"}manifest.webmanifest`, (_req, res) => {
-        getManifest(pwaOption, context)
+        getManifest(pwaOptions, context)
           .then((manifest) => {
             res.send(manifest);
           })
@@ -43,20 +39,20 @@ const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
 
     ready(): void {
       context.siteConfig.head = injectLinkstoHead(
-        pwaOption,
+        pwaOptions,
         base,
         context.siteConfig.head
       );
     },
 
     async generated(): Promise<void> {
-      await genManifest(pwaOption, context);
-      await genServiceWorker(pwaOption, context);
+      await genManifest(pwaOptions, context);
+      await genServiceWorker(pwaOptions, context);
     },
   };
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  if (pwaOption.showInstall !== false)
+  if (pwaOptions.showInstall !== false)
     (config.globalUIComponents as string[]).push("PWAInstall");
 
   return config;

@@ -1,1 +1,1 @@
-export const i18n = PWA_I18N;
+export const locales = PWA_LOCALES;

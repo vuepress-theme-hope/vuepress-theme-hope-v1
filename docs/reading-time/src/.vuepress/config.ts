@@ -10,6 +10,7 @@ export default hope.config({
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
+      lang: "zh-CN",
       title: "阅读时间生成",
       description: "预计阅读时间与字数统计生成",
     },

@@ -1,7 +1,9 @@
+import { getLocales } from "@mr-hope/vuepress-shared";
 import { CAC } from "cac";
 import { getAlias } from "./node/alias";
 import { config } from "./node/config";
 import { eject } from "./node/eject";
+import { themeLocales } from "./node/locales";
 import { getPluginConfig } from "./node/plugins";
 
 import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
@@ -38,26 +40,31 @@ const blogAddtionalPages = [
 // Theme API.
 const themeAPI = (
   themeConfig: ResolvedHopeThemeConfig,
-  ctx: Context
-): PluginOptionAPI => ({
-  alias: getAlias(themeConfig, ctx),
+  context: Context
+): PluginOptionAPI => {
+  // inject locales
+  themeConfig.locales = getLocales(context, themeLocales, themeConfig.locales);
 
-  plugins: getPluginConfig(themeConfig),
+  return {
+    alias: getAlias(themeConfig, context),
 
-  additionalPages: themeConfig.blog === false ? [] : blogAddtionalPages,
+    plugins: getPluginConfig(themeConfig),
 
-  extendCli: (cli: CAC): void => {
-    cli
-      .command(
-        "eject-hope [targetDir]",
-        "copy vuepress-theme-hope into .vuepress/theme for customization."
-      )
-      .option("--debug", "eject in debug mode")
-      .action((dir: string) => {
-        void eject(dir || ".");
-      });
-  },
-});
+    additionalPages: themeConfig.blog === false ? [] : blogAddtionalPages,
+
+    extendCli: (cli: CAC): void => {
+      cli
+        .command(
+          "eject-hope [targetDir]",
+          "copy vuepress-theme-hope into .vuepress/theme for customization."
+        )
+        .option("--debug", "eject in debug mode")
+        .action((dir: string) => {
+          void eject(dir || ".");
+        });
+    },
+  };
+};
 
 themeAPI.config = config;
 

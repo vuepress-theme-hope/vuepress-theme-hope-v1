@@ -6,7 +6,7 @@ import "balloon-css";
 
 let message: Message;
 
-const i18n = CODE_COPY_I18N;
+const locales = CODE_COPY_LOCALES;
 const options = CODE_COPY_OPIONS;
 
 const isMobile = (): boolean =>
@@ -60,7 +60,7 @@ const codeCopyMinxin = Vue.extend({
 
         copyElement.setAttribute(
           "aria-label",
-          i18n[this.$localePath || "/"].hint
+          locales[this.$localePath || "/"].hint
         );
         copyElement.setAttribute("data-balloon-pos", "left");
 
@@ -92,7 +92,7 @@ const codeCopyMinxin = Vue.extend({
       document.execCommand("copy");
 
       if (options.duration !== 0)
-        message.pop(i18n[this.$localePath || "/"].copy, options.duration);
+        message.pop(locales[this.$localePath || "/"].copy, options.duration);
 
       document.body.removeChild(textAreaElement);
 

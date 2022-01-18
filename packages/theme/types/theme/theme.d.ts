@@ -1,8 +1,8 @@
-import { AlgoliaOption, I18nConfig } from "@mr-hope/vuepress-types";
+import { AlgoliaOption, LocaleData } from "@mr-hope/vuepress-types";
 import { HopeThemeAppearanceConfig } from "./appearance";
 import { HopeFeatureConfig } from "./feature";
 import { HopeLayoutConfig } from "./layout";
-import { HopeLangLocalesConfig } from "./locale";
+import { HopeThemeLocalesConfig } from "./locales";
 import { HopeThemePluginConfig } from "./plugin";
 
 /** vuepress-theme-hope 主题配置 */
@@ -11,12 +11,24 @@ export interface HopeThemeConfig
     HopeFeatureConfig,
     HopeLayoutConfig,
     HopeThemePluginConfig {
-  /** 导航栏 Logo，应为绝对路径 */
+  /**
+   * Navbar logo
+   *
+   * should be absolute path relative to `.vuepress/public` folder
+   *
+   * 导航栏图标
+   *
+   * 应为基于 `.vuepress/public` 文件夹的绝对路径
+   */
   logo?: string;
   /**
-   * 暗黑模式下 logo
+   * Navbar logo under darkmode
    *
-   * Logo Image under darkmode
+   * should be absolute path relative to `.vuepress/public` folder
+   *
+   * 夜间模式下导航栏图标
+   *
+   * 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
   darkLogo?: string;
   /** 显示所有页面的标题链接 */
@@ -47,9 +59,9 @@ export interface HopeThemeConfig
   /**
    * 多语言配置
    *
-   * i18n config
+   * Locales config
    */
-  locales?: Record<string, I18nConfig & HopeLangLocalesConfig>;
+  locales?: Record<string, LocaleData & HopeThemeLocalesConfig>;
 
   /** 站点地址 */
   hostname?: string;
@@ -69,7 +81,7 @@ export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
   /** 图标 FontClass 前缀 */
   iconPrefix: string;
   /** 多语言配置 */
-  locales: Record<string, I18nConfig & HopeLangLocalesConfig>;
+  locales: Record<string, LocaleData & HopeThemeLocalesConfig>;
   /** 页脚配置 */
   footer: HopeFooterConfig;
   /** 显示编辑本页链接 */

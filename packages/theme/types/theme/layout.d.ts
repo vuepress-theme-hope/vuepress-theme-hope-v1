@@ -1,4 +1,4 @@
-import { PageInfotype } from "@mr-hope/vuepress-plugin-comment";
+import { PageInfo } from "@mr-hope/vuepress-plugin-comment";
 import { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
 
 /**
@@ -97,7 +97,7 @@ export interface HopeLayoutConfig {
    *
    * @default ['author', 'visitor', 'time', 'category', 'tag', 'reading-time']
    */
-  pageInfo?: PageInfotype[] | false;
+  pageInfo?: PageInfo[] | false;
 
   /**
    * 页脚配置

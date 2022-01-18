@@ -10,6 +10,7 @@ export default hope.config({
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
+      lang: "zh-CN",
       title: "SEO 增强",
       description: "使用 <meta> tag 为你的站点提供 SEO 增强",
     },

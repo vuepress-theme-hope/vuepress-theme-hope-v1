@@ -1,5 +1,4 @@
 import Vue from "vue";
-import { PageInfotype } from "../types";
 import AuthorInfo from "./AuthorInfo.vue";
 import CategoryInfo from "./CategoryInfo.vue";
 import ReadingTimeInfo from "./ReadingTimeInfo.vue";
@@ -7,7 +6,9 @@ import TagInfo from "./TagInfo.vue";
 import TimeInfo from "./TimeInfo.vue";
 import VisitorInfo from "./VisitorInfo.vue";
 import WordInfo from "./WordInfo.vue";
-import { commentOptions, pageInfoI18n } from "./define";
+import { commentOptions, pageInfoLocales } from "./define";
+
+import type { PageInfo } from "../types";
 
 import "balloon-css";
 
@@ -29,7 +30,7 @@ export default Vue.extend({
   }),
 
   computed: {
-    config(): PageInfotype[] | false {
+    config(): PageInfo[] | false {
       const themeConfig = this.$themeConfig.pageInfo;
       const pluginConfig = this.commentConfig.pageInfo;
       const pageConfig = this.$page.frontmatter.pageInfo;
@@ -57,7 +58,7 @@ export default Vue.extend({
       return this.$frontmatter.original === true;
     },
     originText(): string {
-      return pageInfoI18n[this.$localePath || "/"].origin;
+      return pageInfoLocales[this.$localePath || "/"].origin;
     },
   },
 });

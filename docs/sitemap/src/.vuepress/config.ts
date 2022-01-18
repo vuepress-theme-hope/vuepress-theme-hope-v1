@@ -10,6 +10,7 @@ export default hope.config({
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
+      lang: "zh-CN",
       title: "Sitemap 生成器",
       description: "为你的站点生成 Sitemap",
     },

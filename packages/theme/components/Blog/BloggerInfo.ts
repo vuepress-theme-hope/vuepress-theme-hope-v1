@@ -1,11 +1,10 @@
-import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import MediaLinks from "@theme/components/MediaLinks.vue";
 import { timelineMixin } from "@theme/mixins/timeline";
 import { filterArticle } from "@theme/utils/article";
 import { navigate } from "@theme/utils/navigate";
 
 import type { BlogOptions } from "@theme/types";
-import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
+import type { HopeThemeLocaleData } from "@theme/types";
 
 export default timelineMixin.extend({
   name: "BloggerInfo",
@@ -38,8 +37,8 @@ export default timelineMixin.extend({
       return this.hasIntro ? "aria-label" : "";
     },
 
-    i18n(): HopeThemeLocaleConfigItem["blog"] {
-      return this.$themeLocaleConfig.blog || getDefaultLocale().blog;
+    locales(): HopeThemeLocaleData["blog"] {
+      return this.$themeLocaleConfig.blog;
     },
 
     articleNumber(): number {

@@ -29,6 +29,7 @@ export default hope.config({
       lang: "en-US",
     },
     "/zh/": {
+      lang: "zh-CN",
       title: "Theme Demo",
       description: "vuepress-theme-hope 的 demo",
     },

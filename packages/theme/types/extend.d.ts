@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
 import {
   BlogMedia,
   HopeThemeConfig,
   HopeNavBarConfig,
   HopeSideBarConfig,
   HopeFooterConfig,
+  HopeThemeLocaleData,
 } from "./theme";
-import { PageInfotype } from "@mr-hope/vuepress-plugin-comment";
+import { PageInfo } from "@mr-hope/vuepress-plugin-comment";
 import { FeedFrontmatterOption } from "@mr-hope/vuepress-plugin-feed";
 import { AlgoliaOption } from "@mr-hope/vuepress-types";
 
@@ -50,7 +50,7 @@ declare module "@mr-hope/vuepress-types" {
       noSelect?: boolean;
     };
     feed?: FeedFrontmatterOption;
-    pageInfo?: PageInfotype[] | false;
+    pageInfo?: PageInfo[] | false;
     visitor?: boolean;
     breadcrumb?: boolean;
     breadcrumbIcon?: boolean;
@@ -71,7 +71,12 @@ declare module "@mr-hope/vuepress-types" {
     anchorDisplay?: boolean;
   }
 
-  interface I18nConfig extends Partial<HopeThemeLocaleConfigItem> {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface ThemeLocaleData extends HopeThemeLocaleData {
+    /** 当前语言下的标题 */
+    title?: string;
+    /** 当前语言下的描述 */
+    description?: string;
     /** 导航栏链接 */
     nav?: HopeNavBarConfig;
     /** 侧边栏配置 */

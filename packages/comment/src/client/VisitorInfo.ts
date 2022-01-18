@@ -1,7 +1,7 @@
 import Vue from "vue";
 import EyeIcon from "./icons/EyeIcon.vue";
 import FireIcon from "./icons/FireIcon.vue";
-import { commentOptions, pageInfoI18n } from "./define";
+import { commentOptions, pageInfoLocales } from "./define";
 
 import type { Route } from "vue-router";
 import type { ValineOptions, WalineOptions } from "../types";
@@ -46,7 +46,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoI18n[this.$localePath || "/"].views;
+      return pageInfoLocales[this.$localePath || "/"].views;
     },
   },
 

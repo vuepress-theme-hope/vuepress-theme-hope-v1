@@ -9,7 +9,11 @@ export default hope.config({
 
   locales: {
     "/": { lang: "en-US" },
-    "/zh/": { title: "评论插件", description: "VuePress 的评论插件" },
+    "/zh/": {
+      lang: "zh-CN",
+      title: "评论插件",
+      description: "VuePress 的评论插件",
+    },
   },
 
   themeConfig: {

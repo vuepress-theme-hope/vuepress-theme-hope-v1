@@ -5,7 +5,7 @@
         <div
           class="icon-wapper"
           :class="{ active: active === 'article' }"
-          :aria-label="i18n.article"
+          :aria-label="locales.article"
           data-balloon-pos="up"
         >
           <ArticleIcon />
@@ -15,7 +15,7 @@
         <div
           class="icon-wapper"
           :class="{ active: active === 'category' }"
-          :aria-label="i18n.category"
+          :aria-label="locales.category"
           data-balloon-pos="up"
         >
           <CategoryIcon />
@@ -25,7 +25,7 @@
         <div
           class="icon-wapper"
           :class="{ active: active === 'tag' }"
-          :aria-label="i18n.tag"
+          :aria-label="locales.tag"
           data-balloon-pos="up"
         >
           <TagIcon />
@@ -35,7 +35,7 @@
         <div
           class="icon-wapper"
           :class="{ active: active === 'timeline' }"
-          :aria-label="i18n.timeline"
+          :aria-label="locales.timeline"
           data-balloon-pos="up"
         >
           <TimeIcon />
@@ -49,7 +49,7 @@
         <div class="title" @click="navigate('/article/')">
           <ArticleIcon />
           <span class="num">{{ articleNumber }}</span>
-          {{ i18n.article }}
+          {{ locales.article }}
         </div>
         <hr />
         <ul class="sticky-article-list">
@@ -78,7 +78,7 @@
         >
           <CategoryIcon />
           <span class="num">{{ $category.list.length }}</span>
-          {{ i18n.category }}
+          {{ locales.category }}
         </div>
         <hr />
         <MyTransition :delay="0.04">
@@ -97,7 +97,7 @@
         >
           <TagIcon />
           <span class="num">{{ $tag.list.length }}</span>
-          {{ i18n.tag }}
+          {{ locales.tag }}
         </div>
         <hr />
         <MyTransition :delay="0.04">

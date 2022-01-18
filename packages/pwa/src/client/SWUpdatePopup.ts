@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { i18n } from "./define";
+import { locales } from "./define";
 import { event } from "./event";
 
 export default Vue.extend({
@@ -15,7 +15,7 @@ export default Vue.extend({
     },
 
     message(): string {
-      return i18n[this.$localePath || "/"].update;
+      return locales[this.$localePath || "/"].update;
     },
   },
 

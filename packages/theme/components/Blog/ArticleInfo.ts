@@ -66,7 +66,7 @@ export default Vue.extend({
     },
 
     readingTime(): string {
-      const { minute, time } = READING_TIME_I18N[this.$localePath || "/"];
+      const { minute, time } = READING_TIME_LOCALES[this.$localePath || "/"];
 
       return this.article.readingTime.minutes < 1
         ? minute
@@ -77,19 +77,19 @@ export default Vue.extend({
     },
 
     authorText(): string {
-      return PAGE_INFO_I18N[this.$localePath || "/"].author;
+      return PAGE_INFO_LOCALES[this.$localePath || "/"].author;
     },
 
     timeText(): string {
-      return PAGE_INFO_I18N[this.$localePath || "/"].time;
+      return PAGE_INFO_LOCALES[this.$localePath || "/"].date;
     },
 
     tagText(): string {
-      return PAGE_INFO_I18N[this.$localePath || "/"].tag;
+      return PAGE_INFO_LOCALES[this.$localePath || "/"].tag;
     },
 
     readingTimeText(): string {
-      return PAGE_INFO_I18N[this.$localePath || "/"].readingTime;
+      return PAGE_INFO_LOCALES[this.$localePath || "/"].readingTime;
     },
   },
 });

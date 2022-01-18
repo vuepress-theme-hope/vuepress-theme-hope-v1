@@ -1,7 +1,7 @@
 import Vue from "vue";
 import TagIcon from "./icons/TagIcon.vue";
 import { capitalize } from "@mr-hope/vuepress-shared";
-import { pageInfoI18n } from "./define";
+import { pageInfoLocales } from "./define";
 
 import type { PropType } from "vue";
 
@@ -32,7 +32,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoI18n[this.$localePath || "/"].tag;
+      return pageInfoLocales[this.$localePath || "/"].tag;
     },
   },
 

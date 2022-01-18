@@ -8,7 +8,9 @@ export default hope.config({
   dest: "./dist",
 
   locales: {
+    "/": { lang: "en-US" },
     "/zh/": {
+      lang: "zh-CN",
       title: "Feed 生成器",
       description: "VuePress Feed 插件",
     },

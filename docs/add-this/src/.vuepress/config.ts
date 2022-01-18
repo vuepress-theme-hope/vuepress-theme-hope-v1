@@ -11,6 +11,7 @@ export default hope.config({
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
+      lang: "zh-CN",
       title: "分享插件",
       description: "由 AddThis 提供的分享插件",
     },

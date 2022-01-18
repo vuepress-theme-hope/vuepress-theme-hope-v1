@@ -1,5 +1,4 @@
 import Vue from "vue";
-import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import { navigate } from "@theme/utils/navigate";
 
 interface ArticleTypeItem {
@@ -12,13 +11,13 @@ export default Vue.extend({
 
   computed: {
     types(): ArticleTypeItem[] {
-      const blogI18n = this.$themeLocaleConfig.blog || getDefaultLocale().blog;
+      const locales = this.$themeLocaleConfig.blog;
 
       return [
-        { text: blogI18n.allText, path: "/article/" },
-        { text: blogI18n.star, path: "/star/" },
-        { text: blogI18n.slides, path: "/slide/" },
-        { text: blogI18n.encrypt, path: "/encrypt/" },
+        { text: locales.allText, path: "/article/" },
+        { text: locales.star, path: "/star/" },
+        { text: locales.slides, path: "/slide/" },
+        { text: locales.encrypt, path: "/encrypt/" },
       ];
     },
   },

@@ -2,7 +2,7 @@ import Vue from "vue";
 import EditIcon from "@theme/icons/EditIcon.vue";
 import { endingSlashRE, outboundRE } from "@theme/utils/path";
 
-import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
+import type { HopeThemeLocaleData } from "@theme/types";
 import type { GitContributor } from "@mr-hope/vuepress-plugin-git";
 
 export default Vue.extend({
@@ -11,7 +11,7 @@ export default Vue.extend({
   components: { EditIcon },
 
   computed: {
-    i18n(): HopeThemeLocaleConfigItem["meta"] {
+    locales(): HopeThemeLocaleData["meta"] {
       return (
         this.$themeLocaleConfig.meta || {
           contributor: "Contributors",
@@ -30,7 +30,7 @@ export default Vue.extend({
     },
 
     contributorsText(): string {
-      return this.i18n.contributor;
+      return this.locales.contributor;
     },
 
     updateTime(): string {
@@ -42,7 +42,7 @@ export default Vue.extend({
     },
 
     updateTimeText(): string {
-      return this.i18n.updateTime;
+      return this.locales.updateTime;
     },
 
     editLink(): string | false {
@@ -60,7 +60,7 @@ export default Vue.extend({
     },
 
     editLinkText(): string {
-      return this.i18n.editLink;
+      return this.locales.editLink;
     },
   },
 

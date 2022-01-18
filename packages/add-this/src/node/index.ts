@@ -6,7 +6,9 @@ import type { AddThisOptions } from "../types";
 const addThisPlugin: Plugin<AddThisOptions> = (options, { themeConfig }) => ({
   name: "add-this",
 
-  define: { PUB_ID: options.pubid || themeConfig.addThis || "" },
+  define: {
+    PUB_ID: options.pubid || themeConfig.addThis || "",
+  },
 
   globalUIComponents: "AddThis",
 

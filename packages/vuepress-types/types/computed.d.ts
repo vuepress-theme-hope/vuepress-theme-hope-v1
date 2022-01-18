@@ -1,4 +1,4 @@
-import type { I18nConfig, ThemeConfig } from "./config";
+import type { LocaleData, ThemeConfig, ThemeLocaleData } from "./config";
 import type { SiteData } from "./context";
 import type { Page, PageComputed, PageFrontmatter } from "./page";
 import type VueRouter, { Route } from "vue-router";
@@ -19,7 +19,7 @@ declare module "vue/types/vue" {
     $site: SiteData;
     $siteTitle: string;
     $themeConfig: ThemeConfig;
-    $themeLocaleConfig: I18nConfig;
+    $themeLocaleConfig: ThemeLocaleData;
     $title: string;
 
     // injected in client/app.js
@@ -35,7 +35,7 @@ export interface ClientComputedMixin {
   readonly $site: SiteData;
   readonly $themeConfig: ThemeConfig;
   readonly $frontmatter: PageFrontmatter;
-  readonly $localeConfig: I18nConfig;
+  readonly $localeConfig: LocaleData;
   readonly $siteTitle: string;
   readonly $title: string;
   readonly $description: string;

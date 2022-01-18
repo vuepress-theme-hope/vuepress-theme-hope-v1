@@ -5,7 +5,7 @@ export * from "./appearance";
 export * from "./extends";
 export * from "./feature";
 export * from "./layout";
-export * from "./locale";
+export * from "./locales";
 export * from "./plugin";
 export * from "./theme";
 

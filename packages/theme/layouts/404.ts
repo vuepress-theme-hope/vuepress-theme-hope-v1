@@ -1,9 +1,8 @@
 import Vue from "vue";
 import Common from "@theme/components/Common.vue";
 import Page404Icon from "@theme/icons/Page404Icon.vue";
-import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 
-import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
+import type { HopeThemeLocaleData } from "@theme/types";
 
 export default Vue.extend({
   name: "NotFound",
@@ -14,12 +13,14 @@ export default Vue.extend({
   },
 
   computed: {
-    i18n(): HopeThemeLocaleConfigItem["error404"] {
-      return this.$themeLocaleConfig.error404 || getDefaultLocale().error404;
+    locales(): HopeThemeLocaleData["error404"] {
+      return this.$themeLocaleConfig.error404;
     },
 
     msg(): string {
-      return this.i18n.hint[Math.floor(Math.random() * this.i18n.hint.length)];
+      return this.locales.hint[
+        Math.floor(Math.random() * this.locales.hint.length)
+      ];
     },
   },
 

@@ -1,4 +1,4 @@
-import type { I18nConfig } from "./config";
+import type { LocaleData } from "./config";
 
 /** 导航栏配置项 */
 export interface NavBarConfigItem {
@@ -49,7 +49,7 @@ export interface AlgoliaOption {
 }
 
 /** 多语言配置 */
-export interface DefaultThemeLangI18nConfig extends I18nConfig {
+export interface DefaultThemeLangLocaleData extends LocaleData {
   /** 当前语言的导航栏链接 */
   nav?: NavBarConfig;
   /** 当前语言的侧边栏配置 */
@@ -105,7 +105,7 @@ export interface DefaultThemeConfig {
    * 键名是该语言所属的子路径
    * 作为特例，默认语言可以使用 '/' 作为其路径。
    */
-  locales?: Record<string, DefaultThemeLangI18nConfig>;
+  locales?: Record<string, DefaultThemeLangLocaleData>;
 
   /** 项目仓库地址 */
   repo?: string;

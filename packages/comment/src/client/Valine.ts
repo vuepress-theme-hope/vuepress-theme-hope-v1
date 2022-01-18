@@ -1,7 +1,7 @@
 import Vue from "vue";
 import { Route } from "vue-router";
 import { ValineOptions } from "../types";
-import { valineI18n } from "./define";
+import { valineLocales } from "./define";
 
 import type { PropType } from "vue";
 
@@ -70,7 +70,8 @@ export default Vue.extend({
             appId: valineConfig.appId, // Your appId
             appKey: valineConfig.appKey, // Your appKey
             placeholder:
-              valineConfig.placeholder || valineI18n[this.$localePath || "/"],
+              valineConfig.placeholder ||
+              valineLocales[this.$localePath || "/"].placeholder,
             meta: valineConfig.meta || ["nick", "mail"],
             requiredFields: valineConfig.requiredFields || ["nick"],
             avatar: valineConfig.avatar || "retro",

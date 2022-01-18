@@ -1,26 +1,12 @@
-/** Types for supported lang codes */
-export type HopeLang =
-  | "zh-CN"
-  | "zh-TW"
-  | "en-US"
-  | "vi-VN"
-  | "de-AT"
-  | "ru-RU"
-  | "uk-UA"
-  | "pt-BR";
+import {
+  ConvertLocaleConfig,
+  HopeNavBarConfig,
+  HopeSideBarConfig,
+} from "@mr-hope/vuepress-shared";
+import { AlgoliaOption } from "@mr-hope/vuepress-types";
+import { HopeFooterConfig } from "./layout";
 
-/** Types for supported lang paths */
-export type HopeLangPath =
-  | "/zh/"
-  | "/tw/"
-  | "/en/"
-  | "/vi/"
-  | "/de/"
-  | "/ru/"
-  | "/uk/"
-  | "/br/";
-
-export interface HopeThemeLocaleConfigItem {
+export interface HopeThemeLocaleData {
   /** 当前语言代码 */
   lang?: string;
   /** 多语言下拉菜单的标题 */
@@ -87,4 +73,20 @@ export interface HopeThemeLocaleConfigItem {
   };
 }
 
-export type PluginI18nConvert<T> = Record<HopeLangPath, T> & { "/"?: T };
+export type HopeThemeLocaleConfig = ConvertLocaleConfig<HopeThemeLocaleData>;
+
+/** vuepress-theme-hope 多语言配置 */
+export interface HopeThemeLocalesConfig extends Partial<HopeThemeLocaleData> {
+  /** 当前语言下的标题 */
+  title?: string;
+  /** 当前语言下的描述 */
+  description?: string;
+  /** 导航栏链接 */
+  nav?: HopeNavBarConfig;
+  /** 侧边栏配置 */
+  sidebar?: HopeSideBarConfig;
+  /** 当前语言的 algolia 设置 */
+  algolia?: AlgoliaOption;
+  /** 页脚设置 */
+  footer?: HopeFooterConfig;
+}

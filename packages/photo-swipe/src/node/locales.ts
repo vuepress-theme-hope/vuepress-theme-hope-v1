@@ -1,7 +1,38 @@
-import type { HopeLangPath } from "@mr-hope/vuepress-shared";
-import type { PhowoSwipeI18n } from "../types";
+import type { PhowoSwipeLocaleConfig } from "../types";
 
-export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
+export const photoSwipeLocales: PhowoSwipeLocaleConfig = {
+  "/en/": {
+    close: "Close",
+    fullscreen: "Switch to full screen",
+    share: "Share",
+    zoom: "Zoom in/out",
+    prev: "Prev (Arrow Left)",
+    next: "Next (Arrow Right)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Share on Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "download",
+        label: "Download image",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+
   "/zh/": {
     close: "关闭",
     fullscreen: "切换全屏",
@@ -34,7 +65,7 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
     ],
   },
 
-  "/tw/": {
+  "/zh-tw/": {
     close: "關閉",
     fullscreen: "切換全屏",
     share: "分享",
@@ -60,38 +91,6 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
       {
         id: "download",
         label: "下載圖片",
-        url: "{{raw_image_url}}",
-        download: true,
-      },
-    ],
-  },
-
-  "/en/": {
-    close: "Close",
-    fullscreen: "Switch to full screen",
-    share: "Share",
-    zoom: "Zoom in/out",
-    prev: "Prev (Arrow Left)",
-    next: "Next (Arrow Right)",
-    buttons: [
-      {
-        id: "facebook",
-        label: "Share on Facebook",
-        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
-      },
-      {
-        id: "twitter",
-        label: "Tweet",
-        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
-      },
-      {
-        id: "pinterest",
-        label: "Pin it",
-        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
-      },
-      {
-        id: "download",
-        label: "Download image",
         url: "{{raw_image_url}}",
         download: true,
       },
@@ -225,6 +224,7 @@ export const i18n: Record<HopeLangPath, PhowoSwipeI18n> = {
       },
     ],
   },
+
   "/br/": {
     close: "Fechar",
     fullscreen: "Alternar para tela cheia",

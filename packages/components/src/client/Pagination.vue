@@ -9,7 +9,7 @@
           unselectable="on"
           @click="navigate(currentPage - 1)"
         >
-          {{ i18n.prev }}
+          {{ locales.prev }}
         </div>
         <div v-if="displayLeftEllipsis" role="navigation" @click="navigate(1)">
           1
@@ -38,11 +38,11 @@
           role="navigation"
           @click="navigate(currentPage + 1)"
         >
-          {{ i18n.next }}
+          {{ locales.next }}
         </div>
       </div>
       <div class="navigate-wrapper">
-        <label for="navigation-text">{{ i18n.navigate }}:&nbsp;</label>
+        <label for="navigation-text">{{ locales.navigate }}:&nbsp;</label>
         <input
           id="navigation-text"
           v-model="input"
@@ -52,10 +52,10 @@
         <button
           class="navigate"
           role="navigation"
-          :title="i18n.button"
+          :title="locales.button"
           @click="jumpPage(input)"
         >
-          {{ i18n.button }}
+          {{ locales.button }}
         </button>
       </div>
     </div>

@@ -10,6 +10,7 @@ export default hope.config({
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
+      lang: "zh-CN",
       title: "Markdown 增强",
       description: "VuePress 的 Markdown 增强插件",
     },

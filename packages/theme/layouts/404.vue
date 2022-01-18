@@ -3,8 +3,8 @@
     <main class="page not-found">
       <Page404Icon />
       <blockquote v-text="msg" />
-      <button class="action-button" @click="back">{{ i18n.back }}</button>
-      <RouterLink class="action-button" to="/">{{ i18n.home }}</RouterLink>
+      <button class="action-button" @click="back">{{ locales.back }}</button>
+      <RouterLink class="action-button" to="/">{{ locales.home }}</RouterLink>
     </main>
   </Common>
 </template>

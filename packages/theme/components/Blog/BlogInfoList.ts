@@ -1,4 +1,3 @@
-import { getDefaultLocale } from "@mr-hope/vuepress-shared";
 import ArticleIcon from "@theme/icons/ArticleIcon.vue";
 import CategoryIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/CategoryIcon.vue";
 import TagIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/TagIcon.vue";
@@ -12,7 +11,7 @@ import TimelineList from "@theme/components/Blog/TimelineList.vue";
 import { filterArticle } from "@theme/utils/article";
 import { starMixin } from "@theme/mixins/star";
 
-import type { HopeThemeLocaleConfigItem } from "@mr-hope/vuepress-shared";
+import type { HopeThemeLocaleData } from "@theme/types";
 
 export default starMixin.extend({
   name: "BlogInfo",
@@ -35,8 +34,8 @@ export default starMixin.extend({
   }),
 
   computed: {
-    i18n(): HopeThemeLocaleConfigItem["blog"] {
-      return this.$themeLocaleConfig.blog || getDefaultLocale().blog;
+    locales(): HopeThemeLocaleData["blog"] {
+      return this.$themeLocaleConfig.blog;
     },
 
     articleNumber(): number {

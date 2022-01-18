@@ -24,26 +24,26 @@
 
           <button
             class="pswp__button pswp__button--close"
-            :title="i18n.close"
-            :aria-label="i18n.close"
+            :title="locales.close"
+            :aria-label="locales.close"
           />
 
           <button
             class="pswp__button pswp__button--share"
-            :title="i18n.share"
-            :aria-label="i18n.share"
+            :title="locales.share"
+            :aria-label="locales.share"
           />
 
           <button
             class="pswp__button pswp__button--fs"
-            :title="i18n.fullscreen"
-            :aria-label="i18n.fullscreen"
+            :title="locales.fullscreen"
+            :aria-label="locales.fullscreen"
           />
 
           <button
             class="pswp__button pswp__button--zoom"
-            :title="i18n.zoom"
-            :aria-label="i18n.zoom"
+            :title="locales.zoom"
+            :aria-label="locales.zoom"
           />
 
           <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
@@ -65,14 +65,14 @@
 
         <button
           class="pswp__button pswp__button--arrow--left"
-          :title="i18n.prev"
-          :aria-label="i18n.prev"
+          :title="locales.prev"
+          :aria-label="locales.prev"
         />
 
         <button
           class="pswp__button pswp__button--arrow--right"
-          :title="i18n.next"
-          :aria-label="i18n.next"
+          :title="locales.next"
+          :aria-label="locales.next"
         />
 
         <div class="pswp__caption">

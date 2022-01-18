@@ -1,6 +1,6 @@
 import Vue from "vue";
 import TimerIcon from "./icons/TimerIcon.vue";
-import { pageInfoI18n, readingTimeI18n } from "./define";
+import { pageInfoLocales, readingTimeLocales } from "./define";
 
 export default Vue.extend({
   name: "ReadingTimeInfo",
@@ -13,8 +13,8 @@ export default Vue.extend({
     },
 
     text(): string {
-      const minute = readingTimeI18n[this.$localePath || "/"].minute;
-      const time = readingTimeI18n[this.$localePath || "/"].time;
+      const minute = readingTimeLocales[this.$localePath || "/"].minute;
+      const time = readingTimeLocales[this.$localePath || "/"].time;
 
       return this.$page.readingTime.minutes < 1
         ? minute
@@ -25,7 +25,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoI18n[this.$localePath || "/"].readingTime;
+      return pageInfoLocales[this.$localePath || "/"].readingTime;
     },
   },
 });

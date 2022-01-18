@@ -10,6 +10,7 @@ export default hope.config({
   locales: {
     "/": { lang: "en-US" },
     "/zh/": {
+      lang: "zh-CN",
       title: "基于 Git 的信息插件",
       description: "VuePress 的 Git 信息插件",
     },

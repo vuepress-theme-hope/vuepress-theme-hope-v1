@@ -1,8 +1,8 @@
 /* eslint-disable vue/require-explicit-emits */
 import Vue from "vue";
-import { componentI18n } from "./define";
+import { componentLocales } from "./define";
 
-import type { ComponentI18nConfig } from "../types";
+import type { ComponentLocaleData } from "../types";
 
 export default Vue.extend({
   name: "Pagination",
@@ -70,8 +70,8 @@ export default Vue.extend({
       return arr;
     },
 
-    i18n(): ComponentI18nConfig["pagination"] {
-      return componentI18n[this.$localePath || "/"].pagination;
+    locales(): ComponentLocaleData["pagination"] {
+      return componentLocales[this.$localePath || "/"].pagination;
     },
   },
 
@@ -103,7 +103,7 @@ export default Vue.extend({
       if (pageNum <= this.totalPages && pageNum > 0) this.navigate(pageNum);
       else
         alert(
-          this.i18n.errorText.replace(/\$page/g, this.totalPages.toString())
+          this.locales.errorText.replace(/\$page/g, this.totalPages.toString())
         );
     },
   },

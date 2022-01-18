@@ -1,6 +1,6 @@
 import Vue from "vue";
 import AuthorIcon from "./icons/AuthorIcon.vue";
-import { commentOptions, pageInfoI18n } from "./define";
+import { commentOptions, pageInfoLocales } from "./define";
 
 export default Vue.extend({
   name: "AuthorInfo",
@@ -20,7 +20,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoI18n[this.$localePath || "/"].author;
+      return pageInfoLocales[this.$localePath || "/"].author;
     },
   },
 });

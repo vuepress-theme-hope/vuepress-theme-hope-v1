@@ -1,9 +1,25 @@
-export interface CopyCodeI18nConfig {
-  /** 复制文字 */
+import type {
+  ConvertLocaleConfig,
+  LocaleConfig,
+} from "@mr-hope/vuepress-shared";
+
+export interface CopyCodeLocaleData {
+  /**
+   * 复制按钮文字
+   *
+   * Copy button label text
+   */
   copy: string;
-  /** 提示文字 */
+
+  /**
+   * 复制成功提示消息文字
+   *
+   * Success message text after content is copied
+   */
   hint: string;
 }
+
+export type CopyCodeLocaleConfig = ConvertLocaleConfig<CopyCodeLocaleData>;
 
 export interface CopyCodeOptions {
   /**
@@ -30,9 +46,14 @@ export interface CopyCodeOptions {
    * @default false
    */
   showInMobile?: boolean;
+
+  /**
+   * Locale config
+   */
+  locales?: LocaleConfig<CopyCodeLocaleData>;
 }
 
 declare global {
   const CODE_COPY_OPIONS: Required<CopyCodeOptions>;
-  const CODE_COPY_I18N: Record<string, CopyCodeI18nConfig>;
+  const CODE_COPY_LOCALES: CopyCodeLocaleConfig;
 }

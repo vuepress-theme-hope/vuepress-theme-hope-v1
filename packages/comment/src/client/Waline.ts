@@ -1,6 +1,6 @@
 import Vue from "vue";
 import { Route } from "vue-router";
-import { valineI18n } from "./define";
+import { walineLocales } from "./define";
 
 import type { WalineInstance } from "@waline/client";
 import type { PropType } from "vue";
@@ -71,9 +71,7 @@ export default Vue.extend({
             this.waline = Waline({
               el: "#waline-comment",
               lang: this.$lang === "zh-CN" ? "zh-CN" : "en-US",
-              locale: {
-                placeholder: valineI18n[this.$localePath || "/"],
-              },
+              locale: walineLocales[this.$localePath || "/"],
               meta: walineConfig.meta || ["nick", "mail"],
               requiredMeta: walineConfig.requiredMeta || ["nick"],
               emoji: [

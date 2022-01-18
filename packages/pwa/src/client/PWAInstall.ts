@@ -1,6 +1,6 @@
 import Vue from "vue";
 import PWAInstallModal from "./PWAInstallModal.vue";
-import { i18n } from "./define";
+import { locales } from "./define";
 
 import type { ManifestRelatedApps } from "../types";
 
@@ -30,7 +30,7 @@ export default Vue.extend({
 
   computed: {
     install(): string {
-      return i18n[this.$localePath || "/"].install;
+      return locales[this.$localePath || "/"].install;
     },
 
     useHint(): boolean {

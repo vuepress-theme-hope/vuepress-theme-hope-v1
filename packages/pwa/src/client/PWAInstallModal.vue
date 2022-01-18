@@ -6,7 +6,7 @@
       <div class="header">
         <button
           class="close-button"
-          :aria-label="i18n.close"
+          :aria-label="locales.close"
           @click="$emit('toogle', false)"
         >
           <CloseIcon />
@@ -19,14 +19,14 @@
           />
           <div class="title">
             <h1>{{ manifest.short_name || manifest.name }}</h1>
-            <p class="desc">{{ i18n.explain }}</p>
+            <p class="desc">{{ locales.explain }}</p>
           </div>
         </div>
       </div>
       <div class="content">
         <div class="highlight">
           <div v-if="manifest.features" class="feature-wrapper">
-            <h3>{{ i18n.feature }}</h3>
+            <h3>{{ locales.feature }}</h3>
             <ul v-if="manifest.features">
               <li
                 v-for="feature in manifest.features"
@@ -37,7 +37,7 @@
           </div>
 
           <div v-if="manifest.screenshots" class="screenshot-wrapper">
-            <button :aria-label="i18n.prevImage" @click="scrollToLeft">
+            <button :aria-label="locales.prevImage" @click="scrollToLeft">
               <ArrowLeftIcon />
             </button>
             <section class="screenshot">
@@ -48,27 +48,27 @@
                 <img alt="App Screenshot" :src="screenshot.src" />
               </div>
             </section>
-            <button :aria-label="i18n.nextImage" @click="scrollToRight">
+            <button :aria-label="locales.nextImage" @click="scrollToRight">
               <ArrowRightIcon />
             </button>
           </div>
         </div>
         <div class="description">
-          <h3 v-text="i18n.desc" />
+          <h3 v-text="locales.desc" />
           <p v-text="manifest.description" />
         </div>
       </div>
 
       <div v-if="useHint" class="ios-text" @click="hint">
-        <p>{{ i18n.iOSInstall }}</p>
+        <p>{{ locales.iOSInstall }}</p>
         <button class="success">Got it!</button>
       </div>
       <div v-else class="button-wrapper">
         <button class="install-button" @click="install">
-          {{ i18n.install }} <span>{{ manifest.short_name }}</span>
+          {{ locales.install }} <span>{{ manifest.short_name }}</span>
         </button>
         <button class="cancel-button" @click="$emit('toogle', false)">
-          {{ i18n.cancel }}
+          {{ locales.cancel }}
         </button>
       </div>
     </div>

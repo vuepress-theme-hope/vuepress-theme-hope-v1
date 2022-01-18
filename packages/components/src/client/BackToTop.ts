@@ -1,6 +1,6 @@
 import Vue from "vue";
 import debounce from "lodash.debounce";
-import { componentI18n } from "./define";
+import { componentLocales } from "./define";
 
 let scrollHandler: () => void;
 
@@ -35,7 +35,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return componentI18n[this.$localePath || "/"].backToTop;
+      return componentLocales[this.$localePath || "/"].backToTop;
     },
   },
 

@@ -3,9 +3,9 @@ import Vue from "vue";
 import ArrowLeftIcon from "./icons/ArrowLeftIcon.vue";
 import ArrowRightIcon from "./icons/ArrowRightIcon.vue";
 import CloseIcon from "./icons/CloseIcon.vue";
-import { i18n } from "./define";
+import { locales } from "./define";
 
-import type { ManifestOption, PWAI18NConfig } from "../types";
+import type { ManifestOption, PWALocaleData } from "../types";
 
 interface InstallPromptEvent extends Event {
   readonly platforms: string;
@@ -36,8 +36,8 @@ export default Vue.extend({
   }),
 
   computed: {
-    i18n(): PWAI18NConfig {
-      return i18n[this.$localePath || "/"];
+    locales(): PWALocaleData {
+      return locales[this.$localePath || "/"];
     },
   },
 

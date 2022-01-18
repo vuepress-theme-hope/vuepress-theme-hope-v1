@@ -1,6 +1,6 @@
 import Vue from "vue";
 import CalendarIcon from "./icons/CalendarIcon.vue";
-import { pageInfoI18n } from "./define";
+import { pageInfoLocales } from "./define";
 
 export default Vue.extend({
   name: "TimeInfo",
@@ -34,7 +34,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoI18n[this.$localePath || "/"].time;
+      return pageInfoLocales[this.$localePath || "/"].date;
     },
   },
 });
