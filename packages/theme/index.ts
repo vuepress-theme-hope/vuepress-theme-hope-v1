@@ -3,6 +3,7 @@ import { CAC } from "cac";
 import { getAlias } from "./node/alias";
 import { config } from "./node/config";
 import { eject } from "./node/eject";
+import { resolveEncrypt } from "./node/encrypt";
 import { themeLocales } from "./node/locales";
 import { getPluginConfig } from "./node/plugins";
 
@@ -44,6 +45,8 @@ const themeAPI = (
 ): PluginOptionAPI => {
   // inject locales
   themeConfig.locales = getLocales(context, themeLocales, themeConfig.locales);
+  // handle encrypt options
+  if (themeConfig.encrypt) resolveEncrypt(themeConfig.encrypt);
 
   return {
     alias: getAlias(themeConfig, context),
