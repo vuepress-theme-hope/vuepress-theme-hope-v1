@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.24.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.23.0...v1.24.0) (2022-01-19)
+
+### Bug Fixes
+
+- **feed:** fix typos in author ([47cec98](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/47cec980a6da82e7e71149a9e0a41847603bc430))
+- **feed:** improve html comment regexp ([88b6c43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88b6c43b0a7200e4a1d8dda76dee583e71b4dd61))
+
+### Features
+
+- rebuild locales ([0d60db0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0d60db0f49b965ab62e76e0ee51697657408dbdf))
+- update i18n ([8f4d796](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8f4d79691e4522258463ef7b47fcca0cfa25dea3))
+
 ## [1.23.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.22.0...v1.23.0) (2022-01-04)
 
 ### Features
