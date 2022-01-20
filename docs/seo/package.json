@@ -15,7 +15,7 @@
     "docs:serve": "vuepress dev src"
   },
   "devDependencies": {
-    "vuepress": "1.9.5",
+    "vuepress": "1.9.7",
     "vuepress-theme-hope": "1.24.0"
   }
 }

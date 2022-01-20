@@ -53,9 +53,9 @@
     "@types/markdown-it": "^10.0.3",
     "@types/mermaid": "^8.2.7",
     "flowchart.js": "^1.17.0",
-    "katex": "^0.15.1",
+    "katex": "^0.15.2",
     "lodash.debounce": "^4.0.8",
-    "mermaid": "^8.13.8",
+    "mermaid": "^8.13.9",
     "reveal.js": "^4.2.1",
     "vuepress-plugin-container": "^2.1.5"
   }
