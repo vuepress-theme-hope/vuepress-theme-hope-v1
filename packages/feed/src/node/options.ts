@@ -3,7 +3,7 @@ import { error, resolveUrl } from "./utils";
 
 import type { Context } from "@mr-hope/vuepress-types";
 import type { FeedChannelOption } from "../types/feed";
-import type { FeedLinks, FeedOptions, FeedOutput } from "../types";
+import type { FeedLinks, FeedOptions, FeedOutputOptions } from "../types";
 
 export interface ResolvedFeedOutputConfig {
   enable: boolean;
@@ -29,12 +29,10 @@ export const checkOptions = (
     return false;
   }
 
-  options.rootLang = getRootLang(context);
-
   return true;
 };
 
-export const getOutput = (output?: FeedOutput): ResolvedFeedOutput => {
+export const getOutput = (output?: FeedOutputOptions): ResolvedFeedOutput => {
   const defaultOption: ResolvedFeedOutput = {
     atom: {
       enable: true,
@@ -57,7 +55,7 @@ export const getFeedChannelOption = (
   options: FeedOptions,
   context: Context
 ): FeedChannelOption => {
-  const { rootLang, hostname, icon, image } = options;
+  const { hostname, icon, image } = options;
   const { base, themeConfig } = context;
   const { title, description } = context.getSiteData();
   const author = options.channel?.author?.name || themeConfig.author;
@@ -69,7 +67,7 @@ export const getFeedChannelOption = (
     title,
     link: resolveUrl(hostname, base),
     description,
-    language: rootLang,
+    language: getRootLang(context),
     copyright,
     pubDate: new Date(),
     lastUpdated: new Date(),

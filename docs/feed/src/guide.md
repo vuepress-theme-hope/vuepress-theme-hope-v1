@@ -5,7 +5,7 @@ icon: creative
 
 ## Usage
 
-`@mr-hope/vuepress-plugin-feed` plugin will automatically generate feed in the following three formats for you
+`@mr-hope/vuepress-plugin-feed` plugin will automatically generate feed in the following three formats for you:
 
 - Atom 1.0
 - JSON 1.1
@@ -52,7 +52,7 @@ For detailed options and their values, please see [Configuration → Channel Set
 
 By default, all articles will be added to the feed stream.
 
-::: details Articles
+::: info Article
 
 All pages whose `frontmatter.article` is not `false` and are not the homepage will be regarded as articles.
 

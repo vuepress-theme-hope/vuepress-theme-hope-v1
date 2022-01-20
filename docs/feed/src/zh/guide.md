@@ -52,7 +52,7 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 默认情况下，所有文章均会被添加至 feed 流。
 
-::: details 文章
+::: info 文章
 
 所有 `frontmatter.article` 不为 `false` 且不是主页的页面均会被视为文章。
 
