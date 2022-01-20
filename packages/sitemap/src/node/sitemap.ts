@@ -10,15 +10,17 @@ import type {
   SitemapImageOption,
   SitemapVideoOption,
   SitemapOptions,
+  SitemapNewsOption,
 } from "../types";
 
-interface SitemapOption {
-  lastmod: string;
+interface SitemapPageInfo {
+  lastmod?: string;
   changefreq?: string;
   priority?: number;
   img?: SitemapImageOption[];
   video?: SitemapVideoOption[];
   links?: SitemapLinkOption[];
+  news?: SitemapNewsOption[];
 }
 
 const stripLocalePrefix = (
@@ -42,10 +44,10 @@ const generatePageMap = (
   siteData: SiteData,
   base: string,
   options: SitemapOptions
-): Map<string, SitemapOption> => {
+): Map<string, SitemapPageInfo> => {
   const {
     changefreq = "daily",
-    exclude = [],
+    exclude = ["/404.html"],
     dateFormatter = (page: PageComputed): string =>
       page.updateTimeStamp ? new Date(page.updateTimeStamp).toISOString() : "",
   } = options;
@@ -65,7 +67,7 @@ const generatePageMap = (
     return map.set(normalizedPath, prefixesByPath);
   }, new Map<string, string[]>());
 
-  const pagesMap = new Map<string, SitemapOption>();
+  const pagesMap = new Map<string, SitemapPageInfo>();
 
   pages.forEach((page) => {
     const frontmatterOptions: SitemapFrontmatterOption =
@@ -95,12 +97,14 @@ const generatePageMap = (
         url: `${base}${normalizedPath.replace("/", localePrefix)}`,
       }));
 
-    pagesMap.set(page.path, {
-      ...frontmatterOptions,
-      changefreq: frontmatterOptions.changefreq || changefreq,
-      lastmod: lastmodifyTime,
+    const sitemapInfo: SitemapPageInfo = {
+      changefreq,
       links,
-    });
+      ...(lastmodifyTime ? { lastmod: lastmodifyTime } : {}),
+      ...frontmatterOptions,
+    };
+
+    pagesMap.set(page.path, sitemapInfo);
   });
 
   return pagesMap;
@@ -122,13 +126,11 @@ export const genSiteMap = async (
     hostname,
     urls = [],
     outFile = "sitemap.xml",
-    xslUrl,
     exclude = [],
     xmlNameSpace: xmlns,
   } = options;
   const sitemap = new SitemapStream({
     hostname,
-    xslUrl,
     xmlns,
   });
   const sitemapXMLPath = resolve(context.outDir, outFile);

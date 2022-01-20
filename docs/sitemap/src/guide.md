@@ -3,9 +3,9 @@ title: Guide
 icon: creative
 ---
 
-This plugin will automatically generate a Sitemap for your site. In order for the plugin to work properly, you need to pass the deployed domain name to the `domain` option of the plugin.
+This plugin will automatically generate a Sitemap for your site. To let this plugin work, you need to pass the deployed domain name to the `domain` option of the plugin.
 
-The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative version link of the page in other languages ​​according to the locales config.
+The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative version link of the page in other languages according to the locales config.
 
 ## Control Sitemap Link
 

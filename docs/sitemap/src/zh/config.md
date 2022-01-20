@@ -7,7 +7,7 @@ icon: config
 
 ### sitemap.changefreq
 
-- 类型: `"always"|"hourly"|"daily"|"weekly"|"monthly"|"yearly"|"never"`
+- 类型: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
 - 默认值: `"daily"`
 
 页面默认更新频率
@@ -58,14 +58,14 @@ Sitemap 是否不包含此页面
 
 ### changefreq
 
-- 类型: `"always"|"hourly"|"daily"|"weekly"|"monthly"|"yearly"|"never"`
+- 类型: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
 - 默认值: `"daily"`
 
 页面默认更新频率
 
 ### dateFormatter
 
-- 类型: `($page: PageComputed) => string`
+- 类型: `(page: PageComputed) => string`
 - 必填: 否
 
 时间格式化器。默认会自动生成时间戳，如果你遇到了时区问题，请设置这个选项。
