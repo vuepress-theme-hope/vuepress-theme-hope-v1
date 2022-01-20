@@ -1,5 +1,5 @@
 ---
-title: Vssue 配置
+title: Vssue 选项
 icon: vssue
 ---
 
@@ -135,7 +135,7 @@ icon: vssue
 
   ::: tip
 
-  Bitbucket 目前不支持 Issue 标签功能，所以如果你使用 Bitbucket 的话，这个配置将会被忽略。
+  Bitbucket 目前不支持 Issue 标签功能，所以如果你使用 Bitbucket 的话，这个选项将会被忽略。
 
   GitHub 支持在标签名称中加入 emoji，如 `[':heart:Vssue', ':mailbox:Comments']`。
 
@@ -153,7 +153,7 @@ icon: vssue
 
   举例来说，如果 `prefix` 是 `'[Vssue]'`，`title` 是 `'Vssue Demo'`，那么 Issue 的实际标题就是 `'[Vssue]Vssue Demo'`。
 
-  如果 `title` 的类型是 `Function`，这个配置将会被忽略。
+  如果 `title` 的类型是 `Function`，这个选项将会被忽略。
 
 - **参考**: [title](#title)
 

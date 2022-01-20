@@ -3,71 +3,12 @@ title: Waline Config
 icon: waline
 ---
 
-## el
-
-- Type: `string | HTMLElement`
-- Default: `'#waline'`
-
-The DOM element to be mounted on initialization. It must be a valid **CSS selector string** or HTMLElement Object.
-
-::: tip
-
-If you only want to use the pageview statistics feature, DO NOT set it.
-
-:::
-
 ## serverURL
 
 - Type: `string`
 - Required: Yes
 
 Waline server address url
-
-## path
-
-- Type: `string`
-- Default: `window.location.pathname`
-- Required: No
-
-Article path id. Used to distinguish different _article pages_ to ensure loading the correct comment list under the _article page_.
-
-Optional value:
-
-- `window.location.pathname` (default, recommended)
-- `window.location.href`
-- customize
-
-> I. Please ensure the uniqueness of each _article page_ path, otherwise the same comment list may be loaded under different _article pages_.
->
-> II. If the value is `window.location.href`, it may appear that adding _different parameters_ to enter the page, and it will be judged as a new page.
-
-## lang
-
-- Type: `string`
-- Default: `'zh-CN'`
-- Required: No
-
-Display language.
-
-Optional value:
-
-- `'zh'`
-- `'zh-CN'`
-- `'zh-TW'`
-- `'en'`
-- `'en-US'`
-- `'jp'`
-- `'jp-JP'`
-
-If you need a custom language, please refer to [i18n](../guide/client/i18n.md).
-
-## visitor
-
-- Type: `boolean`
-- Default: `false`
-- Required: No
-
-Article reading statistics.
 
 ## emoji
 
@@ -198,7 +139,46 @@ Custom image upload callback to manage picture by yourself. We will pass a pictu
 
 **Code highlighting**, it’s enabled by default, please close it selectively.
 
-### copyright
+## walineLocales
+
+```ts
+interface WalineLocaleData {
+  nick: string;
+  nickError: string;
+  mail: string;
+  mailError: string;
+  link: string;
+  optional: string;
+  placeholder: string;
+  sofa: string;
+  submit: string;
+  reply: string;
+  cancelReply: string;
+  comment: string;
+  refresh: string;
+  more: string;
+  preview: string;
+  emoji: string;
+  uploadImage: string;
+  seconds: string;
+  minutes: string;
+  hours: string;
+  days: string;
+  now: string;
+  uploading: string;
+  login: string;
+  logout: string;
+  admin: string;
+  sticky: string;
+  word: string;
+  wordHint: string;
+  anonymous: string;
+}
+```
+
+Waline locales config. For details, see [Waline i18n customize](https://waline.js.org/en/guide/client/i18n.html#customize)
+
+## copyright
 
 - Type: `boolean`
 - Default: `true`
@@ -209,93 +189,5 @@ Whether show copyright and version in footer.
 ::: tip
 
 We hope you can keep it on to support Waline.
-
-:::
-
-## Deprecated API
-
-The following APIs are still valid, but they will be removed in V2.
-
-### langMode
-
-::: warning Obsolete
-
-Please use `locale` instead.
-
-:::
-
-- Type: `Locale`
-- Required: No
-
-Custom I18N.
-
-### placeholder
-
-::: warning Obsolete
-
-Please use `locale.placeholder` instead.
-
-:::
-
-- Type: `string`
-- Default: `Just go go...`
-- Required: No
-
-Comment box placeholder
-
-### emojiCDN
-
-::: warning Obsolete
-
-Please use `emoji` instead.
-
-:::
-
-- Type: `string`
-- Default: `https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/`
-- Required: No
-
-Set **Emoji Pack CDN**, refer to [Custom Emoji](../guide/client/emoji.md)
-
-### emojiMaps
-
-::: warning Obsolete
-
-Please use `emoji` instead.
-
-:::
-
-- Type: `Object`
-- Default: `null`
-- Required: No
-
-Set `Emoji Packet Mapping’, refer to [Custom Emoji](../guide/client/emoji.md)
-
-### requiredFields
-
-::: warning Obsolete
-
-Please use `requiredMeta` instead.
-
-:::
-
-### anonymous
-
-::: warning Obsolete
-
-Please use `login` instead.
-
-:::
-
-- Type: `boolean`
-- Required: No
-
-Whether to allow login comments. Both supported by default, set to `true` means only support anonymous comments, `false` means only support login comments.
-
-### copyRight
-
-::: danger Deprecated
-
-Please use `copyright` instead.
 
 :::

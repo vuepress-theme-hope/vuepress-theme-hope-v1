@@ -1,5 +1,5 @@
 ---
-title: 配置
+title: 插件选项
 icon: config
 ---
 
@@ -8,7 +8,7 @@ icon: config
 - 类型: `'valine' | 'vssue' | 'disable'`
 - 必填: 是
 
-使用 Valine 还是 Vssue。设置为 `'disabled'` 会禁用评论功能，仅提供页面信息功能。
+使用 Valine 还是 Vssue。设置为 `'disabled'` 仅会禁用评论功能。
 
 ## author
 
@@ -48,18 +48,66 @@ icon: config
 
 每分钟阅读的字数。
 
-## Waline 配置
+## pageInfoLocales
+
+```ts
+export interface PageInfoLocaleData {
+  /**
+   * 作者文字
+   */
+  author: string;
+
+  /**
+   * 写作日期文字
+   */
+  date: string;
+
+  /**
+   * 标记原创的文字
+   */
+  origin: string;
+
+  /**
+   * 访问量文字
+   */
+  views: string;
+
+  /**
+   * 标签文字
+   */
+  tag: string;
+
+  /**
+   * 分类文字
+   */
+  category: string;
+
+  /**
+   * 期望阅读时间文字
+   */
+  readingTime: string;
+
+  /**
+   * 文章字数
+   */
+  words: string;
+}
+```
+
+页面信息的国际化配置。
+
+## Waline 选项
 
 - [点击查看](waline.md)
 
-## Vssue 配置
+## Vssue 选项
 
 - [点击查看](vssue.md)
 
-## Valine 配置
+## Valine 选项
 
 - [点击查看](valine.md)
 
-## 页面配置
+## 页面选项
 
 - [点击查看](frontmatter.md)

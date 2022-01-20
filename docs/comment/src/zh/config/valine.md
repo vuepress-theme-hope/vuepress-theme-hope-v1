@@ -1,5 +1,5 @@
 ---
-title: Valine 配置
+title: Valine 选项
 icon: valine
 ---
 

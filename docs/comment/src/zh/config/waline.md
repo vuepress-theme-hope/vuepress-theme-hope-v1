@@ -1,20 +1,7 @@
 ---
-title: Waline 配置
+title: Waline 选项
 icon: waline
 ---
-
-## el
-
-- 类型: `string | HTMLElement`
-- 必填: 否
-
-Waline 的初始化挂载器。必须是一个有效的 **CSS 选择器** 或 HTMLELement 对象。
-
-::: tip
-
-如果你只想使用浏览量统计功能，请不要设置该项。
-
-:::
 
 ## serverURL
 
@@ -22,52 +9,6 @@ Waline 的初始化挂载器。必须是一个有效的 **CSS 选择器** 或 HT
 - 必填: 是
 
 Waline 的服务端地址。
-
-## path
-
-- 类型: `string`
-- 默认值: `window.location.pathname`
-- 必填: 否
-
-当前 _文章页_ 路径，用于区分不同的 _文章页_，以保证正确读取该 _文章页_ 下的评论列表。
-
-可选值:
-
-- `window.location.pathname` (默认值，推荐)
-- `window.location.href`
-- 自定义
-
-> I. 请保证每个 _文章页_ 路径的唯一性，否则可能会出现不同 _文章页_ 下加载相同评论列表的情况。
->
-> II. 如果值为 `window.location.href`，可能会出现随便加 _不同参数_ 进入该页面，而被判断成新页面的情况。
-
-## lang
-
-- 类型: `string`
-- 默认值: `'zh-CN'`
-- 必填: 否
-
-多语言支持。
-
-可选值:
-
-- `'zh'`
-- `'zh-CN'`
-- `'zh-TW'`
-- `'en'`
-- `'en-US'`
-- `'jp'`
-- `'jp-JP'`
-
-如需 _自定义语言_，请参考 [i18n](../guide/client/i18n.md)。
-
-## visitor
-
-- 类型: `boolean`
-- 默认值: `false`
-- 必填: 否
-
-文章访问量统计。
 
 ## emoji
 
@@ -199,6 +140,45 @@ Waline 的服务端地址。
 - 必填: 否
 
 **代码高亮**，默认开启，若不需要，请手动关闭
+
+## walineLocales
+
+```ts
+interface WalineLocaleData {
+  nick: string;
+  nickError: string;
+  mail: string;
+  mailError: string;
+  link: string;
+  optional: string;
+  placeholder: string;
+  sofa: string;
+  submit: string;
+  reply: string;
+  cancelReply: string;
+  comment: string;
+  refresh: string;
+  more: string;
+  preview: string;
+  emoji: string;
+  uploadImage: string;
+  seconds: string;
+  minutes: string;
+  hours: string;
+  days: string;
+  now: string;
+  uploading: string;
+  login: string;
+  logout: string;
+  admin: string;
+  sticky: string;
+  word: string;
+  wordHint: string;
+  anonymous: string;
+}
+```
+
+Waline 国际化配置。详见 [Waline 自定义语言](https://waline.js.org/guide/client/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80)
 
 ## copyright
 

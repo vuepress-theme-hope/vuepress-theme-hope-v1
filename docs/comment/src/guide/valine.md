@@ -13,11 +13,11 @@ With Valine，this plugin provides you comment and visitors function。
 Create new application in Leancloud, and you will get APP ID/APP Key.
 
 ```js
-options = {
+({
   type: "valine",
   appId: "...", // your appId
   appKey: "...", // your appKey
-};
+});
 ```
 
 You can find all config items on [Config](../api/valine.md).

@@ -30,7 +30,7 @@ icon: creative
 - Vssue 使用代码平台仓库的 issue 面板，需要用户登录或注册相应平台账号。
 - Valine 使用 leancloud，支持页面访问量统计，无需登录账号即可评论
 
-如果你的站点面向大众而非程序员，推荐使用 Waline。
+如果你的站点面向大众而非程序员，推荐使用 Waline；反之推荐 Vssue。
 
 :::
 

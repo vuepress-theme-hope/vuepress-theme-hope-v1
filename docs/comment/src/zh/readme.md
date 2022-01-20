@@ -49,7 +49,7 @@ module.exports = {
     [
       "@mr-hope/comment",
       {
-        // 配置选项
+        // 插件选项
       },
     ],
   ],
@@ -67,7 +67,7 @@ exports default {
     [
       "@mr-hope/comment",
       {
-        // 配置选项
+        // 插件选项
       },
     ],
   ],

@@ -10,7 +10,7 @@ icon: config
 
 Comment service provider.
 
-Setting it to `'disable'` will disable the comment feature while still enabling PageInfo feature.
+Setting it to `'disable'` will only disable the comment feature.
 
 ## author
 
@@ -49,6 +49,54 @@ Whether to enable comment feature by default.
 - Default: `300`
 
 Reading words per minute.
+
+## pageInfoLocales
+
+```ts
+export interface PageInfoLocaleData {
+  /**
+   * Author label text
+   */
+  author: string;
+
+  /**
+   * Writing date label text
+   */
+  date: string;
+
+  /**
+   * Label text marked as original
+   */
+  origin: string;
+
+  /**
+   * Page views label text
+   */
+  views: string;
+
+  /**
+   * Tag label text
+   */
+  tag: string;
+
+  /**
+   * Category label text
+   */
+  category: string;
+
+  /**
+   * Expect reading time label text
+   */
+  readingTime: string;
+
+  /**
+   * Words label Text
+   */
+  words: string;
+}
+```
+
+Locales Config for page infomation.
 
 ## Waline config
 

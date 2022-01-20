@@ -11,17 +11,17 @@ This plugin exposes two components at `@mr-hope/vuepress-plugin-comment/lib/clie
 
 ## `<PageInfo />`
 
-You need to insert the page information component (`<PageInfo />`) before the `<Content />` component.
+Insert page information component (`<PageInfo />`) before the `<Content />` component manually.
 
 - [View Details](page-info.md)
 
 ## `<Comment />`
 
-It is recommended to insert the comment component (`<Comment />`) after the `<PageNav />` component.
+We recommended you to insert the comment component (`<Comment />`) after the `<PageNav />` component.
 
-`<Comment />` components are enabled globally by default. You can disable it by setting `comment: false` in frontmatter on a specific page.
+By default, `<Comment />` component is enabled globally. You can disable it locally by setting `comment: false` in page frontmatter.
 
-To keep it globally disabled, please set `comment` to `false` in the plugin options. This way you can set `comment: true` in the frontmatter of a particular page to enable it locally.
+To keep it globally disabled, please set `comment` to `false` in the plugin options. Then you can set `comment: true` in page frontmatter to enable it locally.
 
 You can choose from 3 comment service provider: Waline, Vssue and Valine.
 
@@ -31,7 +31,7 @@ You can choose from 3 comment service provider: Waline, Vssue and Valine.
 - Vssue uses the issue panel of the code platform repo and requires the user to login or register the corresponding platform account.
 - Valine uses leancloud to support pageview statistics, and you can comment without logging in to any account
 
-If your site is for the general public rather than programmers, Waline is recommended.
+If your site is for the general public rather than programmers, Waline is recommended, otherwise Vssue is recommended.
 
 :::
 
