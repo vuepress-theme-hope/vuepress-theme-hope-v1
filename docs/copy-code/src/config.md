@@ -23,3 +23,21 @@ Hint display time, setting it to `0` will disable the hint.
 - Default: `false`
 
 Whether to display copy button on the mobile device
+
+## locales
+
+```ts
+interface CopyCodeLocaleData {
+  /**
+   * Copy button label text
+   */
+  copy: string;
+
+  /**
+   * Success message text after content is copied
+   */
+  hint: string;
+}
+```
+
+Locales config.

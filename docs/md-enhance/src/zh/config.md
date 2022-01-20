@@ -3,7 +3,7 @@ title: 配置
 icon: config
 ---
 
-你可以传递以下选项来启用或禁用一些功能
+你可以设置以下插件选项来启用或禁用一些功能。
 
 ## enableAll
 
@@ -39,6 +39,26 @@ icon: config
 - 默认值: `true`
 
 是否修复包含特殊字符的图片的引用
+
+## delay
+
+- 类型: `number`
+- 默认值: `500`
+
+操作页面 DOM 的延时，单位 ms。
+
+::: tip
+
+如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`。
+
+:::
+
+## container
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用自定义容器支持。
 
 ## align
 
@@ -236,3 +256,41 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 - 必填: No
 
 你想要传递给 Reveal.js 的配置选项
+
+## locales
+
+```ts
+interface MarkdownEnhanceLocaleData {
+  /**
+   * 信息块的默认标题
+   */
+  info: string;
+
+  /**
+   * 注释块的默认标题
+   */
+  note: string;
+
+  /**
+   * 提示块的默认标题
+   */
+  tip: string;
+
+  /**
+   * 注意块的默认标题
+   */
+  warning: string;
+
+  /**
+   * 警告块的默认标题
+   */
+  danger: string;
+
+  /**
+   * 详情块的默认标题
+   */
+  details: string;
+}
+```
+
+国际化配置。

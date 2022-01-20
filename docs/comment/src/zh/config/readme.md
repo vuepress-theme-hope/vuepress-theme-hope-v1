@@ -51,7 +51,7 @@ icon: config
 ## pageInfoLocales
 
 ```ts
-export interface PageInfoLocaleData {
+interface PageInfoLocaleData {
   /**
    * 作者文字
    */

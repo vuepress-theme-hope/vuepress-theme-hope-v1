@@ -53,7 +53,7 @@ Reading words per minute.
 ## pageInfoLocales
 
 ```ts
-export interface PageInfoLocaleData {
+interface PageInfoLocaleData {
   /**
    * Author label text
    */

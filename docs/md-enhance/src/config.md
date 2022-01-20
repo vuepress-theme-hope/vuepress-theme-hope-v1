@@ -40,6 +40,26 @@ Whether to display the line number to the left of each code block.
 
 Whether to fix image links containing special characters
 
+## delay
+
+- Type: `number`
+- Default: `500`
+
+he delay of operating dom, in ms.
+
+::: tip
+
+If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
+
+:::
+
+## container
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable custom container support.
+
 ## align
 
 - Type: `boolean`
@@ -229,3 +249,41 @@ Acceptable values are:
 - Required: No
 
 Config which you want to pass to reveal.js.
+
+## locales
+
+```ts
+interface MarkdownEnhanceLocaleData {
+  /**
+   * Default Title text for info block
+   */
+  info: string;
+
+  /**
+   * Default Title text for note block
+   */
+  note: string;
+
+  /**
+   * Default Title text for tip block
+   */
+  tip: string;
+
+  /**
+   * Default Title text for warning block
+   */
+  warning: string;
+
+  /**
+   * Default Title text for danger block
+   */
+  danger: string;
+
+  /**
+   * Default Title text for details block
+   */
+  details: string;
+}
+```
+
+Locales config.

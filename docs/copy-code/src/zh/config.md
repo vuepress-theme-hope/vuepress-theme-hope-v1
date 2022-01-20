@@ -23,3 +23,21 @@ icon: config
 - 默认值: `false`
 
 是否展示在移动端
+
+## locales
+
+```ts
+interface CopyCodeLocaleData {
+  /**
+   * 复制按钮文字
+   */
+  copy: string;
+
+  /**
+   * 复制成功提示消息文字
+   */
+  hint: string;
+}
+```
+
+国际化配置

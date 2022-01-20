@@ -15,17 +15,7 @@ icon: markdown
 
 ## 一键启用
 
-你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) 插件的所有功能。
-
-```js {3-5}
-module.exports = {
-  themeConfig: {
-    mdEnhance: {
-      enableAll: true,
-    },
-  },
-};
-```
+你可以在选项中 `enableAll` 设置为 `true` 来启用插件的所有功能。
 
 ::: danger
 
