@@ -73,6 +73,10 @@ If you meet a bug during usage, you can
 Information container
 :::
 
+::: note
+Note container
+:::
+
 ::: tip
 Tip container
 :::
@@ -91,6 +95,10 @@ Details container
 
 ::: info custom title
 A custom information container
+:::
+
+::: note custom title
+A custom note container
 :::
 
 ::: tip custom title
@@ -114,6 +122,10 @@ A custom details container
 Information container
 :::
 
+::: note
+Note container
+:::
+
 ::: tip
 Tip container
 :::
@@ -132,6 +144,10 @@ Details container
 
 ::: info custom title
 A custom information container
+:::
+
+::: note custom title
+A custom note container
 :::
 
 ::: tip custom title

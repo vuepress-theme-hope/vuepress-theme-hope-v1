@@ -12,7 +12,7 @@ import presentation from "./markdown-it/presentation";
 import sub from "./markdown-it/sub";
 import sup from "./markdown-it/sup";
 import tasklist from "./markdown-it/tasklist";
-import { pluginConfig } from "./pluginConfig";
+import { getPluginConfig } from "./pluginConfig";
 
 import type { Plugin } from "@mr-hope/vuepress-types";
 import type { MarkdownEnhanceOptions } from "../types";
@@ -132,7 +132,7 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, context) => {
       if (presentationEnable) md.plugin("presentation").use(presentation);
     },
 
-    plugins: pluginConfig(markdownOption, context),
+    plugins: getPluginConfig(markdownOption, context),
   };
 };
 

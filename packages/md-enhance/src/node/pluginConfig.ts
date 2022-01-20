@@ -5,12 +5,13 @@ import { markdownEnhanceLocales } from "./locales";
 import type { Context, PluginConfig } from "@mr-hope/vuepress-types";
 import type { MarkdownContainerName, MarkdownEnhanceOptions } from "../types";
 
-export const pluginConfig = (
+export const getPluginConfig = (
   markdownOptions: MarkdownEnhanceOptions,
   context: Context
 ): PluginConfig[] => {
   const containers: MarkdownContainerName[] = [
     "info",
+    "note",
     "tip",
     "warning",
     "danger",

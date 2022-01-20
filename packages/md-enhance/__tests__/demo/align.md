@@ -43,6 +43,10 @@ vuepress-theme-hope v2 仍在制作中，API 可能会有
 信息容器。
 :::
 
+::: note
+注释容器。
+:::
+
 ::: tip
 提示容器
 :::
@@ -61,6 +65,10 @@ vuepress-theme-hope v2 仍在制作中，API 可能会有
 
 ::: info 自定义标题
 信息容器
+:::
+
+::: note 自定义标题
+注释容器
 :::
 
 ::: tip 自定义标题
@@ -84,6 +92,10 @@ vuepress-theme-hope v2 仍在制作中，API 可能会有
 信息容器。
 :::
 
+::: note
+注释容器。
+:::
+
 ::: tip
 提示容器
 :::
@@ -102,6 +114,10 @@ vuepress-theme-hope v2 仍在制作中，API 可能会有
 
 ::: info 自定义标题
 信息容器
+:::
+
+::: note 自定义标题
+注释容器
 :::
 
 ::: tip 自定义标题

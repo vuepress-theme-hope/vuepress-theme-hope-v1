@@ -9,6 +9,13 @@ import "./declare";
 
 export interface MarkdownEnhanceLocaleData {
   /**
+   * 提示块的默认标题
+   *
+   * Default Title text for note block
+   */
+  note: string;
+
+  /**
    * 信息块的默认标题
    *
    * Default Title text for info block
