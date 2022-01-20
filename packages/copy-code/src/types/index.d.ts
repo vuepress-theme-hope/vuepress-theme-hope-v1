@@ -5,16 +5,16 @@ import type {
 
 export interface CopyCodeLocaleData {
   /**
-   * 复制按钮文字
-   *
    * Copy button label text
+   *
+   * 复制按钮文字
    */
   copy: string;
 
   /**
-   * 复制成功提示消息文字
-   *
    * Success message text after content is copied
+   *
+   * 复制成功提示消息文字
    */
   hint: string;
 }
@@ -23,25 +23,29 @@ export type CopyCodeLocaleConfig = ConvertLocaleConfig<CopyCodeLocaleData>;
 
 export interface CopyCodeOptions {
   /**
-   * 代码块选择器
-   *
    * Code block selector
+   *
+   * 代码块选择器
    *
    * @default '.theme-default-content div[class*="language-"] pre'
    */
   selector?: string | string[];
   /**
+   * Prompt message display time
+   *
+   * setting with`0` will disable the hint
+   *
    * 提示消息显示时间
    *
-   * Prompt message display time
+   * 设置为 `0` 会禁用提示
    *
    * @default 2000
    */
   duration?: number;
   /**
-   * 是否展示在移动端
-   *
    * Whether to display on the mobile side
+   *
+   * 是否展示在移动端
    *
    * @default false
    */
@@ -49,6 +53,8 @@ export interface CopyCodeOptions {
 
   /**
    * Locale config
+   *
+   * 国际化配置
    */
   locales?: LocaleConfig<CopyCodeLocaleData>;
 }
