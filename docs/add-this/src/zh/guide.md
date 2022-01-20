@@ -5,7 +5,13 @@ icon: creative
 
 ## 注册
 
-请前往 [Add this 注册页面](https://www.addthis.com/register?next=/dashboard) 注册或 [Add this 登录页面](https://www.addthis.com/login?next=/dashboard) 登录账号。
+前往 [Add this 注册页面](https://www.addthis.com/register?next=/dashboard) 注册
+
+::: note
+
+如果你已注册，前往 [Add this 登录页面](https://www.addthis.com/login?next=/dashboard) 登录账号。
+
+:::
 
 ::: tip
 
