@@ -21,16 +21,14 @@ export default Vue.extend({
   }),
 
   mounted(): void {
-    const delay = (): Promise<void> =>
-      new Promise((resolve) => setTimeout(resolve, 500));
-
     const code = decodeURIComponent(
       (this.$el as HTMLElement).dataset.code || ""
     );
 
     void Promise.all([
       import(/* webpackChunkName: "mermaid" */ "mermaid"),
-      delay(),
+      // add a delay
+      new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
     ]).then(([mermaid]) => {
       const { initialize, render } = mermaid.default;
 

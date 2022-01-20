@@ -42,7 +42,15 @@ export default Vue.extend({
     if (revealElement) {
       revealElement.setAttribute("theme", this.theme);
 
-      const promises = [import(/* webpackChunkName: "reveal" */ "reveal.js")];
+      const promises: [
+        Promise<void>,
+        Promise<typeof import("reveal.js")>,
+        ...Promise<{ default: unknown }>[]
+      ] = [
+        // add a delay
+        new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+        import(/* webpackChunkName: "reveal" */ "reveal.js"),
+      ];
 
       promises.push(
         import(
@@ -106,7 +114,7 @@ export default Vue.extend({
       //     )
       //   );
 
-      void Promise.all(promises).then(([revealJS, ...plugins]) => {
+      void Promise.all(promises).then(([, revealJS, ...plugins]) => {
         const reveal = new revealJS.default(revealElement as HTMLElement, {
           plugins: plugins.map((plugin) => plugin.default),
         });

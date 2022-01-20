@@ -49,14 +49,12 @@ export default Vue.extend({
   },
 
   mounted(): void {
-    const delay = (): Promise<void> =>
-      new Promise((resolve) => setTimeout(resolve, 500));
-
     this.$el.setAttribute("id", this.id);
 
     void Promise.all([
       import(/* webpackChunkName: "flowchart" */ "flowchart.js"),
-      delay(),
+      // delay
+      new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
     ]).then(([flowchart]) => {
       const { parse } = flowchart;
 

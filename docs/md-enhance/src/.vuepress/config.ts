@@ -41,6 +41,7 @@ export default hope.config({
           collapsable: false,
           children: [
             "",
+            "container",
             "sup-sub",
             "align",
             "footnote",
@@ -86,6 +87,7 @@ export default hope.config({
               collapsable: false,
               children: [
                 "",
+                "container",
                 "sup-sub",
                 "align",
                 "footnote",
