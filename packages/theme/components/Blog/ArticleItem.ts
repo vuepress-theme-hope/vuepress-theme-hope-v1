@@ -30,8 +30,10 @@ export default Vue.extend({
 
       return (
         this.article.frontmatter.description ||
-        this.article.frontmatter.summary ||
-        ""
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        (this.$themeConfig.blog!.autoExcerpt === false
+          ? ""
+          : this.article.frontmatter.summary || "")
       );
     },
   },

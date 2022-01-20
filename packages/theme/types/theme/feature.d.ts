@@ -107,6 +107,7 @@ export type BlogOptions = {
    * @default 'Yesterday once more'
    */
   timeline?: string;
+
   /**
    * 每页的文章数量
    *
@@ -115,6 +116,13 @@ export type BlogOptions = {
    * @default 10
    */
   perPage?: number;
+
+  /**
+   * 是否自动生成摘要
+   *
+   * @default true
+   */
+  autoExcerpt?: boolean;
 };
 
 /**

@@ -145,6 +145,13 @@ Text on the top of timeline page.
 
 Article number per page
 
+### blog.autoExcerpt
+
+- Type: `boolean`
+- Default: `true`
+
+Whether generate excerpt automatically for each article.
+
 ## Encryption settings
 
 Encryption setting options

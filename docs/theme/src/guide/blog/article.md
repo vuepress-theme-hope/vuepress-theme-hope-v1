@@ -12,6 +12,10 @@ tags:
 
 The topic provides you with a list of all articles under the path `/article/`.
 
+## Auto Excerpt
+
+The theme will generate excerpt automatically for you by default, if you want to disable this feature, please set `autoExcerpt: false` in `themeConfig.blog`.
+
 ## Article
 
 All articles will be added to the article list by default and rendered under the path `/article/`.
