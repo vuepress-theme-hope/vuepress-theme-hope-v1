@@ -161,3 +161,61 @@ Safari 图标
 ## generateSwConfig
 
 传递给 `workbox-build` 的选项，具体详情，请见 [Workbox 文档](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
+
+## locales
+
+```ts
+interface PWALocaleData {
+  /**
+   * 安装按钮文字
+   */
+  install: string;
+
+  /**
+   * iOS 安装文字
+   */
+  iOSInstall: string;
+
+  /**
+   * 取消按钮文字
+   */
+  cancel: string;
+
+  /**
+   * 关闭按钮文字
+   */
+  close: string;
+
+  /**
+   * 上一张图片文字
+   */
+  prevImage: string;
+
+  /**
+   * 下一张图片文字
+   */
+  nextImage: string;
+
+  /**
+   * 安装解释
+   */
+  explain: string;
+
+  /**
+   * 描述标签文字
+   */
+  desc: string;
+
+  /**
+   * 特性标签文字
+   */
+  feature: string;
+
+  /**
+   * 更新内容标签文字
+   */
+  update: string;
+}
+```
+
+国际化配置。

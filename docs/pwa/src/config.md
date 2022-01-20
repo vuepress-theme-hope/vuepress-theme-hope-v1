@@ -155,3 +155,61 @@ You can fill in the custom pop-up component path.
 ## generateSwConfig
 
 Options passed to `workbox-build`, for details, see [Workbox documentation](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
+
+## locales
+
+```ts
+interface PWALocaleData {
+  /**
+   * Install button text
+   */
+  install: string;
+
+  /**
+   * iOS install hint text
+   */
+  iOSInstall: string;
+
+  /**
+   * Cancel button text
+   */
+  cancel: string;
+
+  /**
+   * Close button text
+   */
+  close: string;
+
+  /**
+   * Previous image text
+   */
+  prevImage: string;
+
+  /**
+   * Next image text
+   */
+  nextImage: string;
+
+  /**
+   * Install explain text
+   */
+  explain: string;
+
+  /**
+   * Description label text
+   */
+  desc: string;
+
+  /**
+   * Feature label text
+   */
+  feature: string;
+
+  /**
+   * Update label text
+   */
+  update: string;
+}
+```
+
+Locales config.
