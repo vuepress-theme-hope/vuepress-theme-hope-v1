@@ -45,7 +45,7 @@ Whether to fix image links containing special characters
 - Type: `number`
 - Default: `500`
 
-he delay of operating dom, in ms.
+The delay of operating dom, in ms.
 
 ::: tip
 
