@@ -15,11 +15,11 @@ const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, context) => {
     name: "photo-swipe",
 
     define: (): Record<string, unknown> => ({
-      IMAGE_CONTAINER: photoSwipeOptions.container || ".theme-default-content",
-      IMAGE_SELECTOR:
+      PHOTO_SWIPE_SELECTOR:
         photoSwipeOptions.selector || ".theme-default-content :not(a) > img",
-      PHOTOSWIPE_OPTIONS: photoSwipeOptions.options || {},
-      PHOTOSWIPE_LOCALES: getLocales(
+      PHOTO_SWIPE_DELAY: photoSwipeOptions.delay || 500,
+      PHOTO_SWIPE_OPTIONS: photoSwipeOptions.options || {},
+      PHOTO_SWIPE_LOCALES: getLocales(
         context,
         photoSwipeLocales,
         photoSwipeOptions.locales
@@ -28,7 +28,7 @@ const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (options, context) => {
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
-    globalUIComponents: "PhotoSwipeUI",
+    globalUIComponents: "PhotoSwipe",
   };
 };
 

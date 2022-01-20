@@ -1,9 +1,9 @@
-import PhotoSwipeUI from "./PhotoSwipeUI.vue";
+import PhotoSwipe from "./PhotoSwipe.vue";
 
 import type { EnhanceApp } from "@mr-hope/vuepress-types";
 
 const enhanceApp: EnhanceApp = ({ Vue }) => {
-  Vue.component("PhotoSwipeUI", PhotoSwipeUI);
+  Vue.component("PhotoSwipe", PhotoSwipe);
 };
 
 export default enhanceApp;

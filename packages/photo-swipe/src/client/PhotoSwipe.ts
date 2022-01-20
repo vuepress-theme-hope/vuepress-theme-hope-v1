@@ -2,37 +2,29 @@ import Vue from "vue";
 import PhotoSwipe from "photoswipe";
 
 let images: NodeListOf<HTMLImageElement>;
-const locales = PHOTOSWIPE_LOCALES;
+const locales = PHOTO_SWIPE_LOCALES;
 
 export default Vue.extend({
-  name: "PhotoSwipeUI",
+  name: "PhotoSwipe",
 
-  data: () => ({ locales }),
+  computed: {
+    locales() {
+      return locales[this.$localePath || "/"];
+    },
+  },
 
   watch: {
     $route(): void {
-      const timer = setInterval(() => {
-        const content = document.querySelector<HTMLElement>(IMAGE_CONTAINER);
-        if (content) {
-          this.photoswipe();
-          clearInterval(timer);
-        }
-      }, 200);
+      this.initPhotoSwipe();
     },
   },
 
   mounted(): void {
-    const timer = setInterval(() => {
-      const content = document.querySelector<HTMLElement>(IMAGE_CONTAINER);
-      if (content) {
-        this.photoswipe();
-        clearInterval(timer);
-      }
-    }, 200);
+    this.initPhotoSwipe();
   },
 
   methods: {
-    photoswipe(): void {
+    initPhotoSwipe(): void {
       const pswp = document.querySelector(".pswp") as HTMLElement;
 
       void Promise.all([
@@ -40,17 +32,20 @@ export default Vue.extend({
         import(
           /* webpackChunkName: "photo-swipe" */ "photoswipe/dist/photoswipe-ui-default"
         ),
-      ]).then(([photoSwipe, photoSwipeUIDefault]) => {
+        new Promise<void>((resolve) =>
+          setTimeout(() => resolve(), PHOTO_SWIPE_DELAY)
+        ),
+      ]).then(([photoSwipe, PhotoSwipeDefault]) => {
         void this.getImages().then((imageConfig) => {
           images.forEach((image, index) => {
             image.onclick = (): void => {
               const gallery = new photoSwipe.default(
                 pswp,
-                photoSwipeUIDefault.default,
+                PhotoSwipeDefault.default,
                 imageConfig,
                 {
-                  shareButtons: locales[this.$localePath || "/"].buttons,
-                  ...PHOTOSWIPE_OPTIONS,
+                  shareButtons: this.locales.buttons,
+                  ...PHOTO_SWIPE_OPTIONS,
                   index,
                 }
               );
@@ -73,7 +68,8 @@ export default Vue.extend({
 
     getImages(): Promise<PhotoSwipe.Item[]> {
       const promises: Promise<PhotoSwipe.Item & { title: string }>[] = [];
-      images = document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR);
+      images =
+        document.querySelectorAll<HTMLImageElement>(PHOTO_SWIPE_SELECTOR);
 
       images.forEach((image, index) => {
         promises[index] = new Promise((resolve, reject) => {

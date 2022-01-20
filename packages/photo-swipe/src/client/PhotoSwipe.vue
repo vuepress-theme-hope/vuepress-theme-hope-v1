@@ -83,7 +83,7 @@
   </div>
 </template>
 
-<script src="./PhotoSwipeUI" />
+<script src="./PhotoSwipe" />
 
 <style lang="stylus">
 @require '~photoswipe/dist/photoswipe.css'
