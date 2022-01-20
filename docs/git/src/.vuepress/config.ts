@@ -34,6 +34,10 @@ export default hope.config({
       timezone: "Asia/Shanghai",
     },
 
+    mdEnhance: {
+      container: true,
+    },
+
     pwa: {
       favicon: "/git/favicon.ico",
       themeColor: "#46bd87",

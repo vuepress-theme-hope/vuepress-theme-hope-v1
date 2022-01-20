@@ -74,6 +74,7 @@ export default hope.config({
     },
 
     mdEnhance: {
+      container: true,
       footnote: true,
     },
 
