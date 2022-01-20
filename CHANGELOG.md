@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.25.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.24.0...v1.25.0) (2022-01-20)
+
+### Bug Fixes
+
+- **md-enhance:** fix container styles ([48b7aaf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48b7aaf0a6d7d5694e043d03c898aadff427a0f9))
+- **theme:** fix sidebarTitle ([349f9d7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/349f9d7bd28e75b3e407a237d135586a3b86197d))
+- **theme:** fix types ([f5c83f8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f5c83f89dd9c7ef950a445c2ed1afd8da2a3e169))
+
+### Features
+
+- **md-enhance:** add `container` and `delay` option ([d7e0bb8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d7e0bb8b203468f50dcdc88e2a71096e618fd9f9))
+- **md-enhance:** rebuild container and add note container ([1a12df8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1a12df8917aea52002ce7a79f5cfd8effba982b2))
+- **photo-swipe:** add delay options ([a02fecd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a02fecd1b9ef8947d00ead5484f1c4f070afdf9d))
+- **theme:** add `blog.autoExcerpt`, close [#1398](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1398) ([2f60f81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f60f810c8aec70be9f32694eda77f970a74c1c7))
+
 ## [1.24.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.23.0...v1.24.0) (2022-01-19)
 
 ### Bug Fixes
