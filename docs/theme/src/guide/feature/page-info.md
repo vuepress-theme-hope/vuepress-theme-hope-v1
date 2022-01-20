@@ -35,7 +35,7 @@ To keep it globally disabled, please set `pageInfo` to `false` in the plugin opt
 
 `pageInfo` accepts an array of strings by default, filling in a group of items. The order of filling is the order in which the items are displayed.
 
-The optional values ​​and corresponding contents of the entry are as follows:
+The optional values and corresponding contents of the entry are as follows:
 
 | Entry            | Corresponding content  | page frontmatter value             |
 | ---------------- | ---------------------- | ---------------------------------- |

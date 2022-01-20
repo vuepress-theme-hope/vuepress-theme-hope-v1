@@ -53,7 +53,7 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
     To let the site be registered as a PWA, the site needs to successfully register a valid service worker by itself, and at the same time add a valid manifest file and declare it.
 
-    Each platform or browser has requirements for the size of the Service Worker cache. When the file size of the Service Worker cache is too large, the site will be marked as not installable. For Safari, the threshold is 50 MB, a few browsers will set less or more values ​​(30MB, 70MB, 80MB), and Chrome will mark the threshold at 100 MB.
+    Each platform or browser has requirements for the size of the Service Worker cache. When the file size of the Service Worker cache is too large, the site will be marked as not installable. For Safari, the threshold is 50 MB, a few browsers will set less or more values (30MB, 70MB, 80MB), and Chrome will mark the threshold at 100 MB.
 
     The manifest file should contain at least `name` (or `short_name`) `icons` `start_url`
 
@@ -129,7 +129,7 @@ If you already have a `manifest.webmanifest` or `manifest.json` in `.vuepress/pu
 
 The plugin will use the information from the VuePress plugin API and set the fallback for fields in manifest as much as possible. So you don’t need to set most of the manifest fields.
 
-If the following fields are not set, they will try to fallback to the following preset values ​​in order.
+If the following fields are not set, they will try to fallback to the following preset value in order.
 
 | Options                     | Default value                                                                                          |
 | --------------------------- | ------------------------------------------------------------------------------------------------------ |

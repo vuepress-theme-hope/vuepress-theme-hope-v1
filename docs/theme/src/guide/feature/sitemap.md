@@ -9,7 +9,7 @@ tags:
 
 `vuepress-theme-hope` provide SEO enhancement by includeing [`@mr-hope/vuepress-plugin-sitemap`](https://vuepress-theme-hope.github.io/sitemap/).
 
-The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative version link of the page in other languages ​​according to the locales config.
+The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative version link of the page in other languages according to the locales config.
 
 If you don’t need this plugin, please set `themeConfig.sitemap` to `false`.
 
