@@ -97,7 +97,7 @@ interface Page {
 }
 ```
 
-## Configuration
+## Plugin Options
 
 ### contributor
 

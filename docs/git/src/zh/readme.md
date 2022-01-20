@@ -100,7 +100,7 @@ interface Page {
 }
 ```
 
-## 配置
+## 插件选项
 
 ### contributor
 
