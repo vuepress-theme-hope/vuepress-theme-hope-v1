@@ -20,7 +20,7 @@ export default timelineMixin.extend({
       return (
         this.blogConfig.name ||
         this.$themeConfig.author ||
-        this.$site.title ||
+        this.$siteTitle ||
         ""
       );
     },

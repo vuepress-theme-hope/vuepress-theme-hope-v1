@@ -51,7 +51,7 @@ export default Vue.extend({
 
   computed: {
     siteBrandTitle(): string {
-      return this.$site.title;
+      return this.$siteTitle;
     },
 
     canHideSiteBrandTitle(): boolean {

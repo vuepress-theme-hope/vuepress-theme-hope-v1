@@ -51,7 +51,7 @@ export default Vue.extend({
         (this.$themeConfig.editLinks !== false &&
           this.$page.frontmatter.editLink !== false);
 
-      const { repo, docsRepo } = this.$site.themeConfig;
+      const { repo, docsRepo } = this.$themeConfig;
 
       if (showEditLink && (repo || docsRepo) && this.$page.relativePath)
         return this.createEditLink();
