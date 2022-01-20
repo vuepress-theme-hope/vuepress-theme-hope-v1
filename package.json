@@ -110,6 +110,10 @@
         false
       ],
       [
+        "link-no-emphasis-as-heading",
+        false
+      ],
+      [
         "lint-no-undefined-references",
         false
       ]

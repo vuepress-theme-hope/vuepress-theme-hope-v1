@@ -92,7 +92,7 @@ You can find the corresponding project in the docs folder so you can modify the 
 
 After ensuring that the `yarn run lint` and `yarn run lint:md` commands emit no errors, you can commit to GitHub to open a PR.
 
-If you want to preview the project locally, since the docs are using local themes and plugins, you need to build the local project through `yarn run build`, and then start it with the corresponding command `yarn run docs/<project abbreviation>:serve` in the root directory to start devServer.
+To preview the project locally, since the docs are using local themes and plugins, you need to build the local project through `yarn run build`, and then start it with the corresponding command `yarn run docs/<project abbreviation>:serve` in the root directory to start devServer.
 
 ## Project modification
 

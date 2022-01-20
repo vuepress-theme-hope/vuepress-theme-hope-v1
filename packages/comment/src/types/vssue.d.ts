@@ -103,7 +103,7 @@ export interface VssueOptions extends BaseCommentOptions {
   /**
    * 希望使用自己的代理，就需要设置这个选项
    *
-   * If you want to use your own proxy, you need to set this option.
+   * To use your own proxy, you need to set this option.
    */
   proxy?: string | ((url: string) => string);
 

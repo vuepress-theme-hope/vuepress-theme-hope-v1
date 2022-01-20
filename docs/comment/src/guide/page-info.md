@@ -11,7 +11,7 @@ To keep it globally disabled, please set `pageInfo` to `false` in the plugin opt
 
 `pageInfo` accepts an array of strings, which you should fill in a group of items. The order of you fill is the order in which the items are displayed.
 
-The available values and related page infomation are as follows:
+The available values and related page information are as follows:
 
 | Value            | PageInfo               | Related Fontmatter property        |
 | ---------------- | ---------------------- | ---------------------------------- |

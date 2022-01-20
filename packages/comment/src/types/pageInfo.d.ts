@@ -61,7 +61,7 @@ export interface PageInfoLocaleData {
 export type PageInfoLocaleConfig = ConvertLocaleConfig<PageInfoLocaleData>;
 
 /**
- * Type of page infomation
+ * Type of page information
  *
  * 页面信息类型
  */

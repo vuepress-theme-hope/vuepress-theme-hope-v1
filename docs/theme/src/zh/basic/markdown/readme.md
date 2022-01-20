@@ -177,7 +177,7 @@ Markdown 也允许你只在整个段落的第一行最前面加上 `>` :
 > ## This is a header.
 >
 > 1. This is the first list item.
-> 2. This is the second list item.
+> 1. This is the second list item.
 >
 > Here’s some example code:
 >

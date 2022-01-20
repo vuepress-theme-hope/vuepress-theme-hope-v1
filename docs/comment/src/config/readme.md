@@ -96,7 +96,7 @@ interface PageInfoLocaleData {
 }
 ```
 
-Locales Config for page infomation.
+Locales Config for page information.
 
 ## Waline config
 

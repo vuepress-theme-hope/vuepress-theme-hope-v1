@@ -8,7 +8,7 @@ export interface GitOptions {
   /**
    * 是否注入贡献者信息
    *
-   * Whether inject contributor infomation
+   * Whether inject contributor information
    *
    * @default true
    */

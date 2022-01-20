@@ -25,17 +25,17 @@ Welcome to Waline. In just a few steps, you can enable Waline to provide comment
 
 1. Click the blue button above, it will redirect you to vercel to deploy with waline template.
 
-2. If you haven't logined, we recommend you to sign in with GitHub.
+1. If you haven’t logined, we recommend you to sign in with GitHub.
 
-3. Input your Vercel project name then click `Create`.
+1. Input your Vercel project name then click `Create`.
 
    ![Create Project](./assets/vercel-1.png)
 
-4. Then Vercel will let you create Vercel Team account, click `Skip` and go on.
+1. Then Vercel will let you create Vercel Team account, click `Skip` and go on.
 
    ![skip team](./assets/vercel-2.png)
 
-5. Repo which named you input before will be created and initiallized automatically base on waline example template by Vercel.
+1. Repo which named you input before will be created and initiallized automatically base on waline example template by Vercel.
 
    ![deploy](./assets/vercel-3.png)
 
@@ -43,15 +43,15 @@ Welcome to Waline. In just a few steps, you can enable Waline to provide comment
 
    ![deploy](./assets/vercel-4.png)
 
-6. Click `Settings` menu on the top, and `Environment Variables` button on the side to go to envrionment variables setting page. Then set `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY`. The variables' value should be the ones you got in the previous step. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
+1. Click `Settings` menu on the top, and `Environment Variables` button on the side to go to envrionment variables setting page. Then set `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY`. The variables’ value should be the ones you got in the previous step. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
 
    ![set environment variables](./assets/vercel-5.png)
 
-7. To let your environment variables setting active, you need redeploy your application. Click `Deployments` menu on the top and find the latest deployment at the top of list, click `Redeploy` button in the right dropdown menu.
+1. To let your environment variables setting active, you need redeploy your application. Click `Deployments` menu on the top and find the latest deployment at the top of list, click `Redeploy` button in the right dropdown menu.
 
    ![redeploy](./assets/vercel-6.png)
 
-8. If everything is ok, vercel will redirect to `Overview` page to start redeployment. Wait a moment the `STATUS` will change to `Ready`. Now you can click `Visit` to visit the site. This link is your server address.
+1. If everything is ok, vercel will redirect to `Overview` page to start redeployment. Wait a moment the `STATUS` will change to `Ready`. Now you can click `Visit` to visit the site. This link is your server address.
 
    ![redeploy success](./assets/vercel-7.png)
 
