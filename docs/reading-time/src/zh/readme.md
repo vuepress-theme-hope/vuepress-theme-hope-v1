@@ -92,3 +92,26 @@ export default {
 - 默认值: `300`
 
 每分钟阅读字数
+
+### locales
+
+```ts
+interface ReadingTimeLocaleData {
+  /**
+   * 字数模板，模板中 `$word` 会被自动替换为字数
+   */
+  word: string;
+
+  /**
+   * 小于一分钟文字
+   */
+  less1Minute: string;
+
+  /**
+   * 时间模板
+   */
+  time: string;
+}
+```
+
+国际化配置。

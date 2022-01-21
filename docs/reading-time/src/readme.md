@@ -92,3 +92,26 @@ export default {
 - Default: `300`
 
 Reading speed (words per minute)
+
+### locales
+
+```ts
+interface ReadingTimeLocaleData {
+  /**
+   * Word template, `$word` will be automatically replaced by actual words
+   */
+  word: string;
+
+  /**
+   * Text for less than one minute
+   */
+  less1Minute: string;
+
+  /**
+   * Time template
+   */
+  time: string;
+}
+```
+
+Locales config.
