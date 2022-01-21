@@ -6,6 +6,7 @@ import { chunkRenamePlugin } from "./chunk-rename";
 import type { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
 import type { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
+import type { FeedOptions } from "@mr-hope/vuepress-plugin-feed";
 import type { PluginConfig } from "@mr-hope/vuepress-types";
 import type { ResolvedHopeThemeConfig } from "../types";
 
@@ -46,6 +47,22 @@ const resolveCopyCodeOptions = (
 ): CopyCodeOptions | false =>
   themeConfig.copyCode === false ? false : themeConfig.copyCode || {};
 
+const resolveFeedOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): FeedOptions | false => {
+  return themeConfig.feed === false
+    ? false
+    : {
+        hostname: themeConfig.hostname || "",
+        ...themeConfig.feed,
+        channel: {
+          author: themeConfig.author ? { name: themeConfig.author } : undefined,
+          copyright: themeConfig.footer.copyright || "",
+          ...(themeConfig.feed?.channel || null),
+        },
+      };
+};
+
 export const getPluginConfig = (
   themeConfig: ResolvedHopeThemeConfig
 ): PluginConfig[] => {
@@ -58,7 +75,7 @@ export const getPluginConfig = (
 
     ["@mr-hope/components", resolveComponentsOptions(themeConfig)],
 
-    ["@mr-hope/feed", themeConfig.feed],
+    ["@mr-hope/feed", resolveFeedOptions(themeConfig)],
 
     ["@mr-hope/git", themeConfig.git],
 

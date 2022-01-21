@@ -16,11 +16,8 @@ export interface ResolvedFeedOutput {
   rss: ResolvedFeedOutputConfig;
 }
 
-export const checkOptions = (
-  options: FeedOptions,
-  context: Context
-): boolean => {
-  const hostname = options.hostname || context.themeConfig.hostname;
+export const checkOptions = (options: FeedOptions): boolean => {
+  const hostname = options.hostname;
 
   // make sure hostname do not end with `/`
   if (hostname) options.hostname = hostname.replace(/\/?$/u, "");
@@ -56,19 +53,16 @@ export const getFeedChannelOption = (
   context: Context
 ): FeedChannelOption => {
   const { hostname, icon, image } = options;
-  const { base, themeConfig } = context;
+  const { base } = context;
   const { title, description } = context.getSiteData();
-  const author = options.channel?.author?.name || themeConfig.author;
-
-  const copyright =
-    themeConfig.footer?.copyright || (author ? `Copyright by ${author}` : "");
+  const author = options.channel?.author?.name;
 
   const defaultChannelOpion: FeedChannelOption = {
     title,
     link: resolveUrl(hostname, base),
     description,
     language: getRootLang(context),
-    copyright,
+    copyright: author ? `Copyright by ${author}` : "",
     pubDate: new Date(),
     lastUpdated: new Date(),
     ...(icon ? { icon } : {}),

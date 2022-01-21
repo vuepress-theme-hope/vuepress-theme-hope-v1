@@ -1,9 +1,9 @@
-import { AlgoliaOption, LocaleData } from "@mr-hope/vuepress-types";
-import { HopeThemeAppearanceConfig } from "./appearance";
-import { HopeFeatureConfig } from "./feature";
-import { HopeLayoutConfig } from "./layout";
-import { HopeThemeLocalesConfig } from "./locales";
-import { HopeThemePluginConfig } from "./plugin";
+import type { AlgoliaOption, LocaleData } from "@mr-hope/vuepress-types";
+import type { HopeThemeAppearanceConfig } from "./appearance";
+import type { HopeFeatureConfig } from "./feature";
+import type { HopeFooterConfig, HopeLayoutConfig } from "./layout";
+import type { HopeThemeLocalesConfig } from "./locales";
+import type { HopeThemePluginConfig } from "./plugin";
 
 /** vuepress-theme-hope 主题配置 */
 export interface HopeThemeConfig

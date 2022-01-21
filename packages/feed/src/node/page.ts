@@ -75,9 +75,14 @@ export class FeedPage {
       return [this.feedOption.author];
 
     const { author } = this.$page.frontmatter;
-    const { author: globalAuthor } = this.context.themeConfig;
 
-    return [{ name: author === false ? "" : author || globalAuthor || "" }];
+    return author === false
+      ? []
+      : author
+      ? [{ name: author }]
+      : this.options.channel?.author
+      ? [this.options.channel?.author]
+      : [];
   }
 
   get category(): FeedCategory[] | undefined {
