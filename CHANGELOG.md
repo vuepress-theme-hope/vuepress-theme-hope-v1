@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.26.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.25.0...v1.26.0) (2022-01-21)
+
+### Bug Fixes
+
+- **theme:** fix autoExcerpt issues ([c0c05a6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c0c05a69476e0a1d11cc78ac05f2011e948c11c3))
+
+### Features
+
+- **add-this:** no longer read options from themeConfig ([74df241](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/74df241fd8fa07ce084ef92e18ce0336d96cd0ac))
+- **comment:** extract pageinfo options to `PageInfoProps` ([5569402](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5569402c4dbe65d0cfe59b97b572f9d10ed171e9))
+- **comment:** new option `categoryPath`, `tagPath`, `titleIcon` and `titleIconPrefix` ([bc7295b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bc7295b3894bf2726a44dc2d438ac80b5a762024))
+- **components:** add options ([eb95057](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eb950575ff2c5ab160387e85eba90c9dd6617e56))
+- **components:** stop reading from themeConfig ([309e8f3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/309e8f3816f7ff0f1ff236c188240faadcc57b9a))
+- **copy-code:** stop reading themeConfig ([ea8eed2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ea8eed20a79390d3f6a73004b495f1eb4444f7ff))
+- **feed:** stop reading themeConfig ([18f7bdb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/18f7bdb980aceb73f8ee6b4925c9f760fbf85819))
+- move PageInfo to components ([03c94b2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/03c94b280a6583375cde0f24ad6d9e39f8c8b663))
+- stop reading themeConfig in plugins ([ea644f3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ea644f371bbeea67bd172208d2eb9a1b036276c5))
+
 ## [1.25.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.24.0...v1.25.0) (2022-01-20)
 
 ### Bug Fixes
