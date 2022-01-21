@@ -54,7 +54,7 @@ npm i -D vuepress-theme-hope
 
 ## PageInfo
 
-Page infomation components, see [PageInfo](./page-info.md) for details.
+Page information components, see [PageInfo](./page-info.md) for details.
 
 ## Pagination
 
