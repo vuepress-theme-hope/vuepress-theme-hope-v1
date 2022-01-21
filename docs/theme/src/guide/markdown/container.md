@@ -1,6 +1,9 @@
 ---
 title: Custom container
 icon: customize
+tags:
+  - container
+  - markdown
 ---
 
 The plugin adds tip, note, info, warning, danger and detail container.
@@ -9,17 +12,14 @@ The plugin adds tip, note, info, warning, danger and detail container.
 
 ## Config
 
-```js {7}
+```js {5}
 module.exports = {
-  plugins: [
-    [
-      "md-enhance",
-      {
-        // Enable container
-        container: true,
-      },
-    ],
-  ],
+  themeConfig: {
+    mdEnhance: {
+      // this is the default option, so you can use it directly
+      container: true,
+    },
+  },
 };
 ```
 

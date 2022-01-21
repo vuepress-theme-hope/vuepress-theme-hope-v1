@@ -14,7 +14,7 @@ For detailed info, please see [Stylus Configuration](../../config/stylus.md)
 
 ## Fullscreen Button
 
-Enabled by default, it’s in the theme card in navbar.
+Enabled by default, it’s in theme popup window in navbar.
 
 If you don’t need it, you can disable it by setting `fullscreen` to `false` in the themeConfig.
 
@@ -25,21 +25,6 @@ If the current browser does not support full screen, the full screen button is a
 :::
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js {6}
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    fullscreen: false, // Enable by default
-  },
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts {6}
@@ -54,9 +39,24 @@ export default theme.config({
 ```
 
 </CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js {6}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    fullscreen: false, // Enable by default
+  },
+});
+```
+
+</CodeGroupItem>
 </CodeGroup>
 
-## Back to top button <Badge text="Support page config" />
+## Back to top button
 
 `vuepress-theme-hope` adds a back-to-top control which will display after scrolling down 300px by default.
 

@@ -14,11 +14,11 @@ icon: creative
 ## 演示
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-module.exports = {
+```ts
+// .vuepress/config.ts
+export default {
   plugins: [
     [
       "@mr-hope/copy-code",
@@ -32,11 +32,11 @@ module.exports = {
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-export default {
+```js
+// .vuepress/config.js
+module.exports = {
   plugins: [
     [
       "@mr-hope/copy-code",

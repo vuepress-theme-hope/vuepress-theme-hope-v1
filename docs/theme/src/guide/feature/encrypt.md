@@ -23,18 +23,24 @@ Please **DO NOT USE** this encryption function for any sensitive and confidentia
 
 You can configure encryption options through the `config` field in `themeConfig.encrypt`.
 
-```js
-{
-  // This will encrypt the entire guide directory, and both passwords are available
-  "/guide/": ["1234", "5678"],
-  // This will only encrypt config/page.html
-  "/config/page.html": "1234"
-}
+```js {4-9}
+module.exports = {
+  themeConfig: {
+    encrypt: {
+      config: {
+        // This will encrypt the entire guide directory, and both passwords are available
+        "/guide/": ["1234", "5678"],
+        // This will only encrypt config/page.html
+        "/config/page.html": "1234",
+      },
+    },
+  },
+};
 ```
 
 ::: tip
 
-We recommend you to use `config`, because the password will be hashed and salted by theme and will not appear in the output code.
+We recommend you to use encryption in this way, because the password will be hashed and salted by theme and will not appear in the output code.
 
 :::
 

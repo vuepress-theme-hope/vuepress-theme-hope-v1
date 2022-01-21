@@ -49,6 +49,7 @@ export default {
         collapsable: false,
         children: [
           "intro",
+          "container",
           "components",
           "align",
           "sup-sub",
@@ -235,6 +236,7 @@ export default {
         collapsable: false,
         children: [
           "intro",
+          "container",
           "components",
           "align",
           "sup-sub",

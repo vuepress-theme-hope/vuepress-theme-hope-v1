@@ -14,13 +14,13 @@ tags:
 ## Enable <Badge text="Support page config" />
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js {7,10}
-// .vuepress/themeConfig.js
-const { themeConfig } = require("vuepress-theme-hope");
+```ts {7,10}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = themeConfig({
+export default theme.config({
   themeConfig: {
     comment: {
       type: "waline", // "waline", "valine" 或 "vssue"
@@ -34,13 +34,13 @@ module.exports = themeConfig({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts {7,10}
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js {7,10}
+// .vuepress/themeConfig.js
+const { themeConfig } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = themeConfig({
   themeConfig: {
     comment: {
       type: "waline", // "waline", "valine" 或 "vssue"
@@ -92,13 +92,13 @@ Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MAS
 Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your themeConfig:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     comment: {
       type: "waline",
@@ -110,13 +110,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     comment: {
       type: "waline",
@@ -155,13 +155,13 @@ After this step, you will get `client id` and `client secret` of your OAuth App,
 ### Use the plugin
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js {7-17}
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts {7-17}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     comment: {
       type: "vssue",
@@ -180,13 +180,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts {7-17}
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js {7-17}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     comment: {
       type: "vssue",
@@ -236,13 +236,13 @@ You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy
 Create new application in Leancloud, and you will get APP ID / APP Key.
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     comment: {
       type: "valine",
@@ -255,13 +255,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     comment: {
       type: "valine",

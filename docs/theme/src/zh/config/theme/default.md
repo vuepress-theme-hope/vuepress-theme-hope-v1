@@ -131,4 +131,4 @@ Algolia 搜索配置，你需要至少提供 `apiKey` 和 `indexName`。具体�
 - 类型: `boolean`
 - 默认值: `true`
 
-显示编辑本页链接
+显示编辑此页链接

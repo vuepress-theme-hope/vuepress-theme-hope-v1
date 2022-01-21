@@ -27,13 +27,13 @@ tags:
 :: details Example
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js {5-10}
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     themeColor: {
       blue: "#2196f3",
@@ -47,13 +47,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js {5-10}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     themeColor: {
       blue: "#2196f3",

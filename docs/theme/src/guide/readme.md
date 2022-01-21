@@ -30,23 +30,23 @@ Added more syntax to Markdown, enriching documentation and blog writing
 - [Mermaid Diagram](markdown/mermaid.md)
 - [Mark](markdown/mark.md)
 - [Task list](markdown/tasklist.md)
-- [Subsript and Supercript](markdown/sup-sub.md)
+- [Subscript and Supercript](markdown/sup-sub.md)
 - [Code demo](markdown/demo.md)
 - [Presentation](markdown/presentation.md)
 
 ### Layout
 
-- Optimization of other built-in components
+- Optimization of other built-in components:
 
   - Add `prefix` and `icon` for [Navbar](layout/navbar.md) [Sidebar](layout/sidebar.md)
 
-- Add:
+- Added:
 
   - [Path navigation](layout/page.md#breadcrumb)
 
   - [Custom footer](layout/page.md#footer-support)
 
-  - [Default homepage optimization](layout/home.md)
+  - [Default homepage optimization](layout/home.md):
 
     - Features have new animations and support jump
     - Multiple action buttons
@@ -54,9 +54,9 @@ Added more syntax to Markdown, enriching documentation and blog writing
 
 ### Interface
 
-- [Theme colors](interface/theme-color.md), allowing you to switch dynamically during browsing
+- [Theme colors](interface/theme-color.md): allowing you to switch dynamically during browsing
 
-- [Dark mode](interface/darkmode.md), allowing you to switch manually or apply automatically according to device settings
+- [Dark mode](interface/darkmode.md): allowing you to switch manually or apply automatically according to device settings
 
 - [Icon support](interface/icon.md)
 
@@ -68,7 +68,7 @@ Added more syntax to Markdown, enriching documentation and blog writing
 
 - [One-click copy code](feature/copy-code.md)
 
-- [Picture preview feature](feature/photo-swipe.md), supports zooming, dragging, sliding browsing, sharing and downloading
+- [Picture preview feature](feature/photo-swipe.md): supports zooming, dragging, sliding browsing, sharing and downloading
 
 - [Copyright info](feature/copyright.md)
 
@@ -101,7 +101,7 @@ Added more syntax to Markdown, enriching documentation and blog writing
 
 - [Social follow button and page social sharing][add-this]
 
-- [Articles list swith sticky support](blog/intro.md)
+- [Article list with sticky support, and summary autogeneration](blog/intro.md)
 
 - [Cateory and tag list](blog/category-and-tags.md)
 
@@ -117,7 +117,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-comment][comment]: Comment and page info feature
 
-- [@mr-hope/vuepress-plugin-component][component]: Provide some out of box plugins
+- [@mr-hope/vuepress-plugin-components][components]: Provide some out of box plugins
 
 - [@mr-hope/vuepress-plugin-copy-code][copy-code]: Provide copy button for code blocks
 
@@ -146,7 +146,7 @@ The theme also includes the following plugins, you can use them in other themes 
 [active-hash]: https://vuepress-theme-hope.github.io/active-hash/
 [add-this]: https://vuepress-theme-hope.github.io/add-this/
 [comment]: https://vuepress-theme-hope.github.io/comment/
-[component]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/components/readme.md#usage
+[components]: https://vuepress-theme-hope.github.io/components/
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/
 [feed]: https://vuepress-theme-hope.github.io/feed/
 [git]: https://vuepress-theme-hope.github.io/git/

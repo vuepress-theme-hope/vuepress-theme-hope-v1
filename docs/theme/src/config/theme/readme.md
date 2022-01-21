@@ -14,19 +14,6 @@ You can view [Config of this site][docs-config] as an example, and you can direc
 Besides, we also provide a `themeConfig` helper function, which you can import to provide automatic completion and verification:
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/themeConfig.js
-const { themeConfig } = require("vuepress-theme-hope");
-
-module.exports = themeConfig({
-  // Your themeConfig here
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts{2,4,6}
@@ -34,6 +21,19 @@ module.exports = themeConfig({
 import theme from "vuepress-theme-hope";
 
 export default theme.themeConfig({
+  // Your themeConfig here
+});
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js
+// .vuepress/themeConfig.js
+const { themeConfig } = require("vuepress-theme-hope");
+
+module.exports = themeConfig({
   // Your themeConfig here
 });
 ```
@@ -103,4 +103,4 @@ The multi-language configuration of the theme mainly needs to configure `nav` an
 
 - [**Theme Appearance Config**](apperance.md)
 
-[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.js
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.ts

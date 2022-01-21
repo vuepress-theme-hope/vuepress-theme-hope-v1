@@ -16,7 +16,7 @@ At the same time, as Evan You switched to VitePress driven by Vite, the communit
 
 At the same time, though VuePress has extended Markdown syntax to a certain extent, it still lacks some commonly used functions, such as text alignment, mark, flowchart, formula, presentation, etc. At the same time, some features provided by the default theme are weak or missing, such as picture preview, dark mode, etc.
 
-In this case, the design of `vuepress-theme-hope` was born. Since the developer, Mr. Hope, is a physics major and is not good at design, this theme maintains the simple style of the default theme with little changes, while dedicates to provide a full range of enhancements for **VuePress**.
+In this case, the design of `vuepress-theme-hope` was born. Since the developer, Mr. Hope, majors in physics while not good at design, this theme maintains the simple style of the default theme with little changes, while dedicates to provide a full range of enhancements for **VuePress**.
 
 ### Design goals
 
@@ -52,12 +52,12 @@ The theme also provides [Sitemap Generation](../feature/sitemap.md) to generate 
 
 - Homepage: Support for multiple action buttons, and the UI has been optimized.
 
-- Page: [**page icon**](../interface/icon.md), [**article information**](../feature/page-info.md),**Title list**, picture preview function.
+- Page: [page icon](../interface/icon.md), [article information](../feature/page-info.md), Title list, picture preview function.
 
-- Site structure: simplifie the configuration of [Navigation Bar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md), add support for icons and path prefixes. At the same time, the theme added [**breadcrumb**](../layout/page.md#breadcrumb) and footer support.
+- Site structure: simplifie the configuration of [Navigation Bar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md), add support for icons and path prefixes. At the same time, the theme added [breadcrumb](../layout/page.md#breadcrumb) and footer support.
 
 ### Blog
 
-The theme provides [categories, tags](../blog/category-and-tags.md), [timeline](../blog/timeline.md), [star articles](../blog/article.md) and other functions. Also, the theme gives you a brand new [**blog homepage**](../blog/home.md), and also .
+The theme provides [categories, tags](../blog/category-and-tags.md), [timeline](../blog/timeline.md), [star articles](../blog/article.md) and other functions. Also, the theme gives you a brand new [blog homepage](../blog/home.md), and also .
 
-At the same time, the theme also provides common blog feature such as [**Comment**](../feature/comment.md) and [**Feed**](../feature/feed.md).
+At the same time, the theme also provides common blog feature such as [Comment](../feature/comment.md) and [Feed](../feature/feed.md).

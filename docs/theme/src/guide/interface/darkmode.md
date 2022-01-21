@@ -7,7 +7,7 @@ tags:
   - interface
 ---
 
-In dark mode, the page uses a dark background to protect your eyes.
+In dark mode, the page uses a dark background to make you comfortable.
 
 <!-- more -->
 

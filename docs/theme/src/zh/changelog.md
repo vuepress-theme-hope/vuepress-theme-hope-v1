@@ -13,11 +13,11 @@ icon: time
 
 现在大多插件不再读取 `themeConfig`，所以使用者和调用主题必须直接传入所需选项。
 
-### Comment rebuild <Badge text="破坏性变更" type="danger" />
+### Comment rebuild <Badge text="破坏性变更" type="error" />
 
 `<PageInfo />` 已从评论插件中剥离, 评论插件现在会全局注册 `<CommentService />` 组件。
 
-### Components rebuild <Badge text="破坏性变更" type="danger" />
+### Components rebuild <Badge text="破坏性变更" type="error" />
 
 `<PageInfo />` 提取到了 components 插件, 我们建议你使用 `v-bind` 指令传入它需要的属性。
 
@@ -32,7 +32,7 @@ Components 插件现在支持 `locales` 选项。
 - **md-enhance:** 添加 `container` 和 `delay` 选项
 - **md-enhance:** rebuild container styles and add note container
 
-## Others
+### Others
 
 - **photo-swipe:** 添加 `delay` 选项
 - **theme:** 添加 `blog.autoExcerpt` 选项

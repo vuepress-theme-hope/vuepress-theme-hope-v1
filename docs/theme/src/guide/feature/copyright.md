@@ -11,7 +11,7 @@ copyright:
 
 Sometimes, you may not want some of your articles to be copied by others, or you want others to automatically generate a piece of copyright information to the clipboard when copying.
 
-`vuepress-theme-hope` introduced [vuepress-plugin-copyright](https://www.npmjs.com/package/vuepress-plugin-copyright) to provide related features.
+`vuepress-theme-hope` use [vuepress-plugin-copyright](https://www.npmjs.com/package/vuepress-plugin-copyright) to provide related features.
 
 <!-- more -->
 
@@ -23,7 +23,7 @@ To enable this plugin, you need to set `copyright` in `themeConfig` to `true`, o
 
 ## Usage
 
-By default, when users copy a message of more than 100 words from your site, a copyright information will append the end of the message.
+By default, when users copy a text of more than 100 words from your site, the plugin will append a copyright information at the end of the text.
 
 The author name of the copyright statement will be automatically generated from the author information or site name configured in the theme.
 

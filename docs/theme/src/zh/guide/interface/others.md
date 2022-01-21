@@ -25,21 +25,6 @@ tags:
 :::
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js {6}
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    fullscreen: false, // Enable by default
-  },
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts {6}
@@ -54,9 +39,24 @@ export default theme.config({
 ```
 
 </CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js {6}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    fullscreen: false, // Enable by default
+  },
+});
+```
+
+</CodeGroupItem>
 </CodeGroup>
 
-## 返回顶部按钮 <Badge text="支持页面配置" />
+## 返回顶部按钮
 
 `vuepress-theme-hope` 添加了一个返回顶部控件，默认情况下将在下滑 300px 后显示。
 

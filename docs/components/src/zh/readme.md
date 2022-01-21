@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: vuepress-plugin-components
+heroText: "@mr-hope/vuepress-plugin-components"
 tagline: 组件库插件
 action:
   - text: 快速上手 💡
@@ -40,11 +40,11 @@ npm i -D @mr-hope/vuepress-plugin-components
 ## 使用
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-module.exports = {
+```ts
+// .vuepress/config.ts
+export default {
   plugins: [
     [
       "@mr-hope/components",
@@ -58,11 +58,11 @@ module.exports = {
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-exports default {
+```js
+// .vuepress/config.js
+module.exports = {
   plugins: [
     [
       "@mr-hope/components",

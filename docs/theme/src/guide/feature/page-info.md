@@ -7,15 +7,15 @@ tags:
   - page info
 ---
 
-By including [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/comment/), `vuepress-theme-hope` can display article information for you.
+By including [`@mr-hope/vuepress-plugin-components`](https://vuepress-theme-hope.github.io/components/), `vuepress-theme-hope` can display article information for you.
 
 <!-- more -->
 
 ## Enable
 
-Page information display is enabled globally by default, while supports local config[^applypartically]. You can disable it by setting `pageInfo: false` in frontmatter of a specific page.
+Page information display is enabled globally by default, while supports local config[^supportpageconfig]. You can disable it by setting `pageInfo: false` in frontmatter of a specific page.
 
-[^applypartically]: **Apply Partically Support**
+[^supportpageconfig]: **Page config support**
 
     **Support local configuration**<Badge text="Support page config" /> means that the theme allows the configuration of the page to override the global configuration.
 

@@ -42,11 +42,11 @@ npm i -D vuepress-plugin-active-hash
 ### Usage
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-module.exports = {
+```ts
+// .vuepress/config.ts
+export default {
   plugins: [
     [
       "active-hash",
@@ -60,11 +60,11 @@ module.exports = {
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-exports default {
+```js
+// .vuepress/config.js
+module.exports = {
   plugins: [
     [
       "active-hash",

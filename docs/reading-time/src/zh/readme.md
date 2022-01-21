@@ -47,24 +47,6 @@ npm i -D @mr-hope/vuepress-plugin-reading-time
 ### 使用
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-module.exports = {
-  plugins: [
-    [
-      "@mr-hope/reading-time",
-      {
-        // 你的选项
-      },
-    ],
-  ],
-};
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -75,6 +57,24 @@ export default {
       "@mr-hope/reading-time",
       {
         // 配置选项
+      },
+    ],
+  ],
+};
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js
+// .vuepress/config.js
+module.exports = {
+  plugins: [
+    [
+      "@mr-hope/reading-time",
+      {
+        // 你的选项
       },
     ],
   ],

@@ -26,7 +26,7 @@ export interface ProjectOptions {
   /**
    * 项目描述
    *
-   * Project desription
+   * Project description
    */
   desc?: string;
   /**

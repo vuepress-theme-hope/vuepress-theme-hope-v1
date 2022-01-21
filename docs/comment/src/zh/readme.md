@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: vuepress-plugin-comment
+heroText: "@mr-hope/vuepress-plugin-comment"
 tagline: 评论与阅读量插件
 action:
   - text: 快速上手 💡
@@ -40,11 +40,11 @@ npm i -D @mr-hope/vuepress-plugin-comment
 ## 使用
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-module.exports = {
+```ts
+// .vuepress/config.ts
+export default {
   plugins: [
     [
       "@mr-hope/comment",
@@ -58,11 +58,11 @@ module.exports = {
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-exports default {
+```js
+// .vuepress/config.js
+module.exports = {
   plugins: [
     [
       "@mr-hope/comment",

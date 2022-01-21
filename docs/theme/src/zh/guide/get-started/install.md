@@ -31,19 +31,6 @@ npm init vuepress-theme-hope [dir]
 ## 使用
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  // your config here
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -56,12 +43,31 @@ export default theme.config({
 ```
 
 </CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  // your config here
+});
+```
+
+</CodeGroupItem>
 </CodeGroup>
 
-::: tip 为什么要引入 config 函数
+::: tip
 
-为了尽可能减轻用户配置，vuepress-theme-hope 提供了一些额外的配置选项，需要经过处理才能提交 VuePress、同时 vuepress-theme-hope 也会允许你省略一些配置并自动帮你生成它们。
+`config` 是一个 Helper 函数，它会在你编辑配置的时候，通过 TS 的 Interface 以及 JSDoc，很方便的给你配置的提示并提供自动补全。
 
-比如自动根据你的主题配置中的多语言选项，为你生成项目配置中的多语言选项，并自动帮你完成本地化工作。
+同时，`config` 函数也会为你补全一些直接交付给 VuePress 的默认配置。您无需担心该函数会改变您的配置！它会尊重您所做的每个配置，以确保您的其他插件正常运行。
+
+我们同时提供 `themeConfig`，`navbarConfig` 和 `sidebarConfig` Helper 函数，以应对你将配置拆分成数个文件的情况。
+
+你可以查看 [本文档配置][docs-config] 作为一个配置参考。
 
 :::
+
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.ts

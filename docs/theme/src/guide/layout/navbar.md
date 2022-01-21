@@ -15,28 +15,9 @@ The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links
 
 You can add links to the navbar via `themeConfig.nav`.
 
-The basic configuration items are `text` navigation bar text, `link` navigation bar link, and `icon` navigation bar icon:
+The basic configuration items are `text` (i.e.: navigation bar text), `link` (i.e.: navigation bar link), and `icon` (i.e.: navigation bar icon):
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    nav: [
-      { text: "Guide", link: "/guide/", icon: "creative" },
-      { text: "Config", link: "/config/", icon: "config" },
-      { text: "FAQ", link: "/FAQ/", icon: "question" },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -55,11 +36,7 @@ export default theme.config({
 ```
 
 </CodeGroupItem>
-</CodeGroup>
 
-These links can also be dropdown menus if you provide an array of `items` instead of a `link`:
-
-<CodeGroup>
 <CodeGroupItem title="js">
 
 ```js
@@ -67,6 +44,29 @@ These links can also be dropdown menus if you provide an array of `items` instea
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
+  themeConfig: {
+    nav: [
+      { text: "Guide", link: "/guide/", icon: "creative" },
+      { text: "Config", link: "/config/", icon: "config" },
+      { text: "FAQ", link: "/FAQ/", icon: "question" },
+    ],
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
+These links can also be dropdown menus if you provide an array of `items` instead of a `link`:
+
+<CodeGroup>
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
   themeConfig: {
     nav: [
       {
@@ -84,13 +84,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     nav: [
       {
@@ -112,13 +112,13 @@ export default theme.config({
 In most cases, the grouped items in the navigation bar belong to the same category and will be placed in the same subdirectory, and they have the same path prefix. To simplify the configuration, you can add the `prefix` field to add a prefix to each sub-link in the group:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     nav: [
       {
@@ -137,13 +137,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     nav: [
       {
@@ -166,13 +166,13 @@ export default theme.config({
 You can also have sub groups inside a dropdown by having nested `items`:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     nav: [
       {
@@ -202,13 +202,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     nav: [
       {
@@ -242,13 +242,13 @@ export default theme.config({
 ::: details Demo
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     nav: [
       {
@@ -326,13 +326,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     nav: [
       {
@@ -418,13 +418,13 @@ export default theme.config({
 To disable the navbar globally, use `themeConfig.navbar`:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     navbar: false,
   },
@@ -433,13 +433,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     navbar: false,
   },
@@ -464,13 +464,13 @@ You can use `themeConfig.logo` to configure the icons of the navigation bar, ple
 After configuring the icon, the icon will be displayed on the navigation bar instead of the previous site name on the mobile view.
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     logo: "/logo.png",
   },
@@ -479,13 +479,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     logo: "/logo.png",
   },
@@ -508,22 +508,6 @@ You can set `themeConfig.darkLogo` to display another logo in dark mode.
 You can disable the built-in search box with `themeConfig.search: false`, and customize the number of suggestions will be shown with `themeConfig.searchMaxSuggestions`:
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    search: false,
-    searchMaxSuggestions: 10,
-  },
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -536,6 +520,22 @@ export default theme.config({
       search: false,
       searchMaxSuggestions: 10,
     },
+  },
+});
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    search: false,
+    searchMaxSuggestions: 10,
   },
 });
 ```
@@ -562,13 +562,13 @@ Built-in Search only builds index from the title, `h2` and `h3` headers, if you 
 The `themeConfig.algolia` option allows you to use [Algolia DocSearch](https://community.algolia.com/docsearch/) to replace the simple built-in search. To enable it, you need to provide at least `apiKey` and `indexName`:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     algolia: {
       apiKey: "<API_KEY>",
@@ -580,13 +580,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     algolia: {
       apiKey: "<API_KEY>",
@@ -612,21 +612,6 @@ For more options, check out [Algolia DocSearch’s documentation](https://github
 You can define a placeholder for the search box by adding the `searchPlaceholder` attribute:
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    searchPlaceholder: "Search...",
-  },
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -641,13 +626,7 @@ export default theme.config({
 ```
 
 </CodeGroupItem>
-</CodeGroup>
 
-## Git repository and Edit Links
-
-Providing `themeConfig.repo` auto generates a GitHub link in the navbar and `"Edit this page"` links at the bottom of each page.
-
-<CodeGroup>
 <CodeGroupItem title="js">
 
 ```js
@@ -655,6 +634,27 @@ Providing `themeConfig.repo` auto generates a GitHub link in the navbar and `"Ed
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
+  themeConfig: {
+    searchPlaceholder: "Search...",
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
+## Git repository and Edit Links
+
+Providing `themeConfig.repo` auto generates a GitHub link in the navbar and `"Edit this page"` links at the bottom of each page.
+
+<CodeGroup>
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
   themeConfig: {
     // Assumes GitHub. Can also be a full GitLab url.
     repo: "vuejs/vuepress",
@@ -686,13 +686,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     // Assumes GitHub. Can also be a full GitLab url.
     repo: "vuejs/vuepress",
@@ -750,17 +750,6 @@ For details, see the [Full Screen Button](../interface/others.md#fullscreen-butt
 We provide a `navbarConfig` Helper function. You can import it from `vuepress-theme-hope` and wrap your navigation bar configuration to let the editor provide auto-completion and help you verify the navbar configuration.
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/navbar.js
-const { navbarConfig } = require("vuepress-theme-hope");
-
-module.exports = navbarConfig(/* Your navbar configuration */);
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -768,6 +757,17 @@ module.exports = navbarConfig(/* Your navbar configuration */);
 import theme from "vuepress-theme-hope";
 
 export default theme.navbarConfig(/* Your navbar configuration */);
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js
+// .vuepress/navbar.js
+const { navbarConfig } = require("vuepress-theme-hope");
+
+module.exports = navbarConfig(/* Your navbar configuration */);
 ```
 
 </CodeGroupItem>
@@ -784,13 +784,13 @@ When you are spliting VuePress configuration into multiple parts, you can use th
 ::: details Configuration of this documentation
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     nav: [
       { text: "Guide", link: "/guide/", icon: "creative" },
@@ -880,13 +880,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     nav: [
       { text: "Guide", link: "/guide/", icon: "creative" },

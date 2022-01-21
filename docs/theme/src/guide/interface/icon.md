@@ -7,7 +7,7 @@ tags:
   - interface
 ---
 
-The entire theme has added FontClass format icon support in mutiple places.
+The entire theme adds FontClass format icon support in mutiple places.
 
 You can use iconfont and fontawesome to add icons to your project.
 

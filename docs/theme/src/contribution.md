@@ -40,8 +40,10 @@ The project is a monorepo, managed by `lerna`.
 ├── demo → Theme demo project
 │
 ├── docs → document directory
+│ ├── active-hash → active-hash document
 │ ├── add-this → add-this document
 │ ├── comment → comment document
+│ ├── components → components document
 │ ├── copy-code → copy-code document
 │ ├── feed → feed document
 │ ├── git → git document
@@ -54,6 +56,7 @@ The project is a monorepo, managed by `lerna`.
 │ └── theme → theme document
 │
 ├── packages → project source code
+│ ├── active-hash → active-hash plugin
 │ ├── add-this → add-this plugin
 │ ├── comment → comment plugin
 │ ├── components → components plugin
@@ -67,6 +70,7 @@ The project is a monorepo, managed by `lerna`.
 │ ├── reading-time → reading-time plugin
 │ ├── seo → seo plugin
 │ ├── shared → shared file
+│ ├── smooth-scroll → smooth-scroll plugin
 │ ├── sitemap → sitemap plugin
 │ ├── theme → vuepress-theme-hope theme
 │ ├── theme-types → theme type definition

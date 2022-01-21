@@ -38,7 +38,7 @@ Added more syntax to Markdown, enriching documentation and blog writing
 - Mark
 - Diagram
 - Task list
-- Subsript and Supercript
+- Subscript and Supercript
 - Code Demo
 - Presentation
 

@@ -79,7 +79,7 @@ Algolia 搜索框类型
 - 类型: `boolean`
 - 默认值: `true`
 
-显示编辑本页链接
+显示编辑此页链接
 
 ## updateTime
 

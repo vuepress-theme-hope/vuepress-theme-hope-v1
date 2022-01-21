@@ -40,8 +40,10 @@ yarn
 ├── demo → 主题演示项目
 │
 ├── docs → 文档目录
+│ ├── active-hash → active-hash 文档
 │ ├── add-this → add-this 文档
 │ ├── comment → comment 文档
+│ ├── components → components 文档
 │ ├── copy-code → copy-code 文档
 │ ├── feed → feed 文档
 │ ├── git → git 文档
@@ -54,6 +56,7 @@ yarn
 │ └── theme → 主题文档
 │
 ├── packages → 项目源代码
+│ ├── active-hash → active-hash 插件
 │ ├── add-this → add-this 插件
 │ ├── comment → comment 插件
 │ ├── components → components 插件
@@ -67,6 +70,7 @@ yarn
 │ ├── reading-time → reading-time 插件
 │ ├── seo → seo 插件
 │ ├── shared → 共享文件
+│ ├── smooth-scroll → smooth-scroll 插件
 │ ├── sitemap → sitemap 插件
 │ ├── theme → vuepress-theme-hope 主题
 │ ├── theme-types → 主题的类型定义

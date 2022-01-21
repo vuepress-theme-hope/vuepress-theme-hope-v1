@@ -7,24 +7,9 @@ tags:
   - layout
 ---
 
-To enable the sidebar, use `themeConfig.sidebar`. The basic configuration expects an Array of links:
+To enable the sidebar, use `themeConfig.sidebar`. The basic configuration expects an array of links:
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    sidebar: ["/", "/page-a", "/page-b"],
-  },
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -39,11 +24,26 @@ export default theme.config({
 ```
 
 </CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    sidebar: ["/", "/page-a", "/page-b"],
+  },
+});
+```
+
+</CodeGroupItem>
 </CodeGroup>
 
 Each item of the array will be rendered as a sidebar item.
 
-You can omit the `.md` extension, and paths ending with `/` are inferred as `*/README.md`.
+You can omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
 
 Icon support is enabled in the sidebar by default, and the icon of the page will be displayed before the link in the sidebar (by reading `icon` field in frontmatter). It can be disabled by setting `sidebarIcon` to `false` in `themeConfig`.
 
@@ -52,13 +52,13 @@ The text for the link is automatically inferred (`title` field in frontmatter, t
 ::: details Demo
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     sidebar: [
       "/",
@@ -71,13 +71,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     sidebar: [
       "/",
@@ -112,13 +112,13 @@ sidebarDepth: 2
 The sidebar only displays links for headers in the current active page. You can display all header links for every page with `themeConfig.displayAllHeaders: true`:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js {6}
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts {6}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     displayAllHeaders: true, // Default: false
   },
@@ -127,13 +127,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts {6}
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js {6}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     displayAllHeaders: true, // Default: false
   },
@@ -148,13 +148,13 @@ export default theme.config({
 By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js {6}
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts {6}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     activeHeaderLinks: false, // Default: true
   },
@@ -163,13 +163,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts {6}
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js {6}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     activeHeaderLinks: false, // Default: true
   },
@@ -190,13 +190,13 @@ Sidebar groups are collapsable by default. You can force a group to be always op
 A sidebar group config also supports [sidebarDepth](#nested-header-links) field to override the default sidebar depth (`2`).
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     sidebar: [
       {
@@ -228,13 +228,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     sidebar: [
       {
@@ -270,13 +270,13 @@ export default theme.config({
 ::: details Demo
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     sidebar: [
       {
@@ -309,13 +309,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     sidebar: [
       {
@@ -354,13 +354,13 @@ export default theme.config({
 You can also nest Sidebar grouping:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     sidebar: [
       {
@@ -388,13 +388,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     sidebar: [
       {
@@ -445,13 +445,13 @@ For example, suppose you have a following directory structure:
 Then you can use the following config:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     sidebar: [
       "/" /* / */,
@@ -482,13 +482,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     sidebar: [
       "/" /* / */,
@@ -560,13 +560,13 @@ For example, if you have the following structure:
 You can define your sidebar for each section using below configuration:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     sidebar: {
       "/foo/": [
@@ -594,13 +594,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     sidebar: {
       "/foo/": [
@@ -650,13 +650,13 @@ sidebar: auto
 You can also enable it in all pages by using config:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js {6}
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts {6}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     sidebar: "auto",
   },
@@ -665,13 +665,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts {6}
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js {6}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     sidebar: "auto",
   },
@@ -696,13 +696,13 @@ sidebar: false
 In [multi-language](https://v1.vuepress.vuejs.org/guide/i18n.html) mode, you can also apply it to a specific locale:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     locales: {
       "/zh/": {
@@ -717,13 +717,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     locales: {
       "/zh/": {
@@ -750,17 +750,6 @@ You can set `'mobile'` to display only in mobile view, or set `always` to keep i
 We provide a `sidebarConfig` Helper function. You can import it from `vuepress-theme-hope` and wrap your navigation bar configuration to let the editor provide auto-completion and help you verify the sidebar configuration.
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/sidebar.js
-const { sidebarConfig } = require("vuepress-theme-hope");
-
-module.exports = sidebarConfig(/* Your sidebar configuration */);
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts {6}
@@ -768,6 +757,17 @@ module.exports = sidebarConfig(/* Your sidebar configuration */);
 import theme from "vuepress-theme-hope";
 
 export default theme.sidebarConfig(/* Your sidebar configuration */);
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js
+// .vuepress/sidebar.js
+const { sidebarConfig } = require("vuepress-theme-hope");
+
+module.exports = sidebarConfig(/* Your sidebar configuration */);
 ```
 
 </CodeGroupItem>
@@ -784,13 +784,13 @@ When you are spliting VuePress configuration into multiple parts, you can use th
 ::: details Configuration of this documentation
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     sidebar: {
       "/guide/": [
@@ -937,13 +937,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     sidebar: {
       "/guide/": [

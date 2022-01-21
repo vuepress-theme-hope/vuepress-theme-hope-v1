@@ -17,7 +17,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-comment][comment]: Comment and page info feature
 
-- [@mr-hope/vuepress-plugin-component][component]: Provide some out of box plugins
+- [@mr-hope/vuepress-plugin-components][components]: Provide some out of box plugins
 
 - [@mr-hope/vuepress-plugin-copy-code][copy-code]: Provide copy button for code blocks
 
@@ -61,7 +61,7 @@ tags:
 
 [add-this]: https://vuepress-theme-hope.github.io/add-this/
 [comment]: https://vuepress-theme-hope.github.io/comment/
-[component]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/components/readme.md#usage
+[components]: https://vuepress-theme-hope.github.io/components/
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/
 [feed]: https://vuepress-theme-hope.github.io/feed/
 [git]: https://vuepress-theme-hope.github.io/git/

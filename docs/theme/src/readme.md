@@ -91,19 +91,6 @@ npm init vuepress-theme-hope [dir]
 ## 🚀Usage
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js{2,4,6}
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  // your config here
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts{2,4,6}
@@ -116,18 +103,31 @@ export default theme.config({
 ```
 
 </CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js{2,4,6}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  // your config here
+});
+```
+
+</CodeGroupItem>
 </CodeGroup>
 
 ::: tip
 
 `config` is just a helper function, it will give you config description and provide auto-completion through TS’s Interface and JSDoc.
 
-At the same time, the `config` function will also complete some default configurations for your current configuration which will pass directly to VuePress.
+At the same time, the `config` function will also complete some default configurations for your current configuration which will pass directly to VuePress. Don’t worry it will change your config! It will respect every config you make to make sure your other plugins work well.
 
-Don’t worry it will change your config! It will respect every config you make to make sure your other plugins work well.
+We are also providing `themeConfig`, `navbarConfig` and `sidebarConfig` helper to provide similar experience in case you split your config in to several files.
 
 You can view [Config of this site][docs-config] as an example.
 
 :::
 
-[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.js
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.ts

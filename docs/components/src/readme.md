@@ -3,7 +3,7 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: vuepress-plugin-components
+heroText: "@mr-hope/vuepress-plugin-components"
 tagline: Components lib plugin for vuepress
 action:
   - text: Get Started 💡
@@ -40,11 +40,11 @@ npm i -D @mr-hope/vuepress-plugin-components
 ### Usage
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-module.exports = {
+```ts
+// .vuepress/config.ts
+export default {
   plugins: [
     [
       "@mr-hope/components",
@@ -58,11 +58,11 @@ module.exports = {
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-exports default {
+```js
+// .vuepress/config.js
+module.exports = {
   plugins: [
     [
       "@mr-hope/components",

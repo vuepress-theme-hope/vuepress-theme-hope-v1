@@ -117,7 +117,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-comment][comment]: 评论与文章信息功能
 
-- [@mr-hope/vuepress-plugin-component][component]: 提供一些开箱即用的插件
+- [@mr-hope/vuepress-plugin-components][components]: 提供一些开箱即用的插件
 
 - [@mr-hope/vuepress-plugin-copy-code][copy-code]: 提供一键复制代码块功能。
 
@@ -146,7 +146,7 @@ tags:
 [active-hash]: https://vuepress-theme-hope.github.io/active-hash/zh/
 [add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
 [comment]: https://vuepress-theme-hope.github.io/comment/zh/
-[component]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/components/readme.md#使用
+[components]: https://vuepress-theme-hope.github.io/components/zh/
 [copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/
 [feed]: https://vuepress-theme-hope.github.io/feed/zh/
 [git]: https://vuepress-theme-hope.github.io/git/zh/

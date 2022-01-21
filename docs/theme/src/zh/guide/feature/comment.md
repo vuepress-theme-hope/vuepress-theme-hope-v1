@@ -14,13 +14,13 @@ tags:
 ## 启用 <Badge text="支持页面配置" />
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js {7,10}
-// .vuepress/themeConfig.js
-const { themeConfig } = require("vuepress-theme-hope");
+```ts {7,10}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = themeConfig({
+export default theme.config({
   themeConfig: {
     comment: {
       type: "waline", // "waline", "valine" 或 "vssue"
@@ -34,13 +34,13 @@ module.exports = themeConfig({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts {7,10}
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js {7,10}
+// .vuepress/themeConfig.js
+const { themeConfig } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = themeConfig({
   themeConfig: {
     comment: {
       type: "waline", // "waline", "valine" 或 "vssue"
@@ -92,13 +92,13 @@ export default theme.config({
 设置好环境变量后，点击 `Deploy` 部署，一两分钟即可部署完成。之后在主题设置中设置 vercel 地址:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     comment: {
       type: "waline",
@@ -110,13 +110,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     comment: {
       type: "waline",
@@ -155,13 +155,13 @@ Vssue 支持通过 GitHub, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为
 ### 使用插件
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js {7-17}
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts {7-17}
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     comment: {
       type: "vssue",
@@ -180,13 +180,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts {7-17}
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js {7-17}
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     comment: {
       type: "vssue",
@@ -232,13 +232,13 @@ export default theme.config({
 应用创建好以后，进入刚刚创建的应用，选择左下角的 `设置 > 应用Key`，然后就能看到你的 `APP ID` 和 `APP Key` 了。
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     comment: {
       type: "valine",
@@ -251,13 +251,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     comment: {
       type: "valine",

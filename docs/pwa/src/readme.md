@@ -44,11 +44,11 @@ npm i -D vuepress-plugin-pwa
 ### Usage
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-module.exports = {
+```ts
+// .vuepress/config.ts
+export default {
   plugins: [
     [
       "@mr-hope/pwa",
@@ -62,11 +62,11 @@ module.exports = {
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-export default {
+```js
+// .vuepress/config.js
+module.exports = {
   plugins: [
     [
       "@mr-hope/pwa",

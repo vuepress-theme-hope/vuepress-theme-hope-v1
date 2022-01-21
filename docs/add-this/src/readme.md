@@ -42,22 +42,22 @@ npm i -D vuepress-plugin-add-this
 ### Usage
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-module.exports = {
+```ts
+// .vuepress/config.ts
+export default {
   plugins: [["add-this", { pubid: "your pubid" }]],
 };
 ```
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-export default {
+```js
+// .vuepress/config.js
+module.exports = {
   plugins: [["add-this", { pubid: "your pubid" }]],
 };
 ```

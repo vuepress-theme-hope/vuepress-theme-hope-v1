@@ -14,7 +14,7 @@ tags:
 
 所有的配置键名均为插件名称的驼峰式 (camelcase) 版本。
 
-例如: `@mr-hope/vuepress-copy-code` 的配置键名为 `copyCode`。
+例如: `@mr-hope/vuepress-plugin-copy-code` 的配置键名为 `copyCode`。
 
 :::
 

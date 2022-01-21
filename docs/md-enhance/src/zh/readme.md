@@ -83,11 +83,11 @@ npm i -D vuepress-plugin-md-enhance
 ### 使用
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-module.exports = {
+```ts
+// .vuepress/config.ts
+export default {
   plugins: [
     [
       "md-enhance",
@@ -101,11 +101,11 @@ module.exports = {
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-export default {
+```js
+// .vuepress/config.js
+module.exports = {
   plugins: [
     [
       "md-enhance",

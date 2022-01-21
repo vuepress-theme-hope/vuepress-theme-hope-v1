@@ -7,15 +7,15 @@ tags:
   - page info
 ---
 
-通过内置 [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/comment/zh/)，`vuepress-theme-hope` 实现了文章信息展示。
+通过引入 [`@mr-hope/vuepress-plugin-components`](https://vuepress-theme-hope.github.io/components/zh/)，`vuepress-theme-hope` 实现了文章信息展示。
 
 <!-- more -->
 
 ## 启用
 
-页面信息默认全局启用，同时支持页面配置[^applypartically]。你可以在特定页面的 front matter 中设置 `pageInfo: false` 来局部禁用它。
+页面信息默认全局启用，同时支持页面配置[^supportpageconfig]。你可以在特定页面的 front matter 中设置 `pageInfo: false` 来局部禁用它。
 
-[^applypartically]: **支持页面配置** <Badge text="支持页面配置" />
+[^supportpageconfig]: **支持页面配置** <Badge text="支持页面配置" />
 
     **支持页面配置** 指主题允许页面的配置覆盖全局的配置。这意味着你可以在全局启用的情况下，在特定页面将其禁用，或在全局禁用的情况下在特定页面启用。
 

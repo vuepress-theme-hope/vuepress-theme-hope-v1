@@ -24,12 +24,12 @@ Vssue 支持通过 GitHub, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为
 ### 使用插件
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
 ```js
-// .vuepress/config.js
+// .vuepress/config.ts
 
-module.exports = {
+export default {
   plugins: {
     "@mr-hope/comment": {
       type: "vssue",
@@ -48,12 +48,12 @@ module.exports = {
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
 ```js
-// .vuepress/config.ts
+// .vuepress/config.js
 
-export default {
+module.exports = {
   plugins: {
     "@mr-hope/comment": {
       type: "vssue",

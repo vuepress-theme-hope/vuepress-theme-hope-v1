@@ -44,24 +44,6 @@ npm i -D vuepress-plugin-pwa
 ### 使用
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-module.exports = {
-  plugins: [
-    [
-      "@mr-hope/pwa",
-      {
-        // 你的选项
-      },
-    ],
-  ],
-};
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -72,6 +54,24 @@ export default {
       "@mr-hope/pwa",
       {
         // 配置选项
+      },
+    ],
+  ],
+};
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js
+// .vuepress/config.js
+module.exports = {
+  plugins: [
+    [
+      "@mr-hope/pwa",
+      {
+        // 你的选项
       },
     ],
   ],

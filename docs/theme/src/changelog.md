@@ -13,11 +13,11 @@ This file contain all notable changes of `vuepress-theme-hope` and its plugins.
 
 Now most plugins no long read from themeConfig, so themes or users must directly set and pass options to plugins.
 
-### Comment rebuild <Badge text="breaking changes" type="danger" />
+### Comment rebuild <Badge text="breaking changes" type="error" />
 
 `<PageInfo />` is extracted from comment plugin, and comment plugin now register `<CommentService />` globally.
 
-### Components rebuild <Badge text="breaking changes" type="danger" />
+### Components rebuild <Badge text="breaking changes" type="error" />
 
 `<PageInfo />` is extracted to components plugin, and we recommand you to use `v-bind` directive to pass the props it needs.
 
@@ -32,7 +32,7 @@ Also components now support `locales` options.
 - **md-enhance:** add `container` and `delay` option
 - **md-enhance:** rebuild container styles and add note container
 
-## Others
+### Others
 
 - **photo-swipe:** add `delay` options
 - **theme:** add `blog.autoExcerpt`

@@ -18,25 +18,6 @@ tags:
 基础的配置项有 `text` 导航栏文字，`link` 导航栏链接， `icon` 导航栏图标:
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    nav: [
-      { text: "指南", link: "/zh/guide/", icon: "creative" },
-      { text: "配置", link: "/zh/config/", icon: "config" },
-      { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -55,11 +36,7 @@ export default theme.config({
 ```
 
 </CodeGroupItem>
-</CodeGroup>
 
-当你提供了一个 `items` 数组而不是一个单一的 `link` 时，它将显示为下拉列表 :
-
-<CodeGroup>
 <CodeGroupItem title="js">
 
 ```js
@@ -67,6 +44,29 @@ export default theme.config({
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
+  themeConfig: {
+    nav: [
+      { text: "指南", link: "/zh/guide/", icon: "creative" },
+      { text: "配置", link: "/zh/config/", icon: "config" },
+      { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
+    ],
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
+当你提供了一个 `items` 数组而不是一个单一的 `link` 时，它将显示为下拉列表 :
+
+<CodeGroup>
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
   themeConfig: {
     nav: [
       {
@@ -84,13 +84,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     nav: [
       {
@@ -112,13 +112,13 @@ export default theme.config({
 由于大多数情况下，导航栏的分组项目都属于同一类别，会放在同一个子目录下，它们具有相同的路径前缀。为了简化配置，你可以添加 `prefix` 字段为分组的每一个子链接添加一个前缀:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     nav: [
       {
@@ -137,13 +137,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     nav: [
       {
@@ -166,13 +166,13 @@ export default theme.config({
 此外，你还可以通过嵌套的 `items` 来在下拉列表中设置分组:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     nav: [
       {
@@ -202,13 +202,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     nav: [
       {
@@ -242,13 +242,13 @@ export default theme.config({
 ::: details 例子
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     nav: [
       {
@@ -326,13 +326,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     nav: [
       {
@@ -419,13 +419,13 @@ export default theme.config({
 o disable the navbar globally, use `themeConfig.navbar`:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     navbar: false,
   },
@@ -434,13 +434,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     navbar: false,
   },
@@ -465,13 +465,13 @@ navbar: false
 当配置图标之后，在移动视图上，图标将取代先前的站点名称显示在导航栏上。
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     logo: "/logo.png",
   },
@@ -480,13 +480,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     logo: "/logo.png",
   },
@@ -509,22 +509,6 @@ export default theme.config({
 你可以通过设置 `themeConfig.search: false` 来禁用默认的搜索框，或是通过 `themeConfig.searchMaxSuggestions` 来调整默认搜索框显示的搜索结果数量:
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    search: false,
-    searchMaxSuggestions: 10,
-  },
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -537,6 +521,22 @@ export default theme.config({
       search: false,
       searchMaxSuggestions: 10,
     },
+  },
+});
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    search: false,
+    searchMaxSuggestions: 10,
   },
 });
 ```
@@ -563,13 +563,13 @@ search: false
 你可以通过 `themeConfig.algolia` 选项来用 [Algolia 搜索](https://community.algolia.com/docsearch/) 替换内置的搜索框。要启用 Algolia 搜索，你需要至少提供 `apiKey` 和 `indexName`:
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     algolia: {
       apiKey: "<API_KEY>",
@@ -581,13 +581,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     algolia: {
       apiKey: "<API_KEY>",
@@ -611,21 +611,6 @@ export default theme.config({
 ### 搜索占位符
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    searchPlaceholder: "搜索...",
-  },
-});
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -640,13 +625,7 @@ export default theme.config({
 ```
 
 </CodeGroupItem>
-</CodeGroup>
 
-## Git 仓库和编辑链接
-
-当你提供了 `themeConfig.repo` 选项，将会自动在每个页面的导航栏生成生成一个 GitHub 链接，以及在页面的底部生成一个 `"Edit this page"` 链接。
-
-<CodeGroup>
 <CodeGroupItem title="js">
 
 ```js
@@ -654,6 +633,27 @@ export default theme.config({
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
+  themeConfig: {
+    searchPlaceholder: "搜索...",
+  },
+});
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
+## Git 仓库和编辑链接
+
+当你提供了 `themeConfig.repo` 选项，将会自动在每个页面的导航栏生成生成一个 GitHub 链接，以及在页面的底部生成一个 `"Edit this page"` 链接。
+
+<CodeGroup>
+<CodeGroupItem title="ts">
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
   themeConfig: {
     // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
     repo: "vuejs/vuepress",
@@ -681,13 +681,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
     repo: "vuejs/vuepress",
@@ -741,17 +741,6 @@ editLink: false
 我们提供了一个 `navbarConfig` Helper 函数。你可以从 `vuepress-theme-hope` 中将其引入，并包裹你的导航栏配置来让编辑器提供自动补全并帮助你校验导航栏配置是否正确。
 
 <CodeGroup>
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/navbar.js
-const { navbarConfig } = require("vuepress-theme-hope");
-
-module.exports = navbarConfig(/* 你的导航栏配置 */);
-```
-
-</CodeGroupItem>
-
 <CodeGroupItem title="ts">
 
 ```ts
@@ -759,6 +748,17 @@ module.exports = navbarConfig(/* 你的导航栏配置 */);
 import theme from "vuepress-theme-hope";
 
 export default theme.navbarConfig(/* 你的导航栏配置 */);
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="js">
+
+```js
+// .vuepress/navbar.js
+const { navbarConfig } = require("vuepress-theme-hope");
+
+module.exports = navbarConfig(/* 你的导航栏配置 */);
 ```
 
 </CodeGroupItem>
@@ -775,13 +775,13 @@ export default theme.navbarConfig(/* 你的导航栏配置 */);
 ::: details 本文档的导航栏配置
 
 <CodeGroup>
-<CodeGroupItem title="js">
+<CodeGroupItem title="ts">
 
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
 
-module.exports = config({
+export default theme.config({
   themeConfig: {
     nav: [
       { text: "指南", link: "/zh/guide/", icon: "creative" },
@@ -871,13 +871,13 @@ module.exports = config({
 
 </CodeGroupItem>
 
-<CodeGroupItem title="ts">
+<CodeGroupItem title="js">
 
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
 
-export default theme.config({
+module.exports = config({
   themeConfig: {
     nav: [
       { text: "指南", link: "/zh/guide/", icon: "creative" },
