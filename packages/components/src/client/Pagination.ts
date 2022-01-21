@@ -1,8 +1,7 @@
 /* eslint-disable vue/require-explicit-emits */
 import Vue from "vue";
-import { componentLocales } from "./define";
 
-import type { ComponentLocaleData } from "../types";
+import type { PaginationLocaleData } from "../types";
 
 export default Vue.extend({
   name: "Pagination",
@@ -70,8 +69,8 @@ export default Vue.extend({
       return arr;
     },
 
-    locales(): ComponentLocaleData["pagination"] {
-      return componentLocales[this.$localePath || "/"].pagination;
+    locales(): PaginationLocaleData {
+      return PAGINATION_LOCALES[this.$localePath || "/"];
     },
   },
 

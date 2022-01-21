@@ -122,7 +122,7 @@ interface HopeThemePluginConfig {
    * Comment plugin options
    * @see http://vuepress-theme-hope.github.io/comment/config/
    */
-  comment?: CommentOptions;
+  comment?: CommentOptions | false;
 
   /**
    * chunk 重命名

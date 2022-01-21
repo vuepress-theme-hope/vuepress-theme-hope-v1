@@ -1,6 +1,6 @@
 import Vue from "vue";
 import WordIcon from "./icons/WordIcon.vue";
-import { pageInfoLocales, readingTimeLocales } from "./define";
+import { pageInfoLocales, readingTimeLocales } from "../define";
 
 export default Vue.extend({
   name: "ReadTimeInfo",

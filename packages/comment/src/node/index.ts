@@ -1,16 +1,11 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { resolve } from "path";
-import { pageInfoLocales, walineLocales, valineLocales } from "./locales";
+import { walineLocales, valineLocales } from "./locales";
 
 import type { CommentOptions } from "../types";
 import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
 
 const commentPlugin: Plugin<CommentOptions> = (options, context) => {
-  const userPageInfoLocales = getLocales(
-    context,
-    pageInfoLocales,
-    options.pageInfoLocales
-  );
   const userWalineLocales =
     options.type === "waline"
       ? getLocales(context, walineLocales, options.walineLocales)
@@ -21,7 +16,6 @@ const commentPlugin: Plugin<CommentOptions> = (options, context) => {
       : {};
 
   // remove locales so that they won't be injected in client twice
-  delete options.pageInfoLocales;
   if ("walineLocales" in options) delete options.walineLocales;
   if ("valineLocales" in options) delete options.valineLocales;
 
@@ -30,7 +24,6 @@ const commentPlugin: Plugin<CommentOptions> = (options, context) => {
 
     define: (): Record<string, unknown> => ({
       COMMENT_OPTIONS: options,
-      PAGE_INFO_LOCALES: userPageInfoLocales,
       WALINE_LOCALES: userWalineLocales,
       VALINE_LOCALES: userValineLocales,
     }),
@@ -45,6 +38,8 @@ const commentPlugin: Plugin<CommentOptions> = (options, context) => {
           ? resolve(__dirname, "../client/Waline.vue")
           : "@mr-hope/vuepress-shared/lib/esm/noopModule",
     },
+
+    enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
     plugins: [
       ["@mr-hope/git", true],

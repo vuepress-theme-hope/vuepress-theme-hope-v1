@@ -82,19 +82,7 @@ declare module "@PageTop" {
   export default vue;
 }
 
-declare module "@PageInfo" {
-  import vue from "vue";
-
-  export default vue;
-}
-
 declare module "@PageBottom" {
-  import vue from "vue";
-
-  export default vue;
-}
-
-declare module "@Pagination" {
   import vue from "vue";
 
   export default vue;

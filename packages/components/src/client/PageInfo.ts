@@ -1,11 +1,11 @@
 import Vue from "vue";
-import AuthorInfo from "./AuthorInfo.vue";
-import CategoryInfo from "./CategoryInfo.vue";
-import ReadingTimeInfo from "./ReadingTimeInfo.vue";
-import TagInfo from "./TagInfo.vue";
-import TimeInfo from "./TimeInfo.vue";
-import VisitorInfo from "./VisitorInfo.vue";
-import WordInfo from "./WordInfo.vue";
+import AuthorInfo from "./pageinfo/AuthorInfo.vue";
+import CategoryInfo from "./pageinfo/CategoryInfo.vue";
+import ReadingTimeInfo from "./pageinfo/ReadingTimeInfo.vue";
+import TagInfo from "./pageinfo/TagInfo.vue";
+import TimeInfo from "./pageinfo/TimeInfo.vue";
+import VisitorInfo from "./pageinfo/VisitorInfo.vue";
+import WordInfo from "./pageinfo/WordInfo.vue";
 import { pageInfoLocales } from "./define";
 
 import type { PropType } from "vue";

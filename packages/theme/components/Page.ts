@@ -1,13 +1,12 @@
 import Anchor from "@theme/components/Anchor.vue";
-import Comment from "@Comment";
 import MyTransition from "@theme/components/MyTransition.vue";
-import PageInfo from "@mr-hope/vuepress-plugin-comment/lib/client/PageInfo.vue";
+import PageInfo from "@mr-hope/vuepress-plugin-components/lib/client/PageInfo.vue";
 import PageMeta from "@theme/components/PageMeta.vue";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
 import { pathEncryptMixin } from "@theme/mixins/pathEncrypt";
 
-import type { PageInfoProps } from "@mr-hope/vuepress-plugin-comment";
+import type { PageInfoProps } from "@mr-hope/vuepress-plugin-components";
 import type { PageHeader } from "@mr-hope/vuepress-types";
 import type { PropType } from "vue";
 import type { SidebarItem } from "@theme/utils/sidebar";
@@ -17,7 +16,6 @@ export default pathEncryptMixin.extend({
 
   components: {
     Anchor,
-    Comment,
     MyTransition,
     PageInfo,
     PageMeta,

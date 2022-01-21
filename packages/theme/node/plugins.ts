@@ -17,16 +17,13 @@ const resolveAddThisOptions = (
 
 const resolveCommentOptions = (
   themeConfig: ResolvedHopeThemeConfig
-): CommentOptions => {
-  return {
-    type: "disable",
-    pageInfo: themeConfig.pageInfo,
-    titleIcon: true,
-    titleIconPrefix: themeConfig.iconPrefix,
-    ...(themeConfig.comment || null),
-    categoryPath: "/category/$category/",
-    tagPath: "/tag/$tag/",
-  };
+): CommentOptions | false => {
+  return themeConfig.comment === false
+    ? false
+    : {
+        type: "disable",
+        ...(themeConfig.comment || null),
+      };
 };
 
 export const getPluginConfig = (

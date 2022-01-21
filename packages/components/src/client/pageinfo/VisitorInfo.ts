@@ -1,7 +1,7 @@
 import Vue from "vue";
 import EyeIcon from "./icons/EyeIcon.vue";
 import FireIcon from "./icons/FireIcon.vue";
-import { pageInfoLocales } from "./define";
+import { pageInfoLocales } from "../define";
 
 import type { Route } from "vue-router";
 

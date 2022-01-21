@@ -6,4 +6,4 @@
   </div>
 </template>
 
-<script src="./Comment" />
+<script src="./CommentService" />

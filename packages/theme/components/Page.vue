@@ -53,7 +53,7 @@
       </MyTransition>
 
       <MyTransition :delay="0.16">
-        <Comment :key="$route.path" />
+        <CommentService v-if="$themeConfig.comment" :key="$route.path" />
       </MyTransition>
     </template>
 

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import AuthorIcon from "./icons/AuthorIcon.vue";
-import { pageInfoLocales } from "./define";
+import { pageInfoLocales } from "../define";
 
 export default Vue.extend({
   name: "AuthorInfo",

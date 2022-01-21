@@ -3,7 +3,7 @@ import Valine from "@Valine";
 import Waline from "@Waline";
 
 export default Vue.extend({
-  name: "Comment",
+  name: "CommentService",
 
   components: {
     Valine,

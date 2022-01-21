@@ -1,7 +1,7 @@
 import { capitalize } from "@mr-hope/vuepress-shared";
 import Vue from "vue";
 import CategoryIcon from "./icons/CategoryIcon.vue";
-import { pageInfoLocales } from "./define";
+import { pageInfoLocales } from "../define";
 
 export default Vue.extend({
   name: "CategoryInfo",

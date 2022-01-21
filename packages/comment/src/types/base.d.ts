@@ -1,6 +1,3 @@
-import type { LocaleConfig } from "@mr-hope/vuepress-shared";
-import type { PageInfoLocaleData, PageInfo } from "./pageInfo";
-
 export interface BaseCommentOptions {
   /**
    * 默认作者
@@ -39,11 +36,4 @@ export interface BaseCommentOptions {
    * @default 500
    */
   delay?: number;
-
-  /**
-   * Locales config for pageInfo
-   *
-   * 页面信息的国际化配置
-   */
-  pageInfoLocales?: LocaleConfig<PageInfoLocaleData>;
 }
