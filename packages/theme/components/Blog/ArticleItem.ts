@@ -7,7 +7,6 @@ import { getPathMatchedKeys } from "@theme/utils/encrypt";
 
 import type { PageComputed } from "@mr-hope/vuepress-types";
 import type { PropType } from "vue";
-import type { BlogOptions } from "@theme/types";
 
 export default Vue.extend({
   name: "ArticleItem",
@@ -31,7 +30,7 @@ export default Vue.extend({
 
       return (
         this.article.frontmatter.description ||
-        ((this.$themeConfig.blog as BlogOptions).autoExcerpt === false
+        (this.$themeConfig.blog && this.$themeConfig.blog.autoExcerpt === false
           ? ""
           : this.article.frontmatter.summary || "")
       );
