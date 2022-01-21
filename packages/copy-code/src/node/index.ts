@@ -6,24 +6,19 @@ import type { Plugin } from "@mr-hope/vuepress-types";
 import type { CopyCodeOptions } from "../types";
 
 const copyCodePlugin: Plugin<CopyCodeOptions> = (options, context) => {
-  const copyCodeOptions =
-    Object.keys(options).length > 0
-      ? options
-      : context.themeConfig.copyCode || {};
-
   const userCopyCodeLocales = getLocales(
     context,
     copyCodeLocales,
-    copyCodeOptions.locales
+    options.locales
   );
 
-  delete copyCodeOptions.locales;
+  delete options.locales;
 
   return {
     name: "copy-code",
 
     define: (): Record<string, unknown> => ({
-      CODE_COPY_OPIONS: copyCodeOptions,
+      CODE_COPY_OPIONS: options,
       CODE_COPY_LOCALES: userCopyCodeLocales,
     }),
 

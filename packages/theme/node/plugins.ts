@@ -5,6 +5,7 @@ import { chunkRenamePlugin } from "./chunk-rename";
 
 import type { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
+import type { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
 import type { PluginConfig } from "@mr-hope/vuepress-types";
 import type { ResolvedHopeThemeConfig } from "../types";
 
@@ -29,18 +30,21 @@ const resolveCommentOptions = (
 
 const resolveComponentsOptions = (
   themeConfig: ResolvedHopeThemeConfig
-): ComponentOptions => {
-  return {
-    ...(themeConfig.components || null),
-    backToTop: themeConfig.backToTop !== false,
-    backToTopThreshold:
-      typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
-    breadcrumb: true,
-    badge: true,
-    pagination: true,
-    screenFull: true,
-  };
-};
+): ComponentOptions => ({
+  ...(themeConfig.components || null),
+  backToTop: themeConfig.backToTop !== false,
+  backToTopThreshold:
+    typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
+  breadcrumb: true,
+  badge: true,
+  pagination: true,
+  screenFull: true,
+});
+
+const resolveCopyCodeOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): CopyCodeOptions | false =>
+  themeConfig.copyCode === false ? false : themeConfig.copyCode || {};
 
 export const getPluginConfig = (
   themeConfig: ResolvedHopeThemeConfig
@@ -128,7 +132,7 @@ export const getPluginConfig = (
 
     ["md-enhance", themeConfig.mdEnhance || {}],
 
-    ["@mr-hope/copy-code", themeConfig.copyCode],
+    ["@mr-hope/copy-code", resolveCopyCodeOptions(themeConfig)],
 
     ["photo-swipe", themeConfig.photoSwipe],
 
