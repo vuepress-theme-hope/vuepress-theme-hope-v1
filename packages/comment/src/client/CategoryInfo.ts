@@ -1,7 +1,7 @@
 import { capitalize } from "@mr-hope/vuepress-shared";
 import Vue from "vue";
 import CategoryIcon from "./icons/CategoryIcon.vue";
-import { commentOptions, pageInfoLocales } from "./define";
+import { pageInfoLocales } from "./define";
 
 export default Vue.extend({
   name: "CategoryInfo",
@@ -10,6 +10,7 @@ export default Vue.extend({
 
   props: {
     category: { type: String, default: "" },
+    categoryPath: { type: String, default: "" },
   },
 
   computed: {
@@ -22,12 +23,7 @@ export default Vue.extend({
     },
 
     path(): string {
-      return commentOptions.categoryPath
-        ? commentOptions.categoryPath.replace(
-            /\$category/g,
-            decodeURI(this.name)
-          )
-        : "";
+      return this.categoryPath.replace(/\$category/g, decodeURI(this.name));
     },
 
     hint(): string {

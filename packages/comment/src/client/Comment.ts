@@ -1,5 +1,4 @@
 import Vue from "vue";
-import { commentOptions } from "./define";
 import Valine from "@Valine";
 import Waline from "@Waline";
 
@@ -12,7 +11,7 @@ export default Vue.extend({
   },
 
   data: () => ({
-    options: commentOptions,
+    options: COMMENT_OPTIONS,
   }),
 
   computed: {

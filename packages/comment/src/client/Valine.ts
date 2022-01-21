@@ -5,6 +5,8 @@ import { valineLocales } from "./define";
 
 import type { PropType } from "vue";
 
+let timeout: NodeJS.Timeout | null = null;
+
 export default Vue.extend({
   name: "Valine",
 
@@ -21,8 +23,10 @@ export default Vue.extend({
 
       return Boolean(valineConfig && valineConfig.appId && valineConfig.appKey);
     },
+
     commentDisplay(): boolean {
       if (!this.valineEnable) return false;
+
       const globalEnable = this.valineConfig.comment !== false;
       const pageEnable = this.$page.frontmatter.comment;
 
@@ -44,16 +48,20 @@ export default Vue.extend({
       if (to.path !== from.path)
         // Refresh comment when navigating to a new page
         Vue.nextTick(() => {
-          this.initValine();
+          if (timeout) clearTimeout(timeout);
+
+          timeout = setTimeout(() => {
+            this.initValine();
+          }, this.valineConfig.delay);
         });
     },
   },
 
   mounted(): void {
     if (this.valineEnable)
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         this.initValine();
-      }, 500);
+      }, this.valineConfig.delay);
   },
 
   methods: {

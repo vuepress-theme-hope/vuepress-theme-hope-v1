@@ -6,8 +6,9 @@ import TagInfo from "./TagInfo.vue";
 import TimeInfo from "./TimeInfo.vue";
 import VisitorInfo from "./VisitorInfo.vue";
 import WordInfo from "./WordInfo.vue";
-import { commentOptions, pageInfoLocales } from "./define";
+import { pageInfoLocales } from "./define";
 
+import type { PropType } from "vue";
 import type { PageInfo } from "../types";
 
 import "balloon-css";
@@ -25,24 +26,59 @@ export default Vue.extend({
     WordInfo,
   },
 
-  data: () => ({
-    options: commentOptions,
-  }),
+  props: {
+    titleIcon: {
+      type: Boolean,
+      default: true,
+    },
+
+    titleIconPrefix: {
+      type: String,
+      default: "",
+    },
+
+    items: {
+      type: Array as PropType<PageInfo[]>,
+      default: (): PageInfo[] => [
+        "author",
+        "visitor",
+        "time",
+        "category",
+        "tag",
+        "reading-time",
+      ],
+    },
+
+    defaultAuthor: {
+      type: String,
+      default: "",
+    },
+
+    categoryPath: {
+      type: String,
+      default: "",
+    },
+
+    tagPath: {
+      type: String,
+      default: "",
+    },
+
+    visitor: {
+      type: Boolean,
+      default: false,
+    },
+  },
 
   computed: {
     config(): PageInfo[] | false {
-      const pluginConfig = this.options.pageInfo;
       const pageConfig = this.$page.frontmatter.pageInfo;
 
       return pageConfig === false
         ? false
         : Array.isArray(pageConfig)
         ? pageConfig
-        : pluginConfig === false
-        ? false
-        : Array.isArray(pluginConfig)
-        ? pluginConfig
-        : ["author", "visitor", "time", "category", "tag", "reading-time"];
+        : this.items;
     },
 
     isOriginal(): boolean {

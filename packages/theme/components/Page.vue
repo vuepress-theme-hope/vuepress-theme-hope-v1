@@ -12,7 +12,7 @@
     <slot name="top" />
 
     <MyTransition :delay="0.04">
-      <PageInfo :key="$route.path" />
+      <PageInfo :key="$route.path" v-bind="pageInfoProps" />
     </MyTransition>
 
     <MyTransition v-if="pagePassword && !pageDescrypted" :delay="0.08">

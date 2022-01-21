@@ -1,22 +1,24 @@
 import Vue from "vue";
 import AuthorIcon from "./icons/AuthorIcon.vue";
-import { commentOptions, pageInfoLocales } from "./define";
+import { pageInfoLocales } from "./define";
 
 export default Vue.extend({
   name: "AuthorInfo",
+
   components: { AuthorIcon },
 
-  data: () => ({
-    commentOption: commentOptions,
-  }),
+  props: {
+    defaultAuthor: {
+      type: String,
+      default: "",
+    },
+  },
 
   computed: {
     author(): string {
       const { author } = this.$frontmatter;
 
-      return (
-        author || (author === false ? "" : this.commentOption.author || "")
-      );
+      return author || (author === false ? "" : this.defaultAuthor);
     },
 
     hint(): string {

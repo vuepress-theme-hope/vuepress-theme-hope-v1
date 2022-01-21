@@ -1,41 +1,24 @@
 import Vue from "vue";
 import EyeIcon from "./icons/EyeIcon.vue";
 import FireIcon from "./icons/FireIcon.vue";
-import { commentOptions, pageInfoLocales } from "./define";
+import { pageInfoLocales } from "./define";
 
 import type { Route } from "vue-router";
-import type { ValineOptions, WalineOptions } from "../types";
 
 export default Vue.extend({
   name: "VisitorInfo",
 
   components: { EyeIcon, FireIcon },
 
+  props: {
+    vistor: { type: Boolean, default: false },
+  },
+
   data: () => ({
     count: 0,
   }),
 
   computed: {
-    /** Whether enable page view display */
-    enableVisitor(): boolean {
-      const pluginEnable = Boolean(
-        // valine enabled
-        (commentOptions.type === "valine" &&
-          commentOptions.appId &&
-          commentOptions.appKey) ||
-          // waline enabled
-          (commentOptions.type === "waline" && commentOptions.serverURL)
-      );
-
-      if (!pluginEnable) return false;
-
-      const globalEnable =
-        (commentOptions as ValineOptions | WalineOptions).visitor !== false;
-      const pageConfig = this.$frontmatter.visitor;
-
-      return (globalEnable && pageConfig !== false) || Boolean(pageConfig);
-    },
-
     /** visitorID, use current path */
     visitorID(): string {
       const { base } = this.$site;

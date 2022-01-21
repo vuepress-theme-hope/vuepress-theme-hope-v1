@@ -7,6 +7,7 @@ import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
 import { pathEncryptMixin } from "@theme/mixins/pathEncrypt";
 
+import type { PageInfoProps } from "@mr-hope/vuepress-plugin-comment";
 import type { PageHeader } from "@mr-hope/vuepress-types";
 import type { PropType } from "vue";
 import type { SidebarItem } from "@theme/utils/sidebar";
@@ -52,6 +53,17 @@ export default pathEncryptMixin.extend({
 
     pageDescrypted(): boolean {
       return this.password === this.pagePassword;
+    },
+
+    pageInfoProps(): PageInfoProps {
+      return {
+        titleIcon: true,
+        titleIconPrefix: this.$themeConfig.iconPrefix,
+        items: this.$themeConfig.pageInfo,
+        categoryPath: "/category/$category/",
+        tagPath: "/tag/$tag/",
+        defaultAuthor: this.$themeConfig.author || "",
+      };
     },
   },
 });

@@ -55,7 +55,7 @@ export default Vue.extend({
 
           timeout = setTimeout(() => {
             this.waline?.update({});
-          }, 1000);
+          }, this.walineConfig.delay);
         });
       }
     },
@@ -86,7 +86,7 @@ export default Vue.extend({
             }) as WalineInstance;
           }
         );
-      }, 1000);
+      }, this.walineConfig.delay);
   },
 
   // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle

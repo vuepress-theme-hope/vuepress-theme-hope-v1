@@ -1,16 +1,11 @@
 <template>
-  <span
-    v-if="enableVisitor"
-    class="visitor-info"
-    :aria-label="hint"
-    data-balloon-pos="down"
-  >
+  <span class="visitor-info" :aria-label="hint" data-balloon-pos="down">
     <EyeIcon v-if="count < 1000" />
     <FireIcon v-else />
     <span
       :id="visitorID"
       :data-flag-title="$page.title"
-      class="leancloud_visitors"
+      class="leancloud_visitors waline-visitor-count"
     >
       <span class="leancloud-visitors-count">...</span>
     </span>

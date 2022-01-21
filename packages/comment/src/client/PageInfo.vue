@@ -2,8 +2,8 @@
   <div class="page-title" vocab="https://schema.org/" typeof="Article">
     <h1>
       <i
-        v-if="options.titleIcon && $frontmatter.icon"
-        :class="`iconfont ${options.titleIconPrefix || ''}${$frontmatter.icon}`"
+        v-if="titleIcon && $frontmatter.icon"
+        :class="`iconfont ${titleIconPrefix || ''}${$frontmatter.icon}`"
       />
       <span property="headline">{{ $page.title }}</span>
     </h1>
@@ -13,6 +13,7 @@
         :is="`${item}-info`"
         v-for="item in config"
         :key="$route.path + item"
+        v-bind="{ defaultAuthor, categoryPath, tagPath, visitor }"
       />
     </div>
     <meta
