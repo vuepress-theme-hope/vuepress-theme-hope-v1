@@ -1,5 +1,6 @@
 import { ActiveHashOptions } from "vuepress-plugin-active-hash";
 import { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
+import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
 import { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
 import { FeedOptions } from "@mr-hope/vuepress-plugin-feed";
 import { GitOptions } from "@mr-hope/vuepress-plugin-git";
@@ -123,6 +124,18 @@ interface HopeThemePluginConfig {
    * @see http://vuepress-theme-hope.github.io/comment/config/
    */
   comment?: CommentOptions | false;
+
+  /**
+   * 评论插件配置
+   * @see http://vuepress-theme-hope.github.io/components/zh/config/
+   *
+   * Comment plugin options
+   * @see http://vuepress-theme-hope.github.io/components/config/
+   */
+  components?: Pick<
+    ComponentOptions,
+    "locales" | "pageInfoLocales" | "paginationLocales"
+  >;
 
   /**
    * chunk 重命名

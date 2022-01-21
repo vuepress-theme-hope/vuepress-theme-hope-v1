@@ -4,6 +4,7 @@ import { cleanUrlPlugin } from "./clean-url";
 import { chunkRenamePlugin } from "./chunk-rename";
 
 import type { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
+import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
 import type { PluginConfig } from "@mr-hope/vuepress-types";
 import type { ResolvedHopeThemeConfig } from "../types";
 
@@ -26,6 +27,21 @@ const resolveCommentOptions = (
       };
 };
 
+const resolveComponentsOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): ComponentOptions => {
+  return {
+    ...(themeConfig.components || null),
+    backToTop: Boolean(themeConfig.backToTop),
+    backToTopThreshold:
+      typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
+    breadcrumb: true,
+    badge: true,
+    pagination: true,
+    screenFull: true,
+  };
+};
+
 export const getPluginConfig = (
   themeConfig: ResolvedHopeThemeConfig
 ): PluginConfig[] => {
@@ -36,7 +52,7 @@ export const getPluginConfig = (
   return [
     ["@mr-hope/comment", resolveCommentOptions(themeConfig)],
 
-    ["@mr-hope/components"],
+    ["@mr-hope/components", resolveComponentsOptions(themeConfig)],
 
     ["@mr-hope/feed", themeConfig.feed],
 

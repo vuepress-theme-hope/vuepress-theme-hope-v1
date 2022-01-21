@@ -14,9 +14,12 @@ const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
     name: "@mr-hope/vuepress-plugin-components",
 
     define: (): Record<string, unknown> => ({
-      BACK_TO_TOP:
-        options.backToTop === false ? false : options.backToTop || 300,
+      BACK_TO_TOP: options.backToTop,
+      BACK_TO_TOP_THRESHOLD: options.backToTopThreshold || 300,
+      BREADCRUMB: options.breadcrumb,
+      BADGE: options.badge,
       COMPONENT_LOCALES: getLocales(context, componentLocales, options.locales),
+      PAGINATION: options.pagination,
       PAGINATION_LOCALES: getLocales(
         context,
         paginationLocales,
@@ -27,11 +30,12 @@ const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
         pageInfoLocales,
         options.pageInfoLocales
       ),
+      SCREEN_FULL: options.screenFull,
     }),
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
-    globalUIComponents: "BackToTop",
+    globalUIComponents: options.backToTop === false ? undefined : "BackToTop",
   };
 };
 

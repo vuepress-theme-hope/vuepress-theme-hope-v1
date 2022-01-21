@@ -13,18 +13,11 @@ export default Vue.extend({
   }),
 
   computed: {
-    thresholdDistance(): number {
-      return typeof BACK_TO_TOP === "number" ? BACK_TO_TOP : 300;
-    },
-
     /** Whether to display button */
     display(): boolean {
-      const globalEnable = BACK_TO_TOP !== false;
-      const pageEnable = this.$page.frontmatter.backToTop;
-
       return (
-        (pageEnable || (globalEnable && pageEnable !== false)) &&
-        this.scrollTop > this.thresholdDistance
+        this.$page.frontmatter.backToTop !== false &&
+        this.scrollTop > BACK_TO_TOP_THRESHOLD
       );
     },
 

@@ -9,13 +9,14 @@ import ScreenFull from "./ScreenFull.vue";
 import type { EnhanceApp } from "@mr-hope/vuepress-types";
 
 const enhanceApp: EnhanceApp = ({ Vue }) => {
-  Vue.component("BackToTop", BackToTop);
-  Vue.component("Badge", Badge);
-  Vue.component("BreadCrumb", BreadCrumb);
+  if (BACK_TO_TOP) Vue.component("BackToTop", BackToTop);
+  if (BADGE) Vue.component("Badge", Badge);
+  if (BREADCRUMB) Vue.component("BreadCrumb", BreadCrumb);
+  if (PAGINATION) Vue.component("Pagination", Pagination);
+  if (SCREEN_FULL) Vue.component("ScreenFull", ScreenFull);
+
   Vue.component("CodeGroup", CodeGroup);
   Vue.component("CodeGroupItem", CodeGroupItem);
-  Vue.component("Pagination", Pagination);
-  Vue.component("ScreenFull", ScreenFull);
 };
 
 export default enhanceApp;
