@@ -64,9 +64,23 @@ export interface ComponentLocaleData {
 export type ComponentLocaleConfig = ConvertLocaleConfig<ComponentLocaleData>;
 
 export interface ComponentOptions {
+  /**
+   * Whether enabling backToTop button or the threshold distance (in pixels)
+   *
+   * 是否启用返回顶部按钮，或触发距离 (单位：像素)
+   */
+  backToTop?: number | boolean;
+
+  /**
+   * Locales config
+   *
+   * 国际化配置
+   */
   locales?: LocaleConfig<ComponentLocaleData>;
 }
 
 declare global {
+  const BACK_TO_TOP: number | false;
+  const BREADCRUMB_ICON_PREFIX: string;
   const COMPONENT_LOCALES: ComponentLocaleConfig;
 }

@@ -15,7 +15,7 @@
     <div v-if="switchEnabled" class="darkmode-toggle">
       <label class="desc" for="darkmode-toggle" v-text="`${text.themeMode}:`" />
       <DarkmodeSwitch />
-      <ScreenFull />
+      <ScreenFull :enable="$themeConfig.fullscreen !== false" />
     </div>
   </div>
 </template>

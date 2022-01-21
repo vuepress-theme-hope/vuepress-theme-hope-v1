@@ -11,31 +11,40 @@ interface BreadCrumbConfig {
 export default Vue.extend({
   name: "BreadCrumb",
 
+  props: {
+    show: {
+      type: Boolean,
+      default: true,
+    },
+
+    icon: {
+      type: Boolean,
+      default: true,
+    },
+
+    iconPrefix: {
+      type: String,
+      default: "",
+    },
+  },
+
   computed: {
     enable(): boolean {
-      const globalEnable = this.$themeConfig.breadcrumb !== false;
       const pageEnable = this.$page.frontmatter.breadcrumb;
 
       return (
-        ((globalEnable && pageEnable !== false) || pageEnable === true) &&
+        ((this.show && pageEnable !== false) || pageEnable === true) &&
         this.config.length > 1
       );
     },
 
-    iconEnable(): boolean {
-      const globalEnable = this.$themeConfig.breadcrumbIcon !== false;
+    displayIcon(): boolean {
       const pageEnable = this.$page.frontmatter.breadcrumbIcon;
 
       return (
         this.enable &&
-        ((globalEnable && pageEnable !== false) || pageEnable === true)
+        ((this.icon && pageEnable !== false) || pageEnable === true)
       );
-    },
-
-    iconPrefix(): string {
-      const { iconPrefix } = this.$themeConfig;
-
-      return iconPrefix === "" ? "" : iconPrefix || "icon-";
     },
 
     config(): BreadCrumbConfig[] {

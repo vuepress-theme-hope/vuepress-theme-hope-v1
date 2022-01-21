@@ -26,11 +26,11 @@ Back-to-top Button
 
 ## BreadCrumb
 
-Will read these options from `themeConfig`:
+### Props
 
-- `breadcrumbIcon`: Wether to display icon (default is `true`)
-- `breacurmb`: Wether to use path navigator
-- `iconPrefix`: Icon-font prefix, default is `icon-`. Set `false` or `''` to cancel auto-prefix。
+- show: Whether display globally
+- icon: Whether display icon
+- iconPrefix: icon class prefix
 
 ## Badge
 
@@ -72,6 +72,10 @@ Paging component.
 
 A full-screen button
 
+### Props
+
+- enable: Whether enable this component
+
 ---
 
 vuepress-theme-hope 的组件。
@@ -98,11 +102,11 @@ npm i @mr-hope/vuepress-plugin-components
 
 ## `<BreadCrumb />`
 
-会读取主题配置中的以下字段
+### 属性
 
-- `breadcrumbIcon`: 是否显示图标(默认显示)
-- `breacurmb`: 是否启用路径导航
-- `iconPrefix`: 图标前缀，默认为 `icon-`，设置 `false` 或 `''` 取消前缀，也可设置其他值。
+- show: 是否全局显示
+- icon: 是否显示图标
+- iconPrefix: 图标前缀
 
 ## `<Badge />`
 
@@ -143,3 +147,7 @@ npm i -D vuepress-theme-hope
 ## `<ScreenFull />`
 
 全屏按钮组件
+
+### 属性
+
+- enable: 是否启用此组件

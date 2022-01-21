@@ -4,14 +4,20 @@ import * as screenfull from "screenfull";
 export default Vue.extend({
   name: "ScreenFull",
 
+  props: {
+    enable: {
+      type: Boolean,
+      default: true,
+    },
+  },
+
   data: () => ({
     canFullscreen: false,
     isFullscreen: false,
   }),
 
   mounted(): void {
-    this.canFullscreen =
-      screenfull.isEnabled && this.$themeConfig.fullscreen !== false;
+    this.canFullscreen = screenfull.isEnabled && this.enable;
   },
 
   methods: {

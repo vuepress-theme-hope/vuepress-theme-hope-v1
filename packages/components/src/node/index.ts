@@ -10,6 +10,8 @@ const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
     name: "@mr-hope/vuepress-plugin-components",
 
     define: (): Record<string, unknown> => ({
+      BACK_TO_TOP:
+        options.backToTop === false ? false : options.backToTop || 300,
       COMPONENT_LOCALES: getLocales(context, componentLocales, options.locales),
     }),
 

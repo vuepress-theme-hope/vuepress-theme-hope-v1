@@ -1,7 +1,12 @@
 <template>
   <main class="page">
     <MyTransition>
-      <BreadCrumb :key="$route.path" />
+      <BreadCrumb
+        :key="$route.path"
+        :display="$themeConfig.breadcrumb !== false"
+        :icon="$themeConfig.breadcrumbIcon !== false"
+        :icon-prefix="$themeConfig.iconPrefix"
+      />
     </MyTransition>
 
     <slot name="top" />

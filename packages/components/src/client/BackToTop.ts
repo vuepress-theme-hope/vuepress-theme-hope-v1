@@ -7,10 +7,6 @@ let scrollHandler: () => void;
 export default Vue.extend({
   name: "BackToTop",
 
-  props: {
-    threshold: { type: Number, default: 300 },
-  },
-
   data: () => ({
     /** Scroll distance */
     scrollTop: 0,
@@ -18,14 +14,12 @@ export default Vue.extend({
 
   computed: {
     thresholdDistance(): number {
-      return typeof this.$themeConfig.backToTop === "number"
-        ? this.$themeConfig.backToTop
-        : this.threshold;
+      return typeof BACK_TO_TOP === "number" ? BACK_TO_TOP : 300;
     },
 
     /** Whether to display button */
-    isDisplay(): boolean {
-      const globalEnable = this.$themeConfig.backToTop !== false;
+    display(): boolean {
+      const globalEnable = BACK_TO_TOP !== false;
       const pageEnable = this.$page.frontmatter.backToTop;
 
       return (

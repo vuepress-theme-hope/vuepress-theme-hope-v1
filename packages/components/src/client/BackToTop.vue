@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <button
-      v-if="isDisplay"
+      v-if="display"
       :aria-label="hint"
       class="back-to-top"
       data-balloon-pos="left"
