@@ -6,6 +6,14 @@ import { chunkRenamePlugin } from "./chunk-rename";
 import type { PluginConfig } from "@mr-hope/vuepress-types";
 import type { ResolvedHopeThemeConfig } from "../types";
 
+const resolveAddThisOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): string | false => {
+  const { addThis } = themeConfig;
+
+  return typeof addThis === "string" ? addThis : false;
+};
+
 export const getPluginConfig = (
   themeConfig: ResolvedHopeThemeConfig
 ): PluginConfig[] => {
@@ -73,7 +81,7 @@ export const getPluginConfig = (
 
     ["active-hash", themeConfig.activeHash],
 
-    ["add-this", typeof themeConfig.addThis === "string"],
+    ["add-this", resolveAddThisOptions(themeConfig)],
 
     [
       "copyright",
