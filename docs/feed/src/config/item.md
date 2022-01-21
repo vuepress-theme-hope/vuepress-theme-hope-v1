@@ -78,7 +78,7 @@ Content of the feed item
 
 ### feed.author
 
-- Type: `FeedAuthor[]| FeedAuthor`
+- Type: `FeedAuthor[] | FeedAuthor`
 
 The author of the feed item
 
@@ -105,7 +105,7 @@ interface FeedAuthor {
 
 ### feed.contributor
 
-- Type: `FeedContributor[]| FeedContributor`
+- Type: `FeedContributor[] | FeedContributor`
 
 Contributors to the feed item
 
@@ -165,7 +165,7 @@ The identifier of the feed item, used to identify the feed item.
 
 - **author**
 
-  - Type: `FeedAuthor[]| FeedAuthor`
+  - Type: `FeedAuthor[] | FeedAuthor`
   - Meaning: the author of the feed item
   - Value:
 
@@ -181,7 +181,7 @@ The identifier of the feed item, used to identify the feed item.
 
 - **contributor**
 
-  - Type: `FeedContributor[]| FeedContributor`
+  - Type: `FeedContributor[] | FeedContributor`
   - Meaning: Contributor to the Feed project
   - Value:
 

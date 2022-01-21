@@ -29,7 +29,7 @@ At the same time, the theme also provides you with a [blog-style homepage](home.
 
 The theme provides a blog info sidebar. The sidebar will be displayed on the blog-related page (it will be displayed on the right side on the desktop, and retracted into the sidebar in mobile view)
 
-You can control the display behavior of the sidebar on non-blog related pages through `themeConfig.blog.sidebarDisplay`. Optional values are `'mobile' |'none' |'always'`. The default is `mobile`, that is, when you visit non-blog related pages in mobile view, you can also see it in the sidebar.
+You can control the display behavior of the sidebar on non-blog related pages through `themeConfig.blog.sidebarDisplay`. Optional values are `"mobile" | "none" | "always"`. The default is `"mobile"`, that is, when you visit non-blog related pages in mobile view, you can also see it in the sidebar.
 
 ## Pagination
 
