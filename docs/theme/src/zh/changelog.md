@@ -7,6 +7,80 @@ icon: time
 
 <!-- more -->
 
+## v1.26.0
+
+### ThemeConfig reading <Badge text="config" type="warn" />
+
+现在大多插件不再读取 `themeConfig`，所以使用者和调用主题必须直接传入所需选项。
+
+### Comment rebuild <Badge text="破坏性变更" type="danger" />
+
+`<PageInfo />` 已从评论插件中剥离, 评论插件现在会全局注册 `<CommentService />` 组件。
+
+### Components rebuild <Badge text="破坏性变更" type="danger" />
+
+`<PageInfo />` 提取到了 components 插件, 我们建议你使用 `v-bind` 指令传入它需要的属性。
+
+Components 插件现在支持传入选项控制注册的插件，这样开发者能够完全控制使用哪些组件。
+
+Components 插件现在支持 `locales` 选项。
+
+## v1.25.0
+
+### Container Rebuild <Badge text="新增" />
+
+- **md-enhance:** 添加 `container` 和 `delay` 选项
+- **md-enhance:** rebuild container styles and add note container
+
+## Others
+
+- **photo-swipe:** 添加 `delay` 选项
+- **theme:** 添加 `blog.autoExcerpt` 选项
+
+## v1.24.0
+
+### Locales support <Badge text="新增" />
+
+下面的主题和插件支持通过 `locales` 选项配置国际化文字:
+
+- **comment**
+- **copy-code**
+- **md-enhance**
+- **photo-swipe**
+- **pwa**
+- **reading-time**
+- **theme**
+
+## v1.23.0
+
+- 添加 `zh-TW` 和 `pt-BR` 语言支持
+
+## v1.22.0
+
+同步支持 ts 配置文件 (来自 vuepress@1.9 的变更)
+
+## v1.21.0
+
+### Features
+
+- 添加 `ru-RU` 和 `uk-UA` 语言支持
+
+## v1.20.4
+
+### Features
+
+- **theme**: 为页脚添加国际化支持
+
+  现在你可以为每个语言设置不同的页脚
+
+## v1.20.0
+
+### Features
+
+- **md-enhance**: 重构代码演示
+
+  现在代码演示使用 Shadow DOM 提供样式隔离。
+
 ## v1.19.0
 
 ### 新功能
@@ -30,13 +104,13 @@ icon: time
 
 ### 新功能
 
-#### 图片链接修复 <Badge text="new" />
+#### 图片链接修复 <Badge text="新增" />
 
 现在，你可以在图片链接中使用特殊字符。这是一个针对 VuePress 内部 Bug 的修正。
 
 此功能默认情况下处于启用状态，并由 `imageFix` 选项控制。
 
-#### 链接控制 <Badge text="new" />
+#### 链接控制 <Badge text="新增" />
 
 ThemeConfig 新增 `cleanUrl` 选项以更好地控制链接生成。
 
@@ -141,7 +215,7 @@ interface TaskListOptions {
 
 ### 新功能
 
-#### Mermaid <Badge text="new" />
+#### Mermaid <Badge text="新增" />
 
 `md-enhance` 插件中新增 `mermaid` 选项以支持 mermaid 图表。
 
@@ -155,7 +229,7 @@ your mermaid...
 
 在你的 Markdown 中生成 mermaid 图表。
 
-#### 任务列表 <Badge text="new" />
+#### 任务列表 <Badge text="新增" />
 
 `md-enhance` 插件中新增 `tasklist` 选项以支持任务列表。
 
@@ -175,7 +249,7 @@ your mermaid...
 
 ## v1.14.1
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 `vuepress-theme-hope` 新增 `themeConfig`、`navbarConfig` 和 `sidebarConfig` 辅助函数，以便在配置文件中提供更好的验证和自动补全功能。
 
@@ -243,7 +317,7 @@ your flowchart...
 
 ## v1.12.3
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 新增 `create-vuepress-theme-hope` 包。
 
@@ -257,7 +331,7 @@ your flowchart...
 
 ## v1.12.0
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - 新增 [`git` 插件](https://vuepress-theme-hope.github.io/git/zh/) (`@mr-hope/vuepress-plugin-git`) :tada:
 
@@ -283,7 +357,7 @@ your flowchart...
 
 ## v1.10.0
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **components**: 添加了 `<CodeGroup>` 和 `<CodeGroupItem>` 组件。
 
@@ -293,13 +367,13 @@ your flowchart...
 
 ## v1.9.1
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **theme**: 主题配置新增 `blog.roundAvatar` (默认值: `true`)
 
 ## v1.9.0
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 新增 [**Feed 插件**](https://vuepress-theme-hope.github.io/feed//zh/)。:tada:
 
@@ -315,19 +389,19 @@ your flowchart...
 
 ## v1.8.0
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **theme**: 主题配置新增 `namedChunks` 选项
 
 ## v1.6.0
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **md-enhance**: [新的代码演示功能](https://vuepress-theme-hope.github.io/zh/guide/markdown/demo/) :tada:
 
 ## v1.5.4
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **md-enhance**: 添加两端对齐容器
 
@@ -341,7 +415,7 @@ your flowchart...
 
 ## v1.5.0
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **last-update**: 添加 `timezone` 选项
 
@@ -355,13 +429,13 @@ your flowchart...
 
 ## v1.4.7
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **pwa**: 添加安装弹窗
 
 ## v1.4.5
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **pwa**: 添加 `maxPicSize` 选项
 - **seo**: 自动生成 robots.txt
@@ -380,19 +454,19 @@ your flowchart...
 
 ## v1.4.1
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **pwa**: 新增 `cacheHTML` 选项
 
 ## v1.3.0
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **md-enhance**: 通过 Reveal.js 添加幻灯片支持 :tada:
 
 ## v1.2.0
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 添加越南语支持。
 
@@ -408,7 +482,7 @@ your flowchart...
 
 ## v1.0.1
 
-### 新功能 <Badge text="new" />
+### 新功能 <Badge text="新增" />
 
 - **theme**: 为媒体链接添加码云图标
 

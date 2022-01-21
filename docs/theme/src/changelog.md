@@ -7,6 +7,86 @@ This file contain all notable changes of `vuepress-theme-hope` and its plugins.
 
 <!-- more -->
 
+## v1.26.0
+
+### ThemeConfig reading <Badge text="config" type="warn" />
+
+Now most plugins no long read from themeConfig, so themes or users must directly set and pass options to plugins.
+
+### Comment rebuild <Badge text="breaking changes" type="danger" />
+
+`<PageInfo />` is extracted from comment plugin, and comment plugin now register `<CommentService />` globally.
+
+### Components rebuild <Badge text="breaking changes" type="danger" />
+
+`<PageInfo />` is extracted to components plugin, and we recommand you to use `v-bind` directive to pass the props it needs.
+
+Components now accept options to control component registing, so that developers can take full control of components they are using.
+
+Also components now support `locales` options.
+
+## v1.25.0
+
+### Container Rebuild <Badge text="new" />
+
+- **md-enhance:** add `container` and `delay` option
+- **md-enhance:** rebuild container styles and add note container
+
+## Others
+
+- **photo-swipe:** add `delay` options
+- **theme:** add `blog.autoExcerpt`
+
+## v1.24.0
+
+### Locales support <Badge text="new" />
+
+Now the below plugins and theme support setting locales using `locales` option:
+
+- **comment**
+- **copy-code**
+- **md-enhance**
+- **photo-swipe**
+- **pwa**
+- **reading-time**
+- **theme**
+
+## v1.23.0
+
+- add `zh-TW` and `pt-BR` language support
+
+## v1.22.0
+
+support ts config files with vuepress@1.9 change
+
+## v1.21.0
+
+### Features
+
+- add `ru-RU` and `uk-UA` language support
+
+## v1.20.4
+
+### Features
+
+- **theme**: add i18n support for footer
+
+  now you can set different footer for each loacle
+
+## v1.20.0
+
+### Features
+
+- **md-enhance**: rebuild code-demo
+
+  now code demo is using shadow dom to provide style isolation
+
+## v1.19.3
+
+### Features
+
+- **seo**: can generate summary for you automatically
+
 ## v1.19.0
 
 ### Features
