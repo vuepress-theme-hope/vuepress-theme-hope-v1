@@ -10,7 +10,7 @@
       >
         <RouterLink :to="item.url" property="item" typeof="WebPage">
           <i
-            v-if="item.icon && iconEnable"
+            v-if="icon && item.icon"
             :class="`iconfont ${iconPrefix}${item.icon}`"
           />
           <span property="name">{{ item.title }}</span>
