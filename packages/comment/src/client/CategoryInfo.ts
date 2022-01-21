@@ -1,7 +1,7 @@
+import { capitalize } from "@mr-hope/vuepress-shared";
 import Vue from "vue";
 import CategoryIcon from "./icons/CategoryIcon.vue";
-import { capitalize } from "@mr-hope/vuepress-shared";
-import { pageInfoLocales } from "./define";
+import { commentOptions, pageInfoLocales } from "./define";
 
 export default Vue.extend({
   name: "CategoryInfo",
@@ -13,7 +13,7 @@ export default Vue.extend({
   },
 
   computed: {
-    categoryName(): string {
+    name(): string {
       if (this.category) return capitalize(this.category);
 
       const { category } = this.$frontmatter;
@@ -21,8 +21,13 @@ export default Vue.extend({
       return category ? capitalize(category) : "";
     },
 
-    canUse(): boolean {
-      return this.$themeConfig.blog !== false;
+    path(): string {
+      return commentOptions.categoryPath
+        ? commentOptions.categoryPath.replace(
+            /\$category/g,
+            decodeURI(this.name)
+          )
+        : "";
     },
 
     hint(): string {
@@ -32,10 +37,7 @@ export default Vue.extend({
 
   methods: {
     navigate(): void {
-      const path = `/category/${this.categoryName}/`;
-
-      if (this.canUse && this.$route.path !== path)
-        void this.$router.push(path);
+      if (this.$route.path !== this.path) void this.$router.push(this.path);
     },
   },
 });

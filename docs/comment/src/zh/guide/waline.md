@@ -81,12 +81,6 @@ icon: waline
 
 此时，将 `<Comment>` 组件放置在你网站中合适的位置 (通常是页面的底部)，即可使用 Waline 评论功能。
 
-### 使用主题
-
-在 `themeConfig.comment` 中设置 `type: 'waline'`，同时设置服务端地址 `serverURL` 为上一步获取到的值。
-
-此时 Waline 就会在你的站点上成功运行。 :tada:
-
 ::: tip
 
 你也可以传入其他 Waline 支持的选项 (除了 `el`)。

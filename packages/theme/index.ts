@@ -1,10 +1,8 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
 import { CAC } from "cac";
 import { getAlias } from "./node/alias";
-import { config } from "./node/config";
+import { resolveThemeConfig, resolveVuePressConfig } from "./node/config";
 import { eject } from "./node/eject";
-import { resolveEncrypt } from "./node/encrypt";
-import { themeLocales } from "./node/locales";
+
 import { getPluginConfig } from "./node/plugins";
 
 import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
@@ -12,7 +10,6 @@ import type {
   HopeNavBarConfig,
   HopeSideBarConfig,
   HopeThemeConfig,
-  ResolvedHopeThemeConfig,
 } from "./types";
 
 const blogAddtionalPages = [
@@ -40,20 +37,17 @@ const blogAddtionalPages = [
 
 // Theme API.
 const themeAPI = (
-  themeConfig: ResolvedHopeThemeConfig,
+  themeConfig: HopeThemeConfig,
   context: Context
 ): PluginOptionAPI => {
-  // inject locales
-  themeConfig.locales = getLocales(context, themeLocales, themeConfig.locales);
-  // handle encrypt options
-  if (themeConfig.encrypt) resolveEncrypt(themeConfig.encrypt);
+  const resolvedConfig = resolveThemeConfig(themeConfig, context);
 
   return {
-    alias: getAlias(themeConfig, context),
+    alias: getAlias(resolvedConfig, context),
 
-    plugins: getPluginConfig(themeConfig),
+    plugins: getPluginConfig(resolvedConfig),
 
-    additionalPages: themeConfig.blog === false ? [] : blogAddtionalPages,
+    additionalPages: resolvedConfig.blog === false ? [] : blogAddtionalPages,
 
     extendCli: (cli: CAC): void => {
       cli
@@ -69,7 +63,7 @@ const themeAPI = (
   };
 };
 
-themeAPI.config = config;
+themeAPI.config = resolveVuePressConfig;
 
 // helper functions
 themeAPI.themeConfig = (themeConfig: HopeThemeConfig): HopeThemeConfig =>

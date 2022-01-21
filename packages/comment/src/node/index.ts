@@ -6,36 +6,30 @@ import type { CommentOptions } from "../types";
 import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
 
 const commentPlugin: Plugin<CommentOptions> = (options, context) => {
-  const { themeConfig } = context;
-  const commentOptions: CommentOptions =
-    Object.keys(options).length > 0
-      ? options
-      : themeConfig.comment || { type: "disable" };
-
   const userPageInfoLocales = getLocales(
     context,
     pageInfoLocales,
-    commentOptions.pageInfoLocales
+    options.pageInfoLocales
   );
   const userWalineLocales =
-    commentOptions.type === "waline"
-      ? getLocales(context, walineLocales, commentOptions.walineLocales)
+    options.type === "waline"
+      ? getLocales(context, walineLocales, options.walineLocales)
       : {};
   const userValineLocales =
-    commentOptions.type === "valine"
-      ? getLocales(context, valineLocales, commentOptions.valineLocales)
+    options.type === "valine"
+      ? getLocales(context, valineLocales, options.valineLocales)
       : {};
 
   // remove locales so that they won't be injected in client twice
-  delete commentOptions.pageInfoLocales;
-  if ("walineLocales" in commentOptions) delete commentOptions.walineLocales;
-  if ("valineLocales" in commentOptions) delete commentOptions.valineLocales;
+  delete options.pageInfoLocales;
+  if ("walineLocales" in options) delete options.walineLocales;
+  if ("valineLocales" in options) delete options.valineLocales;
 
   const config: PluginOptionAPI = {
     name: "comment",
 
     define: (): Record<string, unknown> => ({
-      COMMENT_OPTIONS: commentOptions,
+      COMMENT_OPTIONS: options,
       PAGE_INFO_LOCALES: userPageInfoLocales,
       WALINE_LOCALES: userWalineLocales,
       VALINE_LOCALES: userValineLocales,
@@ -43,24 +37,24 @@ const commentPlugin: Plugin<CommentOptions> = (options, context) => {
 
     alias: {
       "@Valine":
-        commentOptions.type === "valine"
+        options.type === "valine"
           ? resolve(__dirname, "../client/Valine.vue")
           : "@mr-hope/vuepress-shared/lib/esm/noopModule",
       "@Waline":
-        commentOptions.type === "waline"
+        options.type === "waline"
           ? resolve(__dirname, "../client/Waline.vue")
           : "@mr-hope/vuepress-shared/lib/esm/noopModule",
     },
 
     plugins: [
-      ["@mr-hope/git", themeConfig.git || true],
+      ["@mr-hope/git", true],
       ["@mr-hope/reading-time", { wordPerminute: options.wordPerminute }],
     ],
   };
 
-  if (commentOptions.type === "vssue")
+  if (options.type === "vssue")
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    config.plugins!.push(["@vssue/vuepress-plugin-vssue", commentOptions]);
+    config.plugins!.push(["@vssue/vuepress-plugin-vssue", options]);
 
   return config;
 };

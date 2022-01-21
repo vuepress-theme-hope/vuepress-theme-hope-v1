@@ -2,8 +2,8 @@
   <div class="page-title" vocab="https://schema.org/" typeof="Article">
     <h1>
       <i
-        v-if="$frontmatter.icon"
-        :class="`iconfont ${iconPrefix}${$frontmatter.icon}`"
+        v-if="options.titleIcon && $frontmatter.icon"
+        :class="`iconfont ${options.titleIconPrefix || ''}${$frontmatter.icon}`"
       />
       <span property="headline">{{ $page.title }}</span>
     </h1>

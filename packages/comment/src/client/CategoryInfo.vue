@@ -1,15 +1,15 @@
 <template>
   <span
-    v-if="categoryName"
+    v-if="name"
     class="category-info"
-    :class="{ enable: canUse }"
-    :role="canUse ? 'navigation' : ''"
+    :class="{ enable: path }"
+    :role="path ? 'navigation' : ''"
     :aria-label="hint"
     data-balloon-pos="down"
     @click="navigate"
   >
     <CategoryIcon />
-    <span property="articleSection" v-text="categoryName" />
+    <span property="articleSection" v-text="name" />
   </span>
 </template>
 

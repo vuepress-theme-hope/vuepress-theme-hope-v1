@@ -1,7 +1,7 @@
 import Vue from "vue";
 import TagIcon from "./icons/TagIcon.vue";
 import { capitalize } from "@mr-hope/vuepress-shared";
-import { pageInfoLocales } from "./define";
+import { commentOptions, pageInfoLocales } from "./define";
 
 import type { PropType } from "vue";
 
@@ -15,7 +15,7 @@ export default Vue.extend({
   },
 
   computed: {
-    $tags(): string[] {
+    items(): string[] {
       if (this.tags.length !== 0) return this.tags;
 
       const { tags, tag = tags } = this.$frontmatter;
@@ -28,7 +28,7 @@ export default Vue.extend({
     },
 
     clickable(): boolean {
-      return this.$themeConfig.blog !== false;
+      return Boolean(commentOptions.tagPath);
     },
 
     hint(): string {
@@ -38,7 +38,10 @@ export default Vue.extend({
 
   methods: {
     navigate(tagName: string): void {
-      const path = `/tag/${tagName}/`;
+      const path = commentOptions.tagPath
+        ? commentOptions.tagPath.replace(/\$tag/g, decodeURI(tagName))
+        : "";
+
       if (this.$route.path !== path) void this.$router.push(path);
     },
   },

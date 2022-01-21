@@ -41,6 +41,38 @@ icon: config
 
 是否默认启用评论功能。
 
+## categoryPath
+
+- 类型: `string`
+- 必填: 否
+
+点击分类标签时跳转的路径。
+
+其中 `$category` 会被自动替换为当前分类名称。
+
+## tagPath
+
+- 类型: `string`
+- 必填: 否
+
+点击标签时跳转的路径。
+
+其中 `$tag` 会被自动替换为当前标签名称。
+
+## titleIcon
+
+- 类型: `boolean`
+- 默认: `false`
+
+是否在标题旁显示图标。
+
+## titleIconPrefix
+
+- 类型: `string`
+- 必填: 否
+
+标题图标 class 前缀
+
 ## wordPerminute
 
 - 类型: `number`

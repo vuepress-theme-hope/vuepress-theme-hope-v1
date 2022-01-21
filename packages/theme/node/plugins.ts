@@ -3,6 +3,7 @@ import { resolve } from "path";
 import { cleanUrlPlugin } from "./clean-url";
 import { chunkRenamePlugin } from "./chunk-rename";
 
+import type { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
 import type { PluginConfig } from "@mr-hope/vuepress-types";
 import type { ResolvedHopeThemeConfig } from "../types";
 
@@ -14,6 +15,20 @@ const resolveAddThisOptions = (
   return typeof addThis === "string" ? addThis : false;
 };
 
+const resolveCommentOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): CommentOptions => {
+  return {
+    type: "disable",
+    pageInfo: themeConfig.pageInfo,
+    titleIcon: true,
+    titleIconPrefix: themeConfig.iconPrefix,
+    ...(themeConfig.comment || null),
+    categoryPath: "/category/$category/",
+    tagPath: "/tag/$tag/",
+  };
+};
+
 export const getPluginConfig = (
   themeConfig: ResolvedHopeThemeConfig
 ): PluginConfig[] => {
@@ -22,7 +37,7 @@ export const getPluginConfig = (
     themeConfig.comment.author = themeConfig.author;
 
   return [
-    ["@mr-hope/comment", themeConfig.comment || true],
+    ["@mr-hope/comment", resolveCommentOptions(themeConfig)],
 
     ["@mr-hope/components"],
 

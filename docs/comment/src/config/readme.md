@@ -43,6 +43,38 @@ Available items:
 
 Whether to enable comment feature by default.
 
+## categoryPath
+
+- Type: `string`
+- Required: No
+
+Path to navigate when clicking category label.
+
+`$category` will be automatically replaced by currect category name.
+
+## tagPath
+
+- Type: `string`
+- Required: No
+
+Path to navigate when clicking tag label.
+
+`$tag` will be automatically replaced by currect tag name.
+
+## titleIcon
+
+- Type: `boolean`
+- Default: `false`
+
+Whether display icon besides title.
+
+## titleIconPrefix
+
+- Type: `string`
+- Required: No
+
+Title icon prefix.
+
 ## wordPerminute
 
 - Type: `number`

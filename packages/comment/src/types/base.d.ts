@@ -32,6 +32,45 @@ export interface BaseCommentOptions {
   comment?: boolean;
 
   /**
+   * Path to navigate when clicking category label
+   *
+   * `$category` will be automatically replaced by currect category name
+   *
+   * 点击分类标签时跳转的路径。
+   *
+   * 其中 `$category` 会被自动替换为当前分类名称
+   */
+  categoryPath?: string;
+
+  /**
+   * Path to navigate when clicking tag label
+   *
+   * `$tag` will be automatically replaced by currect tag name
+   *
+   * 点击标签跳转的路径。
+   *
+   * 其中 `$tag` 会被自动替换为当前分类名称
+   */
+  tagPath?: string;
+
+  /**
+   * Whether display icon besides title
+   *
+   * 是否在标题旁显示图标
+   *
+   * @default false
+   */
+
+  titleIcon?: boolean;
+
+  /**
+   * Title icon prefix
+   *
+   * 标题图标 class 前缀
+   */
+  titleIconPrefix?: string;
+
+  /**
    * Reading speed of words per minute
    *
    * 每分钟阅读字数

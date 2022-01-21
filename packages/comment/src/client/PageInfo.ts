@@ -26,13 +26,12 @@ export default Vue.extend({
   },
 
   data: () => ({
-    commentConfig: commentOptions,
+    options: commentOptions,
   }),
 
   computed: {
     config(): PageInfo[] | false {
-      const themeConfig = this.$themeConfig.pageInfo;
-      const pluginConfig = this.commentConfig.pageInfo;
+      const pluginConfig = this.options.pageInfo;
       const pageConfig = this.$page.frontmatter.pageInfo;
 
       return pageConfig === false
@@ -43,20 +42,13 @@ export default Vue.extend({
         ? false
         : Array.isArray(pluginConfig)
         ? pluginConfig
-        : themeConfig === false
-        ? false
-        : Array.isArray(themeConfig)
-        ? themeConfig
         : ["author", "visitor", "time", "category", "tag", "reading-time"];
     },
-    iconPrefix(): string {
-      const { iconPrefix } = this.$themeConfig;
 
-      return iconPrefix === "" ? "" : iconPrefix || "icon-";
-    },
     isOriginal(): boolean {
       return this.$frontmatter.original === true;
     },
+
     originText(): string {
       return pageInfoLocales[this.$localePath || "/"].origin;
     },

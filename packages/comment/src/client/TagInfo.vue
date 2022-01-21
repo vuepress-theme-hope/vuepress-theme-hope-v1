@@ -1,9 +1,9 @@
 <template>
-  <span v-if="$tags.length !== 0" :aria-label="hint" data-balloon-pos="down">
+  <span v-if="items.length !== 0" :aria-label="hint" data-balloon-pos="down">
     <TagIcon />
     <ul class="tags-wrapper">
       <li
-        v-for="(tag, index) in $tags"
+        v-for="(tag, index) in items"
         :key="tag"
         class="tag"
         :class="{ clickable, [`tag${index % 9}`]: true }"
@@ -12,7 +12,7 @@
         <span :role="clickable ? 'navigation' : ''" v-text="tag" />
       </li>
     </ul>
-    <meta property="keywords" :content="$tags.join(',')" />
+    <meta property="keywords" :content="items.join(',')" />
   </span>
 </template>
 
