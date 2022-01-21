@@ -44,6 +44,7 @@ const resolveComponentsOptions = (
     typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
   breadcrumb: true,
   badge: true,
+  pageinfo: true,
   pagination: true,
   screenFull: true,
 });
