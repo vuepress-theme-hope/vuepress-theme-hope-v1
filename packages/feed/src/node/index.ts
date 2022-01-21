@@ -16,7 +16,7 @@ const isFeed = (frontmatter: PageFrontmatter): boolean =>
   (!frontmatter.feed || frontmatter.feed.enable !== false);
 
 const feedPlugin: Plugin<FeedOptions> = (options, context) => {
-  if (!checkOptions(options, context)) return {};
+  if (!checkOptions(options)) return { name: "feed" };
 
   const channelOptions = getFeedChannelOption(options, context);
   const output = getOutput(options.output);
