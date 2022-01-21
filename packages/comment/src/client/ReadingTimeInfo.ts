@@ -13,11 +13,10 @@ export default Vue.extend({
     },
 
     text(): string {
-      const minute = readingTimeLocales[this.$localePath || "/"].minute;
-      const time = readingTimeLocales[this.$localePath || "/"].time;
+      const { less1Minute, time } = readingTimeLocales[this.$localePath || "/"];
 
       return this.$page.readingTime.minutes < 1
-        ? minute
+        ? less1Minute
         : time.replace(
             "$time",
             Math.round(this.$page.readingTime.minutes).toString()
