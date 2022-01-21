@@ -1,5 +1,5 @@
 import MyTransition from "@theme/components/MyTransition.vue";
-import TimeIcon from "@mr-hope/vuepress-plugin-comment/lib/client/icons/TimeIcon.vue";
+import TimeIcon from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/icons/TimeIcon.vue";
 import { timelineMixin } from "@theme/mixins/timeline";
 
 export default timelineMixin.extend({

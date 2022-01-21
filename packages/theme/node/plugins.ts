@@ -32,7 +32,7 @@ const resolveComponentsOptions = (
 ): ComponentOptions => {
   return {
     ...(themeConfig.components || null),
-    backToTop: Boolean(themeConfig.backToTop),
+    backToTop: themeConfig.backToTop !== false,
     backToTopThreshold:
       typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
     breadcrumb: true,

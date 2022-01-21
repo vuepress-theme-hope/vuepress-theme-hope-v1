@@ -23,7 +23,7 @@ export interface ComponentOptions {
    *
    * 返回顶部按钮触发距离 (单位：像素)
    */
-  backToTopThreshold?: boolean;
+  backToTopThreshold?: number;
 
   /**
    * Whether register breadcrumb component
@@ -72,7 +72,7 @@ export interface ComponentOptions {
    *
    * 分页的国际化配置
    */
-  paginationLocales: LocaleConfig<PaginationLocaleData>;
+  paginationLocales?: LocaleConfig<PaginationLocaleData>;
 }
 
 declare global {
