@@ -40,11 +40,6 @@ const commentPlugin: Plugin<CommentOptions> = (options, context) => {
     },
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
-
-    plugins: [
-      ["@mr-hope/git", true],
-      ["@mr-hope/reading-time", { wordPerminute: options.wordPerminute }],
-    ],
   };
 
   if (options.type === "vssue")

@@ -31,6 +31,13 @@ icon: config
 
 是否注册徽章
 
+## pageinfo
+
+- 类型: `boolean`
+- 默认: `false`
+
+是否注册页面信息组件
+
 ## pagination
 
 - 类型: `boolean`
@@ -44,6 +51,13 @@ icon: config
 - 默认: `false`
 
 是否注册全屏按钮
+
+## wordPerminute
+
+- 类型: `number`
+- 默认: `300`
+
+每分钟阅读的字数。
 
 ## locales
 

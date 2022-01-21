@@ -17,13 +17,6 @@ icon: config
 
 是否默认启用评论功能。
 
-## wordPerminute
-
-- 类型: `number`
-- 默认: `300`
-
-每分钟阅读的字数。
-
 ## Waline 选项
 
 - [点击查看](waline.md)

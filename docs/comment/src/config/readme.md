@@ -19,13 +19,6 @@ Setting it to `'disable'` will only disable the comment feature.
 
 Whether to enable comment feature by default.
 
-## wordPerminute
-
-- Type: `number`
-- Default: `300`
-
-Reading words per minute.
-
 ## Waline config
 
 - [See here](waline.md)

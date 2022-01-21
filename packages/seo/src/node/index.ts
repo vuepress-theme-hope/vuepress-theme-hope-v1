@@ -20,8 +20,6 @@ const getLocales = ({ locales = {} }: ThemeConfig): string[] => {
 
 const seoPlugin: Plugin<SeoOptions> = (options, context) => {
   const { themeConfig } = context;
-  const seoOption =
-    Object.keys(options).length > 0 ? options : themeConfig.seo || {};
 
   return {
     name: "seo",
@@ -52,12 +50,12 @@ const seoPlugin: Plugin<SeoOptions> = (options, context) => {
         path: pageClone.path,
       };
       const metaContext: SeoContent = {
-        ...generateSeo(seoOption, context.base, pageSeoInfo),
-        ...(seoOption.seo ? seoOption.seo(pageSeoInfo) : {}),
+        ...generateSeo(options, context.base, pageSeoInfo),
+        ...(options.seo ? options.seo(pageSeoInfo) : {}),
       };
 
-      appendMeta(meta, metaContext, seoOption);
-      if (seoOption.customMeta) seoOption.customMeta(meta, pageSeoInfo);
+      appendMeta(meta, metaContext, options);
+      if (options.customMeta) options.customMeta(meta, pageSeoInfo);
 
       page.frontmatter.meta = meta;
     },
@@ -100,7 +98,7 @@ const seoPlugin: Plugin<SeoOptions> = (options, context) => {
       );
     },
 
-    plugins: [["@mr-hope/git", themeConfig.git || true]],
+    plugins: [["@mr-hope/git", true]],
   };
 };
 

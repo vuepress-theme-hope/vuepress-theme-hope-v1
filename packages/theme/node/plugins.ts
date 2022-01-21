@@ -7,7 +7,13 @@ import type { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
 import type { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
 import type { FeedOptions } from "@mr-hope/vuepress-plugin-feed";
+import type { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
+import type { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
+import type { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
+import type { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll";
 import type { PluginConfig } from "@mr-hope/vuepress-types";
+import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
+import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { ResolvedHopeThemeConfig } from "../types";
 
 const resolveAddThisOptions = (
@@ -63,6 +69,46 @@ const resolveFeedOptions = (
       };
 };
 
+const resolveMarkdownEnhanceOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): MarkdownEnhanceOptions => ({
+  container: true,
+  ...(themeConfig.mdEnhance || {}),
+});
+
+const resolvePhotoSwipeOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): PhotoSwipeOptions | false =>
+  themeConfig.photoSwipe === false ? false : themeConfig.photoSwipe || {};
+
+const resolvePwaOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): PWAOptions | false =>
+  themeConfig.pwa === false ? false : themeConfig.pwa || {};
+
+const resolveSeoOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): SeoOptions | false =>
+  themeConfig.seo === false
+    ? false
+    : { author: themeConfig.author, ...themeConfig.seo };
+
+const resolveSitemapOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): SitemapOptions | false =>
+  themeConfig.sitemap === false
+    ? false
+    : { hostname: themeConfig.hostname || "", ...themeConfig.sitemap };
+
+const resolveSmmothScrollOptions = (
+  themeConfig: ResolvedHopeThemeConfig
+): SmoothScrollOptions | false =>
+  themeConfig.smoothScroll === false
+    ? false
+    : typeof themeConfig.smoothScroll === "number"
+    ? { delay: themeConfig.smoothScroll }
+    : { delay: 500, ...(themeConfig.smoothScroll || {}) };
+
 export const getPluginConfig = (
   themeConfig: ResolvedHopeThemeConfig
 ): PluginConfig[] => {
@@ -79,20 +125,13 @@ export const getPluginConfig = (
 
     ["@mr-hope/git", themeConfig.git],
 
-    ["@mr-hope/pwa", themeConfig.pwa],
+    ["@mr-hope/pwa", resolvePwaOptions(themeConfig)],
 
-    ["@mr-hope/seo", themeConfig.seo],
+    ["@mr-hope/seo", resolveSeoOptions(themeConfig)],
 
-    ["@mr-hope/sitemap", themeConfig.sitemap],
+    ["@mr-hope/sitemap", resolveSitemapOptions(themeConfig)],
 
-    [
-      "@mr-hope/smooth-scroll",
-      themeConfig.smoothScroll === false
-        ? false
-        : typeof themeConfig.smoothScroll === "number"
-        ? { delay: themeConfig.smoothScroll }
-        : themeConfig.smoothScroll || { delay: 500 },
-    ],
+    ["@mr-hope/smooth-scroll", resolveSmmothScrollOptions(themeConfig)],
 
     [
       "@vuepress/blog",
@@ -147,11 +186,11 @@ export const getPluginConfig = (
         : false,
     ],
 
-    ["md-enhance", themeConfig.mdEnhance || {}],
+    ["md-enhance", resolveMarkdownEnhanceOptions(themeConfig)],
 
     ["@mr-hope/copy-code", resolveCopyCodeOptions(themeConfig)],
 
-    ["photo-swipe", themeConfig.photoSwipe],
+    ["photo-swipe", resolvePhotoSwipeOptions(themeConfig)],
 
     [
       "typescript",

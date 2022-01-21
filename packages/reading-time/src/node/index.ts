@@ -20,7 +20,7 @@ const readingTimePlugin: Plugin<ReadingTimeOptions> = (options, context) => {
     extendPageData($page): void {
       $page.readingTime = readingTime(
         $page._strippedContent,
-        options.wordPerminute || context.themeConfig.wordPerminute || 300
+        options.wordPerminute || 300
       );
     },
   };

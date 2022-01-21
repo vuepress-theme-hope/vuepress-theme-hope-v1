@@ -1,3 +1,5 @@
+import type { SmoothScrollOptions } from "@theme/../smooth-scroll/lib/types";
+
 /**
  * 合法的媒体
  *
@@ -270,7 +272,7 @@ export interface HopeFeatureConfig {
    *
    * @default true
    */
-  smoothScroll?: boolean;
+  smoothScroll?: SmoothScrollOptions | number | false;
 
   /**
    * 每分钟的阅读字数

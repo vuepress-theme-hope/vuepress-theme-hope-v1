@@ -17,30 +17,21 @@ import { getPluginConfig } from "./pluginConfig";
 import type { Plugin } from "@mr-hope/vuepress-types";
 import type { MarkdownEnhanceOptions } from "../types";
 
-const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, context) => {
-  const { themeConfig } = context;
-  const markdownOptions =
-    Object.keys(option).length === 0 ? themeConfig.mdEnhance || {} : option;
-  const alignEnable =
-    markdownOptions.enableAll || markdownOptions.align || false;
-  const demoEnable = markdownOptions.enableAll || markdownOptions.demo || false;
-  const flowchartEnable =
-    markdownOptions.enableAll || markdownOptions.flowchart || false;
-  const footnoteEnable =
-    markdownOptions.enableAll || markdownOptions.footnote || false;
-  const tasklistEnable =
-    markdownOptions.enableAll || markdownOptions.tasklist || false;
-  const mermaidEnable =
-    markdownOptions.enableAll || Boolean(markdownOptions.mermaid) || false;
+const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
+  const alignEnable = options.enableAll || options.align || false;
+  const demoEnable = options.enableAll || options.demo || false;
+  const flowchartEnable = options.enableAll || options.flowchart || false;
+  const footnoteEnable = options.enableAll || options.footnote || false;
+  const tasklistEnable = options.enableAll || options.tasklist || false;
+  const mermaidEnable = options.enableAll || Boolean(options.mermaid) || false;
   const presentationEnable =
-    markdownOptions.enableAll || Boolean(markdownOptions.presentation) || false;
-  const texEnable =
-    markdownOptions.enableAll || Boolean(markdownOptions.tex) || false;
+    options.enableAll || Boolean(options.presentation) || false;
+  const texEnable = options.enableAll || Boolean(options.tex) || false;
 
   const revealPlugins =
-    typeof markdownOptions.presentation === "object" &&
-    Array.isArray(markdownOptions.presentation.plugins)
-      ? markdownOptions.presentation.plugins
+    typeof options.presentation === "object" &&
+    Array.isArray(options.presentation.plugins)
+      ? options.presentation.plugins
       : [];
 
   return {
@@ -60,7 +51,7 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, context) => {
 
     define: (): Record<string, unknown> => ({
       MARKDOWN_ENHANCE_ALIGN: alignEnable,
-      MARKDOWN_ENHANCE_DELAY: markdownOptions.delay || 500,
+      MARKDOWN_ENHANCE_DELAY: options.delay || 500,
       MARKDOWN_ENHANCE_FLOWCHART: flowchartEnable,
       MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
       MARKDOWN_ENHANCE_MERMAID: mermaidEnable,
@@ -69,18 +60,14 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, context) => {
       MARKDOWN_ENHANCE_TEX: texEnable,
       CODE_DEMO_OPTIONS: {
         ...codeDemoDefaultSetting,
-        ...(typeof markdownOptions.demo === "boolean"
-          ? {}
-          : markdownOptions.demo),
+        ...(typeof options.demo === "boolean" ? {} : options.demo),
       },
       MERMAID_OPTIONS:
-        typeof markdownOptions.mermaid === "object"
-          ? markdownOptions.mermaid
-          : {},
+        typeof options.mermaid === "object" ? options.mermaid : {},
       REVEAL_CONFIG:
-        typeof markdownOptions.presentation === "object" &&
-        typeof markdownOptions.presentation.revealConfig === "object"
-          ? markdownOptions.presentation.revealConfig
+        typeof options.presentation === "object" &&
+        typeof options.presentation.revealConfig === "object"
+          ? options.presentation.revealConfig
           : {},
       REVEAL_PLUGIN_HIGHLIGHT: revealPlugins.includes("highlight"),
       REVEAL_PLUGIN_MATH: revealPlugins.includes("math"),
@@ -98,23 +85,17 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, context) => {
       : {}),
 
     chainMarkdown: (md): void => {
-      if (markdownOptions.imageFix !== false)
-        md.plugin("decode-url").use(decodeURL);
-      if (markdownOptions.lineNumbers !== false)
+      if (options.imageFix !== false) md.plugin("decode-url").use(decodeURL);
+      if (options.lineNumbers !== false)
         md.plugin("line-numbers").use(lineNumbers);
-      if (markdownOptions.sup || markdownOptions.enableAll)
-        md.plugin("sup").use(sup);
-      if (markdownOptions.sub || markdownOptions.enableAll)
-        md.plugin("sub").use(sub);
+      if (options.sup || options.enableAll) md.plugin("sup").use(sup);
+      if (options.sub || options.enableAll) md.plugin("sub").use(sub);
       if (footnoteEnable) md.plugin("footnote").use(footnote);
       if (flowchartEnable) md.plugin("flowchart").use(flowchart);
-      if (markdownOptions.mark || markdownOptions.enableAll)
-        md.plugin("mark").use(mark);
+      if (options.mark || options.enableAll) md.plugin("mark").use(mark);
       if (tasklistEnable)
         md.plugin("tasklist").use(tasklist, [
-          typeof markdownOptions.tasklist === "object"
-            ? markdownOptions.tasklist
-            : {},
+          typeof options.tasklist === "object" ? options.tasklist : {},
         ]);
       if (mermaidEnable) md.plugin("mermaid").use(mermaid);
       if (texEnable)
@@ -126,15 +107,13 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (option, context) => {
               "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
               "\\idotsint": "\\int\\!\\cdots\\!\\int",
             },
-            ...(typeof markdownOptions.tex === "object"
-              ? markdownOptions.tex
-              : {}),
+            ...(typeof options.tex === "object" ? options.tex : {}),
           },
         ]);
       if (presentationEnable) md.plugin("presentation").use(presentation);
     },
 
-    plugins: getPluginConfig(markdownOptions, context),
+    plugins: getPluginConfig(options, context),
   };
 };
 

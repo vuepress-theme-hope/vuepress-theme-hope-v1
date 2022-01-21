@@ -5,7 +5,7 @@ import type { PageSeoInfo, SeoContent, SeoOptions } from "../types";
 export const generateSeo = (
   options: SeoOptions,
   base: string,
-  { page, site, locale, path, themeConfig }: PageSeoInfo
+  { page, site, locale, path }: PageSeoInfo
 ): SeoContent => {
   const {
     frontmatter: {
@@ -25,10 +25,7 @@ export const generateSeo = (
   )
     ? "website"
     : "article";
-  const author =
-    pageAuthor === false
-      ? ""
-      : pageAuthor || options.author || themeConfig.author || "";
+  const author = pageAuthor === false ? "" : pageAuthor || options.author || "";
   const publishTime = time
     ? new Date(time).toISOString()
     : typeof createTimeStamp === "number"

@@ -13,6 +13,7 @@ declare global {
   const BREADCRUMB: boolean;
   const BADGE: boolean;
   const COMPONENT_LOCALES: ComponentLocaleConfig;
+  const PAGE_INFO: boolean;
   const PAGE_INFO_LOCALES: PageInfoLocaleConfig;
   const PAGINATION: boolean;
   const PAGINATION_LOCALES: PaginationLocaleConfig;

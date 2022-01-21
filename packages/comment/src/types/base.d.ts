@@ -16,15 +16,6 @@ export interface BaseCommentOptions {
   comment?: boolean;
 
   /**
-   * Reading speed of words per minute
-   *
-   * 每分钟阅读字数
-   *
-   * @default 300
-   */
-  wordPerminute?: number;
-
-  /**
    * The delay of dom operation, in ms
    *
    * If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`

@@ -6,10 +6,18 @@ import {
   pageInfoLocales,
 } from "./locales";
 
-import type { Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginConfig } from "@mr-hope/vuepress-types";
 import type { ComponentOptions } from "../types";
 
 const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
+  const plugins: PluginConfig<unknown>[] = [];
+
+  if (options.pageinfo)
+    plugins.push(
+      ["@mr-hope/git", true],
+      ["@mr-hope/reading-time", { wordPerminute: options.wordPerminute }]
+    );
+
   return {
     name: "@mr-hope/vuepress-plugin-components",
 
@@ -19,6 +27,7 @@ const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
       BREADCRUMB: options.breadcrumb,
       BADGE: options.badge,
       COMPONENT_LOCALES: getLocales(context, componentLocales, options.locales),
+      PAGE_INFO: options.pageinfo,
       PAGINATION: options.pagination,
       PAGINATION_LOCALES: getLocales(
         context,
@@ -36,6 +45,8 @@ const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
     globalUIComponents: options.backToTop ? "BackToTop" : undefined,
+
+    plugins,
   };
 };
 

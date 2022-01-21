@@ -31,12 +31,26 @@ Whether register breadcrumb component
 
 Whether register badge component
 
+## pageinfo
+
+- Type: `boolean`
+- Default: `false`
+
+Whether register pageinfo component
+
 ## pagination
 
 - Type: `boolean`
 - Default: `false`
 
 Whether register pagination component
+
+## wordPerminute
+
+- Type: `number`
+- Default: `300`
+
+Reading words per minute.
 
 ## screenFull
 

@@ -9,25 +9,23 @@ import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import type { PWAOptions } from "../types";
 
 const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
-  const { base, themeConfig } = context;
-  const pwaOptions =
-    Object.keys(options).length > 0 ? options : themeConfig.pwa || {};
+  const { base } = context;
 
   const config: PluginOptionAPI = {
     name: "pwa",
 
     define: (): Record<string, unknown> => ({
-      PWA_LOCALES: getLocales(context, pwaLocales, pwaOptions.locales),
+      PWA_LOCALES: getLocales(context, pwaLocales, options.locales),
       SW_BASE_URL: base || "/",
     }),
 
-    globalUIComponents: [pwaOptions.popupComponent || "SWUpdatePopup"],
+    globalUIComponents: [options.popupComponent || "SWUpdatePopup"],
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
     beforeDevServer(app) {
       app.get(`${base || "/"}manifest.webmanifest`, (_req, res) => {
-        getManifest(pwaOptions, context)
+        getManifest(options, context)
           .then((manifest) => {
             res.send(manifest);
           })
@@ -39,20 +37,20 @@ const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
 
     ready(): void {
       context.siteConfig.head = injectLinkstoHead(
-        pwaOptions,
+        options,
         base,
         context.siteConfig.head
       );
     },
 
     async generated(): Promise<void> {
-      await genManifest(pwaOptions, context);
-      await genServiceWorker(pwaOptions, context);
+      await genManifest(options, context);
+      await genServiceWorker(options, context);
     },
   };
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  if (pwaOptions.showInstall !== false)
+  if (options.showInstall !== false)
     (config.globalUIComponents as string[]).push("PWAInstall");
 
   return config;

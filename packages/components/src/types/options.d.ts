@@ -41,6 +41,15 @@ export interface ComponentOptions {
   badge?: boolean;
 
   /**
+   * Whether register pageinfo component
+   *
+   * 是否注册页面信息
+   *
+   * @default false
+   */
+  pageinfo?: boolean;
+
+  /**
    * Whether register pagination component
    *
    * 是否注册分页组件
@@ -57,6 +66,15 @@ export interface ComponentOptions {
    * @default false
    */
   screenFull?: boolean;
+
+  /**
+   * Reading speed of words per minute
+   *
+   * 每分钟阅读字数
+   *
+   * @default 300
+   */
+  wordPerminute?: number;
 
   /**
    * Locales config

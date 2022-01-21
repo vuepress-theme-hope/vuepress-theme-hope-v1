@@ -198,7 +198,7 @@ interface HopeThemePluginConfig {
    * Markdown enhance plugin options
    * @see http://vuepress-theme-hope.github.io/md-enhance/config/
    */
-  mdEnhance?: MarkdownEnhanceOptions | false;
+  mdEnhance?: MarkdownEnhanceOptions;
 
   /**
    * PWA 插件配置

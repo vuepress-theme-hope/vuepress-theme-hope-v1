@@ -5,30 +5,24 @@ import type { Plugin } from "@mr-hope/vuepress-types";
 import type { SitemapOptions } from "../types";
 
 const sitemapPlugin: Plugin<SitemapOptions> = (options, context) => {
-  const { themeConfig } = context;
+  if (!options.hostname) {
+    console.log(
+      blue("Sitemap"),
+      black.bgRed("Error"),
+      'Not generating sitemap because required "hostname" option doesn’t exist'
+    );
+
+    return { name: "sitemap" };
+  }
 
   return {
     name: "sitemap",
 
     async generated(): Promise<void> {
-      const hostname = options.hostname || themeConfig.hostname;
-
-      if (hostname) {
-        const option =
-          Object.keys(options).length > 0
-            ? { ...options, hostname }
-            : { ...(themeConfig.sitemap || {}), hostname };
-
-        await genSiteMap(option, context);
-      } else
-        console.log(
-          blue("Sitemap"),
-          black.bgRed("Error"),
-          'Not generating sitemap because required "hostname" option doesn’t exist'
-        );
+      await genSiteMap(options, context);
     },
 
-    plugins: [["@mr-hope/git", themeConfig.git || true]],
+    plugins: [["@mr-hope/git", true]],
   };
 };
 
