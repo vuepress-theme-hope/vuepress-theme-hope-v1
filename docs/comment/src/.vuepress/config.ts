@@ -32,9 +32,9 @@ export default hope.config({
         icon: "creative",
         items: [
           {
-            text: "Page Info",
-            icon: "info",
-            link: "/guide/page-info/",
+            text: "Guide",
+            icon: "creative",
+            link: "/guide/",
           },
           { text: "Waline", icon: "waline", link: "/guide/waline/" },
           { text: "Vssue", icon: "vssue", link: "/guide/vssue/" },
@@ -64,7 +64,6 @@ export default hope.config({
     sidebar: {
       "/guide/": [
         "",
-        "page-info",
         "waline",
         {
           title: "Vssue",
@@ -101,9 +100,9 @@ export default hope.config({
             icon: "creative",
             items: [
               {
-                text: "页面信息",
-                icon: "info",
-                link: "/zh/guide/page-info/",
+                text: "指南",
+                icon: "creative",
+                link: "/zh/guide/",
               },
               { text: "Waline", icon: "waline", link: "/zh/guide/waline/" },
               { text: "Vssue", icon: "vssue", link: "/zh/guide/vssue/" },
@@ -125,7 +124,6 @@ export default hope.config({
         sidebar: {
           "/zh/guide/": [
             "",
-            "page-info",
             "waline",
             {
               title: "Vssue",

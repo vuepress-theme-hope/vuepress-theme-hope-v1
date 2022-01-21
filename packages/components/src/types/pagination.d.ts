@@ -2,37 +2,37 @@ import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
 
 export interface PaginationLocaleData {
   /**
-   * 上一页文字
-   *
    * Previous page button label text
+   *
+   * 上一页文字
    */
   prev: string;
 
   /**
-   * 下一页文字
-   *
    * Next page button label text
+   *
+   * 下一页文字
    */
   next: string;
 
   /**
-   * 跳转提示文字
-   *
    * Navigation hint label text
+   *
+   * 跳转提示文字
    */
   navigate: string;
 
   /**
-   * 跳转按钮文字
-   *
    * Navigation button label text
+   *
+   * 跳转按钮文字
    */
   button: string;
 
   /**
-   * 页码错误文字，其中 `$page` 会自动替换为当前的总页数
-   *
    * Error text when invalid page number, `$page` will be replaced by total page number automatically
+   *
+   * 页码错误文字，其中 `$page` 会自动替换为当前的总页数
    */
   errorText: string;
 }

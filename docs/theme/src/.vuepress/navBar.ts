@@ -52,6 +52,10 @@ export default {
               link: "https://vuepress-theme-hope.github.io/comment/",
             },
             {
+              text: "Components Plugin",
+              link: "https://vuepress-theme-hope.github.io/components/",
+            },
+            {
               text: "Copy Code Plugin",
               link: "https://vuepress-theme-hope.github.io/copy-code/",
             },
@@ -142,6 +146,10 @@ export default {
             {
               text: "评论插件",
               link: "https://vuepress-theme-hope.github.io/comment/zh/",
+            },
+            {
+              text: "组件库",
+              link: "https://vuepress-theme-hope.github.io/components/zh/",
             },
             {
               text: "代码复制插件",

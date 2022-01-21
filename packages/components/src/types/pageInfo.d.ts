@@ -76,22 +76,22 @@ export type PageInfo =
 
 export interface PageInfoProps {
   /**
-   * 默认作者
-   *
    * Default author
+   *
+   * 默认作者
    */
   defaultAuthor?: string;
 
   /**
    * Page Info display configuration
    *
-   * @see https://vuepress-theme-hope.github.io/comment/config/#pageinfo
+   * @see https://vuepress-theme-hope.github.io/components/guide/pageinfo/
    *
    * 文章信息配置
    *
-   * @see https://vuepress-theme-hope.github.io/comment/zh/config/#pageinfo
+   * @see https://vuepress-theme-hope.github.io/components/zh/guide/pageinfo/
    *
-   * @default ['Author', 'Visitor', 'Time', 'Category', 'Tag', 'ReadTime']
+   * @default ['author', 'visitor', 'time', 'category', 'tag', 'reading-time']
    */
   items?: PageInfo[] | false;
 

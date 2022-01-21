@@ -1,25 +1,13 @@
 ---
+title: Guide
 icon: creative
 ---
 
-# Guide
+This plugin register `<CommentService />` comonent globally.
 
-This plugin exposes two components at `@mr-hope/vuepress-plugin-comment/lib/client/<component name>.vue`. Please include it manually in your theme.
+We recommended you to insert the comment component (`<CommentService />`) after the `<PageNav />` component.
 
-- `<Comment />`: Comment component
-- `<PageInfo />`: Page information component
-
-## `<PageInfo />`
-
-Insert page information component (`<PageInfo />`) before the `<Content />` component manually.
-
-- [View Details](page-info.md)
-
-## `<Comment />`
-
-We recommended you to insert the comment component (`<Comment />`) after the `<PageNav />` component.
-
-By default, `<Comment />` component is enabled globally. You can disable it locally by setting `comment: false` in page frontmatter.
+By default, `<CommentService />` component is enabled globally. You can disable it locally by setting `comment: false` in page frontmatter.
 
 To keep it globally disabled, please set `comment` to `false` in the plugin options. Then you can set `comment: true` in page frontmatter to enable it locally.
 

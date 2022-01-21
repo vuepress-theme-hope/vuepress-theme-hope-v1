@@ -10,30 +10,6 @@ icon: config
 
 使用 Valine 还是 Vssue。设置为 `'disabled'` 仅会禁用评论功能。
 
-## author
-
-- 类型: `string`
-- 必填: 否
-
-文章的默认作者
-
-## pageInfo
-
-- 类型: `string[] | false`
-- 默认值: `['author', 'visitor', 'time', 'category', 'tag', 'reading-time']`
-
-文章信息，可以填入数组，数组的顺序是各条目显示的顺序。填入 `false` 使其被禁用。
-
-可以填入的条目如下:
-
-- `'author'`: 作者
-- `'time'`: 写作日期
-- `'category'`: 分类
-- `'tag'`: 标签
-- `'reading-time'`: 预计阅读时间
-- `'word'`: 字数
-- `'visitor'`: 访问量
-
 ## comment
 
 - 类型: `boolean`
@@ -41,92 +17,12 @@ icon: config
 
 是否默认启用评论功能。
 
-## categoryPath
-
-- 类型: `string`
-- 必填: 否
-
-点击分类标签时跳转的路径。
-
-其中 `$category` 会被自动替换为当前分类名称。
-
-## tagPath
-
-- 类型: `string`
-- 必填: 否
-
-点击标签时跳转的路径。
-
-其中 `$tag` 会被自动替换为当前标签名称。
-
-## titleIcon
-
-- 类型: `boolean`
-- 默认: `false`
-
-是否在标题旁显示图标。
-
-## titleIconPrefix
-
-- 类型: `string`
-- 必填: 否
-
-标题图标 class 前缀
-
 ## wordPerminute
 
 - 类型: `number`
 - 默认: `300`
 
 每分钟阅读的字数。
-
-## pageInfoLocales
-
-```ts
-interface PageInfoLocaleData {
-  /**
-   * 作者文字
-   */
-  author: string;
-
-  /**
-   * 写作日期文字
-   */
-  date: string;
-
-  /**
-   * 标记原创的文字
-   */
-  origin: string;
-
-  /**
-   * 访问量文字
-   */
-  views: string;
-
-  /**
-   * 标签文字
-   */
-  tag: string;
-
-  /**
-   * 分类文字
-   */
-  category: string;
-
-  /**
-   * 期望阅读时间文字
-   */
-  readingTime: string;
-
-  /**
-   * 文章字数
-   */
-  words: string;
-}
-```
-
-页面信息的国际化配置。
 
 ## Waline 选项
 

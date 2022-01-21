@@ -3,11 +3,52 @@ title: 页面信息
 icon: info
 ---
 
-`<PageInfo />` 组件默认全局启用。你可以在页面的 frontmatter 中设置 `pageInfo: false` 来局部禁用它。
+## Props
 
-如果你需要保持全局禁用，请在插件选项中设置 `pageInfo` 为 `false`。这样你可以在页面 frontmatter 中设置 `pageInfo` 来局部启用它。
+```ts
+interface PageInfoProps {
+  /**
+   * 默认作者
+   */
+  defaultAuthor?: string;
 
-## 参数
+  /**
+   * 文章信息配置
+   *
+   * @default ['author', 'visitor', 'time', 'category', 'tag', 'reading-time']
+   */
+  items?: PageInfo[] | false;
+
+  /**
+   * 点击分类标签时跳转的路径。
+   *
+   * 其中 `$category` 会被自动替换为当前分类名称
+   */
+  categoryPath?: string;
+
+  /**
+   * 点击标签跳转的路径。
+   *
+   * 其中 `$tag` 会被自动替换为当前分类名称
+   */
+  tagPath?: string;
+
+  /**
+   * 是否在标题旁显示图标
+   *
+   * @default false
+   */
+
+  titleIcon?: boolean;
+
+  /**
+   * 标题图标 class 前缀
+   */
+  titleIconPrefix?: string;
+}
+```
+
+### items
 
 `pageInfo` 接受一个字符串数组，填入所展示的页面信息名称，填入的顺序即是各信息显示的顺序。
 
@@ -40,6 +81,12 @@ icon: info
   默认的阅读速度是每分钟 300 字，你可以在插件选项中设置 `wordPerminute` 来覆盖它。
 
 :::
+
+## 启用与禁用
+
+`<PageInfo />` 组件默认全局启用。你可以在页面的 frontmatter 中设置 `pageInfo: false` 来局部禁用它。
+
+如果你需要保持全局禁用，请在插件选项中设置 `pageInfo` 为 `false`。这样你可以在页面 frontmatter 中设置 `pageInfo` 来局部启用它。
 
 ## 原创标识
 

@@ -3,11 +3,52 @@ title: Page information
 icon: info
 ---
 
-The `<PageInfo />` component is enabled globally by default. You can disable it by setting `pageInfo: false` in page frontmatter.
+## Props
 
-To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. Then you can set `pageInfo` in page frontmattaer to enable it locally.
+```ts
+interface PageInfoProps {
+  /**
+   * Default author
+   */
+  defaultAuthor?: string;
 
-## Parameters
+  /**
+   * Page Info display configuration
+   *
+   * @default ['author', 'visitor', 'time', 'category', 'tag', 'reading-time']
+   */
+  items?: PageInfo[] | false;
+
+  /**
+   * Path to navigate when clicking category label
+   *
+   * `$category` will be automatically replaced by currect category name
+   */
+  categoryPath?: string;
+
+  /**
+   * Path to navigate when clicking tag label
+   *
+   * `$tag` will be automatically replaced by currect tag name
+   */
+  tagPath?: string;
+
+  /**
+   * Whether display icon besides title
+   *
+   * @default false
+   */
+
+  titleIcon?: boolean;
+
+  /**
+   * Title icon prefix
+   */
+  titleIconPrefix?: string;
+}
+```
+
+### items
 
 `pageInfo` accepts an array of strings, which you should fill in a group of items. The order of you fill is the order in which the items are displayed.
 
@@ -40,6 +81,12 @@ By default it will display "Author, Visit Number, Writing Date, Category, Tags, 
   By default, the reading speed is 300 words per minute. You can override it by setting `wordPerminute` in the plugin options.
 
 :::
+
+## Enable and disable
+
+The `<PageInfo />` component is enabled globally by default. You can disable it by setting `pageInfo: false` in page frontmatter.
+
+To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. Then you can set `pageInfo` in page frontmattaer to enable it locally.
 
 ## Original Marker
 
