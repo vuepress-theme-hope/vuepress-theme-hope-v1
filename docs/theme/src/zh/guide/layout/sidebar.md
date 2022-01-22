@@ -11,8 +11,9 @@ tags:
 
 对于 Sidebar 基本的配置，可以传入一个包含多个链接的数组:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -25,9 +26,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -40,8 +41,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 数组的每一项最终都会渲染为一个侧边栏项目。
 
@@ -51,10 +53,11 @@ module.exports = config({
 
 侧边栏链接的文字将会从页面自动获取 (优先读取在 frontmatter 中设置的标题，然后回退到页面的第一个标题)。如果你想要指定链接的文字，使用一个格式为 `[link, text]` 的数组。
 
-::: details 例子
+::::: details 例子
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -67,9 +70,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -82,10 +85,11 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 :::
+
+::::
+
+:::::
 
 <!-- more -->
 
@@ -105,8 +109,9 @@ sidebarDepth: 2
 
 默认情况下，侧边栏只会显示由当前活动页面的标题 (headers) 组成的链接，你可以将 `themeConfig.displayAllHeaders` 设置为 `true` 来显示所有页面的标题链接:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {6}
 // .vuepress/config.ts
@@ -119,9 +124,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {6}
 // .vuepress/config.js
@@ -134,15 +139,17 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ## 活动的标题链接
 
 默认情况下，当用户通过滚动查看页面的不同部分时，嵌套的标题链接和 URL 中的 Hash 值会实时更新，这个行为可以通过以下的配置来禁用:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {6}
 // .vuepress/config.ts
@@ -155,9 +162,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {6}
 // .vuepress/config.js
@@ -170,8 +177,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ## 侧边栏分组
 
@@ -183,8 +191,9 @@ module.exports = config({
 
 一个侧边栏的子组配置同时支持 [sidebarDepth](#嵌套的标题链接) 字段用于重写默认显示的侧边栏深度(`2`)。
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -219,136 +228,140 @@ export default theme.config({
   },
 });
 ```
-
-</CodeGroupItem>
-
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    sidebar: [
-      {
-        // 必要的，分组的标题文字
-        title: "Group 1",
-        // 可选的, 分组标题对应的图标
-        icon: "bar",
-        // 可选的, 分组标题对应的链接
-        path: "/foo/",
-        // 可选的，会添加到每个 item 链接地址之前
-        prefix: "/foo/",
-        // 可选的, 设置分组是否可以折叠，默认值是 true,
-        collapsable: false,
-        // 可选的, 嵌套渲染深度，默认值是 2
-        sidebarDepth: 2,
-        // 必要的，分组的子项目
-        children: ["/"],
-      },
-      {
-        title: "Group 2",
-        children: [
-          /* ... */
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-</CodeGroup>
-
-::: details 例子
-
-<CodeGroup>
-<CodeGroupItem title="ts">
-
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
-
-export default theme.config({
-  themeConfig: {
-    sidebar: [
-      {
-        title: "快速上手",
-        icon: "creative",
-        prefix: "/get-started/",
-        collapsable: false,
-        children: [
-          "intro" /* /get-started/intro.html */,
-          "install" /* /get-started/install.html */,
-          "markdown" /* /get-started/markdown.html */,
-        ],
-      },
-      {
-        title: "界面",
-        icon: "skin",
-        prefix: "/interface/",
-        collapsable: false,
-        children: [
-          "darkmode" /* /interface/darkmode.html */,
-          "theme-color" /* /interface/theme-color.html */,
-          "icon" /* /interface/icon.html */,
-          "others" /* /interface/others.html */,
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    sidebar: [
-      {
-        title: "快速上手",
-        icon: "creative",
-        prefix: "/get-started/",
-        collapsable: false,
-        children: [
-          "intro" /* /get-started/intro.html */,
-          "install" /* /get-started/install.html */,
-          "markdown" /* /get-started/markdown.html */,
-        ],
-      },
-      {
-        title: "界面",
-        icon: "skin",
-        prefix: "/interface/",
-        collapsable: false,
-        children: [
-          "darkmode" /* /interface/darkmode.html */,
-          "theme-color" /* /interface/theme-color.html */,
-          "icon" /* /interface/icon.html */,
-          "others" /* /interface/others.html */,
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-</CodeGroup>
 
 :::
 
+::: code-group-item js
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    sidebar: [
+      {
+        // 必要的，分组的标题文字
+        title: "Group 1",
+        // 可选的, 分组标题对应的图标
+        icon: "bar",
+        // 可选的, 分组标题对应的链接
+        path: "/foo/",
+        // 可选的，会添加到每个 item 链接地址之前
+        prefix: "/foo/",
+        // 可选的, 设置分组是否可以折叠，默认值是 true,
+        collapsable: false,
+        // 可选的, 嵌套渲染深度，默认值是 2
+        sidebarDepth: 2,
+        // 必要的，分组的子项目
+        children: ["/"],
+      },
+      {
+        title: "Group 2",
+        children: [
+          /* ... */
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::::
+
+::::: details 例子
+
+:::: code-group
+
+::: code-group-item ts
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: [
+      {
+        title: "快速上手",
+        icon: "creative",
+        prefix: "/get-started/",
+        collapsable: false,
+        children: [
+          "intro" /* /get-started/intro.html */,
+          "install" /* /get-started/install.html */,
+          "markdown" /* /get-started/markdown.html */,
+        ],
+      },
+      {
+        title: "界面",
+        icon: "skin",
+        prefix: "/interface/",
+        collapsable: false,
+        children: [
+          "darkmode" /* /interface/darkmode.html */,
+          "theme-color" /* /interface/theme-color.html */,
+          "icon" /* /interface/icon.html */,
+          "others" /* /interface/others.html */,
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::: code-group-item js
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    sidebar: [
+      {
+        title: "快速上手",
+        icon: "creative",
+        prefix: "/get-started/",
+        collapsable: false,
+        children: [
+          "intro" /* /get-started/intro.html */,
+          "install" /* /get-started/install.html */,
+          "markdown" /* /get-started/markdown.html */,
+        ],
+      },
+      {
+        title: "界面",
+        icon: "skin",
+        prefix: "/interface/",
+        collapsable: false,
+        children: [
+          "darkmode" /* /interface/darkmode.html */,
+          "theme-color" /* /interface/theme-color.html */,
+          "icon" /* /interface/icon.html */,
+          "others" /* /interface/others.html */,
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::::
+
+:::::
+
 侧边栏分组也可以进行嵌套:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -380,9 +393,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -414,8 +427,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 通常情况下，你可能希望搭配 `prefix` 使用来快速还原文档的结构。
 
@@ -438,8 +452,9 @@ module.exports = config({
 
 你就可以进行以下配置:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -474,9 +489,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -511,8 +526,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: warning
 
@@ -553,8 +569,9 @@ module.exports = config({
 
 你就可以遵循以下的侧边栏配置，来为不同路径显示不同的分组:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -586,9 +603,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -620,8 +637,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: warning
 
@@ -643,8 +661,9 @@ sidebar: auto
 
 你也可以通过配置来在所有页面中启用它:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {6}
 // .vuepress/config.ts
@@ -657,9 +676,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {6}
 // .vuepress/config.js
@@ -672,8 +691,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ## 禁用侧边栏
 
@@ -689,8 +709,9 @@ sidebar: false
 
 在 [多语言](https://v1.vuepress.vuejs.org/zh/guide/i18n.html) 模式下, 你也可以为某一特定的语言配置侧边栏:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -709,9 +730,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -730,8 +751,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ## 博主信息
 
@@ -743,8 +765,9 @@ module.exports = config({
 
 我们提供了一个 `sidebarConfig` Helper 函数。你可以从 `vuepress-theme-hope` 中将其引入，并包裹你的导航栏配置来让编辑器提供自动补全并帮助你校验侧边栏配置是否正确。
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {6}
 // .vuepress/sidebar.ts
@@ -753,9 +776,9 @@ import theme from "vuepress-theme-hope";
 export default theme.sidebarConfig(/* 你的侧边栏配置 */);
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/sidebar.js
@@ -764,8 +787,9 @@ const { sidebarConfig } = require("vuepress-theme-hope");
 module.exports = sidebarConfig(/* 你的侧边栏配置 */);
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 
@@ -775,10 +799,11 @@ module.exports = sidebarConfig(/* 你的侧边栏配置 */);
 
 ## 案例
 
-::: details 本文档的侧边栏配置
+::::: details 本文档的侧边栏配置
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -929,9 +954,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -1082,7 +1107,8 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 :::
+
+::::
+
+:::::

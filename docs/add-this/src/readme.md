@@ -21,28 +21,31 @@ copyrightText: false
 
 ### Install
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
 
 ```bash
 yarn add -D vuepress-plugin-add-this
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="npm">
+::: code-group-item npm
 
 ```bash
 npm i -D vuepress-plugin-add-this
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ### Usage
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -51,9 +54,9 @@ export default {
 };
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -62,5 +65,6 @@ module.exports = {
 };
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::

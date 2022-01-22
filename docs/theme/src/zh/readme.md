@@ -74,24 +74,31 @@ copyrightText: false
 
 在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
+
 ```bash
 yarn create vuepress-theme-hope [dir]
 ```
-</CodeGroupItem>
 
-<CodeGroupItem title="npm">
+:::
+
+::: code-group-item npm
+
 ```bash
 npm init vuepress-theme-hope [dir]
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
+
+::::
 
 ## 🚀 使用
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts{2,4,6}
 // .vuepress/config.ts
@@ -102,9 +109,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js{2,4,6}
 // .vuepress/config.js
@@ -115,8 +122,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 

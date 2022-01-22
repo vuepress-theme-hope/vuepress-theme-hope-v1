@@ -13,8 +13,9 @@ icon: creative
 
 ## 演示
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -30,9 +31,9 @@ export default {
 };
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -48,5 +49,6 @@ module.exports = {
 };
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::

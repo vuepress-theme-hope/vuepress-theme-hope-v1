@@ -24,7 +24,7 @@ For example, given the following directory structure:
 .
 ├─ README.md
 ├─ foo
-│  ├─ README.md
+│  ├─ README.md
 │  ├─ one.md
 │  └─ two.md
 └─ bar

@@ -24,8 +24,9 @@ If the current browser does not support full screen, the full screen button is a
 
 :::
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {6}
 // .vuepress/config.ts
@@ -38,9 +39,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {6}
 // .vuepress/config.js
@@ -53,8 +54,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ## Back to top button
 

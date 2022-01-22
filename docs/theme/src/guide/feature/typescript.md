@@ -25,19 +25,25 @@ After enabling this theme, you no longer need to require and enable `@vuepress/p
 
 If your project does not use typescript, you may also need to install typescript:
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
+
 ```bash
 yarn add -D typescript
 ```
-</CodeGroupItem>
 
-<CodeGroupItem title="npm">
+:::
+
+::: code-group-item npm
+
 ```bash
 npm i -D typescript
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
+
+::::
 
 At the same time, you need to ensure that your workspace contains a valid `tsconfig.json`. One of the simplest `tsconfig.json` is as follows:
 

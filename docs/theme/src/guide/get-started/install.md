@@ -10,28 +10,31 @@ tags:
 
 Create a vuepress-theme-hope project in `[dir]` folder under the current project:
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
 
 ```bash
 yarn create vuepress-theme-hope [dir]
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="npm">
+::: code-group-item npm
 
 ```bash
 npm init vuepress-theme-hope [dir]
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ## Usage
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -42,9 +45,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -55,8 +58,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 

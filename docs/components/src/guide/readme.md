@@ -37,19 +37,25 @@ Code Group
 Demo:
 
 ````md
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
+
 ```bash
 yarn add -D vuepress-theme-hope
 ```
-</CodeGroupItem>
 
-<CodeGroupItem title="npm">
+:::
+
+::: code-group-item npm
+
 ```bash
 npm i -D vuepress-theme-hope
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
+
+::::
 ````
 
 ## PageInfo

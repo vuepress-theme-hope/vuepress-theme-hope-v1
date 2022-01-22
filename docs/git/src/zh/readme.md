@@ -15,23 +15,25 @@ copyrightText: false
 
 ### 安装
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
 
 ```bash
 yarn add -D @mr-hope/vuepress-plugin-git
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="npm">
+::: code-group-item npm
 
 ```bash
 npm i -D @mr-hope/vuepress-plugin-git
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ### 使用
 
@@ -49,9 +51,9 @@ module.exports = {
 };
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="ts">
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -67,8 +69,9 @@ export default {
 };
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ## 插件说明
 

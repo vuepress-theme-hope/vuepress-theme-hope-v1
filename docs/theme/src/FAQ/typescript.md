@@ -8,35 +8,47 @@ category: FAQ
 
 1. Please make sure your project depends on typescript, if not, please execute:
 
-   <CodeGroup>
-   <CodeGroupItem title="yarn">
+   :::: code-group
+
+   ::: code-group-item yarn
+
    ```bash
    yarn add -D typescript
    ```
-   </CodeGroupItem>
 
-   <CodeGroupItem title="npm">
+   :::
+
+   ::: code-group-item npm
+
    ```bash
    npm i -D typescript
    ```
-   </CodeGroupItem>
-   </CodeGroup>
+
+   :::
+
+::::
 
 1. Make sure there is a legal tsconfig.json file in your project root, if not, please execute:
 
-   <CodeGroup>
-   <CodeGroupItem title="yarn">
+   :::: code-group
+
+   ::: code-group-item yarn
+
    ```bash
    yarn tsc --init
    ```
-   </CodeGroupItem>
 
-   <CodeGroupItem title="npm">
+   :::
+
+   ::: code-group-item npm
+
    ```bash
    npx tsc --init
    ```
-   </CodeGroupItem>
-   </CodeGroup>
+
+   :::
+
+::::
 
 1. Make sure that your project has at least one TypeScript file included by it.
 

@@ -25,19 +25,25 @@ tags:
 
 如果你的项目没有依赖 typescript，你需要额外安装它:
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
+
 ```bash
 yarn add -D typescript
 ```
-</CodeGroupItem>
 
-<CodeGroupItem title="npm">
+:::
+
+::: code-group-item npm
+
 ```bash
 npm i -D typescript
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
+
+::::
 
 同时，你需要保证你的工作区包含有效的 `tsconfig.json`。 一个最简单的 `tsconfig.json` 如下:
 

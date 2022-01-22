@@ -13,8 +13,9 @@ tags:
 
 ## Enable <Badge text="Support page config" />
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {7,10}
 // .vuepress/config.ts
@@ -32,9 +33,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {7,10}
 // .vuepress/themeConfig.js
@@ -52,8 +53,9 @@ module.exports = themeConfig({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 Comment feature is enabled globally by default, the configuration key is `comment`.
 
@@ -91,8 +93,9 @@ Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MAS
 
 Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your themeConfig:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -108,9 +111,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -126,8 +129,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 
@@ -154,8 +158,9 @@ After this step, you will get `client id` and `client secret` of your OAuth App,
 
 ### Use the plugin
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {7-17}
 // .vuepress/config.ts
@@ -178,9 +183,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {7-17}
 // .vuepress/config.js
@@ -203,8 +208,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 
@@ -235,8 +241,9 @@ You can go to the repository [meteorlxy/vssue-demo](https://github.com/meteorlxy
 
 Create new application in Leancloud, and you will get APP ID / APP Key.
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -253,9 +260,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -272,8 +279,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 Config will be listed on [Config](http://vuepress-theme-hope.github.io/comment/config/valine/).
 

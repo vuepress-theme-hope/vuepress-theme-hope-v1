@@ -17,8 +17,9 @@ You can add links to the navbar via `themeConfig.nav`.
 
 The basic configuration items are `text` (i.e.: navigation bar text), `link` (i.e.: navigation bar link), and `icon` (i.e.: navigation bar icon):
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -35,9 +36,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -54,13 +55,15 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 These links can also be dropdown menus if you provide an array of `items` instead of a `link`:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -82,9 +85,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -106,13 +109,15 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 In most cases, the grouped items in the navigation bar belong to the same category and will be placed in the same subdirectory, and they have the same path prefix. To simplify the configuration, you can add the `prefix` field to add a prefix to each sub-link in the group:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -135,9 +140,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -160,13 +165,15 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 You can also have sub groups inside a dropdown by having nested `items`:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -199,226 +206,230 @@ export default theme.config({
   },
 });
 ```
-
-</CodeGroupItem>
-
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    nav: [
-      {
-        text: "Project",
-        icon: "info",
-        items: [
-          {
-            text: "Built in Plugins",
-            icon: "plugin",
-            items: [
-              /* Some items */
-            ],
-          },
-          {
-            text: "Third party Plugins",
-            icon: "plugin",
-            items: [
-              /* Some items */
-            ],
-          },
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-</CodeGroup>
-
-::: details Demo
-
-<CodeGroup>
-<CodeGroupItem title="ts">
-
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
-
-export default theme.config({
-  themeConfig: {
-    nav: [
-      {
-        text: "Project",
-        icon: "info",
-        items: [
-          {
-            text: "Changelog",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
-          },
-          {
-            text: "Repo",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
-          },
-          {
-            text: "Theme Demo",
-            link: "/demo/",
-          },
-          {
-            text: "Plugins",
-            icon: "plugin",
-            items: [
-              {
-                text: "AddThis Plugin",
-                link: "https://vuepress-theme-hope.github.io/add-this/",
-              },
-              {
-                text: "Comment Plugin",
-                link: "https://vuepress-theme-hope.github.io/comment/",
-              },
-              {
-                text: "Copy Code Plugin",
-                link: "https://vuepress-theme-hope.github.io/copy-code/",
-              },
-              {
-                text: "Feed Plugin",
-                link: "https://vuepress-theme-hope.github.io/feed/",
-              },
-              {
-                text: "Git Info Plugin",
-                link: "https://vuepress-theme-hope.github.io/git/",
-              },
-              {
-                text: "Markdown Enhance Plugin",
-                link: "https://vuepress-theme-hope.github.io/md-enhance/",
-              },
-              {
-                text: "Photo Swipe Plugin",
-                link: "https://vuepress-theme-hope.github.io/photo-swipe/",
-              },
-              {
-                text: "PWA Plugin",
-                link: "https://vuepress-theme-hope.github.io/pwa/",
-              },
-              {
-                text: "Reading Time Plugin",
-                link: "https://vuepress-theme-hope.github.io/reading-time/",
-              },
-              {
-                text: "Seo Plugin",
-                link: "https://vuepress-theme-hope.github.io/seo/",
-              },
-              {
-                text: "Sitemap Plugin",
-                link: "https://vuepress-theme-hope.github.io/sitemap/",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    nav: [
-      {
-        text: "Project",
-        icon: "info",
-        items: [
-          {
-            text: "Changelog",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
-          },
-          {
-            text: "Repo",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
-          },
-          {
-            text: "Theme Demo",
-            link: "/demo/",
-          },
-          {
-            text: "Plugins",
-            icon: "plugin",
-            items: [
-              {
-                text: "AddThis Plugin",
-                link: "https://vuepress-theme-hope.github.io/add-this/",
-              },
-              {
-                text: "Comment Plugin",
-                link: "https://vuepress-theme-hope.github.io/comment/",
-              },
-              {
-                text: "Copy Code Plugin",
-                link: "https://vuepress-theme-hope.github.io/copy-code/",
-              },
-              {
-                text: "Feed Plugin",
-                link: "https://vuepress-theme-hope.github.io/feed/",
-              },
-              {
-                text: "Git Info Plugin",
-                link: "https://vuepress-theme-hope.github.io/git/",
-              },
-              {
-                text: "Markdown Enhance Plugin",
-                link: "https://vuepress-theme-hope.github.io/md-enhance/",
-              },
-              {
-                text: "Photo Swipe Plugin",
-                link: "https://vuepress-theme-hope.github.io/photo-swipe/",
-              },
-              {
-                text: "PWA Plugin",
-                link: "https://vuepress-theme-hope.github.io/pwa/",
-              },
-              {
-                text: "Reading Time Plugin",
-                link: "https://vuepress-theme-hope.github.io/reading-time/",
-              },
-              {
-                text: "Seo Plugin",
-                link: "https://vuepress-theme-hope.github.io/seo/",
-              },
-              {
-                text: "Sitemap Plugin",
-                link: "https://vuepress-theme-hope.github.io/sitemap/",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-</CodeGroup>
 
 :::
+
+::: code-group-item js
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    nav: [
+      {
+        text: "Project",
+        icon: "info",
+        items: [
+          {
+            text: "Built in Plugins",
+            icon: "plugin",
+            items: [
+              /* Some items */
+            ],
+          },
+          {
+            text: "Third party Plugins",
+            icon: "plugin",
+            items: [
+              /* Some items */
+            ],
+          },
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::::
+
+::::: details Demo
+
+:::: code-group
+
+::: code-group-item ts
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    nav: [
+      {
+        text: "Project",
+        icon: "info",
+        items: [
+          {
+            text: "Changelog",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+          },
+          {
+            text: "Repo",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+          },
+          {
+            text: "Theme Demo",
+            link: "/demo/",
+          },
+          {
+            text: "Plugins",
+            icon: "plugin",
+            items: [
+              {
+                text: "AddThis Plugin",
+                link: "https://vuepress-theme-hope.github.io/add-this/",
+              },
+              {
+                text: "Comment Plugin",
+                link: "https://vuepress-theme-hope.github.io/comment/",
+              },
+              {
+                text: "Copy Code Plugin",
+                link: "https://vuepress-theme-hope.github.io/copy-code/",
+              },
+              {
+                text: "Feed Plugin",
+                link: "https://vuepress-theme-hope.github.io/feed/",
+              },
+              {
+                text: "Git Info Plugin",
+                link: "https://vuepress-theme-hope.github.io/git/",
+              },
+              {
+                text: "Markdown Enhance Plugin",
+                link: "https://vuepress-theme-hope.github.io/md-enhance/",
+              },
+              {
+                text: "Photo Swipe Plugin",
+                link: "https://vuepress-theme-hope.github.io/photo-swipe/",
+              },
+              {
+                text: "PWA Plugin",
+                link: "https://vuepress-theme-hope.github.io/pwa/",
+              },
+              {
+                text: "Reading Time Plugin",
+                link: "https://vuepress-theme-hope.github.io/reading-time/",
+              },
+              {
+                text: "Seo Plugin",
+                link: "https://vuepress-theme-hope.github.io/seo/",
+              },
+              {
+                text: "Sitemap Plugin",
+                link: "https://vuepress-theme-hope.github.io/sitemap/",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::: code-group-item js
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    nav: [
+      {
+        text: "Project",
+        icon: "info",
+        items: [
+          {
+            text: "Changelog",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+          },
+          {
+            text: "Repo",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+          },
+          {
+            text: "Theme Demo",
+            link: "/demo/",
+          },
+          {
+            text: "Plugins",
+            icon: "plugin",
+            items: [
+              {
+                text: "AddThis Plugin",
+                link: "https://vuepress-theme-hope.github.io/add-this/",
+              },
+              {
+                text: "Comment Plugin",
+                link: "https://vuepress-theme-hope.github.io/comment/",
+              },
+              {
+                text: "Copy Code Plugin",
+                link: "https://vuepress-theme-hope.github.io/copy-code/",
+              },
+              {
+                text: "Feed Plugin",
+                link: "https://vuepress-theme-hope.github.io/feed/",
+              },
+              {
+                text: "Git Info Plugin",
+                link: "https://vuepress-theme-hope.github.io/git/",
+              },
+              {
+                text: "Markdown Enhance Plugin",
+                link: "https://vuepress-theme-hope.github.io/md-enhance/",
+              },
+              {
+                text: "Photo Swipe Plugin",
+                link: "https://vuepress-theme-hope.github.io/photo-swipe/",
+              },
+              {
+                text: "PWA Plugin",
+                link: "https://vuepress-theme-hope.github.io/pwa/",
+              },
+              {
+                text: "Reading Time Plugin",
+                link: "https://vuepress-theme-hope.github.io/reading-time/",
+              },
+              {
+                text: "Seo Plugin",
+                link: "https://vuepress-theme-hope.github.io/seo/",
+              },
+              {
+                text: "Sitemap Plugin",
+                link: "https://vuepress-theme-hope.github.io/sitemap/",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::::
+
+:::::
 
 ## Disable the Navbar
 
 To disable the navbar globally, use `themeConfig.navbar`:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -431,9 +442,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -446,8 +457,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 You can disable the navbar for a specific page via `YAML front matter`:
 
@@ -463,8 +475,9 @@ You can use `themeConfig.logo` to configure the icons of the navigation bar, ple
 
 After configuring the icon, the icon will be displayed on the navigation bar instead of the previous site name on the mobile view.
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -477,9 +490,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -492,8 +505,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 
@@ -507,8 +521,9 @@ You can set `themeConfig.darkLogo` to display another logo in dark mode.
 
 You can disable the built-in search box with `themeConfig.search: false`, and customize the number of suggestions will be shown with `themeConfig.searchMaxSuggestions`:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -524,9 +539,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -540,8 +555,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 You can also disable the built-in search box for individual pages with `YAML front matter`:
 
@@ -561,8 +577,9 @@ Built-in Search only builds index from the title, `h2` and `h3` headers, if you 
 
 The `themeConfig.algolia` option allows you to use [Algolia DocSearch](https://community.algolia.com/docsearch/) to replace the simple built-in search. To enable it, you need to provide at least `apiKey` and `indexName`:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -578,9 +595,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -596,8 +613,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: warning Note
 
@@ -611,8 +629,9 @@ For more options, check out [Algolia DocSearch’s documentation](https://github
 
 You can define a placeholder for the search box by adding the `searchPlaceholder` attribute:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -625,9 +644,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -640,15 +659,17 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ## Git repository and Edit Links
 
 Providing `themeConfig.repo` auto generates a GitHub link in the navbar and `"Edit this page"` links at the bottom of each page.
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -684,9 +705,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -722,8 +743,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 You can overwrite the following properties on specific pages via `YAML front matter`:
 
@@ -749,8 +771,9 @@ For details, see the [Full Screen Button](../interface/others.md#fullscreen-butt
 
 We provide a `navbarConfig` Helper function. You can import it from `vuepress-theme-hope` and wrap your navigation bar configuration to let the editor provide auto-completion and help you verify the navbar configuration.
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/navbar.ts
@@ -759,9 +782,9 @@ import theme from "vuepress-theme-hope";
 export default theme.navbarConfig(/* Your navbar configuration */);
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/navbar.js
@@ -770,8 +793,9 @@ const { navbarConfig } = require("vuepress-theme-hope");
 module.exports = navbarConfig(/* Your navbar configuration */);
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 
@@ -781,10 +805,11 @@ When you are spliting VuePress configuration into multiple parts, you can use th
 
 ## Demo
 
-::: details Configuration of this documentation
+::::: details Configuration of this documentation
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -878,9 +903,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -974,7 +999,8 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 :::
+
+::::
+
+:::::

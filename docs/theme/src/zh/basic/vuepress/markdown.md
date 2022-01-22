@@ -24,7 +24,7 @@ tags:
 .
 ├─ README.md
 ├─ foo
-│  ├─ README.md
+│├─ README.md
 │  ├─ one.md
 │  └─ two.md
 └─ bar

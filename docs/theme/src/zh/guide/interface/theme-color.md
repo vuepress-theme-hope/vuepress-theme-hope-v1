@@ -23,11 +23,11 @@ tags:
 
 你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式来配置 `themeConfig.themeColor`:
 
-::: details 例子
-:: details Example
+::::: details 例子
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -45,9 +45,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {5-10}
 // .vuepress/config.js
@@ -65,10 +65,11 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 :::
+
+::::
+
+:::::
 
 同时为了使 Stylus 编译器正常工作，你还需要将颜色变量赋值给 `$colorPicker` 写入 `.vuepress/styles` 下的 `palette.styl` 中:
 

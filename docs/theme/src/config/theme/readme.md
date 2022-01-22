@@ -13,8 +13,9 @@ You can view [Config of this site][docs-config] as an example, and you can direc
 
 Besides, we also provide a `themeConfig` helper function, which you can import to provide automatic completion and verification:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts{2,4,6}
 // .vuepress/config.ts
@@ -25,9 +26,9 @@ export default theme.themeConfig({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/themeConfig.js
@@ -38,8 +39,9 @@ module.exports = themeConfig({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 :::
 

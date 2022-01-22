@@ -1,12 +1,13 @@
 ---
 title: Custom container
 icon: customize
+category: markdown
 tags:
   - container
   - markdown
 ---
 
-The plugin adds tip, note, info, warning, danger and detail container.
+The theme adds tip, note, info, warning, danger and detail container.
 
 <!-- more -->
 

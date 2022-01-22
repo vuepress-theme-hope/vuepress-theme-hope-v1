@@ -1,12 +1,13 @@
 ---
 title: 自定义容器
 icon: customize
+category: markdown
 tags:
   - container
   - markdown
 ---
 
-插件可以为你添加提示、注释、信息、注意、警告和详情自定义容器的支持。
+主题可以为你添加提示、注释、信息、注意、警告和详情自定义容器的支持。
 
 <!-- more -->
 
@@ -19,7 +20,7 @@ module.exports = {
       // 这是默认选项，所以你可以直接使用它
       container: true,
     },
-  },
+  },`
 };
 ```
 

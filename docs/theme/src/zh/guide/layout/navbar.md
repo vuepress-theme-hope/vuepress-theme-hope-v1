@@ -17,8 +17,9 @@ tags:
 
 基础的配置项有 `text` 导航栏文字，`link` 导航栏链接， `icon` 导航栏图标:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -35,9 +36,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -54,13 +55,15 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 当你提供了一个 `items` 数组而不是一个单一的 `link` 时，它将显示为下拉列表 :
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -82,9 +85,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -106,13 +109,15 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 由于大多数情况下，导航栏的分组项目都属于同一类别，会放在同一个子目录下，它们具有相同的路径前缀。为了简化配置，你可以添加 `prefix` 字段为分组的每一个子链接添加一个前缀:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -135,9 +140,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -160,13 +165,15 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 此外，你还可以通过嵌套的 `items` 来在下拉列表中设置分组:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -199,227 +206,231 @@ export default theme.config({
   },
 });
 ```
-
-</CodeGroupItem>
-
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    nav: [
-      {
-        text: "项目",
-        icon: "info",
-        items: [
-          {
-            text: "内置插件",
-            icon: "plugin",
-            items: [
-              /* 一些子项目 */
-            ],
-          },
-          {
-            text: "引入插件",
-            icon: "plugin",
-            items: [
-              /* 一些子项目 */
-            ],
-          },
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-</CodeGroup>
-
-::: details 例子
-
-<CodeGroup>
-<CodeGroupItem title="ts">
-
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
-
-export default theme.config({
-  themeConfig: {
-    nav: [
-      {
-        text: "项目",
-        icon: "info",
-        items: [
-          {
-            text: "更新日志",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
-          },
-          {
-            text: "项目地址",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
-          },
-          {
-            text: "项目案例",
-            link: "/zh/demo/",
-          },
-          {
-            text: "插件",
-            icon: "plugin",
-            items: [
-              {
-                text: "AddThis 插件",
-                link: "https://vuepress-theme-hope.github.io/add-this/zh/",
-              },
-              {
-                text: "评论插件",
-                link: "https://vuepress-theme-hope.github.io/comment/zh/",
-              },
-              {
-                text: "代码复制插件",
-                link: "https://vuepress-theme-hope.github.io/copy-code/zh/",
-              },
-              {
-                text: "Feed 插件",
-                link: "https://vuepress-theme-hope.github.io/feed/zh/",
-              },
-              {
-                text: "Git 信息插件",
-                link: "https://vuepress-theme-hope.github.io/git/zh/",
-              },
-              {
-                text: "Markdown 增强插件",
-                link: "https://vuepress-theme-hope.github.io/md-enhance/zh/",
-              },
-              {
-                text: "图片预览插件",
-                link: "https://vuepress-theme-hope.github.io/photo-swipe/zh/",
-              },
-              {
-                text: "PWA 插件",
-                link: "https://vuepress-theme-hope.github.io/pwa/zh/",
-              },
-              {
-                text: "阅读时间插件",
-                link: "https://vuepress-theme-hope.github.io/reading-time/zh/",
-              },
-              {
-                text: "Seo 插件",
-                link: "https://vuepress-theme-hope.github.io/seo/zh/",
-              },
-              {
-                text: "Sitemap 插件",
-                link: "https://vuepress-theme-hope.github.io/sitemap/zh/",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    nav: [
-      {
-        text: "项目",
-        icon: "info",
-        items: [
-          {
-            text: "更新日志",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
-          },
-          {
-            text: "项目地址",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
-          },
-          {
-            text: "项目案例",
-            link: "/zh/demo/",
-          },
-          {
-            text: "插件",
-            icon: "plugin",
-            items: [
-              {
-                text: "AddThis 插件",
-                link: "https://vuepress-theme-hope.github.io/add-this/zh/",
-              },
-              {
-                text: "评论插件",
-                link: "https://vuepress-theme-hope.github.io/comment/zh/",
-              },
-              {
-                text: "代码复制插件",
-                link: "https://vuepress-theme-hope.github.io/copy-code/zh/",
-              },
-              {
-                text: "Feed 插件",
-                link: "https://vuepress-theme-hope.github.io/feed/zh/",
-              },
-              {
-                text: "Git 信息插件",
-                link: "https://vuepress-theme-hope.github.io/git/zh/",
-              },
-              {
-                text: "Markdown 增强插件",
-                link: "https://vuepress-theme-hope.github.io/md-enhance/zh/",
-              },
-              {
-                text: "图片预览插件",
-                link: "https://vuepress-theme-hope.github.io/photo-swipe/zh/",
-              },
-              {
-                text: "PWA 插件",
-                link: "https://vuepress-theme-hope.github.io/pwa/zh/",
-              },
-              {
-                text: "阅读时间插件",
-                link: "https://vuepress-theme-hope.github.io/reading-time/zh/",
-              },
-              {
-                text: "Seo 插件",
-                link: "https://vuepress-theme-hope.github.io/seo/zh/",
-              },
-              {
-                text: "Sitemap 插件",
-                link: "https://vuepress-theme-hope.github.io/sitemap/zh/",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-</CodeGroup>
 
 :::
+
+::: code-group-item js
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    nav: [
+      {
+        text: "项目",
+        icon: "info",
+        items: [
+          {
+            text: "内置插件",
+            icon: "plugin",
+            items: [
+              /* 一些子项目 */
+            ],
+          },
+          {
+            text: "引入插件",
+            icon: "plugin",
+            items: [
+              /* 一些子项目 */
+            ],
+          },
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::::
+
+::::: details 例子
+
+:::: code-group
+
+::: code-group-item ts
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    nav: [
+      {
+        text: "项目",
+        icon: "info",
+        items: [
+          {
+            text: "更新日志",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+          },
+          {
+            text: "项目地址",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+          },
+          {
+            text: "项目案例",
+            link: "/zh/demo/",
+          },
+          {
+            text: "插件",
+            icon: "plugin",
+            items: [
+              {
+                text: "AddThis 插件",
+                link: "https://vuepress-theme-hope.github.io/add-this/zh/",
+              },
+              {
+                text: "评论插件",
+                link: "https://vuepress-theme-hope.github.io/comment/zh/",
+              },
+              {
+                text: "代码复制插件",
+                link: "https://vuepress-theme-hope.github.io/copy-code/zh/",
+              },
+              {
+                text: "Feed 插件",
+                link: "https://vuepress-theme-hope.github.io/feed/zh/",
+              },
+              {
+                text: "Git 信息插件",
+                link: "https://vuepress-theme-hope.github.io/git/zh/",
+              },
+              {
+                text: "Markdown 增强插件",
+                link: "https://vuepress-theme-hope.github.io/md-enhance/zh/",
+              },
+              {
+                text: "图片预览插件",
+                link: "https://vuepress-theme-hope.github.io/photo-swipe/zh/",
+              },
+              {
+                text: "PWA 插件",
+                link: "https://vuepress-theme-hope.github.io/pwa/zh/",
+              },
+              {
+                text: "阅读时间插件",
+                link: "https://vuepress-theme-hope.github.io/reading-time/zh/",
+              },
+              {
+                text: "Seo 插件",
+                link: "https://vuepress-theme-hope.github.io/seo/zh/",
+              },
+              {
+                text: "Sitemap 插件",
+                link: "https://vuepress-theme-hope.github.io/sitemap/zh/",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::: code-group-item js
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    nav: [
+      {
+        text: "项目",
+        icon: "info",
+        items: [
+          {
+            text: "更新日志",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+          },
+          {
+            text: "项目地址",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+          },
+          {
+            text: "项目案例",
+            link: "/zh/demo/",
+          },
+          {
+            text: "插件",
+            icon: "plugin",
+            items: [
+              {
+                text: "AddThis 插件",
+                link: "https://vuepress-theme-hope.github.io/add-this/zh/",
+              },
+              {
+                text: "评论插件",
+                link: "https://vuepress-theme-hope.github.io/comment/zh/",
+              },
+              {
+                text: "代码复制插件",
+                link: "https://vuepress-theme-hope.github.io/copy-code/zh/",
+              },
+              {
+                text: "Feed 插件",
+                link: "https://vuepress-theme-hope.github.io/feed/zh/",
+              },
+              {
+                text: "Git 信息插件",
+                link: "https://vuepress-theme-hope.github.io/git/zh/",
+              },
+              {
+                text: "Markdown 增强插件",
+                link: "https://vuepress-theme-hope.github.io/md-enhance/zh/",
+              },
+              {
+                text: "图片预览插件",
+                link: "https://vuepress-theme-hope.github.io/photo-swipe/zh/",
+              },
+              {
+                text: "PWA 插件",
+                link: "https://vuepress-theme-hope.github.io/pwa/zh/",
+              },
+              {
+                text: "阅读时间插件",
+                link: "https://vuepress-theme-hope.github.io/reading-time/zh/",
+              },
+              {
+                text: "Seo 插件",
+                link: "https://vuepress-theme-hope.github.io/seo/zh/",
+              },
+              {
+                text: "Sitemap 插件",
+                link: "https://vuepress-theme-hope.github.io/sitemap/zh/",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::::
+
+:::::
 
 ### 禁用导航栏
 
 你可以使用 `themeConfig.navbar` 来禁用所有页面的导航栏:
 o disable the navbar globally, use `themeConfig.navbar`:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -432,9 +443,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -447,8 +458,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 你也可以通过 `YAML front matter` 来禁用某个指定页面的导航栏:
 
@@ -464,8 +476,9 @@ navbar: false
 
 当配置图标之后，在移动视图上，图标将取代先前的站点名称显示在导航栏上。
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -478,9 +491,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -493,8 +506,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 
@@ -508,8 +522,9 @@ module.exports = config({
 
 你可以通过设置 `themeConfig.search: false` 来禁用默认的搜索框，或是通过 `themeConfig.searchMaxSuggestions` 来调整默认搜索框显示的搜索结果数量:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -525,9 +540,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -541,8 +556,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 你可以通过 `YAML front matter` 来对单独的页面禁用内置的搜索框:
 
@@ -562,8 +578,9 @@ search: false
 
 你可以通过 `themeConfig.algolia` 选项来用 [Algolia 搜索](https://community.algolia.com/docsearch/) 替换内置的搜索框。要启用 Algolia 搜索，你需要至少提供 `apiKey` 和 `indexName`:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -579,9 +596,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -597,8 +614,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: warning 注意
 
@@ -610,8 +628,9 @@ module.exports = config({
 
 ### 搜索占位符
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -624,9 +643,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -639,15 +658,17 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ## Git 仓库和编辑链接
 
 当你提供了 `themeConfig.repo` 选项，将会自动在每个页面的导航栏生成生成一个 GitHub 链接，以及在页面的底部生成一个 `"Edit this page"` 链接。
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -679,9 +700,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -713,8 +734,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 你可以通过 `YAML front matter` 来禁用指定页面的编辑链接:
 
@@ -740,8 +762,9 @@ editLink: false
 
 我们提供了一个 `navbarConfig` Helper 函数。你可以从 `vuepress-theme-hope` 中将其引入，并包裹你的导航栏配置来让编辑器提供自动补全并帮助你校验导航栏配置是否正确。
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/navbar.ts
@@ -750,9 +773,9 @@ import theme from "vuepress-theme-hope";
 export default theme.navbarConfig(/* 你的导航栏配置 */);
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/navbar.js
@@ -761,8 +784,9 @@ const { navbarConfig } = require("vuepress-theme-hope");
 module.exports = navbarConfig(/* 你的导航栏配置 */);
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 
@@ -772,10 +796,11 @@ module.exports = navbarConfig(/* 你的导航栏配置 */);
 
 ## 案例
 
-::: details 本文档的导航栏配置
+::::: details 本文档的导航栏配置
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -869,9 +894,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -965,7 +990,8 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 :::
+
+::::
+
+:::::

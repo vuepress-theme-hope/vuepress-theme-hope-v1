@@ -62,10 +62,11 @@ Hope
 
 你可以填入一个绝对路径，也可以填入一个相对于 `.vuepress` 文件夹的相对路径。
 
-::: details 例子
+::::: details 例子
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -81,9 +82,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -99,7 +100,8 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 :::
+
+::::
+
+:::::

@@ -74,7 +74,7 @@ export default hope.config({
     },
 
     mdEnhance: {
-      container: true,
+      codegroup: true,
     },
 
     pwa: {

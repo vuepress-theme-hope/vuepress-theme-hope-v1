@@ -21,28 +21,31 @@ copyrightText: false
 
 ### 安装
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
 
 ```bash
 yarn add -D vuepress-plugin-active-hash
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="npm">
+::: code-group-item npm
 
 ```bash
 npm i -D vuepress-plugin-active-hash
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ### 使用
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -58,9 +61,9 @@ export default {
 };
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -76,8 +79,9 @@ module.exports = {
 };
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 此插件是官方插件的改进版本:
 

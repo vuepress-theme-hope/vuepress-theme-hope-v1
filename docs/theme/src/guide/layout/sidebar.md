@@ -9,8 +9,9 @@ tags:
 
 To enable the sidebar, use `themeConfig.sidebar`. The basic configuration expects an array of links:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -23,9 +24,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -38,8 +39,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 Each item of the array will be rendered as a sidebar item.
 
@@ -49,10 +51,11 @@ Icon support is enabled in the sidebar by default, and the icon of the page will
 
 The text for the link is automatically inferred (`title` field in frontmatter, then first header in the page). To explicitly specify the link text, use an array in form of `[link, text]`.
 
-::: details Demo
+::::: details Demo
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -69,9 +72,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -88,10 +91,11 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 :::
+
+::::
+
+:::::
 
 <!-- more -->
 
@@ -111,8 +115,9 @@ sidebarDepth: 2
 
 The sidebar only displays links for headers in the current active page. You can display all header links for every page with `themeConfig.displayAllHeaders: true`:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {6}
 // .vuepress/config.ts
@@ -125,9 +130,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {6}
 // .vuepress/config.js
@@ -140,15 +145,17 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ### Active Header Links
 
 By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {6}
 // .vuepress/config.ts
@@ -161,9 +168,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {6}
 // .vuepress/config.js
@@ -176,8 +183,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ### Sidebar Groups
 
@@ -189,8 +197,9 @@ Sidebar groups are collapsable by default. You can force a group to be always op
 
 A sidebar group config also supports [sidebarDepth](#nested-header-links) field to override the default sidebar depth (`2`).
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -225,136 +234,140 @@ export default theme.config({
   },
 });
 ```
-
-</CodeGroupItem>
-
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    sidebar: [
-      {
-        // required, title of group
-        title: "Group 1",
-        // optional, icon of group
-        icon: "bar",
-        // optional, link of group title
-        path: "/foo/",
-        // optional, will be appended to each item link
-        prefix: "/foo/",
-        // optional, defaults to true
-        collapsable: false,
-        // optional, defaults to 2
-        sidebarDepth: 2,
-        // required, items of group
-        children: ["/"],
-      },
-      {
-        title: "Group 2",
-        children: [
-          /* ... */
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-</CodeGroup>
-
-::: details Demo
-
-<CodeGroup>
-<CodeGroupItem title="ts">
-
-```ts
-// .vuepress/config.ts
-import theme from "vuepress-theme-hope";
-
-export default theme.config({
-  themeConfig: {
-    sidebar: [
-      {
-        title: "Get Started",
-        icon: "creative",
-        prefix: "/get-started/",
-        collapsable: false,
-        children: [
-          "intro" /* /get-started/intro.html */,
-          "install" /* /get-started/install.html */,
-          "markdown" /* /get-started/markdown.html */,
-        ],
-      },
-      {
-        title: "Interface",
-        icon: "skin",
-        prefix: "/interface/",
-        collapsable: false,
-        children: [
-          "darkmode" /* /interface/darkmode.html */,
-          "theme-color" /* /interface/theme-color.html */,
-          "icon" /* /interface/icon.html */,
-          "others" /* /interface/others.html */,
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-
-<CodeGroupItem title="js">
-
-```js
-// .vuepress/config.js
-const { config } = require("vuepress-theme-hope");
-
-module.exports = config({
-  themeConfig: {
-    sidebar: [
-      {
-        title: "Get Started",
-        icon: "creative",
-        prefix: "/get-started/",
-        collapsable: false,
-        children: [
-          "intro" /* /get-started/intro.html */,
-          "install" /* /get-started/install.html */,
-          "markdown" /* /get-started/markdown.html */,
-        ],
-      },
-      {
-        title: "Interface",
-        icon: "skin",
-        prefix: "/interface/",
-        collapsable: false,
-        children: [
-          "darkmode" /* /interface/darkmode.html */,
-          "theme-color" /* /interface/theme-color.html */,
-          "icon" /* /interface/icon.html */,
-          "others" /* /interface/others.html */,
-        ],
-      },
-    ],
-  },
-});
-```
-
-</CodeGroupItem>
-</CodeGroup>
 
 :::
 
+::: code-group-item js
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    sidebar: [
+      {
+        // required, title of group
+        title: "Group 1",
+        // optional, icon of group
+        icon: "bar",
+        // optional, link of group title
+        path: "/foo/",
+        // optional, will be appended to each item link
+        prefix: "/foo/",
+        // optional, defaults to true
+        collapsable: false,
+        // optional, defaults to 2
+        sidebarDepth: 2,
+        // required, items of group
+        children: ["/"],
+      },
+      {
+        title: "Group 2",
+        children: [
+          /* ... */
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::::
+
+::::: details Demo
+
+:::: code-group
+
+::: code-group-item ts
+
+```ts
+// .vuepress/config.ts
+import theme from "vuepress-theme-hope";
+
+export default theme.config({
+  themeConfig: {
+    sidebar: [
+      {
+        title: "Get Started",
+        icon: "creative",
+        prefix: "/get-started/",
+        collapsable: false,
+        children: [
+          "intro" /* /get-started/intro.html */,
+          "install" /* /get-started/install.html */,
+          "markdown" /* /get-started/markdown.html */,
+        ],
+      },
+      {
+        title: "Interface",
+        icon: "skin",
+        prefix: "/interface/",
+        collapsable: false,
+        children: [
+          "darkmode" /* /interface/darkmode.html */,
+          "theme-color" /* /interface/theme-color.html */,
+          "icon" /* /interface/icon.html */,
+          "others" /* /interface/others.html */,
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::: code-group-item js
+
+```js
+// .vuepress/config.js
+const { config } = require("vuepress-theme-hope");
+
+module.exports = config({
+  themeConfig: {
+    sidebar: [
+      {
+        title: "Get Started",
+        icon: "creative",
+        prefix: "/get-started/",
+        collapsable: false,
+        children: [
+          "intro" /* /get-started/intro.html */,
+          "install" /* /get-started/install.html */,
+          "markdown" /* /get-started/markdown.html */,
+        ],
+      },
+      {
+        title: "Interface",
+        icon: "skin",
+        prefix: "/interface/",
+        collapsable: false,
+        children: [
+          "darkmode" /* /interface/darkmode.html */,
+          "theme-color" /* /interface/theme-color.html */,
+          "icon" /* /interface/icon.html */,
+          "others" /* /interface/others.html */,
+        ],
+      },
+    ],
+  },
+});
+```
+
+:::
+
+::::
+
+:::::
+
 You can also nest Sidebar grouping:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -386,9 +399,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -420,8 +433,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 You may want to use it with `prefix` to restore the structure of the document easily.
 
@@ -444,8 +458,9 @@ For example, suppose you have a following directory structure:
 
 Then you can use the following config:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -480,9 +495,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -517,8 +532,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: warning
 
@@ -559,8 +575,9 @@ For example, if you have the following structure:
 
 You can define your sidebar for each section using below configuration:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -592,9 +609,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -626,8 +643,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: warning
 
@@ -649,8 +667,9 @@ sidebar: auto
 
 You can also enable it in all pages by using config:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {6}
 // .vuepress/config.ts
@@ -663,9 +682,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {6}
 // .vuepress/config.js
@@ -678,8 +697,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ### Disabling the Sidebar
 
@@ -695,8 +715,9 @@ sidebar: false
 
 In [multi-language](https://v1.vuepress.vuejs.org/guide/i18n.html) mode, you can also apply it to a specific locale:
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -715,9 +736,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -736,8 +757,9 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ## Blogger Information
 
@@ -749,8 +771,9 @@ You can set `'mobile'` to display only in mobile view, or set `always` to keep i
 
 We provide a `sidebarConfig` Helper function. You can import it from `vuepress-theme-hope` and wrap your navigation bar configuration to let the editor provide auto-completion and help you verify the sidebar configuration.
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts {6}
 // .vuepress/sidebar.ts
@@ -759,9 +782,9 @@ import theme from "vuepress-theme-hope";
 export default theme.sidebarConfig(/* Your sidebar configuration */);
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/sidebar.js
@@ -770,8 +793,9 @@ const { sidebarConfig } = require("vuepress-theme-hope");
 module.exports = sidebarConfig(/* Your sidebar configuration */);
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 
@@ -781,10 +805,11 @@ When you are spliting VuePress configuration into multiple parts, you can use th
 
 ## Demo
 
-::: details Configuration of this documentation
+::::: details Configuration of this documentation
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -935,9 +960,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -1088,7 +1113,8 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 :::
+
+::::
+
+:::::

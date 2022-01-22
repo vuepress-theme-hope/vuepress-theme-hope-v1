@@ -42,6 +42,7 @@ export default hope.config({
           children: [
             "",
             "container",
+            "code-group",
             "sup-sub",
             "align",
             "footnote",
@@ -88,6 +89,7 @@ export default hope.config({
               children: [
                 "",
                 "container",
+                "code-group",
                 "sup-sub",
                 "align",
                 "footnote",

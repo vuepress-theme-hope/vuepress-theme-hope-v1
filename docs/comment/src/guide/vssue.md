@@ -23,8 +23,9 @@ This plugin uses [@vssue/vuepress-plugin-vssue](https://www.npmjs.com/package/@v
 
 ### Use the plugin
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -45,9 +46,9 @@ export default {
 };
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -68,8 +69,9 @@ module.exports = {
 };
 ```
 
-</CodeGroupItem>
-</CodeGroup>
+:::
+
+::::
 
 ::: tip
 

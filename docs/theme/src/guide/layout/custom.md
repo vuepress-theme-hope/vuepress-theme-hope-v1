@@ -62,10 +62,11 @@ All key names of the `custom` object are the `camelCase` version of the slot nam
 
 You can fill in an absolute path or a relative path under the `.vuepress` folder.
 
-::: details example
+::::: details example
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -81,9 +82,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js
 // .vuepress/config.js
@@ -99,7 +100,8 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 :::
+
+::::
+
+:::::

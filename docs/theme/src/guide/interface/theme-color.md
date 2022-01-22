@@ -23,10 +23,11 @@ The first color of the theme color is the default accent color, you need to set 
 
 You need to configure `themeConfig.themeColor` in the format `{ colorname1: colorvalue, colorname2: colorvalue, ... }`:
 
-::: details Example
+::::: details Example
 
-<CodeGroup>
-<CodeGroupItem title="ts">
+:::: code-group
+
+::: code-group-item ts
 
 ```ts
 // .vuepress/config.ts
@@ -44,9 +45,9 @@ export default theme.config({
 });
 ```
 
-</CodeGroupItem>
+:::
 
-<CodeGroupItem title="js">
+::: code-group-item js
 
 ```js {5-10}
 // .vuepress/config.js
@@ -64,10 +65,11 @@ module.exports = config({
 });
 ```
 
-</CodeGroupItem>
-</CodeGroup>
-
 :::
+
+::::
+
+:::::
 
 To let the Stylus compiler to work, you also need to assign the color variable to `$colorPicker` and write it to `palette.styl` under `.vuepress/styles`:
 
@@ -76,9 +78,9 @@ To let the Stylus compiler to work, you also need to assign the color variable t
 ```stylus
 // .vuepress/styles/palette.styl
 $colorPicker = {
-   colorName1: red,
-   colorName2: yellow,
-   colorName3: blue
+   colorName1: red,
+   colorName2: yellow,
+   colorName3: blue
 }
 ```
 

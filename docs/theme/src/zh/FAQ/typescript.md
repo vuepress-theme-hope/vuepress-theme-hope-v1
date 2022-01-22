@@ -8,35 +8,47 @@ category: FAQ
 
 1. 请确保你的项目依赖了 typescript，如果没有，请执行
 
-   <CodeGroup>
-   <CodeGroupItem title="yarn">
+   :::: code-group
+
+   ::: code-group-item yarn
+
    ```bash
    yarn add -D typescript
    ```
-   </CodeGroupItem>
 
-   <CodeGroupItem title="npm">
+   :::
+
+   ::: code-group-item npm
+
    ```bash
    npm i -D typescript
    ```
-   </CodeGroupItem>
-   </CodeGroup>
+
+   :::
+
+::::
 
 1. 确保项目根目录下有一个合法的 tsconfig.json 文件，，如果没有，请执行
 
-   <CodeGroup>
-   <CodeGroupItem title="yarn">
+   :::: code-group
+
+   ::: code-group-item yarn
+
    ```bash
    yarn tsc --init
    ```
-   </CodeGroupItem>
 
-   <CodeGroupItem title="npm">
+   :::
+
+   ::: code-group-item npm
+
    ```bash
    npx tsc --init
    ```
-   </CodeGroupItem>
-   </CodeGroup>
+
+   :::
+
+::::
 
 1. 保证你的项目至少有一个 TypeScript 文件被其 include。
 

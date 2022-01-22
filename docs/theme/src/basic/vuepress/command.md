@@ -8,65 +8,87 @@ tags:
 
 ## Install Dependency
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
+
 ```bash
 yarn install
 ```
-</CodeGroupItem>
 
-<CodeGroupItem title="npm">
+:::
+
+::: code-group-item npm
+
 ```bash
 npm install
 ```
-</CodeGroupItem>
 
-<CodeGroupItem title="yarn short">
+:::
+
+::: code-group-item yarn short
+
 ```bash
 yarn
 ```
-</CodeGroupItem>
 
-<CodeGroupItem title="npm short">
+:::
+
+::: code-group-item npm short
+
 ```bash
 npm i
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
+
+::::
 
 ## Update Dependency
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
+
 ```bash
 yarn upgrade
 ```
-</CodeGroupItem>
 
-<CodeGroupItem title="npm">
+:::
+
+::: code-group-item npm
+
 ```bash
 npm update
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
+
+::::
 
 ## Start Dev
 
 Open local develop environment, please visit[localhost:8080](http://localhost:8080)。
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
+
 ```bash
 yarn run serve
 ```
-</CodeGroupItem>
 
-<CodeGroupItem title="npm">
+:::
+
+::: code-group-item npm
+
 ```bash
 npm run serve
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
+
+::::
 
 ::: tip
 
@@ -78,16 +100,22 @@ Use `Ctrl + C` to stop local dev process.
 
 Generate the files that will be deployed to the server.
 
-<CodeGroup>
-<CodeGroupItem title="yarn">
+:::: code-group
+
+::: code-group-item yarn
+
 ```bash
 yarn run build
 ```
-</CodeGroupItem>
 
-<CodeGroupItem title="npm">
+:::
+
+::: code-group-item npm
+
 ```bash
 npm run build
 ```
-</CodeGroupItem>
-</CodeGroup>
+
+:::
+
+::::
