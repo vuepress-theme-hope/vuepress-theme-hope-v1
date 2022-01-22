@@ -7,17 +7,49 @@ icon: time
 
 <!-- more -->
 
+## v1.27.0
+
+### 代码块分组 <Badge text="breaking changes" type="error" />
+
+你应该使用
+
+````md
+:::: code-group
+
+::: code-group-item title1
+
+```text
+code1
+```
+
+:::
+
+::: code-group-item title2
+
+```text
+code1
+```
+
+:::
+
+::::
+````
+
+来替代 `<CodeGroup />` 和 `<CodeGroupItem />`。
+
+它现在由 `vuepress-plugin-md-enhance` 中的 `codegroup` 选项所控制。
+
 ## v1.26.0
 
-### ThemeConfig reading <Badge text="config" type="warn" />
+### 停止读取主题配置 <Badge text="config" type="warn" />
 
 现在大多插件不再读取 `themeConfig`，所以使用者和调用主题必须直接传入所需选项。
 
-### Comment rebuild <Badge text="破坏性变更" type="error" />
+### 评论组件重构 <Badge text="破坏性变更" type="error" />
 
 `<PageInfo />` 已从评论插件中剥离, 评论插件现在会全局注册 `<CommentService />` 组件。
 
-### Components rebuild <Badge text="破坏性变更" type="error" />
+### 组件库重构 <Badge text="破坏性变更" type="error" />
 
 `<PageInfo />` 提取到了 components 插件, 我们建议你使用 `v-bind` 指令传入它需要的属性。
 
@@ -27,19 +59,19 @@ Components 插件现在支持 `locales` 选项。
 
 ## v1.25.0
 
-### Container Rebuild <Badge text="新增" />
+### 自定义容器重做 <Badge text="新增" />
 
 - **md-enhance:** 添加 `container` 和 `delay` 选项
 - **md-enhance:** rebuild container styles and add note container
 
-### Others
+### 其他
 
 - **photo-swipe:** 添加 `delay` 选项
 - **theme:** 添加 `blog.autoExcerpt` 选项
 
 ## v1.24.0
 
-### Locales support <Badge text="新增" />
+### 国际化支持 <Badge text="新增" />
 
 下面的主题和插件支持通过 `locales` 选项配置国际化文字:
 
@@ -61,13 +93,13 @@ Components 插件现在支持 `locales` 选项。
 
 ## v1.21.0
 
-### Features
+### 新功能
 
 - 添加 `ru-RU` 和 `uk-UA` 语言支持
 
 ## v1.20.4
 
-### Features
+### 新功能
 
 - **theme**: 为页脚添加国际化支持
 
@@ -75,7 +107,7 @@ Components 插件现在支持 `locales` 选项。
 
 ## v1.20.0
 
-### Features
+### 新功能
 
 - **md-enhance**: 重构代码演示
 

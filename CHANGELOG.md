@@ -1,5 +1,39 @@
 # Changelog
 
+## [1.27.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.26.0...v1.27.0) (2022-01-22)
+
+### Features
+
+- move CodeGroup to md-enhance and convert to container ([a94a9d5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a94a9d5a143cf9844136a2cd93c1864431302d3d))
+
+### BREAKING CHANGES
+
+You should use
+
+````md
+:::: code-group
+
+::: code-group-item title1
+
+```text
+code1
+```
+
+:::
+
+::: code-group-item title2
+
+```text
+code1
+```
+
+:::
+
+::::
+````
+
+intead of `<CodeGroup />` and `<CodeGroupItem />`, and it's controled by `codegroup` in `vuepress-plugin-md-enhance`.
+
 ## [1.26.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.25.0...v1.26.0) (2022-01-21)
 
 ### Bug Fixes

@@ -7,6 +7,36 @@ This file contain all notable changes of `vuepress-theme-hope` and its plugins.
 
 <!-- more -->
 
+## v1.27.0
+
+### CodeGroup <Badge text="breaking changes" type="error" />
+
+You should use
+
+````md
+:::: code-group
+
+::: code-group-item title1
+
+```text
+code1
+```
+
+:::
+
+::: code-group-item title2
+
+```text
+code1
+```
+
+:::
+
+::::
+````
+
+intead of `<CodeGroup />` and `<CodeGroupItem />`, and it's controled by `codegroup` in `vuepress-plugin-md-enhance`.
+
 ## v1.26.0
 
 ### ThemeConfig reading <Badge text="config" type="warn" />
