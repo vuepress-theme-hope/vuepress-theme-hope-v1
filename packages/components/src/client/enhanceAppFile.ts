@@ -1,22 +1,17 @@
-import BackToTop from "./BackToTop.vue";
-import Badge from "./Badge.vue";
-import BreadCrumb from "./BreadCrumb.vue";
-import CodeGroup from "./CodeGroup.vue";
-import CodeGroupItem from "./CodeGroupItem.vue";
-import Pagination from "./Pagination.vue";
-import ScreenFull from "./ScreenFull.vue";
+import BackToTop from "@BackToTop";
+import Badge from "@Badge";
+import BreadCrumb from "@BreadCrumb";
+import Pagination from "@Pagination";
+import ScreenFull from "@ScreenFull";
 
 import type { EnhanceApp } from "@mr-hope/vuepress-types";
 
 const enhanceApp: EnhanceApp = ({ Vue }) => {
-  if (BACK_TO_TOP) Vue.component("BackToTop", BackToTop);
-  if (BADGE) Vue.component("Badge", Badge);
-  if (BREADCRUMB) Vue.component("BreadCrumb", BreadCrumb);
-  if (PAGINATION) Vue.component("Pagination", Pagination);
-  if (SCREEN_FULL) Vue.component("ScreenFull", ScreenFull);
-
-  Vue.component("CodeGroup", CodeGroup);
-  Vue.component("CodeGroupItem", CodeGroupItem);
+  if (BackToTop.name) Vue.component("BackToTop", BackToTop);
+  if (Badge.name) Vue.component("Badge", Badge);
+  if (BreadCrumb.name) Vue.component("BreadCrumb", BreadCrumb);
+  if (Pagination.name) Vue.component("Pagination", Pagination);
+  if (ScreenFull.name) Vue.component("ScreenFull", ScreenFull);
 };
 
 export default enhanceApp;

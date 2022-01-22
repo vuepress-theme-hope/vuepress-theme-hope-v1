@@ -17,8 +17,11 @@ import { getPluginConfig } from "./pluginConfig";
 import type { Plugin } from "@mr-hope/vuepress-types";
 import type { MarkdownEnhanceOptions } from "../types";
 
+const noopModule = "@mr-hope/vuepress-shared/lib/esm/noopModule";
+
 const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
   const alignEnable = options.enableAll || options.align || false;
+  const codegroupEnable = options.enableAll || options.codegroup || false;
   const demoEnable = options.enableAll || options.demo || false;
   const flowchartEnable = options.enableAll || options.flowchart || false;
   const footnoteEnable = options.enableAll || options.footnote || false;
@@ -38,24 +41,27 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
     name: "md-enhance",
 
     alias: {
+      "@CodeGroup": codegroupEnable
+        ? resolve(__dirname, "../client/CodeGroup.vue")
+        : noopModule,
+      "@CodeGroupItem": codegroupEnable
+        ? resolve(__dirname, "../client/CodeGroupItem.vue")
+        : noopModule,
       "@FlowChart": flowchartEnable
         ? resolve(__dirname, "../client/FlowChart.vue")
-        : "@mr-hope/vuepress-shared/lib/esm/noopModule",
+        : noopModule,
       "@Mermaid": mermaidEnable
         ? resolve(__dirname, "../client/Mermaid.js")
-        : "@mr-hope/vuepress-shared/lib/esm/noopModule",
+        : noopModule,
       "@Presentation": presentationEnable
         ? resolve(__dirname, "../client/Presentation.vue")
-        : "@mr-hope/vuepress-shared/lib/esm/noopModule",
+        : noopModule,
     },
 
     define: (): Record<string, unknown> => ({
       MARKDOWN_ENHANCE_ALIGN: alignEnable,
       MARKDOWN_ENHANCE_DELAY: options.delay || 500,
-      MARKDOWN_ENHANCE_FLOWCHART: flowchartEnable,
       MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
-      MARKDOWN_ENHANCE_MERMAID: mermaidEnable,
-      MARKDOWN_ENHANCE_PRESENTATION: presentationEnable,
       MARKDOWN_ENHANCE_TASKLIST: tasklistEnable,
       MARKDOWN_ENHANCE_TEX: texEnable,
       CODE_DEMO_OPTIONS: {

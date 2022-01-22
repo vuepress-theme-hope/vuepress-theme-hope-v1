@@ -13,10 +13,7 @@ export * from "./tasklist";
 declare global {
   const CODE_DEMO_OPTIONS: CodeDemoOptions;
   const MARKDOWN_ENHANCE_ALIGN: boolean;
-  const MARKDOWN_ENHANCE_FLOWCHART: boolean;
   const MARKDOWN_ENHANCE_FOOTNOTE: boolean;
-  const MARKDOWN_ENHANCE_MERMAID: boolean;
-  const MARKDOWN_ENHANCE_PRESENTATION: boolean;
   const MARKDOWN_ENHANCE_TASKLIST: boolean;
   const MARKDOWN_ENHANCE_TEX: boolean;
   const MARKDOWN_ENHANCE_DELAY: number;

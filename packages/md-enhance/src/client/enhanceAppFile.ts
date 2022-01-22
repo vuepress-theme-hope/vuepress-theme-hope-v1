@@ -1,3 +1,5 @@
+import CodeGroup from "@CodeGroup";
+import CodeGroupItem from "@CodeGroupItem";
 import FlowChart from "@FlowChart";
 import Mermaid from "@Mermaid";
 import Presentation from "@Presentation";
@@ -8,14 +10,16 @@ import "./styles/container.styl";
 const enhanceApp: EnhanceApp = ({ Vue }) => {
   if (MARKDOWN_ENHANCE_ALIGN) void import("./styles/align.styl");
 
+  if (CodeGroup.name) Vue.component("CodeGroup", CodeGroup);
+  if (CodeGroupItem.name) Vue.component("CodeGroupItem", CodeGroupItem);
+
   if (MARKDOWN_ENHANCE_FOOTNOTE) void import("./styles/footnote.styl");
 
-  if (MARKDOWN_ENHANCE_FLOWCHART) Vue.component("FlowChart", FlowChart);
+  if (FlowChart.name) Vue.component("FlowChart", FlowChart);
 
-  if (MARKDOWN_ENHANCE_MERMAID) Vue.component("Mermaid", Mermaid);
+  if (Mermaid.name) Vue.component("Mermaid", Mermaid);
 
-  if (MARKDOWN_ENHANCE_PRESENTATION)
-    Vue.component("Presentation", Presentation);
+  if (Presentation.name) Vue.component("Presentation", Presentation);
 
   if (MARKDOWN_ENHANCE_TASKLIST) void import("./styles/tasklist.styl");
 

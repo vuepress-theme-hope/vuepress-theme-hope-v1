@@ -31,6 +31,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * 是否启用自定义容器
    *
    * - info
+   * - note
    * - tip
    * - warning
    * - danger
@@ -41,6 +42,7 @@ export type MarkdownEnhanceOptions = Partial<{
    * Whether to enable custom container including
    *
    * - info
+   * - note
    * - tip
    * - warning
    * - danger
@@ -51,6 +53,15 @@ export type MarkdownEnhanceOptions = Partial<{
    * @default false
    */
   container: boolean;
+
+  /**
+   * 是否启用代码组
+   *
+   * Whether to enable codegroup
+   *
+   * @default false
+   */
+  codegroup: boolean;
 
   /**
    * 是否启用自定义对齐支持

@@ -59,6 +59,32 @@ export const getPluginConfig = (
       ["container", { type: "justify", defaultTitle: "" }]
     );
 
+  if (markdownOptions.codegroup || markdownOptions.enableAll)
+    config.push(
+      [
+        "container",
+        {
+          type: "code-group",
+          before: () => `<CodeGroup>\n`,
+          after: () => "</CodeGroup>\n",
+        },
+      ],
+      [
+        "container",
+        {
+          type: "code-group-item",
+          before: (info: string): string => {
+            const isActive = info.split(":").pop() === "active";
+
+            return `<CodeGroupItem title="${
+              isActive ? info.replace(/:active$/, "") : info
+            }"${isActive ? " active" : ""}>\n`;
+          },
+          after: () => "</CodeGroupItem>\n",
+        },
+      ]
+    );
+
   if (markdownOptions.demo || markdownOptions.enableAll)
     config.push(["container", { type: "demo", render: codeDemoRender }]);
 

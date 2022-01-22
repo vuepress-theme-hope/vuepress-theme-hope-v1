@@ -50,6 +50,7 @@
 .code-group-nav-tab
   button()
   position relative
+  min-width 3rem
   border 0
   padding 6px 10px
   cursor pointer

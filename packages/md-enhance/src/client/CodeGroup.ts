@@ -38,7 +38,7 @@ export default Vue.extend({
             active?: string | boolean;
           };
 
-          if (propsData.active) this.activeTabIndex = index;
+          if ("active" in propsData) this.activeTabIndex = index;
 
           return {
             title: propsData.title,

@@ -782,6 +782,18 @@ declare module "*.css" {
   export default content;
 }
 
+declare module "@CodeGroup" {
+  import vue from "vue";
+
+  export default vue;
+}
+
+declare module "@CodeGroupItem" {
+  import vue from "vue";
+
+  export default vue;
+}
+
 declare module "@FlowChart" {
   import vue from "vue";
 
