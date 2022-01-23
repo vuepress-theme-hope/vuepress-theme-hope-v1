@@ -35,7 +35,7 @@ code1
 ::::
 ````
 
-intead of `<CodeGroup />` and `<CodeGroupItem />`, and it's controled by `codegroup` in `vuepress-plugin-md-enhance`.
+intead of `<CodeGroup />` and `<CodeGroupItem />`, and it’s controlled by `codegroup` in `vuepress-plugin-md-enhance`.
 
 ## v1.26.0
 

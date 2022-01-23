@@ -81,7 +81,7 @@ Though VuePress generates HTML files through SSR[^ssr] for all pages, these file
 
 [^ssr]: **SSR**: **S**erver **S**ide **R**endering,
 [^seo]: **SEO**: **S**earch **E**ngine **O**ptimization. For details, please see [SEO Introduction](https://mrhope.site/code/site/html/definition/seo/)
-[^spa]: **SPA**: **S**ingle **P**age **A**pplication, mMost of them only have the homepage, and use history mode to handle routing instead of actually navigating between pages.
+[^spa]: **SPA**: **S**ingle **P**age **A**pplication, most of them only have the homepage, and use history mode to handle routing instead of actually navigating between pages.
 
 VuePress is essentially a SPA. This means that you can enter from the homepage to access all pages normally only caching the homepage.
 
