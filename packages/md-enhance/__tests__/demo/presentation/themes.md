@@ -1,13 +1,13 @@
 ---
-title: 幻灯片主题
+title: Themes
 icon: skin
 ---
 
 <!--lint disable no-duplicate-headings-->
 
-可用的主题:
+Theme available:
 
-- `auto` (默认)
+- `auto` (Default)
 - `black`
 - `white`
 - `league`
@@ -26,13 +26,13 @@ icon: skin
 
 @slidestart
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -48,13 +48,13 @@ const add = (a, b) => {
 
 @slidestart black
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -70,13 +70,13 @@ const add = (a, b) => {
 
 @slidestart white
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -92,13 +92,13 @@ const add = (a, b) => {
 
 @slidestart league
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -114,13 +114,13 @@ const add = (a, b) => {
 
 @slidestart beige
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -136,13 +136,13 @@ const add = (a, b) => {
 
 @slidestart sky
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -158,13 +158,13 @@ const add = (a, b) => {
 
 @slidestart night
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -180,13 +180,13 @@ const add = (a, b) => {
 
 @slidestart serif
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -202,13 +202,13 @@ const add = (a, b) => {
 
 @slidestart simple
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -224,13 +224,13 @@ const add = (a, b) => {
 
 @slidestart solarized
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -246,13 +246,13 @@ const add = (a, b) => {
 
 @slidestart blood
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {
@@ -268,13 +268,13 @@ const add = (a, b) => {
 
 @slidestart moon
 
-## 幻灯片标题
+## Slide Title
 
-一个拥有文字和 [链接](https://mrhope.site) 的段落
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 代码高亮
+## Highlight
 
 ```js [2-4|1-5]
 const add = (a, b) => {

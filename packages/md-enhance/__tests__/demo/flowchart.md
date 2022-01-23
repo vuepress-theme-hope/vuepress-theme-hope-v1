@@ -1,9 +1,48 @@
 ---
-title: 流程图
+title: Flowchart
 icon: tree
 ---
 
-## 演示
+Let the Markdown file support flow chart in your VuePress site
+
+<!-- more -->
+
+This plugin is using [flowchart.js](https://github.com/adrai/flowchart.js) to support this feature.
+
+## Configuration
+
+```js {7}
+module.exports = {
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // Enable flowchart
+        flowchart: true,
+      },
+    ],
+  ],
+};
+```
+
+## Syntax
+
+````md
+<!-- ↓ :preset is optional -->
+
+```flow:preset
+
+<!-- Your flowchart code here. -->
+
+```
+````
+
+Available presets for now:
+
+- `vue` (default)
+- `ant`
+
+## Demo
 
 ```flow
 st=>start: Start|past:>http://www.google.com[blank]
@@ -43,21 +82,21 @@ c2(no)->op2->e
 ```
 ````
 
-## 流程图介绍
+## Flowchart Intro
 
-### 节点类型
+### Node Types
 
-定义了结点形状
+Defines the shape that the node will take.
 
-#### 开始 & 结束
+### start & end
 
-被用于流程开始的第一个节点。
-默认文字为 `Start`.
+Used as the first node where flows start from.
+Default text is `Start`.
 
 - `[Variable]->start: [Text]`
 
-被用于流程结束的最后一个节点。
-默认文字为 `End`.
+Used as the last node where a flow ends.
+Default text is `End`.
 
 - `[Variable]->end: [Text]`
 
@@ -77,7 +116,9 @@ e=>end: End
 st->e
 ```
 
-#### 操作
+### operation
+
+Indicates that an operation needs to happen in the flow.
 
 - `[Variable]->operation: [Text]`
 
@@ -97,7 +138,9 @@ e=>end: End
 process->e
 ```
 
-#### 输入输出
+### inputoutput
+
+Indicates that IO happens in a flow.
 
 - `[Variable]->inputoutput: [Text]`
 
@@ -117,7 +160,9 @@ e=>end: End
 process->e
 ```
 
-#### 子程序
+### subroutine
+
+Indicates that a subroutine happens in the flow and that there should be another flowchart that documents this subroutine.
 
 - `[Variable]->subroutine: [Text]`
 
@@ -137,7 +182,9 @@ e=>end: End
 process->e
 ```
 
-#### 条件
+### condition
+
+Allows for a conditional or logical statement to direct the flow into one of two or more paths.
 
 - `[Variable]->condition: [Text]`
 
@@ -164,9 +211,9 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-#### 平行
+### parallel
 
-定义同时开始的多个程序。
+Allows for multiple flows to happen simultaneously.
 
 - `[Variable]->parallel: [Text]`
 - `[Variable](path1, direction)->[Position]`
@@ -192,42 +239,44 @@ para(path1, bottom)->process->e
 para(path2)->e
 ```
 
-### 链接
+## Connections
 
-连接方式在流程图中节点定义后描述，使用 `->` 指定一个节点之间的链接，例如 `nodeVar1->nodeVar2->nodeVar3`
+Connections are defined in their own section below the node definitions.
 
-流程可以被分开:
+The `->` operator specifies a connection from one node to another like `nodeVar1->nodeVar2->nodeVar3`.
+
+Not all nodes need to be specified in one string and can be separaged like so
 
 ```md
 nodeVar1->nodeVar2
 nodeVar2->nodeVar3
 ```
 
-连接格式定义如下:
+Connection syntax is as follows:
 
 `<node variable name>[(<specificaion1>[, <specification2])]-><node variable name>[[(<specificaion1>[, <specification2])]-><node variable name>]`
 
-在 `[]` 中的项是可选的。
+Items in `[]` are optional.
 
-### 方向
+### Directions
 
-以下方向可用，并定义了连接将从节点离开的方向。如果指定符不止一个，则总是最后一个。所有节点都有默认方向，这使其成为可选规范。`<direction>` 的可选值为:
+The following directions are available and define the direction the connection will leave the node from. If there are more than one specifiers, it is always the last. All nodes have a default direction making this an optional specification. `<direction>` will be used and one of the below list should be used in its place.
 
 - `left`
 - `right`
 - `top`
 - `bottom`
 
-### 节点特定说明符
+### Node Specific Specifiers by Type
 
-每个节点变量都有可选的说明符，例如方向，有些变量有特殊的说明符，具体取决于下面定义的节点类型。在 `()` 中的变量名后添加说明符，并用`,` 分隔，例如 `nodeVar (spec1，spec2)`。
+Each node variables has optional specifiers, like direction, and some have special specifiers depending on the node type that are defined below. Specifiers are added after the variable name in `()` and separated with `,` like `nodeVar(spec1, spec2)`.
 
 - **start**
   **operation**
   **inputoutput**
   **subroutine**
 
-  可选方向
+  Optional direction
 
   `startVar(<direction>)->nextNode`
 
@@ -239,9 +288,9 @@ nodeVar2->nodeVar3
 
 - **condition**
 
-  必需指定 `yes` or `no`
+  Required logical specification of `yes` or `no`
 
-  可选方向
+  Optional direction
 
   ```md
   conditionalVar(yes, <direction>)->nextNode1
@@ -250,9 +299,9 @@ nodeVar2->nodeVar3
 
 - **parallel**
 
-  必需指定路径方向 `path1`, `path2`, 或 `path3`
+  Required path specification of `path1`, `path2`, or `path3`
 
-  可选方向
+  Optional direction
 
   ```md
   parallelVar(path1, <direction>)->nextNode1
@@ -260,23 +309,25 @@ nodeVar2->nodeVar3
   parallelVar(path3, <direction>)->nextNode3
   ```
 
-### 网址
+### Links
 
-可以使用 `:>` 运算符将外部链接添加到节点。
+A external link can be added to a node with the `:>` operator.
 
-`[blank]` 指定打开新的页面
+The `st` node is linked with `http://www.google.com` and will open a new tab because `[blank]` is at the end of the URL.
+
+The `e` node is linked with `http://www.yahoo.com` and will cause the page to navigate to that page instead of opening a new tab.
 
 ```md
 st=>start: Start:>http://www.google.com[blank]
 e=>end: End:>http://www.yahoo.com
 ```
 
-### 建议
+## Advice
 
-文本中可能不应该使用的符号: `=>`、`->`、 `:>`、`|`、`@>` 和 `:$`
+Symbols that should possibly not be used in the text: `=>` and `->` and `:>` and `|` and `@>` and `:$`
 
-如果要在流程图中强调特定路径，则可以另外定义它，如下所示:
+To emphasize a specific path in your flowchart, you can define it like this:
 
-```
+```md
 st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})
 ```

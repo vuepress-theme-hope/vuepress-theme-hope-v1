@@ -50,6 +50,8 @@ module.exports = {
     sidebar: {
       "/": [
         "",
+        "containter",
+        "code-group",
         "sup-sub",
         "align",
         "footnote",
@@ -58,7 +60,11 @@ module.exports = {
         "flowchart",
         "mermaid",
         "tex",
-        "demo",
+        {
+          title: "Code demo",
+          collapsable: false,
+          children: ["demo/", "demo/normal", "demo/vue", "demo/react"],
+        },
         {
           title: "Presentation",
           collapsable: false,

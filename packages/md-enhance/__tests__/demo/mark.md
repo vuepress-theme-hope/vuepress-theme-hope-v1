@@ -1,12 +1,36 @@
 ---
-title: 标记
+title: Markup
 icon: write
 ---
 
-## 案例
+Make Markdown files in your VuePress site support markup.
 
-Mr.Hope ==十分== 帅
+<!-- more -->
+
+## Configuration
+
+```js {7}
+module.exports = {
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // open tag
+        mark: true,
+      },
+    ],
+  ],
+};
+```
+
+## Syntax
+
+Use `== ==` to mark.
+
+## Demo
+
+Mr. Hope is ==handsome==.
 
 ```md
-Mr.Hope ==十分== 帅
+Mr. Hope is ==handsome==.
 ```

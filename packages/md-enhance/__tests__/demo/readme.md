@@ -1,54 +1,82 @@
 ---
-title: 快速上手
+title: Get Started
 icon: markdown
 ---
 
-## 新增的更多语法
+By installing and enableing this plugin, you can use more syntax in your Markdown files.
 
-### 自定义对齐
+::: tip
+
+Don’t worry about the size of your site. If you don’t enable related features, the final code won’t include code for these features.
+
+At the same time, VuePress itself adds some Markdown syntaxes. You can [view the official documentation](https://v1.vuepress.vuejs.org/guide/markdown.html).
+
+:::
+
+## Enable all
+
+You can set `enableAll: true` in plugin options to enable all features of this plugin.
+
+::: danger
+
+Please use this option ONLY for playing or testing.
+
+As time grows, `vupress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
+
+Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check extra syntax)
+
+Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
+
+Please use the options below and enable ONLY the feature you want to use.
+
+:::
+
+## New Feature
+
+### Superscript and Subscript
+
+19^th^ H~2~O
+
+- [View Detail](sup-sub.md)
+
+### Align
 
 ::: center
 
-我是居中的
+I am center
 
 :::
 
 ::: right
 
-我在右对齐
+I am right align
 
 :::
 
-- [查看详情](align.md)
+- [View Detail](align.md)
 
-### 上下角标
+### Footnote
 
-19^th^ H~2~O
+This text has footnote[^first].
 
-- [查看详情](sup-sub.md)
+[^first]: This is footnote content
 
-### 脚注
+- [View Detail](footnote.md)
 
-此文字有脚注[^first].
+### Mark
 
-[^first]: 这是脚注内容
+You can mark ==important words== .
 
-- [查看详情](footnote.md)
+- [View Detail](mark.md)
 
-### 标记
+### Tasklist
 
-你可以标记 ==重要的内容== 。
+- [x] Plan A
+- [ ] Plan B
 
-- [查看详情](mark.md)
+- [View Detail](tasklist.md)
 
-### 任务列表
-
-- [x] 计划 1
-- [ ] 计划 2
-
-- [查看详情](tasklist.md)
-
-### 流程图
+### Flowchart
 
 ```flow
 cond=>condition: Process?
@@ -59,9 +87,9 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-- [查看详情](flowchart.md)
+- [View Detail](flowchart.md)
 
-### Mermaid 图表
+### Mermaid
 
 ```mermaid
 flowchart TB
@@ -80,29 +108,29 @@ flowchart TB
     two --> c2
 ```
 
-- [查看详情](mermaid.md)
+- [View Detail](mermaid.md)
 
-### Tex 语法
+### Tex
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [查看详情](tex.md)
+- [View Detail](tex.md)
 
-### 代码演示
+### Code Demo
 
-::: demo 一个普通 Demo
+::: demo A normal demo
 
 ```html
 <h1>Mr.Hope</h1>
-<p><span id="very">十分</span> 帅</p>
+<p>Is <span id="very">very</span> handsome</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("十分帅");
+  alert("Very handsome!");
 });
 ```
 
@@ -114,26 +142,26 @@ span {
 
 :::
 
-- [查看详情](demo.md)
+- [View Detail](demo/readme.md)
 
-### 幻灯片
+### Presentation
 
 @slidestart
 
-## 幻灯片 1
+## Slide 1
 
-一个有文字和 [链接](https://mrhope.site) 的段落
-
----
-
-## 幻灯片 2
-
-- 项目 1
-- 项目 2
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 幻灯片 3.1
+## Slide 2
+
+- Item 1
+- Item 2
+
+---
+
+## Slide 3.1
 
 ```js
 const a = 1;
@@ -141,7 +169,7 @@ const a = 1;
 
 --
 
-## 幻灯片 3.2
+## Slide 3.2
 
 $$
 J(\theta_0,\theta_1) = \sum_{i=0}
@@ -149,4 +177,4 @@ $$
 
 @slideend
 
-- [查看详情](presentation/readme.md)
+- [View Detail](presentation/readme.md)

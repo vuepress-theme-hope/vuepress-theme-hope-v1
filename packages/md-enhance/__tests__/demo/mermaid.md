@@ -3,9 +3,43 @@ title: Mermaid
 icon: diagram
 ---
 
-## 案例
+Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/) in your VuePress site.
 
-### 流程图
+<!-- more -->
+
+## Configuration
+
+```js {7}
+module.exports = {
+  plugins: [
+    [
+      "md-enhance",
+      {
+        // Enable mermaid
+        mermaid: true,
+      },
+    ],
+  ],
+};
+```
+
+## Syntax
+
+````md
+```mermaid
+
+<!-- Your mermaid code here. -->
+
+```
+````
+
+## Usage
+
+Please see [mermaid](https://mermaid-js.github.io/mermaid/#/).
+
+## Demo
+
+### Flowchart
 
 ```mermaid
 flowchart TB
@@ -47,7 +81,7 @@ flowchart TB
 
 :::
 
-### 循序图
+### Sequence Diagram
 
 ```sequence
 Alice ->> Bob: Hello Bob, how are you?
@@ -77,7 +111,7 @@ Alice->John: Yes... John, how are you?
 
 :::
 
-### 类图
+### Class Diagram
 
 ```class
 class Square~Shape~{
@@ -111,7 +145,7 @@ Square : +getMessages() List~string~
 
 :::
 
-### 状态图
+### State Diagram
 
 ```state
 [*] --> Active
@@ -155,7 +189,7 @@ state Active {
 
 :::
 
-### 关系图
+### Entity Relationship Diagrams
 
 ```er
 CAR ||--o{ NAMED-DRIVER : allows
@@ -193,7 +227,7 @@ PERSON {
 
 :::
 
-### 用户日记图
+### User Journey Diagram
 
 ```journey
 title My working day
@@ -223,7 +257,7 @@ section Go home
 
 :::
 
-### 甘特图
+### Gantt diagrams
 
 ```gantt
 dateFormat  YYYY-MM-DD
@@ -293,7 +327,7 @@ Add another diagram to demo page    :48h
 
 :::
 
-### 饼图
+### Pie chart diagrams
 
 ```pie
 title What Voldemort doesn't have?
@@ -315,7 +349,7 @@ title What Voldemort doesn't have?
 
 :::
 
-### 一个复杂的案例
+### A complex example
 
 ```mermaid
 graph TB
