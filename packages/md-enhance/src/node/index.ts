@@ -21,6 +21,7 @@ const noopModule = "@mr-hope/vuepress-shared/lib/esm/noopModule";
 
 const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
   const alignEnable = options.enableAll || options.align || false;
+  const containerEnable = options.enableAll || options.container || false;
   const codegroupEnable = options.enableAll || options.codegroup || false;
   const demoEnable = options.enableAll || options.demo || false;
   const flowchartEnable = options.enableAll || options.flowchart || false;
@@ -60,6 +61,7 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
 
     define: (): Record<string, unknown> => ({
       MARKDOWN_ENHANCE_ALIGN: alignEnable,
+      MARKDOWN_ENHANCE_CONTAINER: containerEnable,
       MARKDOWN_ENHANCE_DELAY: options.delay || 500,
       MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
       MARKDOWN_ENHANCE_TASKLIST: tasklistEnable,

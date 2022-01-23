@@ -5,10 +5,10 @@ import Mermaid from "@Mermaid";
 import Presentation from "@Presentation";
 import type { EnhanceApp } from "@mr-hope/vuepress-types";
 
-import "./styles/container.styl";
-
 const enhanceApp: EnhanceApp = ({ Vue }) => {
   if (MARKDOWN_ENHANCE_ALIGN) void import("./styles/align.styl");
+
+  if (MARKDOWN_ENHANCE_CONTAINER) void import("./styles/container.styl");
 
   if (CodeGroup.name) Vue.component("CodeGroup", CodeGroup);
   if (CodeGroupItem.name) Vue.component("CodeGroupItem", CodeGroupItem);
