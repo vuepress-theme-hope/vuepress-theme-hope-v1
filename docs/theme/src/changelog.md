@@ -7,6 +7,10 @@ This file contain all notable changes of `vuepress-theme-hope` and its plugins.
 
 <!-- more -->
 
+## v1.27.1
+
+- **md-enhance:** add `lazyLoad` option
+
 ## v1.27.0
 
 ### CodeGroup <Badge text="breaking changes" type="error" />

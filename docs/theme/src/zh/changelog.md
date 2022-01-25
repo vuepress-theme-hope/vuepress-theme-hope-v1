@@ -7,6 +7,10 @@ icon: time
 
 <!-- more -->
 
+## v1.27.1
+
+- **md-enhance:** 添加了 `lazyLoad` 选项控制图片懒加载
+
 ## v1.27.0
 
 ### 代码块分组 <Badge text="breaking changes" type="error" />

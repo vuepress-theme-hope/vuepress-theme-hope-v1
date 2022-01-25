@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.27.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.27.0...v1.27.1) (2022-01-25)
+
+### Bug Fixes
+
+- fix missing deps ([db5064d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/db5064d972ea423e69fd2a4b1acc8127b52586c3))
+- **md-enhance:** only import container styles when needed ([5e13193](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e13193b72a1ffccc2f125a4f30aef2237425f41))
+
+### Features
+
+- **md-enhance:** add option `lazyLoad` ([dc16d34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dc16d343ad28684c777140bbf8018e7475379fe2))
+
 ## [1.27.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.26.0...v1.27.0) (2022-01-22)
 
 ### Features
