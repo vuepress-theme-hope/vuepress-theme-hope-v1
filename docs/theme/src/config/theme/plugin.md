@@ -43,7 +43,7 @@ Please use the options below and enable ONLY the feature you want to use.
 
 :::
 
-### mdEnhance.lineNumbers <Badge text="Default value changed" type = "error" />
+### mdEnhance.lineNumbers <Badge text="Default value changed" type="error" />
 
 - Type: `boolean`
 - Default: `true`
@@ -56,6 +56,13 @@ Whether to show line numbers to the left of each code block
 - Default: `true`
 
 Whether to fix image links containing special characters
+
+### mdEnhance.lazyLoad <Badge text="Default behavior changed" type="warning" />
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to lazy load every images in page in native way
 
 ### mdEnhance.align
 

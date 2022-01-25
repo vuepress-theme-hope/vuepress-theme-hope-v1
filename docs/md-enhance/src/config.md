@@ -26,7 +26,7 @@ Please use the options below and enable ONLY the feature you want to use.
 
 :::
 
-## lineNumbers
+## lineNumbers <Badge text="Default value changed" type="error" />
 
 - Type: `boolean`
 - Default: `true`
@@ -38,7 +38,14 @@ Whether to display the line number to the left of each code block.
 - Type: `boolean`
 - Default: `true`
 
-Whether to fix image links containing special characters
+Whether to fix image links containing special characters.
+
+## lazyLoad <Badge text="Default behavior changed" type="warning" />
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to lazy load every images in page in native way.
 
 ## delay
 

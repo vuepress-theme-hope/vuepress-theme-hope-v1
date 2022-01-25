@@ -21,16 +21,18 @@ const urlDecode = (url: string, config: DecodeURLOption): string => {
   return /^(\w+?:\/)?\.?\//.test(realURL) ? realURL : `./${realURL}`;
 };
 
-const decodeURL = (md: MarkdownIt, config: DecodeURLOption = "*"): void => {
-  md.renderer.rules.image = (tokens, idx): string => {
+export const decodeURL = (
+  md: MarkdownIt,
+  config: DecodeURLOption = "*"
+): void => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const originalImageRender = md.renderer.rules.image!;
+
+  md.renderer.rules.image = (tokens, idx, options, env, self): string => {
     const token = tokens[idx];
 
-    return `<img src="${urlDecode(
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      token.attrs![token.attrIndex("src")][1],
-      config
-    )}" alt="${md.utils.escapeHtml(token.content)}" />`;
+    token.attrSet("src", urlDecode(token.attrGet("src") || "", config));
+
+    return originalImageRender(tokens, idx, options, env, self);
   };
 };
-
-export default decodeURL;

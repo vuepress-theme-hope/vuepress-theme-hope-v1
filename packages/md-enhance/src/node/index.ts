@@ -2,10 +2,11 @@ import { resolve } from "path";
 import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 
 import { codeDemoDefaultSetting } from "./markdown-it/code-demo";
-import decodeURL from "./markdown-it/decode-url";
+import { decodeURL } from "./markdown-it/decode-url";
 import flowchart from "./markdown-it/flowchart";
 import footnote from "./markdown-it/footnote";
 import katex from "./markdown-it/katex";
+import { lazyLoad } from "./markdown-it/lazy-load";
 import mark from "./markdown-it/mark";
 import mermaid from "./markdown-it/mermaid";
 import presentation from "./markdown-it/presentation";
@@ -93,9 +94,10 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
       : {}),
 
     chainMarkdown: (md): void => {
-      if (options.imageFix !== false) md.plugin("decode-url").use(decodeURL);
+      if (options.lazyLoad !== false) md.plugin("lazy-load").use(lazyLoad);
       if (options.lineNumbers !== false)
         md.plugin("line-numbers").use(lineNumbers);
+      if (options.imageFix !== false) md.plugin("decode-url").use(decodeURL);
       if (options.sup || options.enableAll) md.plugin("sup").use(sup);
       if (options.sub || options.enableAll) md.plugin("sub").use(sub);
       if (footnoteEnable) md.plugin("footnote").use(footnote);

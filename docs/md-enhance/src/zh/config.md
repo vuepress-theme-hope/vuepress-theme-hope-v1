@@ -26,7 +26,7 @@ icon: config
 
 :::
 
-## lineNumbers
+## lineNumbers <Badge text="改变默认值" type="error" />
 
 - 类型: `boolean`
 - 默认值: `true`
@@ -38,7 +38,14 @@ icon: config
 - 类型: `boolean`
 - 默认值: `true`
 
-是否修复包含特殊字符的图片的引用
+是否修复包含特殊字符的图片的引用。
+
+## lazyLoad <Badge text="改变默认行为" type="warn" />
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否使用原生方式懒加载页面图片。
 
 ## delay
 

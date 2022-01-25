@@ -163,6 +163,15 @@ export type MarkdownEnhanceOptions = Partial<{
   presentation: PresentationOptions | boolean;
 
   /**
+   * Whether enable native image lazy loading
+   *
+   * 是否启用原生的图片懒加载
+   *
+   * @default true
+   */
+  lazyLoad?: boolean;
+
+  /**
    * Whether to enable all features.
    *
    * 是否启用全部增强语法

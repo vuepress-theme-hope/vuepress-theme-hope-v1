@@ -55,6 +55,13 @@ Markdown 功能增强，详情请见 [vuepress-plugin-md-enhance 文档][md-enha
 
 是否修复包含特殊字符的图片的引用
 
+### mdEnhance.lazyLoad <Badge text="改变默认行为" type="warn" />
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否使用原生方式懒加载页面图片。
+
 ### mdEnhance.align
 
 - 类型: `boolean`
