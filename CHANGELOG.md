@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.27.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.27.1...v1.27.2) (2022-01-26)
+
+### Bug Fixes
+
+- **theme:** fix failure when `footer` not set ([45a0857](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/45a0857ce2505b3cac8dc38e0f77959c200f0d7c))
+
 ## [1.27.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.27.0...v1.27.1) (2022-01-25)
 
 ### Bug Fixes
