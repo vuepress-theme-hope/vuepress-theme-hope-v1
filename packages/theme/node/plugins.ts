@@ -64,7 +64,7 @@ const resolveFeedOptions = (
         ...themeConfig.feed,
         channel: {
           author: themeConfig.author ? { name: themeConfig.author } : undefined,
-          copyright: themeConfig.footer.copyright || "",
+          copyright: themeConfig.footer?.copyright || "",
           ...(themeConfig.feed?.channel || null),
         },
       };
