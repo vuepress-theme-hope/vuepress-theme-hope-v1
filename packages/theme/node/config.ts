@@ -29,7 +29,10 @@ const defaultConfig = {
 };
 
 const defaultThemeConfig: HopeThemeConfig = {
+  sidebarDepth: 2,
   iconPrefix: "icon-",
+  footer: {},
+  editLinks: true,
 };
 
 export const resolveThemeConfig = (

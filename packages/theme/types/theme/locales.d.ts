@@ -1,18 +1,15 @@
-import {
-  ConvertLocaleConfig,
-  HopeNavBarConfig,
-  HopeSideBarConfig,
-} from "@mr-hope/vuepress-shared";
+import { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
 import { AlgoliaOption } from "@mr-hope/vuepress-types";
+import { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
 import { HopeFooterConfig } from "./layout";
 
 export interface HopeThemeLocaleData {
   /** 当前语言代码 */
-  lang?: string;
+  lang: string;
   /** 多语言下拉菜单的标题 */
-  selectText?: string;
+  selectText: string;
   /** 该语言在下拉菜单中的标签 */
-  label?: string;
+  label: string;
   /** 辅助标签 */
   ariaLabel?: string;
 

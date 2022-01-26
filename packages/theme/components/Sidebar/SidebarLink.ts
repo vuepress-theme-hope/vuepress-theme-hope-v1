@@ -188,11 +188,7 @@ export default Vue.extend({
     const link = renderLink(h, {
       icon:
         $themeConfig.sidebarIcon !== false && item.frontmatter.icon
-          ? `${
-              $themeConfig.iconPrefix === ""
-                ? ""
-                : $themeConfig.iconPrefix || "icon-"
-            }${item.frontmatter.icon}`
+          ? `${$themeConfig.iconPrefix}${item.frontmatter.icon}`
           : "",
       text: item.title || item.path,
       link: item.path,

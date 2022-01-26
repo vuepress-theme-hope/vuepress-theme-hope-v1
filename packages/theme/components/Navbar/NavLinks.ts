@@ -4,7 +4,7 @@ import NavLink from "@theme/components/Navbar/NavLink.vue";
 import { getNavLinkItem } from "@theme/utils/navbar";
 
 import type { NavBarConfigItem } from "@mr-hope/vuepress-types";
-import type { NavBarConfigItem as ResovledNavbarConfigItem } from "@theme/utils/navbar";
+import type { NavBarConfigItem as ResolvedNavbarConfigItem } from "@theme/utils/navbar";
 
 export default Vue.extend({
   name: "NavLinks",
@@ -15,7 +15,7 @@ export default Vue.extend({
   },
 
   computed: {
-    navLinks(): ResovledNavbarConfigItem[] {
+    navLinks(): ResolvedNavbarConfigItem[] {
       const navbar: NavBarConfigItem[] =
         this.$themeLocaleConfig.nav || this.$themeConfig.nav || [];
 

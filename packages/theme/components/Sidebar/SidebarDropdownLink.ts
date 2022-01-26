@@ -22,12 +22,6 @@ export default Vue.extend({
     dropdownAriaLabel(): string {
       return this.item.ariaLabel || this.item.text;
     },
-
-    iconPrefix(): string {
-      const { iconPrefix } = this.$themeConfig;
-
-      return iconPrefix === "" ? "" : iconPrefix || "icon-";
-    },
   },
 
   watch: {

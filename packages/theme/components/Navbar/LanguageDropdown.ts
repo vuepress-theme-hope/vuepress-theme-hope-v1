@@ -7,7 +7,7 @@ import { getNavLinkItem } from "@theme/utils/navbar";
 import type { VNode } from "vue";
 import type VueRouter from "vue-router";
 import type { RouterOptions } from "vue-router";
-import type { NavBarConfigItem as ResovledNavbarConfigItem } from "@theme/utils/navbar";
+import type { NavBarConfigItem as ResolvedNavbarConfigItem } from "@theme/utils/navbar";
 
 export default Vue.extend({
   name: "LanguageDropdown",
@@ -15,7 +15,7 @@ export default Vue.extend({
   components: { NavLink, DropdownLink },
 
   computed: {
-    dropdown(): ResovledNavbarConfigItem | false {
+    dropdown(): ResolvedNavbarConfigItem | false {
       const { locales } = this.$site;
 
       if (locales && Object.keys(locales).length > 1) {

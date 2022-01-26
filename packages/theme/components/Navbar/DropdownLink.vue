@@ -8,7 +8,10 @@
     >
       <slot name="title">
         <span class="title">
-          <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
+          <i
+            v-if="item.icon"
+            :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`"
+          />
           {{ item.text }}
         </span>
       </slot>

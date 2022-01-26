@@ -16,12 +16,6 @@ export default Vue.extend({
       return ensureExt(this.item.link as string);
     },
 
-    iconPrefix(): string {
-      const { iconPrefix } = this.$themeConfig;
-
-      return iconPrefix === "" ? "" : iconPrefix || "icon-";
-    },
-
     active(): boolean {
       // link is home path
       if (

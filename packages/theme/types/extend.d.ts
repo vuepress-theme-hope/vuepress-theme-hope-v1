@@ -1,15 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   BlogMedia,
-  HopeThemeConfig,
-  HopeNavBarConfig,
-  HopeSideBarConfig,
-  HopeFooterConfig,
+  HopeThemeLocalesConfig,
   HopeThemeLocaleData,
+  ResolvedHopeThemeConfig,
 } from "./theme";
 import { PageInfo } from "@mr-hope/vuepress-plugin-comment";
 import { FeedFrontmatterOption } from "@mr-hope/vuepress-plugin-feed";
-import { AlgoliaOption } from "@mr-hope/vuepress-types";
 
 declare module "vue/types/vue" {
   export interface Vue {
@@ -72,23 +69,12 @@ declare module "@mr-hope/vuepress-types" {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface ThemeLocaleData extends HopeThemeLocaleData {
-    /** 当前语言下的标题 */
-    title?: string;
-    /** 当前语言下的描述 */
-    description?: string;
-    /** 导航栏链接 */
-    nav?: HopeNavBarConfig;
-    /** 侧边栏配置 */
-    sidebar?: HopeSideBarConfig;
-    /** 当前语言的 algolia 设置 */
-    algolia?: AlgoliaOption;
-    /** 页脚设置 */
-    footer?: HopeFooterConfig;
-  }
+  interface ThemeLocaleData
+    extends HopeThemeLocaleData,
+      HopeThemeLocalesConfig {}
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface ThemeConfig extends HopeThemeConfig {}
+  interface ThemeConfig extends ResolvedHopeThemeConfig {}
 
   interface Page {
     _chunkName?: string;
