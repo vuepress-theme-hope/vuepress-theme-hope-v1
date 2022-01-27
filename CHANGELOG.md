@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.27.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.27.2...v1.27.3) (2022-01-27)
+
+### Bug Fixes
+
+- **comment:** fix vssue, fix [#1429](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1429) ([ba3fcf2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ba3fcf2f9efa24b1fb3f1520a234af1ae10c009d))
+- **theme:** fix addThis plugin ([9a4d506](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9a4d50679660800dce537eb7c462351b66c51920))
+
 ## [1.27.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.27.1...v1.27.2) (2022-01-26)
 
 ### Bug Fixes
