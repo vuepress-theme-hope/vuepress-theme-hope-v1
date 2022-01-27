@@ -98,6 +98,14 @@ export default hope.config({
       serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
+    git: {
+      timezone: "Asia/Shanghai",
+    },
+
+    mdEnhance: {
+      container: true,
+    },
+
     pwa: {
       favicon: "/feed/favicon.ico",
       themeColor: "#46bd87",

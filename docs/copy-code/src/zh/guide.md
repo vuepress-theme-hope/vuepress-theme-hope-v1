@@ -24,7 +24,7 @@ export default {
     [
       "@mr-hope/copy-code",
       {
-        // your options
+        // 插件选项
       },
     ],
   ],
@@ -42,7 +42,7 @@ module.exports = {
     [
       "@mr-hope/copy-code",
       {
-        // your options
+        // 插件选项
       },
     ],
   ],

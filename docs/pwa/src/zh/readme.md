@@ -28,7 +28,7 @@ copyrightText: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D vuepress-plugin-pwa
+yarn add -D @mr-hope/vuepress-plugin-pwa
 ```
 
 :::
@@ -36,7 +36,7 @@ yarn add -D vuepress-plugin-pwa
 ::: code-group-item npm
 
 ```bash
-npm i -D vuepress-plugin-pwa
+npm i -D @mr-hope/vuepress-plugin-pwa
 ```
 
 :::

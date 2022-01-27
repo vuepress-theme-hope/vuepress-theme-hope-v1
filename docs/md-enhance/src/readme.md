@@ -22,13 +22,13 @@ features:
     details: Your Markdown now suppport footnotes
     link: /guide/footnote/
 
-  - title: DIY Align
+  - title: Custom Align
     details: Let you decide to align paragraphs in the way you like
     link: /guide/align/
 
   - title: Mark Support
     details: Mark words and sentences in Markdown
-    link: /guide/flowchart/
+    link: /guide/mark/
 
   - title: Tasklist Support
     details: Use tasklist in Markdown
