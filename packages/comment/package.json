@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-comment",
-  "version": "1.27.1",
+  "version": "1.27.3",
   "description": "A simple Comment plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
