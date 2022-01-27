@@ -1,4 +1,5 @@
 import hope from "vuepress-theme-hope";
+import { version } from "../../../../lerna.json";
 
 export default hope.config({
   title: "Feed Generator",
@@ -38,6 +39,16 @@ export default hope.config({
         icon: "config",
         link: "/config/",
       },
+      {
+        text: version,
+        icon: "note",
+        items: [
+          {
+            text: "V2 Docs",
+            link: "https://vuepress-theme-hope.github.io/v2/feed/",
+          },
+        ],
+      },
     ],
 
     sidebar: {
@@ -67,6 +78,16 @@ export default hope.config({
             text: "配置",
             icon: "config",
             link: "/zh/config/",
+          },
+          {
+            text: version,
+            icon: "note",
+            items: [
+              {
+                text: "V2 文档",
+                link: "https://vuepress-theme-hope.github.io/v2/feed/zh/",
+              },
+            ],
           },
         ],
 

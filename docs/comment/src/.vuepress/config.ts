@@ -1,4 +1,5 @@
 import hope from "vuepress-theme-hope";
+import { version } from "../../../../lerna.json";
 
 export default hope.config({
   title: "Comment Plugin",
@@ -56,6 +57,16 @@ export default hope.config({
             text: "Valine",
             icon: "valine",
             link: "/config/valine/",
+          },
+        ],
+      },
+      {
+        text: version,
+        icon: "note",
+        items: [
+          {
+            text: "V2 Docs",
+            link: "https://vuepress-theme-hope.github.io/v2/comment/",
           },
         ],
       },
@@ -117,6 +128,16 @@ export default hope.config({
               { text: "Waline", icon: "waline", link: "/zh/config/waline/" },
               { text: "Vssue", icon: "vssue", link: "/zh/config/vssue/" },
               { text: "Valine", icon: "valine", link: "/zh/config/valine/" },
+            ],
+          },
+          {
+            text: version,
+            icon: "note",
+            items: [
+              {
+                text: "V2 文档",
+                link: "https://vuepress-theme-hope.github.io/v2/comment/zh/",
+              },
             ],
           },
         ],

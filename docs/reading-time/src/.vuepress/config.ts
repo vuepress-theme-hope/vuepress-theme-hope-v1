@@ -1,4 +1,5 @@
 import hope from "vuepress-theme-hope";
+import { version } from "../../../../lerna.json";
 
 export default hope.config({
   title: "Reading Time Counter",
@@ -25,8 +26,34 @@ export default hope.config({
     docsBranch: "v1",
     docsDir: "docs/reading-time/src",
 
+    nav: [
+      {
+        text: version,
+        icon: "note",
+        items: [
+          {
+            text: "V2 Docs",
+            link: "https://vuepress-theme-hope.github.io/v2/reading-time/",
+          },
+        ],
+      },
+    ],
+
     locales: {
-      "/zh/": {},
+      "/zh/": {
+        nav: [
+          {
+            text: version,
+            icon: "note",
+            items: [
+              {
+                text: "V2 文档",
+                link: "https://vuepress-theme-hope.github.io/v2/reading-time/zh/",
+              },
+            ],
+          },
+        ],
+      },
     },
 
     blog: false,

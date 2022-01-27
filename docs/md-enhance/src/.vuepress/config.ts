@@ -1,4 +1,5 @@
 import hope from "vuepress-theme-hope";
+import { version } from "../../../../lerna.json";
 
 export default hope.config({
   title: "Markdown Enhance",
@@ -29,6 +30,16 @@ export default hope.config({
       { text: "Home", icon: "home", link: "/" },
       { text: "Guide", icon: "creative", link: "/guide/" },
       { text: "Config", icon: "config", link: "/config/" },
+      {
+        text: version,
+        icon: "note",
+        items: [
+          {
+            text: "V2 Docs",
+            link: "https://vuepress-theme-hope.github.io/v2/md-enhance/",
+          },
+        ],
+      },
     ],
 
     sidebar: {
@@ -77,6 +88,16 @@ export default hope.config({
           { text: "主页", icon: "home", link: "/zh/" },
           { text: "指南", icon: "creative", link: "/zh/guide/" },
           { text: "配置", icon: "config", link: "/zh/config/" },
+          {
+            text: version,
+            icon: "note",
+            items: [
+              {
+                text: "V2 文档",
+                link: "https://vuepress-theme-hope.github.io/v2/md-enhance/zh/",
+              },
+            ],
+          },
         ],
         sidebar: {
           "/zh/": [
