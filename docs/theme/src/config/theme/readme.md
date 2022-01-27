@@ -7,7 +7,7 @@ tags:
   - config
 ---
 
-::: tip
+::::: tip
 
 You can view [Config of this site][docs-config] as an example, and you can directly view [Type Declaration file](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/theme/types/theme/) in the source code.
 
@@ -43,7 +43,7 @@ module.exports = themeConfig({
 
 ::::
 
-:::
+:::::
 
 The following configuration has been added to the themeConfig field in `.vuepress/config.js`:
 
