@@ -1,6 +1,8 @@
 import hope from "vuepress-theme-hope";
 
 export default hope.config({
+  base: "/v1-demo/",
+
   title: "Theme Demo",
   description: "A demo for vuepress-theme-hope",
 
@@ -150,37 +152,37 @@ export default hope.config({
     },
 
     pwa: {
-      favicon: "/favicon.ico",
+      favicon: "/v1-demo/favicon.ico",
       cachePic: true,
       apple: {
-        icon: "/assets/icon/apple-icon-152.png",
+        icon: "/v1-demo/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/assets/icon/ms-icon-144.png",
+        image: "/v1-demo/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
         icons: [
           {
-            src: "/assets/icon/chrome-mask-512.png",
+            src: "/v1-demo/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-mask-192.png",
+            src: "/v1-demo/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-512.png",
+            src: "/v1-demo/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-192.png",
+            src: "/v1-demo/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
@@ -189,16 +191,16 @@ export default hope.config({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/guide/",
+            url: "/v1-demo/guide/",
             icons: [
               {
-                src: "/assets/icon/guide-maskable.png",
+                src: "/v1-demo/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/assets/icon/guide-monochrome.png",
+                src: "/v1-demo/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
