@@ -43,8 +43,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, context) => {
   };
 
   if (options.type === "vssue")
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    config.plugins!.push(["@vssue/vuepress-plugin-vssue", options]);
+    config.plugins = [["@vssue/vuepress-plugin-vssue", options]];
 
   return config;
 };
