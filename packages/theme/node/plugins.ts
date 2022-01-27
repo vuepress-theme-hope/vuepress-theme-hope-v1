@@ -3,6 +3,7 @@ import { resolve } from "path";
 import { cleanUrlPlugin } from "./clean-url";
 import { chunkRenamePlugin } from "./chunk-rename";
 
+import type { AddThisOptions } from "vuepress-plugin-add-this";
 import type { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
 import type { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
@@ -18,10 +19,10 @@ import type { ResolvedHopeThemeConfig } from "../types";
 
 const resolveAddThisOptions = (
   themeConfig: ResolvedHopeThemeConfig
-): string | false => {
+): AddThisOptions | false => {
   const { addThis } = themeConfig;
 
-  return typeof addThis === "string" ? addThis : false;
+  return typeof addThis === "string" ? { pubid: addThis } : false;
 };
 
 const resolveCommentOptions = (
