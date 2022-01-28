@@ -1,6 +1,6 @@
 /* eslint-disable max-statements */
-import MarkdownIt = require("markdown-it");
-import StateInline = require("markdown-it/lib/rules_inline/state_inline");
+import type MarkdownIt = require("markdown-it");
+import type StateInline = require("markdown-it/lib/rules_inline/state_inline");
 
 /*
  * Insert each marker as a separate text token, and add it to delimiter list

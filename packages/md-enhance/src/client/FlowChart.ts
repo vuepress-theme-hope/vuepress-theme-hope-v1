@@ -2,8 +2,8 @@ import Vue from "vue";
 import Loading from "./icons/LoadingIcon.vue";
 import debounce from "lodash.debounce";
 import presets from "./presets";
-import * as Flowchart from "flowchart.js";
 
+import type * as Flowchart from "flowchart.js";
 import type { PropType } from "vue";
 
 let svg: Flowchart.Instance;

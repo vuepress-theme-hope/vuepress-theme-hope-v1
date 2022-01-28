@@ -2,7 +2,8 @@
  * Created by nanyuantingfeng on 2020/3/1 10:10. *
  ***************************************************/
 import { decode } from "mdurl";
-import MarkdownIt = require("markdown-it");
+
+import type MarkdownIt = require("markdown-it");
 
 export type DecodeURLOption = RegExp | string[] | "*" | "." | "./";
 

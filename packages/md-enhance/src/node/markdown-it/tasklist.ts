@@ -1,5 +1,3 @@
-import MarkdownIt = require("markdown-it");
-import StateCore = require("markdown-it/lib/rules_core/state_core");
 import Token = require("markdown-it/lib/token");
 import {
   getParentTokenIndex,
@@ -8,6 +6,9 @@ import {
   isListItemToken,
   setTokenAttr,
 } from "./utils";
+
+import type MarkdownIt = require("markdown-it");
+import type StateCore = require("markdown-it/lib/rules_core/state_core");
 import type { TaskListOptions } from "../../types";
 
 interface TaskListEnv {

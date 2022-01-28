@@ -1,6 +1,6 @@
 import hash = require("hash-sum");
-import Token = require("markdown-it/lib/token");
 
+import type Token = require("markdown-it/lib/token");
 import type { CodeDemoOptions } from "../../types";
 
 export const codeDemoRender = (tokens: Token[], idx: number): string => {

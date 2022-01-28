@@ -1,4 +1,4 @@
-import MarkdownIt = require("markdown-it");
+import type MarkdownIt = require("markdown-it");
 
 export const lazyLoad = (md: MarkdownIt): void => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

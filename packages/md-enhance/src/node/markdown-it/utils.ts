@@ -1,5 +1,5 @@
-import StateBlock = require("markdown-it/lib/rules_block/state_block");
-import Token = require("markdown-it/lib/token");
+import type StateBlock = require("markdown-it/lib/rules_block/state_block");
+import type Token = require("markdown-it/lib/token");
 
 export const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
 

@@ -1,7 +1,8 @@
 /* eslint-disable max-statements */
 import hash = require("hash-sum");
-import MarkdownIt = require("markdown-it");
-import Token = require("markdown-it/lib/token");
+
+import type MarkdownIt = require("markdown-it");
+import type Token = require("markdown-it/lib/token");
 
 const mermaidRender = (tokens: Token[], idx: number): string => {
   const token = tokens[idx];

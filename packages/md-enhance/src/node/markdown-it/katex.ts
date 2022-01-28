@@ -1,9 +1,10 @@
 /* eslint-disable max-statements */
-import MarkdownIt = require("markdown-it");
-import StateBlock = require("markdown-it/lib/rules_block/state_block");
-import StateInline = require("markdown-it/lib/rules_inline/state_inline");
 import katex = require("katex");
 import { escapeHtml } from "./utils";
+
+import type MarkdownIt = require("markdown-it");
+import type StateBlock = require("markdown-it/lib/rules_block/state_block");
+import type StateInline = require("markdown-it/lib/rules_inline/state_inline");
 
 /*
  * Test if potential opening or closing delimieter

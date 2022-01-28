@@ -1,9 +1,9 @@
 /* eslint-disable max-statements */
 // Process ^superscript^
-
-import MarkdownIt = require("markdown-it");
-import StateInline = require("markdown-it/lib/rules_inline/state_inline");
 import { UNESCAPE_RE } from "./utils";
+
+import type MarkdownIt = require("markdown-it");
+import type StateInline = require("markdown-it/lib/rules_inline/state_inline");
 
 const superscriptRender = (state: StateInline, silent?: boolean): boolean => {
   let found;

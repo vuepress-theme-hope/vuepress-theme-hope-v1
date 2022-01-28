@@ -1,13 +1,14 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable max-statements */
 
-import MarkdownIt = require("markdown-it");
-import Renderer = require("markdown-it/lib/renderer");
-import StateBlock = require("markdown-it/lib/rules_block/state_block");
-import StateCore = require("markdown-it/lib/rules_core/state_core");
-import StateInline = require("markdown-it/lib/rules_inline/state_inline");
 import Token = require("markdown-it/lib/token");
 import parseLinkLabel = require("markdown-it/lib/helpers/parse_link_label");
+
+import type MarkdownIt = require("markdown-it");
+import type Renderer = require("markdown-it/lib/renderer");
+import type StateBlock = require("markdown-it/lib/rules_block/state_block");
+import type StateCore = require("markdown-it/lib/rules_core/state_core");
+import type StateInline = require("markdown-it/lib/rules_inline/state_inline");
 
 interface FootNoteToken extends Token {
   meta: {

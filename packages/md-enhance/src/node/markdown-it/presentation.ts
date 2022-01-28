@@ -1,7 +1,8 @@
 /* eslint-disable max-statements */
 import hash = require("hash-sum");
-import MarkdownIt = require("markdown-it");
 import { generateUML } from "./utils";
+
+import type MarkdownIt = require("markdown-it");
 
 export default (md: MarkdownIt): void => {
   md.block.ruler.before(
