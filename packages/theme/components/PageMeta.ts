@@ -34,7 +34,7 @@ export default Vue.extend({
     },
 
     updateTime(): string {
-      return this.$page.frontmatter.contributor === false ||
+      return this.$page.frontmatter.updateTime === false ||
         (this.$themeConfig.updateTime === false &&
           !this.$page.frontmatter.updateTime)
         ? ""
