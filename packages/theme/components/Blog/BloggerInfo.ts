@@ -3,8 +3,7 @@ import { timelineMixin } from "@theme/mixins/timeline";
 import { filterArticle } from "@theme/utils/article";
 import { navigate } from "@theme/utils/navigate";
 
-import type { BlogOptions } from "@theme/types";
-import type { HopeThemeLocaleData } from "@theme/types";
+import type { BlogOptions, HopeThemeLocaleData } from "@theme/types";
 
 export default timelineMixin.extend({
   name: "BloggerInfo",

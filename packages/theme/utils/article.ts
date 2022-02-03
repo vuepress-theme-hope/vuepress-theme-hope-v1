@@ -53,11 +53,11 @@ export const getDate = (
 };
 
 export const compareDate = (
-  dataA: Date | number | string | undefined,
-  dataB: Date | number | string | undefined
+  dateA: Date | number | string | undefined,
+  dateB: Date | number | string | undefined
 ): number => {
-  if (!dataA) return 1;
-  if (!dataB) return -1;
+  if (!dateA) return 1;
+  if (!dateB) return -1;
 
   const compare = (
     a: (number | undefined)[],
@@ -77,7 +77,7 @@ export const compareDate = (
     return b[0] - a[0];
   };
 
-  return compare(getDate(dataA), getDate(dataB));
+  return compare(getDate(dateA), getDate(dateB));
 };
 
 export const filterArticle = (
