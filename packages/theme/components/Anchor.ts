@@ -1,9 +1,9 @@
 import Vue from "vue";
-import { SidebarHeader } from "@theme/utils/sidebar";
 import { isActive } from "@theme/utils/path";
 
 import type { CreateElement, PropType, VNode } from "vue";
 import type { Route } from "vue-router";
+import type { SidebarHeader } from "@theme/utils/sidebar";
 
 interface AnchorItem {
   text: string;

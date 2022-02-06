@@ -42,6 +42,9 @@
   --dot-bar-color #eaecef
   --dot-border-color #ddd
 
+  @media (max-width $MQMobile)
+    margin 0 1.2rem
+
   .theme-dark &
     --dot-color #444
     --dot-bar-color #333
@@ -172,9 +175,5 @@
           position relative
           font-size 16px
           line-height 30px
-
-@media (max-width $MQMobile)
-  .timeline-wrapper
-    margin 0 1.2rem
 </style>
 D
