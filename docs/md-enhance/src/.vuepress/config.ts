@@ -141,6 +141,12 @@ export default hope.config({
       },
     },
 
+    algolia: {
+      appId: "VXIEHELDL1",
+      apiKey: "595796f71b6ba14326719682c3738c0c",
+      indexName: "vuepress-theme-hope-v1",
+    },
+
     blog: false,
 
     footer: {

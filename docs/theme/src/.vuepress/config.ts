@@ -48,8 +48,9 @@ export default hope.config({
     },
 
     algolia: {
-      apiKey: "6b0dce9b8ac6778738e26c56def7eb76",
-      indexName: "vuepress-theme-hope",
+      appId: "VXIEHELDL1",
+      apiKey: "595796f71b6ba14326719682c3738c0c",
+      indexName: "vuepress-theme-hope-v1",
     },
 
     algoliaType: "full",
