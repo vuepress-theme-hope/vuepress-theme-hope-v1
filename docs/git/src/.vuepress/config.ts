@@ -1,5 +1,4 @@
 import hope from "vuepress-theme-hope";
-import { version } from "../../../../lerna.json";
 
 export default hope.config({
   title: "Git-based info plugin",
