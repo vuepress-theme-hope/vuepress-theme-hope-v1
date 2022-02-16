@@ -3,7 +3,7 @@
     <MyTransition>
       <BreadCrumb
         :key="$route.path"
-        :display="$themeConfig.breadcrumb !== false"
+        :show="$themeConfig.breadcrumb !== false"
         :icon="$themeConfig.breadcrumbIcon !== false"
         :icon-prefix="$themeConfig.iconPrefix"
       />
