@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.27.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.27.3...v1.27.4) (2022-02-16)
+
+### Bug Fixes
+
+- **theme:** fix BreadCrumb prop ([bc0fa1a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bc0fa1a01b94a36173cbb63d0aec236d3818a9ad))
+- **theme:** fix updateTime frontmatter ([fddcdae](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fddcdaef4ee33580a9d887a1376b81e4c118c739))
+
+### Features
+
+- **theme:** remove used components ([e35b02a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e35b02afd4e2f0d0724628781ff12fd8a7fb414b))
+
 ## [1.27.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.27.2...v1.27.3) (2022-01-27)
 
 ### Bug Fixes
