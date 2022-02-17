@@ -173,7 +173,7 @@ Besides the plugin does not process anything in the manifest, but outputs them a
 
 The plugin also provides other PWA-related options, such as Microsoft tile icon and color settings, Apple icon and so on.
 
-You can set them as needed. For detailed options, please see [Configuration Page](https://vuepress-theme-hope.github.io/v1/pwa/config/)).
+You can set them as needed. For detailed options, please see [Configuration Page](https://vuepress-theme-hope.github.io/v1/pwa/config.html).
 
 ## Further Reading
 

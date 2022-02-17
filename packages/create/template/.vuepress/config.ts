@@ -1,28 +1,10 @@
-const { config } = require("vuepress-theme-hope");
+import hope from "vuepress-theme-hope";
 
-module.exports = config({
+export default hope.config({
   title: "Theme Demo",
   description: "A demo for vuepress-theme-hope",
 
   dest: "./dist",
-
-  head: [
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" },
-    ],
-    [
-      "script",
-      {
-        src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
-      },
-    ],
-    ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
-    ],
-  ],
 
   locales: {
     "/": {
@@ -127,6 +109,8 @@ module.exports = config({
     copyright: {
       status: "global",
     },
+
+    cleanUrl: false,
 
     git: {
       timezone: "Asia/Shanghai",

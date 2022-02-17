@@ -71,6 +71,8 @@ export default hope.config({
       status: "local",
     },
 
+    cleanUrl: false,
+
     git: {
       timezone: "Asia/Shanghai",
     },

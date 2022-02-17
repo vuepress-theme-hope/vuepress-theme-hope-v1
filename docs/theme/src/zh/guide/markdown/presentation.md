@@ -63,7 +63,7 @@ module.exports = {
 - `blood`
 - `moon`
 
-主题演示，请详见 [幻灯片主题](https://vuepress-theme-hope.github.io/v1/md-enhance/zh/guide/presentation/themes/)
+主题演示，请详见 [幻灯片主题](https://vuepress-theme-hope.github.io/v1/md-enhance/zh/guide/presentation/themes.html)
 
 ## 演示
 
@@ -131,7 +131,7 @@ $$
 @slideend
 ````
 
-详细与完整的演示详见 [幻灯片演示](https://vuepress-theme-hope.github.io/v1/md-enhance/zh/guide/presentation/demo/)
+详细与完整的演示详见 [幻灯片演示](https://vuepress-theme-hope.github.io/v1/md-enhance/zh/guide/presentation/demo.html)
 
 ## 选项
 

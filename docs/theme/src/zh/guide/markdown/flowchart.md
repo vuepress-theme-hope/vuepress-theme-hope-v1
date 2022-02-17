@@ -84,4 +84,4 @@ c2(no)->op2->e
 
 ## 流程图介绍
 
-详见 [流程图介绍](https://vuepress-theme-hope.github.io/v1/md-enhance/zh/guide/flowchart/#%E6%B5%81%E7%A8%8B%E5%9B%BE%E4%BB%8B%E7%BB%8D)。
+详见 [流程图介绍](https://vuepress-theme-hope.github.io/v1/md-enhance/zh/guide/flowchart.html#流程图介绍)。

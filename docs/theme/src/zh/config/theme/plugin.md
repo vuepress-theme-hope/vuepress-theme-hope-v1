@@ -628,8 +628,8 @@ AddThis 的 pubid
 [comment-config]: https://vuepress-theme-hope.github.io/v1/comment/zh/config/
 [copy-code]: https://vuepress-theme-hope.github.io/v1/copy-code/zh/
 [md-enhance-config]: https://vuepress-theme-hope.github.io/v1/md-enhance/zh/config/
-[photo-swipe-config]: https://vuepress-theme-hope.github.io/v1/photo-swipe/zh/config/
-[pwa-config]: https://vuepress-theme-hope.github.io/v1/pwa/zh/config/
+[photo-swipe-config]: https://vuepress-theme-hope.github.io/v1/photo-swipe/zh/config.html
+[pwa-config]: https://vuepress-theme-hope.github.io/v1/pwa/zh/config.html
 [feed-config]: https://vuepress-theme-hope.github.io/v1/feed/zh/config/
 [seo-config]: https://vuepress-theme-hope.github.io/v1/seo/zh/#插件选项
 [sitemap-config]: https://vuepress-theme-hope.github.io/v1/sitemap/zh/#插件选项

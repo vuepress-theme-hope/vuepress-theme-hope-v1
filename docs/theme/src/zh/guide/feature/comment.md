@@ -61,7 +61,7 @@ module.exports = themeConfig({
 
 ::: info
 
-受篇幅限制，完整的评论插件配置，详见 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-theme-hope.github.io/v1/comment)。
+受篇幅限制，完整的评论插件配置，详见 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-theme-hope.github.io/v1/comment/)。
 
 :::
 

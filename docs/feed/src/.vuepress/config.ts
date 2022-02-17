@@ -125,6 +125,8 @@ export default hope.config({
       serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
+    cleanUrl: false,
+
     git: {
       timezone: "Asia/Shanghai",
     },

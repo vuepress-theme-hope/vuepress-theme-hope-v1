@@ -30,6 +30,8 @@ export default hope.config({
       copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     },
 
+    cleanUrl: false,
+
     git: {
       timezone: "Asia/Shanghai",
     },

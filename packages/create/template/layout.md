@@ -95,4 +95,4 @@ Sidebar bottom content
 
 :::
 
-For details, see [Custom layout](https://vuepress-theme-hope.github.io/v1/guide/layout/custom/).
+For details, see [Custom layout](https://vuepress-theme-hope.github.io/v1/guide/layout/custom.html).

@@ -624,8 +624,8 @@ Delay to smooth scroll to hash, default is `500`.
 [copyright-config]: https://vuepress.github.io/en/plugins/copyright/
 [md-enhance-config]: https://vuepress-theme-hope.github.io/v1/md-enhance/config/
 [copy-code]: https://vuepress-theme-hope.github.io/v1/copy-code
-[photo-swipe-config]: https://vuepress-theme-hope.github.io/v1/photo-swipe/config/
-[pwa-config]: https://vuepress-theme-hope.github.io/v1/pwa/config/
+[photo-swipe-config]: https://vuepress-theme-hope.github.io/v1/photo-swipe/config.html
+[pwa-config]: https://vuepress-theme-hope.github.io/v1/pwa/config.html
 [feed-config]: https://vuepress-theme-hope.github.io/v1/feed/config/
 [seo-config]: https://vuepress-theme-hope.github.io/v1/seo/#plugin-options
 [sitemap-config]: https://vuepress-theme-hope.github.io/v1/sitemap/#plugin-options

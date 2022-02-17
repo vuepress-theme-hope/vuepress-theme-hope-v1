@@ -95,4 +95,4 @@ icon: layout
 
 :::
 
-更多详情，详见 [自定义布局](https://vuepress-theme-hope.github.io/v1/zh/guide/layout/custom/).
+更多详情，详见 [自定义布局](https://vuepress-theme-hope.github.io/v1/zh/guide/layout/custom.html).

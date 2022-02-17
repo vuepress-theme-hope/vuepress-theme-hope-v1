@@ -444,7 +444,7 @@ If you are extending this theme, you may need to update your code.
 
 ### Features <Badge text="new" />
 
-- **md-enhance**: [new Code Demo feature](https://vuepress-theme-hope.github.io/v1/guide/markdown/demo/) :tada:
+- **md-enhance**: [new Code Demo feature](https://vuepress-theme-hope.github.io/v1/guide/markdown/demo.html) :tada:
 
 ## v1.5.4
 

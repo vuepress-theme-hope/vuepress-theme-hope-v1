@@ -53,7 +53,7 @@ $$
 
 ### More
 
-For specific Tex syntax, see [Katex tutorial](https://vuepress-theme-hope.github.io/v1/md-enhance/guide/tex/#tutorial)
+For specific Tex syntax, see [Katex tutorial](https://vuepress-theme-hope.github.io/v1/md-enhance/guide/tex.html#tutorial)
 
 ## Playground
 

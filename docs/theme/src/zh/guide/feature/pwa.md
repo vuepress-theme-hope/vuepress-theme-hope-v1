@@ -178,7 +178,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 插件还提供了其他 PWA 相关选项，比如微软磁贴图标与颜色设置，苹果图标等。
 
-你可以酌情根据需要设置它们。详细的选项请见 [PWA 插件配置](https://vuepress-theme-hope.github.io/v1/pwa/zh/config/)。
+你可以酌情根据需要设置它们。详细的选项请见 [PWA 插件配置](https://vuepress-theme-hope.github.io/v1/pwa/zh/config.html)。
 
 ## 相关阅读
 

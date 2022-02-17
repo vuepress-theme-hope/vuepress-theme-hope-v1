@@ -8,24 +8,6 @@ export default hope.config({
 
   dest: "./dist",
 
-  head: [
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" },
-    ],
-    [
-      "script",
-      {
-        src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
-      },
-    ],
-    ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
-    [
-      "script",
-      { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
-    ],
-  ],
-
   locales: {
     "/": {
       lang: "en-US",
@@ -130,6 +112,8 @@ export default hope.config({
     copyright: {
       status: "global",
     },
+
+    cleanUrl: false,
 
     git: {
       timezone: "Asia/Shanghai",

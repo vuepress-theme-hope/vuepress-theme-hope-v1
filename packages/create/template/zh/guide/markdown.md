@@ -6,13 +6,13 @@ tag:
   - markdown
 ---
 
-`vuepress-theme-hope` 通过内置 [md-enhance](https://vuepress-theme-hope.github.io/v1/md-enhance)，在 Markdown 中启用了更多的语法与新功能。
+`vuepress-theme-hope` 通过内置 [md-enhance](https://vuepress-theme-hope.github.io/v1/md-enhance/)，在 Markdown 中启用了更多的语法与新功能。
 
 <!-- more -->
 
 ## 一键启用
 
-你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/v1/md-enhance) 插件的所有功能。
+你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/v1/md-enhance/) 插件的所有功能。
 
 ```js {3-5}
 module.exports = {
@@ -38,7 +38,7 @@ module.exports = {
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/sup-sub/)
+- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/sup-sub.html)
 
 ### 自定义对齐
 
@@ -72,7 +72,7 @@ module.exports = {
 
 ::::
 
-- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/align/)
+- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/align.html)
 
 ### 脚注
 
@@ -90,7 +90,7 @@ module.exports = {
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/footnote/)
+- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/footnote.html)
 
 ### 标记
 
@@ -104,7 +104,7 @@ module.exports = {
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/mark/)
+- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/mark.html)
 
 ### 任务列表
 
@@ -120,7 +120,7 @@ module.exports = {
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/v1/guide/markdown/tasklist/)
+- [点击查看](https://vuepress-theme-hope.github.io/v1/guide/markdown/tasklist.html)
 
 ### 流程图
 
@@ -148,7 +148,7 @@ cond(no)->e
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/flowchart/)
+- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/flowchart.html)
 
 ## Mermaid
 
@@ -174,7 +174,7 @@ graph TD;
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/mermaid/)
+- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/mermaid.html)
 
 ### Tex 语法
 
@@ -194,7 +194,7 @@ $$
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/tex/)
+- [点击查看](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/tex.html)
 
 ### 代码案例
 
