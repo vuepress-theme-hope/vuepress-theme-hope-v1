@@ -7,7 +7,7 @@ tags:
   - pwa
 ---
 
-默认情况下，该主题将通过内置 [`@mr-hope/vuepress-plugin-pwa`](https://vuepress-theme-hope.github.io/pwa/zh/) 启用渐进式 Web 应用程序支持[^pwa-intro]。
+默认情况下，该主题将通过内置 [`@mr-hope/vuepress-plugin-pwa`](https://vuepress-theme-hope.github.io/v1/pwa/zh/) 启用渐进式 Web 应用程序支持[^pwa-intro]。
 
 如果你不需要此功能或想使用其他 pwa 插件，则可以将 `themeConfig.pwa` 设置为 `false` 来禁用该插件。
 
@@ -178,13 +178,13 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 插件还提供了其他 PWA 相关选项，比如微软磁贴图标与颜色设置，苹果图标等。
 
-你可以酌情根据需要设置它们。详细的选项请见 [PWA 插件配置](https://vuepress-theme-hope.github.io/pwa/zh/config/)。
+你可以酌情根据需要设置它们。详细的选项请见 [PWA 插件配置](https://vuepress-theme-hope.github.io/v1/pwa/zh/config/)。
 
 ## 相关阅读
 
 更多内容，请详见:
 
-- [PWA 插件文档](https://vuepress-theme-hope.github.io/pwa/zh/)
+- [PWA 插件文档](https://vuepress-theme-hope.github.io/v1/pwa/zh/)
 - [Google PWA](https://web.dev/progressive-web-apps/)
 - [MDN PWA](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps)
 - [W3C Manifest 规范](https://w3c.github.io/manifest/)

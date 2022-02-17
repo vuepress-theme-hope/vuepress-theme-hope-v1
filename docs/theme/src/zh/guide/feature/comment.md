@@ -7,7 +7,7 @@ tags:
   - feature
 ---
 
-通过内置 [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/comment/zh/)，`vuepress-theme-hope` 实现了评论功能。
+通过内置 [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/v1/comment/zh/)，`vuepress-theme-hope` 实现了评论功能。
 
 <!-- more -->
 
@@ -61,7 +61,7 @@ module.exports = themeConfig({
 
 ::: info
 
-受篇幅限制，完整的评论插件配置，详见 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-theme-hope.github.io/comment)。
+受篇幅限制，完整的评论插件配置，详见 [@mr-hope/vuepress-plugin-comment 插件文档](https://vuepress-theme-hope.github.io/v1/comment)。
 
 :::
 

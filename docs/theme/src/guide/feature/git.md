@@ -7,7 +7,7 @@ tags:
   - last update
 ---
 
-`vuepress-theme-hope` will automatic generate the create time, last update time and contributors of the page through the built-in [`@mr-hope/vuepress-plugin-git`](https://vuepress-theme-hope.github.io/git/) plugin.
+`vuepress-theme-hope` will automatic generate the create time, last update time and contributors of the page through the built-in [`@mr-hope/vuepress-plugin-git`](https://vuepress-theme-hope.github.io/v1/git/) plugin.
 
 By default, the plugin will get the UNIX timestamp(ms) of each file’s fist and last `git` commit for you, and it will also display at the bottom of each page in an appropriate format.
 

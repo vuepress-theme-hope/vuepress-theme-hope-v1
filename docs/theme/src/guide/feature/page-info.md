@@ -7,7 +7,7 @@ tags:
   - page info
 ---
 
-By including [`@mr-hope/vuepress-plugin-components`](https://vuepress-theme-hope.github.io/components/), `vuepress-theme-hope` can display article information for you.
+By including [`@mr-hope/vuepress-plugin-components`](https://vuepress-theme-hope.github.io/v1/components/), `vuepress-theme-hope` can display article information for you.
 
 <!-- more -->
 

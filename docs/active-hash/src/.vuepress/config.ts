@@ -4,7 +4,7 @@ export default hope.config({
   title: "Git-based info plugin",
   description: "Info plugin based on active-hash for vuepress",
 
-  base: "/active-hash/",
+  base: "/v1/active-hash/",
   dest: "./dist",
 
   locales: {

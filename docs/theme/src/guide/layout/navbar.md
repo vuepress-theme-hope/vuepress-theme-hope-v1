@@ -282,47 +282,47 @@ export default theme.config({
             items: [
               {
                 text: "AddThis Plugin",
-                link: "https://vuepress-theme-hope.github.io/add-this/",
+                link: "https://vuepress-theme-hope.github.io/v1/add-this/",
               },
               {
                 text: "Comment Plugin",
-                link: "https://vuepress-theme-hope.github.io/comment/",
+                link: "https://vuepress-theme-hope.github.io/v1/comment/",
               },
               {
                 text: "Copy Code Plugin",
-                link: "https://vuepress-theme-hope.github.io/copy-code/",
+                link: "https://vuepress-theme-hope.github.io/v1/copy-code/",
               },
               {
                 text: "Feed Plugin",
-                link: "https://vuepress-theme-hope.github.io/feed/",
+                link: "https://vuepress-theme-hope.github.io/v1/feed/",
               },
               {
                 text: "Git Info Plugin",
-                link: "https://vuepress-theme-hope.github.io/git/",
+                link: "https://vuepress-theme-hope.github.io/v1/git/",
               },
               {
                 text: "Markdown Enhance Plugin",
-                link: "https://vuepress-theme-hope.github.io/md-enhance/",
+                link: "https://vuepress-theme-hope.github.io/v1/md-enhance/",
               },
               {
                 text: "Photo Swipe Plugin",
-                link: "https://vuepress-theme-hope.github.io/photo-swipe/",
+                link: "https://vuepress-theme-hope.github.io/v1/photo-swipe/",
               },
               {
                 text: "PWA Plugin",
-                link: "https://vuepress-theme-hope.github.io/pwa/",
+                link: "https://vuepress-theme-hope.github.io/v1/pwa/",
               },
               {
                 text: "Reading Time Plugin",
-                link: "https://vuepress-theme-hope.github.io/reading-time/",
+                link: "https://vuepress-theme-hope.github.io/v1/reading-time/",
               },
               {
                 text: "Seo Plugin",
-                link: "https://vuepress-theme-hope.github.io/seo/",
+                link: "https://vuepress-theme-hope.github.io/v1/seo/",
               },
               {
                 text: "Sitemap Plugin",
-                link: "https://vuepress-theme-hope.github.io/sitemap/",
+                link: "https://vuepress-theme-hope.github.io/v1/sitemap/",
               },
             ],
           },
@@ -366,47 +366,47 @@ module.exports = config({
             items: [
               {
                 text: "AddThis Plugin",
-                link: "https://vuepress-theme-hope.github.io/add-this/",
+                link: "https://vuepress-theme-hope.github.io/v1/add-this/",
               },
               {
                 text: "Comment Plugin",
-                link: "https://vuepress-theme-hope.github.io/comment/",
+                link: "https://vuepress-theme-hope.github.io/v1/comment/",
               },
               {
                 text: "Copy Code Plugin",
-                link: "https://vuepress-theme-hope.github.io/copy-code/",
+                link: "https://vuepress-theme-hope.github.io/v1/copy-code/",
               },
               {
                 text: "Feed Plugin",
-                link: "https://vuepress-theme-hope.github.io/feed/",
+                link: "https://vuepress-theme-hope.github.io/v1/feed/",
               },
               {
                 text: "Git Info Plugin",
-                link: "https://vuepress-theme-hope.github.io/git/",
+                link: "https://vuepress-theme-hope.github.io/v1/git/",
               },
               {
                 text: "Markdown Enhance Plugin",
-                link: "https://vuepress-theme-hope.github.io/md-enhance/",
+                link: "https://vuepress-theme-hope.github.io/v1/md-enhance/",
               },
               {
                 text: "Photo Swipe Plugin",
-                link: "https://vuepress-theme-hope.github.io/photo-swipe/",
+                link: "https://vuepress-theme-hope.github.io/v1/photo-swipe/",
               },
               {
                 text: "PWA Plugin",
-                link: "https://vuepress-theme-hope.github.io/pwa/",
+                link: "https://vuepress-theme-hope.github.io/v1/pwa/",
               },
               {
                 text: "Reading Time Plugin",
-                link: "https://vuepress-theme-hope.github.io/reading-time/",
+                link: "https://vuepress-theme-hope.github.io/v1/reading-time/",
               },
               {
                 text: "Seo Plugin",
-                link: "https://vuepress-theme-hope.github.io/seo/",
+                link: "https://vuepress-theme-hope.github.io/v1/seo/",
               },
               {
                 text: "Sitemap Plugin",
-                link: "https://vuepress-theme-hope.github.io/sitemap/",
+                link: "https://vuepress-theme-hope.github.io/v1/sitemap/",
               },
             ],
           },
@@ -852,47 +852,47 @@ export default theme.config({
             items: [
               {
                 text: "AddThis Plugin",
-                link: "https://vuepress-theme-hope.github.io/add-this/",
+                link: "https://vuepress-theme-hope.github.io/v1/add-this/",
               },
               {
                 text: "Comment Plugin",
-                link: "https://vuepress-theme-hope.github.io/comment/",
+                link: "https://vuepress-theme-hope.github.io/v1/comment/",
               },
               {
                 text: "Copy Code Plugin",
-                link: "https://vuepress-theme-hope.github.io/copy-code/",
+                link: "https://vuepress-theme-hope.github.io/v1/copy-code/",
               },
               {
                 text: "Feed Plugin",
-                link: "https://vuepress-theme-hope.github.io/feed/",
+                link: "https://vuepress-theme-hope.github.io/v1/feed/",
               },
               {
                 text: "Git Info Plugin",
-                link: "https://vuepress-theme-hope.github.io/git/",
+                link: "https://vuepress-theme-hope.github.io/v1/git/",
               },
               {
                 text: "Markdown Enhance Plugin",
-                link: "https://vuepress-theme-hope.github.io/md-enhance/",
+                link: "https://vuepress-theme-hope.github.io/v1/md-enhance/",
               },
               {
                 text: "Photo Swipe Plugin",
-                link: "https://vuepress-theme-hope.github.io/photo-swipe/",
+                link: "https://vuepress-theme-hope.github.io/v1/photo-swipe/",
               },
               {
                 text: "PWA Plugin",
-                link: "https://vuepress-theme-hope.github.io/pwa/",
+                link: "https://vuepress-theme-hope.github.io/v1/pwa/",
               },
               {
                 text: "Reading Time Plugin",
-                link: "https://vuepress-theme-hope.github.io/reading-time/",
+                link: "https://vuepress-theme-hope.github.io/v1/reading-time/",
               },
               {
                 text: "Seo Plugin",
-                link: "https://vuepress-theme-hope.github.io/seo/",
+                link: "https://vuepress-theme-hope.github.io/v1/seo/",
               },
               {
                 text: "Sitemap Plugin",
-                link: "https://vuepress-theme-hope.github.io/sitemap/",
+                link: "https://vuepress-theme-hope.github.io/v1/sitemap/",
               },
             ],
           },
@@ -948,47 +948,47 @@ module.exports = config({
             items: [
               {
                 text: "AddThis Plugin",
-                link: "https://vuepress-theme-hope.github.io/add-this/",
+                link: "https://vuepress-theme-hope.github.io/v1/add-this/",
               },
               {
                 text: "Comment Plugin",
-                link: "https://vuepress-theme-hope.github.io/comment/",
+                link: "https://vuepress-theme-hope.github.io/v1/comment/",
               },
               {
                 text: "Copy Code Plugin",
-                link: "https://vuepress-theme-hope.github.io/copy-code/",
+                link: "https://vuepress-theme-hope.github.io/v1/copy-code/",
               },
               {
                 text: "Feed Plugin",
-                link: "https://vuepress-theme-hope.github.io/feed/",
+                link: "https://vuepress-theme-hope.github.io/v1/feed/",
               },
               {
                 text: "Git Info Plugin",
-                link: "https://vuepress-theme-hope.github.io/git/",
+                link: "https://vuepress-theme-hope.github.io/v1/git/",
               },
               {
                 text: "Markdown Enhance Plugin",
-                link: "https://vuepress-theme-hope.github.io/md-enhance/",
+                link: "https://vuepress-theme-hope.github.io/v1/md-enhance/",
               },
               {
                 text: "Photo Swipe Plugin",
-                link: "https://vuepress-theme-hope.github.io/photo-swipe/",
+                link: "https://vuepress-theme-hope.github.io/v1/photo-swipe/",
               },
               {
                 text: "PWA Plugin",
-                link: "https://vuepress-theme-hope.github.io/pwa/",
+                link: "https://vuepress-theme-hope.github.io/v1/pwa/",
               },
               {
                 text: "Reading Time Plugin",
-                link: "https://vuepress-theme-hope.github.io/reading-time/",
+                link: "https://vuepress-theme-hope.github.io/v1/reading-time/",
               },
               {
                 text: "Seo Plugin",
-                link: "https://vuepress-theme-hope.github.io/seo/",
+                link: "https://vuepress-theme-hope.github.io/v1/seo/",
               },
               {
                 text: "Sitemap Plugin",
-                link: "https://vuepress-theme-hope.github.io/sitemap/",
+                link: "https://vuepress-theme-hope.github.io/v1/sitemap/",
               },
             ],
           },

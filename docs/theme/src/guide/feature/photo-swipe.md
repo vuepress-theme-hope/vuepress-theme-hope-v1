@@ -7,7 +7,7 @@ tags:
   - photo preview
 ---
 
-By including [vuepress-plugin-photo-swipe](https://vuepress-theme-hope.github.io/photo-swipe/), vuepress-theme-hope will make the pictures in the body of the page enter the preview mode when clicked.
+By including [vuepress-plugin-photo-swipe](https://vuepress-theme-hope.github.io/v1/photo-swipe/), vuepress-theme-hope will make the pictures in the body of the page enter the preview mode when clicked.
 
 <!-- more -->
 

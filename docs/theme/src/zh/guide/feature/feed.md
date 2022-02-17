@@ -7,7 +7,7 @@ tags:
   - feature
 ---
 
-`vuepress-theme-hope` 通过内置 [`@mr-hope/vuepress-plugin-feed`](https://vuepress-theme-hope.github.io/feed/zh/) 插件来为你提供 feed 支持。
+`vuepress-theme-hope` 通过内置 [`@mr-hope/vuepress-plugin-feed`](https://vuepress-theme-hope.github.io/v1/feed/zh/) 插件来为你提供 feed 支持。
 
 主题会自动为你生成以下三种格式的 feed 文件:
 
@@ -28,7 +28,7 @@ tags:
 - 将建立 Feed 的日期转换为 ISOString 写入到 `channel.pubDate` 中
 - 通过 `channel.ttl` 中设置内容的更新周期(单位: 分钟)
 
-详细的选项及其默认值详见 [Feed 插件频道设置](https://vuepress-theme-hope.github.io/feed/zh/config/channel/)
+详细的选项及其默认值详见 [Feed 插件频道设置](https://vuepress-theme-hope.github.io/v1/feed/zh/config/channel/)
 
 ## 项目设置
 
@@ -36,10 +36,10 @@ tags:
 
 如果你想在 feed 中移除指定页面，你可以在该页面的 frontmatter 中将 `feed.enable` 设置为 `false`。
 
-当然你也可以通过 `frontmatter.feed` 直接向 feed 插件传入内容。详细的选项及其默认值详见 [Feed 插件项目设置](https://vuepress-theme-hope.github.io/feed/zh/config/item/)
+当然你也可以通过 `frontmatter.feed` 直接向 feed 插件传入内容。详细的选项及其默认值详见 [Feed 插件项目设置](https://vuepress-theme-hope.github.io/v1/feed/zh/config/item/)
 
 ## 输出配置
 
 你可通过配置选项中的 `output` 来决定输出哪些格式的 Feed 文件以及它们的位置。
 
-详细的选项及其默认值详见 [Feed 插件输出设置](https://vuepress-theme-hope.github.io/feed/zh/config/#output)
+详细的选项及其默认值详见 [Feed 插件输出设置](https://vuepress-theme-hope.github.io/v1/feed/zh/config/#output)

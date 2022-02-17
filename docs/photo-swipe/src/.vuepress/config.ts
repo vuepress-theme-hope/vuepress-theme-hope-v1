@@ -5,7 +5,7 @@ export default hope.config({
   title: "Photo preview",
   description: "Photo swipe Plugin for VuePress",
 
-  base: "/photo-swipe/",
+  base: "/v1/photo-swipe/",
   dest: "./dist",
 
   locales: {

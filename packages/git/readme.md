@@ -11,7 +11,7 @@
 
 Git 信息插件 🕘 / Git information plugin🕘
 
-## [Official Docs](https://vuepress-theme-hope.github.io/git/) | [官方文档](https://vuepress-theme-hope.github.io/git/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v1/git/) | [官方文档](https://vuepress-theme-hope.github.io/v1/git/zh/)
 
 ## Install / 安装
 

@@ -5,7 +5,7 @@ export default hope.config({
   title: "Markdown Enhance",
   description: "Markdown Enhancement for VuePress",
 
-  base: "/md-enhance/",
+  base: "/v1/md-enhance/",
   dest: "./dist",
 
   locales: {

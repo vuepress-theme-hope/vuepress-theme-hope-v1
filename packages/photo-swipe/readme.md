@@ -9,7 +9,7 @@
 
 <!-- markdownlint-restore -->
 
-## [Official Docs](https://vuepress-theme-hope.github.io/photo-swipe) / [官方文档](https://vuepress-theme-hope.github.io/photo-swipe/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v1/photo-swipe) / [官方文档](https://vuepress-theme-hope.github.io/v1/photo-swipe/zh/)
 
 ## Install / 安装
 

@@ -85,11 +85,11 @@ export interface PageInfoProps {
   /**
    * Page Info display configuration
    *
-   * @see https://vuepress-theme-hope.github.io/components/guide/pageinfo/
+   * @see https://vuepress-theme-hope.github.io/v1/components/guide/pageinfo/
    *
    * 文章信息配置
    *
-   * @see https://vuepress-theme-hope.github.io/components/zh/guide/pageinfo/
+   * @see https://vuepress-theme-hope.github.io/v1/components/zh/guide/pageinfo/
    *
    * @default ['author', 'visitor', 'time', 'category', 'tag', 'reading-time']
    */

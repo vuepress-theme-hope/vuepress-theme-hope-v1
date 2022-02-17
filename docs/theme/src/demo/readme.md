@@ -29,5 +29,5 @@ category: demo
 - Feel free to add yours
 
 [docker-practice]: https://docker_practice.gitee.io/us-en
-[vuepress-theme-hope]: https://vuepress-theme-hope.github.io
+[vuepress-theme-hope]: https://vuepress-theme-hope.github.io/v1/
 [hope-studio]: https://hope-studio.innenu.com

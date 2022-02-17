@@ -5,7 +5,7 @@ export default hope.config({
   title: "Feed Generator",
   description: "Feed Plugin for vuepress",
 
-  base: "/feed/",
+  base: "/v1/feed/",
   dest: "./dist",
 
   locales: {

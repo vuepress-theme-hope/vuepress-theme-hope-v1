@@ -11,7 +11,7 @@
 
 VuePress SEO plugin🛠 / VuePress SEO 插件 🛠
 
-## [Official Docs](https://vuepress-theme-hope.github.io/seo/) | [官方文档](https://vuepress-theme-hope.github.io/seo/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v1/seo/) | [官方文档](https://vuepress-theme-hope.github.io/v1/seo/zh/)
 
 ## 安装 / Install
 

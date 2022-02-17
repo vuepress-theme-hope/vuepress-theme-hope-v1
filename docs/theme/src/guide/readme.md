@@ -143,16 +143,16 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [vuepress-plugin-photo-swipe][photo-swipe]: Make the site’s picture support click zoom
 
-[active-hash]: https://vuepress-theme-hope.github.io/active-hash/
-[add-this]: https://vuepress-theme-hope.github.io/add-this/
-[comment]: https://vuepress-theme-hope.github.io/comment/
-[components]: https://vuepress-theme-hope.github.io/components/
-[copy-code]: https://vuepress-theme-hope.github.io/copy-code/
-[feed]: https://vuepress-theme-hope.github.io/feed/
-[git]: https://vuepress-theme-hope.github.io/git/
-[md-enhance]: https://vuepress-theme-hope.github.io/md-enhance/
-[photo-swipe]: https://vuepress-theme-hope.github.io/photo-swipe/
-[pwa]: https://vuepress-theme-hope.github.io/pwa/
-[reading-time]: https://vuepress-theme-hope.github.io/reading-time/
-[seo]: https://vuepress-theme-hope.github.io/seo/
-[sitemap]: https://vuepress-theme-hope.github.io/sitemap/
+[active-hash]: https://vuepress-theme-hope.github.io/v1/active-hash/
+[add-this]: https://vuepress-theme-hope.github.io/v1/add-this/
+[comment]: https://vuepress-theme-hope.github.io/v1/comment/
+[components]: https://vuepress-theme-hope.github.io/v1/components/
+[copy-code]: https://vuepress-theme-hope.github.io/v1/copy-code/
+[feed]: https://vuepress-theme-hope.github.io/v1/feed/
+[git]: https://vuepress-theme-hope.github.io/v1/git/
+[md-enhance]: https://vuepress-theme-hope.github.io/v1/md-enhance/
+[photo-swipe]: https://vuepress-theme-hope.github.io/v1/photo-swipe/
+[pwa]: https://vuepress-theme-hope.github.io/v1/pwa/
+[reading-time]: https://vuepress-theme-hope.github.io/v1/reading-time/
+[seo]: https://vuepress-theme-hope.github.io/v1/seo/
+[sitemap]: https://vuepress-theme-hope.github.io/v1/sitemap/

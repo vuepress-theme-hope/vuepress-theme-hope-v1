@@ -5,7 +5,7 @@ export default hope.config({
   title: "Share Plugin",
   description: "Share Plugin provided by AddThis",
 
-  base: "/add-this/",
+  base: "/v1/add-this/",
 
   dest: "./dist",
 

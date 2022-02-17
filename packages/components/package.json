@@ -6,7 +6,7 @@
     "vuepress-plugin",
     "components"
   ],
-  "homepage": "https://vuepress-theme-hope.github.io/components/",
+  "homepage": "https://vuepress-theme-hope.github.io/v1/components/",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },

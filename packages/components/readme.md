@@ -4,7 +4,7 @@
 
 Components for vuepress-theme-hope.
 
-## [Official Docs](https://vuepress-theme-hope.github.io/components/) | [官方文档](https://vuepress-theme-hope.github.io/components/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v1/components/) | [官方文档](https://vuepress-theme-hope.github.io/v1/components/zh/)
 
 ## 安装 / Install
 

@@ -5,7 +5,7 @@ export default hope.config({
   title: "Reading Time Counter",
   description: "Expect reading time and word count statistics",
 
-  base: "/reading-time/",
+  base: "/v1/reading-time/",
   dest: "./dist",
 
   locales: {

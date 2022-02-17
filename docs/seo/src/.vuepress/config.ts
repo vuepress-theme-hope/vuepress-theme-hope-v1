@@ -5,7 +5,7 @@ export default hope.config({
   title: "SEO Enhance",
   description: "Using <meta> tags to Enhance Your site SEO",
 
-  base: "/seo/",
+  base: "/v1/seo/",
   dest: "./dist",
 
   locales: {

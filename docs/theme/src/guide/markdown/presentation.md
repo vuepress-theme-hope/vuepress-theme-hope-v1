@@ -64,7 +64,7 @@ Theme available(replace `[theme]` with them):
 - `blood`
 - `moon`
 
-For details, see [Themes demo](https://vuepress-theme-hope.github.io/md-enhance/guide/presentation/themes/).
+For details, see [Themes demo](https://vuepress-theme-hope.github.io/v1/md-enhance/guide/presentation/themes/).
 
 ## Demo
 
@@ -132,7 +132,7 @@ $$
 @slideend
 ````
 
-For detailed demo, please see [Presentation Demo](https://vuepress-theme-hope.github.io/md-enhance/guide/presentation/demo/)
+For detailed demo, please see [Presentation Demo](https://vuepress-theme-hope.github.io/v1/md-enhance/guide/presentation/demo/)
 
 ## Options
 

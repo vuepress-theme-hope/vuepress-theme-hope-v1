@@ -384,7 +384,7 @@ If you are extending this theme, you may need to update your code.
 ### Features <Badge text="new" />
 
 - `last-update` plugin is removed
-- a new [`git` plugin](https://vuepress-theme-hope.github.io/git/) (`@mr-hope/vuepress-plugin-git`) :tada:
+- a new [`git` plugin](https://vuepress-theme-hope.github.io/v1/git/) (`@mr-hope/vuepress-plugin-git`) :tada:
 
 ## v1.11.1
 
@@ -422,7 +422,7 @@ If you are extending this theme, you may need to update your code.
 
 ### Features <Badge text="new" />
 
-[**new Feed plugin**](https://vuepress-theme-hope.github.io/feed/). :tada:
+[**new Feed plugin**](https://vuepress-theme-hope.github.io/v1/feed/). :tada:
 
 ### Breaking Changes <Badge text="drop" type="error" />
 
@@ -444,7 +444,7 @@ If you are extending this theme, you may need to update your code.
 
 ### Features <Badge text="new" />
 
-- **md-enhance**: [new Code Demo feature](https://vuepress-theme-hope.github.io/guide/markdown/demo/) :tada:
+- **md-enhance**: [new Code Demo feature](https://vuepress-theme-hope.github.io/v1/guide/markdown/demo/) :tada:
 
 ## v1.5.4
 

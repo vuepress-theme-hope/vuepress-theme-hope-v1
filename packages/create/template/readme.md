@@ -35,4 +35,4 @@ This is a blog home page.
 
 To use this layout, you should set both `blog: true` and `home: true` in the page front matter.
 
-For related configuration docs, please see [blog homepage](https://vuepress-theme-hope.github.io/guide/blog/home/)
+For related configuration docs, please see [blog homepage](https://vuepress-theme-hope.github.io/v1/guide/blog/home/)

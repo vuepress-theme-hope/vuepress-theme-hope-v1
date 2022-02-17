@@ -4,7 +4,7 @@ export default hope.config({
   title: "Sitemap Generator",
   description: "Generate Sitemap for your site",
 
-  base: "/sitemap/",
+  base: "/v1/sitemap/",
   dest: "./dist",
 
   locales: {

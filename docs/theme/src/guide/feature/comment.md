@@ -7,7 +7,7 @@ tags:
   - feature
 ---
 
-`vuepress-theme-hope` implements the comment feature with built-in [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/comment/).
+`vuepress-theme-hope` implements the comment feature with built-in [`@mr-hope/vuepress-plugin-comment`](https://vuepress-theme-hope.github.io/v1/comment/).
 
 <!-- more -->
 
@@ -61,7 +61,7 @@ Comment feature is enabled globally by default, the configuration key is `commen
 
 ::: tip
 
-For the complete config item of the plugin ,please see [@mr-hope/vuepress-plugin-comment plugin documentation](https://vuepress-theme-hope.github.io/comment/).
+For the complete config item of the plugin ,please see [@mr-hope/vuepress-plugin-comment plugin documentation](https://vuepress-theme-hope.github.io/v1/comment/).
 
 :::
 

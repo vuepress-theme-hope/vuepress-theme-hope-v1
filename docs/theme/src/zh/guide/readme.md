@@ -99,7 +99,7 @@ tags:
 
 ### 博客
 
-- [社交关注按钮与页面社交分享](https://vuepress-theme-hope.github.io/add-this/zh/)
+- [社交关注按钮与页面社交分享](https://vuepress-theme-hope.github.io/v1/add-this/zh/)
 
 - [支持置顶的文章列表](blog/intro.md)
 
@@ -143,16 +143,16 @@ tags:
 
 - [vuepress-plugin-photo-swipe][photo-swipe]: 使网站的图片支持缩放与滑动浏览
 
-[active-hash]: https://vuepress-theme-hope.github.io/active-hash/zh/
-[add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
-[comment]: https://vuepress-theme-hope.github.io/comment/zh/
-[components]: https://vuepress-theme-hope.github.io/components/zh/
-[copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/
-[feed]: https://vuepress-theme-hope.github.io/feed/zh/
-[git]: https://vuepress-theme-hope.github.io/git/zh/
-[md-enhance]: https://vuepress-theme-hope.github.io/md-enhance/zh/
-[photo-swipe]: https://vuepress-theme-hope.github.io/photo-swipe/zh/
-[pwa]: https://vuepress-theme-hope.github.io/pwa/zh/
-[reading-time]: https://vuepress-theme-hope.github.io/reading-time/zh/
-[seo]: https://vuepress-theme-hope.github.io/seo/zh/
-[sitemap]: https://vuepress-theme-hope.github.io/sitemap/zh/
+[active-hash]: https://vuepress-theme-hope.github.io/v1/active-hash/zh/
+[add-this]: https://vuepress-theme-hope.github.io/v1/add-this/zh/
+[comment]: https://vuepress-theme-hope.github.io/v1/comment/zh/
+[components]: https://vuepress-theme-hope.github.io/v1/components/zh/
+[copy-code]: https://vuepress-theme-hope.github.io/v1/copy-code/zh/
+[feed]: https://vuepress-theme-hope.github.io/v1/feed/zh/
+[git]: https://vuepress-theme-hope.github.io/v1/git/zh/
+[md-enhance]: https://vuepress-theme-hope.github.io/v1/md-enhance/zh/
+[photo-swipe]: https://vuepress-theme-hope.github.io/v1/photo-swipe/zh/
+[pwa]: https://vuepress-theme-hope.github.io/v1/pwa/zh/
+[reading-time]: https://vuepress-theme-hope.github.io/v1/reading-time/zh/
+[seo]: https://vuepress-theme-hope.github.io/v1/seo/zh/
+[sitemap]: https://vuepress-theme-hope.github.io/v1/sitemap/zh/

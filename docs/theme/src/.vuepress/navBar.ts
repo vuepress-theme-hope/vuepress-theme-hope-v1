@@ -41,55 +41,55 @@ export default {
           items: [
             {
               text: "Active Hash Plugin",
-              link: "https://vuepress-theme-hope.github.io/active-hash/",
+              link: "https://vuepress-theme-hope.github.io/v1/active-hash/",
             },
             {
               text: "AddThis Plugin",
-              link: "https://vuepress-theme-hope.github.io/add-this/",
+              link: "https://vuepress-theme-hope.github.io/v1/add-this/",
             },
             {
               text: "Comment Plugin",
-              link: "https://vuepress-theme-hope.github.io/comment/",
+              link: "https://vuepress-theme-hope.github.io/v1/comment/",
             },
             {
               text: "Components Plugin",
-              link: "https://vuepress-theme-hope.github.io/components/",
+              link: "https://vuepress-theme-hope.github.io/v1/components/",
             },
             {
               text: "Copy Code Plugin",
-              link: "https://vuepress-theme-hope.github.io/copy-code/",
+              link: "https://vuepress-theme-hope.github.io/v1/copy-code/",
             },
             {
               text: "Feed Plugin",
-              link: "https://vuepress-theme-hope.github.io/feed/",
+              link: "https://vuepress-theme-hope.github.io/v1/feed/",
             },
             {
               text: "Git Info Plugin",
-              link: "https://vuepress-theme-hope.github.io/git/",
+              link: "https://vuepress-theme-hope.github.io/v1/git/",
             },
             {
               text: "Markdown Enhance Plugin",
-              link: "https://vuepress-theme-hope.github.io/md-enhance/",
+              link: "https://vuepress-theme-hope.github.io/v1/md-enhance/",
             },
             {
               text: "Photo Swipe Plugin",
-              link: "https://vuepress-theme-hope.github.io/photo-swipe/",
+              link: "https://vuepress-theme-hope.github.io/v1/photo-swipe/",
             },
             {
               text: "PWA Plugin",
-              link: "https://vuepress-theme-hope.github.io/pwa/",
+              link: "https://vuepress-theme-hope.github.io/v1/pwa/",
             },
             {
               text: "Reading Time Plugin",
-              link: "https://vuepress-theme-hope.github.io/reading-time/",
+              link: "https://vuepress-theme-hope.github.io/v1/reading-time/",
             },
             {
               text: "Seo Plugin",
-              link: "https://vuepress-theme-hope.github.io/seo/",
+              link: "https://vuepress-theme-hope.github.io/v1/seo/",
             },
             {
               text: "Sitemap Plugin",
-              link: "https://vuepress-theme-hope.github.io/sitemap/",
+              link: "https://vuepress-theme-hope.github.io/v1/sitemap/",
             },
           ],
         },
@@ -137,55 +137,55 @@ export default {
           items: [
             {
               text: "自动激活锚点插件",
-              link: "https://vuepress-theme-hope.github.io/active-hash/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/active-hash/zh/",
             },
             {
               text: "AddThis 插件",
-              link: "https://vuepress-theme-hope.github.io/add-this/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/add-this/zh/",
             },
             {
               text: "评论插件",
-              link: "https://vuepress-theme-hope.github.io/comment/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/comment/zh/",
             },
             {
               text: "组件库",
-              link: "https://vuepress-theme-hope.github.io/components/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/components/zh/",
             },
             {
               text: "代码复制插件",
-              link: "https://vuepress-theme-hope.github.io/copy-code/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/copy-code/zh/",
             },
             {
               text: "Feed 插件",
-              link: "https://vuepress-theme-hope.github.io/feed/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/feed/zh/",
             },
             {
               text: "Git 信息插件",
-              link: "https://vuepress-theme-hope.github.io/git/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/git/zh/",
             },
             {
               text: "Markdown 增强插件",
-              link: "https://vuepress-theme-hope.github.io/md-enhance/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/md-enhance/zh/",
             },
             {
               text: "图片预览插件",
-              link: "https://vuepress-theme-hope.github.io/photo-swipe/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/photo-swipe/zh/",
             },
             {
               text: "PWA 插件",
-              link: "https://vuepress-theme-hope.github.io/pwa/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/pwa/zh/",
             },
             {
               text: "阅读时间插件",
-              link: "https://vuepress-theme-hope.github.io/reading-time/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/reading-time/zh/",
             },
             {
               text: "Seo 插件",
-              link: "https://vuepress-theme-hope.github.io/seo/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/seo/zh/",
             },
             {
               text: "Sitemap 插件",
-              link: "https://vuepress-theme-hope.github.io/sitemap/zh/",
+              link: "https://vuepress-theme-hope.github.io/v1/sitemap/zh/",
             },
           ],
         },

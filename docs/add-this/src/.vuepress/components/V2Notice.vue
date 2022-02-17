@@ -66,7 +66,7 @@ export default Vue.extend({
 
     v2docs() {
       window.open(
-        `https://vuepress-theme-hope.github.io/v2/add-thie${this.$localePath}`
+        `https://vuepress-theme-hope.github.io/v2/add-this${this.$localePath}`
       );
       this.close();
     },

@@ -618,14 +618,14 @@ Delay to smooth scroll to hash, default is `500`.
 
 > Set to `false` to disable this feature.
 
-[active-hash-config]: https://vuepress-theme-hope.github.io/active-hash/#config
-[add-this]: https://vuepress-theme-hope.github.io/add-this/
-[comment-config]: https://vuepress-theme-hope.github.io/comment/config/
+[active-hash-config]: https://vuepress-theme-hope.github.io/v1/active-hash/#config
+[add-this]: https://vuepress-theme-hope.github.io/v1/add-this/
+[comment-config]: https://vuepress-theme-hope.github.io/v1/comment/config/
 [copyright-config]: https://vuepress.github.io/en/plugins/copyright/
-[md-enhance-config]: https://vuepress-theme-hope.github.io/md-enhance/config/
-[copy-code]: https://vuepress-theme-hope.github.io/copy-code
-[photo-swipe-config]: https://vuepress-theme-hope.github.io/photo-swipe/config/
-[pwa-config]: https://vuepress-theme-hope.github.io/pwa/config/
-[feed-config]: https://vuepress-theme-hope.github.io/feed/config/
-[seo-config]: https://vuepress-theme-hope.github.io/seo/#plugin-options
-[sitemap-config]: https://vuepress-theme-hope.github.io/sitemap/#plugin-options
+[md-enhance-config]: https://vuepress-theme-hope.github.io/v1/md-enhance/config/
+[copy-code]: https://vuepress-theme-hope.github.io/v1/copy-code
+[photo-swipe-config]: https://vuepress-theme-hope.github.io/v1/photo-swipe/config/
+[pwa-config]: https://vuepress-theme-hope.github.io/v1/pwa/config/
+[feed-config]: https://vuepress-theme-hope.github.io/v1/feed/config/
+[seo-config]: https://vuepress-theme-hope.github.io/v1/seo/#plugin-options
+[sitemap-config]: https://vuepress-theme-hope.github.io/v1/sitemap/#plugin-options

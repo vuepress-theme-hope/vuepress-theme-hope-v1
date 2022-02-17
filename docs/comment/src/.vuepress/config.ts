@@ -5,7 +5,7 @@ export default hope.config({
   title: "Comment Plugin",
   description: "Comment Plugin for VuePress",
 
-  base: "/comment/",
+  base: "/v1/comment/",
   dest: "./dist",
 
   locales: {

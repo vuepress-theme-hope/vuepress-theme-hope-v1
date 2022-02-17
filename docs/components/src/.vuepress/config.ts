@@ -5,7 +5,7 @@ export default hope.config({
   title: "Components Lib",
   description: "Components Lib plugin for VuePress",
 
-  base: "/components/",
+  base: "/v1/components/",
   dest: "./dist",
 
   locales: {

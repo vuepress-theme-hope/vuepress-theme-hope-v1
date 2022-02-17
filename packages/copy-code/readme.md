@@ -11,7 +11,7 @@
 
 VuePress copy code plugin📋 / VuePress 代码复制插件 📋
 
-## [Official Docs](https://vuepress-theme-hope.github.io/copy-code/) | [官方文档](https://vuepress-theme-hope.github.io/copy-code/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v1/copy-code/) | [官方文档](https://vuepress-theme-hope.github.io/v1/copy-code/zh/)
 
 ## Usage / 使用
 

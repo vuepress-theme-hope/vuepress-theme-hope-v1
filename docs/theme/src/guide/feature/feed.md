@@ -7,7 +7,7 @@ tags:
   - feed
 ---
 
-The theme will enable feed generation support using [`@mr-hope/vuepress-plugin-feed`](https://vuepress-theme-hope.github.io/feed/) by default.
+The theme will enable feed generation support using [`@mr-hope/vuepress-plugin-feed`](https://vuepress-theme-hope.github.io/v1/feed/) by default.
 
 `@mr-hope/vuepress-plugin-feed` plugin will automatically generate feed in the following three formats for you
 
@@ -28,7 +28,7 @@ We recommend you to set the following options:
 - Convert the date when the feed was created to ISOString and write it to `channel.pubDate`
 - Set the content update cycle (unit: minute) in `channel.ttl`
 
-For detailed options and their values, please see [Feed Channel Config](https://vuepress-theme-hope.github.io/feed/config/channel/)
+For detailed options and their values, please see [Feed Channel Config](https://vuepress-theme-hope.github.io/v1/feed/config/channel/)
 
 ## Project Settings
 
@@ -36,10 +36,10 @@ By default, all articles will be added to the feed stream. You can control the g
 
 To remove a specific page from the feed, set `feed.enable` to `false` in the frontmatter of the page.
 
-You can also add content directly to the feed plugin via `frontmatter.feed`. For detailed options and their default values, please see [Feed Item Config](https://vuepress-theme-hope.github.io/feed/config/item/)
+You can also add content directly to the feed plugin via `frontmatter.feed`. For detailed options and their default values, please see [Feed Item Config](https://vuepress-theme-hope.github.io/v1/feed/config/item/)
 
 ## Output configuration
 
 You can use the `output` in the configuration options to decide which feed file formats to output and their location.
 
-For detailed options and their default values, see [Feed Output config](https://vuepress-theme-hope.github.io/feed/config/#output)
+For detailed options and their default values, see [Feed Output config](https://vuepress-theme-hope.github.io/v1/feed/config/#output)

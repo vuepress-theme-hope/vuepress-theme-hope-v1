@@ -7,7 +7,7 @@ tags:
   - seo
 ---
 
-`vuepress-theme-hope` 通过内置 [`@mr-hope/vuepress-plugin-seo`](https://vuepress-theme-hope.github.io/seo/zh/) 为提供 SEO 增强功能。
+`vuepress-theme-hope` 通过内置 [`@mr-hope/vuepress-plugin-seo`](https://vuepress-theme-hope.github.io/v1/seo/zh/) 为提供 SEO 增强功能。
 
 为了使插件能够更好的工作，可能需要查看一下 [页面信息配置](../../config/page.md#页面信息配置) 并合理的配置它们。
 

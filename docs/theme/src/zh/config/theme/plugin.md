@@ -623,13 +623,13 @@ AddThis 的 pubid
 
 > 设置为 `false` 以禁用此功能。
 
-[active-hash-config]: https://vuepress-theme-hope.github.io/active-hash/zh/#配置
-[add-this]: https://vuepress-theme-hope.github.io/add-this/zh/
-[comment-config]: https://vuepress-theme-hope.github.io/comment/zh/config/
-[copy-code]: https://vuepress-theme-hope.github.io/copy-code/zh/
-[md-enhance-config]: https://vuepress-theme-hope.github.io/md-enhance/zh/config/
-[photo-swipe-config]: https://vuepress-theme-hope.github.io/photo-swipe/zh/config/
-[pwa-config]: https://vuepress-theme-hope.github.io/pwa/zh/config/
-[feed-config]: https://vuepress-theme-hope.github.io/feed/zh/config/
-[seo-config]: https://vuepress-theme-hope.github.io/seo/zh/#插件选项
-[sitemap-config]: https://vuepress-theme-hope.github.io/sitemap/zh/#插件选项
+[active-hash-config]: https://vuepress-theme-hope.github.io/v1/active-hash/zh/#配置
+[add-this]: https://vuepress-theme-hope.github.io/v1/add-this/zh/
+[comment-config]: https://vuepress-theme-hope.github.io/v1/comment/zh/config/
+[copy-code]: https://vuepress-theme-hope.github.io/v1/copy-code/zh/
+[md-enhance-config]: https://vuepress-theme-hope.github.io/v1/md-enhance/zh/config/
+[photo-swipe-config]: https://vuepress-theme-hope.github.io/v1/photo-swipe/zh/config/
+[pwa-config]: https://vuepress-theme-hope.github.io/v1/pwa/zh/config/
+[feed-config]: https://vuepress-theme-hope.github.io/v1/feed/zh/config/
+[seo-config]: https://vuepress-theme-hope.github.io/v1/seo/zh/#插件选项
+[sitemap-config]: https://vuepress-theme-hope.github.io/v1/sitemap/zh/#插件选项

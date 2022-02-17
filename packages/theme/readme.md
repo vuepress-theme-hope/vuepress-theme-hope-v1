@@ -20,7 +20,7 @@ A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress
 
 ## Official Docs / 官方文档
 
-[English Docs](https://vuepress-theme-hope.github.io/) | [中文文档](https://vuepress-theme-hope.github.io/zh/) | [Gitee 镜像](#gitee-镜像)
+[English Docs](https://vuepress-theme-hope.github.io/v1/) | [中文文档](https://vuepress-theme-hope.github.io/v1/zh/) | [Gitee 镜像](#gitee-镜像)
 
 [Theme Highlights](#Theme-Highlights) | [主题特点](#主题特点)
 

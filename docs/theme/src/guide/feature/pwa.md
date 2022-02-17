@@ -7,7 +7,7 @@ tags:
   - pwa
 ---
 
-The theme will enable progressive web app support[^pwa-intro] by including [`@mr-hope/vuepress-plugin-pwa`](https://vuepress-theme-hope.github.io/pwa/).
+The theme will enable progressive web app support[^pwa-intro] by including [`@mr-hope/vuepress-plugin-pwa`](https://vuepress-theme-hope.github.io/v1/pwa/).
 
 [^pwa-intro]: **PWA introduction**
 
@@ -173,13 +173,13 @@ Besides the plugin does not process anything in the manifest, but outputs them a
 
 The plugin also provides other PWA-related options, such as Microsoft tile icon and color settings, Apple icon and so on.
 
-You can set them as needed. For detailed options, please see [Configuration Page](https://vuepress-theme-hope.github.io/pwa/config/)).
+You can set them as needed. For detailed options, please see [Configuration Page](https://vuepress-theme-hope.github.io/v1/pwa/config/)).
 
 ## Further Reading
 
 For more details, please see:
 
-- [PWA plugin docs](https://vuepress-theme-hope.github.io/pwa/)
+- [PWA plugin docs](https://vuepress-theme-hope.github.io/v1/pwa/)
 - [Google PWA](https://web.dev/progressive-web-apps/)
 - [MDN PWA](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps)
 - [W3C Manifest Specification](https://w3c.github.io/manifest/)

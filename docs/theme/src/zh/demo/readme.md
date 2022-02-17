@@ -29,5 +29,5 @@ category: demo
 - 随时随地添加你的博客或文档到此
 
 [docker-practice]: https://vuepress.mirror.docker-practice.com/
-[vuepress-theme-hope]: https://vuepress-theme-hope.github.io
+[vuepress-theme-hope]: https://vuepress-theme-hope.github.io/v1/
 [hope-studio]: https://hope-studio.innenu.com

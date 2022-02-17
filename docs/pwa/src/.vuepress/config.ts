@@ -5,7 +5,7 @@ export default hope.config({
   title: "PWA Support",
   description: "A powerful PWA plugin for vuepress",
 
-  base: "/pwa/",
+  base: "/v1/pwa/",
   dest: "./dist",
 
   locales: {

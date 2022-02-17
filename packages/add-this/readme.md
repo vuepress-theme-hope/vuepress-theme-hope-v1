@@ -11,7 +11,7 @@
 
 VuePress add-this plugin💌 / VuePress AddThis 插件 💌
 
-## [Official Docs](https://vuepress-theme-hope.github.io/add-this/) / [官方文档](https://vuepress-theme-hope.github.io/add-this/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v1/add-this/) / [官方文档](https://vuepress-theme-hope.github.io/v1/add-this/zh/)
 
 ## Install / 安装
 

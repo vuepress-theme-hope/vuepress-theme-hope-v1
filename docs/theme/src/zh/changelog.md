@@ -369,7 +369,7 @@ your flowchart...
 
 ### 新功能 <Badge text="新增" />
 
-- 新增 [`git` 插件](https://vuepress-theme-hope.github.io/git/zh/) (`@mr-hope/vuepress-plugin-git`) :tada:
+- 新增 [`git` 插件](https://vuepress-theme-hope.github.io/v1/git/zh/) (`@mr-hope/vuepress-plugin-git`) :tada:
 
 ### 破坏变更 <Badge text="移除" type="warn" />
 
@@ -411,7 +411,7 @@ your flowchart...
 
 ### 新功能 <Badge text="新增" />
 
-新增 [**Feed 插件**](https://vuepress-theme-hope.github.io/feed//zh/)。:tada:
+新增 [**Feed 插件**](https://vuepress-theme-hope.github.io/v1/feed//zh/)。:tada:
 
 ### 破坏变更 <Badge text="移除" type="warn" />
 
@@ -433,7 +433,7 @@ your flowchart...
 
 ### 新功能 <Badge text="新增" />
 
-- **md-enhance**: [新的代码演示功能](https://vuepress-theme-hope.github.io/zh/guide/markdown/demo/) :tada:
+- **md-enhance**: [新的代码演示功能](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/demo/) :tada:
 
 ## v1.5.4
 

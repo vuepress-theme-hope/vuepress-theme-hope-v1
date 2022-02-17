@@ -11,7 +11,7 @@
 
 VuePress Sitemap plugin🗺️ / VuePress Sitemap 插件 🗺️
 
-## [Official Docs](https://vuepress-theme-hope.github.io/sitemap/) | [官方文档](https://vuepress-theme-hope.github.io/sitemap/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v1/sitemap/) | [官方文档](https://vuepress-theme-hope.github.io/v1/sitemap/zh/)
 
 ## 安装 / Install
 

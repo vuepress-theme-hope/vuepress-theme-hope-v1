@@ -140,20 +140,20 @@ interface HopeThemePluginConfig {
   /**
    * chunk 重命名
    *
-   * @see https://vuepress-theme-hope.github.io/zh/config/theme/plugin/#chunkrename
+   * @see https://vuepress-theme-hope.github.io/v1/zh/config/theme/plugin/#chunkrename
    *
    * Chunk Rename
-   * @see https://vuepress-theme-hope.github.io/config/theme/plugin/#chunkrename
+   * @see https://vuepress-theme-hope.github.io/v1/config/theme/plugin/#chunkrename
    */
 
   chunkRename?: ChunkRenameOptions | false;
 
   /**
    * 清理插件配置
-   * @see https://vuepress-theme-hope.github.io/zh/config/theme/plugin/#cleanurl
+   * @see https://vuepress-theme-hope.github.io/v1/zh/config/theme/plugin/#cleanurl
    *
    * Clean Url Config
-   * @see https://vuepress-theme-hope.github.io/config/theme/plugin/#cleanurl
+   * @see https://vuepress-theme-hope.github.io/v1/config/theme/plugin/#cleanurl
    */
   cleanUrl?: CleanUrlOptions | false;
 

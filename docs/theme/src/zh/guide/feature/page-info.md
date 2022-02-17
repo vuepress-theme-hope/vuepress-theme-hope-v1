@@ -7,7 +7,7 @@ tags:
   - page info
 ---
 
-通过引入 [`@mr-hope/vuepress-plugin-components`](https://vuepress-theme-hope.github.io/components/zh/)，`vuepress-theme-hope` 实现了文章信息展示。
+通过引入 [`@mr-hope/vuepress-plugin-components`](https://vuepress-theme-hope.github.io/v1/components/zh/)，`vuepress-theme-hope` 实现了文章信息展示。
 
 <!-- more -->
 

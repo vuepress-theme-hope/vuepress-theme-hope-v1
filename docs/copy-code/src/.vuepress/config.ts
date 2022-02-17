@@ -5,7 +5,7 @@ export default hope.config({
   title: "Quick Code Copy",
   description: "Quick Code Copy Plugin for vuepress",
 
-  base: "/copy-code/",
+  base: "/v1/copy-code/",
   dest: "./dist",
 
   locales: {

@@ -7,7 +7,7 @@ tags:
   - markdown
 ---
 
-除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过 [vuepress-plugin-md-enhance](https://vuepress-theme-hope.github.io/md-enhance)，在 Markdown 中启用了更多的语法与新功能。
+除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过 [vuepress-plugin-md-enhance](https://vuepress-theme-hope.github.io/v1/md-enhance/)，在 Markdown 中启用了更多的语法与新功能。
 
 <!-- more -->
 
@@ -19,7 +19,7 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定�
 
 ## 启用 Markdown 增强
 
-`.vuepress/config.js` 中的 `themeconfig.mdEnhance` 会直接传递给插件作为插件选项。所以你也可以直接阅读 [vuepress-plugin-md-enhance 文档](https://vuepress-theme-hope.github.io/md-enhance) 查看用法。
+`.vuepress/config.js` 中的 `themeconfig.mdEnhance` 会直接传递给插件作为插件选项。所以你也可以直接阅读 [vuepress-plugin-md-enhance 文档](https://vuepress-theme-hope.github.io/v1/md-enhance/) 查看用法。
 
 ::: tip
 
@@ -29,7 +29,7 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定�
 
 ### 一键启用
 
-你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) 插件的所有功能。
+你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/v1/md-enhance/) 插件的所有功能。
 
 ```js {3-5}
 module.exports = {

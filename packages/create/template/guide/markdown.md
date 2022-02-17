@@ -6,13 +6,13 @@ tag:
   - markdown
 ---
 
-`vuepress-theme-hope` enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) plugin.
+`vuepress-theme-hope` enables more syntax in Markdown via the built-in [md-enhance](https://vuepress-theme-hope.github.io/v1/md-enhance) plugin.
 
 <!-- more -->
 
 ## Enable all
 
-You can set `themeconfig.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) plugin.
+You can set `themeconfig.mdEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/v1/md-enhance) plugin.
 
 ```js {3-5}
 module.exports = {
@@ -38,7 +38,7 @@ module.exports = {
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/sup-sub/)
+- [View Detail](https://vuepress-theme-hope.github.io/v1/guide/markdown/sup-sub/)
 
 ### Align
 
@@ -72,7 +72,7 @@ I am right align
 
 ::::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/align/)
+- [View Detail](https://vuepress-theme-hope.github.io/v1/guide/markdown/align/)
 
 ### Footnote
 
@@ -90,7 +90,7 @@ This text has footnote[^first].
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/footnote/)
+- [View Detail](https://vuepress-theme-hope.github.io/v1/guide/markdown/footnote/)
 
 ### Mark
 
@@ -104,7 +104,7 @@ You can mark ==important words== .
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/mark/)
+- [View Detail](https://vuepress-theme-hope.github.io/v1/guide/markdown/mark/)
 
 ### Tasklist
 
@@ -120,7 +120,7 @@ You can mark ==important words== .
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/tasklist/)
+- [View Detail](https://vuepress-theme-hope.github.io/v1/guide/markdown/tasklist/)
 
 ### Flowchart
 
@@ -148,7 +148,7 @@ cond(no)->e
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/flowchart/)
+- [View Detail](https://vuepress-theme-hope.github.io/v1/guide/markdown/flowchart/)
 
 ## Mermaid
 
@@ -174,7 +174,7 @@ graph TD;
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/mermaid/)
+- [View Detail](https://vuepress-theme-hope.github.io/v1/guide/markdown/mermaid/)
 
 ### Tex
 
@@ -194,7 +194,7 @@ $$
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/tex/)
+- [View Detail](https://vuepress-theme-hope.github.io/v1/guide/markdown/tex/)
 
 ### Demo
 
@@ -412,7 +412,7 @@ h1 {
 
 ::::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/demo/)
+- [View Detail](https://vuepress-theme-hope.github.io/v1/guide/markdown/demo/)
 
 ### Presentation
 
@@ -484,7 +484,7 @@ $$
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/guide/markdown/presentation/)
+- [View Detail](https://vuepress-theme-hope.github.io/v1/guide/markdown/presentation/)
 
 ## Other Syntax
 
