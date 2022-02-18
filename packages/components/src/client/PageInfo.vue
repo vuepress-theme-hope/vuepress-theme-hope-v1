@@ -48,9 +48,6 @@ $pageInfoTextSize ?= 14px
         color var(--accent-color, $accentColor)
         font-size 0.9em
 
-  .page-title + .theme-default-content:not(.custom)
-    padding-top 0
-
   .page-info
     display flex
     justify-content flex-start
@@ -92,6 +89,17 @@ $pageInfoTextSize ?= 14px
       height 1em
       margin-right 0.25em
 
-  .theme-default-content:not(.custom) > h1:first-child
-    display none
+  .theme-default-content:not(.custom)
+    padding-top 0
+
+    > h1:first-child
+      display none
+
+      + h2
+        margin-top 0.5rem - $navbarHeight !important
+        padding-top $navbarHeight !important
+
+        @media (max-width $MQMobile)
+          margin-top 0.5rem - $navbarMobileHeight !important
+          padding-top $navbarMobileHeight !important
 </style>
