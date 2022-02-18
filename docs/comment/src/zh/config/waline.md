@@ -22,22 +22,20 @@ Waline 的服务端地址。
 - 类型: `string`
 - 必填: 否
 
-暗黑模式适配。
+深色模式适配。
 
-- 设置 `'auto'` 会根据设备暗黑模式自适应。
+- 设置 `'auto'` 会根据设备深色模式自适应。
 - 填入 CSS 选择器会在对应选择器生效时启用夜间模式。
 
 ::: tip 针对不同主题的例子
 
-- **Docusaurus**: 它会在 `<html>` 上通过设置 `data-theme="dark"` 开启暗黑模式，那么你需要将 `dark` 选项设置为 `'html[data-theme="dark"]'`。
+- **Docusaurus**: 它会在 `<html>` 上通过设置 `data-theme="dark"` 开启深色模式，那么你需要将 `dark` 选项设置为 `'html[data-theme="dark"]'`。
 
-- **hexo-theme-fluid**: 它会在 `<html>` 上通过设置 `data-user-color-scheme="dark"` 开启暗黑模式。那么你需要将 `dark` 选项设置为 `'html[data-user-color-scheme="dark"]'`。
-
-- **vuepress-theme-hope**: 它会在 `<body>` 上添加`theme-dark` class 来开启暗黑模式。那么你需要将 `dark` 选项设置为 `body.theme-dark`。
+- **hexo-theme-fluid**: 它会在 `<html>` 上通过设置 `data-user-color-scheme="dark"` 开启深色模式。那么你需要将 `dark` 选项设置为 `'html[data-user-color-scheme="dark"]'`。
 
 :::
 
-自定义样式与暗黑模式详见 [自定义样式](https://waline.js.org/guide/client/style.html)。
+自定义样式与深色模式详见 [自定义样式](https://waline.js.org/guide/client/style.html)。
 
 ## meta
 
@@ -143,40 +141,48 @@ Waline 的服务端地址。
 
 ## walineLocales
 
-```ts
-interface WalineLocaleData {
-  nick: string;
-  nickError: string;
-  mail: string;
-  mailError: string;
-  link: string;
-  optional: string;
-  placeholder: string;
-  sofa: string;
-  submit: string;
-  reply: string;
-  cancelReply: string;
-  comment: string;
-  refresh: string;
-  more: string;
-  preview: string;
-  emoji: string;
-  uploadImage: string;
-  seconds: string;
-  minutes: string;
-  hours: string;
-  days: string;
-  now: string;
-  uploading: string;
-  login: string;
-  logout: string;
-  admin: string;
-  sticky: string;
-  word: string;
-  wordHint: string;
-  anonymous: string;
-}
-```
+- Type: `WalineLocaleConfig`
+
+  ```ts
+  interface WalineLocaleData {
+    nick: string;
+    nickError: string;
+    mail: string;
+    mailError: string;
+    link: string;
+    optional: string;
+    placeholder: string;
+    sofa: string;
+    submit: string;
+    reply: string;
+    cancelReply: string;
+    comment: string;
+    refresh: string;
+    more: string;
+    preview: string;
+    emoji: string;
+    uploadImage: string;
+    seconds: string;
+    minutes: string;
+    hours: string;
+    days: string;
+    now: string;
+    uploading: string;
+    login: string;
+    logout: string;
+    admin: string;
+    sticky: string;
+    word: string;
+    wordHint: string;
+    anonymous: string;
+  }
+
+  interface WalineLocaleConfig {
+    [localePath: string]: WalineLocaleData;
+  }
+  ```
+
+- 必填: 否
 
 Waline 国际化配置。详见 [Waline 自定义语言](https://waline.js.org/guide/client/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80)
 

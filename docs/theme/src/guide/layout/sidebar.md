@@ -303,7 +303,7 @@ export default theme.config({
       },
       {
         title: "Interface",
-        icon: "skin",
+        icon: "palette",
         prefix: "/interface/",
         collapsable: false,
         children: [
@@ -342,7 +342,7 @@ module.exports = config({
       },
       {
         title: "Interface",
-        icon: "skin",
+        icon: "palette",
         prefix: "/interface/",
         collapsable: false,
         children: [
@@ -828,7 +828,7 @@ export default theme.config({
         },
         {
           title: "Interface",
-          icon: "skin",
+          icon: "palette",
           prefix: "interface/",
           collapsable: false,
           children: ["darkmode", "theme-color", "icon", "others"],
@@ -981,7 +981,7 @@ module.exports = config({
         },
         {
           title: "Interface",
-          icon: "skin",
+          icon: "palette",
           prefix: "interface/",
           collapsable: false,
           children: ["darkmode", "theme-color", "icon", "others"],

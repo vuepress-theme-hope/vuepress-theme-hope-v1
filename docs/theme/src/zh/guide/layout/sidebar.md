@@ -297,7 +297,7 @@ export default theme.config({
       },
       {
         title: "界面",
-        icon: "skin",
+        icon: "palette",
         prefix: "/interface/",
         collapsable: false,
         children: [
@@ -336,7 +336,7 @@ module.exports = config({
       },
       {
         title: "界面",
-        icon: "skin",
+        icon: "palette",
         prefix: "/interface/",
         collapsable: false,
         children: [
@@ -822,7 +822,7 @@ export default theme.config({
         },
         {
           title: "界面",
-          icon: "skin",
+          icon: "palette",
           prefix: "interface/",
           collapsable: false,
           children: ["darkmode", "theme-color", "icon", "others"],
@@ -975,7 +975,7 @@ module.exports = config({
         },
         {
           title: "界面",
-          icon: "skin",
+          icon: "palette",
           prefix: "interface/",
           collapsable: false,
           children: ["darkmode", "theme-color", "icon", "others"],

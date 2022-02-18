@@ -12,7 +12,7 @@ export default {
       },
       {
         title: "Interface",
-        icon: "skin",
+        icon: "palette",
         prefix: "interface/",
         collapsable: false,
         children: [
@@ -200,7 +200,7 @@ export default {
       },
       {
         title: "界面",
-        icon: "skin",
+        icon: "palette",
         prefix: "interface/",
         collapsable: false,
         children: [

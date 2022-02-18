@@ -1,6 +1,6 @@
 ---
 title: Stylus config
-icon: skin
+icon: palette
 category: config
 tags:
   - config

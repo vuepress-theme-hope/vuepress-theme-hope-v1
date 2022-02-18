@@ -33,8 +33,6 @@ Darkmode support
 
 - **hexo-theme-fluid**: It will enable darkmode by setting `data-user-color-scheme="dark"` on the `<html>` tag itself. So you need to set `'html[data-user-color-scheme="dark"]'` as `dark` option.
 
-- **vuepress-theme-hope**: It will enable darkmode by setting `theme-dark` class on the `<body>` tag itself. So you need to set `'body.theme-dark'` as `dark` option.
-
 :::
 
 For details of custom style and darkmode, please see [Custom Style](https://waline.js.org/en/guide/client/style.html).
@@ -96,15 +94,13 @@ See the [Avatar setting](https://waline.js.org/en/guide/client/avatar.html) for 
 
 - Type: `number | [number, number]`
 - Default: `0`
-- Required: `false`
 
-Comment word s limit. When a single number is filled in, it 's the maximum number of comment words. No limit when set to `0`.
+Comment word s limit. When a single number is filled in, it ’s the maximum number of comment words. No limit when set to `0`.
 
 ## pageSize
 
 - Type: `number`
 - Default: `10`
-- Required: No
 
 number of comments per page.
 
@@ -112,7 +108,6 @@ number of comments per page.
 
 - Type: `string`
 - Default: `https://sdn.geekzu.org/avatar/`
-- Required: No
 
 Gravatar CDN baseURL.
 
@@ -120,7 +115,6 @@ Gravatar CDN baseURL.
 
 - Type: `boolean`
 - Default: `false`
-- Required: No
 
 Whether **force** pulling the latest avatar each time.
 
@@ -135,46 +129,53 @@ Custom image upload callback to manage picture by yourself. We will pass a pictu
 
 - Type: `boolean`
 - Default: `true`
-- Required: No
 
 **Code highlighting**, it’s enabled by default, please close it selectively.
 
 ## walineLocales
 
-```ts
-interface WalineLocaleData {
-  nick: string;
-  nickError: string;
-  mail: string;
-  mailError: string;
-  link: string;
-  optional: string;
-  placeholder: string;
-  sofa: string;
-  submit: string;
-  reply: string;
-  cancelReply: string;
-  comment: string;
-  refresh: string;
-  more: string;
-  preview: string;
-  emoji: string;
-  uploadImage: string;
-  seconds: string;
-  minutes: string;
-  hours: string;
-  days: string;
-  now: string;
-  uploading: string;
-  login: string;
-  logout: string;
-  admin: string;
-  sticky: string;
-  word: string;
-  wordHint: string;
-  anonymous: string;
-}
-```
+- Type: `WalineLocaleConfig`
+
+  ```ts
+  interface WalineLocaleData {
+    nick: string;
+    nickError: string;
+    mail: string;
+    mailError: string;
+    link: string;
+    optional: string;
+    placeholder: string;
+    sofa: string;
+    submit: string;
+    reply: string;
+    cancelReply: string;
+    comment: string;
+    refresh: string;
+    more: string;
+    preview: string;
+    emoji: string;
+    uploadImage: string;
+    seconds: string;
+    minutes: string;
+    hours: string;
+    days: string;
+    now: string;
+    uploading: string;
+    login: string;
+    logout: string;
+    admin: string;
+    sticky: string;
+    word: string;
+    wordHint: string;
+    anonymous: string;
+  }
+
+  interface WalineLocaleConfig {
+    [localePath: string]: WalineLocaleData;
+  }
+  ```
+
+- Required: No
 
 Waline locales config. For details, see [Waline i18n customize](https://waline.js.org/en/guide/client/i18n.html#customize)
 
@@ -182,7 +183,6 @@ Waline locales config. For details, see [Waline i18n customize](https://waline.j
 
 - Type: `boolean`
 - Default: `true`
-- Required: No
 
 Whether show copyright and version in footer.
 

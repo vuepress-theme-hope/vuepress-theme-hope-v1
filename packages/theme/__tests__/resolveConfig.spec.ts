@@ -76,12 +76,12 @@ describe("Test resolveTheme function", () => {
           },
           {
             title: "Outlook",
-            icon: "skin",
+            icon: "palette",
             children: ["navbar", "sidebar", "breadcrumb", "page"],
           },
           {
             title: "New Feature",
-            icon: "skin",
+            icon: "palette",
             children: ["themecolor", "fullscreen", "comment", "component"],
           },
           {
@@ -164,12 +164,12 @@ describe("Test resolveTheme function", () => {
               },
               {
                 title: "外观",
-                icon: "skin",
+                icon: "palette",
                 children: ["navbar", "sidebar", "breadcrumb", "page"],
               },
               {
                 title: "新增功能",
-                icon: "skin",
+                icon: "palette",
                 children: ["themecolor", "fullscreen", "comment", "component"],
               },
               {
