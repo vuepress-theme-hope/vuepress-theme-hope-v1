@@ -7,11 +7,11 @@ heroText: "@mr-hope/vuepress-plugin-pwa"
 tagline: A powerfull PWA plugin
 action:
   - text: Guide 💡
-    link: /guide/
+    link: /guide.html
     type: primary
 
   - text: Config 🛠
-    link: /config/
+    link: /config.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false

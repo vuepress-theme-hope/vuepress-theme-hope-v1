@@ -433,7 +433,7 @@ your flowchart...
 
 ### 新功能 <Badge text="新增" />
 
-- **md-enhance**: [新的代码演示功能](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/demo/) :tada:
+- **md-enhance**: [新的代码演示功能](https://vuepress-theme-hope.github.io/v1/zh/guide/markdown/demo.html) :tada:
 
 ## v1.5.4
 

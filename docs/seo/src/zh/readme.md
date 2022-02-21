@@ -7,11 +7,11 @@ heroText: "@mr-hope/vuepress-plugin-seo"
 tagline: 向你的网页注入 <meta>，来增强你网页的 SEO。
 action:
   - text: 快速上手 💡
-    link: /zh/guide/
+    link: /zh/guide.html
     type: primary
 
   - text: 配置 🛠
-    link: /zh/config/
+    link: /zh/config.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false

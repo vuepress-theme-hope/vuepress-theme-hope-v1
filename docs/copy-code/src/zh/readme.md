@@ -7,11 +7,11 @@ heroText: "@mr-hope/vuepress-plugin-copy-code"
 tagline: 为 VuePress 提供代码块一键复制
 action:
   - text: 快速上手 💡
-    link: /zh/guide/
+    link: /zh/guide.html
     type: primary
 
   - text: 配置 🛠
-    link: /zh/config/
+    link: /zh/config.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false

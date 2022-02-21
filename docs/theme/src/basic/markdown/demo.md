@@ -226,7 +226,7 @@ Shortcuts:
 
 ::: tip
 
-For more see [emoji list](emoji.md)
+For more see [emoji list](emoji/readme.md)
 
 :::
 

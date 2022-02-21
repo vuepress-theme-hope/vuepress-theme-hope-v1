@@ -20,7 +20,7 @@ Create new application in Leancloud, and you will get APP ID/APP Key.
 });
 ```
 
-You can find all config items on [Config](../api/valine.md).
+You can find all config items on [Config](../config/valine.md).
 
 ::: tip
 
