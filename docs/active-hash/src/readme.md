@@ -5,14 +5,6 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-active-hash
 tagline: Active hash plugin for vuepress
-action:
-  - text: Guide 💡
-    link: /guide.html
-    type: primary
-
-  - text: Config 🛠
-    link: /config.html
-
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
 ---

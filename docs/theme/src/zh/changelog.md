@@ -411,7 +411,7 @@ your flowchart...
 
 ### 新功能 <Badge text="新增" />
 
-新增 [**Feed 插件**](https://vuepress-theme-hope.github.io/v1/feed//zh/)。:tada:
+新增 [**Feed 插件**](https://vuepress-theme-hope.github.io/v1/feed/zh/)。:tada:
 
 ### 破坏变更 <Badge text="移除" type="warn" />
 

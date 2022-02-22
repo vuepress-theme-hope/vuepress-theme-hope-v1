@@ -21,7 +21,7 @@ export default {
       items: [
         {
           text: "Changelog",
-          link: "/changelog/",
+          link: "/changelog.html",
         },
         {
           text: "Repo",
@@ -33,7 +33,7 @@ export default {
         },
         {
           text: "Contribution Guide",
-          link: "/contribution/",
+          link: "/contribution.html",
         },
         {
           text: "Plugins",
@@ -117,7 +117,7 @@ export default {
       items: [
         {
           text: "变更日志",
-          link: "/zh/changelog/",
+          link: "/zh/changelog.html",
         },
         {
           text: "项目地址",
@@ -129,7 +129,7 @@ export default {
         },
         {
           text: "贡献指南",
-          link: "/zh/contribution/",
+          link: "/zh/contribution.html",
         },
         {
           text: "插件",

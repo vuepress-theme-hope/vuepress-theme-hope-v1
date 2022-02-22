@@ -11,7 +11,7 @@ action:
     type: primary
 
   - text: 配置 🛠
-    link: /zh/config/
+    link: /zh/config.html
 
 features:
   - title: 上下角标支持

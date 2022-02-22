@@ -45,7 +45,7 @@ export default hope.config({
         items: [
           {
             text: "V2 Docs",
-            link: "https://vuepress-theme-hope.github.io/v2/v1/add-this/",
+            link: "https://vuepress-theme-hope.github.io/v2/add-this/",
           },
         ],
       },

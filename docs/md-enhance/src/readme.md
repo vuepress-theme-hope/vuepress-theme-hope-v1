@@ -11,7 +11,7 @@ action:
     type: primary
 
   - text: Config 🛠
-    link: /config/
+    link: /config.html
 
 features:
   - title: Superscript and subscript support

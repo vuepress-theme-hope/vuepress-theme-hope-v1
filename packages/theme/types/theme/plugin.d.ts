@@ -107,10 +107,10 @@ export interface HopeCopyrightConfig {
 interface HopeThemePluginConfig {
   /**
    * AddThis 的公共 ID
-   * @see http://vuepress-theme-hope.github.io/add-this/zh/config/
+   * @see http://vuepress-theme-hope.github.io/v1/add-this/zh/config.html
    *
    * pubid for addthis
-   * @see http://vuepress-theme-hope.github.io/add-this/config/
+   * @see http://vuepress-theme-hope.github.io/v1/add-this/config.html
    */
   addThis?: string;
 
@@ -118,19 +118,19 @@ interface HopeThemePluginConfig {
 
   /**
    * 评论插件配置
-   * @see http://vuepress-theme-hope.github.io/comment/zh/config/
+   * @see http://vuepress-theme-hope.github.io/v1/comment/zh/config/
    *
    * Comment plugin options
-   * @see http://vuepress-theme-hope.github.io/comment/config/
+   * @see http://vuepress-theme-hope.github.io/v1/comment/config/
    */
   comment?: CommentOptions | false;
 
   /**
    * 评论插件配置
-   * @see http://vuepress-theme-hope.github.io/components/zh/config/
+   * @see http://vuepress-theme-hope.github.io/v1/components/zh/config.html
    *
    * Comment plugin options
-   * @see http://vuepress-theme-hope.github.io/components/config/
+   * @see http://vuepress-theme-hope.github.io/v1/components/config.html
    */
   components?: Pick<
     ComponentOptions,
@@ -159,10 +159,10 @@ interface HopeThemePluginConfig {
 
   /**
    * 代码复制插件配置
-   * @see http://vuepress-theme-hope.github.io/copy-code/zh/config/
+   * @see http://vuepress-theme-hope.github.io/v1/copy-code/zh/config.html
    *
    * code copy plugin options
-   * @see http://vuepress-theme-hope.github.io/copy-code/config/
+   * @see http://vuepress-theme-hope.github.io/v1/copy-code/config.html
    */
   copyCode?: CopyCodeOptions | false;
 
@@ -175,64 +175,64 @@ interface HopeThemePluginConfig {
 
   /**
    * Feed 插件配置
-   * @see http://vuepress-theme-hope.github.io/feed/zh/config/
+   * @see http://vuepress-theme-hope.github.io/v1/feed/zh/config/
    *
    * Feed plugin options
-   * @see http://vuepress-theme-hope.github.io/feed/config/
+   * @see http://vuepress-theme-hope.github.io/v1/feed/config/
    */
   feed?: FeedOptions | false;
 
   /**
    * Git 插件配置
-   * @see http://vuepress-theme-hope.github.io/git/zh/
+   * @see http://vuepress-theme-hope.github.io/v1/git/zh/
    *
    * Git plugin options
-   * @see http://vuepress-theme-hope.github.io/git/
+   * @see http://vuepress-theme-hope.github.io/v1/git/
    */
   git?: GitOptions | false;
 
   /**
    * Markdown 增强插件配置
-   * @see http://vuepress-theme-hope.github.io/md-enhance/zh/config/
+   * @see http://vuepress-theme-hope.github.io/v1/md-enhance/zh/config.html
    *
    * Markdown enhance plugin options
-   * @see http://vuepress-theme-hope.github.io/md-enhance/config/
+   * @see http://vuepress-theme-hope.github.io/v1/md-enhance/config.html
    */
   mdEnhance?: MarkdownEnhanceOptions;
 
   /**
    * PWA 插件配置
-   * @see http://vuepress-theme-hope.github.io/pwa/zh/config/
+   * @see http://vuepress-theme-hope.github.io/v1/pwa/zh/config.html
    *
    * PWA plugin options
-   * @see http://vuepress-theme-hope.github.io/pwa/config/
+   * @see http://vuepress-theme-hope.github.io/v1/pwa/config.html
    */
   pwa?: PWAOptions | false;
 
   /**
    * 图片预览插件配置
-   * @see http://vuepress-theme-hope.github.io/photo-swipe/zh/config/
+   * @see http://vuepress-theme-hope.github.io/v1/photo-swipe/zh/config.html
    *
    * Photo Swipe plugin options
-   * @see http://vuepress-theme-hope.github.io/photo-swipe/config/
+   * @see http://vuepress-theme-hope.github.io/v1/photo-swipe/config.html
    */
   photoSwipe?: PhotoSwipeOptions | false;
 
   /**
    * SEO 插件配置
-   * @see http://vuepress-theme-hope.github.io/seo/zh/config/
+   * @see http://vuepress-theme-hope.github.io/v1/seo/zh/config.html
    *
    * SEO plugin options
-   * @see http://vuepress-theme-hope.github.io/seo/config/
+   * @see http://vuepress-theme-hope.github.io/v1/seo/config.html
    */
   seo?: SeoOptions | false;
 
   /**
    * Sitemap 插件配置
-   * @see http://vuepress-theme-hope.github.io/sitemap/zh/config/
+   * @see http://vuepress-theme-hope.github.io/v1/sitemap/zh/config.html
    *
    * Sitemap plugin options
-   * @see http://vuepress-theme-hope.github.io/sitemap/config/
+   * @see http://vuepress-theme-hope.github.io/v1/sitemap/config.html
    */
   sitemap?: SitemapOptions | false;
 

@@ -22,7 +22,7 @@ The theme maintains the style of the `@vuepress/theme-default`, and adds a lot o
 
 Added more syntax to Markdown, enriching documentation and blog writing
 
-- [Badge `<Badge />`](feature/component.md#badge-mybadge): Added color support
+- [Badge `<Badge />`](markdown/components.md#badge-mybadge): Added color support
 - [CodeGroup `<CodeGroup />`](markdown/components.md#codegroup-codegroupitem)
 - [Tex Support](markdown/tex.md)
 - [Custom alignment](markdown/align.md)
