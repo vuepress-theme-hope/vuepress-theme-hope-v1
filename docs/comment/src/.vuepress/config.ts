@@ -37,9 +37,9 @@ export default hope.config({
             icon: "creative",
             link: "/guide/",
           },
-          { text: "Waline", icon: "waline", link: "/guide/waline/" },
-          { text: "Vssue", icon: "vssue", link: "/guide/vssue/" },
-          { text: "Valine", icon: "valine", link: "/guide/valine/" },
+          { text: "Waline", icon: "waline", link: "/guide/waline.html" },
+          { text: "Vssue", icon: "vssue", link: "/guide/vssue.html" },
+          { text: "Valine", icon: "valine", link: "/guide/valine.html" },
         ],
       },
       {
@@ -50,13 +50,13 @@ export default hope.config({
           {
             text: "Waline",
             icon: "waline",
-            link: "/config/waline/",
+            link: "/config/waline.html",
           },
-          { text: "Vssue", icon: "vssue", link: "/config/vssue/" },
+          { text: "Vssue", icon: "vssue", link: "/config/vssue.html" },
           {
             text: "Valine",
             icon: "valine",
-            link: "/config/valine/",
+            link: "/config/valine.html",
           },
         ],
       },
@@ -115,9 +115,9 @@ export default hope.config({
                 icon: "creative",
                 link: "/zh/guide/",
               },
-              { text: "Waline", icon: "waline", link: "/zh/guide/waline/" },
-              { text: "Vssue", icon: "vssue", link: "/zh/guide/vssue/" },
-              { text: "Valine", icon: "valine", link: "/zh/guide/valine/" },
+              { text: "Waline", icon: "waline", link: "/zh/guide/waline.html" },
+              { text: "Vssue", icon: "vssue", link: "/zh/guide/vssue.html" },
+              { text: "Valine", icon: "valine", link: "/zh/guide/valine.html" },
             ],
           },
           {
@@ -125,9 +125,17 @@ export default hope.config({
             icon: "config",
             items: [
               { text: "配置", icon: "config", link: "/zh/config/" },
-              { text: "Waline", icon: "waline", link: "/zh/config/waline/" },
-              { text: "Vssue", icon: "vssue", link: "/zh/config/vssue/" },
-              { text: "Valine", icon: "valine", link: "/zh/config/valine/" },
+              {
+                text: "Waline",
+                icon: "waline",
+                link: "/zh/config/waline.html",
+              },
+              { text: "Vssue", icon: "vssue", link: "/zh/config/vssue.html" },
+              {
+                text: "Valine",
+                icon: "valine",
+                link: "/zh/config/valine.html",
+              },
             ],
           },
           {
@@ -197,15 +205,15 @@ export default hope.config({
     },
 
     pwa: {
-      favicon: "/comment/favicon.ico",
+      favicon: "/v1/comment/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/comment/assets/icon/apple-icon-152.png",
+        icon: "/v1/comment/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/comment/assets/icon/ms-icon-144.png",
+        image: "/v1/comment/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
@@ -213,24 +221,24 @@ export default hope.config({
         short_name: "comment plugin",
         icons: [
           {
-            src: "/comment/assets/icon/chrome-mask-512.png",
+            src: "/v1/comment/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/comment/assets/icon/chrome-mask-192.png",
+            src: "/v1/comment/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/comment/assets/icon/chrome-512.png",
+            src: "/v1/comment/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/comment/assets/icon/chrome-192.png",
+            src: "/v1/comment/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
@@ -239,16 +247,16 @@ export default hope.config({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/comment/guide/",
+            url: "/v1/comment/guide/",
             icons: [
               {
-                src: "/comment/assets/icon/guide-maskable.png",
+                src: "/v1/comment/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/comment/assets/icon/guide-monochrome.png",
+                src: "/v1/comment/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
@@ -258,16 +266,16 @@ export default hope.config({
           {
             name: "Config",
             short_name: "Config",
-            url: "/comment/config/",
+            url: "/v1/comment/config/",
             icons: [
               {
-                src: "/comment/assets/icon/config-maskable.png",
+                src: "/v1/comment/assets/icon/config-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/comment/assets/icon/config-monochrome.png",
+                src: "/v1/comment/assets/icon/config-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",

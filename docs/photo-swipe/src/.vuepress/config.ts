@@ -28,8 +28,8 @@ export default hope.config({
 
     nav: [
       { text: "Home", icon: "home", link: "/" },
-      { text: "Guide", icon: "creative", link: "/guide/" },
-      { text: "Config", icon: "config", link: "/config/" },
+      { text: "Guide", icon: "creative", link: "/guide.html" },
+      { text: "Config", icon: "config", link: "/config.html" },
       {
         text: version,
         icon: "note",
@@ -46,8 +46,8 @@ export default hope.config({
       "/zh/": {
         nav: [
           { text: "主页", icon: "home", link: "/zh/" },
-          { text: "指南", icon: "creative", link: "/zh/guide/" },
-          { text: "配置", icon: "config", link: "/zh/config/" },
+          { text: "指南", icon: "creative", link: "/zh/guide.html" },
+          { text: "配置", icon: "config", link: "/zh/config.html" },
           {
             text: version,
             icon: "note",
@@ -85,15 +85,15 @@ export default hope.config({
     },
 
     pwa: {
-      favicon: "/photo-swipe/favicon.ico",
+      favicon: "/v1/photo-swipe/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/photo-swipe/assets/icon/apple-icon-152.png",
+        icon: "/v1/photo-swipe/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/photo-swipe/assets/icon/ms-icon-144.png",
+        image: "/v1/photo-swipe/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
@@ -101,24 +101,24 @@ export default hope.config({
         short_name: "photo-swipe plugin",
         icons: [
           {
-            src: "/photo-swipe/assets/icon/chrome-mask-512.png",
+            src: "/v1/photo-swipe/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/photo-swipe/assets/icon/chrome-mask-192.png",
+            src: "/v1/photo-swipe/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/photo-swipe/assets/icon/chrome-512.png",
+            src: "/v1/photo-swipe/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/photo-swipe/assets/icon/chrome-192.png",
+            src: "/v1/photo-swipe/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
@@ -127,16 +127,16 @@ export default hope.config({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/photo-swipe/guide/",
+            url: "/v1/photo-swipe/guide.html",
             icons: [
               {
-                src: "/photo-swipe/assets/icon/guide-maskable.png",
+                src: "/v1/photo-swipe/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/photo-swipe/assets/icon/guide-monochrome.png",
+                src: "/v1/photo-swipe/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
@@ -146,16 +146,16 @@ export default hope.config({
           {
             name: "Config",
             short_name: "Config",
-            url: "/photo-swipe/config/",
+            url: "/v1/photo-swipe/config.html",
             icons: [
               {
-                src: "/photo-swipe/assets/icon/config-maskable.png",
+                src: "/v1/photo-swipe/assets/icon/config-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/photo-swipe/assets/icon/config-monochrome.png",
+                src: "/v1/photo-swipe/assets/icon/config-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",

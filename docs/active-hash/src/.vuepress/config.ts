@@ -40,15 +40,15 @@ export default hope.config({
     },
 
     pwa: {
-      favicon: "/active-hash/favicon.ico",
+      favicon: "/v1/active-hash/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/active-hash/assets/icon/apple-icon-152.png",
+        icon: "/v1/active-hash/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/active-hash/assets/icon/ms-icon-144.png",
+        image: "/v1/active-hash/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
@@ -56,24 +56,24 @@ export default hope.config({
         short_name: "active-hash plugin",
         icons: [
           {
-            src: "/active-hash/assets/icon/chrome-mask-512.png",
+            src: "/v1/active-hash/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/active-hash/assets/icon/chrome-mask-192.png",
+            src: "/v1/active-hash/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/active-hash/assets/icon/chrome-512.png",
+            src: "/v1/active-hash/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/active-hash/assets/icon/chrome-192.png",
+            src: "/v1/active-hash/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },

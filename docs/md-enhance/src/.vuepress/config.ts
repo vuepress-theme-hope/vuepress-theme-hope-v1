@@ -29,7 +29,7 @@ export default hope.config({
     nav: [
       { text: "Home", icon: "home", link: "/" },
       { text: "Guide", icon: "creative", link: "/guide/" },
-      { text: "Config", icon: "config", link: "/config/" },
+      { text: "Config", icon: "config", link: "/config.html" },
       {
         text: version,
         icon: "note",
@@ -87,7 +87,7 @@ export default hope.config({
         nav: [
           { text: "主页", icon: "home", link: "/zh/" },
           { text: "指南", icon: "creative", link: "/zh/guide/" },
-          { text: "配置", icon: "config", link: "/zh/config/" },
+          { text: "配置", icon: "config", link: "/zh/config.html" },
           {
             text: version,
             icon: "note",
@@ -173,15 +173,15 @@ export default hope.config({
     },
 
     pwa: {
-      favicon: "/md-enhance/favicon.ico",
+      favicon: "/v1/md-enhance/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/md-enhance/assets/icon/apple-icon-152.png",
+        icon: "/v1/md-enhance/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/md-enhance/assets/icon/ms-icon-144.png",
+        image: "/v1/md-enhance/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
@@ -189,24 +189,24 @@ export default hope.config({
         short_name: "md-enhance plugin",
         icons: [
           {
-            src: "/md-enhance/assets/icon/chrome-mask-512.png",
+            src: "/v1/md-enhance/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/md-enhance/assets/icon/chrome-mask-192.png",
+            src: "/v1/md-enhance/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/md-enhance/assets/icon/chrome-512.png",
+            src: "/v1/md-enhance/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/md-enhance/assets/icon/chrome-192.png",
+            src: "/v1/md-enhance/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
@@ -215,16 +215,16 @@ export default hope.config({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/md-enhance/guide/",
+            url: "/v1/md-enhance/guide/",
             icons: [
               {
-                src: "/md-enhance/assets/icon/guide-maskable.png",
+                src: "/v1/md-enhance/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/md-enhance/assets/icon/guide-monochrome.png",
+                src: "/v1/md-enhance/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
@@ -234,16 +234,16 @@ export default hope.config({
           {
             name: "Config",
             short_name: "Config",
-            url: "/md-enhance/config/",
+            url: "/v1/md-enhance/config.html",
             icons: [
               {
-                src: "/md-enhance/assets/icon/config-maskable.png",
+                src: "/v1/md-enhance/assets/icon/config-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/md-enhance/assets/icon/config-monochrome.png",
+                src: "/v1/md-enhance/assets/icon/config-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",

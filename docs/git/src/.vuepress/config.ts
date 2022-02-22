@@ -41,15 +41,15 @@ export default hope.config({
     },
 
     pwa: {
-      favicon: "/git/favicon.ico",
+      favicon: "/v1/git/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/git/assets/icon/apple-icon-152.png",
+        icon: "/v1/git/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/git/assets/icon/ms-icon-144.png",
+        image: "/v1/git/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
@@ -57,24 +57,24 @@ export default hope.config({
         short_name: "Git plugin",
         icons: [
           {
-            src: "/git/assets/icon/chrome-mask-512.png",
+            src: "/v1/git/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/git/assets/icon/chrome-mask-192.png",
+            src: "/v1/git/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/git/assets/icon/chrome-512.png",
+            src: "/v1/git/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/git/assets/icon/chrome-192.png",
+            src: "/v1/git/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },

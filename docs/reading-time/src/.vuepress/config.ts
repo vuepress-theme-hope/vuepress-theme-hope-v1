@@ -74,15 +74,15 @@ export default hope.config({
     },
 
     pwa: {
-      favicon: "/reading-time/favicon.ico",
+      favicon: "/v1/reading-time/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/reading-time/assets/icon/apple-icon-152.png",
+        icon: "/v1/reading-time/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/reading-time/assets/icon/ms-icon-144.png",
+        image: "/v1/reading-time/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
@@ -90,24 +90,24 @@ export default hope.config({
         short_name: "reading-time plugin",
         icons: [
           {
-            src: "/reading-time/assets/icon/chrome-mask-512.png",
+            src: "/v1/reading-time/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/reading-time/assets/icon/chrome-mask-192.png",
+            src: "/v1/reading-time/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/reading-time/assets/icon/chrome-512.png",
+            src: "/v1/reading-time/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/reading-time/assets/icon/chrome-192.png",
+            src: "/v1/reading-time/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },

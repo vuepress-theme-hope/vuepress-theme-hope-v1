@@ -32,7 +32,7 @@ export default hope.config({
       {
         text: "Guide",
         icon: "creative",
-        link: "/guide/",
+        link: "/guide.html",
       },
       {
         text: "Config",
@@ -72,7 +72,7 @@ export default hope.config({
           {
             text: "指南",
             icon: "creative",
-            link: "/zh/guide/",
+            link: "/zh/guide.html",
           },
           {
             text: "配置",
@@ -136,15 +136,15 @@ export default hope.config({
     },
 
     pwa: {
-      favicon: "/feed/favicon.ico",
+      favicon: "/v1/feed/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/feed/assets/icon/apple-icon-152.png",
+        icon: "/v1/feed/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/feed/assets/icon/ms-icon-144.png",
+        image: "/v1/feed/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
@@ -152,24 +152,24 @@ export default hope.config({
         short_name: "feed plugin",
         icons: [
           {
-            src: "/feed/assets/icon/chrome-mask-512.png",
+            src: "/v1/feed/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/feed/assets/icon/chrome-mask-192.png",
+            src: "/v1/feed/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/feed/assets/icon/chrome-512.png",
+            src: "/v1/feed/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/feed/assets/icon/chrome-192.png",
+            src: "/v1/feed/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
@@ -178,16 +178,16 @@ export default hope.config({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/feed/guide/",
+            url: "/v1/feed/guide.html",
             icons: [
               {
-                src: "/feed/assets/icon/guide-maskable.png",
+                src: "/v1/feed/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/feed/assets/icon/guide-monochrome.png",
+                src: "/v1/feed/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
@@ -197,16 +197,16 @@ export default hope.config({
           {
             name: "Config",
             short_name: "Config",
-            url: "/feed/config/",
+            url: "/v1/feed/config/",
             icons: [
               {
-                src: "/feed/assets/icon/config-maskable.png",
+                src: "/v1/feed/assets/icon/config-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/feed/assets/icon/config-monochrome.png",
+                src: "/v1/feed/assets/icon/config-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
