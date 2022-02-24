@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.28.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.0...v1.28.1) (2022-02-24)
+
+## [1.28.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.4...v1.28.0) (2022-02-24)
+
 ## [1.27.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.27.3...v1.27.4) (2022-02-16)
 
 ### Bug Fixes
