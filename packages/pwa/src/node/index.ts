@@ -1,5 +1,6 @@
 import { resolve } from "path";
 import { getLocales } from "@mr-hope/vuepress-shared";
+import { appendBase } from "./helper";
 import { injectLinkstoHead } from "./injectHead";
 import { getManifest, genManifest } from "./genManifest";
 import { genServiceWorker } from "./genServiceWorker";
@@ -10,6 +11,8 @@ import type { PWAOptions } from "../types";
 
 const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
   const { base } = context;
+
+  if (options.appendBase) appendBase(base, options);
 
   const config: PluginOptionAPI = {
     name: "pwa",
