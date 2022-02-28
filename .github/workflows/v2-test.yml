@@ -21,10 +21,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
 
@@ -79,10 +77,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
 
@@ -133,10 +129,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
 
