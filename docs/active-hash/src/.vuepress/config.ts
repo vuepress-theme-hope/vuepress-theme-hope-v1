@@ -1,10 +1,12 @@
 import hope from "vuepress-theme-hope";
 
-export default hope.config({
-  title: "Git-based info plugin",
-  description: "Info plugin based on active-hash for vuepress",
+const base = process.env.BASE || "/";
 
-  base: "/v1/active-hash/",
+export default hope.config({
+  title: "Actice Hash plugin",
+  description: "Update route hash for vuepress",
+
+  base: `${base}active-hash/`,
   dest: "./dist",
 
   locales: {
@@ -40,15 +42,15 @@ export default hope.config({
     },
 
     pwa: {
-      favicon: "/v1/active-hash/favicon.ico",
+      favicon: "/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/v1/active-hash/assets/icon/apple-icon-152.png",
+        icon: "/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/v1/active-hash/assets/icon/ms-icon-144.png",
+        image: "/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
@@ -56,29 +58,30 @@ export default hope.config({
         short_name: "active-hash plugin",
         icons: [
           {
-            src: "/v1/active-hash/assets/icon/chrome-mask-512.png",
+            src: "/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/v1/active-hash/assets/icon/chrome-mask-192.png",
+            src: "/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/v1/active-hash/assets/icon/chrome-512.png",
+            src: "/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/v1/active-hash/assets/icon/chrome-192.png",
+            src: "/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
         ],
       },
+      appendBase: true,
     },
   },
 });

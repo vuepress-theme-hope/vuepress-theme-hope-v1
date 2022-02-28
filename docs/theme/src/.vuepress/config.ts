@@ -2,12 +2,13 @@ import hope from "vuepress-theme-hope";
 import navBarConfig from "./navBar";
 import sideBarConfig from "./sideBar";
 
+const base = process.env.BASE || "/";
+
 export default hope.config({
   title: "vuepress-theme-hope",
   description: "A vuepress theme with tons of features✨",
 
-  base: "/v1/",
-
+  base,
   dest: "./dist",
 
   head: [
@@ -181,6 +182,7 @@ export default hope.config({
           },
         ],
       },
+      appendBase: true,
     },
   },
 

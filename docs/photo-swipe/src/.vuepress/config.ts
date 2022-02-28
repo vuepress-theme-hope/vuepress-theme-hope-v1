@@ -1,11 +1,13 @@
 import hope from "vuepress-theme-hope";
 import { version } from "../../../../lerna.json";
 
+const base = process.env.BASE || "/";
+
 export default hope.config({
   title: "Photo preview",
   description: "Photo swipe Plugin for VuePress",
 
-  base: "/v1/photo-swipe/",
+  base: `${base}photo-swipe/`,
   dest: "./dist",
 
   locales: {
@@ -85,15 +87,15 @@ export default hope.config({
     },
 
     pwa: {
-      favicon: "/v1/photo-swipe/favicon.ico",
+      favicon: "/favicon.ico",
       themeColor: "#46bd87",
       cachePic: true,
       apple: {
-        icon: "/v1/photo-swipe/assets/icon/apple-icon-152.png",
+        icon: "/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/v1/photo-swipe/assets/icon/ms-icon-144.png",
+        image: "/assets/icon/ms-icon-144.png",
         color: "#ffffff",
       },
       manifest: {
@@ -101,24 +103,24 @@ export default hope.config({
         short_name: "photo-swipe plugin",
         icons: [
           {
-            src: "/v1/photo-swipe/assets/icon/chrome-mask-512.png",
+            src: "/assets/icon/chrome-mask-512.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/v1/photo-swipe/assets/icon/chrome-mask-192.png",
+            src: "/assets/icon/chrome-mask-192.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/v1/photo-swipe/assets/icon/chrome-512.png",
+            src: "/assets/icon/chrome-512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/v1/photo-swipe/assets/icon/chrome-192.png",
+            src: "/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
           },
@@ -127,16 +129,16 @@ export default hope.config({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/v1/photo-swipe/guide.html",
+            url: "/guide.html",
             icons: [
               {
-                src: "/v1/photo-swipe/assets/icon/guide-maskable.png",
+                src: "/assets/icon/guide-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/v1/photo-swipe/assets/icon/guide-monochrome.png",
+                src: "/assets/icon/guide-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
@@ -146,16 +148,16 @@ export default hope.config({
           {
             name: "Config",
             short_name: "Config",
-            url: "/v1/photo-swipe/config.html",
+            url: "/config.html",
             icons: [
               {
-                src: "/v1/photo-swipe/assets/icon/config-maskable.png",
+                src: "/assets/icon/config-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
               },
               {
-                src: "/v1/photo-swipe/assets/icon/config-monochrome.png",
+                src: "/assets/icon/config-monochrome.png",
                 sizes: "192x192",
                 purpose: "monochrome",
                 type: "image/png",
@@ -164,6 +166,7 @@ export default hope.config({
           },
         ],
       },
+      appendBase: true,
     },
   },
 
