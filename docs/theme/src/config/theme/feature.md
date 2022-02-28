@@ -85,7 +85,7 @@ The optional values of `MediaType` are as follows:
 - `'Bitbucket'`: Bitbucket
 - `'Dingding'`: Dingding
 - `'Discord'`: Discord
-- `'Dribbble'`: Dribble
+- `'Dribbble'`: Dribbble
 - `'Email'`: Email
 - `'Evernote'`: Evernote
 - `'Facebook'`: Facebook

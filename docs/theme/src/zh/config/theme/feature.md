@@ -89,7 +89,7 @@ tags:
 - `'Bitbucket'`: Bitbucket
 - `'Dingding'`: 钉钉
 - `'Discord'`: Discord
-- `'Dribbble'`: Dribble
+- `'Dribbble'`: Dribbble
 - `'Email'`: Email
 - `'Evernote'`: 印象笔记
 - `'Facebook'`: 脸书
