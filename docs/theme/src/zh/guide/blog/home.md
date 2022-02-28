@@ -29,33 +29,33 @@ tags:
 ::: tip 可用的社交媒体:
 
 - `'Baidu'`: 百度
-- `'Bitbucket'`: Bitbucket
+- `'Bitbucket'`
 - `'Dingding'`: 钉钉
-- `'Discord'`: Discord
-- `'Dribbble'`: Dribbble
-- `'Email'`: Email
+- `'Discord'`
+- `'Dribbble'`
+- `'Email'`: 邮件
 - `'Evernote'`: 印象笔记
 - `'Facebook'`: 脸书
 - `'Flipboard'`: 红板报
-- `'Gitee'`: Gitee
-- `'Github'`: GitHub
-- `'Gitlab'`: Gitlab
-- `'Gmail'`: 谷歌邮箱(当然你也可以填入你自己的其他邮箱)
-- `'Instagram'`: Instagram
-- `'Line'`: Line
+- `'Gitee'`: 码云
+- `'GitHub'`
+- `'Gitlab'`
+- `'Gmail'`: 谷歌邮箱
+- `'Instagram'`
+- `'Line'`
 - `'Linkedin'`: 领英
-- `'Pinterest'`: 拼趣
-- `'Pocket'`: Pocket
+- `'Pinterest'`
+- `'Pocket'`
 - `'QQ'`: QQ
 - `'Qzone'`: QQ 空间
-- `'Reddit'`: Reddit
+- `'Reddit'`
 - `'Rss'`: RSS 地址
-- `'Steam'`: Steam
-- `'Twitter'`: Twitter
+- `'Steam'`
+- `'Twitter'`
 - `'Wechat'`: 微信
 - `'Weibo'`: 微博
-- `'Whatsapp'`: Whatsapp
-- `'Youtube'`: YouTube
+- `'Whatsapp'`
+- `'Youtube'`
 - `'Zhihu'`: 知乎
 
 :::

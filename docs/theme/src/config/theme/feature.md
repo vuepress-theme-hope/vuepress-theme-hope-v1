@@ -81,35 +81,35 @@ Set social links.
 
 The optional values of `MediaType` are as follows:
 
-- `'Baidu'`: Baidu
-- `'Bitbucket'`: Bitbucket
-- `'Dingding'`: Dingding
-- `'Discord'`: Discord
-- `'Dribbble'`: Dribbble
-- `'Email'`: Email
-- `'Evernote'`: Evernote
-- `'Facebook'`: Facebook
-- `'Flipboard'`: Flipboard
-- `'Gitee'`: Gitee
-- `'Github'`: GitHub
-- `'Gitlab'`: Gitlab
-- `'Gmail'`: Google mailbox (you can also fill in your own other mailbox)
-- `'Instagram'`: Instagram
-- `'Line'`: Line
-- `'Linkedin'`: LinkedIn
-- `'Pinterest'`: Pinterest
-- `'Pocket'`: Pocket
-- `'QQ'`: QQ
-- `'Qzone'`: Qzone
-- `'Reddit'`: Reddit
-- `'Rss'`: RSS address
-- `'Steam'`: Steam
-- `'Twitter'`: Twitter
-- `'Wechat'`: WeChat
-- `'Weibo'`: Weibo
-- `'Whatsapp'`: Whatsapp
-- `'Youtube'`: YouTube
-- `'Zhihu'`: Zhihu
+- `'Baidu'`
+- `'Bitbucket'`
+- `'Dingding'`
+- `'Discord'`
+- `'Dribbble'`
+- `'Email'`
+- `'Evernote'`
+- `'Facebook'`
+- `'Flipboard'`
+- `'Gitee'`
+- `'Github'`
+- `'Gitlab'`
+- `'Gmail'`
+- `'Instagram'`
+- `'Line'`
+- `'Linkedin'`
+- `'Pinterest'`
+- `'Pocket'`
+- `'QQ'`
+- `'Qzone'`
+- `'Reddit'`
+- `'Rss'`
+- `'Steam'`
+- `'Twitter'`
+- `'Wechat'`
+- `'Weibo'`
+- `'Whatsapp'`
+- `'Youtube'`
+- `'Zhihu'`
 
 :::
 
