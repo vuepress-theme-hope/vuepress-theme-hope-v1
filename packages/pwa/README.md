@@ -11,7 +11,7 @@
 
 VuePress PWA plugin📦 / VuePress PWA 插件 📦
 
-## [Official Docs](https://vuepress-theme-hope.github.io/v1/pwa/) | [官方文档](https://vuepress-theme-hope.github.io/v1/pwa/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v1/pwa/) | [官方文档](https://vuepress-theme-hope.gitee.io/v1/pwa/zh/)
 
 ## Install / 安装
 

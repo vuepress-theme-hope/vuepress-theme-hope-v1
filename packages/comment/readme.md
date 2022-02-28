@@ -11,7 +11,7 @@
 
 VuePress comment plugin💬 / VuePress 评论插件 💬
 
-## [Official Docs](https://vuepress-theme-hope.github.io/v1/comment/) | [官方文档](https://vuepress-theme-hope.github.io/v1/comment/zh/)
+## [Official Docs](https://vuepress-theme-hope.github.io/v1/comment/) | [官方文档](https://vuepress-theme-hope.gitee.io/v1/comment/zh/)
 
 ## 安装 / Install
 

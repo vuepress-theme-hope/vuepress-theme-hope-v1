@@ -107,7 +107,7 @@ export interface HopeCopyrightConfig {
 interface HopeThemePluginConfig {
   /**
    * AddThis 的公共 ID
-   * @see http://vuepress-theme-hope.github.io/v1/add-this/zh/config.html
+   * @see http://vuepress-theme-hope.gitee.io/v1/add-this/zh/config.html
    *
    * pubid for addthis
    * @see http://vuepress-theme-hope.github.io/v1/add-this/config.html
@@ -118,7 +118,7 @@ interface HopeThemePluginConfig {
 
   /**
    * 评论插件配置
-   * @see http://vuepress-theme-hope.github.io/v1/comment/zh/config/
+   * @see http://vuepress-theme-hope.gitee.io/v1/comment/zh/config/
    *
    * Comment plugin options
    * @see http://vuepress-theme-hope.github.io/v1/comment/config/
@@ -127,7 +127,7 @@ interface HopeThemePluginConfig {
 
   /**
    * 评论插件配置
-   * @see http://vuepress-theme-hope.github.io/v1/components/zh/config.html
+   * @see http://vuepress-theme-hope.gitee.io/v1/components/zh/config.html
    *
    * Comment plugin options
    * @see http://vuepress-theme-hope.github.io/v1/components/config.html
@@ -140,7 +140,7 @@ interface HopeThemePluginConfig {
   /**
    * chunk 重命名
    *
-   * @see https://vuepress-theme-hope.github.io/v1/zh/config/theme/plugin/#chunkrename
+   * @see https://vuepress-theme-hope.gitee.io/v1/zh/config/theme/plugin/#chunkrename
    *
    * Chunk Rename
    * @see https://vuepress-theme-hope.github.io/v1/config/theme/plugin/#chunkrename
@@ -150,7 +150,7 @@ interface HopeThemePluginConfig {
 
   /**
    * 清理插件配置
-   * @see https://vuepress-theme-hope.github.io/v1/zh/config/theme/plugin/#cleanurl
+   * @see https://vuepress-theme-hope.gitee.io/v1/zh/config/theme/plugin/#cleanurl
    *
    * Clean Url Config
    * @see https://vuepress-theme-hope.github.io/v1/config/theme/plugin/#cleanurl
@@ -159,7 +159,7 @@ interface HopeThemePluginConfig {
 
   /**
    * 代码复制插件配置
-   * @see http://vuepress-theme-hope.github.io/v1/copy-code/zh/config.html
+   * @see http://vuepress-theme-hope.gitee.io/v1/copy-code/zh/config.html
    *
    * code copy plugin options
    * @see http://vuepress-theme-hope.github.io/v1/copy-code/config.html
@@ -175,7 +175,7 @@ interface HopeThemePluginConfig {
 
   /**
    * Feed 插件配置
-   * @see http://vuepress-theme-hope.github.io/v1/feed/zh/config/
+   * @see http://vuepress-theme-hope.gitee.io/v1/feed/zh/config/
    *
    * Feed plugin options
    * @see http://vuepress-theme-hope.github.io/v1/feed/config/
@@ -184,7 +184,7 @@ interface HopeThemePluginConfig {
 
   /**
    * Git 插件配置
-   * @see http://vuepress-theme-hope.github.io/v1/git/zh/
+   * @see http://vuepress-theme-hope.gitee.io/v1/git/zh/
    *
    * Git plugin options
    * @see http://vuepress-theme-hope.github.io/v1/git/
@@ -193,7 +193,7 @@ interface HopeThemePluginConfig {
 
   /**
    * Markdown 增强插件配置
-   * @see http://vuepress-theme-hope.github.io/v1/md-enhance/zh/config.html
+   * @see http://vuepress-theme-hope.gitee.io/v1/md-enhance/zh/config.html
    *
    * Markdown enhance plugin options
    * @see http://vuepress-theme-hope.github.io/v1/md-enhance/config.html
@@ -202,7 +202,7 @@ interface HopeThemePluginConfig {
 
   /**
    * PWA 插件配置
-   * @see http://vuepress-theme-hope.github.io/v1/pwa/zh/config.html
+   * @see http://vuepress-theme-hope.gitee.io/v1/pwa/zh/config.html
    *
    * PWA plugin options
    * @see http://vuepress-theme-hope.github.io/v1/pwa/config.html
@@ -211,7 +211,7 @@ interface HopeThemePluginConfig {
 
   /**
    * 图片预览插件配置
-   * @see http://vuepress-theme-hope.github.io/v1/photo-swipe/zh/config.html
+   * @see http://vuepress-theme-hope.gitee.io/v1/photo-swipe/zh/config.html
    *
    * Photo Swipe plugin options
    * @see http://vuepress-theme-hope.github.io/v1/photo-swipe/config.html
@@ -220,7 +220,7 @@ interface HopeThemePluginConfig {
 
   /**
    * SEO 插件配置
-   * @see http://vuepress-theme-hope.github.io/v1/seo/zh/config.html
+   * @see http://vuepress-theme-hope.gitee.io/v1/seo/zh/config.html
    *
    * SEO plugin options
    * @see http://vuepress-theme-hope.github.io/v1/seo/config.html
@@ -229,7 +229,7 @@ interface HopeThemePluginConfig {
 
   /**
    * Sitemap 插件配置
-   * @see http://vuepress-theme-hope.github.io/v1/sitemap/zh/config.html
+   * @see http://vuepress-theme-hope.gitee.io/v1/sitemap/zh/config.html
    *
    * Sitemap plugin options
    * @see http://vuepress-theme-hope.github.io/v1/sitemap/config.html

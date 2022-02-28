@@ -3,6 +3,8 @@ import navBarConfig from "./navBar";
 import sideBarConfig from "./sideBar";
 
 const base = process.env.BASE || "/";
+const hostname =
+  process.env.HOSTNAME || "https://vuepress-theme-hope-v1.netlify.app";
 
 export default hope.config({
   title: "vuepress-theme-hope",
@@ -32,7 +34,7 @@ export default hope.config({
 
   themeConfig: {
     logo: "/logo.svg",
-    hostname: "https://vuepress-theme-hope.github.io",
+    hostname,
 
     author: "Mr.Hope",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",

@@ -7,7 +7,7 @@ export interface AddThisOptions {
    *
    * Add This 的公开 ID
    *
-   * @see https://vuepress-theme-hope.github.io/v1/add-this/zh/guide/
+   * @see https://vuepress-theme-hope.gitee.io/v1/add-this/zh/guide/
    */
   pubid: string;
 }

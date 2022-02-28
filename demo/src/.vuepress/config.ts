@@ -1,7 +1,11 @@
 import hope from "vuepress-theme-hope";
 
+const base = process.env.BASE || "/";
+const hostname =
+  process.env.HOSTNAME || "https://vuepress-theme-hope-v1-demo.netlify.app";
+
 export default hope.config({
-  base: "/v1-demo/",
+  base,
 
   title: "Theme Demo",
   description: "A demo for vuepress-theme-hope",
@@ -21,7 +25,7 @@ export default hope.config({
 
   themeConfig: {
     logo: "/logo.svg",
-    hostname: "https://vuepress-theme-hope-demo.mrhope.site",
+    hostname,
 
     author: "Mr.Hope",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
