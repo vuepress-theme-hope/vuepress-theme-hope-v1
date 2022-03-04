@@ -18,6 +18,16 @@
 
 A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
 
+## ⚠️ V1 End of support / V1 停止支持
+
+V1 development is currently terminated and only provides limited support. It is recommended to migrate to the V2 version as soon as possible. See [V1 end of support Annoucement](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535) for more details.
+
+If you want to use in new projects, please use [V2 version](https://github.com/vuepress-theme-hope/vuepress-theme-hope).
+
+V1 开发目前已经终止，并仅提供有限的支持，建议尽快迁移到 V2 版本。有关详细信息，请参阅 [V1 结束支持通告](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535)。
+
+如果你想用于新项目，请使用 [V2 版本](https://github.com/vuepress-theme-hope/vuepress-theme-hope)。
+
 ## Official Docs / 官方文档
 
 [English Docs](https://vuepress-theme-hope.github.io/v1/) | [中文文档](https://vuepress-theme-hope.github.io/v1/zh/) | [Gitee 镜像](#gitee-镜像)
