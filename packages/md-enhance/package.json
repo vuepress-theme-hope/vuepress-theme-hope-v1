@@ -50,13 +50,13 @@
     "@types/hash-sum": "^1.0.0",
     "@types/katex": "^0.11.1",
     "@types/lodash.debounce": "^4.0.6",
-    "@types/markdown-it": "^10.0.3",
-    "@types/mermaid": "^8.2.7",
+    "@types/markdown-it": "^12.2.3",
+    "@types/mermaid": "^8.2.8",
     "flowchart.js": "^1.17.1",
     "katex": "^0.15.2",
     "lodash.debounce": "^4.0.8",
     "mermaid": "^8.14.0",
-    "reveal.js": "^4.2.1",
+    "reveal.js": "^4.3.0",
     "vuepress-plugin-container": "^2.1.5"
   }
 }
