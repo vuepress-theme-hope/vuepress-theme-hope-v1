@@ -13,6 +13,12 @@ VuePress comment plugin💬 / VuePress 评论插件 💬
 
 ## [Official Docs](https://vuepress-theme-hope.github.io/v1/comment/) | [官方文档](https://vuepress-theme-hope.gitee.io/v1/comment/zh/)
 
+## V2 Version / V2 版本
+
+VuePress 2 is recommanded to start new project. You should use [`vuepress-plugin-comment2@next`](https://vuepress-theme-hope.github.io/v2/comment/).
+
+建议在新项目中使用 VuePress 2。你应该使用 [`vuepress-plugin-comment2@next`](https://vuepress-theme-hope.gitee.io/v2/comment/zh/).
+
 ## 安装 / Install
 
 ```bash

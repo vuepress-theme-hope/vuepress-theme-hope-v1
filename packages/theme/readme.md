@@ -20,7 +20,13 @@ A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress
 
 ## Official Docs / 官方文档
 
-[English Docs](https://vuepress-theme-hope.github.io/v1/) | [中文文档](https://vuepress-theme-hope.gitee.io/v1/zh/) | [Gitee 镜像](#gitee-镜像)
+[English Docs](https://vuepress-theme-hope.github.io/v1/) | [中文文档](https://vuepress-theme-hope.gitee.io/v1/zh/)
+
+## V2 Version / V2 版本
+
+VuePress 2 is recommanded to start new project. You should use [`vuepress-plugin-hope@next`](https://vuepress-theme-hope.github.io/v2/).
+
+建议在新项目中使用 VuePress 2。你应该使用 [`vuepress-plugin-hope@next`](https://vuepress-theme-hope.gitee.io/v2/zh/).
 
 [Theme Highlights](#Theme-Highlights) | [主题特点](#主题特点)
 
@@ -237,9 +243,3 @@ The theme and all its plugins are fully optimized to provide complete accessibil
 ### 完整的无障碍支持
 
 主题及其所有插件均经过全面优化，以提供完整的辅助功能支持。
-
-## Gitee 镜像
-
-由于有些人无法访问 GitHub Pages 或速度很慢，我们在 Gitee 上部署了 [国内镜像](https://vuepress-theme-hope.gitee.io)。
-
-请注意由于该镜像为手动部署，我们不保证它时刻与 GitHub Pages 的文档同步。

@@ -19,6 +19,11 @@ cli
   .action(async (dir: string) => {
     if (!dir) return cli.outputHelp();
 
+    console.log("We recommand you to use vuepress2.\n");
+    console.log(
+      'To use it, run "npm init vuepress-theme-hope@next [dir]" instead.\n'
+    );
+
     const { lang, message } = await getLanguage();
 
     const targetFolder = resolve(process.cwd(), dir);
@@ -150,8 +155,8 @@ cli
 cli.help(() => [
   {
     title:
-      "yarn create vuepress-theme-hope <dir> / npm init vuepress-theme-hope <dir>",
-    body: "Create a vuepress-theme-hope template in <dir>",
+      "yarn create vuepress-theme-hope [dir] / npm init vuepress-theme-hope [dir]",
+    body: "Create a vuepress-theme-hope template in [dir]",
   },
 ]);
 

@@ -13,6 +13,12 @@ VuePress SEO plugin🛠 / VuePress SEO 插件 🛠
 
 ## [Official Docs](https://vuepress-theme-hope.github.io/v1/seo/) | [官方文档](https://vuepress-theme-hope.github.io/v1/seo/zh/)
 
+## V2 Version / V2 版本
+
+VuePress 2 is recommanded to start new project. You should use [`vuepress-plugin-seo2@next`](https://vuepress-theme-hope.github.io/v2/seo/).
+
+建议在新项目中使用 VuePress 2。你应该使用 [`vuepress-plugin-seo2@next`](https://vuepress-theme-hope.gitee.io/v2/seo/zh/).
+
 ## 安装 / Install
 
 ```bash

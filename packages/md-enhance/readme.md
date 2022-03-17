@@ -13,6 +13,12 @@
 
 Markdown enhancement plugin📄 / Markdown 增强插件 📄
 
+## V2 Version / V2 版本
+
+VuePress 2 is recommanded to start new project. You should use [`vuepress-plugin-md-enhance@next`](https://vuepress-theme-hope.github.io/v2/md-enhance/).
+
+建议在新项目中使用 VuePress 2。你应该使用 [`vuepress-plugin-md-enhance@next`](https://vuepress-theme-hope.gitee.io/v2/md-enhance/zh/).
+
 ## [Official Docs](https://vuepress-theme-hope.github.io/v1/md-enhance/) | [官方文档](https://vuepress-theme-hope.gitee.io/v1/md-enhance/zh/)
 
 ## Install / 安装

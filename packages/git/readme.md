@@ -13,6 +13,12 @@ Git 信息插件 🕘 / Git information plugin🕘
 
 ## [Official Docs](https://vuepress-theme-hope.github.io/v1/git/) | [官方文档](https://vuepress-theme-hope.gitee.io/v1/git/zh/)
 
+## V2 Version / V2 版本
+
+VuePress 2 is recommanded to start new project. You should use[`@vuepress/plugin-git@next`.
+
+建议在新项目中使用 VuePress 2。你应该使用 `@vuepress/plugin-git@next`.
+
 ## Install / 安装
 
 ```bash

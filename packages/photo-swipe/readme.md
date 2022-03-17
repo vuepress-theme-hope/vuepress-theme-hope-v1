@@ -11,6 +11,14 @@
 
 ## [Official Docs](https://vuepress-theme-hope.github.io/v1/photo-swipe) / [官方文档](https://vuepress-theme-hope.gitee.io/v1/photo-swipe/zh/)
 
+## V2 Version / V2 版本
+
+VuePress 2 is recommanded to start new project. You should use [`vuepress-plugin-photo-swipe@next`](https://vuepress-theme-hope.github.io/v2/photo-swipe/).
+
+建议在新项目中使用 VuePress 2。你应该使用 [`vuepress-plugin-photo-swipe@next`](https://vuepress-theme-hope.gitee.io/v2/photo-swipe/zh/).
+
+## [Official Docs](https://vuepress-theme-hope.github.io/v1/photo-swipe/) | [官方文档](https://vuepress-theme-hope.gitee.io/v1/photo-swipe/zh/)
+
 ## Install / 安装
 
 ```bash
