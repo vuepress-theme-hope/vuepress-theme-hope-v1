@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.28.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.1...v1.28.2) (2022-03-17)
+
+### Features
+
+- **pwa:** add appendBase option ([6469f43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6469f4322398c13ddf85e9a276733f0a5704fdc4))
+
 ## [1.28.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.0...v1.28.1) (2022-02-24)
 
 ## [1.28.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.4...v1.28.0) (2022-02-24)
