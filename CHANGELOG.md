@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.28.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.2...v1.28.3) (2022-03-18)
+
+### Bug Fixes
+
+- fix types issues ([3b7669a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3b7669aca91ffb952e11af561c94722dbfb7cf62))
+
 ## [1.28.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.1...v1.28.2) (2022-03-17)
 
 ### Features
