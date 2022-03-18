@@ -9,4 +9,4 @@ export type EnhanceApp = (options: {
   router: VueRouter & { options: RouterOptions };
   siteData: SiteData;
   isServer: boolean;
-}) => void;
+}) => void | Promise<void>;

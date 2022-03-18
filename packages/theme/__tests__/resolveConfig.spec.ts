@@ -223,8 +223,9 @@ describe("Test resolveTheme function", () => {
       },
 
       algolia: {
-        apiKey: "4deb442097fb6a05638adf10ef86e222",
-        indexName: "mrhope_vuepress-theme",
+        appId: "VXIEHELDL1",
+        apiKey: "595796f71b6ba14326719682c3738c0c",
+        indexName: "vuepress-theme-hope-v1",
       },
 
       footer: {

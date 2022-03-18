@@ -10,9 +10,11 @@ extends:
   - plugin:prettier/recommended
 
 ignorePatterns:
-  - dist/
-  - node_modules/
-  - lib/
+  - "**/dist/**"
+  - "**/node_modules/**"
+  - ".cache/**"
+  - ".temp/**"
+  - "packages/*/lib/**"
   - packages/theme/**/*.js
   - packages/theme/**/*.d.ts
   - "!packages/theme/types/**/*.d.ts"
@@ -128,6 +130,17 @@ overrides:
 
         - selector:
             - property
+          format: null
+          custom:
+            regex: (^/.*/$|^@|^[a-z]+(?:-[a-z]+)*?$)
+            match: true
+          # allow locales path like `/zh/`, alias starting with `@` and css property like `line-width`
+          filter: (^/.*/$|^@|^[a-z]+(?:-[a-z]+)*?$)
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+
+        - selector:
+            - property
           format:
             - camelCase
             - PascalCase
@@ -150,6 +163,12 @@ overrides:
         - off
 
   - files:
+      - "*.d.ts"
+    rules:
+      no-underscore-dangle:
+        - off
+
+  - files:
       - "**/__tests__/**/*.spec.{j,t}s?(x)"
 
     env:
@@ -160,9 +179,9 @@ overrides:
         - off
       "@typescript-eslint/no-explicit-any":
         - off
-      "@typescript-eslint/no-unsafe-assignment":
-        - off
       "@typescript-eslint/no-non-null-assertion":
+        - off
+      "@typescript-eslint/no-unsafe-assignment":
         - off
       "@typescript-eslint/no-unsafe-call":
         - off

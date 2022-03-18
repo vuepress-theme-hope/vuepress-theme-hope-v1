@@ -42,7 +42,7 @@ export type SideBarConfig =
 
 /** Algolia 搜索配置 */
 export interface AlgoliaOption {
-  appId?: string;
+  appId: string;
   apiKey: string;
   indexName: string;
   searchParameters?: Record<string, string>;
