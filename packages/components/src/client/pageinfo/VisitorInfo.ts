@@ -11,7 +11,7 @@ export default Vue.extend({
   components: { EyeIcon, FireIcon },
 
   props: {
-    vistor: { type: Boolean, default: false },
+    visitor: { type: Boolean, default: false },
   },
 
   data: () => ({
