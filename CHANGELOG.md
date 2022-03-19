@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.28.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.3...v1.28.4) (2022-03-19)
+
+### Bug Fixes
+
+- **components:** fix typos ([d086317](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d08631787068334050ac90670e502f4532e43bca))
+
 ## [1.28.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.2...v1.28.3) (2022-03-18)
 
 ### Bug Fixes
