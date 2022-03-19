@@ -11,7 +11,10 @@ tags:
 
 By default, the plugin will get the UNIX timestamp(ms) of each file’s fist and last `git` commit for you, and it will also display at the bottom of each page in an appropriate format.
 
-At the same time, all contributors to the page will be displayed at the bottom of the page. If you don’t want to show contributors, please set `themeConfig.git.contributor` to `false`.
+At the same time, all contributors to the page will be displayed at the bottom of the page.
+
+- If you don’t want to show last update time, please set `themeConfig.updateTime` to `false`.
+- If you don’t want to show contributors, please set `themeConfig.contributor` to `false`.
 
 <!-- more -->
 

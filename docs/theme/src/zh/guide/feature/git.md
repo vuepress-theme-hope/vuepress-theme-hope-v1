@@ -11,7 +11,10 @@ tags:
 
 默认情况下，页面的创建时间和上一次更新时间会通过页面文件文件最后一次 `git` 提交的 UNIX 时间戳 (ms) 来自动生成，并将以合适的日期格式显示在每一页的底部。
 
-同时，页面的底部也会显示该页面的所有贡献者。如果你不希望显示贡献者，请设置 `themeConfig.git.contributor` 为 `false`。
+同时，页面的底部也会显示该页面的所有贡献者。
+
+- 如果你不希望显示最后更新使用，请设置 `themeConfig.updateTime` 为 `false`。
+- 如果你不希望显示贡献者，请设置 `themeConfig.contributor` 为 `false`。
 
 <!-- more -->
 
