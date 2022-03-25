@@ -4,7 +4,7 @@ icon: gitee
 
 # Gitee 第三方应用
 
-> Vssue 同样可以配合自己搭建的 Gitee 企业版 使用。只需要将 `baseURL` 设置为你的 Gitee URL 即可。查看 [配置参考 - baseURL](../options/README.md#baseurl)
+> Vssue 同样可以配合自己搭建的 Gitee 企业版 使用。只需要将 `baseURL` 设置为你的 Gitee URL 即可。
 >
 > Gitee 需要设置 `clientSecret`，因为 Gitee 目前还不支持 implicit grant type
 

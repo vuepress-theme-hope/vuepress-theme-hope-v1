@@ -28,7 +28,3 @@ icon: config
 ## Valine 选项
 
 - [点击查看](valine.md)
-
-## 页面选项
-
-- [点击查看](frontmatter.md)

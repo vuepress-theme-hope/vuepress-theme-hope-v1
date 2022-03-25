@@ -12,7 +12,7 @@ Guide: [Set up GitHub OAuth App](./github.md)
 
 - Vssue API package: [@vssue/api-github-v3](https://www.npmjs.com/package/@vssue/api-github-v3)
 - Features or drawbacks:
-  - [clientSecret](../options/README.md#clientsecret) is required
+  - clientSecret is required
   - Comments not sortable
   - Comments editable
   - Comments deletable
@@ -23,7 +23,7 @@ Guide: [Set up GitHub OAuth App](./github.md)
 
 - Vssue API package: [@vssue/api-github-v4](https://www.npmjs.com/package/@vssue/api-github-v4)
 - Features or drawbacks:
-  - [clientSecret](../options/README.md#clientsecret) is required
+  - clientSecret is required
   - Comments sortable
   - Comments editable
   - Comments deletable
@@ -67,7 +67,7 @@ Guide: [Set up Gitee OAuth Application](./gitee.md)
 
 - Vssue API package: [@vssue/api-gitee-v5](https://www.npmjs.com/package/@vssue/api-gitee-v5)
 - Features or drawbacks:
-  - [clientSecret](../options/README.md#clientsecret) is required
+  - clientSecret is required
   - Comments not sortable
   - Comments editable
   - Comments deletable

@@ -12,7 +12,7 @@ icon: support
 
 - Vssue API 包: [@vssue/api-github-v3](https://www.npmjs.com/package/@vssue/api-github-v3)
 - 特点 / 缺点:
-  - 需要设置 [clientSecret](../options/README.md#clientsecret)
+  - 需要设置 clientSecret
   - 评论无法排序
   - 评论可以编辑
   - 评论可以删除
@@ -23,7 +23,7 @@ icon: support
 
 - Vssue API 包: [@vssue/api-github-v4](https://www.npmjs.com/package/@vssue/api-github-v4)
 - 特点 / 缺点:
-  - 需要设置 [clientSecret](../options/README.md#clientsecret)
+  - 需要设置 clientSecret
   - 评论可以排序
   - 评论可以编辑
   - 评论可以删除
@@ -67,7 +67,7 @@ icon: support
 
 - Vssue API 包: [@vssue/api-gitee-v5](https://www.npmjs.com/package/@vssue/api-gitee-v5)
 - 特点 / 缺点:
-  - 需要设置 [clientSecret](../options/README.md#clientsecret)
+  - 需要设置 clientSecret
   - 评论无法排序
   - 评论可以编辑
   - 评论可以删除
