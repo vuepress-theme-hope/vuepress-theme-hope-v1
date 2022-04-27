@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.28.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.4...v1.28.5) (2022-04-27)
+
+### Bug Fixes
+
+- **pwa:** fix option types ([1743048](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1743048e4667324e7110e92e5ddd9dcc7e7abebc))
+
 ## [1.28.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.3...v1.28.4) (2022-03-19)
 
 ### Bug Fixes
