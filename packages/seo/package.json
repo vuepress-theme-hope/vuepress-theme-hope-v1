@@ -35,7 +35,7 @@
     "@mr-hope/vuepress-types": "1.28.3",
     "@types/fs-extra": "^9.0.13",
     "chalk": "^4.1.2",
-    "fs-extra": "^10.0.1"
+    "fs-extra": "^10.1.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,10 +1,11 @@
-/* eslint-disable max-statements */
 import katex = require("katex");
 import { escapeHtml } from "./utils";
 
-import type MarkdownIt = require("markdown-it");
-import type StateBlock = require("markdown-it/lib/rules_block/state_block");
-import type StateInline = require("markdown-it/lib/rules_inline/state_inline");
+import type StateInline from "markdown-it/lib/rules_inline/state_inline";
+import type { PluginWithOptions } from "markdown-it";
+import type { RuleInline } from "markdown-it/lib/parser_inline";
+import type { RuleBlock } from "markdown-it/lib/parser_block";
+import type { KatexOptions } from "katex";
 
 /*
  * Test if potential opening or closing delimieter
@@ -32,7 +33,7 @@ const isValidDelim = (
   };
 };
 
-const inlineTex = (state: StateInline, silent?: boolean): boolean => {
+const inlineTex: RuleInline = (state, silent) => {
   let match;
   let pos;
   let res;
@@ -45,6 +46,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
     if (!silent) state.pending += "$";
 
     state.pos += 1;
+
     return true;
   }
 
@@ -55,6 +57,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
    * we have found an opening delimieter already.
    */
   const start = state.pos + 1;
+
   match = start;
   while ((match = state.src.indexOf("$", match)) !== -1) {
     /*
@@ -75,6 +78,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
     if (!silent) state.pending += "$";
 
     state.pos = start;
+
     return true;
   }
 
@@ -83,6 +87,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
     if (!silent) state.pending += "$$";
 
     state.pos = start + 1;
+
     return true;
   }
 
@@ -93,6 +98,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
     if (!silent) state.pending += "$";
 
     state.pos = start;
+
     return true;
   }
 
@@ -107,12 +113,7 @@ const inlineTex = (state: StateInline, silent?: boolean): boolean => {
   return true;
 };
 
-const blockTex = (
-  state: StateBlock,
-  start: number,
-  end: number,
-  silent: boolean
-): boolean => {
+const blockTex: RuleBlock = (state, start, end, silent) => {
   let firstLine;
   let lastLine;
   let next;
@@ -171,11 +172,12 @@ const blockTex = (
 };
 
 // set KaTeX as the renderer for markdown-it-simplemath
-const katexInline = (tex: string, options: katex.KatexOptions): string => {
-  options.displayMode = false;
-
+const katexInline = (tex: string, options: KatexOptions): string => {
   try {
-    return katex.renderToString(tex, options);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // eslint-disable-next-line
+    return katex.renderToString(tex, { ...options, displayMode: false });
   } catch (error) {
     if (options.throwOnError) console.warn(error);
 
@@ -185,11 +187,19 @@ const katexInline = (tex: string, options: katex.KatexOptions): string => {
   }
 };
 
-const katexBlock = (tex: string, options: katex.KatexOptions): string => {
-  options.displayMode = true;
-
+const katexBlock = (tex: string, options: KatexOptions): string => {
   try {
-    return `<p class='katex-block'>${katex.renderToString(tex, options)}</p>`;
+    return `<p class='katex-block'>${
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      // eslint-disable-next-line
+      katex.renderToString(tex, {
+        ...options,
+        displayMode: true,
+        strict: (errorCode: string): string =>
+          errorCode === "newLineInDisplayMode" ? "ignore" : "warn",
+      })
+    }</p>`;
   } catch (error) {
     if (options.throwOnError) console.warn(error);
 
@@ -199,18 +209,20 @@ const katexBlock = (tex: string, options: katex.KatexOptions): string => {
   }
 };
 
-export default (
-  md: MarkdownIt,
-  options: katex.KatexOptions = { throwOnError: false }
-): void => {
+const katexPlugin: PluginWithOptions<KatexOptions> = (
+  md,
+  options = { throwOnError: false }
+) => {
   md.inline.ruler.after("escape", "inlineTex", inlineTex);
   // It’s a workaround here because types issue
   md.block.ruler.after("blockquote", "blockTex", blockTex, {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
 
-  md.renderer.rules.inlineTex = (tokens, idx): string =>
-    katexInline(tokens[idx].content, options);
-  md.renderer.rules.blockTex = (tokens, idx): string =>
-    `${katexBlock(tokens[idx].content, options)}\n`;
+  md.renderer.rules.inlineTex = (tokens, index): string =>
+    katexInline(tokens[index].content, options);
+  md.renderer.rules.blockTex = (tokens, index): string =>
+    `${katexBlock(tokens[index].content, options)}\n`;
 };
+
+export default katexPlugin;
