@@ -157,7 +157,7 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    activeHeaderLinks: false, // 默认值: true
+    activeHash: false, // 默认值: true
   },
 });
 ```
@@ -172,7 +172,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    activeHeaderLinks: false, // 默认值: true
+    activeHash: false, // 默认值: true
   },
 });
 ```

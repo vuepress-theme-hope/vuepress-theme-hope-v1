@@ -42,13 +42,6 @@ tags:
 
 是否显示所有页面的标题链接
 
-## activeHeaderLinks
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否自动更新嵌套的标题链接和 URL 中的 Hash 值
-
 ## search
 
 - 类型: `boolean`

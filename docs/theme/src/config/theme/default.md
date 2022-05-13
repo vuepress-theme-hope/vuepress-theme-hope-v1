@@ -33,13 +33,6 @@ The logo image of the navigation bar. Needs to be filled with an absolute path. 
 
 Whether to display header links in sidebar for all pages
 
-## activeHeaderLinks
-
-- Type: `boolean`
-- Default value: `true`
-
-Whether to automatically update hash values in URLs and sidebar active headings.
-
 ## search
 
 - Type: `boolean`

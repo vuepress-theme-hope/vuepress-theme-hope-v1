@@ -163,7 +163,7 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    activeHeaderLinks: false, // Default: true
+    activeHash: false, // Default: true
   },
 });
 ```
@@ -178,7 +178,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    activeHeaderLinks: false, // Default: true
+    activeHash: false, // Default: true
   },
 });
 ```
