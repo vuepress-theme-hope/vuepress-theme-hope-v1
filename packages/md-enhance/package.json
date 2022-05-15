@@ -50,7 +50,7 @@
     "@types/hash-sum": "^1.0.0",
     "@types/katex": "^0.14.0",
     "@types/lodash.debounce": "^4.0.7",
-    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it": "^10.0.3",
     "@types/mermaid": "^8.2.9",
     "flowchart.js": "^1.17.1",
     "katex": "^0.15.3",

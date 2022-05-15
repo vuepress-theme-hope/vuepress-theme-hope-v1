@@ -3,6 +3,7 @@ export * from "./decodeUrl";
 export * from "./flowchart";
 export * from "./footnote";
 export * from "./katex";
+export * from "./imageMark";
 export * from "./lazyLoad";
 export * from "./mark";
 export * from "./mermaid";

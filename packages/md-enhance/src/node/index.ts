@@ -7,6 +7,7 @@ import {
   flowchart,
   footnote,
   katex,
+  imageMark,
   lazyLoad,
   mark,
   mermaid,
@@ -18,22 +19,43 @@ import {
 import { getPluginConfig } from "./pluginConfig";
 
 import type { Plugin } from "@mr-hope/vuepress-types";
+import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../types";
 
 const noopModule = "@mr-hope/vuepress-shared/lib/esm/noopModule";
 
 const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
-  const alignEnable = options.enableAll || options.align || false;
-  const containerEnable = options.enableAll || options.container || false;
-  const codegroupEnable = options.enableAll || options.codegroup || false;
-  const demoEnable = options.enableAll || options.demo || false;
-  const flowchartEnable = options.enableAll || options.flowchart || false;
-  const footnoteEnable = options.enableAll || options.footnote || false;
-  const tasklistEnable = options.enableAll || options.tasklist || false;
-  const mermaidEnable = options.enableAll || Boolean(options.mermaid) || false;
-  const presentationEnable =
-    options.enableAll || Boolean(options.presentation) || false;
-  const texEnable = options.enableAll || Boolean(options.tex) || false;
+  const getStatus = (key: keyof MarkdownEnhanceOptions, gfm = false): boolean =>
+    key in options
+      ? Boolean(options[key])
+      : gfm && "gfm" in options
+      ? Boolean(options.gfm)
+      : options.enableAll || false;
+
+  const alignEnable = getStatus("align");
+  const containerEnable = getStatus("container");
+  const codegroupEnable = getStatus("codegroup");
+  const demoEnable = getStatus("demo");
+  const flowchartEnable = getStatus("flowchart");
+  const footnoteEnable = getStatus("footnote", true);
+  const imageMarkEnable = getStatus("imageMark", true);
+  const tasklistEnable = getStatus("tasklist", true);
+  const mermaidEnable = getStatus("mermaid");
+  const presentationEnable = getStatus("presentation");
+  const texEnable = getStatus("tex");
+
+  const katexOptions: KatexOptions = {
+    macros: {
+      // support more symbols
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      "\\liiiint": "\\int\\!\\!\\!\\iiint",
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      "\\idotsint": "\\int\\!\\cdots\\!\\int",
+    },
+    ...(typeof options.tex === "object" ? options.tex : {}),
+  };
 
   const revealPlugins =
     typeof options.presentation === "object" &&
@@ -95,37 +117,30 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
         }
       : {}),
 
-    chainMarkdown: (md): void => {
-      if (options.lazyLoad !== false) md.plugin("lazy-load").use(lazyLoad);
-      if (options.lineNumbers !== false)
-        md.plugin("line-numbers").use(lineNumbers);
-      if (options.imageFix !== false) md.plugin("decode-url").use(decodeURL);
-      if (options.sup || options.enableAll) md.plugin("sup").use(sup);
-      if (options.sub || options.enableAll) md.plugin("sub").use(sub);
-      if (footnoteEnable) md.plugin("footnote").use(footnote);
-      if (flowchartEnable) md.plugin("flowchart").use(flowchart);
-      if (options.mark || options.enableAll) md.plugin("mark").use(mark);
+    extendMarkdown: (markdownIt): void => {
+      // hack
+      if (options.lineNumbers !== false) markdownIt.use(lineNumbers);
+      if (options.imageFix !== false) markdownIt.use(decodeURL);
+
+      if (getStatus("lazyLoad")) markdownIt.use(lazyLoad);
+      if (imageMarkEnable)
+        markdownIt.use(
+          imageMark,
+          typeof options.imageMark === "object" ? options.imageMark : {}
+        );
+      if (getStatus("sup")) markdownIt.use(sup);
+      if (getStatus("sub")) markdownIt.use(sub);
+      if (footnoteEnable) markdownIt.use(footnote);
+      if (flowchartEnable) markdownIt.use(flowchart);
+      if (getStatus("mark")) markdownIt.use(mark);
       if (tasklistEnable)
-        md.plugin("tasklist").use(tasklist, [
+        markdownIt.use(tasklist, [
           typeof options.tasklist === "object" ? options.tasklist : {},
         ]);
-      if (mermaidEnable) md.plugin("mermaid").use(mermaid);
-      if (texEnable)
-        md.plugin("katex").use(katex, [
-          {
-            macros: {
-              // support more symbols
-              // eslint-disable-next-line @typescript-eslint/naming-convention
-              "\\liiiint": "\\int\\!\\!\\!\\iiint",
-              // eslint-disable-next-line @typescript-eslint/naming-convention
-              "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
-              // eslint-disable-next-line @typescript-eslint/naming-convention
-              "\\idotsint": "\\int\\!\\cdots\\!\\int",
-            },
-            ...(typeof options.tex === "object" ? options.tex : {}),
-          },
-        ]);
-      if (presentationEnable) md.plugin("presentation").use(presentation);
+
+      if (mermaidEnable) markdownIt.use(mermaid);
+      if (texEnable) markdownIt.use(katex, katexOptions);
+      if (presentationEnable) markdownIt.use(presentation);
     },
 
     plugins: getPluginConfig(options, context),

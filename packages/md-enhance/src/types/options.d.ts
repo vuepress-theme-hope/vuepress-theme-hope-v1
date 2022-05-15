@@ -37,14 +37,14 @@ export interface MarkdownEnhanceOptions {
   //  */
   // linkCheck?: "always" | "dev" | "build" | "never" | boolean;
 
-  // /**
-  //  * Whether enable standard GFM support
-  //  *
-  //  * 是否启用标准的 GitHub Favor Markdown 支持
-  //  *
-  //  * @default false
-  //  */
-  // gfm?: boolean;
+  /**
+   * Whether enable standard GFM support
+   *
+   * 是否启用标准的 GitHub Favor Markdown 支持
+   *
+   * @default false
+   */
+  gfm?: boolean;
 
   /**
    * Whether to enable custom container including
