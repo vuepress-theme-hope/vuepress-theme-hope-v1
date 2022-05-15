@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.29.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.5...v1.29.0) (2022-05-15)
+
+### Features
+
+- **copy-code:** support delay and pure option ([2f50b7f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f50b7f646e0a32f4fa67b6692f48a374f5c57c8))
+- **feed:** rebuild feed plugin ([937de4b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/937de4b37ad65364af3be83975fc28abc885cb32))
+- **md-enhance:** support gfm option ([29dcbb4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29dcbb4e1d25287ace1f65a1013caee5ccfafd1d))
+- **md-enhance:** support imageMark ([feec562](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/feec56245cd7a35cb0cb2891eae607416762f63b))
+- **md-enhance:** update markdown-it plugin ([92b32e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/92b32e87cdf0eee4fc8adb236e97f0a3bc0ef551))
+- **md-enhance:** use react 18 ([594dc3a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/594dc3a6354f6a0bf6798008eb5f301cde5655a6))
+
 ## [1.28.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.4...v1.28.5) (2022-04-27)
 
 ### Bug Fixes
