@@ -102,6 +102,12 @@ export default hope.config({
 
     cleanUrl: false,
 
+    feed: {
+      atom: true,
+      json: true,
+      rss: true,
+    },
+
     git: {
       timezone: "Asia/Shanghai",
     },

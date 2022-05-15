@@ -180,7 +180,7 @@ interface HopeThemePluginConfig {
    * Feed plugin options
    * @see http://vuepress-theme-hope.github.io/v1/feed/config/
    */
-  feed?: FeedOptions | false;
+  feed?: Partial<FeedOptions> | false;
 
   /**
    * Git 插件配置
