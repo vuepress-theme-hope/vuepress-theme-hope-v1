@@ -1,14 +1,15 @@
 import type { LocaleConfig } from "@mr-hope/vuepress-shared";
 import type { KatexOptions } from "katex";
-import type { CodeDemoOptions } from "./code-demo";
+import type { CodeDemoOptions } from "./codeDemo";
+import type { ImageMarkOptions } from "./imageMark";
 import type { MarkdownEnhanceLocaleData } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
 
 /**
- * `vueress-plugin-md-enhance` options
+ * md-enhance plugin configuration
  */
-export type MarkdownEnhanceOptions = Partial<{
+export interface MarkdownEnhanceOptions {
   /**
    * Whether to show line numbers to the left of each code block
    *
@@ -16,7 +17,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default true
    */
-  lineNumbers: boolean;
+  lineNumbers?: boolean;
 
   /**
    * Whether to fix image links containing special characters
@@ -25,20 +26,27 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default true
    */
-  imageFix: boolean;
+  imageFix?: boolean;
+
+  // /**
+  //  * Whether check dead links in markdown
+  //  *
+  //  * @description `true` equals to `'always'`, `false` equals to `'never'`
+  //  *
+  //  * @default 'dev'
+  //  */
+  // linkCheck?: "always" | "dev" | "build" | "never" | boolean;
+
+  // /**
+  //  * Whether enable standard GFM support
+  //  *
+  //  * 是否启用标准的 GitHub Favor Markdown 支持
+  //  *
+  //  * @default false
+  //  */
+  // gfm?: boolean;
 
   /**
-   * 是否启用自定义容器
-   *
-   * - info
-   * - note
-   * - tip
-   * - warning
-   * - danger
-   * - details
-   *
-   * ⚠ 最后四个会和默认主题冲突，且可能会覆盖默认主题的样式与行为
-   *
    * Whether to enable custom container including
    *
    * - info
@@ -48,74 +56,94 @@ export type MarkdownEnhanceOptions = Partial<{
    * - danger
    * - details
    *
-   * ⚠ The last 4 is conflict with default theme and may overide it.
+   * ⚠ The last 4 items conflict with default theme and will overide it’s style.
+   *
+   * 是否启用自定义容器
+   *
+   * - info
+   * - note
+   * - tip
+   * - warning
+   * - danger
+   * - details
+   *
+   * ⚠ 最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。
    *
    * @default false
    */
-  container: boolean;
+  container?: boolean;
 
   /**
-   * 是否启用代码组
+   * Whether to enable codegroup.
    *
-   * Whether to enable codegroup
+   * 是否启用代码组。
    *
    * @default false
    */
-  codegroup: boolean;
+  codegroup?: boolean;
 
   /**
-   * 是否启用自定义对齐支持
-   *
    * Whether to enable align support
    *
+   * 是否启用自定义对齐支持。
+   *
    * @default false
    */
-  align: boolean;
+  align?: boolean;
 
   /**
-   * 是否启用上角标格式支持
-   *
    * Whether to enable superscript format support
    *
+   * 是否启用上角标格式支持。
+   *
    * @default false
    */
-  sup: boolean;
+  sup?: boolean;
 
   /**
-   * 是否启用下角标格式支持
-   *
    * Whether to enable subscript format support
    *
+   * 是否启用下角标格式支持。
+   *
    * @default false
    */
-  sub: boolean;
+  sub?: boolean;
 
   /**
-   * 是否启用脚注格式支持
-   *
    * Whether to enable footnote format support
    *
+   * 是否启用脚注格式支持。
+   *
    * @default false
    */
-  footnote: boolean;
+  footnote?: boolean;
 
   /**
-   * 是否启用标注支持
+   * Whether enable native image lazy loading
    *
+   * 是否启用原生的图片懒加载。
+   *
+   * @default false
+   */
+  lazyLoad?: boolean;
+
+  /**
+   * Whether to enable gfm image id mark support
+   *
+   * 是否启用 GFM 图片 ID 标记。
+   *
+   * @default false
+   */
+  imageMark?: ImageMarkOptions | boolean;
+
+  /**
    * Whether to enable mark format support
    *
-   * @default false
-   */
-  mark: boolean;
-
-  /**
-   * Whether to enable flowchart support
-   *
-   * 是否启用 flowchart 流程图支持
+   * 是否启用标注支持。
    *
    * @default false
    */
-  flowchart: boolean;
+  mark?: boolean;
 
   /**
    * Whether to enable tastlist format support
@@ -124,16 +152,47 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  tasklist: TaskListOptions | boolean;
+  tasklist?: TaskListOptions | boolean;
+
+  // /**
+  //  * Whether to enable markdown import syntax support\
+  //  *
+  //  * 是否启用 Markdown 导入语法支持
+  //  *
+  //  * @default false
+  //  */
+  // mdImport?: (path: string) => string | boolean;
 
   /**
    * Whether to enable TeX syntax support
    *
+   * @see https://katex.org/docs/options.html
+   *
    * 是否启用 TeX 语法支持
+   *
+   * @see https://katex.org/docs/options.html
    *
    * @default false
    */
-  tex: KatexOptions | boolean;
+  tex?: KatexOptions | boolean;
+
+  // /**
+  //  * Whether to enable chart support
+  //  *
+  //  * 是否启用 chart 图表支持
+  //  *
+  //  * @default false
+  //  */
+  // chart?: boolean;
+
+  /**
+   * Whether to enable flowchart support
+   *
+   * 是否启用 flowchart 流程图支持
+   *
+   * @default false
+   */
+  flowchart?: boolean;
 
   /**
    * Whether to enable mermaid support
@@ -142,7 +201,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  mermaid: boolean;
+  mermaid?: boolean;
 
   /**
    * Whether to enable code-demo support
@@ -151,7 +210,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  demo: Partial<CodeDemoOptions> | boolean;
+  demo?: Partial<CodeDemoOptions> | boolean;
 
   /**
    * Whether to enable presentation support
@@ -160,16 +219,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  presentation: PresentationOptions | boolean;
-
-  /**
-   * Whether enable native image lazy loading
-   *
-   * 是否启用原生的图片懒加载
-   *
-   * @default true
-   */
-  lazyLoad?: boolean;
+  presentation?: PresentationOptions | boolean;
 
   /**
    * Whether to enable all features.
@@ -178,7 +228,7 @@ export type MarkdownEnhanceOptions = Partial<{
    *
    * @default false
    */
-  enableAll: boolean;
+  enableAll?: boolean;
 
   /**
    * The delay of operating dom, in ms
@@ -199,4 +249,4 @@ export type MarkdownEnhanceOptions = Partial<{
    * 国际化配置选项
    */
   locales?: LocaleConfig<MarkdownEnhanceLocaleData>;
-}>;
+}

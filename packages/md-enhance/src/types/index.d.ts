@@ -1,11 +1,12 @@
 import { Mermaid } from "mermaid";
 import type { RevealOptions } from "reveal.js";
-import type { CodeDemoOptions } from "./code-demo";
+import type { CodeDemoOptions } from "./codeDemo";
 
 import "./declare";
 
-export * from "./code-demo";
+export * from "./codeDemo";
 export * from "./locales";
+export * from "./imageMark";
 export * from "./options";
 export * from "./presentation";
 export * from "./tasklist";
