@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-types": "1.28.3",
-    "dayjs": "^1.11.1",
+    "dayjs": "^1.11.2",
     "execa": "^5.1.1"
   },
   "publishConfig": {
