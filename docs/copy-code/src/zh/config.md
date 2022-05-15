@@ -24,20 +24,44 @@ icon: config
 
 是否展示在移动端
 
+## delay
+
+- 类型: `number`
+- 默认值: `500`
+
+注册复制按钮的延时，单位 ms。
+
+如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`
+
+## pure
+
+- 类型: `false`
+- 默认值: `false`
+
+是否生成样式纯净的小而简单的复制按钮。
+
 ## locales
 
-```ts
-interface CopyCodeLocaleData {
-  /**
-   * 复制按钮文字
-   */
-  copy: string;
+- 类型: `CopyCodeLocaleConfig`
 
-  /**
-   * 复制成功提示消息文字
-   */
-  hint: string;
-}
-```
+  ```ts
+  interface CopyCodeLocaleData {
+    /**
+     * 复制按钮文字
+     */
+    copy: string;
 
-国际化配置
+    /**
+     * 复制成功提示消息文字
+     */
+    hint: string;
+  }
+
+  interface CopyCodeLocaleConfig {
+    [localePath: string]: CopyCodeLocaleData;
+  }
+  ```
+
+- 必填: 否
+
+复制按钮插件的国际化配置。
