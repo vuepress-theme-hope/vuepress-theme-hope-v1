@@ -1,5 +1,5 @@
 <template>
-  <div v-show="commentDisplay" class="valine-wrapper">
+  <div v-show="enableComment" class="valine-wrapper">
     <div id="valine" />
   </div>
 </template>

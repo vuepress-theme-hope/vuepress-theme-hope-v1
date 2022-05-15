@@ -1,8 +1,7 @@
 <template>
   <div v-show="pluginEnable" class="comments-wrapper">
-    <Valine v-if="options.type === 'valine'" :valine-config="options" />
-    <Waline v-else-if="options.type === 'waline'" :waline-config="options" />
-    <Vssue v-else-if="options.type === 'vssue'" :title="$title" />
+    <Vssue v-if="options.type === 'vssue'" :title="$title" />
+    <CommentProvider v-else :config="options" />
   </div>
 </template>
 

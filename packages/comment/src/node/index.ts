@@ -29,12 +29,10 @@ const commentPlugin: Plugin<CommentOptions> = (options, context) => {
     }),
 
     alias: {
-      "@Valine":
+      "@CommentProvider":
         options.type === "valine"
           ? resolve(__dirname, "../client/Valine.vue")
-          : "@mr-hope/vuepress-shared/lib/esm/noopModule",
-      "@Waline":
-        options.type === "waline"
+          : options.type === "waline"
           ? resolve(__dirname, "../client/Waline.vue")
           : "@mr-hope/vuepress-shared/lib/esm/noopModule",
     },

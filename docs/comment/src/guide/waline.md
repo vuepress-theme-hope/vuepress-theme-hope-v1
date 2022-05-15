@@ -3,11 +3,11 @@ title: Waline
 icon: waline
 ---
 
-Welcome to Waline. In just a few steps, you can enable Waline to provide comments and pageviews on your website.
+Welcome to Waline. In just a few steps, you can enable Waline to provide comments and pageviews on your site.
 
 <!-- more -->
 
-## LeanCloud settings (Database)
+## LeanCloud Settings (Database)
 
 1. [sign in](https://console.leancloud.app/login) or [sign up](https://console.leancloud.app/register) LeanCloud and enter [Console](https://console.leancloud.app/apps).
 
@@ -59,9 +59,9 @@ Welcome to Waline. In just a few steps, you can enable Waline to provide comment
 
 ### Using plugin
 
-Set `type: 'waline'` in the plugin options, and set `serverURL` as the link obtained in the previous step.
+Set `type: "waline"` in the plugin options, and set `serverURL` as the link obtained in the previous step.
 
-Then, place the `<Comment>` component at a suitable location in your website (usually at the bottom of the page), you will be able to see the comment box.
+Then, place the `<CommentService>` component at a suitable location in your site (usually at the bottom of the page), you will be able to see the comment box.
 
 ::: tip
 
@@ -71,7 +71,7 @@ For details, see [Waline Config](../config/waline.md)
 
 :::
 
-## Comment management (Management)
+## Comment Management
 
 1. After the deployment is complete, please visit `<serverURL>/ui/register` to register. The first person to register will be set as an administrator.
 1. After you log in as administrator, you can see the comment management interface. You can edit, mark or delete comments here.

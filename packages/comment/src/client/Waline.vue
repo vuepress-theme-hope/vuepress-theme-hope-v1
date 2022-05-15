@@ -1,5 +1,5 @@
 <template>
-  <div v-show="commentDisplay" class="waline-wrapper">
+  <div v-show="enableComment" class="waline-wrapper">
     <div id="waline-comment" />
   </div>
 </template>

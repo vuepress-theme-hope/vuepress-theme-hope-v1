@@ -1,13 +1,11 @@
 import Vue from "vue";
-import Valine from "@Valine";
-import Waline from "@Waline";
+import CommentProvider from "@CommentProvider";
 
 export default Vue.extend({
   name: "CommentService",
 
   components: {
-    Valine,
-    Waline,
+    CommentProvider,
   },
 
   data: () => ({
@@ -18,10 +16,7 @@ export default Vue.extend({
     pluginEnable(): boolean {
       return (
         this.options.type !== "disable" &&
-        (this.$frontmatter.comment ||
-          (this.options.comment !== false &&
-            (this.options.type === "valine" ||
-              this.$frontmatter.comment !== false)))
+        (this.$frontmatter.comment || this.options.comment !== false)
       );
     },
   },

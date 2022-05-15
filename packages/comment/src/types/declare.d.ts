@@ -162,13 +162,7 @@ declare module "valine" {
   export default Valine;
 }
 
-declare module "@Valine" {
-  import vue from "vue";
-
-  export default vue;
-}
-
-declare module "@Waline" {
+declare module "@CommentProvider" {
   import vue from "vue";
 
   export default vue;
