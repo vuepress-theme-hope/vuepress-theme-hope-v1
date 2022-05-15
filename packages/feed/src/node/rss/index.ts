@@ -1,5 +1,6 @@
-import convert = require("xml-js");
-import { encodeCDATA, encodeXML, generator, isUrl } from "../utils";
+import { js2xml } from "xml-js";
+import { stripTags } from "../stripTags";
+import { FEED_GENERATOR, encodeCDATA, encodeXML, isUrl } from "../utils";
 
 import type { Feed } from "../feed";
 import type { FeedCategory, FeedEnclosure, FeedItemOption } from "../../types";
@@ -92,7 +93,7 @@ export const renderRSS = (feed: Feed): string => {
             ? channel.lastUpdated.toUTCString()
             : new Date().toUTCString(),
         },
-        generator: { _text: generator },
+        generator: { _text: FEED_GENERATOR },
         docs: {
           _text: "https://validator.w3.org/feed/docs/rss2.html",
         },
@@ -114,7 +115,8 @@ export const renderRSS = (feed: Feed): string => {
 
   /**
    * Channel Categories
-   * https://validator.w3.org/feed/docs/rss2.html#comments
+   *
+   * @see https://validator.w3.org/feed/docs/rss2.html#comments
    */
   content.rss.channel.category = Array.from(feed.categories).map(
     (category) => ({ _text: category })
@@ -122,7 +124,8 @@ export const renderRSS = (feed: Feed): string => {
 
   /**
    * Channel Categories
-   * https://validator.w3.org/feed/docs/rss2.html#hrelementsOfLtitemgt
+   *
+   * @see https://validator.w3.org/feed/docs/rss2.html#hrelementsOfLtitemgt
    */
   content.rss.channel.item = feed.items.map((entry) => {
     const item: RSSItem = {
@@ -136,7 +139,11 @@ export const renderRSS = (feed: Feed): string => {
     };
 
     if (entry.description)
-      item.description = { _text: encodeXML(entry.description) };
+      item.description = {
+        _text: entry.description.startsWith("html:")
+          ? stripTags(entry.description.substring(5))
+          : entry.description,
+      };
 
     /**
      * Item Author
@@ -191,7 +198,7 @@ export const renderRSS = (feed: Feed): string => {
     content.rss._attributes["xmlns:dc"] = "http://purl.org/dc/elements/1.1/";
   }
 
-  return convert.js2xml(content, {
+  return js2xml(content, {
     compact: true,
     ignoreComment: true,
     spaces: 2,

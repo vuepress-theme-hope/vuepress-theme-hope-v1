@@ -1,67 +1,98 @@
 import { deepAssign, getRootLang } from "@mr-hope/vuepress-shared";
-import { error, resolveUrl } from "./utils";
+import { compareDate, resolveUrl } from "./utils";
 
-import type { Context } from "@mr-hope/vuepress-types";
-import type { FeedChannelOption } from "../types/feed";
-import type { FeedLinks, FeedOptions, FeedOutputOptions } from "../types";
+import type { Context, Page } from "@mr-hope/vuepress-types";
+import type {
+  BaseFeedOptions,
+  FeedChannelOption,
+  FeedLinks,
+  FeedOptions,
+} from "../types";
 
-export interface ResolvedFeedOutputConfig {
-  enable: boolean;
-  path: string;
-}
+export type ResolvedFeedOptions = BaseFeedOptions & { hostname: string };
 
-export interface ResolvedFeedOutput {
-  atom: ResolvedFeedOutputConfig;
-  json: ResolvedFeedOutputConfig;
-  rss: ResolvedFeedOutputConfig;
-}
+export type ResolvedFeedOptionsMap = Record<string, ResolvedFeedOptions>;
 
-export const checkOptions = (options: FeedOptions): boolean => {
-  const hostname = options.hostname;
-
+export const ensureHostName = (options: Partial<FeedOptions>): boolean => {
   // make sure hostname do not end with `/`
-  if (hostname) options.hostname = hostname.replace(/\/?$/u, "");
-  else {
-    error("Option 'hostname' is required!");
-    return false;
+  if (options.hostname) {
+    options.hostname = options.hostname.replace(/\/?$/u, "");
+
+    return true;
   }
 
-  return true;
+  return false;
 };
 
-export const getOutput = (output?: FeedOutputOptions): ResolvedFeedOutput => {
-  const defaultOption: ResolvedFeedOutput = {
-    atom: {
-      enable: true,
-      path: "atom.xml",
-    },
-    json: {
-      enable: true,
-      path: "feed.json",
-    },
-    rss: {
-      enable: true,
-      path: "rss.xml",
-    },
-  };
+export const checkOutput = (options: Partial<FeedOptions>): boolean =>
+  // some locales request output
+  (options.locales &&
+    Object.entries(options.locales).some(
+      ([, { atom, json, rss }]) => atom || json || rss
+    )) ||
+  // root option requsts output
+  Boolean(options.atom || options.json || options.rss);
 
-  return deepAssign(defaultOption, output || {});
-};
+export const getFeedOptions = (
+  context: Context,
+  options: FeedOptions
+): ResolvedFeedOptionsMap =>
+  Object.fromEntries(
+    Object.keys({
+      // root locale must exists
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      "/": {},
+      ...context.siteConfig.locales,
+    }).map((localePath) => [
+      localePath,
+      {
+        // default values
+        filter: ({ frontmatter, _filePath }: Page): boolean =>
+          !(
+            frontmatter.home ||
+            !_filePath ||
+            frontmatter.article === false ||
+            frontmatter.feed === false
+          ),
+        sorter: (pageA: Page, pageB: Page): number =>
+          compareDate(
+            pageA.createTimeStamp
+              ? new Date(pageA.createTimeStamp)
+              : pageA.frontmatter.time,
+            pageB.createTimeStamp
+              ? new Date(pageB.createTimeStamp)
+              : pageB.frontmatter.time
+          ),
+        ...options,
+        ...options.locales?.[localePath],
+
+        // make sure hostname is not been overided
+        hostname: options.hostname,
+      } as ResolvedFeedOptions,
+    ])
+  );
 
 export const getFeedChannelOption = (
+  context: Context,
   options: FeedOptions,
-  context: Context
+  localePath = ""
 ): FeedChannelOption => {
   const { hostname, icon, image } = options;
-  const { base } = context;
-  const { title, description } = context.getSiteData();
+  const {
+    base,
+    siteConfig: { title, description, locales = {} },
+  } = context;
   const author = options.channel?.author?.name;
 
   const defaultChannelOpion: FeedChannelOption = {
-    title,
-    link: resolveUrl(hostname, base),
-    description,
-    language: getRootLang(context),
+    title: locales[localePath]?.title || title || locales["/"]?.title || "",
+    link: resolveUrl(hostname, base, localePath),
+    description:
+      locales[localePath]?.description ||
+      description ||
+      locales["/"]?.description ||
+      "",
+    language: locales[localePath]?.lang || getRootLang(context),
     copyright: author ? `Copyright by ${author}` : "",
     pubDate: new Date(),
     lastUpdated: new Date(),
@@ -73,17 +104,37 @@ export const getFeedChannelOption = (
   return deepAssign(defaultChannelOpion, options.channel || {});
 };
 
+export const getFilename = (
+  options: ResolvedFeedOptions,
+  prefix = "/"
+): {
+  atomOutputFilename: string;
+  jsonOutputFilename: string;
+  rssOutputFilename: string;
+} => ({
+  atomOutputFilename: `${prefix.replace(/^\//, "")}${
+    options.atomOutputFilename || "atom.xml"
+  }`,
+  jsonOutputFilename: `${prefix.replace(/^\//, "")}${
+    options.jsonOutputFilename || "feed.json"
+  }`,
+  rssOutputFilename: `${prefix.replace(/^\//, "")}${
+    options.rssOutputFilename || "rss.xml"
+  }`,
+});
+
 export const getFeedLinks = (
-  options: FeedOptions,
-  output: ResolvedFeedOutput,
-  context: Context
+  context: Context,
+  options: FeedOptions
 ): FeedLinks => {
   const { base } = context;
   const { hostname } = options;
+  const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+    getFilename(options);
 
   return {
-    atom: resolveUrl(hostname, base, output.atom.path),
-    json: resolveUrl(hostname, base, output.json.path),
-    rss: resolveUrl(hostname, base, output.rss.path),
+    atom: resolveUrl(hostname, base, atomOutputFilename),
+    json: resolveUrl(hostname, base, jsonOutputFilename),
+    rss: resolveUrl(hostname, base, rssOutputFilename),
   };
 };

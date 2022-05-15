@@ -32,8 +32,7 @@ Channel description
 
 - Default:
   - `siteConfig.locales['/'].lang`
-  - If the above is not provided, fall back to `themeConfig.locales['/'].lang`
-  - If the above is not provided, fall back to `'en-US'`
+  - If the above is not provided, fall back to `"en-US"`
 
 The language of the channel
 
@@ -41,8 +40,10 @@ The language of the channel
 
 - Type: `string`
 
-- Default: -`themeConfig.footer.copyright` (footer copyright information)
-  - If the above is not provided, try to read the `author.name` in `themeConfig.author` and channel options, and fall back to `Copyright by $author`
+- Default:
+
+  - Try to read the `author.name` in channel options, and fall back to `Copyright by $author`
+
 - Recommended to set manually: **Yes**
 
 Channel copyright information
@@ -86,8 +87,6 @@ An icon representing a channel, a square picture, with not less than 128×128 in
 ## channel.author
 
 - Type: `FeedAuthor`
-
-- Default: Try to read `themeConfig.author` and generate with name option
 - Recommended to set manually: **Yes**
 
 The author of the channel.
@@ -100,7 +99,7 @@ interface FeedAuthor {
   name: string;
   /** Author’s email */
   email?: string;
-  /** Author’s website */
+  /** Author’s site */
   url?: string;
   /**
    * Author’s avatar address

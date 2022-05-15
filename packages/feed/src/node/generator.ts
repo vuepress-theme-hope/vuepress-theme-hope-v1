@@ -1,87 +1,143 @@
 import { cyan } from "chalk";
-import { resolve, relative } from "path";
-import { outputFile } from "fs-extra";
+import { ensureDir, outputFile } from "fs-extra";
+import { dirname, resolve } from "path";
+
 import { Feed } from "./feed";
-import { getOutput } from "./options";
+import { getFeedChannelOption, getFilename, getFeedLinks } from "./options";
 import { FeedPage } from "./page";
-import { wait, success } from "./utils";
+import { compareDate, success } from "./utils";
 
 import type { Context, Page } from "@mr-hope/vuepress-types";
-import type { FeedOptions, FeedInitOptions } from "../types";
+import type { ResolvedFeedOptionsMap } from "./options";
 
 export class FeedGenerator {
   /** feed 生成器 */
-  feed: Feed;
+  feedMap: Record<string, Feed>;
 
   constructor(
-    private pages: Page[],
-    private options: FeedOptions,
-    feedOption: FeedInitOptions,
-    private context: Context
+    private context: Context,
+    private options: ResolvedFeedOptionsMap
   ) {
-    this.feed = new Feed(feedOption);
+    this.feedMap = Object.fromEntries(
+      Object.entries(options).map(([localePath, localeOptions]) => {
+        return [
+          localePath,
+          new Feed({
+            channel: getFeedChannelOption(context, localeOptions, localePath),
+            links: getFeedLinks(context, localeOptions),
+          }),
+        ];
+      })
+    );
   }
 
-  addPages(): void {
+  addPages(localePath: string): void {
+    const feed = this.feedMap[localePath];
+    const localeOption = this.options[localePath];
+    const {
+      filter = ({ frontmatter, _filePath }: Page): boolean =>
+        !(
+          frontmatter.home ||
+          !_filePath ||
+          frontmatter.article === false ||
+          frontmatter.feed === false
+        ),
+      sorter = (pageA: Page, pageB: Page): number =>
+        compareDate(
+          pageA.createTimeStamp
+            ? new Date(pageA.createTimeStamp)
+            : pageA.frontmatter.time,
+          pageB.createTimeStamp
+            ? new Date(pageB.createTimeStamp)
+            : pageB.frontmatter.time
+        ),
+    } = localeOption;
+
+    const pages = this.context.pages
+      .filter((page) => page._localePath === localePath)
+      .filter(filter)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      .sort(sorter)
+      .slice(0, localeOption.count || 100);
+
     let count = 0;
-    const pages = this.pages.slice(0, this.options.count);
 
     for (const page of pages) {
       const item = new FeedPage(
+        this.context,
+        localeOption,
         page,
-        this.feed,
-        this.options,
-        this.context
+        feed
       ).getFeedItem();
 
       if (item) {
-        this.feed.addItem(item);
+        feed.addItem(item);
         count += 1;
       }
     }
 
-    success(`added ${cyan(`${count} page(s)`)} as feed item(s)`);
+    success(
+      `added ${cyan(`${count} page(s)`)} as feed item(s) in route ${cyan(
+        localePath
+      )}`
+    );
   }
 
   async generateFeed(): Promise<void> {
-    const { outDir, cwd } = this.context;
-    const output = getOutput(this.options.output);
+    const { outDir } = this.context;
 
-    this.addPages();
+    await Promise.all(
+      Object.entries(this.options).map(async ([localePath, localeOptions]) => {
+        // current locale has valid output
+        if (localeOptions.atom || localeOptions.json || localeOptions.rss) {
+          const feed = this.feedMap[localePath];
+          const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+            getFilename(localeOptions, localePath);
 
-    wait("Generating Feed...");
+          this.addPages(localePath);
 
-    // generate atom files
-    if (output.atom.enable) {
-      const filePath = resolve(outDir, output.atom.path);
+          // generate atom files
+          if (localeOptions.atom) {
+            const filePath = resolve(outDir, atomOutputFilename);
 
-      await outputFile(filePath, this.feed.atom());
+            await ensureDir(dirname(filePath));
+            await outputFile(filePath, feed.atom());
 
-      success(
-        `Atom feed file generated and saved to ${cyan(relative(cwd, filePath))}`
-      );
-    }
+            success(
+              `Atom feed file generated and saved to ${cyan(
+                atomOutputFilename
+              )}`
+            );
+          }
 
-    // generate json files
-    if (output.json.enable) {
-      const filePath = resolve(outDir, output.json.path);
+          // generate json files
+          if (localeOptions.json) {
+            const filePath = resolve(outDir, jsonOutputFilename);
 
-      await outputFile(filePath, this.feed.json());
+            await ensureDir(dirname(filePath));
+            await outputFile(filePath, feed.json());
 
-      success(
-        `JSON feed file generated and saved to ${cyan(relative(cwd, filePath))}`
-      );
-    }
+            success(
+              `JSON feed file generated and saved to ${cyan(
+                jsonOutputFilename
+              )}`
+            );
+          }
 
-    // generate rss files
-    if (output.rss.enable) {
-      const filePath = resolve(outDir, output.rss.path);
+          // generate rss files
+          if (localeOptions.rss) {
+            const filePath = resolve(outDir, rssOutputFilename);
 
-      await outputFile(filePath, this.feed.rss());
+            await ensureDir(dirname(filePath));
+            await outputFile(filePath, feed.rss());
 
-      success(
-        `RSS feed file generated and saved to ${cyan(relative(cwd, filePath))}`
-      );
-    }
+            success(
+              `RSS feed file generated and saved to ${cyan(rssOutputFilename)}`
+            );
+          }
+        }
+      })
+    );
   }
 }

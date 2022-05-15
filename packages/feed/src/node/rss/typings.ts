@@ -109,7 +109,6 @@ export interface RSSContent {
   rss: {
     _attributes: {
       version: string;
-
       // eslint-disable-next-line @typescript-eslint/naming-convention
       "xmlns:atom"?: string;
       // eslint-disable-next-line @typescript-eslint/naming-convention

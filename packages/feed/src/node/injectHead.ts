@@ -1,15 +1,17 @@
+import { getFilename } from "./options";
 import { resolveUrl } from "./utils";
-import { getOutput } from "./options";
 
 import type { Context, HeadItem } from "@mr-hope/vuepress-types";
-import type { FeedOptions } from "../types";
+import type { ResolvedFeedOptionsMap } from "./options";
 
 export const injectLinkstoHead = (
-  options: FeedOptions,
-  context: Context
+  context: Context,
+  options: ResolvedFeedOptionsMap
 ): void => {
-  const output = getOutput(options.output);
   const { base, siteConfig } = context;
+
+  const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+    getFilename(options["/"]);
 
   const getHeadItem = (
     name: string,
@@ -21,29 +23,32 @@ export const injectLinkstoHead = (
       {
         rel: "alternate",
         type,
-        href: resolveUrl(options.hostname, base, fileName),
-        title: `${siteConfig.title || ""} ${name} Feed`,
+        href: resolveUrl(options["/"].hostname, base, fileName),
+        title: `${
+          siteConfig.title || siteConfig.locales?.["/"]?.title || ""
+        } ${name} Feed`,
       },
     ];
   };
 
+  // ensure head exists
   if (!siteConfig.head) siteConfig.head = [];
 
   // add atom link
-  if (output.atom.enable)
+  if (options.atom)
     siteConfig.head.push(
-      getHeadItem("Atom", output.atom.path, "application/atom+xml")
+      getHeadItem("Atom", atomOutputFilename, "application/atom+xml")
     );
 
   // add json link
-  if (output.json.enable)
+  if (options.json)
     siteConfig.head.push(
-      getHeadItem("JSON", output.json.path, "application/json")
+      getHeadItem("JSON", jsonOutputFilename, "application/json")
     );
 
   // add rss link
-  if (output.rss.enable)
+  if (options.rss)
     siteConfig.head.push(
-      getHeadItem("RSS", output.rss.path, "application/rss+xml")
+      getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
     );
 };

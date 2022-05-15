@@ -1,9 +1,11 @@
 import {
   getImageMineType,
-  isAbsoluteUrl,
-  isUrl,
   resolveHTML,
   resolveUrl,
+  getAuthor,
+  getCategory,
+  isAbsoluteUrl,
+  isUrl,
 } from "./utils";
 
 import type {
@@ -13,28 +15,35 @@ import type {
   PageFrontmatter,
 } from "@mr-hope/vuepress-types";
 import type { Feed } from "./feed";
+import type { AuthorInfo } from "./utils";
 import type {
   FeedAuthor,
   FeedCategory,
   FeedContributor,
   FeedEnclosure,
+  FeedGetter,
   FeedItemOption,
   FeedOptions,
   FeedFrontmatterOption,
 } from "../types";
 
 export class FeedPage {
-  private feedOption: FeedFrontmatterOption;
+  private pageFeedOptions: FeedFrontmatterOption;
   private frontmatter: PageFrontmatter;
 
+  private base: string;
+  private getter: FeedGetter;
+
   constructor(
-    private $page: PageComputed,
-    private feed: Feed,
+    private context: Context,
     private options: FeedOptions,
-    private context: Context
+    private $page: PageComputed,
+    private feed: Feed
   ) {
+    this.base = this.context.base;
     this.frontmatter = $page.frontmatter;
-    this.feedOption = this.frontmatter.feed || {};
+    this.getter = options.getter || {};
+    this.pageFeedOptions = this.frontmatter.feed || {};
   }
 
   /** Get current page */
@@ -45,108 +54,146 @@ export class FeedPage {
   }
 
   get title(): string {
-    return this.feedOption.title || this.$page.title;
+    if (typeof this.getter.title === "function")
+      return this.getter.title(this.page);
+
+    return this.pageFeedOptions.title || this.page.title;
   }
 
   /** real url */
   get link(): string {
-    return resolveUrl(
-      this.options.hostname,
-      this.context.base,
-      this.$page.path
-    );
+    if (typeof this.getter.link === "function")
+      return this.getter.link(this.page);
+
+    return resolveUrl(this.options.hostname, this.base, this.page.path);
   }
 
   get description(): string | undefined {
-    if (this.feedOption.description) return this.feedOption.description;
+    if (typeof this.getter.description === "function")
+      return this.getter.description(this.page);
+
+    if (this.pageFeedOptions.description)
+      return this.pageFeedOptions.description;
 
     if (this.frontmatter.description) return this.frontmatter.description;
 
-    if (this.$page.excerpt)
-      return resolveHTML(this.context.markdown.render(this.$page.excerpt).html);
+    if (this.page.excerpt)
+      return `html:${resolveHTML(
+        this.context.markdown.render(this.page.excerpt).html,
+        this.options.customElements
+      )}`;
 
     return undefined;
   }
 
   get author(): FeedAuthor[] {
-    if (Array.isArray(this.feedOption.author)) return this.feedOption.author;
+    if (typeof this.getter.author === "function")
+      return this.getter.author(this.page);
 
-    if (typeof this.feedOption.author === "object")
-      return [this.feedOption.author];
+    if (Array.isArray(this.pageFeedOptions.author))
+      return this.pageFeedOptions.author;
 
-    const { author } = this.$page.frontmatter;
+    if (typeof this.pageFeedOptions.author === "object")
+      return [this.pageFeedOptions.author];
 
-    return author === false
+    return this.frontmatter.author === false
       ? []
-      : author
-      ? [{ name: author }]
+      : this.frontmatter.author
+      ? getAuthor(this.frontmatter.author)
       : this.options.channel?.author
-      ? [this.options.channel?.author]
+      ? getAuthor(this.options.channel?.author as AuthorInfo)
       : [];
   }
 
   get category(): FeedCategory[] | undefined {
-    if (Array.isArray(this.feedOption.category))
-      return this.feedOption.category;
+    if (typeof this.getter.category === "function")
+      return this.getter.category(this.page);
 
-    if (typeof this.feedOption.category === "object")
-      return [this.feedOption.category];
+    if (Array.isArray(this.pageFeedOptions.category))
+      return this.pageFeedOptions.category;
+
+    if (typeof this.pageFeedOptions.category === "object")
+      return [this.pageFeedOptions.category];
 
     const { category } = this.frontmatter;
 
-    return category ? [{ name: category }] : [];
+    return getCategory(category).map((item) => ({ name: item }));
   }
 
   get enclosure(): FeedEnclosure | undefined {
+    if (typeof this.getter.enclosure === "function")
+      return this.getter.enclosure(this.page);
+
     if (this.image)
       return {
         url: this.image,
-        type: getImageMineType(this.image.split(".").pop() || ""),
+        type: getImageMineType(this.image.split(".").pop() as string),
       };
 
     return undefined;
   }
 
   get guid(): string {
-    return this.feedOption.guid || this.page._permalink || this.link;
+    return this.pageFeedOptions.guid || this.link;
   }
 
   get pubDate(): Date | undefined {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const { date, time = date } = this.$page.frontmatter;
-    const createTimeStamp = this.$page.createTimeStamp;
+    if (typeof this.getter.publishDate === "function")
+      return this.getter.publishDate(this.page);
 
-    return time instanceof Date
-      ? time
+    const { time, date = time } = this.page.frontmatter;
+
+    const { createTimeStamp } = this.page || {};
+
+    return date && date instanceof Date
+      ? date
       : createTimeStamp
       ? new Date(createTimeStamp)
       : undefined;
   }
 
   get lastUpdated(): Date {
-    const updateTimeStamp = this.$page.updateTimeStamp;
+    if (typeof this.getter.lastUpdateDate === "function")
+      return this.getter.lastUpdateDate(this.page);
+
+    const { updateTimeStamp } = this.page || {};
 
     return updateTimeStamp ? new Date(updateTimeStamp) : new Date();
   }
 
   get content(): string {
-    if (this.feedOption.content) return this.feedOption.content;
+    if (typeof this.getter.content === "function")
+      return this.getter.content(this.page);
+
+    if (this.pageFeedOptions.content) return this.pageFeedOptions.content;
 
     // eslint-disable-next-line no-underscore-dangle
     const { html } = this.context.markdown.render(
       this.page?._strippedContent || ""
     );
 
-    return resolveHTML(html);
+    return resolveHTML(html, this.options.customElements);
   }
 
   get image(): string | undefined {
-    const { image } = this.frontmatter;
+    if (typeof this.getter.image === "function")
+      return this.getter.image(this.page);
 
-    if (image) {
-      if (isAbsoluteUrl(image))
-        return resolveUrl(this.options.hostname, this.context.base, image);
-      if (isUrl(image)) return image;
+    const banner = this.frontmatter.banner as string | undefined;
+    const cover = this.frontmatter.cover as string | undefined;
+
+    if (banner) {
+      if (isAbsoluteUrl(banner))
+        return resolveUrl(this.options.hostname, this.context.base, banner);
+
+      if (isUrl(banner)) return banner;
+    }
+
+    if (cover) {
+      if (isAbsoluteUrl(cover))
+        return resolveUrl(this.options.hostname, this.context.base, cover);
+
+      if (isUrl(cover)) return cover;
     }
 
     const result = /!\[.*?\]\((.*?)\)/iu.exec(
@@ -156,6 +203,7 @@ export class FeedPage {
     if (result) {
       if (isAbsoluteUrl(result[1]))
         return resolveUrl(this.options.hostname, this.context.base, result[1]);
+
       if (isUrl(result[1])) return result[1];
     }
 
@@ -163,17 +211,24 @@ export class FeedPage {
   }
 
   get contributor(): FeedContributor[] {
-    if (Array.isArray(this.feedOption.contributor))
-      return this.feedOption.contributor;
+    if (typeof this.getter.contributor === "function")
+      return this.getter.contributor(this.page);
 
-    if (typeof this.feedOption.contributor === "object")
-      return [this.feedOption.contributor];
+    if (Array.isArray(this.pageFeedOptions.contributor))
+      return this.pageFeedOptions.contributor;
+
+    if (typeof this.pageFeedOptions.contributor === "object")
+      return [this.pageFeedOptions.contributor];
 
     return this.author;
   }
 
   get copyright(): string | undefined {
+    if (typeof this.getter.copyright === "function")
+      return this.getter.copyright(this.page);
+
     if (this.frontmatter.copyrightText) return this.frontmatter.copyrightText;
+
     const firstAuthor = this.author[0];
 
     if (firstAuthor?.name) return `Copyright by ${firstAuthor.name}`;
@@ -181,7 +236,7 @@ export class FeedPage {
     return undefined;
   }
 
-  getFeedItem(): FeedItemOption | false {
+  getFeedItem(): FeedItemOption | null {
     const {
       author,
       category,
@@ -199,7 +254,7 @@ export class FeedPage {
     } = this;
 
     // we need at least title or description
-    if (!title && !description) return false;
+    if (!title && !description) return null;
 
     // add category to feed
     if (category) category.forEach((item) => this.feed.addCategory(item.name));

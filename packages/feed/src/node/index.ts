@@ -1,60 +1,38 @@
-import {
-  checkOptions,
-  getFeedChannelOption,
-  getFeedLinks,
-  getOutput,
-} from "./options";
+import chalk from "chalk";
+import { checkOutput, ensureHostName, getFeedOptions } from "./options";
 import { injectLinkstoHead } from "./injectHead";
 import { FeedGenerator } from "./generator";
 
-import type { Page, PageFrontmatter, Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import type { FeedOptions } from "../types";
-
-const isFeed = (frontmatter: PageFrontmatter): boolean =>
-  !frontmatter.home &&
-  frontmatter.article !== false &&
-  (!frontmatter.feed || frontmatter.feed.enable !== false);
+import { error, info } from "./utils";
 
 const feedPlugin: Plugin<FeedOptions> = (options, context) => {
-  if (!checkOptions(options)) return { name: "feed" };
+  const plugin: PluginOptionAPI = {
+    name: "vuepress-plugin-feed2",
+  };
 
-  const channelOptions = getFeedChannelOption(options, context);
-  const output = getOutput(options.output);
-  const feedLinks = getFeedLinks(options, output, context);
+  if (!ensureHostName(options)) {
+    error(`Option ${chalk.magenta("hostname")} is required!`);
 
-  const pages: Page[] = [];
+    return plugin;
+  }
+
+  if (!checkOutput(options)) {
+    info("No requested output, the plugin won’t start!");
+
+    return plugin;
+  }
+
+  const feedOptions = getFeedOptions(context, options);
 
   return {
-    name: "feed",
+    ...plugin,
 
-    /**
-     * Store pages for future usage
-     */
-    extendPageData($page): void {
-      if (!options.filter) pages.push($page);
-      else if (
-        typeof options.filter === "function" &&
-        options.filter($page) &&
-        isFeed($page.frontmatter)
-      )
-        pages.push($page);
-    },
+    ready: (): void => injectLinkstoHead(context, feedOptions),
 
-    ready(): void {
-      injectLinkstoHead(options, context);
-    },
-
-    async generated(): Promise<void> {
-      const feedPages = (
-        typeof options.sort === "function" ? pages.sort(options.sort) : pages
-      ).slice(0, options.count);
-
-      await new FeedGenerator(
-        feedPages,
-        options,
-        { channel: channelOptions, links: feedLinks },
-        context
-      ).generateFeed();
+    generated: async (): Promise<void> => {
+      await new FeedGenerator(context, feedOptions).generateFeed();
     },
   };
 };
