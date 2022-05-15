@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { decodeURL } from "../../src/node/markdown-it/decode-url";
+import { decodeURL } from "../../src/node/markdown-it/decodeUrl";
 
 describe("decode-url", () => {
   it("Should resolve all", () => {

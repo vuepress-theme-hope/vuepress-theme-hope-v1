@@ -1,14 +1,40 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable max-statements */
+/**
+ * Forked from https://github.com/markdown-it/markdown-it-footnote/blob/master/index.js
+ *
+ * Copyright (c) 2014-2015 Vitaly Puzrin, Alex Kocharin.
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 import Token = require("markdown-it/lib/token");
 import parseLinkLabel = require("markdown-it/lib/helpers/parse_link_label");
 
-import type MarkdownIt = require("markdown-it");
+import type { PluginSimple } from "markdown-it";
 import type Renderer = require("markdown-it/lib/renderer");
 import type StateBlock = require("markdown-it/lib/rules_block/state_block");
 import type StateCore = require("markdown-it/lib/rules_core/state_core");
 import type StateInline = require("markdown-it/lib/rules_inline/state_inline");
+import type { RuleBlock } from "markdown-it/lib/parser_block";
+import type { RuleInline } from "markdown-it/lib/parser_inline";
 
 interface FootNoteToken extends Token {
   meta: {
@@ -47,14 +73,14 @@ interface FootNoteStateCore extends StateCore {
   env: FootNoteEnv;
 }
 
-const getIDSuffix = (tokens: FootNoteToken[], idx: number): string =>
+const getIDSuffix = (tokens: FootNoteToken[], index: number): string =>
   // add suffix when mutiple id was found
-  tokens[idx].meta.subId > 0 ? `:${tokens[idx].meta.subId}` : "";
+  tokens[index].meta.subId > 0 ? `:${tokens[index].meta.subId}` : "";
 
-const renderFootnoteAnchorName = (
+const renderFootnoteAnchorName: Renderer.RenderRule = (
   tokens: FootNoteToken[],
-  idx: number,
-  _options: MarkdownIt.Options,
+  index,
+  _options,
   env: FootNoteEnv
 ): string =>
   `${
@@ -62,37 +88,46 @@ const renderFootnoteAnchorName = (
     typeof env.docId === "string" ? `-${env.docId}-` : ""
   }${
     // increasing id
-    (tokens[idx].meta.id + 1).toString()
+    (tokens[index].meta.id + 1).toString()
   }`;
 
-const renderFootnoteCaption = (tokens: FootNoteToken[], idx: number): string =>
+const renderFootnoteCaption: Renderer.RenderRule = (
+  tokens: FootNoteToken[],
+  index
+): string =>
   `[${
     // number
-    (tokens[idx].meta.id + 1).toString()
-  }${getIDSuffix(tokens, idx)}]`;
+    (tokens[index].meta.id + 1).toString()
+  }${getIDSuffix(tokens, index)}]`;
 
-const renderFootnoteRef = (
+const renderFootnoteRef: Renderer.RenderRule = (
   tokens: FootNoteToken[],
-  idx: number,
-  options: MarkdownIt.Options,
+  index,
+  options,
   env: FootNoteEnv,
-  self: Renderer
+  self
 ): string => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const id = self.rules.footnoteAnchorName!(tokens, idx, options, env, self);
+  const id = self.rules.footnoteAnchorName!(tokens, index, options, env, self);
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const caption = self.rules.footnoteCaption!(tokens, idx, options, env, self);
+  const caption = self.rules.footnoteCaption!(
+    tokens,
+    index,
+    options,
+    env,
+    self
+  );
 
   return `<sup class="footnote-ref"><a href="#footnote${id}">${caption}</a><a class="footnote-anchor" id="footnote-ref${id}${getIDSuffix(
     tokens,
-    idx
+    index
   )}" /></sup>`;
 };
 
-const renderFootnoteBlockOpen = (
+const renderFootnoteBlockOpen: Renderer.RenderRule = (
   _tokens: FootNoteToken[],
-  _idx: number,
-  options: MarkdownIt.Options
+  _index,
+  options
 ): string =>
   `${
     options.xhtmlOut
@@ -102,51 +137,51 @@ const renderFootnoteBlockOpen = (
 
 const renderFootnoteBlockClose = (): string => "</ol>\n</section>\n";
 
-const renderFootnoteOpen = (
+const renderFootnoteOpen: Renderer.RenderRule = (
   tokens: FootNoteToken[],
-  idx: number,
-  options: MarkdownIt.Options,
+  index,
+  options,
   env: FootNoteEnv,
-  slf: Renderer
+  self
 ): string =>
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  `<li id="footnote${slf.rules.footnoteAnchorName!(
+  `<li id="footnote${self.rules.footnoteAnchorName!(
     tokens,
-    idx,
+    index,
     options,
     env,
-    slf
-  )}${getIDSuffix(tokens, idx)}" class="footnote-item">`;
+    self
+  )}${getIDSuffix(tokens, index)}" class="footnote-item">`;
 
 const renderFootnoteClose = (): string => "</li>\n";
 
-const renderFootnoteAnchor = (
+const renderFootnoteAnchor: Renderer.RenderRule = (
   tokens: FootNoteToken[],
-  idx: number,
-  options: MarkdownIt.Options,
+  index,
+  options,
   env: FootNoteEnv,
-  self: Renderer
+  self
 ): string => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return ` <a href="#footnote-ref${self.rules.footnoteAnchorName!(
     tokens,
-    idx,
+    index,
     options,
     env,
     self
   )}${
-    getIDSuffix(tokens, idx)
+    getIDSuffix(tokens, index)
     /* ↩ with escape code to prevent display as Apple Emoji on iOS */
   }" class="footnote-backref">\u21a9\uFE0E</a>`;
 };
 
 // Process footnote block definition
-const footnoteDef = (
+const footnoteDef: RuleBlock = (
   state: FootNoteStateBlock,
-  startLine: number,
-  endLine: number,
-  silent: boolean
-): boolean => {
+  startLine,
+  endLine,
+  silent
+) => {
   let pos;
   let token;
   let offset;
@@ -177,6 +212,7 @@ const footnoteDef = (
   if (!state.env.footnotes) state.env.footnotes = {};
   if (!state.env.footnotes.refs) state.env.footnotes.refs = {};
   const label = state.src.slice(start + 2, pos - 2);
+
   state.env.footnotes.refs[`:${label}`] = -1;
 
   token = new Token("footnoteReferenceOpen", "", 1);
@@ -235,10 +271,7 @@ const footnoteDef = (
 };
 
 // Process inline footnotes (^[...])
-const footnoteInline = (
-  state: FootNoteStateInline,
-  silent?: boolean
-): boolean => {
+const footnoteInline: RuleInline = (state: FootNoteStateInline, silent) => {
   let footnoteId;
   let token;
   let tokens: Token[];
@@ -289,7 +322,7 @@ const footnoteInline = (
 };
 
 // Process footnote references ([^...])
-const footnoteRef = (state: FootNoteStateInline, silent?: boolean): boolean => {
+const footnoteRef: RuleInline = (state: FootNoteStateInline, silent) => {
   let pos;
   let footnoteId;
   let footnoteSubId;
@@ -361,15 +394,18 @@ const footnoteTail = (state: FootNoteStateCore): boolean => {
       insideRef = true;
       current = [];
       currentLabel = stateToken.meta.label;
+
       return false;
     }
     if (stateToken.type === "footnoteReferenceClose") {
       insideRef = false;
       // prepend ':' to avoid conflict with Object.prototype members
       refTokens[`:${currentLabel}`] = current;
+
       return false;
     }
     if (insideRef) current.push(stateToken);
+
     return !insideRef;
   });
 
@@ -402,7 +438,7 @@ const footnoteTail = (state: FootNoteStateCore): boolean => {
     } else if (list[i].label) tokens = refTokens[`:${list[i].label as string}`];
     else tokens = [];
 
-    state.tokens = state.tokens.concat(tokens);
+    if (tokens) state.tokens = state.tokens.concat(tokens);
     if (state.tokens[state.tokens.length - 1].type === "paragraph_close")
       lastParagraph = state.tokens.pop() || null;
     else lastParagraph = null;
@@ -429,7 +465,7 @@ const footnoteTail = (state: FootNoteStateCore): boolean => {
   return true;
 };
 
-const footnote = (md: MarkdownIt): void => {
+export const footnote: PluginSimple = (md) => {
   md.renderer.rules.footnoteRef = renderFootnoteRef;
   md.renderer.rules.footnoteBlockOpen = renderFootnoteBlockOpen;
   md.renderer.rules.footnoteBlockClose = renderFootnoteBlockClose;
@@ -448,5 +484,3 @@ const footnote = (md: MarkdownIt): void => {
   md.inline.ruler.after("footnoteInline", "footnoteRef", footnoteRef);
   md.core.ruler.after("inline", "footnoteTail", footnoteTail);
 };
-
-export default footnote;

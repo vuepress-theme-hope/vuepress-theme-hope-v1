@@ -1,18 +1,20 @@
 import { resolve } from "path";
 import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 
-import { codeDemoDefaultSetting } from "./markdown-it/code-demo";
-import { decodeURL } from "./markdown-it/decode-url";
-import flowchart from "./markdown-it/flowchart";
-import footnote from "./markdown-it/footnote";
-import katex from "./markdown-it/katex";
-import { lazyLoad } from "./markdown-it/lazy-load";
-import mark from "./markdown-it/mark";
-import mermaid from "./markdown-it/mermaid";
-import presentation from "./markdown-it/presentation";
-import sub from "./markdown-it/sub";
-import sup from "./markdown-it/sup";
-import tasklist from "./markdown-it/tasklist";
+import {
+  codeDemoDefaultSetting,
+  decodeURL,
+  flowchart,
+  footnote,
+  katex,
+  lazyLoad,
+  mark,
+  mermaid,
+  presentation,
+  sub,
+  sup,
+  tasklist,
+} from "./markdown-it";
 import { getPluginConfig } from "./pluginConfig";
 
 import type { Plugin } from "@mr-hope/vuepress-types";

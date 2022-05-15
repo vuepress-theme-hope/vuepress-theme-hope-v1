@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import { lazyLoad } from "../../src/node/markdown-it/lazy-load";
+import { lazyLoad } from "../../src/node/markdown-it/lazyLoad";
 
 describe("decode-url", () => {
   it("Should resolve all", () => {

@@ -1,10 +1,9 @@
-/* eslint-disable max-statements */
 import hash = require("hash-sum");
 import { generateUML } from "./utils";
 
-import type MarkdownIt = require("markdown-it");
+import type { PluginSimple } from "markdown-it";
 
-export default (md: MarkdownIt): void => {
+export const presentation: PluginSimple = (md) => {
   md.block.ruler.before(
     "fence",
     "presentation",
@@ -16,9 +15,9 @@ export default (md: MarkdownIt): void => {
     { alt: ["paragraph", "reference", "blockquote", "list"] }
   );
 
-  md.renderer.rules.presentation = (tokens, idx): string => {
-    const token = tokens[idx];
-    const key = `presentation-${hash(idx)}`;
+  md.renderer.rules.presentation = (tokens, index): string => {
+    const token = tokens[index];
+    const key = `presentation-${hash(index)}`;
     const { content, info } = token;
 
     return `<Presentation id="${key}" data-code="${encodeURIComponent(

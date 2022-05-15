@@ -1,5 +1,5 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
-import { codeDemoRender } from "./markdown-it/code-demo";
+import { codeDemoRender } from "./markdown-it/codeDemo";
 import { markdownEnhanceLocales } from "./locales";
 
 import type { Context, PluginConfig } from "@mr-hope/vuepress-types";

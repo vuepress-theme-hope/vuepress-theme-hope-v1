@@ -1,7 +1,7 @@
 /* eslint-disable max-statements */
 import hash = require("hash-sum");
 
-import type MarkdownIt = require("markdown-it");
+import type { PluginSimple } from "markdown-it";
 import type Token = require("markdown-it/lib/token");
 
 const flowchartRender = (tokens: Token[], idx: number): string => {
@@ -9,12 +9,12 @@ const flowchartRender = (tokens: Token[], idx: number): string => {
   const key = `flowchart-${hash(idx)}`;
   const { content, info } = token;
 
-  return `<FlowChart id="${key}" data-code="${encodeURIComponent(
+  return `<FlowChart id="${key}" code="${encodeURIComponent(
     content
   )}" preset="${info.trim().split(":")[1] || "vue"}"></FlowChart>`;
 };
 
-const flowchart = (md: MarkdownIt): void => {
+export const flowchart: PluginSimple = (md) => {
   // Handle ```flow and ```flowchart blocks
   const fence = md.renderer.rules.fence;
 
@@ -32,5 +32,3 @@ const flowchart = (md: MarkdownIt): void => {
 
   md.renderer.rules.flowchart = flowchartRender;
 };
-
-export default flowchart;

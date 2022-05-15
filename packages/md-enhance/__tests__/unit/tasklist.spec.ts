@@ -1,5 +1,5 @@
 import MarkdownIt = require("markdown-it");
-import tasklist from "../../src/node/markdown-it/tasklist";
+import { tasklist } from "../../src/node/markdown-it/tasklist";
 
 describe("Task list", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(tasklist);
@@ -84,20 +84,43 @@ describe("Task list", () => {
     ).toMatchSnapshot();
   });
 
-  it("Should not render label after", () => {
-    const markdownItWithOutLabelAfter = MarkdownIt({ linkify: true }).use(
-      tasklist,
-      {
-        labelAfter: false,
-      }
-    );
+  it("Should increse id", () => {
+    const markdownItWithOutLabel = MarkdownIt({ linkify: true }).use(tasklist, {
+      label: false,
+    });
 
     expect(
-      markdownItWithOutLabelAfter.render(`
+      markdownItWithOutLabel.render(`
 - [ ] unchecked item 1
 - [ ] unchecked item 2
 - [ ] unchecked item 3
 - [x] checked item 4
+
+Some content
+
+- [ ] unchecked item 1
+- [ ] unchecked item 2
+- [ ] unchecked item 3
+- [x] checked item 4
+  - [ ] unchecked item 1
+  - [ ] unchecked item 2
+  - [ ] unchecked item 3
+  - [x] checked item 4
+`)
+    ).toMatchSnapshot();
+  });
+
+  it("Should render with items containing other markdown syntax", () => {
+    const markdownItWithOutLabel = MarkdownIt({ linkify: true }).use(tasklist, {
+      label: false,
+    });
+
+    expect(
+      markdownItWithOutLabel.render(`
+- [ ] unchecked [link](https://example.com)
+- [ ] unchecked **item 2**
+- [ ] _unchecked_ item 3
+- [x] ~~checked item 4~~
 `)
     ).toMatchSnapshot();
   });
