@@ -139,7 +139,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [vuepress-plugin-add-this][add-this]: Provide sociel share and follow function
 
-- [vuepress-plugin-md-enhance][md-enhance]): Provide more Markdown syntax
+- [vuepress-plugin-md-enhance][md-enhance]: Provide more Markdown syntax
 
 - [vuepress-plugin-photo-swipe][photo-swipe]: Make the site’s picture support click zoom
 
