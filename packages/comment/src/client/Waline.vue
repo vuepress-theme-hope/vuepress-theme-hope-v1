@@ -8,6 +8,7 @@
 
 <style lang="stylus">
 @require '~@mr-hope/vuepress-shared/styles/wrapper'
+@require '~@waline/client/dist/waline.css'
 
 .page
   .waline-wrapper
