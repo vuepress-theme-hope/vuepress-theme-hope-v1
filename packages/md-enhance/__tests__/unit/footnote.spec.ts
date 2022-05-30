@@ -23,7 +23,7 @@ belong to the previous footnote.
     line.  In this way, multi-paragraph footnotes work like
     multi-paragraph list items.
 
-This paragraph won't be part of the note, because it
+This paragraph won’t be part of the note, because it
 isn't indented.
 `,
         {}
@@ -61,6 +61,16 @@ baz
 
 [^foo
 ]: bar baz
+`)
+    ).toMatchSnapshot();
+  });
+
+  it("Nested footnotes", () => {
+    expect(
+      markdownIt.render(`
+foo[^1] bar[^2].
+
+[^1]:[^2]: baz
 `)
     ).toMatchSnapshot();
   });
@@ -166,7 +176,7 @@ belong to the previous footnote.
     line.  In this way, multi-paragraph footnotes work like
     multi-paragraph list items.
 
-This paragraph won't be part of the note, because it
+This paragraph won’t be part of the note, because it
 isn't indented.
 `,
         { docId: "test-doc-id" }

@@ -210,19 +210,19 @@ The following are the library links used by the third-party code demo service. U
 
 ##### mdEnhance.demo.babel
 
-Default value: `"https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"`
+Default value: `"https://unpkg.com/@babel/standalone/babel.min.js"`
 
 ##### mdEnhance.demo.vue
 
-Default value: `"https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"`
+Default value: `"https://unpkg.com/vue@2/dist/vue.min.js"`
 
 ##### mdEnhance.demo.react
 
-Default value: `"https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"`
+Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
 
 ##### mdEnhance.demo.reactDOM
 
-Default value: `"https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"`
+Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
 ### mdEnhance.presentation
 

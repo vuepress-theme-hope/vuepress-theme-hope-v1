@@ -2,19 +2,19 @@ import MarkdownIt = require("markdown-it");
 import { mermaid } from "../../src/node/markdown-it/mermaid";
 
 const demo = `flowchart TB
-    c1-->a2
-    subgraph one
-    a1-->a2
-    end
-    subgraph two
-    b1-->b2
-    end
-    subgraph three
-    c1-->c2
-    end
-    one --> two
-    three --> two
-    two --> c2`;
+  c1-->a2
+  subgraph one
+  a1-->a2
+  end
+  subgraph two
+  b1-->b2
+  end
+  subgraph three
+  c1-->c2
+  end
+  one --> two
+  three --> two
+  two --> c2`;
 
 describe("mermaid", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(mermaid);
@@ -27,8 +27,13 @@ ${demo}
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code=".*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code=".*?"><\/Mermaid>/
     );
+    expect(
+      /<Mermaid id="mermaid.*?" code="(.*?)"><\/Mermaid>/.exec(
+        renderResult
+      )?.[1]
+    ).toMatch(encodeURIComponent(demo));
     expect(renderResult).toMatchSnapshot();
   });
 
@@ -63,7 +68,7 @@ Alice->John: Yes... John, how are you?
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="sequenceDiagram.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="sequenceDiagram.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -72,10 +77,10 @@ Alice->John: Yes... John, how are you?
     const renderResult = markdownIt.render(`
 \`\`\`class
 class Square~Shape~{
-    int id
-    List~int~ position
-    setPoints(List~int~ points)
-    getPoints() List~int~
+  int id
+  List~int~ position
+  setPoints(List~int~ points)
+  getPoints() List~int~
 }
 
 Square : -List~string~ messages
@@ -85,7 +90,7 @@ Square : +getMessages() List~string~
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="classDiagram.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="classDiagram.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -96,23 +101,23 @@ Square : +getMessages() List~string~
 [*] --> Active
 
 state Active {
-    [*] --> NumLockOff
-    NumLockOff --> NumLockOn : EvNumLockPressed
-    NumLockOn --> NumLockOff : EvNumLockPressed
-    --
-    [*] --> CapsLockOff
-    CapsLockOff --> CapsLockOn : EvCapsLockPressed
-    CapsLockOn --> CapsLockOff : EvCapsLockPressed
-    --
-    [*] --> ScrollLockOff
-    ScrollLockOff --> ScrollLockOn : EvScrollLockPressed
-    ScrollLockOn --> ScrollLockOff : EvScrollLockPressed
+  [*] --> NumLockOff
+  NumLockOff --> NumLockOn : EvNumLockPressed
+  NumLockOn --> NumLockOff : EvNumLockPressed
+  --
+  [*] --> CapsLockOff
+  CapsLockOff --> CapsLockOn : EvCapsLockPressed
+  CapsLockOn --> CapsLockOff : EvCapsLockPressed
+  --
+  [*] --> ScrollLockOff
+  ScrollLockOff --> ScrollLockOn : EvScrollLockPressed
+  ScrollLockOn --> ScrollLockOff : EvScrollLockPressed
 }
 \`\`\`
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="stateDiagram-v2.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="stateDiagram-v2.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -122,21 +127,21 @@ state Active {
 \`\`\`er
 CAR ||--o{ NAMED-DRIVER : allows
 CAR {
-    string registrationNumber
-    string make
-    string model
+  string registrationNumber
+  string make
+  string model
 }
 PERSON ||--o{ NAMED-DRIVER : is
 PERSON {
-    string firstName
-    string lastName
-    int age
+  string firstName
+  string lastName
+  int age
 }
 \`\`\`
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="erDiagram.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="erDiagram.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -156,7 +161,7 @@ section Go home
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="journey.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="journey.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -196,7 +201,7 @@ Add another diagram to demo page    :48h
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="gantt.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="gantt.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -212,7 +217,25 @@ title What Voldemort doesn't have?
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="pie.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="pie.*?"><\/Mermaid>/
+    );
+    expect(renderResult).toMatchSnapshot();
+  });
+
+  it("Should render ```git-graph", () => {
+    const renderResult = markdownIt.render(`
+\`\`\`git-graph
+commit id: "Normal"
+commit
+commit id: "Reverse" type: REVERSE
+commit
+commit id: "Highlight" type: HIGHLIGHT
+commit
+\`\`\`
+`);
+
+    expect(renderResult).toMatch(
+      /<Mermaid id="mermaid.*?" code="gitGraph.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });

@@ -32,7 +32,7 @@ describe("superscript", () => {
     );
   });
 
-  it("Should handle mutiple '\\'", () => {
+  it("Should handle multiple '\\'", () => {
     expect(markdownIt.render(`^foo\\\\\\\\\\\\\\ bar^`)).toEqual(
       "<p><sup>foo\\\\\\ bar</sup></p>\n"
     );

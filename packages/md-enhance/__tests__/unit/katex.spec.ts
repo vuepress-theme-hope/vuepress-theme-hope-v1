@@ -27,7 +27,7 @@ describe("inline katex", () => {
   });
 
   it("Should render when the first one is after a charater", () => {
-    expect(markdownIt.render(`The next$a = 1$ won't work`)).toMatchSnapshot();
+    expect(markdownIt.render(`The next$a = 1$ won’t work`)).toMatchSnapshot();
   });
 
   it("Should not render error msg when content is wrong", () => {
@@ -53,6 +53,7 @@ describe("inline katex", () => {
 describe("block katex", () => {
   it("Shoud render", () => {
     expect(markdownIt.render(`$$a=1$$`)).toMatchSnapshot();
+
     expect(
       markdownIt.render(`
 $$
@@ -85,11 +86,25 @@ $$</p>\n`);
 
   it("Should not render error msg when content is wrong", () => {
     expect(markdownIt.render("$$\\fra{a}{b}$$")).toMatchSnapshot();
+
     expect(
       markdownIt.render(`
 $$
 \\fra{a}{b}
 $$
+`)
+    ).toMatchSnapshot();
+  });
+
+  it("Should not output warnings when content has line breaks", () => {
+    expect(
+      markdownIt.render(`
+$$
+\\begin{alignedat}{2}
+    10&x+ &3&y = 2 \\\\
+    3&x+&13&y = 4
+\\end{alignedat}
+$$    
 `)
     ).toMatchSnapshot();
   });

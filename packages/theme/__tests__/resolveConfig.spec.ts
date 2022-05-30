@@ -9,26 +9,6 @@ describe("Test resolveTheme function", () => {
 
     dest: "./dist",
 
-    head: [
-      [
-        "script",
-        {
-          src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js",
-        },
-      ],
-      [
-        "script",
-        {
-          src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
-        },
-      ],
-      ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
-      [
-        "script",
-        { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
-      ],
-    ],
-
     locales: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       "/": { lang: "en-US" },

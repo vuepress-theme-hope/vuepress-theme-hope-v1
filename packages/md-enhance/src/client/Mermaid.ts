@@ -66,6 +66,7 @@ export default Vue.extend({
 
   props: {
     id: { type: String, required: true },
+    code: { type: String, required: true },
   },
 
   data: () => ({
@@ -75,9 +76,7 @@ export default Vue.extend({
   }),
 
   mounted(): void {
-    const code = decodeURIComponent(
-      (this.$el as HTMLElement).dataset.code || ""
-    );
+    const code = decodeURIComponent(this.code);
 
     void Promise.all([
       import(/* webpackChunkName: "mermaid" */ "mermaid"),
