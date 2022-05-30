@@ -107,9 +107,8 @@ const renderFootnoteRef: Renderer.RenderRule = (
   env: FootNoteEnv,
   self
 ): string => {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const id = self.rules.footnoteAnchorName!(tokens, index, options, env, self);
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
   const caption = self.rules.footnoteCaption!(
     tokens,
     index,
@@ -144,7 +143,6 @@ const renderFootnoteOpen: Renderer.RenderRule = (
   env: FootNoteEnv,
   self
 ): string =>
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   `<li id="footnote${self.rules.footnoteAnchorName!(
     tokens,
     index,
@@ -162,7 +160,6 @@ const renderFootnoteAnchor: Renderer.RenderRule = (
   env: FootNoteEnv,
   self
 ): string => {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return ` <a href="#footnote-ref${self.rules.footnoteAnchorName!(
     tokens,
     index,

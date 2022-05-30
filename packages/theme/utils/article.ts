@@ -74,6 +74,7 @@ export const compareDate = (
 
       return compare(a, b);
     }
+
     return b[0] - a[0];
   };
 
@@ -131,6 +132,7 @@ export const generatePagination = (
 
   while (index < pages.length) {
     const paginationPage: PageComputed[] = [];
+
     for (let i = 0; i < perPage; i++)
       if (index < pages.length) {
         paginationPage.push(pages[index]);

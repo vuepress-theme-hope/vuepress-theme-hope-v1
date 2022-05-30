@@ -32,6 +32,7 @@ export const chunkRenamePlugin: Plugin<ChunkRenameOptions> = (
             const comment = page._chunkName
               ? `/* webpackChunkName: ${JSON.stringify(page._chunkName)} */`
               : "";
+
             return `  ${key}: () => import(${comment}${filePath})`;
           })
           .join(",\n")} \n}`;
@@ -47,8 +48,10 @@ export const chunkRenamePlugin: Plugin<ChunkRenameOptions> = (
 
   if (layoutChunkName) {
     const { layoutComponentMap } = context.themeAPI;
+
     for (const key in layoutComponentMap) {
       const component = layoutComponentMap[key];
+
       component._chunkName = layoutChunkName(component);
     }
 
@@ -68,6 +71,7 @@ export const chunkRenamePlugin: Plugin<ChunkRenameOptions> = (
                   component._chunkName
                 )} */`
               : "";
+
             return `  ${key}: () => import(${comment}${filePath})`;
           })
           .join(",\n")} \n}`;

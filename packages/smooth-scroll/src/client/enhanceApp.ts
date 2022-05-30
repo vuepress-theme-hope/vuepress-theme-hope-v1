@@ -7,6 +7,7 @@ const getElementPosition = (el: Element): { x: number; y: number } => {
   const docEl = document.documentElement;
   const docRect = docEl.getBoundingClientRect();
   const elRect = el.getBoundingClientRect();
+
   return {
     x: elRect.left - docRect.left,
     y: elRect.top - docRect.top,

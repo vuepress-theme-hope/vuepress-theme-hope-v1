@@ -31,6 +31,7 @@ export default Vue.extend({
 
       if (!preset) {
         console.warn(`[md-enhance:flowchart] Unknown preset: ${this.preset}`);
+
         return presets.vue;
       }
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { deepAssign, deepAssignReverse } from "../../src/assign";
 
 describe("deepassign", () => {

@@ -9,6 +9,7 @@ import type { WalineOptions } from "../types";
 let timeout: NodeJS.Timeout | null = null;
 
 export default Vue.extend({
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "Waline",
 
   props: {
@@ -42,7 +43,7 @@ export default Vue.extend({
     enablePageview(): boolean {
       if (!this.enable) return false;
 
-      const globalEnable = this.config.visitor !== false;
+      const globalEnable = this.config.pageview !== false;
       const pageEnable = this.$page.frontmatter.visitor;
 
       return (globalEnable && pageEnable !== false) || pageEnable === true;
@@ -59,7 +60,7 @@ export default Vue.extend({
           timeout = setTimeout(() => {
             this.waline?.update({
               path: this.$withBase(this.$route.path),
-              visitor: this.enablePageview,
+              pageview: this.enablePageview,
             });
           }, this.config.delay);
         });
@@ -72,26 +73,26 @@ export default Vue.extend({
       timeout = setTimeout(() => {
         const { config } = this;
 
-        void import(/* webpackChunkName: "waline" */ "@waline/client").then(
-          ({ default: Waline }) => {
-            this.waline = Waline({
-              el: "#waline-comment",
-              lang: this.$lang === "zh-CN" ? "zh-CN" : "en-US",
-              locale: {
-                ...walineLocales[this.$localePath || "/"],
-                ...(config.locale || {}),
-              } as WalineLocale,
-              emoji: [
-                "//unpkg.com/@waline/emojis@1.0.1/weibo",
-                "//unpkg.com/@waline/emojis@1.0.1/bilibili",
-              ],
-              dark: "body.theme-dark",
-              ...config,
-              visitor: this.enablePageview,
-              path: this.$withBase(this.$route.path),
-            }) as WalineInstance;
-          }
-        );
+        void import(
+          /* webpackChunkName: "waline" */ "@waline/client/dist/waline"
+        ).then(({ init }) => {
+          this.waline = init({
+            el: "#waline-comment",
+            lang: this.$lang === "zh-CN" ? "zh-CN" : "en-US",
+            locale: {
+              ...walineLocales[this.$localePath || "/"],
+              ...(config.locale || {}),
+            } as WalineLocale,
+            emoji: [
+              "//unpkg.com/@waline/emojis@1.0.1/weibo",
+              "//unpkg.com/@waline/emojis@1.0.1/bilibili",
+            ],
+            dark: "body.theme-dark",
+            ...config,
+            pageview: this.enablePageview,
+            path: this.$withBase(this.$route.path),
+          }) as WalineInstance;
+        });
       }, this.config.delay);
   },
 

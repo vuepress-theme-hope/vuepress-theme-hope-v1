@@ -26,7 +26,6 @@ export const flowchart: PluginSimple = (md) => {
     if (realInfo === "flow" || realInfo === "flowchart")
       return flowchartRender(tokens, idx);
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return fence!(...args);
   };
 

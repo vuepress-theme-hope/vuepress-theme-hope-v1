@@ -16,7 +16,9 @@ export default Vue.extend({
   computed: {
     actionLinks(): ActionConfig[] {
       const { action } = this.$frontmatter;
+
       if (Array.isArray(action)) return action as ActionConfig[];
+
       return [action] as ActionConfig[];
     },
   },

@@ -83,6 +83,7 @@ export default Vue.extend({
         }?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`;
 
       const gitlab = /gitlab.com/u;
+
       if (gitlab.test(docsRepo))
         return `${docsRepo.replace(endingSlashRE, "")}/-/edit/${docsBranch}/${
           docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""

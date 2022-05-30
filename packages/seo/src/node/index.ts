@@ -12,6 +12,7 @@ import type { SeoContent } from "../types/seo";
 
 const getLocales = ({ locales = {} }: ThemeConfig): string[] => {
   const langs: string[] = [];
+
   for (const path in locales)
     if (locales[path].lang) langs.push(locales[path].lang as string);
 
@@ -40,6 +41,7 @@ const seoPlugin: Plugin<SeoOptions> = (options, context) => {
         Object.create(Object.getPrototypeOf(page) as object) as Page,
         page
       );
+
       pageClone.buildPermalink();
 
       const pageSeoInfo: PageSeoInfo = {

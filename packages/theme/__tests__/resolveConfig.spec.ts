@@ -30,6 +30,7 @@ describe("Test resolveTheme function", () => {
     ],
 
     locales: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "/": { lang: "en-US" },
       "/zh/": {
         title: "vuepress-theme-hope",
@@ -129,6 +130,7 @@ describe("Test resolveTheme function", () => {
           },
         ],
 
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "/": ["", "guide/", "config/", "basic/"],
       },
 
@@ -287,6 +289,7 @@ describe("Test resolveTheme function", () => {
           shortcuts: [
             {
               name: "Guide",
+              // eslint-disable-next-line @typescript-eslint/naming-convention
               short_name: "Guide",
               url: "/guide/",
               icons: [
@@ -306,6 +309,7 @@ describe("Test resolveTheme function", () => {
             },
             {
               name: "Config",
+              // eslint-disable-next-line @typescript-eslint/naming-convention
               short_name: "Config",
               url: "/config/",
               icons: [
@@ -325,6 +329,7 @@ describe("Test resolveTheme function", () => {
             },
             {
               name: "Basic",
+              // eslint-disable-next-line @typescript-eslint/naming-convention
               short_name: "Basic",
               url: "/basic/",
               icons: [

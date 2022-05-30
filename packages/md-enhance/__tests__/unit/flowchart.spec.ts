@@ -39,6 +39,7 @@ ${demo}
 ${demo}
 \`\`\`
 `);
+
     expect(flowChartRenderResult).toMatch(
       /<FlowChart id="flowchart-.*?" code=".*?" preset="vue"><\/FlowChart>/
     );
@@ -78,6 +79,7 @@ ${demo}
 ${demo}
 \`\`\`
 `);
+
     expect(flowChartRenderResult).toMatch(
       /<FlowChart id="flowchart-.*?" code=".*?" preset="ant"><\/FlowChart>/
     );

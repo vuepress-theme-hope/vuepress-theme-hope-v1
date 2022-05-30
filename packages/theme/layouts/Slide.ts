@@ -15,7 +15,6 @@ export default Vue.extend({
 
   // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
   destroyed(): void {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     document.querySelector("html")!.classList.remove("reveal-full-page");
     document.body.classList.remove("reveal-viewport");
     document.body.style.removeProperty("--slide-width");

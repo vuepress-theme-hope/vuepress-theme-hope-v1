@@ -63,6 +63,7 @@ export default class Color {
         : Number(colorString.trim());
 
     const rgbaResult = RGBAPattern.exec(color);
+
     if (rgbaResult)
       return new Color(
         "rgb",
@@ -73,6 +74,7 @@ export default class Color {
       );
 
     const rgbResult = RGBPattern.exec(color);
+
     if (rgbResult)
       return new Color(
         "rgb",

@@ -5,6 +5,7 @@ import Color from "../utils/color.ts";
 describe("colorTest", () => {
   it("should handle short HEX color string", () => {
     const white = Color.getColor("#fff");
+
     expect(white.red).toEqual(255);
     expect(white.green).toEqual(255);
     expect(white.blue).toEqual(255);
@@ -12,6 +13,7 @@ describe("colorTest", () => {
     expect(white.toString()).toEqual("#fff");
 
     const black = Color.getColor("#000");
+
     expect(black.red).toEqual(0);
     expect(black.green).toEqual(0);
     expect(black.blue).toEqual(0);
@@ -19,6 +21,7 @@ describe("colorTest", () => {
     expect(black.toString()).toEqual("#000");
 
     const ffff = Color.getColor("#ffff");
+
     expect(ffff.red).toEqual(255);
     expect(ffff.green).toEqual(255);
     expect(ffff.blue).toEqual(255);
@@ -36,6 +39,7 @@ describe("colorTest", () => {
 
   it("should handle long HEX color string", () => {
     const white = Color.getColor("#ffffff");
+
     expect(white.red).toEqual(255);
     expect(white.green).toEqual(255);
     expect(white.blue).toEqual(255);
@@ -43,6 +47,7 @@ describe("colorTest", () => {
     expect(white.toString()).toEqual("#fff");
 
     const black = Color.getColor("#000000");
+
     expect(black.red).toEqual(0);
     expect(black.green).toEqual(0);
     expect(black.blue).toEqual(0);
@@ -50,6 +55,7 @@ describe("colorTest", () => {
     expect(black.toString()).toEqual("#000");
 
     const ffffffff = Color.getColor("#ffffffff");
+
     expect(ffffffff.red).toEqual(255);
     expect(ffffffff.green).toEqual(255);
     expect(ffffffff.blue).toEqual(255);
@@ -83,18 +89,21 @@ describe("colorTest", () => {
 
   it("should handle rgb", () => {
     const a = Color.getColor("rgb(85,170,204)");
+
     expect(a.red).toEqual(85);
     expect(a.green).toEqual(170);
     expect(a.blue).toEqual(204);
     expect(a.alpha).toEqual(1);
 
     const b = Color.getColor("rgb(85 , 170 ,204 )");
+
     expect(b.red).toEqual(85);
     expect(b.green).toEqual(170);
     expect(b.blue).toEqual(204);
     expect(b.alpha).toEqual(1);
 
     const c = Color.getColor("rgb( 85 ,170 , 204)");
+
     expect(c.red).toEqual(85);
     expect(c.green).toEqual(170);
     expect(c.blue).toEqual(204);
@@ -103,18 +112,21 @@ describe("colorTest", () => {
 
   it("should handle rgba", () => {
     const a = Color.getColor("rgba(85,170,204,0.1)");
+
     expect(a.red).toEqual(85);
     expect(a.green).toEqual(170);
     expect(a.blue).toEqual(204);
     expect(a.alpha).toEqual(0.1);
 
     const b = Color.getColor("rgba(85 , 170 ,204, 1 )");
+
     expect(b.red).toEqual(85);
     expect(b.green).toEqual(170);
     expect(b.blue).toEqual(204);
     expect(b.alpha).toEqual(1);
 
     const c = Color.getColor("rgba( 85 ,170 , 204, .3)");
+
     expect(c.red).toEqual(85);
     expect(c.green).toEqual(170);
     expect(c.blue).toEqual(204);
@@ -123,6 +135,7 @@ describe("colorTest", () => {
 
   it("should darken color", () => {
     const a = Color.getColor("#3c5dc2").darken(0.1);
+
     expect(a.toString()).toEqual("#3654af");
   });
 });

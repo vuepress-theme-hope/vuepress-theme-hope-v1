@@ -19,6 +19,28 @@ ignorePatterns:
   - packages/theme/**/*.d.ts
   - "!packages/theme/types/**/*.d.ts"
 
+rules:
+  padding-line-between-statements:
+    - error
+    - blankLine: always
+      prev:
+        - const
+        - let
+      next:
+        - "*"
+    - blankLine: any
+      prev:
+        - const
+        - let
+      next:
+        - const
+        - let
+    - blankLine: always
+      prev:
+        - "*"
+      next:
+        - return
+
 overrides:
   - files:
       - "*.vue"
@@ -116,6 +138,7 @@ overrides:
             - variable
           format:
             - camelCase
+            - PascalCase
             - UPPER_CASE
           leadingUnderscore: allow
           trailingUnderscore: allow
@@ -156,6 +179,9 @@ overrides:
         - warn
         - ignoreRestArgs: true
 
+      "@typescript-eslint/no-non-null-assertion":
+        - off
+
       "@typescript-eslint/no-unsafe-member-access":
         - warn
 
@@ -175,15 +201,11 @@ overrides:
       jest: true
 
     rules:
-      "@typescript-eslint/naming-convention":
-        - off
       "@typescript-eslint/no-explicit-any":
         - off
-      "@typescript-eslint/no-non-null-assertion":
+      "@typescript-eslint/no-unsafe-call":
         - off
       "@typescript-eslint/no-unsafe-assignment":
-        - off
-      "@typescript-eslint/no-unsafe-call":
         - off
       "@typescript-eslint/no-unsafe-member-access":
         - off

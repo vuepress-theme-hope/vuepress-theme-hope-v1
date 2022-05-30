@@ -51,7 +51,6 @@ export const mermaid: PluginSimple = (md) => {
     if (info.trim() === "git-graph")
       return mermaidHackRender("git-graph", content, index);
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return fence!(...args);
   };
 

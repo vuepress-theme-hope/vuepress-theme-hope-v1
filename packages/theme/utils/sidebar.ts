@@ -175,6 +175,7 @@ const resolveSidebarItem = (
     );
 
   const children = sidebarConfigItem.children || [];
+
   // item do not have children
   if (children.length === 0 && sidebarConfigItem.path)
     // cover title

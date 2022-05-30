@@ -105,6 +105,7 @@ export default Vue.extend({
 
     scrollToRight(): void {
       const screenshotsDiv = document.querySelector(".screenshot");
+
       if (screenshotsDiv)
         screenshotsDiv.scrollBy({
           left: screenshotsDiv.clientWidth,

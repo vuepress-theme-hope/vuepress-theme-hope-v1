@@ -30,6 +30,7 @@ const enhanceApp: EnhanceApp = async ({ Vue, router, isServer }) => {
           console.log("[PWA]: Content has been updated");
           const key = "service-worker-version";
           const version = Number(localStorage.getItem(key) || 0);
+
           localStorage.setItem(key, (version + 1).toString());
           localStorage.removeItem("manifest");
           event.$emit("sw-updated", new SWUpdateEvent(registration));

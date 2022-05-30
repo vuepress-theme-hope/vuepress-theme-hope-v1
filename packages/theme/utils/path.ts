@@ -11,6 +11,7 @@ export const normalize = (path: string): string =>
 
 export const getHash = (path: string): string | void => {
   const match = hashRE.exec(path);
+
   if (match) return match[0];
 
   return "";
@@ -90,8 +91,10 @@ export const resolvePath = (
 
   // resolve relative path
   const segments = path.replace(/^\//u, "").split("/");
+
   for (let i = 0; i < segments.length; i++) {
     const segment = segments[i];
+
     if (segment === "..") stack.pop();
     else if (segment !== ".") stack.push(segment);
   }

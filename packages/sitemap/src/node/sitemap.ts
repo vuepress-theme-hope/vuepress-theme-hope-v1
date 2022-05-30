@@ -62,6 +62,7 @@ const generatePageMap = (
       localeKeys
     );
     const prefixesByPath = map.get(normalizedPath) || [];
+
     prefixesByPath.push(localePrefix);
 
     return map.set(normalizedPath, prefixesByPath);

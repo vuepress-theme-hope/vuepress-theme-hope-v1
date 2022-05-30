@@ -27,7 +27,7 @@ const css = (
   const window = el.ownerDocument.defaultView;
 
   // `null` means not to return pseudo styles
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
   return window!.getComputedStyle(el, null)[property] as string;
 };
 

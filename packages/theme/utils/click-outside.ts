@@ -83,6 +83,7 @@ export const bind: PopupDirectiveFunction = (el, binding, vNode) => {
   };
   const clickHandler =
     "ontouchstart" in document.documentElement ? "touchstart" : "click";
+
   if (!isServer(vNode)) document.addEventListener(clickHandler, handler);
 };
 
@@ -95,6 +96,7 @@ export const unbind: PopupDirectiveFunction = (el, _binding, vNode) => {
   // Remove Event Listeners
   const clickHandler =
     "ontouchstart" in document.documentElement ? "touchstart" : "click";
+
   if (!isServer(vNode) && el.$vueClickOutside)
     document.removeEventListener(clickHandler, el.$vueClickOutside.handler);
   delete el.$vueClickOutside;

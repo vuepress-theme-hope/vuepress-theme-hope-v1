@@ -6,6 +6,7 @@ import { commandSync } from "execa";
 export const checkGitRepo = (cwd: string): boolean => {
   try {
     commandSync("git log", { cwd });
+
     return true;
   } catch {
     return false;

@@ -36,6 +36,7 @@ export default Vue.extend({
 
     handleDropdown(event: MouseEvent): void {
       const isTriggerByTab = event.detail === 0;
+
       if (isTriggerByTab) this.setOpen(!this.open);
     },
 

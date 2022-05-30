@@ -29,7 +29,6 @@ export const appendMeta = (
   for (const property in content)
     switch (property) {
       case "article:tag":
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         (content as ArticleSeoContent)["article:tag"]!.forEach((tag: string) =>
           addMeta(meta, { name: "article:tag", content: tag })
         );

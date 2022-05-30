@@ -52,7 +52,6 @@ const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
     },
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   if (options.showInstall !== false)
     (config.globalUIComponents as string[]).push("PWAInstall");
 

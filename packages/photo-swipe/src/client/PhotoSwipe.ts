@@ -49,6 +49,7 @@ export default Vue.extend({
                   index,
                 }
               );
+
               gallery.init();
             };
           });
@@ -68,6 +69,7 @@ export default Vue.extend({
 
     getImages(): Promise<PhotoSwipe.Item[]> {
       const promises: Promise<PhotoSwipe.Item & { title: string }>[] = [];
+
       images =
         document.querySelectorAll<HTMLImageElement>(PHOTO_SWIPE_SELECTOR);
 
