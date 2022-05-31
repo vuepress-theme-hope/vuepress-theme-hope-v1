@@ -1,4 +1,6 @@
 import hash = require("hash-sum");
+import { uml } from "./uml";
+
 import type { PluginSimple } from "markdown-it";
 import type Token = require("markdown-it/lib/token");
 
@@ -28,4 +30,26 @@ export const flowchart: PluginSimple = (md) => {
   };
 
   md.renderer.rules["flowchart"] = flowchartRender;
+};
+
+/** @deprecated */
+export const legacyFlowchart: PluginSimple = (md) => {
+  uml(md, {
+    name: "flowchart",
+    open: "flowstart",
+    close: "flowend",
+    render: (tokens, idx): string => {
+      console.warn(
+        '"@flowstart ... @flowend" is deprecated, you should use ```flow ... ``` instead.'
+      );
+
+      const token = tokens[idx];
+      const key = `flowchart_${hash(idx)}`;
+      const { content, info } = token;
+
+      return `<FlowChart id="${key}" code="${encodeURIComponent(
+        content
+      )}" preset="${info.trim() || "vue"}"></FlowChart>`;
+    },
+  });
 };

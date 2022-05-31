@@ -22,6 +22,7 @@ import {
   tasklist,
   vueDemo,
   legacyCodeDemo,
+  legacyFlowchart,
 } from "./markdown-it";
 import { getPluginConfig } from "./pluginConfig";
 
@@ -139,7 +140,10 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
       if (getStatus("sup")) md.use(sup);
       if (getStatus("sub")) md.use(sub);
       if (footnoteEnable) md.use(footnote);
-      if (flowchartEnable) md.use(flowchart);
+      if (flowchartEnable) {
+        md.use(flowchart);
+        md.use(legacyFlowchart);
+      }
       if (getStatus("mark")) md.use(mark);
       if (tasklistEnable)
         md.use(tasklist, [
