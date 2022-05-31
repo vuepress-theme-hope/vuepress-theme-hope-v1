@@ -59,7 +59,7 @@ export default Vue.extend({
 
   data: () => ({
     isExpanded: false,
-    height: "0px",
+    height: "0",
     loaded: false,
   }),
 
@@ -139,7 +139,9 @@ export default Vue.extend({
     onToggle(): void {
       this.height = this.isExpanded
         ? "0"
-        : `${(this.$refs.codeContainer as HTMLDivElement).clientHeight + 13.8}`;
+        : `${
+            (this.$refs.codeContainer as HTMLDivElement).clientHeight + 13.8
+          }px`;
 
       this.isExpanded = !this.isExpanded;
     },
