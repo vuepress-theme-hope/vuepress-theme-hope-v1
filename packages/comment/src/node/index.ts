@@ -1,8 +1,9 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { resolve } from "path";
+import { covertWalineOptions } from "./compact";
 import { walineLocales, valineLocales } from "./locales";
 
-import type { CommentOptions } from "../types";
+import type { CommentOptions, WalineOptions } from "../types";
 import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
 
 const commentPlugin: Plugin<CommentOptions> = (options, context) => {
@@ -18,6 +19,10 @@ const commentPlugin: Plugin<CommentOptions> = (options, context) => {
   // remove locales so that they won't be injected in client twice
   if ("walineLocales" in options) delete options.walineLocales;
   if ("valineLocales" in options) delete options.valineLocales;
+
+  // FIXME: This is a compact cod
+  if (options.type === "waline")
+    covertWalineOptions(options as WalineOptions & Record<string, unknown>);
 
   const config: PluginOptionAPI = {
     name: "comment",
