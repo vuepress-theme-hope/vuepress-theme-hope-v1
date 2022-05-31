@@ -1,7 +1,8 @@
 import chalk from "chalk";
-import { checkOutput, ensureHostName, getFeedOptions } from "./options";
+import { covertOptions } from "./compact";
 import { injectLinkstoHead } from "./injectHead";
 import { FeedGenerator } from "./generator";
+import { checkOutput, ensureHostName, getFeedOptions } from "./options";
 
 import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
 import type { FeedOptions } from "../types";
@@ -11,6 +12,8 @@ const feedPlugin: Plugin<FeedOptions> = (options, context) => {
   const plugin: PluginOptionAPI = {
     name: "vuepress-plugin-feed2",
   };
+
+  covertOptions(options as FeedOptions & Record<string, unknown>);
 
   if (!ensureHostName(options)) {
     error(`Option ${chalk.magenta("hostname")} is required!`);
