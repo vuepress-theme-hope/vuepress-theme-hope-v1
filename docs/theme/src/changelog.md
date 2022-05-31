@@ -348,7 +348,7 @@ Add german language support.
 Flowchart syntax is changed from
 
 ```md
-@flowshart
+@flowstart
 your flowchart...
 @flowend
 ```

@@ -336,7 +336,7 @@ your flowchart...
 流程图语法从
 
 ```md
-@flowshart
+@flowstart
 你的流程图...
 @flowend
 ```
