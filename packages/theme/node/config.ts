@@ -35,10 +35,39 @@ const defaultThemeConfig: HopeThemeConfig = {
   editLinks: true,
 };
 
+const convertThemeConfig = (
+  themeConfig: HopeThemeConfig & Record<string, unknown>
+): void => {
+  // FIXME: Compact Code
+  [
+    // v1 options
+    ["namedChunk", "chunkRename"],
+    ["addthis", "addThis"],
+    ["markdown", "mdEnhance"],
+    ["lastUpdatedTransformer", "lastUpdate"],
+  ].forEach(([oldOptions, newOptions]) => {
+    if (oldOptions in themeConfig) {
+      console.warn(
+        `"${oldOptions}" is deprecated, you should use "${newOptions}" instead.`
+      );
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      // eslint-disable-next-line
+      options[newOptions] = options[oldOptions];
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      // eslint-disable-next-line
+      delete options[oldOptions];
+    }
+  });
+};
+
 export const resolveThemeConfig = (
   themeConfig: HopeThemeConfig,
   context: Context
 ): ResolvedHopeThemeConfig => {
+  convertThemeConfig(themeConfig as HopeThemeConfig & Record<string, unknown>);
+
   // merge default themeConfig
   deepAssignReverse(defaultThemeConfig, themeConfig);
 
