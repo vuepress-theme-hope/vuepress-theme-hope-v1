@@ -198,7 +198,7 @@ $$
 
 ### 代码案例
 
-::: demo 一个普通 Demo
+::: normal-demo 一个普通 Demo
 
 ```html
 <h1>Mr.Hope</h1>
@@ -222,7 +222,7 @@ span {
 :::: details 代码
 
 ````md
-::: demo 一个普通 Demo
+::: normal-demo 一个普通 Demo
 
 ```html
 <h1>Mr.Hope</h1>
@@ -246,7 +246,7 @@ span {
 
 ::::
 
-::: demo [react] 一个 React Demo
+::: react-demo 一个 React Demo
 
 ```js
 export default class App extends React.Component {
@@ -275,7 +275,7 @@ export default class App extends React.Component {
 :::: details 代码
 
 ````md
-::: demo [react] 一个 React Demo
+::: react-demo 一个 React Demo
 
 ```js
 export default class App extends React.Component {
@@ -304,7 +304,7 @@ export default class App extends React.Component {
 
 ::::
 
-::: demo [vue] 一个 Vue Demo
+::: vue-demo 一个 Vue Demo
 
 ```vue
 <template>
@@ -329,7 +329,7 @@ export default {
 :::: details 代码
 
 ````md
-::: demo [vue] 一个 Vue Demo
+::: vue-demo 一个 Vue Demo
 
 ```vue
 <template>
@@ -354,7 +354,7 @@ export default {
 
 ::::
 
-::: demo 一个普通 Demo
+::: normal-demo 一个普通 Demo
 
 ```md
 # 标题
@@ -383,7 +383,7 @@ h1 {
 :::: details 代码
 
 ````md
-::: demo 一个普通 Demo
+::: normal-demo 一个普通 Demo
 
 ```md
 # 标题

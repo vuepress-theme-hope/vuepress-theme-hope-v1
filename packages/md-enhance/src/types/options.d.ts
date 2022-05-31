@@ -2,9 +2,11 @@ import type { LocaleConfig } from "@mr-hope/vuepress-shared";
 import type { KatexOptions } from "katex";
 import type { CodeDemoOptions } from "./codeDemo";
 import type { ImageMarkOptions } from "./imageMark";
+import type { IncludeOptions } from "./include";
 import type { MarkdownEnhanceLocaleData } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
+import type { StylizeOptions } from "./stylize";
 
 /**
  * md-enhance plugin configuration
@@ -56,7 +58,7 @@ export interface MarkdownEnhanceOptions {
    * - danger
    * - details
    *
-   * ⚠ The last 4 items conflict with default theme and will overide it’s style.
+   * ⚠ The last 4 items conflict with default theme and will override it’s style.
    *
    * 是否启用自定义容器
    *
@@ -72,6 +74,24 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   container?: boolean;
+
+  // /**
+  //  * Whether to enable tabs.
+  //  *
+  //  * 是否启用标签页分组。
+  //  *
+  //  * @default false
+  //  */
+  // tabs?: boolean;
+
+  // /**
+  //  * Whether to enable codetabs.
+  //  *
+  //  * 是否启用代码组。
+  //  *
+  //  * @default false
+  //  */
+  // codetabs?: boolean;
 
   /**
    * Whether to enable codegroup.
@@ -154,14 +174,14 @@ export interface MarkdownEnhanceOptions {
    */
   tasklist?: TaskListOptions | boolean;
 
-  // /**
-  //  * Whether to enable markdown import syntax support\
-  //  *
-  //  * 是否启用 Markdown 导入语法支持
-  //  *
-  //  * @default false
-  //  */
-  // mdImport?: (path: string) => string | boolean;
+  /**
+   * Whether to enable include syntax support
+   *
+   * 是否启用导入语法支持
+   *
+   * @default false
+   */
+  include?: IncludeOptions;
 
   /**
    * Whether to enable TeX syntax support
@@ -176,14 +196,23 @@ export interface MarkdownEnhanceOptions {
    */
   tex?: KatexOptions | boolean;
 
+  /**
+   * Whether to enable chart support
+   *
+   * 是否启用 chart 图表支持
+   *
+   * @default false
+   */
+  chart?: boolean;
+
   // /**
-  //  * Whether to enable chart support
+  //  * Whether to enable echarts support
   //  *
-  //  * 是否启用 chart 图表支持
+  //  * 是否启用 echarts 图表支持
   //  *
   //  * @default false
   //  */
-  // chart?: boolean;
+  // echarts?: boolean;
 
   /**
    * Whether to enable flowchart support
@@ -220,6 +249,13 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   presentation?: PresentationOptions | boolean;
+
+  /**
+   * Keyword enhancement
+   *
+   * 关键词显示增强选项
+   */
+  stylize?: StylizeOptions;
 
   /**
    * Whether to enable all features.

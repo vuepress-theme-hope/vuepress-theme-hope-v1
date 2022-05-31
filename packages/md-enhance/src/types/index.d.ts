@@ -5,11 +5,13 @@ import type { CodeDemoOptions } from "./codeDemo";
 import "./declare";
 
 export * from "./codeDemo";
-export * from "./locales";
 export * from "./imageMark";
+export * from "./include";
+export * from "./locales";
 export * from "./options";
 export * from "./presentation";
 export * from "./tasklist";
+export * from "./stylize";
 
 declare global {
   const CODE_DEMO_OPTIONS: CodeDemoOptions;

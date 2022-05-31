@@ -6,7 +6,7 @@ icon: react
 ## Syntax
 
 ````md
-::: demo [react] Optional title text
+::: react-demo Optional title text
 
 ```js
 // your script, exporting your react component through `export default`
@@ -33,7 +33,7 @@ icon: react
 
 ## Demo
 
-::: demo [react] A function-based React Demo
+::: react-demo A function-based React Demo
 
 ```js
 export default () => {
@@ -65,7 +65,7 @@ export default () => {
 :::: details Code
 
 ````md
-::: demo [react] A function-based React Demo
+::: react-demo A function-based React Demo
 
 ```js
 export default () => {
@@ -97,7 +97,7 @@ export default () => {
 
 ::::
 
-::: demo [react] A class-based React Demo
+::: react-demo A class-based React Demo
 
 ```js
 export default class App extends React.Component {
@@ -132,7 +132,7 @@ export default class App extends React.Component {
 :::: details Code
 
 ````md
-::: demo [react] A class-based React Demo
+::: react-demo A class-based React Demo
 
 ```js
 export default class App extends React.Component {

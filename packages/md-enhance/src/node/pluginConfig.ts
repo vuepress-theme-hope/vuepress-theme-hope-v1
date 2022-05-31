@@ -1,5 +1,4 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
-import { codeDemoRender } from "./markdown-it/codeDemo";
 import { markdownEnhanceLocales } from "./locales";
 
 import type { Context, PluginConfig } from "@mr-hope/vuepress-types";
@@ -84,9 +83,6 @@ export const getPluginConfig = (
         },
       ]
     );
-
-  if (markdownOptions.demo || markdownOptions.enableAll)
-    config.push(["container", { type: "demo", render: codeDemoRender }]);
 
   return config;
 };

@@ -1,3 +1,5 @@
+import ChartJS from "@ChartJS";
+import CodeDemo from "@CodeDemo";
 import CodeGroup from "@CodeGroup";
 import CodeGroupItem from "@CodeGroupItem";
 import FlowChart from "@FlowChart";
@@ -10,6 +12,8 @@ const enhanceApp: EnhanceApp = ({ Vue }) => {
 
   if (MARKDOWN_ENHANCE_CONTAINER) void import("./styles/container.styl");
 
+  if (ChartJS.name) Vue.component("ChartJS", ChartJS);
+  if (CodeDemo.name) Vue.component("CodeDemo", CodeDemo);
   if (CodeGroup.name) Vue.component("CodeGroup", CodeGroup);
   if (CodeGroupItem.name) Vue.component("CodeGroupItem", CodeGroupItem);
 

@@ -1,4 +1,4 @@
-import type { CodeDemoOptions } from "../../types";
+import type { CodeDemoOptions } from "../../../types";
 
 export interface CodeType {
   html: [code: string, type: string] | [];
@@ -12,5 +12,6 @@ export interface Code extends CodeDemoOptions {
   js: string;
   css: string;
   isLegal: boolean;
+  jsx?: boolean;
   getScript: () => string;
 }

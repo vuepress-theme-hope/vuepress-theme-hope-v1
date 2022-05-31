@@ -782,6 +782,18 @@ declare module "*.css" {
   export default content;
 }
 
+declare module "@ChartJS" {
+  import vue from "vue";
+
+  export default vue;
+}
+
+declare module "@CodeDemo" {
+  import vue from "vue";
+
+  export default vue;
+}
+
 declare module "@CodeGroup" {
   import vue from "vue";
 

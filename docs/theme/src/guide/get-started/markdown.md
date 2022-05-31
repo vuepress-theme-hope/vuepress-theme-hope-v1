@@ -109,7 +109,7 @@ $$
 
 ### Code Demo
 
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```html
 <h1>Mr.Hope</h1>

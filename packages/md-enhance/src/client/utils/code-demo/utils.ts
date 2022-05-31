@@ -1,5 +1,5 @@
 import type { Code } from "./typings";
-import type { CodeDemoOptions } from "../../types";
+import type { CodeDemoOptions } from "../../../types";
 
 export const options = CODE_DEMO_OPTIONS;
 
@@ -97,7 +97,7 @@ export const loadScript = (
     const script = document.createElement("script");
 
     script.src = link;
-    document.getElementsByTagName("body")[0].appendChild(script);
+    document.querySelector("body")?.appendChild(script);
 
     script.onload = (): void => {
       resolve();
@@ -142,7 +142,7 @@ export const injectScript = (
     script.appendChild(
       document.createTextNode(
         // here we are fixing `document` variable back to shadowDOM
-        `{const document=window.document.querySelector('#${id} .demo-wrapper').shadowRoot;\n${scriptText}}`
+        `{const document=window.document.querySelector('#${id} .code-demo-container').shadowRoot;\n${scriptText}}`
       )
     );
     shadowRoot.appendChild(script);

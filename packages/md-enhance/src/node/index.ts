@@ -2,19 +2,26 @@ import { resolve } from "path";
 import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 
 import {
-  codeDemoDefaultSetting,
+  CODE_DEMO_DEFAULT_SETTING,
+  chart,
   decodeURL,
   flowchart,
   footnote,
   katex,
   imageMark,
+  include,
   lazyLoad,
   mark,
   mermaid,
+  normalDemo,
   presentation,
+  reactDemo,
+  stylize,
   sub,
   sup,
   tasklist,
+  vueDemo,
+  legacyCodeDemo,
 } from "./markdown-it";
 import { getPluginConfig } from "./pluginConfig";
 
@@ -33,6 +40,7 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
       : options.enableAll || false;
 
   const alignEnable = getStatus("align");
+  const chartEnable = getStatus("chart");
   const containerEnable = getStatus("container");
   const codegroupEnable = getStatus("codegroup");
   const demoEnable = getStatus("demo");
@@ -67,6 +75,12 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
     name: "md-enhance",
 
     alias: {
+      "@ChartJS": chartEnable
+        ? resolve(__dirname, "../client/ChartJS.vue")
+        : noopModule,
+      "@CodeDemo": demoEnable
+        ? resolve(__dirname, "../client/CodeDemo.vue")
+        : noopModule,
       "@CodeGroup": codegroupEnable
         ? resolve(__dirname, "../client/CodeGroup.vue")
         : noopModule,
@@ -92,8 +106,8 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
       MARKDOWN_ENHANCE_TASKLIST: tasklistEnable,
       MARKDOWN_ENHANCE_TEX: texEnable,
       CODE_DEMO_OPTIONS: {
-        ...codeDemoDefaultSetting,
-        ...(typeof options.demo === "boolean" ? {} : options.demo),
+        ...CODE_DEMO_DEFAULT_SETTING,
+        ...(typeof options.demo === "object" ? options.demo : {}),
       },
       MERMAID_OPTIONS:
         typeof options.mermaid === "object" ? options.mermaid : {},
@@ -111,36 +125,41 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
-    ...(demoEnable
-      ? {
-          clientRootMixin: resolve(__dirname, "../client/clientRootMixin.js"),
-        }
-      : {}),
-
-    extendMarkdown: (markdownIt): void => {
+    extendMarkdown: (md): void => {
       // hack
-      if (options.lineNumbers !== false) markdownIt.use(lineNumbers);
-      if (options.imageFix !== false) markdownIt.use(decodeURL);
+      if (options.lineNumbers !== false) md.use(lineNumbers);
+      if (options.imageFix !== false) md.use(decodeURL);
 
-      if (getStatus("lazyLoad")) markdownIt.use(lazyLoad);
+      if (getStatus("lazyLoad")) md.use(lazyLoad);
       if (imageMarkEnable)
-        markdownIt.use(
+        md.use(
           imageMark,
           typeof options.imageMark === "object" ? options.imageMark : {}
         );
-      if (getStatus("sup")) markdownIt.use(sup);
-      if (getStatus("sub")) markdownIt.use(sub);
-      if (footnoteEnable) markdownIt.use(footnote);
-      if (flowchartEnable) markdownIt.use(flowchart);
-      if (getStatus("mark")) markdownIt.use(mark);
+      if (getStatus("sup")) md.use(sup);
+      if (getStatus("sub")) md.use(sub);
+      if (footnoteEnable) md.use(footnote);
+      if (flowchartEnable) md.use(flowchart);
+      if (getStatus("mark")) md.use(mark);
       if (tasklistEnable)
-        markdownIt.use(tasklist, [
+        md.use(tasklist, [
           typeof options.tasklist === "object" ? options.tasklist : {},
         ]);
-
-      if (mermaidEnable) markdownIt.use(mermaid);
-      if (texEnable) markdownIt.use(katex, katexOptions);
-      if (presentationEnable) markdownIt.use(presentation);
+      if (chartEnable) md.use(chart);
+      if (demoEnable) {
+        md.use(normalDemo);
+        md.use(vueDemo);
+        md.use(reactDemo);
+        md.use(legacyCodeDemo);
+      }
+      if (getStatus("include"))
+        md.use(include, [
+          typeof options.include === "function" ? options.include : undefined,
+        ]);
+      if (mermaidEnable) md.use(mermaid);
+      if (texEnable) md.use(katex, katexOptions);
+      if (presentationEnable) md.use(presentation);
+      if (getStatus("stylize")) md.use(stylize, options.stylize);
     },
 
     plugins: getPluginConfig(options, context),

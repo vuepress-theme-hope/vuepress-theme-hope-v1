@@ -28,7 +28,7 @@ module.exports = {
 You should use the following syntax:
 
 ````md
-::: demo [type] Optional title text
+::: [type]-demo Optional title text
 
 ```html
 <!-- ↑ use available ones -->
@@ -63,7 +63,7 @@ The plugin support three types:
 Syntax:
 
 ````md
-::: demo Optional title text
+::: normal-demo Optional title text
 
 ```html
 <!-- html code -->
@@ -97,7 +97,7 @@ Syntax:
 Syntax:
 
 ````md
-::: demo [vue] Optional title text
+::: vue-demo Optional title text
 
 ```vue
 <!-- ↑ you can also use html-->
@@ -126,7 +126,7 @@ export default {
 Syntax:
 
 ````md
-::: demo [react] Optional title text
+::: react-demo Optional title text
 
 ```js
 export default class App extends React.Component {
@@ -182,7 +182,7 @@ Available CSS languages:
 
 ## Demo
 
-::: demo Demo
+::: normal-demo Demo
 
 ```html
 <h1>Mr.Hope</h1>
@@ -206,7 +206,7 @@ span {
 :::: details Code
 
 ````md
-::: demo Demo
+::: normal-demo Demo
 
 ```html
 <h1>Mr.Hope</h1>
@@ -228,7 +228,7 @@ span {
 :::
 ````
 
-::: demo [react] A function-based React Demo
+::: react-demo A function-based React Demo
 
 ```js
 export default () => {
@@ -260,7 +260,7 @@ export default () => {
 :::: details Code
 
 ````md
-::: demo [react] A function-based React Demo
+::: react-demo A function-based React Demo
 
 ```js
 export default () => {
@@ -292,7 +292,7 @@ export default () => {
 
 ::::
 
-::: demo [react] A class-based React Demo
+::: react-demo A class-based React Demo
 
 ```js
 export default class App extends React.Component {
@@ -327,7 +327,7 @@ export default class App extends React.Component {
 :::: details Code
 
 ````md
-::: demo [react] A class-based React Demo
+::: react-demo A class-based React Demo
 
 ```js
 export default class App extends React.Component {
@@ -362,7 +362,7 @@ export default class App extends React.Component {
 
 ::::
 
-::: demo [vue] A Vue Demo
+::: vue-demo A Vue Demo
 
 ```vue
 <template>
@@ -392,7 +392,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] A Vue Demo
+::: vue-demo A Vue Demo
 
 ```vue
 <template>
@@ -422,7 +422,7 @@ export default {
 
 ::::
 
-::: demo A demo using language not supoprted by browsers
+::: normal-demo A demo using language not supoprted by browsers
 
 ```md
 # Title
@@ -451,7 +451,7 @@ h1 {
 :::: details Code
 
 ````md
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```md
 # Title

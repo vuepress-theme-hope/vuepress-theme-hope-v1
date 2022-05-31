@@ -198,7 +198,7 @@ $$
 
 ### Demo
 
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```html
 <h1>Mr.Hope</h1>
@@ -222,7 +222,7 @@ span {
 :::: details Code
 
 ````md
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```html
 <h1>Mr.Hope</h1>
@@ -246,7 +246,7 @@ span {
 
 ::::
 
-::: demo [react] A react demo
+::: react-demo A react demo
 
 ```js
 export default class App extends React.Component {
@@ -275,7 +275,7 @@ export default class App extends React.Component {
 :::: details Code
 
 ````md
-::: demo [react] A react demo
+::: react-demo A react demo
 
 ```js
 export default class App extends React.Component {
@@ -304,7 +304,7 @@ export default class App extends React.Component {
 
 ::::
 
-::: demo [vue] A vue demo
+::: vue-demo A vue demo
 
 ```vue
 <template>
@@ -329,7 +329,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] A vue demo
+::: vue-demo A vue demo
 
 ```vue
 <template>
@@ -354,7 +354,7 @@ export default {
 
 ::::
 
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```md
 # Title
@@ -383,7 +383,7 @@ h1 {
 :::: details Code
 
 ````md
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```md
 # Title

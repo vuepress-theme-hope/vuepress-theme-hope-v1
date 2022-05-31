@@ -3,7 +3,7 @@ import { getConfig, preProcessorConfig } from "./utils";
 import type Babel from "@babel/core";
 import type { Code, CodeType } from "./typings";
 import type { PreProcessorType } from "./utils";
-import type { CodeDemoOptions } from "../../types";
+import type { CodeDemoOptions } from "../../../types";
 
 declare global {
   interface Window {
@@ -57,16 +57,19 @@ const getReactTemplate = (code: string): string =>
     .replace(
       /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/,
       ""
-    )};\nReactDOM.render(React.createElement($reactApp), document.getElementById("app"))`;
+    )};\nReactDOM.createRoot(document.getElementById("app")).render(React.createElement($reactApp))`;
 
 const getVueJsTemplate = (js: string): string =>
-  `new Vue({ el: '#app', ${js
-    .replace(/export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u, "$1")
+  js
     .replace(
-      /export\s+default\s*Vue\.extend\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
-      "$1"
+      /export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u,
+      "Vue.createApp({$1}).mount('#app')"
     )
-    .trim()} })`;
+    .replace(
+      /export\s+default\s*define(Async)?Component\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
+      "Vue.createApp({$1}).mount('#app')"
+    )
+    .trim();
 
 export const wrapper = (scriptStr: string): string =>
   `(function(exports){var module={};module.exports=exports;${scriptStr};return module.exports.__esModule?module.exports.default:module.exports;})({})`;
@@ -128,12 +131,12 @@ export const getVueCode = (
         ? window.Babel?.transform(js, { presets: ["es2015"] })?.code || ""
         : js.replace(/export\s+default/u, "return");
 
-      return `const appOptions=${wrapper(
+      return `const app=window.document.createElement('div');document.firstElementChild.appendChild(app);const appOptions=${wrapper(
         scriptStr
       )};appOptions.template=\`${html.replace(
         "`",
         '\\`"'
-      )}\`;document.firstElementChild.appendChild(new (window.Vue.extend(appOptions))().$mount().$el);`;
+      )}\`;window.Vue.createApp(appOptions).mount(app);`;
     },
   };
 };
@@ -157,6 +160,7 @@ export const getReactCode = (
         : ""),
     isLegal: code.isLegal,
     jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],
+    jsx: true,
     getScript: (): string => {
       const scriptStr =
         window.Babel?.transform(code.js[0] || "", {

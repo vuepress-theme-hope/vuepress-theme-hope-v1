@@ -28,7 +28,7 @@ module.exports = {
 You should use the following syntax:
 
 ````md
-::: demo [type] Optional title text
+::: normal-demo Optional title text
 
 ```html
 <!-- ↑ use available ones -->
@@ -95,7 +95,7 @@ Available CSS languages:
 
 ### Not supported language demo
 
-::: demo A demo using language not supoprted by browsers
+::: normal-demo A demo using language not supoprted by browsers
 
 ```md
 # Title
@@ -124,7 +124,7 @@ h1 {
 :::: details Code
 
 ````md
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```md
 # Title
