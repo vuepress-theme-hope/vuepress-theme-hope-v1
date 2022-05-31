@@ -1,9 +1,8 @@
 import Vue from "vue";
+import LoadingIcon from "./icons/LoadingIcon.vue";
 
 import type { ChartConfiguration } from "chart.js";
 import type { PropType } from "vue";
-
-declare const MARKDOWN_ENHANCE_DELAY: number;
 
 const parseChartConfig = (
   config: string,
@@ -21,6 +20,8 @@ const parseChartConfig = (
 
 export default Vue.extend({
   name: "ChartJS",
+
+  components: { LoadingIcon },
 
   props: {
     config: { type: String, required: true },
