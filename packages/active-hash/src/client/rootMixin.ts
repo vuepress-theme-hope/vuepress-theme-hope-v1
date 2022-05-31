@@ -1,20 +1,24 @@
-import debounce from "lodash.debounce";
+import { debounce } from "ts-debounce";
 import Vue from "vue";
 
-let scrollHandler: () => void;
+import type { DebouncedFunction } from "ts-debounce";
+
+let onScroll: DebouncedFunction<[], () => void>;
 
 export default Vue.extend({
   mounted() {
-    scrollHandler = debounce(() => {
+    onScroll = debounce(() => {
       this.setActiveHash();
     }, 300);
 
-    window.addEventListener("scroll", scrollHandler);
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    window.addEventListener("scroll", onScroll);
   },
 
   // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
   beforeDestroy() {
-    window.removeEventListener("scroll", scrollHandler);
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    window.removeEventListener("scroll", onScroll);
   },
 
   methods: {

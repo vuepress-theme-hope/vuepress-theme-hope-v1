@@ -1,3 +1,4 @@
+import { debounce } from "ts-debounce";
 import { getSidebarItems } from "@theme/utils/sidebar";
 import { globalEncryptMixin } from "@theme/mixins/globalEncrypt";
 import Navbar from "@theme/components/Navbar/Navbar.vue";
@@ -5,8 +6,8 @@ import PageFooter from "@theme/components/PageFooter.vue";
 import Password from "@theme/components/Password.vue";
 import { PageHeader } from "@mr-hope/vuepress-types";
 import Sidebar from "@theme/components/Sidebar/Sidebar.vue";
-import throttle from "lodash.throttle";
 
+import type { DebouncedFunction } from "ts-debounce";
 import type { SidebarItem, SidebarHeader } from "@theme/utils/sidebar";
 
 export default globalEncryptMixin.extend({
@@ -105,9 +106,8 @@ export default globalEncryptMixin.extend({
       this.isSidebarOpen = false;
     });
 
-    window.addEventListener(
-      "scroll",
-      throttle(() => {
+    const onScroll: DebouncedFunction<[], () => void> = debounce(
+      () => {
         const distance = this.getScrollTop();
 
         // scroll down
@@ -117,7 +117,15 @@ export default globalEncryptMixin.extend({
         } else this.hideNavbar = false;
 
         lastDistance = distance;
-      }, 300)
+      },
+      300,
+      { isImmediate: true }
+    );
+
+    window.addEventListener(
+      "scroll",
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+      onScroll
     );
   },
 

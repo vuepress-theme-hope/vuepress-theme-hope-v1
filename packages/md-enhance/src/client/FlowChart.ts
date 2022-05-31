@@ -1,7 +1,9 @@
 import Vue from "vue";
+import { debounce } from "ts-debounce";
 import Loading from "./icons/LoadingIcon.vue";
-import debounce from "lodash.debounce";
 import presets from "./presets";
+
+import type { DebouncedFunction } from "ts-debounce";
 
 import type * as Flowchart from "flowchart.js";
 import type { PropType } from "vue";
@@ -38,7 +40,7 @@ export default Vue.extend({
       return preset;
     },
 
-    resize(): () => void {
+    onResize(): DebouncedFunction<[], () => void> {
       return debounce(() => {
         const scale = this.getScale(window.innerWidth);
 
@@ -66,13 +68,15 @@ export default Vue.extend({
       svg.drawSVG(this.id, { ...this.$preset, scale: this.scale });
       this.loading = false;
 
-      window.addEventListener("resize", this.resize);
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+      window.addEventListener("resize", this.onResize);
     });
   },
 
   // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
   beforeDestroy(): void {
-    window.removeEventListener("resize", this.resize);
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    window.removeEventListener("resize", this.onResize);
   },
 
   methods: {
