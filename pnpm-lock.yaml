@@ -476,10 +476,9 @@ importers:
       '@mr-hope/vuepress-plugin-smooth-scroll': workspace:*
       '@mr-hope/vuepress-shared': workspace:*
       '@mr-hope/vuepress-types': workspace:*
-      '@types/bcryptjs': ^2.4.2
       '@types/react': ^18.0.9
       '@vuepress/plugin-blog': ^1.9.4
-      bcryptjs: ^2.4.3
+      bcrypt-ts: ^1.0.0
       chalk: ^4.1.2
       dayjs: ^1.11.2
       docsearch.js: ^2.6.3
@@ -505,10 +504,9 @@ importers:
       '@mr-hope/vuepress-plugin-smooth-scroll': link:../smooth-scroll
       '@mr-hope/vuepress-shared': link:../shared
       '@mr-hope/vuepress-types': link:../vuepress-types
-      '@types/bcryptjs': 2.4.2
       '@types/react': 18.0.10
       '@vuepress/plugin-blog': 1.9.4_chalk@4.1.2
-      bcryptjs: 2.4.3
+      bcrypt-ts: 1.0.0
       chalk: 4.1.2
       dayjs: 1.11.2
       docsearch.js: 2.6.3
@@ -2384,10 +2382,6 @@ packages:
       '@babel/types': 7.18.4
     dev: true
 
-  /@types/bcryptjs/2.4.2:
-    resolution: {integrity: sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==}
-    dev: false
-
   /@types/body-parser/1.19.2:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
@@ -4173,8 +4167,8 @@ packages:
     dependencies:
       tweetnacl: 0.14.5
 
-  /bcryptjs/2.4.3:
-    resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
+  /bcrypt-ts/1.0.0:
+    resolution: {integrity: sha512-7CwTSYmfIPdP/CR2uKMajK4eNByTIZqJgrF2j4yozv8BDMbBgCzzxy6iKy6WLueZH+ZcFpyWDa6ddsDH9Yf5FA==}
     dev: false
 
   /big.js/3.2.0:

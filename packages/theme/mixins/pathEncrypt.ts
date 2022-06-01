@@ -1,4 +1,4 @@
-import { compareSync } from "bcryptjs";
+import { compareSync } from "bcrypt-ts";
 import { encryptBaseMixin } from "@theme/mixins/encrypt";
 import { getPathMatchedKeys } from "@theme/utils/encrypt";
 

@@ -1,4 +1,4 @@
-import { hashSync } from "bcryptjs";
+import { hashSync } from "bcrypt-ts";
 
 import type { EncryptOptions } from "../types";
 

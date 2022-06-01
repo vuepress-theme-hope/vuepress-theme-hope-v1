@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { compareSync, hashSync } from "bcryptjs";
+import { compareSync, hashSync } from "bcrypt-ts";
 
 describe("bcrypt test", () => {
   it("should match", () => {
