@@ -45,7 +45,7 @@ export const timelineMixin = Vue.extend({
           if (!timelineItems[0] || timelineItems[0].year !== year)
             timelineItems.unshift({ year, articles: [] });
 
-          article.frontmatter.parsedDate = `${month}/${day}`;
+          article.frontmatter["parsedDate"] = `${month}/${day}`;
           timelineItems[0].articles.push(article);
         }
       });

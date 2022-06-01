@@ -36,8 +36,8 @@
     "demo:serve": "vuepress dev __tests__/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "1.28.3",
-    "@mr-hope/vuepress-types": "1.28.3",
+    "@mr-hope/vuepress-shared": "workspace:*",
+    "@mr-hope/vuepress-types": "workspace:*",
     "@types/photoswipe": "^4.1.2",
     "photoswipe": "^4.1.3"
   },

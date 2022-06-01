@@ -110,9 +110,9 @@ export default Vue.extend({
         this.linksWrapMaxWidth =
           (this.$el as HTMLElement).offsetWidth -
           NAVBAR_HORIZONTAL_PADDING -
-          ((this.$refs.siteInfo &&
-            (this.$refs.siteInfo as Vue).$el &&
-            ((this.$refs.siteInfo as Vue).$el as HTMLElement).offsetWidth) ||
+          ((this.$refs["siteInfo"] &&
+            (this.$refs["siteInfo"] as Vue).$el &&
+            ((this.$refs["siteInfo"] as Vue).$el as HTMLElement).offsetWidth) ||
             0);
       }
     };

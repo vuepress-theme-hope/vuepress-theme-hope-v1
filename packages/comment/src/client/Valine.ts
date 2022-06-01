@@ -89,7 +89,7 @@ export default Vue.extend({
             pageSize: config.pageSize || 10,
             enableQQ: config.enableQQ || true,
             emojiCDN: config.emojiCDN || "",
-            emojiMaps: config.emojiMaps,
+            emojiMaps: config.emojiMaps || {},
             lang: this.$lang === "zh-CN" ? "zh-CN" : "en",
           });
         }

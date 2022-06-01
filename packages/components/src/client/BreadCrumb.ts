@@ -60,7 +60,9 @@ export default Vue.extend({
           if (element.path === links[index]) {
             breadcrumbConfig.push({
               title: element.title,
-              icon: element.frontmatter.icon,
+              ...(element.frontmatter.icon
+                ? { icon: element.frontmatter.icon }
+                : {}),
               url: element.path,
             });
             break;

@@ -1,9 +1,9 @@
+import { describe, it, expect } from "vitest";
 import { resolve } from "upath";
-import MarkdownIt = require("markdown-it");
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import MarkdownContainer = require("markdown-it-container");
+import MarkdownIt from "markdown-it";
+import MarkdownContainer from "markdown-it-container";
 import { include } from "../../src/node/markdown-it/include";
+
 import type { PluginWithOptions } from "markdown-it";
 
 const container = MarkdownContainer as PluginWithOptions;

@@ -102,7 +102,7 @@ export default Vue.extend({
       // attach a shadow root to demo
 
       const shadowRoot = (
-        this.$refs.demoWrapper as HTMLDivElement
+        this.$refs["demoWrapper"] as HTMLDivElement
       ).attachShadow({
         mode: "open",
       });
@@ -140,7 +140,7 @@ export default Vue.extend({
       this.height = this.isExpanded
         ? "0"
         : `${
-            (this.$refs.codeContainer as HTMLDivElement).clientHeight + 13.8
+            (this.$refs["codeContainer"] as HTMLDivElement).clientHeight + 13.8
           }px`;
 
       this.isExpanded = !this.isExpanded;

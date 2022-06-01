@@ -36,10 +36,10 @@
     "demo:serve": "vuepress dev __tests__/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-plugin-git": "1.29.0",
-    "@mr-hope/vuepress-plugin-reading-time": "1.28.3",
-    "@mr-hope/vuepress-shared": "1.28.3",
-    "@mr-hope/vuepress-types": "1.28.3",
+    "@mr-hope/vuepress-plugin-git": "workspace:*",
+    "@mr-hope/vuepress-plugin-reading-time": "workspace:*",
+    "@mr-hope/vuepress-shared": "workspace:*",
+    "@mr-hope/vuepress-types": "workspace:*",
     "@vssue/api-bitbucket-v2": "^1.4.7",
     "@vssue/api-gitea-v1": "^1.4.7",
     "@vssue/api-gitee-v5": "^1.4.7",

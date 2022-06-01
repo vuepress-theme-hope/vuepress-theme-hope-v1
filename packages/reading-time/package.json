@@ -27,12 +27,11 @@
   "scripts": {
     "build": "tsc -b tsconfig.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib",
-    "test": "jest"
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "devDependencies": {
-    "@mr-hope/vuepress-shared": "1.28.3",
-    "@mr-hope/vuepress-types": "1.28.3"
+    "@mr-hope/vuepress-shared": "workspace:*",
+    "@mr-hope/vuepress-types": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

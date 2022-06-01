@@ -1,4 +1,5 @@
-import MarkdownIt = require("markdown-it");
+import { describe, it, expect } from "vitest";
+import MarkdownIt from "markdown-it";
 import { mark } from "../../src/node/markdown-it/mark";
 
 describe("mark", () => {
@@ -41,8 +42,7 @@ describe("mark", () => {
     );
   });
 
-  // TODO: Should work using latest markdown-it
-  it.skip("Have the same priority as emphases with respect to links", () => {
+  it("Have the same priority as emphases with respect to links", () => {
     expect(markdownIt.render(`[==link]()==`)).toEqual(
       `<p><a href="">==link</a>==</p>\n`
     );
@@ -56,7 +56,7 @@ describe("mark", () => {
       `<p>==<code>code==</code></p>\n`
     );
     expect(markdownIt.render("` == code`==")).toEqual(
-      `<p><code>== code</code>==</p>\n`
+      `<p><code> == code</code>==</p>\n`
     );
   });
 

@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { Feed } from "../src/node/feed";
 import { lastUpdated, pubDate, sampleFeed } from "./setup";
 

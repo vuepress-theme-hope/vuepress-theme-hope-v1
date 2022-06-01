@@ -9,7 +9,7 @@ const enhanceApp: EnhanceApp = async ({ Vue, router, isServer }) => {
   Vue.component("PWAInstall", PWAInstall);
   Vue.component("SWUpdatePopup", SWUpdatePopup);
 
-  if (process.env.NODE_ENV === "production" && !isServer) {
+  if (process.env["NODE_ENV"] === "production" && !isServer) {
     const { register } = await import("register-service-worker");
 
     // Register service worker

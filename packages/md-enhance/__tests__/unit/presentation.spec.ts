@@ -1,4 +1,5 @@
-import MarkdownIt = require("markdown-it");
+import { describe, it, expect } from "vitest";
+import MarkdownIt from "markdown-it";
 import { presentation } from "../../src/node/markdown-it/presentation";
 
 const demo = `

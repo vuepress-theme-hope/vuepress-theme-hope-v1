@@ -14,14 +14,14 @@ export default Vue.extend({
       const defaultStyle = {
         maxHeight: "180px",
         margin:
-          this.$frontmatter.showTitle === false
+          this.$frontmatter["showTitle"] === false
             ? "6rem auto 1.5rem"
             : "1rem auto",
       };
 
       return {
         ...defaultStyle,
-        ...(this.$frontmatter.heroImageStyle as Record<string, string>),
+        ...(this.$frontmatter["heroImageStyle"] as Record<string, string>),
       };
     },
 

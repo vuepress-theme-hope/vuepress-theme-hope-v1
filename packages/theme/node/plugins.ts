@@ -64,7 +64,9 @@ const resolveFeedOptions = (
         hostname: themeConfig.hostname || "",
         ...themeConfig.feed,
         channel: {
-          author: themeConfig.author ? { name: themeConfig.author } : undefined,
+          ...(themeConfig.author
+            ? { author: { name: themeConfig.author } }
+            : {}),
           copyright: themeConfig.footer.copyright || "",
           ...(themeConfig.feed?.channel || null),
         },
@@ -93,7 +95,10 @@ const resolveSeoOptions = (
 ): SeoOptions | false =>
   themeConfig.seo === false
     ? false
-    : { author: themeConfig.author, ...themeConfig.seo };
+    : {
+        ...(themeConfig.author ? { author: themeConfig.author } : {}),
+        ...themeConfig.seo,
+      };
 
 const resolveSitemapOptions = (
   themeConfig: ResolvedHopeThemeConfig

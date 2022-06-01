@@ -30,6 +30,9 @@
     "clean": "rimraf lib *.tsbuildinfo",
     "copy": "cpx \"src/**/*.{d.ts,vue,styl,json}\" lib"
   },
+  "dependencies": {
+    "@mr-hope/vuepress-types": "workspace:*"
+  },
   "publishConfig": {
     "access": "public"
   }

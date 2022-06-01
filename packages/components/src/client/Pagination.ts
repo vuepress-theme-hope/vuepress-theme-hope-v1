@@ -85,12 +85,13 @@ export default Vue.extend({
     navigate(page: number): void {
       const query = { ...this.$route.query };
 
-      if (query.page === page.toString() || (page === 1 && !query.page)) return;
+      if (query["page"] === page.toString() || (page === 1 && !query["page"]))
+        return;
 
       this.$emit("change", page);
 
-      if (page === 1) delete query.page;
-      else query.page = page.toString();
+      if (page === 1) delete query["page"];
+      else query["page"] = page.toString();
 
       void this.$router.push({ path: this.$route.path, query });
     },

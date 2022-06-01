@@ -56,7 +56,7 @@ export default globalEncryptMixin.extend({
       if (this.sidebar === false) return false;
 
       return (
-        !this.$frontmatter.home &&
+        !this.$frontmatter["home"] &&
         this.$frontmatter.sidebar !== false &&
         this.sidebarItems.length !== 0
       );
@@ -69,7 +69,7 @@ export default globalEncryptMixin.extend({
     },
 
     pageClasses(): unknown {
-      const userPageClass = this.$page.frontmatter.pageClass as
+      const userPageClass = this.$page.frontmatter["pageClass"] as
         | string
         | string[]
         | Record<string, boolean>;

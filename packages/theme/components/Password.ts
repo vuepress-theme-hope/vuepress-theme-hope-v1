@@ -16,7 +16,7 @@ export default Vue.extend({
 
   computed: {
     isMainPage(): boolean {
-      return this.$frontmatter.home === true;
+      return this.$frontmatter["home"] === true;
     },
 
     encrypt(): HopeThemeLocaleData["encrypt"] {

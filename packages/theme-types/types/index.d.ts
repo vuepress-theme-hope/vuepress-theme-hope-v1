@@ -15,3 +15,5 @@
 /// <reference types="vuepress-plugin-photo-swipe" />
 
 /// <reference types="vuepress-theme-hope" />
+
+export {};

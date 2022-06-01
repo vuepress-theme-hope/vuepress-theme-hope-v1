@@ -57,7 +57,9 @@ export default pathEncryptMixin.extend({
       return {
         titleIcon: true,
         titleIconPrefix: this.$themeConfig.iconPrefix,
-        items: this.$themeConfig.pageInfo,
+        ...(this.$themeConfig.pageInfo
+          ? { items: this.$themeConfig.pageInfo }
+          : {}),
         categoryPath: "/category/$category/",
         tagPath: "/tag/$tag/",
         defaultAuthor: this.$themeConfig.author || "",

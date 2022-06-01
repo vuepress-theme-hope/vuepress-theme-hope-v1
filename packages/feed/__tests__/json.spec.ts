@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { sampleFeed } from "./setup";
 
 describe("JSON 1.1", () => {

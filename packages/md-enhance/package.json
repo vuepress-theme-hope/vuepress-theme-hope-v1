@@ -40,13 +40,12 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,css,styl,svg}\" lib",
     "demo:build": "vuepress build __tests__/demo",
     "demo:clean-serve": "vuepress dev __tests__/demo --no-cache",
-    "demo:serve": "vuepress dev __tests__/demo",
-    "test": "jest"
+    "demo:serve": "vuepress dev __tests__/demo"
   },
   "dependencies": {
     "@babel/core": "*",
-    "@mr-hope/vuepress-shared": "1.28.3",
-    "@mr-hope/vuepress-types": "1.28.3",
+    "@mr-hope/vuepress-shared": "workspace:*",
+    "@mr-hope/vuepress-types": "workspace:*",
     "@types/hash-sum": "^1.0.0",
     "@types/katex": "^0.14.0",
     "@types/markdown-it": "^10.0.3",
@@ -61,5 +60,8 @@
     "ts-debounce": "^4.0.0",
     "upath": "^2.0.1",
     "vuepress-plugin-container": "^2.1.5"
+  },
+  "devDependencies": {
+    "@types/babel__core": "7.1.19"
   }
 }

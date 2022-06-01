@@ -36,7 +36,7 @@ export default Vue.extend({
   mounted(): void {
     this.$el.setAttribute("id", this.id);
     this.code = decodeURIComponent(
-      (this.$el as HTMLElement).dataset.code || ""
+      (this.$el as HTMLElement).dataset["code"] || ""
     );
 
     const revealElement = document.querySelector(`#${this.id}`);
@@ -129,7 +129,7 @@ export default Vue.extend({
             transition: "slide",
             slideNumber: true,
             ...REVEAL_CONFIG,
-            ...(this.$frontmatter.reveal || {}),
+            ...(this.$frontmatter["reveal"] || {}),
             embedded: this.$frontmatter.layout !== "Slide",
           } as Partial<RevealOptions>)
           .then(() => {

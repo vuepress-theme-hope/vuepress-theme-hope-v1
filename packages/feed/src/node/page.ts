@@ -179,8 +179,8 @@ export class FeedPage {
     if (typeof this.getter.image === "function")
       return this.getter.image(this.page);
 
-    const banner = this.frontmatter.banner as string | undefined;
-    const cover = this.frontmatter.cover as string | undefined;
+    const banner = this.frontmatter["banner"] as string | undefined;
+    const cover = this.frontmatter["cover"] as string | undefined;
 
     if (banner) {
       if (isAbsoluteUrl(banner))
@@ -266,17 +266,17 @@ export class FeedPage {
     return {
       title,
       link,
-      description,
       author,
-      category,
-      enclosure,
       guid,
-      pubDate,
       lastUpdated,
       content,
-      image,
       contributor,
-      copyright,
+      ...(description ? { description } : {}),
+      ...(category ? { category } : {}),
+      ...(enclosure ? { enclosure } : {}),
+      ...(pubDate ? { pubDate } : {}),
+      ...(image ? { image } : {}),
+      ...(copyright ? { copyright } : {}),
     };
   }
 }

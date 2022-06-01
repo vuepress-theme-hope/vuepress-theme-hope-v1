@@ -61,7 +61,7 @@ const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
 
-    globalUIComponents: options.backToTop ? "BackToTop" : undefined,
+    globalUIComponents: options.backToTop ? "BackToTop" : [],
 
     plugins,
   };

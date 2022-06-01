@@ -152,7 +152,7 @@ export default Vue.extend({
         : selfActive;
 
     const pageMaxDepth = $page.frontmatter.sidebarDepth;
-    const localesMaxDepth = $themeLocaleConfig.sidebarDepth as number;
+    const localesMaxDepth = $themeLocaleConfig["sidebarDepth"] as number;
     const themeMaxDepth = $themeConfig.sidebarDepth;
 
     const maxDepth =
@@ -182,7 +182,7 @@ export default Vue.extend({
       ];
 
     const displayAllHeaders =
-      ($themeLocaleConfig.displayAllHeaders as boolean | undefined) ||
+      ($themeLocaleConfig["displayAllHeaders"] as boolean | undefined) ||
       $themeConfig.displayAllHeaders;
 
     const link = renderLink(h, {

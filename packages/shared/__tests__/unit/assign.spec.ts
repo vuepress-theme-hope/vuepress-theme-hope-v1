@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { describe, it, expect } from "vitest";
 import { deepAssign, deepAssignReverse } from "../../src/assign";
 
 describe("deepassign", () => {
@@ -128,7 +129,7 @@ describe("deepassignReverse", () => {
 
     expect(ans1).toEqual({ a: 2 });
 
-    const object3 = { "%": "zhangbowang", b: true, c: 1, e: [], f: {} };
+    const object3 = { "%": "zhangbowang", b: true, c: 1 };
     const object4 = { "%": "special", b: false, d: "2" };
 
     const ans2 = deepAssignReverse(object3, object4);
@@ -138,8 +139,6 @@ describe("deepassignReverse", () => {
       b: false,
       c: 1,
       d: "2",
-      e: [],
-      f: {},
     });
   });
 
@@ -198,7 +197,14 @@ describe("deepassignReverse", () => {
     expect(ans).toEqual({ a: { a: 1, b: 0, c: 2 }, b: { a: 1 } });
   });
 
-  it("error without params", () => {
-    expect(() => deepAssignReverse()).toThrow("No param is given");
+  it("assign empty object", () => {
+    const object1 = { a: { a: 1, b: 2 }, d: 1 };
+    const object2 = { d: 1 };
+    const object3 = { a: { a: 2, c: 3 }, b: [], c: false };
+    const object4 = { d: 2 };
+
+    const ans = deepAssignReverse(object1, object2, object3, object4);
+
+    expect(ans).toEqual({ a: { a: 2, b: 2, c: 3 }, b: [], c: false, d: 2 });
   });
 });

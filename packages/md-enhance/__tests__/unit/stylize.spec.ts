@@ -1,4 +1,5 @@
-import MarkdownIt = require("markdown-it");
+import { describe, expect, it } from "vitest";
+import MarkdownIt from "markdown-it";
 import { stylize } from "../../src/node/markdown-it";
 import type { StylizeOptions, StylizeResult } from "../../src/types";
 

@@ -37,7 +37,7 @@ export class FeedGenerator {
     const {
       filter = ({ frontmatter, _filePath }: Page): boolean =>
         !(
-          frontmatter.home ||
+          frontmatter["home"] ||
           !_filePath ||
           frontmatter.article === false ||
           frontmatter.feed === false

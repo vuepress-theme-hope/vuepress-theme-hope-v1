@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Atom 1.0 should generate a valid feed 1`] = `
+exports[`Atom 1.0 > should generate a valid feed 1`] = `
 "<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>
 <feed xmlns=\\"http://www.w3.org/2005/Atom\\" xml:lang=\\"en\\">
   <id>http://example.com/</id>
@@ -45,8 +45,8 @@ exports[`Atom 1.0 should generate a valid feed 1`] = `
     <author>
       <name>Joe Smith, Name Only</name>
     </author>
-    <category term=\\"Grateful Dead\\"/>
-    <category term=\\"MSFT\\"/>
+    <category term=\\"Grateful Dead\\" scheme=\\"\\"/>
+    <category term=\\"MSFT\\" scheme=\\"\\"/>
     <contributor>
       <name>Shawn Kemp</name>
       <email>shawnkemp@example.com</email>

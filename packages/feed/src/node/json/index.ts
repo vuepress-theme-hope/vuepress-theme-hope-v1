@@ -54,7 +54,7 @@ export const renderJSON = (feed: Feed): string => {
 
       // json_feed distinguishes between html and text content
       // but since we only take a single type, we'll assume HTML
-      content_html: item.content,
+      content_html: item.content || "",
     };
 
     if (item.image) feedItem.image = item.image;

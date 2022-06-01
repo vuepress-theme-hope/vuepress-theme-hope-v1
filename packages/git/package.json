@@ -30,7 +30,7 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "1.28.3",
+    "@mr-hope/vuepress-types": "workspace:*",
     "dayjs": "^1.11.2",
     "execa": "^5.1.1"
   },

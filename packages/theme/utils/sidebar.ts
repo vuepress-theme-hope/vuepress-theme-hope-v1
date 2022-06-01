@@ -35,20 +35,21 @@ export const groupSidebarHeaders = groupHeaders;
 
 const resolveSidebarHeaders = (page: PageComputed): SidebarAutoItem[] => {
   const headers = page.headers ? groupSidebarHeaders(page.headers) : [];
+  const { icon } = page.frontmatter;
 
   return [
     {
       type: "group",
       collapsable: false,
       title: page.title,
-      icon: page.frontmatter.icon,
+      ...(icon ? { icon } : {}),
       path: "",
       children: headers.map<SidebarHeaderItem>((header) => ({
         ...header,
         type: "header",
         basePath: page.path,
         path: `${page.path}#${header.slug}`,
-        children: header.children,
+        ...(header.children ? { children: header.children } : {}),
       })),
     },
   ];
@@ -177,12 +178,12 @@ const resolveSidebarItem = (
   const children = sidebarConfigItem.children || [];
 
   // item do not have children
-  if (children.length === 0 && sidebarConfigItem.path)
+  if (children.length === 0 && sidebarConfigItem["path"])
     // cover title
     return Object.assign(
       resolvePageforSidebar(
         pages,
-        resolve(prefix, sidebarConfigItem.path as string, base)
+        resolve(prefix, sidebarConfigItem["path"] as string, base)
       ),
       { title: sidebarConfigItem.title }
     );
@@ -191,8 +192,8 @@ const resolveSidebarItem = (
   return {
     ...sidebarConfigItem,
     type: "group",
-    path: sidebarConfigItem.path
-      ? resolve(prefix, sidebarConfigItem.path as string, base)
+    path: sidebarConfigItem["path"]
+      ? resolve(prefix, sidebarConfigItem["path"] as string, base)
       : "",
     children: children.map((child) =>
       resolveSidebarItem(

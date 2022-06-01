@@ -11,7 +11,7 @@ import type {
 } from "./typings";
 
 const genAuthororContributor = (author: FeedAuthor): AtomAuthor => {
-  const { name, email, url } = author;
+  const { name = "", email, url } = author;
 
   return {
     name,
@@ -21,7 +21,7 @@ const genAuthororContributor = (author: FeedAuthor): AtomAuthor => {
 };
 
 const genCategory = (category: FeedCategory): AtomCategory => {
-  const { name, scheme } = category;
+  const { name, scheme = "" } = category;
 
   return {
     _attributes: {

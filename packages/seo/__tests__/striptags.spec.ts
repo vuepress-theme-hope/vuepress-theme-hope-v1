@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { StateMachine, striptags } from "../src/node/stripTags";
 
 const ExampleText = `<atag someattr="value">some text<btag>more text</btag></atag>`;

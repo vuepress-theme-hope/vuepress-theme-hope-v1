@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { encodeXML } from "../src/node/utils";
 
 describe("Encode XML", () => {

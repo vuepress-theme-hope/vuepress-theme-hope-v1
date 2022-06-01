@@ -33,9 +33,13 @@ export const getManifest = async (
 
   const finalManifest: ManifestOption = {
     name:
-      siteConfig.title || (themeConfig.title as string | undefined) || "Site",
+      siteConfig.title ||
+      (themeConfig["title"] as string | undefined) ||
+      "Site",
     short_name:
-      siteConfig.title || (themeConfig.title as string | undefined) || "Site",
+      siteConfig.title ||
+      (themeConfig["title"] as string | undefined) ||
+      "Site",
     description:
       siteConfig.description || "A site built with vuepress-theme-hope",
     lang: getRootLang(context),

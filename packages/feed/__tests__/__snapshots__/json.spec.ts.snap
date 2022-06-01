@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`JSON 1.1 should generate a valid feed 1`] = `
+exports[`JSON 1.1 > should generate a valid feed 1`] = `
 "{
   \\"version\\": \\"https://jsonfeed.org/version/1.1\\",
   \\"title\\": \\"Feed Title\\",

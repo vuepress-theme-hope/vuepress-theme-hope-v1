@@ -1,3 +1,4 @@
+import { it, expect } from "vitest";
 import { md2text } from "../src/node/utils";
 
 it("should recognize headings", () => {

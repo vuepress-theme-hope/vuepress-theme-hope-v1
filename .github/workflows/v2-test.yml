@@ -27,16 +27,14 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 6
+          version: 7
+          run_install: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: pnpm
-
-      - name: Install Deps
-        run: pnpm install --frozen-lockfile
 
       - name: Build project
         env:
@@ -54,7 +52,7 @@ jobs:
 
       - name: Vite build test
         run: |
-          pnpm run -r run demo:vite-build
+          pnpm run -r demo:vite-build
 
   linter-and-unit:
     name: Linter and Unit test
@@ -66,16 +64,14 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 6
+          version: 7
+          run_install: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: pnpm
-
-      - name: Install Deps
-        run: pnpm install --frozen-lockfile
 
       - name: Build project
         env:
@@ -85,7 +81,6 @@ jobs:
       - name: Linter test
         run: |
           pnpm run lint:check
-          pnpm run lint:md
 
       - name: Unit test
         env:

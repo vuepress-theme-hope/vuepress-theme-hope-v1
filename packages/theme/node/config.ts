@@ -15,7 +15,7 @@ import type {
 } from "../types";
 
 const defaultConfig = {
-  base: process.env.VuePress_BASE || "/",
+  base: process.env["VuePress_BASE"] || "/",
 
   temp: "./node_modules/.temp",
 

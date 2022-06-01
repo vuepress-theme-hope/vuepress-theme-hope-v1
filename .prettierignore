@@ -20,3 +20,6 @@ packages/theme/**/*d.ts
 
 # Coverage Files
 coverage/
+
+# Lock files
+pnpm-lock.yaml

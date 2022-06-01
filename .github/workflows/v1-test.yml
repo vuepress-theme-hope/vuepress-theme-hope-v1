@@ -23,44 +23,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: restore lerna
-        uses: actions/cache@v3
-        id: lerna-cache
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          path: |
-            node_modules
-            **/node_modules
-          key: ${{ runner.os }}-lerna-${{ hashFiles('yarn.lock') }}
-
-      - name: Get yarn cache directory path
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: yarn-cache
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install Deps
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+          version: 7
+          run_install: true
 
       - name: Build project
-        run: yarn run build
+        run: pnpm run build
 
       - name: Linter test
         run: |
-          yarn run lint:check
-          yarn run lint:md
+          pnpm run lint:check
+          pnpm run lint:md
 
       - name: Unit test
-        run: yarn run test
+        run: pnpm run test
 
       - name: Upload coverage
         if: github.ref == 'refs/heads/v1'
@@ -70,6 +48,12 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+      - name: Install pnpm 6
+        if: matrix.node == '12'
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6
+
       - name: Test Demo Build
         run: |
-          yarn run demo:build
+          pnpm run demo:build

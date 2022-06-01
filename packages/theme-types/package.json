@@ -26,14 +26,15 @@
   },
   "types": "types/index.d.ts",
   "dependencies": {
-    "@mr-hope/vuepress-plugin-comment": "1.29.0",
-    "@mr-hope/vuepress-plugin-feed": "1.29.0",
-    "@mr-hope/vuepress-plugin-git": "1.29.0",
-    "@mr-hope/vuepress-plugin-pwa": "1.28.5",
-    "@mr-hope/vuepress-plugin-reading-time": "1.28.3",
-    "@mr-hope/vuepress-types": "1.28.3",
-    "vuepress-plugin-md-enhance": "1.29.0",
-    "vuepress-plugin-photo-swipe": "1.28.3"
+    "@mr-hope/vuepress-plugin-comment": "workspace:*",
+    "@mr-hope/vuepress-plugin-feed": "workspace:*",
+    "@mr-hope/vuepress-plugin-git": "workspace:*",
+    "@mr-hope/vuepress-plugin-pwa": "workspace:*",
+    "@mr-hope/vuepress-plugin-reading-time": "workspace:*",
+    "@mr-hope/vuepress-types": "workspace:*",
+    "vuepress-plugin-md-enhance": "workspace:*",
+    "vuepress-plugin-photo-swipe": "workspace:*",
+    "vuepress-theme-hope": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

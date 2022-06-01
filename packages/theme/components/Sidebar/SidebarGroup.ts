@@ -22,7 +22,8 @@ export default Vue.extend({
 
   beforeCreate(): void {
     // eslint-disable-next-line
-    this.$options.components!.SidebarLinks =
+    // eslint-disable-next-line
+    this.$options.components!["SidebarLinks"] =
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       require("@theme/components/Sidebar/SidebarLinks.vue").default;
   },

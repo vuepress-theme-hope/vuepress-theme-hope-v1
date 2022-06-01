@@ -49,7 +49,7 @@ export const getFeedOptions = (
         // default values
         filter: ({ frontmatter, _filePath }: Page): boolean =>
           !(
-            frontmatter.home ||
+            frontmatter["home"] ||
             !_filePath ||
             frontmatter.article === false ||
             frontmatter.feed === false

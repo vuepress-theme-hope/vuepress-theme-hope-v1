@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { removeMarkdown } from "./remove-markdown";
 
 describe("remove Markdown", () => {

@@ -72,7 +72,7 @@ const generatePageMap = (
 
   pages.forEach((page) => {
     const frontmatterOptions: SitemapFrontmatterOption =
-      (page.frontmatter.sitemap as SitemapFrontmatterOption) || {};
+      (page.frontmatter["sitemap"] as SitemapFrontmatterOption) || {};
     const metaRobots = (page.frontmatter.meta || []).find(
       (meta) => meta.name === "robots"
     );
@@ -132,7 +132,7 @@ export const genSiteMap = async (
   } = options;
   const sitemap = new SitemapStream({
     hostname,
-    xmlns,
+    ...(xmlns ? { xmlns } : {}),
   });
   const sitemapXMLPath = resolve(context.outDir, outFile);
   const writeStream = createWriteStream(sitemapXMLPath);

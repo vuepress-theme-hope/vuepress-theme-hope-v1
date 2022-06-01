@@ -1,4 +1,5 @@
-import MarkdownIt = require("markdown-it");
+import { describe, it, expect, vi } from "vitest";
+import MarkdownIt from "markdown-it";
 import { container } from "../../src/node/markdown-it/container";
 
 describe("container", () => {
@@ -64,7 +65,7 @@ describe("container", () => {
     });
 
     it("rule should call it", () => {
-      const spy = jest.fn();
+      const spy = vi.fn();
       const markdownIt = MarkdownIt({ linkify: true }).use(container, {
         name: "name",
         validate: spy,

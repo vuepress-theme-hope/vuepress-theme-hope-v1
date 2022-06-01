@@ -1,4 +1,5 @@
-import MarkdownIt = require("markdown-it");
+import { describe, it, expect, vi } from "vitest";
+import MarkdownIt from "markdown-it";
 import { katex } from "../../src/node/markdown-it/katex";
 
 const markdownIt = MarkdownIt({ linkify: true }).use(katex);
@@ -38,7 +39,7 @@ describe("inline katex", () => {
     // eslint-disable-next-line @typescript-eslint/unbound-method
     const originalWarn = global.console.warn;
 
-    global.console.warn = jest.fn();
+    global.console.warn = vi.fn();
 
     expect(markdownItWithError.render("$\\fra{a}{b}$")).toEqual(
       "<p><span class='katex-error' title='ParseError: KaTeX parse error: Undefined control sequence: \\fra at position 1: \\̲f̲r̲a̲{a}{b}'>\\fra{a}{b}</span></p>\n"
@@ -113,7 +114,7 @@ $$
     // eslint-disable-next-line @typescript-eslint/unbound-method
     const originalWarn = global.console.warn;
 
-    global.console.warn = jest.fn();
+    global.console.warn = vi.fn();
     expect(markdownItWithError.render("$$\\fra{a}{b}$$")).toMatch(
       /<p class='katex-block katex-error' title='[\s\S]*?'>[\s\S]*?<\/p>/
     );

@@ -35,19 +35,19 @@ export const injectLinkstoHead = (
   if (!siteConfig.head) siteConfig.head = [];
 
   // add atom link
-  if (options.atom)
+  if (options["atom"])
     siteConfig.head.push(
       getHeadItem("Atom", atomOutputFilename, "application/atom+xml")
     );
 
   // add json link
-  if (options.json)
+  if (options["json"])
     siteConfig.head.push(
       getHeadItem("JSON", jsonOutputFilename, "application/json")
     );
 
   // add rss link
-  if (options.rss)
+  if (options["rss"])
     siteConfig.head.push(
       getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
     );

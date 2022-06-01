@@ -47,7 +47,7 @@ export default Vue.extend({
         this.type as "js" | "json"
       );
       const ctx = (
-        this.$refs.chartCanvasElement as HTMLCanvasElement
+        this.$refs["chartCanvasElement"] as HTMLCanvasElement
       )?.getContext("2d") as CanvasRenderingContext2D;
 
       new Chart(ctx, data);
