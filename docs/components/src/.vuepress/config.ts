@@ -1,5 +1,5 @@
 import hope from "vuepress-theme-hope";
-import { version } from "../../../../lerna.json";
+import { version } from "../../../../package.json";
 
 const base = process.env.BASE || "/";
 const hostname =

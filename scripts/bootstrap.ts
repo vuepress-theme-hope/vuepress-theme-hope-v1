@@ -1,6 +1,6 @@
 import { existsSync, writeFileSync, readdirSync } from "fs";
 import { join, resolve } from "path";
-import { version } from "../packages/theme/package.json";
+import { version } from "../package.json";
 
 const packagesDir = resolve(__dirname, "../packages/");
 const files = readdirSync(packagesDir);

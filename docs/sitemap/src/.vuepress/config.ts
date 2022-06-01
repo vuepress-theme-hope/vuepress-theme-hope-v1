@@ -1,4 +1,5 @@
 import hope from "vuepress-theme-hope";
+import { version } from "../../../../package.json";
 
 const base = process.env.BASE || "/";
 const hostname =
@@ -40,6 +41,16 @@ export default hope.config({
         icon: "config",
         link: "/config.html",
       },
+      {
+        text: version,
+        icon: "note",
+        items: [
+          {
+            text: "V2 Docs",
+            link: "https://vuepress-theme-hope.github.io/v2/sitemap/",
+          },
+        ],
+      },
     ],
 
     locales: {
@@ -55,6 +66,16 @@ export default hope.config({
             text: "配置",
             icon: "config",
             link: "/zh/config.html",
+          },
+          {
+            text: version,
+            icon: "note",
+            items: [
+              {
+                text: "V2 文档",
+                link: "https://vuepress-theme-hope.github.io/v2/sitemap/zh/",
+              },
+            ],
           },
         ],
       },

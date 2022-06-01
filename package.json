@@ -1,7 +1,9 @@
 {
   "name": "vuepress-theme-hope-root",
+  "version": "1.29.0",
   "private": true,
   "description": "A light vuepress theme",
+  "type": "module",
   "scripts": {
     "build": "pnpm copy && tsc -b",
     "clean": "pnpm run -r --parallel clean",
