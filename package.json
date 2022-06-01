@@ -8,7 +8,7 @@
     "commit": "pnpm git-cz",
     "copy": "pnpm run -r --parallel copy",
     "demo:build": "pnpm --dir=demo build",
-    "demo:serve": "pnpm --dir=demo serve",
+    "demo:dev": "pnpm --dir=demo dev",
     "dev": "concurrently \"pnpm run -r --parallel dev:copy\" \"tsc -b -w\"",
     "docs:build": "pnpm run -r --parallel docs:build",
     "postinstall": "husky install",
