@@ -35,7 +35,7 @@ files.forEach((pkgName) => {
       },
       license: "MIT",
       author: {
-        email: "zhangbowang1998@gmail.com",
+        email: "mister-hope@outlook.com",
         name: "Mr.Hope",
         url: "https://mrhope.site",
       },

@@ -74,7 +74,7 @@ export type BlogOptions = {
    * {
    *   QQ: "http://wpa.qq.com/msgrd?v=3&uin=1178522294&site=qq&menu=yes",
    *   Qzone: "https://1178522294.qzone.qq.com/",
-   *   Gmail: "mailto:zhangbowang1998@gmail.com",
+   *   Gmail: "mailto:mister-hope@outlook.com",
    *   Zhihu: "https://www.zhihu.com/people/mister-hope",
    *   Steam: "https://steamcommunity.com/id/Mr-Hope/",
    *   Weibo: "https://weibo.com/misterhope",
