@@ -1,4 +1,32 @@
-# Changelog
+# Change Log
+
+All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [1.30.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/compare/v1.29.0...v1.30.0) (2022-06-02)
+
+### Features
+
+- **comment:** add compact code for comment ([3bb666e](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/3bb666e91ca73df79d9bad3954d0b89296101558))
+- **copy-code:** update style ([ab4d060](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/ab4d06036afa7ac5557207fbd8aede7e4deae71e))
+- **feed:** add compact code ([1d66e6c](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/1d66e6cf1d30bb7ce621f908ac4cd8e9e859be0b))
+- **feed:** update feed plugin ([26d8fac](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/26d8fac9a12730d216133ffeb268e9600dcada37))
+- **md-enhance:** add legacy flowchart ([4adb920](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/4adb920b7bde6afc00f4c87b5eed97fdd5068275))
+- **md-enhance:** add new options ([6b589e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/6b589e38172bec4dd94784c5a6a7114f49d41951))
+- **photo-swipe:** rebuild photoswipe ([18bf3c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/18bf3c3372d6e80ff186581173bd287f99fe1825))
+- **pwa:** rebuild pwa ([085541e](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/085541efecf60a26a3ccb2518a5fe7683c0b622c))
+- **reading-time:** update locales ([a8b2961](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/a8b2961d210bd4c4247026e3ddcb2671af5ef479))
+- **seo:** rebuild seo ([6d9304b](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/6d9304b94bc193eb91aa057055ebbf0550a904bc))
+- **sitemap:** rebuild sitemap ([498249a](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/498249af5128e1a83fdd4832d3037025bbf68543))
+- **theme:** add compact for deprecated options ([5309995](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/5309995b2e7b398afc8ee2403c8574bdfee59979))
+
+### Bug Fixes
+
+- **comment:** fix waline style ([520e3bf](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/520e3bfebaec2668a55e4a62a213a8a9ca8557b6))
+- **md-enhance:** fix ChartJS ([2e264ae](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/2e264aecf00e9a3af947cc85ab51ccbb95a35e3b))
+- **md-enhance:** fix code demo ([08eeee5](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/08eeee540ba64a8c02a8aa6cf633e58a878eff9f))
+- **pwa:** fix typos ([756eb26](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/756eb261fc047dc38f4dea02434c070ffcde0b68))
+- **pwa:** fix typos ([7bd347e](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/7bd347e086c857312439c8d3ecc40b36d8871723))
+- **theme:** fix calling seo plugin ([ab95621](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/ab95621b346f92bb2af2c366f6d8ece222da7cc3))
 
 ## [1.29.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v1.28.5...v1.29.0) (2022-05-15)
 
