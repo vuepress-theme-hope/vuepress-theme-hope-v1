@@ -39,7 +39,7 @@
     "@mr-hope/vuepress-shared": "workspace:*",
     "@mr-hope/vuepress-types": "workspace:*",
     "@types/photoswipe": "^4.1.2",
-    "photoswipe": "^4.1.3"
+    "photoswipe": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"
