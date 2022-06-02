@@ -1,4 +1,8 @@
-import type { SitemapImageOption, SitemapVideoOption } from "./sitemap";
+import type {
+  SitemapImageOption,
+  SitemapNewsOption,
+  SitemapVideoOption,
+} from "./sitemap";
 
 export interface SitemapFrontmatterOption {
   /**
@@ -42,4 +46,11 @@ export interface SitemapFrontmatterOption {
    * 视频配置
    */
   video?: SitemapVideoOption[];
+
+  /**
+   * News config
+   *
+   * 新闻配置
+   */
+  news?: SitemapNewsOption[];
 }

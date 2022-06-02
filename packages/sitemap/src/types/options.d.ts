@@ -1,10 +1,12 @@
 import type { PageComputed } from "@mr-hope/vuepress-types";
 
+export type ModifyTimeGetter = (page: PageComputed) => string;
+
 export interface SitemapOptions {
   /**
    * domain which to be deployed to
    *
-   * 网站域名
+   * 部署的网站域名
    */
   hostname: string;
 
@@ -13,23 +15,23 @@ export interface SitemapOptions {
    *
    * 需要额外包含的网址
    */
-  urls?: string[];
+  extraUrls?: string[];
 
   /**
    * Urls to be excluded
    *
    * 不被收录的页面
    */
-  exclude?: string[];
+  excludeUrls?: string[];
 
   /**
-   * Output file name, relative to dest folder
+   * Output filename, relative to dest folder
    *
    * 输出的文件名，相对于输出目录
    *
    * @default 'sitemap.xml'
    */
-  outFile?: string;
+  sitemapFilename?: string;
 
   /**
    * Page default update frequency
@@ -49,8 +51,10 @@ export interface SitemapOptions {
 
   /**
    * Date format function
+   *
+   * 时间格式化器
    */
-  dateFormatter?: (page: PageComputed) => string;
+  modifyTimeGetter?: ModifyTimeGetter;
 
   /**
    * XML namespaces to turn on - all by default
