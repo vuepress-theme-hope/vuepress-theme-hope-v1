@@ -7,7 +7,7 @@ export const getContributors = async (
 ): Promise<GitContributor[]> => {
   const { stdout } = await execa(
     "git",
-    ["--no-pager", "shortlog", "-nes", "--", basename(filePath)],
+    ["--no-pager", "shortlog", "-nes", "HEAD", "--", basename(filePath)],
     {
       cwd: dirname(filePath),
       stdin: "inherit",
@@ -16,7 +16,7 @@ export const getContributors = async (
 
   return stdout
     .split("\n")
-    .map((item) => /^(\d+)\t(.*) <(.*)>$/u.exec(item.trim()))
+    .map((item) => item.trim().match(/^(\d+)\t(.*) <(.*)>$/))
     .filter((item): item is RegExpExecArray => item !== null)
     .map(([, commits, name, email]) => ({
       name,

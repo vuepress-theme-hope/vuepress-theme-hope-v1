@@ -47,7 +47,7 @@ export const getUpdatedTimeStamp = async (
 ): Promise<number> => {
   const { stdout } = await execa(
     "git",
-    ["--no-pager", "log", "-1", "--format=%at", basename(filePath)],
+    ["--no-pager", "log", "--format=%at", "-1", basename(filePath)],
     { cwd: dirname(filePath) }
   );
 
