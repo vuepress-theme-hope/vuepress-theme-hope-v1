@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   getChinese,
   getWordNumber,
-  readingTime,
+  getReadingTime,
 } from "../src/node/reading-time";
 
 describe("Reading Time Test", () => {
@@ -28,19 +28,21 @@ describe("Reading Time Test", () => {
 
   it("Reading Time", () => {
     expect(
-      readingTime("\n Hope ! is #$%^&* handsome, and %^&* he is a great man.")
+      getReadingTime(
+        "\n Hope ! is #$%^&* handsome, and %^&* he is a great man."
+      )
     ).toEqual({
       minutes: 0.03,
       words: 9,
     });
 
-    expect(readingTime("春眠^&*(不觉晓，处处闻!#$%啼鸟。")).toEqual({
+    expect(getReadingTime("春眠^&*(不觉晓，处处闻!#$%啼鸟。")).toEqual({
       minutes: 0.03,
       words: 10,
     });
 
     expect(
-      readingTime(
+      getReadingTime(
         "  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man."
       )
     ).toEqual({
@@ -49,7 +51,7 @@ describe("Reading Time Test", () => {
     });
 
     expect(
-      readingTime(
+      getReadingTime(
         "\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Hope is handsome, and he is a great man."
       )
     ).toEqual({
@@ -57,7 +59,7 @@ describe("Reading Time Test", () => {
       words: 133,
     });
 
-    expect(readingTime("")).toEqual({
+    expect(getReadingTime("")).toEqual({
       minutes: 0,
       words: 0,
     });
