@@ -16,7 +16,7 @@ export type ResolvedFeedOptionsMap = Record<string, ResolvedFeedOptions>;
 export const ensureHostName = (options: Partial<FeedOptions>): boolean => {
   // make sure hostname do not end with `/`
   if (options.hostname) {
-    options.hostname = options.hostname.replace(/\/?$/u, "");
+    options.hostname = options.hostname.replace(/\/$/u, "");
 
     return true;
   }

@@ -84,10 +84,7 @@ export const isUrl = (test: string): boolean => {
 export const isAbsoluteUrl = (test: string): boolean => test.startsWith("/");
 
 export const resolveUrl = (hostname: string, base = "", path = ""): string =>
-  `${hostname}${
-    // make sure base starts and ends with '/'
-    base.replace(/^\/?/u, "/").replace(/\/?$/u, "/")
-  }${
+  `${hostname}${base}${
     // make sure path does not start with '/'
     path.replace(/^\//u, "")
   }`;
