@@ -15260,7 +15260,7 @@ packages:
     resolution: {integrity: sha512-n+8lbukhrKrsI9H/EX0EBgkE1pn85LAQFvQ5dIvrZP4Kz6JxPOPPNTQmZMhahQV1tXbLZQCEN7A1WZH4x+arJQ==}
     hasBin: true
     peerDependencies:
-      chalk: ^2.0.0
+      chalk: ^2.0.0 || 4
       commander: ^2.0.0
       esm: ^3.0.0
     peerDependenciesMeta:

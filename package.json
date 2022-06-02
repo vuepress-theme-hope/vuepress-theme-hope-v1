@@ -113,6 +113,9 @@
   },
   "pnpm": {
     "peerDependencyRules": {
+      "allowedVersions": {
+        "chalk": "4"
+      },
       "ignoreMissing": [
         "chalk",
         "commander",
