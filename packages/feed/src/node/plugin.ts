@@ -10,7 +10,7 @@ import type { FeedOptions } from "../types";
 
 export const feedPlugin: Plugin<FeedOptions> = (options, context) => {
   const plugin: PluginOptionAPI = {
-    name: "vuepress-plugin-feed2",
+    name: "@mr-hope/vuepress-plugin-feed",
   };
 
   covertOptions(options as FeedOptions & Record<string, unknown>);

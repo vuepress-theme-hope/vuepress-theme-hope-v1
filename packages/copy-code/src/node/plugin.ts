@@ -15,7 +15,7 @@ export const copyCodePlugin: Plugin<CopyCodeOptions> = (options, context) => {
   delete options.locales;
 
   return {
-    name: "copy-code",
+    name: "@mr-hope/vuepress-plugin-copy-code",
 
     define: (): Record<string, unknown> => ({
       CODE_COPY_OPIONS: options,

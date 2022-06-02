@@ -25,8 +25,8 @@
  * © 2019 GitHub, Inc.
  */
 
-import { Message } from "./message";
 import Vue from "vue";
+import { Message } from "./message";
 import { CHECK_ICON, COPY_BUTTON, PURE_COPY_BUTTON } from "./utils";
 
 import "./style/code.styl";
