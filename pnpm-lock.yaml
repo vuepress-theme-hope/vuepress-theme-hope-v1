@@ -120,115 +120,141 @@ importers:
 
   docs/active-hash:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/add-this:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/comment:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/components:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/copy-code:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/feed:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/git:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/md-enhance:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/photo-swipe:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/pwa:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/reading-time:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/seo:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/sitemap:
     specifiers:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
   docs/theme:
     specifiers:
-      axios: 0.27.2
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: workspace:*
     devDependencies:
-      axios: 0.27.2
+      rimraf: 3.0.2
       vuepress: 1.9.7
       vuepress-theme-hope: link:../../packages/theme
 
@@ -4057,15 +4083,6 @@ packages:
     transitivePeerDependencies:
       - debug
     dev: false
-
-  /axios/0.27.2:
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
-    dependencies:
-      follow-redirects: 1.15.1
-      form-data: 4.0.0
-    transitivePeerDependencies:
-      - debug
-    dev: true
 
   /babel-loader/8.2.5_lzsemofhph6vepnub4bnemnm6m:
     resolution: {integrity: sha512-OSiFfH89LrEMiWd4pLNqGz4CwJDtbs2ZVc+iGu2HrkRfPxId9F2anQj38IxWpmRfsUY0aBZYi1EFcd3mhtRMLQ==}
@@ -8326,15 +8343,6 @@ packages:
       combined-stream: 1.0.8
       mime-types: 2.1.35
     dev: false
-
-  /form-data/4.0.0:
-    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
-    engines: {node: '>= 6'}
-    dependencies:
-      asynckit: 0.4.0
-      combined-stream: 1.0.8
-      mime-types: 2.1.35
-    dev: true
 
   /formidable/1.2.6:
     resolution: {integrity: sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==}
