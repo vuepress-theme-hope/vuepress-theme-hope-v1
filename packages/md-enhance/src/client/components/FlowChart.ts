@@ -1,7 +1,7 @@
 import Vue from "vue";
 import { debounce } from "ts-debounce";
-import Loading from "./icons/LoadingIcon.vue";
-import presets from "./presets";
+import Loading from "../icons/LoadingIcon.vue";
+import presets from "../flowchart-preset";
 
 import type { DebouncedFunction } from "ts-debounce";
 

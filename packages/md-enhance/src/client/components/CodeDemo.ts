@@ -9,15 +9,15 @@ import {
   loadNormal,
   loadReact,
   loadVue,
-} from "./utils";
+} from "../utils";
 
-import CodePenIcon from "./icons/CodePenIcon.vue";
-import JSFiddleIcon from "./icons/JSFiddleIcon.vue";
-import LoadingIcon from "./icons/LoadingIcon.vue";
+import CodePenIcon from "../icons/CodePenIcon.vue";
+import JSFiddleIcon from "../icons/JSFiddleIcon.vue";
+import LoadingIcon from "../icons/LoadingIcon.vue";
 
 import type { PropType } from "vue";
-import type { Code, CodeType } from "./utils";
-import type { CodeDemoOptions } from "../types";
+import type { Code, CodeType } from "../utils";
+import type { CodeDemoOptions } from "../../types";
 
 import "balloon-css/balloon.css";
 

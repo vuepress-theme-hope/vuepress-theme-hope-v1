@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Loading from "./icons/LoadingIcon.vue";
+import Loading from "../icons/LoadingIcon.vue";
 
 import type { RevealOptions } from "reveal.js";
 import type { PropType } from "vue";

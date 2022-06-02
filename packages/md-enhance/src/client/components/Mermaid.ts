@@ -1,9 +1,9 @@
 import Vue from "vue";
-import Loading from "./icons/LoadingIcon.vue";
+import Loading from "../icons/LoadingIcon.vue";
 
 import type mermaidAPI from "mermaid/mermaidAPI";
 
-import "./styles/mermaid.styl";
+import "../styles/mermaid.styl";
 
 const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
   return {

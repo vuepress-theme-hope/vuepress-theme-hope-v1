@@ -1,5 +1,5 @@
 import Vue from "vue";
-import LoadingIcon from "./icons/LoadingIcon.vue";
+import LoadingIcon from "../icons/LoadingIcon.vue";
 
 import type { ChartConfiguration } from "chart.js";
 import type { PropType } from "vue";

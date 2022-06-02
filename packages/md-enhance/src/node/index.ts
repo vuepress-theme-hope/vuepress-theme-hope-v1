@@ -77,25 +77,25 @@ const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (options, context) => {
 
     alias: {
       "@ChartJS": chartEnable
-        ? resolve(__dirname, "../client/ChartJS.vue")
+        ? resolve(__dirname, "../client/components/ChartJS.vue")
         : noopModule,
       "@CodeDemo": demoEnable
-        ? resolve(__dirname, "../client/CodeDemo.vue")
+        ? resolve(__dirname, "../client/components/CodeDemo.vue")
         : noopModule,
       "@CodeGroup": codegroupEnable
-        ? resolve(__dirname, "../client/CodeGroup.vue")
+        ? resolve(__dirname, "../client/components/CodeGroup.vue")
         : noopModule,
       "@CodeGroupItem": codegroupEnable
-        ? resolve(__dirname, "../client/CodeGroupItem.vue")
+        ? resolve(__dirname, "../client/components/CodeGroupItem.vue")
         : noopModule,
       "@FlowChart": flowchartEnable
-        ? resolve(__dirname, "../client/FlowChart.vue")
+        ? resolve(__dirname, "../client/components/FlowChart.vue")
         : noopModule,
       "@Mermaid": mermaidEnable
-        ? resolve(__dirname, "../client/Mermaid.js")
+        ? resolve(__dirname, "../client/components/Mermaid.js")
         : noopModule,
       "@Presentation": presentationEnable
-        ? resolve(__dirname, "../client/Presentation.vue")
+        ? resolve(__dirname, "../client/components/Presentation.vue")
         : noopModule,
     },
 
