@@ -25,7 +25,7 @@ const commentPlugin: Plugin<CommentOptions> = (options, context) => {
     covertWalineOptions(options as WalineOptions & Record<string, unknown>);
 
   const config: PluginOptionAPI = {
-    name: "comment",
+    name: "@mr-hope/vuepress-plugin-comment",
 
     define: (): Record<string, unknown> => ({
       COMMENT_OPTIONS: options,
