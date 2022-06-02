@@ -5,60 +5,101 @@ icon: config
 
 ## 插件选项
 
-### author
+### hostname
 
 - 类型: `string`
+- 必填: 是
+
+部署域名
+
+### author
+
+- 类型: `Author`
 - 必填: 否
 
 默认作者
 
-### twitterID
+```ts
+type AuthorInfo = {
+  name: string;
+  url?: string;
+};
+
+type Author = string | string[] | AuthorInfo | AuthorInfo[];
+```
+
+### autoDescription
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否自动生成描述
+
+## canonical
+
+- 类型: `string | ((page: Page) => string | null)`
+- 必填: 否
+
+首选连接
+
+### fallBackImage
 
 - 类型: `string`
 - 必填: 否
 
-填入你的 twitter 用户名
+当找不到图片时的回退图片链接
 
 ### restrictions
 
 - 类型: `string`
 - 必填: 否
 
-内容的年龄分级，格式为 `[int]+`，如 `'13+'`
+内容的年龄分级，格式为 `[int]+`，如 `"13+"`
+
+### twitterID
+
+- 类型: `string`
+- 必填: 否
+
+你的 twitter 用户名
+
+### isArticle
+
+- 类型: `(page: Page) => boolean`
+- 必填: 否
+
+你可以使用此选项判断一个页面是否是文章。
 
 ### seo
 
-- 类型: `(info: PageSeoInfo) => Record<string, string>`
+- 类型:
 
-你可以使用此选项来注入新的或覆盖掉默认生成的 SEO，你需要按照 `<property>: <content>` 的格式来返回一个对象。
+  ```ts
+  function seo(
+    ogp: SeoContent,
+    page: Page,
+    context: Context
+  ) => SeoContent;
+  ```
+
+- 必填: 否
+
+自定义 OGP 生成器
+
+你可以使用此选项来注入新的或覆盖掉默认生成的 OGP 标签。
 
 ### customMeta
 
-- 类型: `(meta: Meta[], info: PageSeoInfo) => void`
-
-你可以使用此选项来直接注入任意格式的 `<meta>` 标签到 `<head>`。
-
-## 相关接口
-
-- `PageSeoInfo` 的接口类型如下:
+- 类型:
 
   ```ts
-  interface PageSeoInfo {
-    /** 页面对象 */
-    page: Page;
-    /** 站点对象 */
-    site: SiteConfig;
-    /** 主题配置 */
-    themeConfig: ThemeConfig;
-    /** 支持的多语言 */
-    locales: string[];
-    /** 当前页面地址 */
-    path: string;
-  }
+  function customMeta(
+    meta: Meta,
+    page: Page,
+    context: Context
+  ) => void
   ```
 
-- `Meta` 的接口类型为 `Record<"content" | "name" | "charset" | "http-equiv", string>`
+- 必填: 否
 
-  `Meta` 对象的键会渲染为 meta 标签的属性，值会渲染为对应属性的值。
-
-  详情请见 [Frontmatter → Meta](https://v1.vuepress.vuejs.org/zh/guide/frontmatter.html#meta)
+你可以使用此选项来直接注入 meta 标签到 `<head>`。

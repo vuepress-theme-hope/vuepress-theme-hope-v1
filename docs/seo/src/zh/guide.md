@@ -3,37 +3,37 @@ title: 指南
 icon: guide
 ---
 
-本插件会通过注入 `<meta>` 标签，以增强网站搜索引擎优化性。
+本插件会通过向网站 `<head>` 注入 `<meta>` 标签，让你的网站完全支持 [开放内容协议 OGP](https://ogp.me/) 以增强站点的搜索引擎优化性。
 
 ## 开箱即用
 
-插件开箱即用，在不做任何配置的情况下，会尽可能通过页面内容，提取对应的信息生成 `<meta>` 标签。
+插件开箱即用，在不做任何配置的情况下，会尽可能通过页面内容，提取对应的信息补全 OGP 所需的必要标签。
 
-默认情况下，插件会读取站点配置、主题配置与页面的 frontmatter 来尽可能自动为生成 `<meta>` 标签。诸如站点名称，页面标题，页面类型，写作日期，最后更新日期，文章标签均会自动生成。
+默认情况下，插件会读取站点配置、主题配置与页面的 frontmatter 来尽可能自动生成。诸如站点名称，页面标题，页面类型，写作日期，最后更新日期，文章标签均会自动生成。
 
-以下是会被默认注入到 `<head>` 中的 `<meta>` 标签及其值:
+### 默认的 OGP 生成逻辑
 
-|         属性名称         |                                        值                                        |
-| :----------------------: | :------------------------------------------------------------------------------: |
-|         `og:url`         |                         `themeConfig.hostname` + `path`                          |
-|      `og:site_name`      |                                  `$site.title`                                   |
-|        `og:title`        |                                   `page.title`                                   |
-|     `og:description`     |                          `page.frontmatter.description`                          |
-|        `og:type`         |                                   `'article'`                                    |
-|        `og:image`        |                `themeConfig.hostname` + `page.frontmatter.image`                 |
-|    `og:updated_time`     |                              `page.updateTimeStamp`                              |
-|       `og:locale`        |                              `page._computed.$lang`                              |
-|  `og:locale:alternate`   |                      `$themeConfig.locales` 包含的其他语言                       |
-|      `twitter:card`      |                             `'summary_large_image'`                              |
-|   `twitter:image:alt`    |                                  `$site.title`                                   |
-|     `article:author`     |               `page.frontmatter.author` \|\| `themeConfig.author`                |
-|      `article:tag`       |               `page.frontmatter.tags` \|\| `page.frontmatter.tag`                |
-| `article:published_time` | `page.frontmatter.time` \|\| `page.frontmatter.date` \|\| `page.createTimeStamp` |
-| `article:modified_time`  |                              `page.updateTimeStamp`                              |
+|         属性名称         |                                                 值                                                 |
+| :----------------------: | :------------------------------------------------------------------------------------------------: |
+|         `og:url`         |                                    `options.hostname` + `path`                                     |
+|      `og:site_name`      |                                         `siteConfig.title`                                         |
+|        `og:title`        |                                            `page.title`                                            |
+|     `og:description`     |    `page.frontmatter.description` \|\| 自动生成 (当插件选项中的 `autoDescription` 为 `true` 时)    |
+|        `og:type`         |                                            `"article"`                                             |
+|        `og:image`        | `options.hostname` + `page.frontmatter.image` \|\| 页面的第一张图片\|\| 插件选项的 `fallbackImage` |
+|    `og:updated_time`     |                                       `page.git.updatedTime`                                       |
+|       `og:locale`        |                                            `page.lang`                                             |
+|  `og:locale:alternate`   |                                 `siteData.locales` 包含的其他语言                                  |
+|      `twitter:card`      |                              `"summary_large_image"` (仅在找到图片时)                              |
+|   `twitter:image:alt`    |                                   `page.title` (仅在找到图片时)                                    |
+|     `article:author`     |                          `page.frontmatter.author` \|\| `options.author`                           |
+|      `article:tag`       |                        `page.frontmatter.tags` \|\| `page.frontmatter.tag`                         |
+| `article:published_time` |                        `page.frontmatter.date` \|\| `page.git.createdTime`                         |
+| `article:modified_time`  |                                       `page.git.updatedTime`                                       |
 
-## 自由定制
+## 直接添加 meta 标签
 
-你可以在页面的 frontmatter 中配置 `meta` 选项，自主定制特定页面用于 SEO 的 `<meta>` 标签内容。
+你可以在页面的 frontmatter 中配置 `meta` 选项，自主添加特定 Meta 标签到页面 `<head>` 以增强 SEO。
 
 如:
 
@@ -49,57 +49,63 @@ meta:
 
 ## 自定义生成过程
 
-本插件也支持你完全控制 `<meta>` 标签的生成逻辑。
+本插件也支持你完全控制生成逻辑。
+
+### 页面类型
+
+对于大多数页面，基本只有文章和网页两种类型，所以插件提供了 `isArticle` 选项让你提供辨别文章的逻辑。
+
+选项接受一个 `(page: Page) => boolean` 格式的函数，默认情况下从 Markdown 文件生成的非主页页面都会被视为文章。
+
+::: note
+
+如果某个网页的确符合图书、音乐之类的“冷门”类型，你可以通过设置下方三个选项处理它们。
+
+:::
 
 ### seo
 
-你可以使用插件选项的 `seo` 传入一个函数来注入新的 `<meta>` 标签或覆盖掉 [开箱即用](#开箱即用) 部分的默认生成内容。你需要按照 `<property>: <content>` 的格式来返回一个对象。
-
-比如你返回了 `{ 'og:url': 'google.com', 'og:image': 'google.com/logo.jpg' }`，则插件会注入以下内容到 `<head>` 中:
-
-```html
-<meta property="og:url" content="google.com" />
-<meta property="og:image" content="google.com/logo.jpg" />
-```
-
-### customMeta
-
-当你需要注入的 `<meta>` 没有使用 `property` 和 `content`，或者你想要移除已有的 meta，你可以向插件选项 `customMeta` 传入一个自定义生成函数，完全定制 `<meta>` 标签。
-
-`customMeta` 的结构为 `(meta: Meta[], info: PageSeoInfo) => void`
-
-`PageSeoInfo` 的结构如下:
+你可以使用插件选项的 `seo` 传入一个函数来按照你的需要修改默认 OGP 对象并返回。
 
 ```ts
-interface PageSeoInfo {
-  /** 当前页面对象 */
-  page: Page;
-  /** Vuepress 配置  */
-  site: SiteConfig;
-  /** 主题配置 */
-  themeConfig: ThemeConfig | Record<string, never>;
-  /** 站点支持的语言 */
-  locale: string[];
-  /** 当前页面路径 */
-  path: string;
-}
+function seo(
+  /** 插件自动推断的 OGP 对象 */
+  ogp: SeoContent,
+  /** 页面对象 */
+  page: Page,
+  /** VuePress Context */
+  context: Context
+): SeoContent;
 ```
 
-`Meta` 的类型为 `Record<"content" | "name" | "charset" | "http-equiv", string>`，对象的键会渲染为 `<meta>` 标签的属性，值会渲染为对应属性的值。
+详细的参数结构详见 [配置](./config.md)。
 
-比如:
+比如你在使用某个第三方主题，并按照主题要求为每篇文章在 Front Matter 中设置了 `banner`，那你可以传入这样的 `seo`:
 
-```js
-(meta: Meta, info: PageSeoInfo) => {
-  const index = meta.findIndex((item) => item.property === "og:type");
-
-  if (index !== -1) meta.splice(index, 1);
-
-  meta.push({ a: "1", b: "2" });
-};
+```ts
+({
+  seo: (ogp, page) => ({
+    ...ogp,
+    "og:image": page.frontmatter.banner || ogp["og:image"],
+  }),
+});
 ```
 
-会向当前页面的 `<head>` 注入 `<meta a="1" b="2" />`，并移除任何已存在的 `<meta property="og:type" />`。
+### 自定义 meta 标签
+
+有些时候你可能需要符合其他协议或按照其他搜索引擎提供的格式提供对应的 SEO 标签，此时你可以使用 `customMeta` 选项，其类型为:
+
+```ts
+function customMeta(
+  meta: Meta,
+  /** 页面对象 */
+  page: Page,
+  /** VuePress Context */
+  context: Context
+): void;
+```
+
+你应该直接修改传入的 `meta` 参数。
 
 ## SEO 介绍
 

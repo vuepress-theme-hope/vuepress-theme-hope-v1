@@ -5,60 +5,85 @@ icon: config
 
 ## Plugin Options
 
+### hostname
+
+- Type: `string`
+- Required: No
+
+Deploy hostname.
+
 ### author
 
 - Type: `string`
 - Required: No
 
-Default author
+Default author.
 
-### twitterID
+### autoDescription
+
+- Type: `boolean`
+- Default: `true`
+
+Whether generate description automatically
+
+### fallBackImage
 
 - Type: `string`
 - Required: No
 
-Fill in your twitter username
+Fallback Image link when no image are found
 
 ### restrictions
 
 - Type: `string`
 - Required: No
 
-The age rating of the content, the format is `[int]+`, such as `'13+'`
+The age rating of the content, the format is `[int]+`, such as `"13+"`.
+
+### twitterID
+
+- Type: `string`
+- Required: No
+
+Fill in your twitter username.
+
+### isArticle
+
+- Type: `(page: Page) => boolean`
+- Required: No
+
+Use this option to judge whether the page is an article.
 
 ### seo
 
-- Type: `(info: PageSeoInfo) => Record<string, string>`
+- Type:
 
-You can use this option to inject new or overwrite the default generated SEO, you need to return an object in the format of `<property>: <content>`.
+  ```ts
+  function seo(
+    seo: SeoContent,
+    page: Page,
+    context: Context
+  ) => SeoContent;
+  ```
+
+- Required: No
+
+Custom SEO Generator.
+
+You can use this options to edit SEO tags.
 
 ### customMeta
 
-- Type: `(meta: Meta[], info: PageSeoInfo) => void`
-
-You can use this option to directly inject any format of `<meta>` tags into `<head>`.
-
-## Related interface
-
-- Interface of `PageSeoInfo`:
+- Type:
 
   ```ts
-  interface PageSeoInfo {
-    /** Current Page Object */
-    page: Page;
-    /** Vuepress Config  */
-    site: SiteConfig;
-    /** Current ThemeConfig */
-    themeConfig: ThemeConfig | Record<string, never>;
-    /** langs which are supported */
-    locale: string[];
-    /** Current page path */
-    path: string;
-  }
+  function customHead(
+    meta: Meta,
+    page: Page,
+    context: Context
+  ) => void
   ```
 
-- The interface of `Meta` is `Record<"content" | "name" | "charset" | "http-equiv", string>`
+- Required: No
 
-  The key of the `Meta` object will be rendered as the attribute of the meta tag, and the value will be rendered as the value of the corresponding attribute.
-
-  For details, please see [Frontmatter → Meta](https://v1.vuepress.vuejs.org/guide/frontmatter.html#meta)
+You can use this options to edit meta tags injected to `<head>`.
