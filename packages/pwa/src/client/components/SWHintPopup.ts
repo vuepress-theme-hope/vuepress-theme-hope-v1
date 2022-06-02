@@ -1,5 +1,5 @@
 import Vue from "vue";
-import UpdateIcon from "./icon/UpdateIcon.vue";
+import UpdateIcon from "./icons/UpdateIcon.vue";
 import { locales } from "../define";
 import { event } from "../utils";
 
