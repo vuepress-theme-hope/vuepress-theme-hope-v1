@@ -654,13 +654,13 @@ declare module "reveal.js" {
     addEventListener(
       type: string,
       listener: () => void,
-      useCapture: boolean
+      useCapture?: boolean
     ): void;
 
     removeEventListener(
       type: string,
       listener: () => void,
-      useCapture: boolean
+      useCapture?: boolean
     ): void;
 
     /**

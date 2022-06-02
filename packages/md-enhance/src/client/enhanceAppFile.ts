@@ -23,7 +23,12 @@ const enhanceApp: EnhanceApp = ({ Vue }) => {
 
   if (Mermaid.name) Vue.component("Mermaid", Mermaid);
 
-  if (Presentation.name) Vue.component("Presentation", Presentation);
+  if (Presentation.name) {
+    Vue.component("Presentation", Presentation);
+
+    if (REVEAL_CONFIG.plugins?.includes("chalkboard"))
+      void import("@mr-hope/vuepress-shared-utils/styles/font-awesome.styl");
+  }
 
   if (MARKDOWN_ENHANCE_TASKLIST) void import("./styles/tasklist.styl");
 
