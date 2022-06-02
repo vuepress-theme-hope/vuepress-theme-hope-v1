@@ -51,8 +51,8 @@ export const getFeedOptions = (
           !(
             frontmatter["home"] ||
             !_filePath ||
-            frontmatter.article === false ||
-            frontmatter.feed === false
+            frontmatter["article"] === false ||
+            frontmatter["feed"] === false
           ),
         sorter: (pageA: Page, pageB: Page): number =>
           compareDate(
@@ -66,7 +66,7 @@ export const getFeedOptions = (
         ...options,
         ...options.locales?.[localePath],
 
-        // make sure hostname is not been overided
+        // make sure hostname is not been overrided
         hostname: options.hostname,
       } as ResolvedFeedOptions,
     ])
@@ -77,11 +77,11 @@ export const getFeedChannelOption = (
   options: FeedOptions,
   localePath = ""
 ): FeedChannelOption => {
-  const { hostname, icon, image } = options;
   const {
     base,
     siteConfig: { title, description, locales = {} },
   } = context;
+  const { hostname, icon, image } = options;
   const author = options.channel?.author?.name;
 
   const defaultChannelOpion: FeedChannelOption = {

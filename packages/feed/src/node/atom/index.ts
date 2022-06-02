@@ -11,7 +11,7 @@ import type {
 } from "./typings";
 
 const genAuthororContributor = (author: FeedAuthor): AtomAuthor => {
-  const { name = "", email, url } = author;
+  const { name = "Unknown", email, url } = author;
 
   return {
     name,
@@ -125,20 +125,17 @@ export const renderAtom = (feed: Feed): string => {
       };
 
     // author(s)
-    if (Array.isArray(item.author))
+    if (item.author)
       entry.author = item.author
         .filter((author) => author.name)
         .map((author) => genAuthororContributor(author));
-    else if (item.author && item.author.name)
-      entry.author = [genAuthororContributor(item.author)];
 
-    if (Array.isArray(item.category))
+    if (item.category)
       // category
       entry.category = item.category.map((category) => genCategory(category));
-    else if (item.category) entry.category = [genCategory(item.category)];
 
     // contributor
-    if (Array.isArray(item.contributor))
+    if (item.contributor)
       entry.contributor = item.contributor.map((contributor) =>
         genAuthororContributor(contributor)
       );

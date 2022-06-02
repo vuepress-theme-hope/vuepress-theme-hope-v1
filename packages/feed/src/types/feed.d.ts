@@ -192,7 +192,7 @@ export interface FeedGetter {
    *
    * 项目描述获取器
    */
-  description?: (page: Page) => string | undefined;
+  description?: (page: Page) => string | null;
 
   /**
    * Item content getter
@@ -217,21 +217,21 @@ export interface FeedGetter {
    *
    * 项目分类获取器
    */
-  category?: (page: Page) => FeedCategory[] | undefined;
+  category?: (page: Page) => FeedCategory[] | null;
 
   /**
    * Item enclosure getter
    *
    * 项目附件获取器
    */
-  enclosure?: (page: Page) => FeedEnclosure | undefined;
+  enclosure?: (page: Page) => FeedEnclosure | null;
 
   /**
    * Item publish date getter
    *
    * 项目发布日期获取器
    */
-  publishDate?: (page: Page) => Date | undefined;
+  publishDate?: (page: Page) => Date | null;
 
   /**
    * Item last update date getter
@@ -259,5 +259,5 @@ export interface FeedGetter {
    *
    * 项目版权获取器
    */
-  copyright?: (page: Page) => string | undefined;
+  copyright?: (page: Page) => string | null;
 }

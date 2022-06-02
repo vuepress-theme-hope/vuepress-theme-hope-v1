@@ -38,8 +38,8 @@ export const resolveHTML = (
     .replace(/<a href="#.*?">.*?<\/a>/gu, "")
     // remove html comment
     .replace(/(<!--.*?--!?>)|(<!--[\S\s]+?--!?>)|(<!--[\S\s]*?$)/gu, "")
-    // remove OutboundLink
-    .replace(/<OutboundLink ?\/>/gu, "")
+    // remove ExternalLinkIcon
+    .replace(/<ExternalLinkIcon ?\/>/gu, "")
     // resolve RouterLink
     .replace(
       /<RouterLink to="(.*?)">(.*?)<\/RouterLink>/gu,

@@ -9,46 +9,51 @@ export const injectLinkstoHead = (
   options: ResolvedFeedOptionsMap
 ): void => {
   const { base, siteConfig } = context;
+  const localePaths = Object.keys(options);
 
-  const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
-    getFilename(options["/"]);
+  // there is only one language, so we append it to siteData
+  if (localePaths.length === 1) {
+    const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
+      getFilename(options["/"]);
+    const { atom, json, rss, hostname } = options["/"];
 
-  const getHeadItem = (
-    name: string,
-    fileName: string,
-    type: string
-  ): HeadItem => {
-    return [
-      "link",
-      {
-        rel: "alternate",
-        type,
-        href: resolveUrl(options["/"].hostname, base, fileName),
-        title: `${
-          siteConfig.title || siteConfig.locales?.["/"]?.title || ""
-        } ${name} Feed`,
-      },
-    ];
-  };
+    const getHeadItem = (
+      name: string,
+      fileName: string,
+      type: string
+    ): HeadItem => {
+      return [
+        "link",
+        {
+          rel: "alternate",
+          type,
+          href: resolveUrl(hostname, base, fileName),
+          title: `${
+            siteConfig.title || siteConfig.locales?.["/"]?.title || ""
+          } ${name} Feed`,
+        },
+      ];
+    };
 
-  // ensure head exists
-  if (!siteConfig.head) siteConfig.head = [];
+    // ensure head exists
+    if (!siteConfig.head) siteConfig.head = [];
 
-  // add atom link
-  if (options["atom"])
-    siteConfig.head.push(
-      getHeadItem("Atom", atomOutputFilename, "application/atom+xml")
-    );
+    // add atom link
+    if (atom)
+      siteConfig.head.push(
+        getHeadItem("Atom", atomOutputFilename, "application/atom+xml")
+      );
 
-  // add json link
-  if (options["json"])
-    siteConfig.head.push(
-      getHeadItem("JSON", jsonOutputFilename, "application/json")
-    );
+    // add json link
+    if (json)
+      siteConfig.head.push(
+        getHeadItem("JSON", jsonOutputFilename, "application/json")
+      );
 
-  // add rss link
-  if (options["rss"])
-    siteConfig.head.push(
-      getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
-    );
+    // add rss link
+    if (rss)
+      siteConfig.head.push(
+        getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
+      );
+  }
 };

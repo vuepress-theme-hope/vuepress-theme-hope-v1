@@ -1,3 +1,4 @@
+import type { BasePageFrontMatter } from "vuepress-shared";
 import type { FeedAuthor, FeedContributor, FeedCategory } from "./feed";
 
 export interface FeedFrontmatterOption {
@@ -32,7 +33,14 @@ export interface FeedFrontmatterOption {
   category?: FeedCategory[] | FeedCategory;
 
   /**
-   * @desciption guid should be unique gloably
+   * @description guid should be unique gloably
    */
   guid?: string;
+}
+
+export interface FeedPluginFrontmatter extends BasePageFrontMatter {
+  /**
+   * Feed plugin options
+   */
+  feed?: FeedFrontmatterOption | false;
 }
