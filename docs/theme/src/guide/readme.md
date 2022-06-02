@@ -8,7 +8,7 @@ tags:
 
 ::: tip
 
-If you met a bug while using, you can open an issue [here](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)
+If you met a bug while using, you can open an issue [here](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues)
 
 :::
 

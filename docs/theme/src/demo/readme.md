@@ -12,7 +12,7 @@ category: demo
 ## vuepress-theme-hope
 
 - [Link][vuepress-theme-hope]
-- [Source](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/docs/theme)
+- [Source](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/tree/main/docs/theme)
 
 ## Hope Studio
 

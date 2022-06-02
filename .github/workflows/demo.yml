@@ -1,9 +1,9 @@
-name: Deploy V1 Theme Demo
+name: Deploy Theme Demo
 
 on:
   push:
     branches:
-      - v1
+      - main
 
 jobs:
   theme-demo:

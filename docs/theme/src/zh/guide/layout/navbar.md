@@ -266,7 +266,7 @@ export default theme.config({
         items: [
           {
             text: "更新日志",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
           },
           {
             text: "项目地址",
@@ -350,7 +350,7 @@ module.exports = config({
         items: [
           {
             text: "更新日志",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
           },
           {
             text: "项目地址",
@@ -827,7 +827,7 @@ export default theme.config({
         items: [
           {
             text: "更新日志",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
           },
           {
             text: "项目地址",
@@ -923,7 +923,7 @@ module.exports = config({
         items: [
           {
             text: "更新日志",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
           },
           {
             text: "项目地址",

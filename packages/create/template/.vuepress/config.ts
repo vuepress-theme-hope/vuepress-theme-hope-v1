@@ -21,7 +21,7 @@ export default hope.config({
     hostname: "https://vuepress-theme-hope-demo.mrhope.site",
 
     author: "Mr.Hope",
-    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1",
 
     nav: [
       { text: "Blog Home", link: "/", icon: "home" },

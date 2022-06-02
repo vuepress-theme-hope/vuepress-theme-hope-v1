@@ -37,9 +37,8 @@ export default hope.config({
     hostname,
 
     author: "Mr.Hope",
-    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1",
     repoDisplay: false,
-    docsBranch: "v1",
     docsDir: "docs/theme/src",
 
     nav: navBarConfig.en,

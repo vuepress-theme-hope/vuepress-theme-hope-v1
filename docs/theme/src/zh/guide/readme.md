@@ -8,7 +8,7 @@ tags:
 
 ::: tip
 
-如果你在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 或者 [加入 QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555) 进行反馈。
+如果你在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues) 或者 [加入 QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555) 进行反馈。
 
 :::
 

@@ -8,7 +8,7 @@ category: FAQ
 
 If you ran into some issues, please make sure you are in the lastest version and tried removing `node_modules` folder then a clean install.
 
-If the issue exists or there is somthing you don’t know how to solve, welcome to [open a dicussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new). Questions are always welcome, no matter **they are simple or not**. You only need to make sure two points:
+If the issue exists or there is somthing you don’t know how to solve, welcome to [open a dicussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/discussions/new). Questions are always welcome, no matter **they are simple or not**. You only need to make sure two points:
 
 1. You have tried searching related docs through search box.
 

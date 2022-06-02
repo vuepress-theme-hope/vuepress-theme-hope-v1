@@ -74,4 +74,4 @@ You can view [Config of this site][docs-config] as an example.
 
 :::
 
-[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.ts
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/docs/theme/src/.vuepress/config.ts

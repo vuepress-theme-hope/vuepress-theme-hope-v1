@@ -9,7 +9,7 @@ tags:
 
 ::::: tip
 
-You can view [Config of this site][docs-config] as an example, and you can directly view [Type Declaration file](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/theme/types/theme/) in the source code.
+You can view [Config of this site][docs-config] as an example, and you can directly view [Type Declaration file](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/packages/theme/types/theme/) in the source code.
 
 Besides, we also provide a `themeConfig` helper function, which you can import to provide automatic completion and verification:
 
@@ -105,4 +105,4 @@ The multi-language configuration of the theme mainly needs to configure `nav` an
 
 - [**Theme Appearance Config**](apperance.md)
 
-[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.ts
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/docs/theme/src/.vuepress/config.ts

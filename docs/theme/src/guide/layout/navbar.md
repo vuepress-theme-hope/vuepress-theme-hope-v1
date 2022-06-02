@@ -266,7 +266,7 @@ export default theme.config({
         items: [
           {
             text: "Changelog",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
           },
           {
             text: "Repo",
@@ -350,7 +350,7 @@ module.exports = config({
         items: [
           {
             text: "Changelog",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
           },
           {
             text: "Repo",
@@ -836,7 +836,7 @@ export default theme.config({
         items: [
           {
             text: "Changelog",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
           },
           {
             text: "Repo",
@@ -932,7 +932,7 @@ module.exports = config({
         items: [
           {
             text: "Changelog",
-            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+            link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
           },
           {
             text: "Repo",

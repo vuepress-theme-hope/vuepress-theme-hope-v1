@@ -24,9 +24,9 @@ files.forEach((pkgName) => {
         "vuepress-theme-hope",
         "mr-hope",
       ],
-      homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/${pkgName}#readme`,
+      homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/tree/main/packages/${pkgName}#readme`,
       bugs: {
-        url: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues",
+        url: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues",
       },
       repository: {
         type: "git",

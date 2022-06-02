@@ -12,7 +12,7 @@ category: FAQ
 
 请确保你使用的是最新版本主题，之后在禁用缓存的情况下重新运行开发服务器: `vuepress dev <你的文档地址> --no-cache`。
 
-如果问题依然存在，请在 GitHub 上 [提一个 Issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose)，并完整粘贴运行 `vuepress dev <你的文档地址> --debug` 时终端输出的内容，如果你的内容与页面显示相关，请一并附上相应的截图。
+如果问题依然存在，请在 GitHub 上 [提一个 Issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues/new/choose)，并完整粘贴运行 `vuepress dev <你的文档地址> --debug` 时终端输出的内容，如果你的内容与页面显示相关，请一并附上相应的截图。
 
 ## `warning Overiding existing page xxx`
 

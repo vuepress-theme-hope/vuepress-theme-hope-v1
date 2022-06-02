@@ -145,7 +145,7 @@ If the following fields are not set, they will try to fallback to the following 
 | orientation                 | `'portrait-primary'`                                                                                   |
 | prefer_related_applications | `false`                                                                                                |
 
-For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/pwa/src/types/manifest.d.ts)
+For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/packages/pwa/src/types/manifest.d.ts)
 
 ### Manual configuration
 

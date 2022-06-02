@@ -17,7 +17,7 @@ category: demo
 ## vuepress-theme-hope 文档
 
 - [项目地址][vuepress-theme-hope]
-- [项目文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/docs/theme)
+- [项目文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/tree/main/docs/theme)
 
 ## Docker 从入门到实践
 

@@ -27,7 +27,6 @@ export default hope.config({
 
     author: "Mr.Hope",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hopeeme-hope",
-    docsBranch: "v1",
     docsDir: "docs/pwa/src",
 
     nav: [

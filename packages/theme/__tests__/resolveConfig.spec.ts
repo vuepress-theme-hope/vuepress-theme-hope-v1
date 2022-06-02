@@ -24,7 +24,7 @@ describe("Test resolveTheme function", () => {
       hostname: "https://vuepress-theme-hope.github.io",
 
       author: "Mr.Hope",
-      repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+      repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1",
       repoDisplay: false,
       docsDir: "docs/theme/src",
 
@@ -46,7 +46,7 @@ describe("Test resolveTheme function", () => {
         },
         {
           text: "Changelog",
-          link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+          link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
         },
       ],
       sidebar: {
@@ -135,7 +135,7 @@ describe("Test resolveTheme function", () => {
             },
             {
               text: "更新日志",
-              link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/CHANGELOG.md",
+              link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
             },
           ],
           sidebar: {

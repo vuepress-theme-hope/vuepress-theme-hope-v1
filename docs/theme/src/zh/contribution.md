@@ -121,7 +121,7 @@ yarn
   └── types → 需要导出的类型定义
 ```
 
-由于 VuePress@v1 要求客户端以 `module.exports` 的形式导出插件 API，所以我们无法在插件入口文件导出其他类型。类型定义指向 `lib/types`。
+由于 VuePress1 要求客户端以 `module.exports` 的形式导出插件 API，所以我们无法在插件入口文件导出其他类型。类型定义指向 `lib/types`。
 
 另外由于客户端一侧使用 ES Module (import/export)，而 Node.js 端一侧使用 commonjs (require/exports)，不能交叉引用 node 和 client 文件夹内的代码。
 

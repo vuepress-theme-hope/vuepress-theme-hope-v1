@@ -9,7 +9,7 @@ tags:
 
 ::: tip
 
-你可以查看 [本文档的配置][docs-config] 作为案例，你也可以直接查看源代码中的 [types 文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/packages/theme/types/theme/)
+你可以查看 [本文档的配置][docs-config] 作为案例，你也可以直接查看源代码中的 [types 文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/packages/theme/types/theme/)
 
 另外我们还提供了 `themeConfig` Helper 函数，你可以引入它来提供自动补全和校验:
 
@@ -82,4 +82,4 @@ SideBarItem 新增
 
 - [**主题外观配置**](apperance.md)
 
-[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.ts
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/docs/theme/src/.vuepress/config.ts

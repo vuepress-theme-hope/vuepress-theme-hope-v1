@@ -1,12 +1,12 @@
-name: Test V1 Theme
+name: Test Theme
 
 on:
   push:
     branches:
-      - v1
+      - main
   pull_request:
     branches:
-      - v1
+      - main
 
 jobs:
   test-theme:
@@ -41,7 +41,7 @@ jobs:
         run: pnpm run test
 
       - name: Upload coverage
-        if: github.ref == 'refs/heads/v1'
+        if: github.ref == 'refs/heads/main'
         uses: codecov/codecov-action@v3
 
       - uses: actions/setup-node@v3

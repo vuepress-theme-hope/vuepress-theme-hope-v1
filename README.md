@@ -6,8 +6,8 @@
 <h4 align="center">A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题✨</h4>
 
 [![Author: Mr.Hope](https://img.shields.io/badge/作者-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
-[![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/LICENSE)
-[![Open in Visual Studio Code](https://img.shields.io/badge/-open%20in%20vscode-blue?style=for-the-badge&logo=visualstudiocode)](https://open.vscode.dev/vuepress-theme-hope/vuepress-theme-hope/tree/v1)
+[![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/LICENSE)
+[![Open in Visual Studio Code](https://img.shields.io/badge/-open%20in%20vscode-blue?style=for-the-badge&logo=visualstudiocode)](https://open.vscode.dev/vuepress-theme-hope/vuepress-theme-hope-v1)
 
 <!-- markdownlint-restore -->
 
@@ -15,10 +15,13 @@
 
 [![opencollective](https://opencollective.com/vuepress-theme-hope/tiers/badge.svg)](https://opencollective.com/vuepress-theme-hope)
 
-[![DeepScan grade](https://deepscan.io/api/teams/9792/projects/17544/branches/405514/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9792&pid=17544&bid=405514)
-![CodeQL](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/codeql-analysis.yml/badge.svg)
-[![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/v1/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
-![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/v1-test.yml/badge.svg)
+<!-- [![DeepScan grade](https://deepscan.io/api/teams/9792/projects/17544/branches/405514/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9792&pid=17544&bid=405514) -->
+
+![CodeQL](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/actions/workflows/codeql-analysis.yml/badge.svg)
+
+<!-- [![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope-v1/branch/main/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope-v1) -->
+
+![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/actions/workflows/test.yml/badge.svg)
 
 A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
 
@@ -36,11 +39,11 @@ V1 开发目前已经终止，并仅提供有限的支持，建议尽快迁移�
 
 ## Contact
 
-We recommend you to contact using [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) and [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions), but you are welcome to join our [telegram group!](https://t.me/vuepressthemehope).
+We recommend you to contact using [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues) and [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/discussions), but you are welcome to join our [telegram group!](https://t.me/vuepressthemehope).
 
 ## 联系
 
-我们建议你使用 [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 和 [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions) 联系，但也欢迎你加入我们的 [QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
+我们建议你使用 [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues) 和 [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/discussions) 联系，但也欢迎你加入我们的 [QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
 。
 
 ## Gitee 镜像

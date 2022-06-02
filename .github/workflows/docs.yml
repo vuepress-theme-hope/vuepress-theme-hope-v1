@@ -1,4 +1,4 @@
-name: Deploy V2 Docs
+name: Deploy Docs
 
 on:
   push:
@@ -7,7 +7,6 @@ on:
 
 jobs:
   deploy-gh-pages:
-    name: Deploy V2 docs to gh pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,40 +27,36 @@ jobs:
           cache: pnpm
 
       - name: Build project
-        env:
-          NODE_OPTIONS: --max_old_space_size=4096
         run: pnpm run build
 
-      - name: Docs build
+      - name: Build Docs
         env:
-          BASE: /v2/
+          BASE: /v1/
           HOSTNAME: https://vuepress-theme-hope.github.io/
           NODE_OPTIONS: --max_old_space_size=4096
-        run: pnpm run docs:vite-build
+        run: pnpm run docs:build
 
       - name: Combine output
         run: |
-          pnpm cpx "docs/blog2/dist/**" dist/blog
-          pnpm cpx "docs/comment2/dist/**" dist/comment
+          pnpm cpx "docs/theme/dist/**" dist
+          pnpm cpx "docs/active-hash/dist/**" dist/active-hash
+          pnpm cpx "docs/add-this/dist/**" dist/add-this
+          pnpm cpx "docs/comment/dist/**" dist/comment
           pnpm cpx "docs/components/dist/**" dist/components
-          pnpm cpx "docs/copy-code2/dist/**" dist/copy-code
-          pnpm cpx "docs/copyright2/dist/**" dist/copyright
-          pnpm cpx "docs/feed2/dist/**" dist/feed
-          pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
+          pnpm cpx "docs/copy-code/dist/**" dist/copy-code
+          pnpm cpx "docs/feed/dist/**" dist/feed
+          pnpm cpx "docs/git/dist/**" dist/git
           pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
           pnpm cpx "docs/photo-swipe/dist/**" dist/photo-swipe
-          pnpm cpx "docs/pwa2/dist/**" dist/pwa
-          pnpm cpx "docs/reading-time2/dist/**" dist/reading-time
-          pnpm cpx "docs/redirect/dist/**" dist/redirect
-          pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
-          pnpm cpx "docs/seo2/dist/**" dist/seo
-          pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
-          pnpm cpx "docs/theme/dist/**" dist
+          pnpm cpx "docs/pwa/dist/**" dist/pwa
+          pnpm cpx "docs/reading-time/dist/**" dist/reading-time
+          pnpm cpx "docs/seo/dist/**" dist/seo
+          pnpm cpx "docs/sitemap/dist/**" dist/sitemap
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: vuepress-theme-hope/v2
+          repository-name: vuepress-theme-hope/v1
           branch: gh-pages
           folder: dist
           token: ${{ secrets.ACCESS_TOKEN }}
