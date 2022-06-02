@@ -43,7 +43,7 @@
     "@mr-hope/vuepress-plugin-smooth-scroll": "workspace:*",
     "@mr-hope/vuepress-shared": "workspace:*",
     "@mr-hope/vuepress-types": "workspace:*",
-    "@types/react": "^18.0.9",
+    "@types/react": "^18.0.10",
     "@vuepress/plugin-blog": "^1.9.4",
     "bcrypt-ts": "^1.0.0",
     "chalk": "^4.1.2",
