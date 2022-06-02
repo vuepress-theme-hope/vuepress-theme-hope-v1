@@ -96,6 +96,7 @@ const resolveSeoOptions = (
   themeConfig.seo === false
     ? false
     : {
+        hostname: themeConfig.hostname || "",
         ...(themeConfig.author ? { author: themeConfig.author } : {}),
         ...themeConfig.seo,
       };
