@@ -15,9 +15,9 @@
 
 [![opencollective](https://opencollective.com/vuepress-theme-hope/tiers/badge.svg)](https://opencollective.com/vuepress-theme-hope)
 
-[[![DeepScan grade](https://deepscan.io/api/teams/15982/projects/21236/branches/604727/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=15982&pid=21236&bid=604727)
+[![DeepScan grade](https://deepscan.io/api/teams/15982/projects/21236/branches/604727/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=15982&pid=21236&bid=604727)
 ![CodeQL](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/actions/workflows/codeql-analysis.yml/badge.svg)
-[[![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope-v1/branch/main/graph/badge.svg?token=j4mvTCK3gA)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope-v1)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope-v1)
+[![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope-v1/branch/main/graph/badge.svg?token=j4mvTCK3gA)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope-v1)
 ![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/actions/workflows/test.yml/badge.svg)
 
 A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
