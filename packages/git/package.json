@@ -32,7 +32,7 @@
   "dependencies": {
     "@mr-hope/vuepress-types": "workspace:*",
     "dayjs": "^1.11.2",
-    "execa": "^5.1.1"
+    "execa": "^6.0.0"
   },
   "publishConfig": {
     "access": "public"
