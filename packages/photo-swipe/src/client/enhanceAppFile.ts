@@ -1,4 +1,4 @@
-import PhotoSwipe from "./PhotoSwipe.vue";
+import PhotoSwipe from "./components/PhotoSwipe.vue";
 
 import type { EnhanceApp } from "@mr-hope/vuepress-types";
 

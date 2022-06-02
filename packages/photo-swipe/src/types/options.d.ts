@@ -1,6 +1,6 @@
 import type { LocaleConfig } from "@mr-hope/vuepress-shared";
 import type PhotoSwipe from "photoswipe";
-import type { PhowoSwipeLocaleData } from "./locales";
+import type { PhotoSwipeLocaleData } from "./locales";
 
 export interface PhotoSwipeOptions {
   /**
@@ -37,5 +37,5 @@ export interface PhotoSwipeOptions {
    *
    * 国际化配置
    */
-  locales?: LocaleConfig<PhowoSwipeLocaleData>;
+  locales?: LocaleConfig<PhotoSwipeLocaleData>;
 }

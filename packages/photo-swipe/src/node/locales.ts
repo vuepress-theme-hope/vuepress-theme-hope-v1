@@ -1,6 +1,6 @@
-import type { PhowoSwipeLocaleConfig } from "../types";
+import type { PhotoSwipeLocaleConfig } from "../types";
 
-export const photoSwipeLocales: PhowoSwipeLocaleConfig = {
+export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
   "/en/": {
     close: "Close",
     fullscreen: "Switch to full screen",
@@ -251,6 +251,134 @@ export const photoSwipeLocales: PhowoSwipeLocaleConfig = {
       {
         id: "download",
         label: "baixar imagem",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+
+  "/pl/": {
+    close: "Zamknij",
+    fullscreen: "Przełącz na pełny ekran",
+    share: "Share",
+    zoom: "Powiększ/pomniejsz",
+    prev: "Poprzedni (strzałka w lewo)",
+    next: "Następny (strzałka w prawo)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Share on Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "download",
+        label: "Download image",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+
+  "/sk/": {
+    close: "Zatvor",
+    fullscreen: "Prepni na celú obrazovku",
+    share: "Share",
+    zoom: "Priblíž/Oddial",
+    prev: "Predošlí (šípka doľava)",
+    next: "Nasledujúci (šípka doprava)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Share on Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "download",
+        label: "Download image",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+
+  "/fr/": {
+    close: "Fermer",
+    fullscreen: "Basculer en plein écran",
+    share: "Share",
+    zoom: "Zoom avant/arrière",
+    prev: "Précédent (Flèche gauche)",
+    next: "Suivant (Flèche droite)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Share on Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "download",
+        label: "Download image",
+        url: "{{raw_image_url}}",
+        download: true,
+      },
+    ],
+  },
+
+  "/es/": {
+    close: "Cerrar",
+    fullscreen: "Cambiar a pantalla completa",
+    share: "Share",
+    zoom: "Acercar/Alejar",
+    prev: "Anterior (Flecha izquierda)",
+    next: "Siguiente (Flecha derecha)",
+    buttons: [
+      {
+        id: "facebook",
+        label: "Share on Facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u={{url}}",
+      },
+      {
+        id: "twitter",
+        label: "Tweet",
+        url: "https://twitter.com/intent/tweet?text={{text}}&url={{url}}",
+      },
+      {
+        id: "pinterest",
+        label: "Pin it",
+        url: "http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}",
+      },
+      {
+        id: "download",
+        label: "Download image",
         url: "{{raw_image_url}}",
         download: true,
       },
