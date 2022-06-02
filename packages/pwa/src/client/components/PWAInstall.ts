@@ -1,8 +1,8 @@
 import Vue from "vue";
 import PWAInstallModal from "./PWAInstallModal.vue";
-import { locales } from "./define";
+import { locales } from "../define";
 
-import type { ManifestRelatedApps } from "../types";
+import type { ManifestRelatedApps } from "../../types";
 
 interface ModernNavigator extends Navigator {
   // Unstandard Api

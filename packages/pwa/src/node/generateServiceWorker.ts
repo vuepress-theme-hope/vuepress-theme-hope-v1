@@ -1,7 +1,8 @@
 import { black, blue, cyan } from "chalk";
-import { readFile, statSync, writeFile } from "fs-extra";
+import { statSync } from "fs-extra";
 import { resolve } from "path";
 import { generateSW } from "workbox-build";
+
 import type { Context } from "@mr-hope/vuepress-types";
 import type {
   ManifestEntry,
@@ -33,33 +34,30 @@ const imageFilter =
     return { warnings, manifest };
   };
 
-export const genServiceWorker = async (
-  options: PWAOptions,
-  context: Context
+export const generateServiceWorker = async (
+  context: Context,
+  options: PWAOptions
 ): Promise<void> => {
   console.log(
     blue("PWA:"),
     black.bgYellow("wait"),
     "Generating service worker..."
   );
+  const { title, locales = {} } = context.siteConfig;
   const swDest = resolve(context.outDir, "./service-worker.js");
-
-  const additionalManifestEntries: ManifestEntry[] = [];
 
   const globPatterns = ["**/*.{js,css,svg}", "**/*.{woff,woff2,eot,ttf,otf}"];
 
-  if (options.cacheHTML === false)
-    globPatterns.push("./index.html", "./404.html");
-  else globPatterns.push("**/*.html");
+  if (options.cacheHTML) globPatterns.push("**/*.html");
+  else globPatterns.push("./index.html", "./404.html");
 
   if (options.cachePic) globPatterns.push("**/*.{png,jpg,jpeg,bmp,gif,webp}");
 
   await generateSW({
     swDest,
     globDirectory: context.outDir,
-    cacheId: context.siteConfig.name || "mr-hope",
+    cacheId: title || locales["/"]?.title || "hope",
     globPatterns,
-    additionalManifestEntries,
     cleanupOutdatedCaches: true,
     clientsClaim: true,
     maximumFileSizeToCacheInBytes: (options.maxSize || 2048) * 1024,
@@ -100,10 +98,4 @@ export const genServiceWorker = async (
         )
       );
   });
-
-  await writeFile(
-    swDest,
-    await readFile(resolve(__dirname, "./skip-waiting.js"), "utf8"),
-    { flag: "a" }
-  );
 };

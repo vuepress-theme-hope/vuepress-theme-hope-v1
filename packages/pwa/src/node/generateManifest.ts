@@ -8,10 +8,10 @@ import type { Context } from "@mr-hope/vuepress-types";
 import type { ManifestOption, PWAOptions } from "../types";
 
 export const getManifest = async (
-  options: PWAOptions,
-  context: Context
+  context: Context,
+  options: PWAOptions
 ): Promise<ManifestOption> => {
-  const { sourceDir, siteConfig, themeConfig } = context;
+  const { base, sourceDir, siteConfig } = context;
   const userManifestPath = resolve(
     sourceDir,
     "./.vuepress/public/manifest.webmanifest"
@@ -32,19 +32,15 @@ export const getManifest = async (
   ) as ManifestOption;
 
   const finalManifest: ManifestOption = {
-    name:
-      siteConfig.title ||
-      (themeConfig["title"] as string | undefined) ||
-      "Site",
-    short_name:
-      siteConfig.title ||
-      (themeConfig["title"] as string | undefined) ||
-      "Site",
+    name: siteConfig.title || siteConfig.locales?.["/"]?.title || "Site",
+    short_name: siteConfig.title || siteConfig.locales?.["/"]?.title || "Site",
     description:
-      siteConfig.description || "A site built with vuepress-theme-hope",
+      siteConfig.description ||
+      siteConfig.locales?.["/"]?.description ||
+      "A site built with vuepress",
     lang: getRootLang(context),
-    start_url: context.base,
-    scope: context.base,
+    start_url: base,
+    scope: base,
 
     display: "standalone",
     theme_color: options.themeColor || "#46bd87",
@@ -59,9 +55,9 @@ export const getManifest = async (
   return finalManifest;
 };
 
-export const genManifest = async (
-  options: PWAOptions,
-  context: Context
+export const generateManifest = async (
+  context: Context,
+  manifest: Promise<ManifestOption>
 ): Promise<void> => {
   console.log(
     blue("PWA:"),
@@ -70,10 +66,9 @@ export const genManifest = async (
   );
 
   const { cwd, outDir } = context;
-  const manifest = await getManifest(options, context);
   const manifestPath = resolve(outDir, "manifest.webmanifest");
 
-  await writeJSON(manifestPath, manifest, {
+  await writeJSON(manifestPath, await manifest, {
     flag: "w",
   });
 

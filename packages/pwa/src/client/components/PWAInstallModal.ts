@@ -3,9 +3,9 @@ import Vue from "vue";
 import ArrowLeftIcon from "./icons/ArrowLeftIcon.vue";
 import ArrowRightIcon from "./icons/ArrowRightIcon.vue";
 import CloseIcon from "./icons/CloseIcon.vue";
-import { locales } from "./define";
+import { locales } from "../define";
 
-import type { ManifestOption, PWALocaleData } from "../types";
+import type { ManifestOption, PWALocaleData } from "../../types";
 
 interface InstallPromptEvent extends Event {
   readonly platforms: string;
@@ -80,7 +80,7 @@ export default Vue.extend({
         this.manifest = JSON.parse(manifestContent) as ManifestOption;
       else
         try {
-          const response = await fetch(`${SW_BASE_URL}manifest.webmanifest`);
+          const response = await fetch(this.$withBase("manifest.webmanifest"));
           const data = (await response.json()) as ManifestOption;
 
           this.manifest = data;

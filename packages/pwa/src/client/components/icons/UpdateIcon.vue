@@ -1,24 +1,7 @@
 <template>
-  <transition name="sw-update-popup">
-    <slot :reload="reload" :enabled="enabled" :message="message">
-      <div
-        v-if="enabled"
-        class="sw-update-popup"
-        role="button"
-        tabindex="0"
-        @click="reload"
-      >
-        {{ message }}
-        <span class="refresh">
-          <svg
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="84"
-            height="84"
-          >
-            <path
-              d="M949.948959 146.249899l0 255.82655c0 21.980617-13.988596 35.969213-35.969213 35.969213l-255.82655
+  <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M949.948959 146.249899l0 255.82655c0 21.980617-13.988596 35.969213-35.969213 35.969213l-255.82655
               0c-13.988596 0-25.982768-7.992021-33.972742-21.980617-5.997598-13.988596-4.001127-27.977191
               7.990998-39.97034l79.941704-77.945233c-55.954383-51.973722-121.917724-77.955466-199.862957-77.955466-37.974893 0-75.949786 8.002254-113.924679 21.99085-37.974893 15.984043-67.947532 37.974893-91.933829
               63.956637-25.981744 23.986297-47.972595 53.958936-63.956637 91.933829-29.982872 73.954339-29.982872
@@ -36,60 +19,6 @@
               107.928105-33.973766 169.889295-33.973766 55.963593 0 109.923552 9.987468 161.886017
               29.972639 53.969169 21.99085 101.932554 51.963489 139.907447 89.938382l73.954339-73.944106c9.987468-9.997702 23.987321-13.988596 39.971363-8.002254C941.956937 120.268154 949.948959 132.261303
               949.948959 146.249899z"
-            />
-          </svg>
-        </span>
-      </div>
-    </slot>
-  </transition>
+    />
+  </svg>
 </template>
-
-<script src="./SWUpdatePopup" />
-
-<style lang="stylus">
-@keyframes rotate
-  0%
-    transform rotate(0deg)
-
-  50%
-    transform rotate(360deg)
-
-  100%
-    transform rotate(360deg)
-
-.sw-update-popup
-  position fixed
-  right 1rem
-  bottom 1rem
-  padding 0.5rem 0.75rem
-  border-radius 0.5rem
-  box-shadow 0 2px 12px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.15))
-  background var(--bgcolor, #fff)
-  color var(--text-color, $textColor)
-  line-height 1.5
-  z-index 110
-  cursor pointer
-
-  .refresh
-    display inline-block
-    vertical-align middle
-    width 1.5rem
-    height 1.5rem
-    margin-left 0.4em
-    background var(--accent-color, $accentColor)
-    border-radius 0.75rem
-
-    svg
-      animation rotate 3s ease infinite
-      width 1.2em
-      height 1.2em
-      margin 0.15em
-      fill var(--white, #fff)
-
-.sw-update-popup-enter-active, .sw-update-popup-leave-active
-  transition opacity 0.3s, transform 0.3s
-
-.sw-update-popup-enter, .sw-update-popup-leave-to
-  opacity 0
-  transform translate(0, 50%) scale(0.5)
-</style>

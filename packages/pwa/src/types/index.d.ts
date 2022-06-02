@@ -6,5 +6,6 @@ export * from "./options";
 
 declare global {
   const PWA_LOCALES: PWALocaleConfig;
-  const SW_BASE_URL: string;
+  const SW_FORCE_UPDATE: boolean;
+  const SW_PATH: string;
 }

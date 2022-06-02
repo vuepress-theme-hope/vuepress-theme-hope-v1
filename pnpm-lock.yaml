@@ -430,6 +430,7 @@ importers:
       '@types/fs-extra': ^9.0.13
       chalk: ^4.1.2
       fs-extra: ^10.1.0
+      mitt: ^3.0.0
       register-service-worker: ^1.7.2
       workbox-build: ^6.5.3
     dependencies:
@@ -438,6 +439,7 @@ importers:
       '@types/fs-extra': 9.0.13
       chalk: 4.1.2
       fs-extra: 10.1.0
+      mitt: 3.0.0
       register-service-worker: 1.7.2
       workbox-build: 6.5.3
 
@@ -11077,6 +11079,10 @@ packages:
       stream-each: 1.2.3
       through2: 2.0.5
     dev: true
+
+  /mitt/3.0.0:
+    resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
+    dev: false
 
   /mixin-deep/1.3.2:
     resolution: {integrity: sha512-WRoDn//mXBiJ1H40rqa3vH0toePwSsGb45iInWlTySa+Uu4k3tYUSxa2v1KqAiLtvlrSzaExqS1gtk96A9zvEA==}

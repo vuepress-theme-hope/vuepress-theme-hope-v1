@@ -49,13 +49,9 @@ export const injectLinkstoHead = (
     }
   }
 
-  setLink(
-    "manifest",
-    `${base.replace(/^\/?/u, "/").replace(/\/?$/u, "/")}manifest.webmanifest`,
-    {
-      crossorigin: "use-credentials",
-    }
-  );
+  setLink("manifest", `${base}manifest.webmanifest`, {
+    crossorigin: "use-credentials",
+  });
   setMeta("theme-color", options.themeColor || "#46bd87");
 
   if (
@@ -95,7 +91,7 @@ export const injectLinkstoHead = (
   // enhance pwa experience
   setMeta(
     "viewport",
-    "width=device-width, initial-scale=1.0, viewport-fit=cover"
+    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
   );
 
   return head;
