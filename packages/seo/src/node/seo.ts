@@ -1,64 +1,64 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { resolveUrl } from "./utils";
-import type { PageSeoInfo, SeoContent, SeoOptions } from "../types";
+import { black, blue, cyan } from "chalk";
+import { existsSync, readFile, writeFile } from "fs-extra";
+import { join, relative } from "path";
+import { addOGP } from "./inject";
+import { getOGP } from "./meta";
 
-export const generateSeo = (
+import type { Context, Page } from "@mr-hope/vuepress-types";
+import type { SeoOptions } from "../types";
+
+export const appendSEO = (
+  page: Page,
   options: SeoOptions,
-  base: string,
-  { page, site, locale, path }: PageSeoInfo
-): SeoContent => {
-  const {
-    frontmatter: {
-      author: pageAuthor,
-      date,
-      image,
-      time = date,
-      tag,
-      tags = tag,
-    },
-    createTimeStamp,
-    updateTimeStamp,
-  } = page;
+  context: Context
+): void => {
+  const meta = page.frontmatter.meta || [];
 
-  const type = ["article", "category", "tag", "timeline"].some((folder) =>
-    page.regularPath.startsWith(`/${folder}`)
-  )
-    ? "website"
-    : "article";
-  const author = pageAuthor === false ? "" : pageAuthor || options.author || "";
-  const publishTime = time
-    ? new Date(time).toISOString()
-    : typeof createTimeStamp === "number"
-    ? new Date(createTimeStamp).toISOString()
+  const defaultOGP = getOGP(page, options, context);
+
+  const ogpContent = options.seo
+    ? options.seo(defaultOGP, page, context)
+    : defaultOGP;
+
+  addOGP(meta, ogpContent);
+
+  if (options.customMeta) options.customMeta(meta, page, context);
+
+  page.frontmatter.meta = meta;
+};
+
+export const generateRobotsTxt = async ({
+  cwd,
+  outDir,
+  sourceDir,
+}: Context): Promise<void> => {
+  console.log(blue("SEO:"), black.bgYellow("wait"), "Generating robots.txt");
+  const publicPath = join(sourceDir, ".vuepress/public/robots.txt");
+
+  let content = existsSync(publicPath)
+    ? await readFile(publicPath, { encoding: "utf8" })
     : "";
-  const modifiedTime =
-    typeof updateTimeStamp === "number"
-      ? new Date(updateTimeStamp).toISOString()
-      : "";
-  const articleTags: string[] = Array.isArray(tags)
-    ? tags
-    : typeof tag === "string"
-    ? [tag]
-    : [];
 
-  return {
-    "og:url": resolveUrl(base, path),
-    "og:site_name": site.title || "",
-    "og:title": page.title,
-    "og:description":
-      page.frontmatter.description || page.frontmatter.summary || "",
-    "og:type": type,
-    "og:image": image ? resolveUrl(base, image) : "",
-    "og:updated_time": modifiedTime,
-    "og:locale": page._computed.$lang,
-    "og:locale:alternate": locale,
+  if (content && !content.includes("User-agent")) {
+    console.error(
+      blue("SEO:"),
+      black.bgRed("error"),
+      "robots.txt seems invalid!"
+    );
+  } else {
+    content += "\nUser-agent:*\nDisallow:\n";
 
-    "twitter:card": "summary_large_image",
-    "twitter:image:alt": site.title || "",
+    await writeFile(join(outDir, "robots.txt"), content, {
+      flag: "w",
+    });
 
-    "article:author": author,
-    "article:tag": articleTags,
-    "article:published_time": publishTime,
-    "article:modified_time": modifiedTime,
-  };
+    console.log(
+      blue("SEO:"),
+      black.bgGreen("Success"),
+      `${cyan("robots.txt")} generated and saved to ${cyan(
+        relative(cwd, outDir)
+      )}`
+    );
+  }
 };

@@ -1,57 +1,100 @@
-import type { ArticleSeoContent, SeoContent, SeoOptions } from "../types";
+/* eslint-disable @typescript-eslint/naming-convention */
+import {
+  getAuthor,
+  getCover,
+  getDate,
+  getImages,
+  getLocales,
+  resolveUrl,
+} from "./utils";
 
-type Meta = Record<string, string>[];
+import type { Context, Page } from "@mr-hope/vuepress-types";
+import type { SeoContent, SeoOptions } from "../types";
 
-interface MetaOptions {
-  name: string;
-  content: string;
-  attribute?: string;
-}
+export const getOGP = (
+  page: Page,
+  options: SeoOptions,
+  context: Context
+): SeoContent => {
+  const {
+    isArticle = (page): boolean =>
+      Boolean(page._filePath && !page.frontmatter["home"]),
+  } = options;
+  const { base, siteConfig } = context;
 
-const addMeta = (
-  meta: Meta,
-  {
-    name,
-    content,
-    attribute = ["article:", "og:"].some((type) => name.startsWith(type))
-      ? "property"
-      : "name",
-  }: MetaOptions
-): void => {
-  if (content) meta.push({ [attribute]: name, content });
-};
+  const {
+    frontmatter: {
+      author: pageAuthor,
+      time,
+      date = time,
+      tag,
+      tags = tag as string[],
+    },
+  } = page;
 
-export const appendMeta = (
-  meta: Meta,
-  content: SeoContent,
-  options: SeoOptions
-): void => {
-  for (const property in content)
-    switch (property) {
-      case "article:tag":
-        (content as ArticleSeoContent)["article:tag"]!.forEach((tag: string) =>
-          addMeta(meta, { name: "article:tag", content: tag })
-        );
-        break;
-      case "og:locale:alternate":
-        content["og:locale:alternate"].forEach((locale: string) => {
-          if (locale !== content["og:locale"])
-            addMeta(meta, { name: "og:locale:alternate", content: locale });
-        });
-        break;
-      default:
-        addMeta(meta, {
-          name: property,
-          content: content[property as keyof SeoContent] as string,
-        });
-    }
+  const title =
+    siteConfig.locales?.[page._localePath]?.title ||
+    siteConfig.title ||
+    siteConfig.locales?.["/"]?.title ||
+    "";
+  const author =
+    pageAuthor === false ? [] : getAuthor(pageAuthor || options.author);
 
-  if (options.restrictions)
-    addMeta(meta, {
-      name: "og:restrictions:age",
-      content: options.restrictions,
-    });
+  const modifiedTime = page.updateTimeStamp
+    ? new Date(page.updateTimeStamp).toISOString()
+    : "";
+  const articleTags: string[] = Array.isArray(tags)
+    ? tags
+    : typeof tag === "string"
+    ? [tag]
+    : [];
 
-  if (options.twitterID)
-    addMeta(meta, { name: "twitter:creator", content: options.twitterID });
+  const articleTitle = page.title;
+  const cover = getCover(page, options, context);
+  const images = getImages(page, options, context);
+  const locales = getLocales(page._computed.$lang, siteConfig.locales || {});
+
+  let publishedTime = "";
+
+  if (date instanceof Date) publishedTime = new Date(date).toISOString();
+  else if (date) {
+    const dateInfo = getDate(date);
+
+    if (dateInfo && dateInfo.value)
+      publishedTime = dateInfo.value.toISOString();
+  }
+
+  const ogImage = cover || images[0] || options.fallBackImage || "";
+
+  const defaultOGP: SeoContent = {
+    "og:url": resolveUrl(options.hostname, base, page.path),
+    "og:site_name": title,
+    "og:title": articleTitle,
+    "og:description":
+      page.frontmatter.description ||
+      (options.autoDescription ? page.frontmatter.summary || "" : ""),
+    "og:type": isArticle(page) ? "article" : "website",
+    "og:image": ogImage,
+    "og:updated_time": modifiedTime,
+    "og:locale": page._computed.$lang,
+    "og:locale:alternate": locales,
+    ...(options.restrictions
+      ? { "og:restrictions:age": options.restrictions }
+      : {}),
+
+    ...(options.twitterID ? { "twitter:creator": options.twitterID } : {}),
+    ...(ogImage
+      ? {
+          "twitter:card": "summary_large_image",
+          "twitter:image:alt": articleTitle,
+        }
+      : {}),
+
+    "article:author": author[0]?.name,
+    "article:tag": articleTags,
+    "article:published_time": publishedTime,
+    "article:modified_time": modifiedTime,
+  };
+
+  return defaultOGP;
 };
