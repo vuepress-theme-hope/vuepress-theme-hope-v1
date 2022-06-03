@@ -16,7 +16,7 @@ importers:
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
       'vuepress-plugin-reading-time1': workspace:*
-      '@mr-hope/vuepress-plugin-seo': workspace:*
+      'vuepress-plugin-seo1': workspace:*
       '@mr-hope/vuepress-plugin-sitemap': workspace:*
       '@mr-hope/vuepress-plugin-smooth-scroll': workspace:*
       '@mr-hope/vuepress-theme-types': workspace:*
@@ -69,7 +69,7 @@ importers:
       '@mr-hope/vuepress-plugin-git': link:packages/git
       '@mr-hope/vuepress-plugin-pwa': link:packages/pwa
       'vuepress-plugin-reading-time1': link:packages/reading-time
-      '@mr-hope/vuepress-plugin-seo': link:packages/seo
+      'vuepress-plugin-seo1': link:packages/seo
       '@mr-hope/vuepress-plugin-sitemap': link:packages/sitemap
       '@mr-hope/vuepress-plugin-smooth-scroll': link:packages/smooth-scroll
       '@mr-hope/vuepress-theme-types': link:packages/theme-types
@@ -521,7 +521,7 @@ importers:
       'vuepress-plugin-feed1': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
-      '@mr-hope/vuepress-plugin-seo': workspace:*
+      'vuepress-plugin-seo1': workspace:*
       '@mr-hope/vuepress-plugin-sitemap': workspace:*
       '@mr-hope/vuepress-plugin-smooth-scroll': workspace:*
       '@types/react': ^18.0.10
@@ -549,7 +549,7 @@ importers:
       'vuepress-plugin-feed1': link:../feed
       '@mr-hope/vuepress-plugin-git': link:../git
       '@mr-hope/vuepress-plugin-pwa': link:../pwa
-      '@mr-hope/vuepress-plugin-seo': link:../seo
+      'vuepress-plugin-seo1': link:../seo
       '@mr-hope/vuepress-plugin-sitemap': link:../sitemap
       '@mr-hope/vuepress-plugin-smooth-scroll': link:../smooth-scroll
       '@types/react': 18.0.10

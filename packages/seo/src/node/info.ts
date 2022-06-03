@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import {
-  getAuthor,
-  getCover,
-  getDate,
-  getImages,
-  getLocales,
-  resolveUrl,
-} from "./utils";
+import { getAuthor, getDate, removeEndingSlash } from "vuepress-shared";
+
+import { getCover, getImages, getLocales, resolveUrl } from "./utils";
 
 import type { Context, Page } from "vuepress-typings";
 import type { SeoContent, SeoOptions } from "../types";
@@ -97,4 +92,16 @@ export const getOGP = (
   };
 
   return defaultOGP;
+};
+
+export const getCanonicalLink = (
+  page: Page,
+  options: SeoOptions
+): string | null => {
+  if (typeof options.canonical === "function") return options.canonical(page);
+
+  if (typeof options.canonical === "string")
+    return `${removeEndingSlash(options.canonical)}${page.path}`;
+
+  return null;
 };

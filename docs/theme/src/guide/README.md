@@ -129,7 +129,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [vuepress-plugin-reading-time1][reading-time]: Expect reading time and words count
 
-- [@mr-hope/vuepress-plugin-seo][seo]: SEO Enhancement Plugin
+- [vuepress-plugin-seo1][seo]: SEO Enhancement Plugin
 
 - [@mr-hope/vuepress-plugin-sitemap][sitemap]: Sitemap Generator for your site
 

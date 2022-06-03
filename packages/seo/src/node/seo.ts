@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { black, blue, cyan } from "chalk";
 import { existsSync, readFile, writeFile } from "fs-extra";
-import { join, relative } from "path";
-import { addOGP } from "./inject";
-import { getOGP } from "./meta";
+import { join } from "path";
+import { getCanonicalLink, getOGP } from "./info";
+import { addOGP, appendCanonical } from "./inject";
+import { logger } from "./utils";
 
 import type { Context, Page } from "vuepress-typings";
 import type { SeoOptions } from "../types";
@@ -21,7 +21,10 @@ export const appendSEO = (
     ? options.seo(defaultOGP, page, context)
     : defaultOGP;
 
+  const canonicalLink = getCanonicalLink(page, options);
+
   addOGP(meta, ogpContent);
+  appendCanonical(page, canonicalLink);
 
   if (options.customMeta) options.customMeta(meta, page, context);
 
@@ -29,11 +32,11 @@ export const appendSEO = (
 };
 
 export const generateRobotsTxt = async ({
-  cwd,
   outDir,
   sourceDir,
 }: Context): Promise<void> => {
-  console.log(blue("SEO:"), black.bgYellow("wait"), "Generating robots.txt");
+  logger.load("Generating robots.txt");
+
   const publicPath = join(sourceDir, ".vuepress/public/robots.txt");
 
   let content = existsSync(publicPath)
@@ -41,11 +44,8 @@ export const generateRobotsTxt = async ({
     : "";
 
   if (content && !content.includes("User-agent")) {
-    console.error(
-      blue("SEO:"),
-      black.bgRed("error"),
-      "robots.txt seems invalid!"
-    );
+    logger.error();
+    logger.update("robots.txt seems invalid!");
   } else {
     content += "\nUser-agent:*\nDisallow:\n";
 
@@ -53,12 +53,6 @@ export const generateRobotsTxt = async ({
       flag: "w",
     });
 
-    console.log(
-      blue("SEO:"),
-      black.bgGreen("Success"),
-      `${cyan("robots.txt")} generated and saved to ${cyan(
-        relative(cwd, outDir)
-      )}`
-    );
+    logger.succeed();
   }
 };

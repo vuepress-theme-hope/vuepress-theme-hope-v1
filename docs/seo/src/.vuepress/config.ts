@@ -122,7 +122,7 @@ export default hope.config({
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-seo",
+        name: "vuepress-plugin-seo1",
         short_name: "seo-plugin",
         icons: [
           {

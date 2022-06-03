@@ -1,20 +1,17 @@
-import { black, blue, cyan } from "chalk";
+import { magenta } from "chalk";
+import { stripTags } from "vuepress-shared";
+
 import { appendSEO, generateRobotsTxt } from "./seo";
-import { striptags } from "./stripTags";
-import { md2text } from "./utils";
+import { logger, md2text } from "./utils";
 
 import type { Page, Plugin, PluginEntry } from "vuepress-typings";
 import type { SeoOptions } from "../types";
 
 export const seoPlugin: Plugin<SeoOptions> = (options, context) => {
-  const plugin: PluginEntry = { name: "vuepress-plugin-seo" };
+  const plugin: PluginEntry = { name: "vuepress-plugin-seo2" };
 
   if (!options.hostname) {
-    console.log(
-      blue("SEO:"),
-      black.bgRed("error"),
-      `Option ${cyan("hostname")} is required!`
-    );
+    logger.error(`Option ${magenta("hostname")} is required!`);
 
     return plugin;
   }
@@ -26,7 +23,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options, context) => {
       // generate summary
       if (!page.frontmatter.description)
         page.frontmatter.summary =
-          striptags(page.excerpt) ||
+          stripTags(page.excerpt) ||
           md2text(page._strippedContent).slice(0, 180) ||
           "";
 
@@ -41,7 +38,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options, context) => {
       appendSEO(pageClone, options, context);
     },
 
-    generated: async (): Promise<void> => generateRobotsTxt(context),
+    generated: (): Promise<void> => generateRobotsTxt(context),
 
     plugins: [["@mr-hope/git", true]],
   };

@@ -52,7 +52,7 @@ tags:
 
 - [vuepress-plugin-reading-time1][reading-time]: 阅读时间与字数统计
 
-- [@mr-hope/vuepress-plugin-seo][seo]: SEO 增强插件
+- [vuepress-plugin-seo1][seo]: SEO 增强插件
 
 - [@mr-hope/vuepress-plugin-sitemap][sitemap]: 为你的站点生成 sitemap
 

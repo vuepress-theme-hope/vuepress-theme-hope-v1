@@ -1,3 +1,4 @@
+import type { Page } from "vuepress-typings";
 import type { ArticleSeoContent, SeoContent } from "../types";
 
 type Meta = Record<string, string>[];
@@ -45,4 +46,8 @@ export const addOGP = (meta: Meta, content: SeoContent): void => {
             content: content[property as keyof SeoContent] as string,
           });
     }
+};
+
+export const appendCanonical = (page: Page, url?: string | null): void => {
+  if (url) page.frontmatter.canonicalUrl = url;
 };

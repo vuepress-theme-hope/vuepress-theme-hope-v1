@@ -7,7 +7,7 @@ tags:
   - seo
 ---
 
-`vuepress-theme-hope` provide SEO enhancement by includeing [`@mr-hope/vuepress-plugin-seo`](https://vuepress-theme-hope.github.io/v1/seo/).
+`vuepress-theme-hope` provide SEO enhancement by includeing [`vuepress-plugin-seo1`](https://vuepress-theme-hope.github.io/v1/seo/).
 
 To make the plugin work better, you may need to look at [Page Information Configuration](../../config/page.md#page-information-configuration) and configure them reasonably.
 

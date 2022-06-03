@@ -7,7 +7,7 @@ import { GitOptions } from "@mr-hope/vuepress-plugin-git";
 import { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
-import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
+import { SeoOptions } from "vuepress-plugin-seo1";
 import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
 import { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll";
 

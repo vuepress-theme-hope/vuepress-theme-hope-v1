@@ -109,4 +109,11 @@ export interface SeoOptions {
     /** VuePress Context */
     context: Context
   ) => void;
+
+  /**
+   * Add canonical URL
+   *
+   * 添加首选地址
+   */
+  canonical?: string | ((page: Page) => string | null);
 }

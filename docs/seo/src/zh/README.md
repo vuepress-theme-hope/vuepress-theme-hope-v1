@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-seo"
+heroText: "vuepress-plugin-seo1"
 tagline: 向你的网页注入 <meta>，来增强你网页的 SEO。
 action:
   - text: 快速上手 💡
@@ -26,7 +26,7 @@ copyrightText: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-seo
+yarn add -D vuepress-plugin-seo1
 ```
 
 :::
@@ -34,7 +34,7 @@ yarn add -D @mr-hope/vuepress-plugin-seo
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-seo
+npm i -D vuepress-plugin-seo1
 ```
 
 :::
@@ -52,7 +52,7 @@ npm i -D @mr-hope/vuepress-plugin-seo
 export default {
   plugins: [
     [
-      "@mr-hope/seo",
+      "seo1",
       {
         // 配置选项
       },
@@ -70,7 +70,7 @@ export default {
 module.exports = {
   plugins: [
     [
-      "@mr-hope/seo",
+      "seo1",
       {
         // 配置选项
       },
