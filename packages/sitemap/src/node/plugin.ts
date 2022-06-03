@@ -1,6 +1,7 @@
-import { black, blue } from "chalk";
+import { magenta } from "chalk";
 import { covertOptions } from "./compact";
 import { generateSiteMap } from "./generateSitemap";
+import { logger } from "./utils";
 
 import type { Plugin, PluginEntry } from "vuepress-typings";
 import type { SitemapOptions } from "../types";
@@ -9,15 +10,11 @@ export const sitemapPlugin: Plugin<SitemapOptions> = (options, context) => {
   covertOptions(options as SitemapOptions & Record<string, unknown>);
 
   const plugin: PluginEntry = {
-    name: "@mr-hope/vuepress-plugin-sitemap",
+    name: "vuepress-plugin-sitemap1",
   };
 
   if (!options.hostname) {
-    console.log(
-      blue("Sitemap"),
-      black.bgRed("Error"),
-      'Not generating sitemap because required "hostname" option doesn’t exist'
-    );
+    logger.error(`Option ${magenta("hostname")} is required!`);
 
     return plugin;
   }
@@ -25,7 +22,7 @@ export const sitemapPlugin: Plugin<SitemapOptions> = (options, context) => {
   return {
     ...plugin,
 
-    generated: async (): Promise<void> => generateSiteMap(options, context),
+    onGenerated: (): Promise<void> => generateSiteMap(options, context),
 
     plugins: [["@mr-hope/git", true]],
   };

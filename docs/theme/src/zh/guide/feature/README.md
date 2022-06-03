@@ -54,7 +54,7 @@ tags:
 
 - [vuepress-plugin-seo1][seo]: SEO 增强插件
 
-- [@mr-hope/vuepress-plugin-sitemap][sitemap]: 为你的站点生成 sitemap
+- [vuepress-plugin-sitemap1][sitemap]: 为你的站点生成 sitemap
 
 - [vuepress-plugin-add-this][add-this]: 让网站支持社交分享与关注
 

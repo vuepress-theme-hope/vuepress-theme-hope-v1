@@ -54,7 +54,7 @@ The theme includes the following plugins, you can use them directly in other the
 
 - [vuepress-plugin-seo1][seo]: SEO Enhancement Plugin
 
-- [@mr-hope/vuepress-plugin-sitemap][sitemap]: Sitemap Generator for your site
+- [vuepress-plugin-sitemap1][sitemap]: Sitemap Generator for your site
 
 - [vuepress-plugin-add-this][add-this]: Provide sociel share and follow function
 

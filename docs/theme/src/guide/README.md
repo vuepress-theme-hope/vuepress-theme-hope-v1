@@ -131,7 +131,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [vuepress-plugin-seo1][seo]: SEO Enhancement Plugin
 
-- [@mr-hope/vuepress-plugin-sitemap][sitemap]: Sitemap Generator for your site
+- [vuepress-plugin-sitemap1][sitemap]: Sitemap Generator for your site
 
 - @mr-hope/vuepress-plugin-smooth-scroll: Smooth scrolling (Remove old browers polyfill)
 

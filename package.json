@@ -57,7 +57,6 @@
     "@commitlint/config-conventional": "17.0.2",
     "@mr-hope/vuepress-plugin-components": "workspace:*",
     "@mr-hope/vuepress-plugin-git": "workspace:*",
-    "@mr-hope/vuepress-plugin-sitemap": "workspace:*",
     "@mr-hope/vuepress-plugin-smooth-scroll": "workspace:*",
     "@mr-hope/vuepress-theme-types": "workspace:*",
     "@types/inquirer": "8.2.1",
@@ -103,6 +102,7 @@
     "vuepress-plugin-pwa1": "workspace:*",
     "vuepress-plugin-reading-time1": "workspace:*",
     "vuepress-plugin-seo1": "workspace:*",
+    "vuepress-plugin-sitemap1": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-typings": "workspace:*"
   },

@@ -1,7 +1,9 @@
-import { black, blue, cyan } from "chalk";
-import { createWriteStream, readFile, existsSync, writeFile } from "fs-extra";
-import { relative, resolve } from "path";
+import { cyan } from "chalk";
+import { createWriteStream, existsSync, readFile, writeFile } from "fs-extra";
+import { resolve } from "path";
 import { SitemapStream } from "sitemap";
+import { removeEndingSlash, removeLeadingSlash } from "vuepress-shared";
+import { logger } from "./utils";
 
 import type { Context, Page } from "vuepress-typings";
 import type {
@@ -67,11 +69,11 @@ const generatePageMap = (
     const frontmatterOptions: SitemapFrontmatterOption =
       (page.frontmatter["sitemap"] as SitemapFrontmatterOption) || {};
 
-    const metaRobots = (page.frontmatter.meta || []).find(
+    const metaRobotTags = (page.frontmatter.meta || []).find(
       (meta) => meta.name === "robots"
     );
-    const excludePage = metaRobots
-      ? (metaRobots.content || "")
+    const excludePage = metaRobotTags
+      ? (metaRobotTags.content || "")
           .split(/,/u)
           .map((content) => content.trim())
           .includes("noindex")
@@ -88,9 +90,9 @@ const generatePageMap = (
     if (relatedLocales.length > 1) {
       links = relatedLocales.map((localePrefix) => ({
         lang: locales[localePrefix]?.lang || "en",
-        url: `${base}${defaultPath
-          .replace(/^\//u, localePrefix)
-          .replace(/\/$/, "")}`,
+        url: `${base}${removeLeadingSlash(
+          defaultPath.replace(/^\//u, localePrefix)
+        )}`,
       }));
     }
 
@@ -112,18 +114,14 @@ export const generateSiteMap = async (
   context: Context
 ): Promise<void> => {
   const { extraUrls = [], xmlNameSpace: xmlns } = options;
-  const hostname = options.hostname.replace(/\/$/, "");
+  const hostname = removeEndingSlash(options.hostname);
   const sitemapFilename = options.sitemapFilename
-    ? options.sitemapFilename.replace(/^\//, "")
+    ? removeLeadingSlash(options.sitemapFilename)
     : "sitemap.xml";
 
-  console.log(
-    blue("Sitemap:"),
-    black.bgYellow("wait"),
-    "Generating sitemap..."
-  );
+  logger.load(`Generating sitemap to ${cyan(sitemapFilename)}`);
 
-  const { base, cwd, outDir } = context;
+  const { base, outDir } = context;
   const sitemap = new SitemapStream({
     hostname,
     ...(xmlns ? { xmlns } : {}),
@@ -136,30 +134,27 @@ export const generateSiteMap = async (
 
   pagesMap.forEach((page, path) =>
     sitemap.write({
-      url: `${base}${path.replace(/^\//, "")}`,
+      url: `${base}${removeLeadingSlash(path)}`,
       ...page,
     })
   );
 
   extraUrls.forEach((item) =>
-    sitemap.write({ url: `${base}${item.replace(/^\//, "")}` })
+    sitemap.write({ url: `${base}${removeLeadingSlash(item)}` })
   );
 
   await new Promise<void>((resolve) => {
     sitemap.end(() => {
+      logger.succeed();
       resolve();
-
-      console.log(
-        blue("Sitemap:"),
-        black.bgGreen("Success"),
-        `Sitemap generated and saved to ${cyan(relative(cwd, sitemapXMLPath))}`
-      );
     });
   });
 
   const robotTxtPath = resolve(outDir, "robots.txt");
 
   if (existsSync(robotTxtPath)) {
+    logger.load(`Appended sitemap path to ${cyan("robots.txt")}`);
+
     const robotsTxt = await readFile(robotTxtPath, { encoding: "utf8" });
 
     const newRobotsTxtContent = `${robotsTxt.replace(
@@ -169,10 +164,6 @@ export const generateSiteMap = async (
 
     await writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
 
-    console.log(
-      blue("Sitemap:"),
-      black.bgGreen("Success"),
-      `Appended sitemap path to ${cyan("robots.txt")}`
-    );
+    logger.succeed();
   }
 };

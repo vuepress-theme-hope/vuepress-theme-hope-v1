@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-sitemap"
+heroText: "vuepress-plugin-sitemap1"
 tagline: 自动在你构建网页时为你生成网页的 sitemap。
 action:
   - text: 快速上手 💡
@@ -26,7 +26,7 @@ copyrightText: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-sitemap
+yarn add -D vuepress-plugin-sitemap1
 ```
 
 :::
@@ -34,7 +34,7 @@ yarn add -D @mr-hope/vuepress-plugin-sitemap
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-sitemap
+npm i -D vuepress-plugin-sitemap1
 ```
 
 :::
@@ -52,7 +52,7 @@ npm i -D @mr-hope/vuepress-plugin-sitemap
 export default {
   plugins: [
     [
-      "@mr-hope/sitemap",
+      "sitemap1",
       {
         // 配置选项
       },
@@ -70,7 +70,7 @@ export default {
 module.exports = {
   plugins: [
     [
-      "@mr-hope/sitemap",
+      "sitemap1",
       {
         // 配置选项
       },

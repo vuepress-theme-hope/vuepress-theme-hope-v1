@@ -122,7 +122,7 @@ export default hope.config({
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-sitemap",
+        name: "vuepress-plugin-sitemap1",
         short_name: "sitemap plugin",
         icons: [
           {

@@ -10,7 +10,7 @@ import type { CopyCodeOptions } from "vuepress-plugin-copy-code1";
 import type { FeedOptions } from "vuepress-plugin-feed1";
 import type { PWAOptions } from "vuepress-plugin-pwa1";
 import type { SeoOptions } from "vuepress-plugin-seo1";
-import type { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
+import type { SitemapOptions } from "vuepress-plugin-sitemap1";
 import type { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll";
 import type { PluginConfig } from "vuepress-typings";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
@@ -137,7 +137,7 @@ export const getPluginConfig = (
 
     ["seo1", resolveSeoOptions(themeConfig)],
 
-    ["@mr-hope/sitemap", resolveSitemapOptions(themeConfig)],
+    ["sitemap1", resolveSitemapOptions(themeConfig)],
 
     ["@mr-hope/smooth-scroll", resolveSmmothScrollOptions(themeConfig)],
 

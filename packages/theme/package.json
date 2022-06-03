@@ -34,7 +34,6 @@
     "@docsearch/js": "^3.1.0",
     "@mr-hope/vuepress-plugin-components": "workspace:*",
     "@mr-hope/vuepress-plugin-git": "workspace:*",
-    "@mr-hope/vuepress-plugin-sitemap": "workspace:*",
     "@mr-hope/vuepress-plugin-smooth-scroll": "workspace:*",
     "@types/react": "^18.0.10",
     "@vuepress/plugin-blog": "^1.9.4",
@@ -54,6 +53,7 @@
     "vuepress-plugin-photo-swipe": "workspace:*",
     "vuepress-plugin-pwa1": "workspace:*",
     "vuepress-plugin-seo1": "workspace:*",
+    "vuepress-plugin-sitemap1": "workspace:*",
     "vuepress-plugin-typescript": "^0.3.1",
     "vuepress-shared": "workspace:*",
     "vuepress-typings": "workspace:*"

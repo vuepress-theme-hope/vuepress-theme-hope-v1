@@ -8,7 +8,7 @@ import { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import { PWAOptions } from "vuepress-plugin-pwa1";
 import { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import { SeoOptions } from "vuepress-plugin-seo1";
-import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
+import { SitemapOptions } from "vuepress-plugin-sitemap1";
 import { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll";
 
 import type { Page, ResolvedComponent } from "vuepress-typings";

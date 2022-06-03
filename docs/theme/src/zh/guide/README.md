@@ -131,7 +131,7 @@ tags:
 
 - [vuepress-plugin-seo1][seo]: SEO 增强插件
 
-- [@mr-hope/vuepress-plugin-sitemap][sitemap]: 为你的站点生成 sitemap
+- [vuepress-plugin-sitemap1][sitemap]: 为你的站点生成 sitemap
 
 - @mr-hope/vuepress-plugin-smooth-scroll: 启用平滑滚动 (移除了旧浏览器兼容)
 
