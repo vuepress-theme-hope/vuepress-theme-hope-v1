@@ -263,7 +263,7 @@ Config which you want to pass to reveal.js.
 
 Comment options are omitted here because of the complexity.
 
-For details, see [@mr-hope/vuepress-plugin-comment documentation][comment-config]
+For details, see [vuepress-plugin-comment1 documentation][comment-config]
 
 > You can omit this option if you don’t want the comment feature
 

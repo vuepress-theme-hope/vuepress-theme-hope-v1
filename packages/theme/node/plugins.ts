@@ -4,7 +4,7 @@ import { cleanUrlPlugin } from "./clean-url";
 import { chunkRenamePlugin } from "./chunk-rename";
 
 import type { AddThisOptions } from "vuepress-plugin-add-this";
-import type { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
+import type { CommentOptions } from "vuepress-plugin-comment1";
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
 import type { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
 import type { FeedOptions } from "@mr-hope/vuepress-plugin-feed";
@@ -125,7 +125,7 @@ export const getPluginConfig = (
     themeConfig.comment.author = themeConfig.author;
 
   return [
-    ["@mr-hope/comment", resolveCommentOptions(themeConfig)],
+    ["comment1", resolveCommentOptions(themeConfig)],
 
     ["@mr-hope/components", resolveComponentsOptions(themeConfig)],
 

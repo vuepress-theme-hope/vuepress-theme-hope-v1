@@ -1,6 +1,6 @@
 /// <reference types="@mr-hope/vuepress-types" />
 
-/// <reference types="@mr-hope/vuepress-plugin-comment" />
+/// <reference types="vuepress-plugin-comment1" />
 
 /// <reference types="@mr-hope/vuepress-plugin-feed" />
 

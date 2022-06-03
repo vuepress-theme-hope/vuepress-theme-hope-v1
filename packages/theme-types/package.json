@@ -26,12 +26,12 @@
   },
   "types": "types/index.d.ts",
   "dependencies": {
-    "@mr-hope/vuepress-plugin-comment": "workspace:*",
     "@mr-hope/vuepress-plugin-feed": "workspace:*",
     "@mr-hope/vuepress-plugin-git": "workspace:*",
     "@mr-hope/vuepress-plugin-pwa": "workspace:*",
     "@mr-hope/vuepress-plugin-reading-time": "workspace:*",
     "@mr-hope/vuepress-types": "workspace:*",
+    "vuepress-plugin-comment1": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-plugin-photo-swipe": "workspace:*",
     "vuepress-theme-hope": "workspace:*"

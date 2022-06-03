@@ -15,7 +15,7 @@ tags:
 
 ## 内建插件
 
-- [@mr-hope/vuepress-plugin-comment][comment]: 评论与文章信息功能
+- [vuepress-plugin-comment1][comment]: 评论与文章信息功能
 
 - [@mr-hope/vuepress-plugin-components][components]: 提供一些开箱即用的插件
 

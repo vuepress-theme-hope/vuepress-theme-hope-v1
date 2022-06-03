@@ -256,7 +256,7 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 评论系统
 
-配置因为复杂度在这里被省略，具体配置请见　[@mr-hope/vuepress-plugin-comment 文档][comment-config]
+配置因为复杂度在这里被省略，具体配置请见　[vuepress-plugin-comment1 文档][comment-config]
 
 > 如果你不需要评论功能，忽略此选项即可
 

@@ -115,7 +115,7 @@ tags:
 
 本主题还包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
 
-- [@mr-hope/vuepress-plugin-comment][comment]: 评论与文章信息功能
+- [vuepress-plugin-comment1][comment]: 评论与文章信息功能
 
 - [@mr-hope/vuepress-plugin-components][components]: 提供一些开箱即用的插件
 

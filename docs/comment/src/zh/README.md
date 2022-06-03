@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-comment"
+heroText: "vuepress-plugin-comment1"
 tagline: 评论与阅读量插件
 action:
   - text: 快速上手 💡
@@ -24,7 +24,7 @@ copyrightText: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-comment
+yarn add -D vuepress-plugin-comment1
 ```
 
 :::
@@ -32,7 +32,7 @@ yarn add -D @mr-hope/vuepress-plugin-comment
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-comment
+npm i -D vuepress-plugin-comment1
 ```
 
 :::
@@ -50,7 +50,7 @@ npm i -D @mr-hope/vuepress-plugin-comment
 export default {
   plugins: [
     [
-      "@mr-hope/comment",
+      "comment1",
       {
         // 插件选项
       },
@@ -68,7 +68,7 @@ export default {
 module.exports = {
   plugins: [
     [
-      "@mr-hope/comment",
+      "comment1",
       {
         // 插件选项
       },

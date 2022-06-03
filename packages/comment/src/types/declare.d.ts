@@ -162,7 +162,7 @@ declare module "valine" {
   export default Valine;
 }
 
-declare module "@CommentProvider" {
+declare module "@CommentService" {
   import vue from "vue";
 
   export default vue;

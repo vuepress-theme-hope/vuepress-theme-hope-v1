@@ -21,7 +21,7 @@ module.exports = {
 
   plugins: [
     [
-      "@mr-hope/comment",
+      "comment1",
       {
         // type: "valine",
         // author: "Mr.Hope",

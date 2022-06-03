@@ -2,7 +2,6 @@
   <main class="page">
     <slot name="top" />
 
-    <PageInfo />
     <Content class="theme-default-content" />
     <PageEdit />
 
@@ -14,11 +13,10 @@
 
 <script>
 import PageEdit from "@parent-theme/components/PageEdit.vue";
-import PageInfo from "@mr-hope/vuepress-plugin-comment/PageInfo.vue";
 import PageNav from "@parent-theme/components/PageNav.vue";
 
 export default {
-  components: { PageEdit, PageInfo, PageNav },
+  components: { PageEdit, PageNav },
   props: ["sidebarItems"],
 };
 </script>

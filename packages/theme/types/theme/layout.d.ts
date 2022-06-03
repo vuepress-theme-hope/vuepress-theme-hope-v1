@@ -1,4 +1,4 @@
-import { PageInfo } from "@mr-hope/vuepress-plugin-comment";
+import { PageInfo } from "vuepress-plugin-comment1";
 import { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
 
 /**

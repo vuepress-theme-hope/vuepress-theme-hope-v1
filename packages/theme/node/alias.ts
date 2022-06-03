@@ -58,7 +58,7 @@ export const getAlias = (
       ? resolve(ctx.sourceDir, ".vuepress", custom.pageBottom)
       : noopModule,
     "@Comment": commentEnabled
-      ? "@mr-hope/vuepress-plugin-comment/lib/client/Comment.vue"
+      ? "vuepress-plugin-comment1/lib/client/Comment.vue"
       : noopModule,
     "@NavbarStart": custom.navbarStart
       ? resolve(ctx.sourceDir, ".vuepress", custom.navbarStart)

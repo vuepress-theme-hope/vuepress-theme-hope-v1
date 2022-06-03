@@ -31,7 +31,7 @@ This plugin uses [@vssue/vuepress-plugin-vssue](https://www.npmjs.com/package/@v
 // .vuepress/config.ts
 export default {
   plugins: {
-    "@mr-hope/comment": {
+    comment1: {
       type: "vssue",
       // set `platform` rather than `api`
       platform: "github",
@@ -54,7 +54,7 @@ export default {
 // .vuepress/config.js
 module.exports = {
   plugins: {
-    "@mr-hope/comment": {
+    comment1: {
       type: "vssue",
       // set `platform` rather than `api`
       platform: "github",

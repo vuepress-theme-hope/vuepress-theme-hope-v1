@@ -32,7 +32,7 @@ Vssue 支持通过 GitHub, Gitlab, Bitbucket 或者 Gitee 的 Issue 系统来为
 
 export default {
   plugins: {
-    "@mr-hope/comment": {
+    comment1: {
       type: "vssue",
       // 设置 `platform` 而不是 `api`
       platform: "github",
@@ -56,7 +56,7 @@ export default {
 
 module.exports = {
   plugins: {
-    "@mr-hope/comment": {
+    comment1: {
       type: "vssue",
       // 设置 `platform` 而不是 `api`
       platform: "github",

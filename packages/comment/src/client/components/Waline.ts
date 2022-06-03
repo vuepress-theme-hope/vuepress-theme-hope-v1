@@ -1,23 +1,17 @@
 import Vue from "vue";
 import { Route } from "vue-router";
-import { walineLocales } from "./define";
 
 import type { WalineLocale, WalineInstance } from "@waline/client";
-import type { PropType } from "vue";
-import type { WalineOptions } from "../types";
+import type { WalineOptions } from "../../types";
 
 let timeout: NodeJS.Timeout | null = null;
+
+const options = COMMENT_OPTIONS as WalineOptions;
+const locales = WALINE_LOCALES;
 
 export default Vue.extend({
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Waline",
-
-  props: {
-    config: {
-      type: Object as PropType<WalineOptions>,
-      required: true,
-    },
-  },
 
   data: () => ({
     waline: null as WalineInstance | null,
@@ -25,15 +19,13 @@ export default Vue.extend({
 
   computed: {
     enable(): boolean {
-      const { config } = this;
-
-      return Boolean(config.serverURL);
+      return Boolean(options.serverURL);
     },
 
     enableComment(): boolean {
       if (!this.enable) return false;
 
-      const globalEnable = this.config.comment !== false;
+      const globalEnable = options.comment !== false;
       const pageEnable = this.$page.frontmatter.comment;
 
       return (globalEnable && pageEnable !== false) || pageEnable === true;
@@ -43,7 +35,7 @@ export default Vue.extend({
     enablePageview(): boolean {
       if (!this.enable) return false;
 
-      const globalEnable = this.config.pageview !== false;
+      const globalEnable = options.pageview !== false;
       const pageEnable = this.$page.frontmatter.pageview;
 
       return (globalEnable && pageEnable !== false) || pageEnable === true;
@@ -62,7 +54,7 @@ export default Vue.extend({
               path: this.$withBase(this.$route.path),
               pageview: this.enablePageview,
             });
-          }, this.config.delay);
+          }, options.delay);
         });
       }
     },
@@ -71,8 +63,6 @@ export default Vue.extend({
   mounted(): void {
     if (this.enable)
       timeout = setTimeout(() => {
-        const { config } = this;
-
         void import(
           /* webpackChunkName: "waline" */ "@waline/client/dist/waline"
         ).then(({ init }) => {
@@ -80,20 +70,20 @@ export default Vue.extend({
             el: "#waline-comment",
             lang: this.$lang === "zh-CN" ? "zh-CN" : "en-US",
             locale: {
-              ...walineLocales[this.$localePath],
-              ...(config.locale || {}),
+              ...locales[this.$localePath],
+              ...(options.locale || {}),
             } as WalineLocale,
             emoji: [
               "//unpkg.com/@waline/emojis@1.0.1/weibo",
               "//unpkg.com/@waline/emojis@1.0.1/bilibili",
             ],
             dark: "body.theme-dark",
-            ...config,
+            ...options,
             pageview: this.enablePageview,
             path: this.$withBase(this.$route.path),
           }) as WalineInstance;
         });
-      }, this.config.delay);
+      }, options.delay);
   },
 
   // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle

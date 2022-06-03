@@ -1,5 +1,5 @@
 import { ActiveHashOptions } from "vuepress-plugin-active-hash";
-import { CommentOptions } from "@mr-hope/vuepress-plugin-comment";
+import { CommentOptions } from "vuepress-plugin-comment1";
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
 import { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
 import { FeedOptions } from "@mr-hope/vuepress-plugin-feed";

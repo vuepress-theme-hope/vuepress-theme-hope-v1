@@ -1,4 +1,4 @@
-import CommentService from "./CommentService.vue";
+import CommentService from "@CommentService";
 
 import type { EnhanceApp } from "@mr-hope/vuepress-types";
 

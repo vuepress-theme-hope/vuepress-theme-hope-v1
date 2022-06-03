@@ -7,11 +7,11 @@ import type { CommentOptions, WalineOptions } from "../types";
 import type { Plugin, PluginEntry } from "@mr-hope/vuepress-types";
 
 export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
-  // FIXME: This is a compact cod
+  // FIXME: This is a compact code
   if (options.type === "waline")
     covertWalineOptions(options as WalineOptions & Record<string, unknown>);
 
-  const PLUGIN_NAME = "@mr-hope/vuepress-plugin-comment";
+  const PLUGIN_NAME = "vuepress-plugin-comment1";
   const userValineLocales =
     options.type === "valine"
       ? getLocales({
@@ -45,11 +45,13 @@ export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
     }),
 
     alias: {
-      "@CommentProvider":
+      "@CommentService":
         options.type === "valine"
-          ? resolve(__dirname, "../client/Valine.vue")
+          ? resolve(__dirname, "../client/components/Valine.vue")
           : options.type === "waline"
-          ? resolve(__dirname, "../client/Waline.vue")
+          ? resolve(__dirname, "../client/components/Waline.vue")
+          : options.type === "vssue"
+          ? resolve(__dirname, "../client/components/Vssue.js")
           : noopModule,
     },
 

@@ -226,7 +226,7 @@ export default hope.config({
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-comment",
+        name: "vuepress-plugin-comment1",
         short_name: "comment plugin",
         icons: [
           {

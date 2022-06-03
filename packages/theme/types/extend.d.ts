@@ -6,7 +6,7 @@ import {
   HopeThemeLocaleData,
   ResolvedHopeThemeConfig,
 } from "./theme";
-import { PageInfo } from "@mr-hope/vuepress-plugin-comment";
+import { PageInfo } from "vuepress-plugin-comment1";
 import { FeedFrontmatterOption } from "@mr-hope/vuepress-plugin-feed";
 
 declare module "vue/types/vue" {

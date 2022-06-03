@@ -15,7 +15,7 @@ tags:
 
 ## Build-in plugins
 
-- [@mr-hope/vuepress-plugin-comment][comment]: Comment and page info feature
+- [vuepress-plugin-comment1][comment]: Comment and page info feature
 
 - [@mr-hope/vuepress-plugin-components][components]: Provide some out of box plugins
 
