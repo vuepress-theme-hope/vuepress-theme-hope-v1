@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-feed"
+heroText: "vuepress-plugin-feed1"
 tagline: 为 VuePress 提供 Feed 生成
 action:
   - text: 快速上手 💡
@@ -26,7 +26,7 @@ copyrightText: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-feed
+yarn add -D vuepress-plugin-feed1
 ```
 
 :::
@@ -34,7 +34,7 @@ yarn add -D @mr-hope/vuepress-plugin-feed
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-feed
+npm i -D vuepress-plugin-feed1
 ```
 
 :::
@@ -48,7 +48,7 @@ npm i -D @mr-hope/vuepress-plugin-feed
 module.exports = {
   plugins: [
     [
-      "@mr-hope/feed",
+      "feed1",
       {
         // 你的选项
       },
@@ -66,7 +66,7 @@ module.exports = {
 export default {
   plugins: [
     [
-      "@mr-hope/feed",
+      "feed1",
       {
         // 你的选项
       },

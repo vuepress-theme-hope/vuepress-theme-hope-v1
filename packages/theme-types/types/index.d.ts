@@ -2,7 +2,7 @@
 
 /// <reference types="vuepress-plugin-comment1" />
 
-/// <reference types="@mr-hope/vuepress-plugin-feed" />
+/// <reference types="vuepress-plugin-feed1" />
 
 /// <reference types="@mr-hope/vuepress-plugin-git" />
 

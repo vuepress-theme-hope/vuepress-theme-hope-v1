@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { stripTags } from "../stripTags";
+import { stripTags } from "vuepress-shared";
 
 import type { Feed } from "../feed";
 import type { FeedAuthor } from "../../types";

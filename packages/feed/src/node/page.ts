@@ -1,16 +1,9 @@
-import {
-  getImageMineType,
-  resolveHTML,
-  resolveUrl,
-  getAuthor,
-  getCategory,
-  isAbsoluteUrl,
-  isUrl,
-} from "./utils";
+import { getAuthor, getCategory, isAbsoluteUrl, isUrl } from "vuepress-shared";
+import { getImageMineType, resolveHTML, resolveUrl } from "./utils";
 
+import type { AuthorInfo } from "vuepress-shared";
 import type { Context, Page, PageFrontmatter } from "vuepress-typings";
 import type { Feed } from "./feed";
-import type { AuthorInfo } from "./utils";
 import type {
   FeedAuthor,
   FeedCategory,
@@ -102,7 +95,7 @@ export class FeedPage {
     if (typeof this.pageFeedOptions.category === "object")
       return [this.pageFeedOptions.category];
 
-    const { category } = this.frontmatter;
+    const { categories, category = categories } = this.frontmatter;
 
     return getCategory(category).map((item) => ({ name: item }));
   }
@@ -165,19 +158,18 @@ export class FeedPage {
     if (typeof this.getter.image === "function")
       return this.getter.image(this.page);
 
-    const banner = this.frontmatter["banner"] as string | undefined;
-    const cover = this.frontmatter["cover"] as string | undefined;
+    const { banner, cover } = this.frontmatter;
 
     if (banner) {
       if (isAbsoluteUrl(banner))
-        return resolveUrl(this.options.hostname, this.context.base, banner);
+        return resolveUrl(this.options.hostname, this.base, banner);
 
       if (isUrl(banner)) return banner;
     }
 
     if (cover) {
       if (isAbsoluteUrl(cover))
-        return resolveUrl(this.options.hostname, this.context.base, cover);
+        return resolveUrl(this.options.hostname, this.base, cover);
 
       if (isUrl(cover)) return cover;
     }
@@ -188,7 +180,7 @@ export class FeedPage {
 
     if (result) {
       if (isAbsoluteUrl(result[1]))
-        return resolveUrl(this.options.hostname, this.context.base, result[1]);
+        return resolveUrl(this.options.hostname, this.base, result[1]);
 
       if (isUrl(result[1])) return result[1];
     }

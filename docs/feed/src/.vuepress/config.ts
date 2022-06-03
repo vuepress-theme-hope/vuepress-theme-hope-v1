@@ -157,7 +157,7 @@ export default hope.config({
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-feed",
+        name: "vuepress-plugin-feed1",
         short_name: "feed plugin",
         icons: [
           {

@@ -7,7 +7,7 @@ tags:
   - feature
 ---
 
-`vuepress-theme-hope` 通过内置 [`@mr-hope/vuepress-plugin-feed`](https://vuepress-theme-hope.github.io/v1/feed/zh/) 插件来为你提供 feed 支持。
+`vuepress-theme-hope` 通过内置 [`vuepress-plugin-feed1`](https://vuepress-theme-hope.github.io/v1/feed/zh/) 插件来为你提供 feed 支持。
 
 主题会自动为你生成以下三种格式的 feed 文件:
 

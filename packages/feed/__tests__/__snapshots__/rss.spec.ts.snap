@@ -11,7 +11,7 @@ exports[`RSS 2.0 > should generate a valid feed 1`] = `
     <language>en</language>
     <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
     <lastBuildDate>Sat, 13 Jul 2013 23:00:00 GMT</lastBuildDate>
-    <generator>@mr-hope/vuepress-plugin-feed</generator>
+    <generator>vuepress-plugin-feed1</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>All rights reserved 2013, John Doe</copyright>
     <ttl>60</ttl>
@@ -49,7 +49,7 @@ exports[`RSS 2.0 > should generate a valid feed with audio 1`] = `
     <language>en</language>
     <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
     <lastBuildDate>Sat, 13 Jul 2013 23:00:00 GMT</lastBuildDate>
-    <generator>@mr-hope/vuepress-plugin-feed</generator>
+    <generator>vuepress-plugin-feed1</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>All rights reserved 2013, John Doe</copyright>
     <ttl>60</ttl>
@@ -126,7 +126,7 @@ exports[`RSS 2.0 > should generate a valid feed with enclosure 1`] = `
     <language>en</language>
     <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
     <lastBuildDate>Sat, 13 Jul 2013 23:00:00 GMT</lastBuildDate>
-    <generator>@mr-hope/vuepress-plugin-feed</generator>
+    <generator>vuepress-plugin-feed1</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>All rights reserved 2013, John Doe</copyright>
     <ttl>60</ttl>
@@ -190,7 +190,7 @@ exports[`RSS 2.0 > should generate a valid feed with image properties 1`] = `
     <language>en</language>
     <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
     <lastBuildDate>Sat, 13 Jul 2013 23:00:00 GMT</lastBuildDate>
-    <generator>@mr-hope/vuepress-plugin-feed</generator>
+    <generator>vuepress-plugin-feed1</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>All rights reserved 2013, John Doe</copyright>
     <ttl>60</ttl>
@@ -241,7 +241,7 @@ exports[`RSS 2.0 > should generate a valid feed with video 1`] = `
     <language>en</language>
     <pubDate>Wed, 10 Jul 2013 23:00:00 GMT</pubDate>
     <lastBuildDate>Sat, 13 Jul 2013 23:00:00 GMT</lastBuildDate>
-    <generator>@mr-hope/vuepress-plugin-feed</generator>
+    <generator>vuepress-plugin-feed1</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>All rights reserved 2013, John Doe</copyright>
     <ttl>60</ttl>

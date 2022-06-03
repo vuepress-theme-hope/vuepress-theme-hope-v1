@@ -7,7 +7,7 @@ import type { AddThisOptions } from "vuepress-plugin-add-this";
 import type { CommentOptions } from "vuepress-plugin-comment1";
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
 import type { CopyCodeOptions } from "vuepress-plugin-copy-code1";
-import type { FeedOptions } from "@mr-hope/vuepress-plugin-feed";
+import type { FeedOptions } from "vuepress-plugin-feed1";
 import type { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import type { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 import type { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
@@ -129,7 +129,7 @@ export const getPluginConfig = (
 
     ["@mr-hope/components", resolveComponentsOptions(themeConfig)],
 
-    ["@mr-hope/feed", resolveFeedOptions(themeConfig)],
+    ["feed1", resolveFeedOptions(themeConfig)],
 
     ["@mr-hope/git", themeConfig.git],
 

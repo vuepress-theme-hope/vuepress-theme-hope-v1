@@ -1,6 +1,6 @@
+import { encodeCDATA, encodeXML, isUrl, stripTags } from "vuepress-shared";
 import { js2xml } from "xml-js";
-import { stripTags } from "../stripTags";
-import { FEED_GENERATOR, encodeCDATA, encodeXML, isUrl } from "../utils";
+import { FEED_GENERATOR } from "../utils";
 
 import type { Feed } from "../feed";
 import type { FeedCategory, FeedEnclosure, FeedItemOption } from "../../types";

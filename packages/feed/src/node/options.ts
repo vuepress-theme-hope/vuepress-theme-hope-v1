@@ -1,4 +1,10 @@
-import { deepAssign, getRootLang } from "vuepress-shared";
+import {
+  deepAssign,
+  getRootLang,
+  removeEndingSlash,
+  removeLeadingSlash,
+} from "vuepress-shared";
+
 import { compareDate, resolveUrl } from "./utils";
 
 import type { Context, Page } from "vuepress-typings";
@@ -16,7 +22,7 @@ export type ResolvedFeedOptionsMap = Record<string, ResolvedFeedOptions>;
 export const ensureHostName = (options: Partial<FeedOptions>): boolean => {
   // make sure hostname do not end with `/`
   if (options.hostname) {
-    options.hostname = options.hostname.replace(/\/$/u, "");
+    options.hostname = removeEndingSlash(options.hostname);
 
     return true;
   }
@@ -34,7 +40,7 @@ export const checkOutput = (options: Partial<FeedOptions>): boolean =>
   Boolean(options.atom || options.json || options.rss);
 
 export const getFeedOptions = (
-  context: Context,
+  { siteConfig }: Context,
   options: FeedOptions
 ): ResolvedFeedOptionsMap =>
   Object.fromEntries(
@@ -42,7 +48,7 @@ export const getFeedOptions = (
       // root locale must exists
       // eslint-disable-next-line @typescript-eslint/naming-convention
       "/": {},
-      ...context.siteConfig.locales,
+      ...siteConfig.locales,
     }).map((localePath) => [
       localePath,
       {
@@ -112,22 +118,21 @@ export const getFilename = (
   jsonOutputFilename: string;
   rssOutputFilename: string;
 } => ({
-  atomOutputFilename: `${prefix.replace(/^\//, "")}${
+  atomOutputFilename: `${removeLeadingSlash(prefix)}${
     options.atomOutputFilename || "atom.xml"
   }`,
-  jsonOutputFilename: `${prefix.replace(/^\//, "")}${
+  jsonOutputFilename: `${removeLeadingSlash(prefix)}${
     options.jsonOutputFilename || "feed.json"
   }`,
-  rssOutputFilename: `${prefix.replace(/^\//, "")}${
+  rssOutputFilename: `${removeLeadingSlash(prefix)}${
     options.rssOutputFilename || "rss.xml"
   }`,
 });
 
 export const getFeedLinks = (
-  context: Context,
+  { base }: Context,
   options: FeedOptions
 ): FeedLinks => {
-  const { base } = context;
   const { hostname } = options;
   const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
     getFilename(options);

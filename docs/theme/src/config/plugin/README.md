@@ -21,7 +21,7 @@ tags:
 
 - [vuepress-plugin-copy-code1][copy-code]: Provide copy button for code blocks
 
-- [@mr-hope/vuepress-plugin-feed][feed]: Feed generation support
+- [vuepress-plugin-feed1][feed]: Feed generation support
 
 - [@mr-hope/vuepress-plugin-git][git]: Info plugin based on git
 

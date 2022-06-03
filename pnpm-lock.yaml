@@ -12,7 +12,7 @@ importers:
       '@commitlint/cli': 17.0.2
       '@commitlint/config-conventional': 17.0.2
       '@mr-hope/vuepress-plugin-components': workspace:*
-      '@mr-hope/vuepress-plugin-feed': workspace:*
+      'vuepress-plugin-feed1': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
       '@mr-hope/vuepress-plugin-reading-time': workspace:*
@@ -65,7 +65,7 @@ importers:
       '@commitlint/cli': 17.0.2
       '@commitlint/config-conventional': 17.0.2
       '@mr-hope/vuepress-plugin-components': link:packages/components
-      '@mr-hope/vuepress-plugin-feed': link:packages/feed
+      'vuepress-plugin-feed1': link:packages/feed
       '@mr-hope/vuepress-plugin-git': link:packages/git
       '@mr-hope/vuepress-plugin-pwa': link:packages/pwa
       '@mr-hope/vuepress-plugin-reading-time': link:packages/reading-time
@@ -518,7 +518,7 @@ importers:
       '@docsearch/css': ^3.1.0
       '@docsearch/js': ^3.1.0
       '@mr-hope/vuepress-plugin-components': workspace:*
-      '@mr-hope/vuepress-plugin-feed': workspace:*
+      'vuepress-plugin-feed1': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
       '@mr-hope/vuepress-plugin-seo': workspace:*
@@ -546,7 +546,7 @@ importers:
       '@docsearch/css': 3.1.0
       '@docsearch/js': 3.1.0_@types+react@18.0.10
       '@mr-hope/vuepress-plugin-components': link:../components
-      '@mr-hope/vuepress-plugin-feed': link:../feed
+      'vuepress-plugin-feed1': link:../feed
       '@mr-hope/vuepress-plugin-git': link:../git
       '@mr-hope/vuepress-plugin-pwa': link:../pwa
       '@mr-hope/vuepress-plugin-seo': link:../seo
@@ -573,7 +573,7 @@ importers:
 
   packages/theme-types:
     specifiers:
-      '@mr-hope/vuepress-plugin-feed': workspace:*
+      'vuepress-plugin-feed1': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
       '@mr-hope/vuepress-plugin-reading-time': workspace:*
@@ -583,7 +583,7 @@ importers:
       vuepress-theme-hope: workspace:*
       vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-plugin-feed': link:../feed
+      'vuepress-plugin-feed1': link:../feed
       '@mr-hope/vuepress-plugin-git': link:../git
       '@mr-hope/vuepress-plugin-pwa': link:../pwa
       '@mr-hope/vuepress-plugin-reading-time': link:../reading-time

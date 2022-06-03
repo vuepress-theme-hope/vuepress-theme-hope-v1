@@ -1,5 +1,6 @@
+import { encodeCDATA, encodeXML } from "vuepress-shared";
 import { js2xml } from "xml-js";
-import { encodeCDATA, encodeXML, FEED_GENERATOR } from "../utils";
+import { FEED_GENERATOR } from "../utils";
 
 import type { Feed } from "../feed";
 import type { FeedAuthor, FeedCategory } from "../../types";

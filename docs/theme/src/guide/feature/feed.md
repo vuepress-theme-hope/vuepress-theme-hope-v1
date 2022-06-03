@@ -7,9 +7,9 @@ tags:
   - feed
 ---
 
-The theme will enable feed generation support using [`@mr-hope/vuepress-plugin-feed`](https://vuepress-theme-hope.github.io/v1/feed/) by default.
+The theme will enable feed generation support using [`vuepress-plugin-feed1`](https://vuepress-theme-hope.github.io/v1/feed/) by default.
 
-`@mr-hope/vuepress-plugin-feed` plugin will automatically generate feed in the following three formats for you
+`vuepress-plugin-feed1` plugin will automatically generate feed in the following three formats for you
 
 - Atom 1.0 (Default output: atom.xml)
 - JSON 1.1 (Default output: feed.json)

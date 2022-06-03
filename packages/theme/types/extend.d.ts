@@ -7,7 +7,7 @@ import {
   ResolvedHopeThemeConfig,
 } from "./theme";
 import { PageInfo } from "vuepress-plugin-comment1";
-import { FeedFrontmatterOption } from "@mr-hope/vuepress-plugin-feed";
+import { FeedFrontmatterOption } from "vuepress-plugin-feed1";
 
 declare module "vue/types/vue" {
   export interface Vue {

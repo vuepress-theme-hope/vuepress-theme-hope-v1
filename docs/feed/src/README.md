@@ -3,7 +3,7 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-feed"
+heroText: "vuepress-plugin-feed1"
 tagline: Feed plugin for vuepress
 action:
   - text: Guide 💡
@@ -26,7 +26,7 @@ copyrightText: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-feed
+yarn add -D vuepress-plugin-feed1
 ```
 
 :::
@@ -34,7 +34,7 @@ yarn add -D @mr-hope/vuepress-plugin-feed
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-feed
+npm i -D vuepress-plugin-feed1
 ```
 
 :::
@@ -52,7 +52,7 @@ npm i -D @mr-hope/vuepress-plugin-feed
 export default {
   plugins: [
     [
-      "@mr-hope/feed",
+      "feed1",
       {
         // your options
       },
@@ -70,7 +70,7 @@ export default {
 module.exports = {
   plugins: [
     [
-      "@mr-hope/feed",
+      "feed1",
       {
         // your options
       },

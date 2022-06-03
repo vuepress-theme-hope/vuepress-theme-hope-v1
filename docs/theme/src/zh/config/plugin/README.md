@@ -21,7 +21,7 @@ tags:
 
 - [vuepress-plugin-copy-code1][copy-code]: 提供一键复制代码块功能。
 
-- [@mr-hope/vuepress-plugin-feed][feed]: 提供 Feed 生成
+- [vuepress-plugin-feed1][feed]: 提供 Feed 生成
 
 - [@mr-hope/vuepress-plugin-git][git]: 基于 Git 的页面信息插件
 

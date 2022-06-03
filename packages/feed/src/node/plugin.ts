@@ -1,28 +1,28 @@
-import chalk from "chalk";
+import { magenta } from "chalk";
 import { covertOptions } from "./compact";
+import { checkOutput, ensureHostName, getFeedOptions } from "./options";
 import { injectLinkstoHead } from "./injectHead";
 import { FeedGenerator } from "./generator";
-import { checkOutput, ensureHostName, getFeedOptions } from "./options";
-import { error, info } from "./utils";
+import { logger } from "./utils";
 
 import type { Plugin, PluginEntry } from "vuepress-typings";
 import type { FeedOptions } from "../types";
 
 export const feedPlugin: Plugin<FeedOptions> = (options, context) => {
-  const plugin: PluginEntry = {
-    name: "@mr-hope/vuepress-plugin-feed",
-  };
-
   covertOptions(options as FeedOptions & Record<string, unknown>);
 
+  const plugin: PluginEntry = {
+    name: "vuepress-plugin-feed1",
+  };
+
   if (!ensureHostName(options)) {
-    error(`Option ${chalk.magenta("hostname")} is required!`);
+    logger.error(`Option ${magenta("hostname")} is required!`);
 
     return plugin;
   }
 
   if (!checkOutput(options)) {
-    info("No requested output, the plugin won’t start!");
+    logger.info("No requested output, the plugin won’t start!");
 
     return plugin;
   }

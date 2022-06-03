@@ -121,7 +121,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [vuepress-plugin-copy-code1][copy-code]: Provide copy button for code blocks
 
-- [@mr-hope/vuepress-plugin-feed][feed]: Feed support
+- [vuepress-plugin-feed1][feed]: Feed support
 
 - [@mr-hope/vuepress-plugin-git][git]: Info plugin based on git
 

@@ -44,7 +44,7 @@ The theme includes the following plugins, you can use them directly in other the
 
 - [vuepress-plugin-copy-code1][copy-code]: Provide copy button for code blocks
 
-- [@mr-hope/vuepress-plugin-feed][feed]: Feed support
+- [vuepress-plugin-feed1][feed]: Feed support
 
 - [@mr-hope/vuepress-plugin-git][git]: Info based on git
 

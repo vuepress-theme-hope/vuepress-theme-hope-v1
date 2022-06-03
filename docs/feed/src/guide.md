@@ -5,7 +5,7 @@ icon: creative
 
 ## Usage
 
-The `@mr-hope/vuepress-plugin-feed` plugin can generate feed files in the following three formats for you:
+The `vuepress-plugin-feed1` plugin can generate feed files in the following three formats for you:
 
 - Atom 1.0
 - JSON 1.1

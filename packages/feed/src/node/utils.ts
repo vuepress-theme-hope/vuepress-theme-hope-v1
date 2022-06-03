@@ -1,19 +1,6 @@
-import { black, blue } from "chalk";
+import { Logger, removeLeadingSlash } from "vuepress-shared";
 
-export const wait = (message: string): void =>
-  console.log(blue("Feed:"), black.bgYellowBright("wait"), message);
-
-export const warn = (message: string): void =>
-  console.log(blue("Feed:"), black.bgYellow("warn"), message);
-
-export const info = (message: string): void =>
-  console.log(blue("Feed:"), black.bgBlue("Info"), message);
-
-export const error = (message: string): void =>
-  console.log(blue("Feed:"), black.bgRed("Error"), message);
-
-export const success = (message: string): void =>
-  console.log(blue("Feed:"), black.bgGreen("Success"), message);
+export const logger = new Logger("vuepress-plugin-feed1");
 
 export const compareDate = (
   dateA: Date | string | undefined,
@@ -58,36 +45,8 @@ export const resolveHTML = (
     // remove tex
     .replace(/<math[\s\S]*?\/math>/gu, "<i>Content not supported</i>");
 
-/**
- * check if string is a valid url
- */
-export const isUrl = (test: string): boolean => {
-  if (typeof test !== "string" || test === "") return false;
-
-  // url Math
-  const result = /^(?:\w+:)?\/\/(\S+)$/u.exec(test);
-
-  if (!result) return false;
-
-  const address = result[1];
-
-  if (!address) return false;
-
-  return (
-    // address with localhost
-    /^localhost[:?\d]*(?:[^:?\d]\S*)?$/u.test(address) ||
-    // address without localhost
-    /^[^\s.]+\.\S{2,}$/u.test(address)
-  );
-};
-
-export const isAbsoluteUrl = (test: string): boolean => test.startsWith("/");
-
 export const resolveUrl = (hostname: string, base = "", path = ""): string =>
-  `${hostname}${base}${
-    // make sure path does not start with '/'
-    path.replace(/^\//u, "")
-  }`;
+  `${hostname}${base}${removeLeadingSlash(path)}`;
 
 export const getImageMineType = (ext = ""): string =>
   `image/${
@@ -104,66 +63,4 @@ export const getImageMineType = (ext = ""): string =>
       : ""
   }`;
 
-/**
- * @see https://stackoverflow.com/questions/223652/is-there-a-way-to-escape-a-cdata-end-token-in-xml
- */
-export const encodeCDATA = (content: string): string =>
-  content.replace(/]]>/g, "]]]]><![CDATA[>");
-
-export const encodeXML = (content: string): string =>
-  content
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
-
-export const FEED_GENERATOR = "@mr-hope/vuepress-plugin-feed";
-
-export type AuthorInfo = { name: string; url?: string };
-
-export type Author = string | string[] | AuthorInfo | AuthorInfo[];
-
-export const getAuthor = (
-  author: Author | false | undefined,
-  canDisable = false
-): AuthorInfo[] => {
-  if (author) {
-    if (Array.isArray(author)) {
-      return author.map((item) =>
-        typeof item === "string" ? { name: item } : item
-      );
-    }
-
-    if (typeof author === "string") return [{ name: author }];
-
-    if (typeof author === "object" && author.name) return [author];
-
-    console.error(
-      `Expect 'author' to be \`AuthorInfo[] | AuthorInfo | string[] | string ${
-        canDisable ? "" : "| false"
-      } | undefined\`, but got`,
-      author
-    );
-
-    return [];
-  }
-
-  return [];
-};
-
-export const getCategory = (
-  category: string[] | string | undefined
-): string[] => {
-  if (category) {
-    if (Array.isArray(category)) return category;
-    if (typeof category === "string") return [category];
-
-    console.error(
-      `Expect 'category' to be \`string[] | string | undefined\`, but got`,
-      category
-    );
-  }
-
-  return [];
-};
+export const FEED_GENERATOR = "vuepress-plugin-feed2";

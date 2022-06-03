@@ -12,7 +12,7 @@ exports[`Atom 1.0 > should generate a valid feed 1`] = `
     <uri>https://example.com/johndoe?link=sanitized&amp;value=2</uri>
   </author>
   <updated>2013-07-13T23:00:00.000Z</updated>
-  <generator>@mr-hope/vuepress-plugin-feed</generator>
+  <generator>vuepress-plugin-feed1</generator>
   <link rel=\\"self\\" href=\\"http://example.com/atom.xml\\"/>
   <link rel=\\"alternate\\" href=\\"http://example.com/\\"/>
   <link rel=\\"hub\\" href=\\"wss://example.com/\\"/>

@@ -5,7 +5,7 @@ import { dirname, resolve } from "path";
 import { Feed } from "./feed";
 import { getFeedChannelOption, getFilename, getFeedLinks } from "./options";
 import { FeedPage } from "./page";
-import { compareDate, success } from "./utils";
+import { compareDate, logger } from "./utils";
 
 import type { Context, Page } from "vuepress-typings";
 import type { ResolvedFeedOptionsMap } from "./options";
@@ -78,7 +78,7 @@ export class FeedGenerator {
       }
     }
 
-    success(
+    logger.succeed(
       `added ${cyan(`${count} page(s)`)} as feed item(s) in route ${cyan(
         localePath
       )}`
@@ -105,7 +105,7 @@ export class FeedGenerator {
             await ensureDir(dirname(filePath));
             await outputFile(filePath, feed.atom());
 
-            success(
+            logger.succeed(
               `Atom feed file generated and saved to ${cyan(
                 atomOutputFilename
               )}`
@@ -119,7 +119,7 @@ export class FeedGenerator {
             await ensureDir(dirname(filePath));
             await outputFile(filePath, feed.json());
 
-            success(
+            logger.succeed(
               `JSON feed file generated and saved to ${cyan(
                 jsonOutputFilename
               )}`
@@ -133,7 +133,7 @@ export class FeedGenerator {
             await ensureDir(dirname(filePath));
             await outputFile(filePath, feed.rss());
 
-            success(
+            logger.succeed(
               `RSS feed file generated and saved to ${cyan(rssOutputFilename)}`
             );
           }

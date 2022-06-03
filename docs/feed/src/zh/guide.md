@@ -5,7 +5,7 @@ icon: creative
 
 ## 使用
 
-`@mr-hope/vuepress-plugin-feed` 插件可为你生成以下三种格式的 feed 文件:
+`vuepress-plugin-feed1` 插件可为你生成以下三种格式的 feed 文件:
 
 - Atom 1.0
 - JSON 1.1
