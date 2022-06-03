@@ -6,7 +6,7 @@ import { filterArticle, sortArticle } from "@theme/utils/article";
 import { getPathMatchedKeys } from "@theme/utils/encrypt";
 
 import type { BlogOptions } from "@theme/types";
-import type { BasePage } from "@mr-hope/vuepress-types";
+import type { BasePage } from "vuepress-typings";
 import type { Route } from "vue-router";
 
 export default Vue.extend({

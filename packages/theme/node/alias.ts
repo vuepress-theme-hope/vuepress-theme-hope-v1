@@ -1,7 +1,7 @@
 import { noopModule } from "vuepress-shared";
 import { resolve } from "path";
 
-import type { Context } from "@mr-hope/vuepress-types";
+import type { Context } from "vuepress-typings";
 import type { ResolvedHopeThemeConfig } from "../types";
 
 export const getAlias = (

@@ -5,7 +5,7 @@ import { FeedGenerator } from "./generator";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options";
 import { error, info } from "./utils";
 
-import type { Plugin, PluginEntry } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginEntry } from "vuepress-typings";
 import type { FeedOptions } from "../types";
 
 export const feedPlugin: Plugin<FeedOptions> = (options, context) => {

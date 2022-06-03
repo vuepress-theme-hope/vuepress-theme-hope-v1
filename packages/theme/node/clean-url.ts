@@ -1,4 +1,4 @@
-import type { Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin } from "vuepress-typings";
 import type { CleanUrlOptions } from "../types";
 
 export const cleanUrlPlugin: Plugin<CleanUrlOptions> = ({

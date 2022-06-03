@@ -2,7 +2,7 @@ import { deepAssignReverse, getLocales, path2Lang } from "vuepress-shared";
 import { resolveEncrypt } from "./encrypt";
 import { themeLocales } from "./locales";
 
-import type { Config, Context } from "@mr-hope/vuepress-types";
+import type { Config, Context } from "vuepress-typings";
 import type {
   HopeThemeConfig,
   ResolvedHopeThemeConfig,

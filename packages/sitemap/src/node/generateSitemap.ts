@@ -3,7 +3,7 @@ import { createWriteStream, readFile, existsSync, writeFile } from "fs-extra";
 import { relative, resolve } from "path";
 import { SitemapStream } from "sitemap";
 
-import type { Context, Page } from "@mr-hope/vuepress-types";
+import type { Context, Page } from "vuepress-typings";
 import type {
   SitemapFrontmatterOption,
   SitemapImageOption,

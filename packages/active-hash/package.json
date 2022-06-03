@@ -32,8 +32,8 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "workspace:*",
-    "ts-debounce": "^4.0.0"
+    "ts-debounce": "^4.0.0",
+    "vuepress-typings": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

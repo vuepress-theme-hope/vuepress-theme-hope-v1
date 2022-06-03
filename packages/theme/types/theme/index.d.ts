@@ -1,4 +1,4 @@
-import type { Config } from "@mr-hope/vuepress-types";
+import type { Config } from "vuepress-typings";
 import type { HopeThemeConfig, ResolvedHopeThemeConfig } from "./theme";
 
 export * from "./appearance";

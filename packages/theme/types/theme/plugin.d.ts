@@ -11,7 +11,7 @@ import { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 import { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
 import { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll";
 
-import type { Page, ResolvedComponent } from "@mr-hope/vuepress-types";
+import type { Page, ResolvedComponent } from "vuepress-typings";
 
 /**
  * 重命名块选项

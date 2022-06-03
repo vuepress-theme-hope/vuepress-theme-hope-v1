@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import type { BasePage } from "@mr-hope/vuepress-types";
+import type { BasePage } from "vuepress-typings";
 
 export const getDate = (
   date: string | number | Date

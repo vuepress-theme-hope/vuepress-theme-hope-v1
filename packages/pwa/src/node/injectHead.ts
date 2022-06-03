@@ -1,4 +1,4 @@
-import type { HeadItem } from "@mr-hope/vuepress-types";
+import type { HeadItem } from "vuepress-typings";
 import type { PWAOptions } from "../types";
 
 export const injectLinkstoHead = (

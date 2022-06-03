@@ -8,7 +8,7 @@ import {
   resolveUrl,
 } from "./utils";
 
-import type { Context, Page } from "@mr-hope/vuepress-types";
+import type { Context, Page } from "vuepress-typings";
 import type { SeoContent, SeoOptions } from "../types";
 
 export const getOGP = (

@@ -2,7 +2,7 @@ import { getLocales } from "vuepress-shared";
 import { resolve } from "path";
 import { photoSwipeLocales } from "./locales";
 
-import type { Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin } from "vuepress-typings";
 import type { PhotoSwipeOptions } from "../types";
 
 export const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (

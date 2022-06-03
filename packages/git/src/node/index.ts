@@ -6,7 +6,7 @@ import {
   getUpdatedTimeStamp,
 } from "./time";
 
-import type { Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin } from "vuepress-typings";
 import type { GitOptions } from "../types";
 
 const gitPlugin: Plugin<GitOptions> = (options, { cwd }) => {

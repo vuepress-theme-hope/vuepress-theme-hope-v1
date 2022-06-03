@@ -4,7 +4,7 @@ import Vue from "vue";
 // @ts-ignore: docsearch type issue
 import docsearch from "@docsearch/js";
 
-import type { AlgoliaOption } from "@mr-hope/vuepress-types";
+import type { AlgoliaOption } from "vuepress-typings";
 import type { DocSearchProps } from "@docsearch/react";
 import type { PropType } from "vue";
 

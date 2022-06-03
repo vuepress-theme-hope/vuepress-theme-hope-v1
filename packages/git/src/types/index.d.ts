@@ -29,7 +29,7 @@ export interface GitOptions {
   transformer?: (timestamp: number, lang: string) => string;
 }
 
-declare module "@mr-hope/vuepress-types/types/page" {
+declare module "vuepress-typings/types/page" {
   interface BasePage {
     contributors?: GitContributor[];
     createTime?: string;

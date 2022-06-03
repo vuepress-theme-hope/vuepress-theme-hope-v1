@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import type { Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin } from "vuepress-typings";
 
 import type { ActiveHashOptions } from "../types";
 

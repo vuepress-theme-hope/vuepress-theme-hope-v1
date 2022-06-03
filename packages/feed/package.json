@@ -30,11 +30,11 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "workspace:*",
     "@types/fs-extra": "9.0.13",
     "chalk": "^4.1.2",
     "fs-extra": "^10.1.0",
     "vuepress-shared": "workspace:*",
+    "vuepress-typings": "workspace:*",
     "xml-js": "^1.6.11"
   },
   "publishConfig": {

@@ -74,7 +74,7 @@ The project is a monorepo, managed by `lerna`.
 │ ├── sitemap → sitemap plugin
 │ ├── theme → vuepress-theme-hope theme
 │ ├── theme-types → theme type definition
-│ └── vuepress-types → vuepress type definition
+│ └── vuepress-typings → vuepress type definition
 │
 ├── scripts → command scripts
 │

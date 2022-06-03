@@ -7,7 +7,7 @@ import {
   resolvePath,
 } from "./path";
 
-import type { BasePage, SiteData } from "@mr-hope/vuepress-types";
+import type { BasePage, SiteData } from "vuepress-typings";
 import type {
   HopeSideBarConfig,
   HopeSideBarConfigItem,

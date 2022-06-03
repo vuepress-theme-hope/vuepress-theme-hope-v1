@@ -27,7 +27,7 @@ import {
 } from "./markdown-it";
 import { getPluginConfig } from "./pluginConfig";
 
-import type { Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin } from "vuepress-typings";
 import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../types";
 

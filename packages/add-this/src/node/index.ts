@@ -1,6 +1,6 @@
 import { resolve } from "path";
 
-import type { Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin } from "vuepress-typings";
 import type { AddThisOptions } from "../types";
 
 const addThisPlugin: Plugin<AddThisOptions> = (options) => ({

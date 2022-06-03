@@ -1,6 +1,6 @@
 import { dayjs } from "./dayjs";
 
-import type { Context, Lang, Locales, Page } from "@mr-hope/vuepress-types";
+import type { Context, Lang, Locales, Page } from "vuepress-typings";
 import type { Author, AuthorInfo, SeoOptions } from "../types";
 
 /**

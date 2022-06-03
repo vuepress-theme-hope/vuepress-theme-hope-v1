@@ -72,9 +72,9 @@ You can:
    {
      "compilerOptions": {
        "target": "ES6", /// Any target not less than 'ES5'
-       "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-types
+       "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-typings
        "experimentalDecorators": true, // TypeScript files for '.vue' needs this option
-       "module": "commonjs", // Avoiding some issues related to vuepress-types
+       "module": "commonjs", // Avoiding some issues related to vuepress-typings
        // type definition files of vuepress and this theme
        "types": ["@mr-hope/vuepress-theme-types"]
      },

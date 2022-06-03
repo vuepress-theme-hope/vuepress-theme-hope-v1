@@ -74,7 +74,7 @@ yarn
 │ ├── sitemap → sitemap 插件
 │ ├── theme → vuepress-theme-hope 主题
 │ ├── theme-types → 主题的类型定义
-│ └── vuepress-types → vuepress 类型定义
+│ └── vuepress-typings → vuepress 类型定义
 │
 ├── scripts → 命令脚本
 │

@@ -1,7 +1,7 @@
 import Vue from "vue";
 import { filterArticle, getDate, sortArticle } from "@theme/utils/article";
 
-import type { BasePage } from "@mr-hope/vuepress-types";
+import type { BasePage } from "vuepress-typings";
 
 export interface TimelineItem {
   year: number;

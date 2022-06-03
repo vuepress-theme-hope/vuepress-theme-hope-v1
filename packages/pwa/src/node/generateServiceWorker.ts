@@ -3,7 +3,7 @@ import { statSync } from "fs-extra";
 import { resolve } from "path";
 import { generateSW } from "workbox-build";
 
-import type { Context } from "@mr-hope/vuepress-types";
+import type { Context } from "vuepress-typings";
 import type {
   ManifestEntry,
   ManifestTransform,

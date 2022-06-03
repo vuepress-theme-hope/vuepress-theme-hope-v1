@@ -4,7 +4,7 @@ import { black, blue, cyan } from "chalk";
 import { existsSync, readFile, writeJSON } from "fs-extra";
 import { relative, resolve } from "path";
 
-import type { Context } from "@mr-hope/vuepress-types";
+import type { Context } from "vuepress-typings";
 import type { ManifestOption, PWAOptions } from "../types";
 
 export const getManifest = async (

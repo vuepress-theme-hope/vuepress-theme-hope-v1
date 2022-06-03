@@ -5,7 +5,7 @@ import CodeGroupItem from "@CodeGroupItem";
 import FlowChart from "@FlowChart";
 import Mermaid from "@Mermaid";
 import Presentation from "@Presentation";
-import type { EnhanceApp } from "@mr-hope/vuepress-types";
+import type { EnhanceApp } from "vuepress-typings";
 
 const enhanceApp: EnhanceApp = ({ Vue }) => {
   if (MARKDOWN_ENHANCE_ALIGN) void import("./styles/align.styl");

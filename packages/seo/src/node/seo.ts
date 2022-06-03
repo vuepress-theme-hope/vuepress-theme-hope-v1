@@ -5,7 +5,7 @@ import { join, relative } from "path";
 import { addOGP } from "./inject";
 import { getOGP } from "./meta";
 
-import type { Context, Page } from "@mr-hope/vuepress-types";
+import type { Context, Page } from "vuepress-typings";
 import type { SeoOptions } from "../types";
 
 export const appendSEO = (

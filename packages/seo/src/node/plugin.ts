@@ -3,7 +3,7 @@ import { appendSEO, generateRobotsTxt } from "./seo";
 import { striptags } from "./stripTags";
 import { md2text } from "./utils";
 
-import type { Page, Plugin, PluginEntry } from "@mr-hope/vuepress-types";
+import type { Page, Plugin, PluginEntry } from "vuepress-typings";
 import type { SeoOptions } from "../types";
 
 export const seoPlugin: Plugin<SeoOptions> = (options, context) => {

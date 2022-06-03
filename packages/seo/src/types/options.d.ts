@@ -1,4 +1,4 @@
-import type { Context, Page } from "@mr-hope/vuepress-types";
+import type { Context, Page } from "vuepress-typings";
 import type { SeoContent } from "./ogp";
 
 export type AuthorInfo = { name: string; url?: string };

@@ -3,8 +3,8 @@ import { resolve } from "path";
 import { covertOptions } from "./compact";
 import { walineLocales, valineLocales } from "./locales";
 
+import type { Plugin, PluginEntry } from "vuepress-typings";
 import type { CommentOptions } from "../types";
-import type { Plugin, PluginEntry } from "@mr-hope/vuepress-types";
 
 export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
   covertOptions(options as CommentOptions & Record<string, unknown>);

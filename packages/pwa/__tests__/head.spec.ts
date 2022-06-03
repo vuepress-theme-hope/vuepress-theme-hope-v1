@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { injectLinkstoHead } from "../src/node/injectHead";
 
-import type { HeadItem } from "@mr-hope/vuepress-types";
+import type { HeadItem } from "vuepress-typings";
 import type { PWAOptions } from "../src/types";
 
 const options: PWAOptions = {

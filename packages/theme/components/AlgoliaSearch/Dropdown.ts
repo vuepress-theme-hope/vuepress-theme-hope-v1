@@ -1,6 +1,6 @@
 import Vue from "vue";
 
-import type { AlgoliaOption } from "@mr-hope/vuepress-types";
+import type { AlgoliaOption } from "vuepress-typings";
 import type { PropType } from "vue";
 
 export default Vue.extend({

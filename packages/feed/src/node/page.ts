@@ -8,7 +8,7 @@ import {
   isUrl,
 } from "./utils";
 
-import type { Context, Page, PageFrontmatter } from "@mr-hope/vuepress-types";
+import type { Context, Page, PageFrontmatter } from "vuepress-typings";
 import type { Feed } from "./feed";
 import type { AuthorInfo } from "./utils";
 import type {

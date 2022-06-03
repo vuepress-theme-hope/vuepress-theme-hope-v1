@@ -44,7 +44,6 @@
   },
   "dependencies": {
     "@babel/core": "*",
-    "@mr-hope/vuepress-types": "workspace:*",
     "@types/hash-sum": "^1.0.0",
     "@types/katex": "^0.14.0",
     "@types/markdown-it": "^10.0.3",
@@ -59,7 +58,8 @@
     "ts-debounce": "^4.0.0",
     "upath": "^2.0.1",
     "vuepress-plugin-container": "^2.1.5",
-    "vuepress-shared": "workspace:*"
+    "vuepress-shared": "workspace:*",
+    "vuepress-typings": "workspace:*"
   },
   "devDependencies": {
     "@types/babel__core": "7.1.19"

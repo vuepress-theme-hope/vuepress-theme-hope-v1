@@ -1,4 +1,4 @@
-import type { Page } from "@mr-hope/vuepress-types";
+import type { Page } from "vuepress-typings";
 import type { FeedChannelOption, FeedGetter } from "./feed";
 
 export interface BaseFeedOptions {

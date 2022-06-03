@@ -2,7 +2,7 @@ import { black, blue } from "chalk";
 import { covertOptions } from "./compact";
 import { generateSiteMap } from "./generateSitemap";
 
-import type { Plugin, PluginEntry } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginEntry } from "vuepress-typings";
 import type { SitemapOptions } from "../types";
 
 export const sitemapPlugin: Plugin<SitemapOptions> = (options, context) => {

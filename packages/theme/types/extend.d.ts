@@ -19,7 +19,7 @@ declare module "vue/types/vue" {
   }
 }
 
-declare module "@mr-hope/vuepress-types" {
+declare module "vuepress-typings" {
   interface PageFrontmatter extends BasePageFrontmatterInfo {
     summary?: string;
     sticky?: boolean | number;

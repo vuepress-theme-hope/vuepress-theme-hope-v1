@@ -1,6 +1,6 @@
 import { getDate, timeTransformer } from "../../shared";
 
-import type { Page } from "@mr-hope/vuepress-types";
+import type { Page } from "vuepress-typings";
 import type { DateOptions } from "../../shared";
 
 export const injectLocalizedDate = (

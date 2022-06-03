@@ -5,7 +5,7 @@ import PresentationIcon from "@theme/icons/PresentationIcon.vue";
 import StickyIcon from "@theme/icons/StickyIcon.vue";
 import { getPathMatchedKeys } from "@theme/utils/encrypt";
 
-import type { BasePage } from "@mr-hope/vuepress-types";
+import type { BasePage } from "vuepress-typings";
 import type { PropType } from "vue";
 
 export default Vue.extend({

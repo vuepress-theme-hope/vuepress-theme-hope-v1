@@ -4,7 +4,7 @@ import PrevIcon from "@theme/icons/PrevIcon.vue";
 import { resolvePath } from "@theme/utils/path";
 import { resolvePageforSidebar } from "@theme/utils/sidebar";
 
-import type { BasePage, SiteData } from "@mr-hope/vuepress-types";
+import type { BasePage, SiteData } from "vuepress-typings";
 import type { PropType } from "vue";
 import type { Route } from "vue-router";
 import type {

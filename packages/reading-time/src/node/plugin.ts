@@ -2,7 +2,7 @@ import { getLocales } from "vuepress-shared";
 import { readingTimeLocales } from "./locales";
 import { getReadingTime } from "./reading-time";
 
-import type { Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin } from "vuepress-typings";
 import type { ReadingTimeOptions } from "../types";
 
 export const readingTimePlugin: Plugin<ReadingTimeOptions> = (

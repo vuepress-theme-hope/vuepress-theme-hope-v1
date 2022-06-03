@@ -9,7 +9,7 @@ import { appendBase } from "./helper";
 import { injectLinkstoHead } from "./injectHead";
 import { pwaLocales } from "./locales";
 
-import type { Plugin, PluginEntry } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginEntry } from "vuepress-typings";
 import type { PWAOptions } from "../types";
 
 export const pwaPlugin: Plugin<PWAOptions> = (options, context) => {

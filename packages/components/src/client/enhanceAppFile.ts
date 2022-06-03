@@ -4,7 +4,7 @@ import BreadCrumb from "@BreadCrumb";
 import Pagination from "@Pagination";
 import ScreenFull from "@ScreenFull";
 
-import type { EnhanceApp } from "@mr-hope/vuepress-types";
+import type { EnhanceApp } from "vuepress-typings";
 
 const enhanceApp: EnhanceApp = ({ Vue }) => {
   if (BackToTop.name) Vue.component("BackToTop", BackToTop);

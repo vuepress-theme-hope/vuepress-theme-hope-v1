@@ -2,7 +2,7 @@ import { lang2PathConfig, path2langConfig, supportedLangs } from "./config";
 import { Logger } from "../logger";
 import { deepAssign } from "../utils";
 
-import type { Context } from "@mr-hope/vuepress-types";
+import type { Context } from "vuepress-typings";
 import type { HopeLang } from "./types";
 import type { ConvertLocaleConfig, LocaleConfig } from "../../shared";
 

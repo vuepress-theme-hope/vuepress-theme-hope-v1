@@ -7,7 +7,7 @@ import { getFeedChannelOption, getFilename, getFeedLinks } from "./options";
 import { FeedPage } from "./page";
 import { compareDate, success } from "./utils";
 
-import type { Context, Page } from "@mr-hope/vuepress-types";
+import type { Context, Page } from "vuepress-typings";
 import type { ResolvedFeedOptionsMap } from "./options";
 
 export class FeedGenerator {

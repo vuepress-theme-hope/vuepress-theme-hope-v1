@@ -1,7 +1,7 @@
 import { getLocales } from "vuepress-shared";
 import { markdownEnhanceLocales } from "./locales";
 
-import type { Context, PluginConfig } from "@mr-hope/vuepress-types";
+import type { Context, PluginConfig } from "vuepress-typings";
 import type { MarkdownContainerName, MarkdownEnhanceOptions } from "../types";
 
 export const getPluginConfig = (

@@ -51,9 +51,9 @@ npm i -D typescript
 {
   "compilerOptions": {
     "target": "ES6", // 任何不小于 es6 的 target 均可
-    "allowSyntheticDefaultImports": true, // 规避 vuepress-types 的类型定义问题
+    "allowSyntheticDefaultImports": true, // 规避 vuepress-typings 的类型定义问题
     "experimentalDecorators": true, // Vue 的 TypeScript 写法需要开启此选项
-    "module": "commonjs", // 为了避免 vuepress-types 解析失败
+    "module": "commonjs", // 为了避免 vuepress-typings 解析失败
     "types": ["@mr-hope/vuepress-theme-types"]
   },
   "include": [

@@ -6,7 +6,7 @@ import {
   pageInfoLocales,
 } from "./locales";
 
-import type { Plugin, PluginConfig } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginConfig } from "vuepress-typings";
 import type { ComponentOptions } from "../types";
 
 export const componentPlugin: Plugin<ComponentOptions> = (options, context) => {

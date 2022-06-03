@@ -7,7 +7,7 @@ import Password from "@theme/components/Password.vue";
 import { pathEncryptMixin } from "@theme/mixins/pathEncrypt";
 
 import type { PageInfoProps } from "@mr-hope/vuepress-plugin-components";
-import type { PageHeader } from "@mr-hope/vuepress-types";
+import type { PageHeader } from "vuepress-typings";
 import type { PropType } from "vue";
 import type { SidebarItem } from "@theme/utils/sidebar";
 

@@ -1,5 +1,5 @@
 import type { ConvertLocaleConfig } from "vuepress-shared";
-import type { AlgoliaOption } from "@mr-hope/vuepress-types";
+import type { AlgoliaOption } from "vuepress-typings";
 import type { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
 import type { HopeFooterConfig } from "./layout";
 

@@ -1,7 +1,4 @@
-import {
-  NavBarConfigItem,
-  SideBarConfigItemObject,
-} from "@mr-hope/vuepress-types";
+import { NavBarConfigItem, SideBarConfigItemObject } from "vuepress-typings";
 
 /** vuepress-theme-hope 导航栏配置项 */
 export interface HopeNavBarConfigItem extends NavBarConfigItem {

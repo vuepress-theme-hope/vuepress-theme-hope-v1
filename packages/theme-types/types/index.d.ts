@@ -1,4 +1,4 @@
-/// <reference types="@mr-hope/vuepress-types" />
+/// <reference types="vuepress-typings" />
 
 /// <reference types="vuepress-plugin-comment1" />
 

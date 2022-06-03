@@ -6,7 +6,7 @@ import CategoryInfo from "@mr-hope/vuepress-plugin-components/lib/client/pageinf
 import TagInfo from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/TagInfo.vue";
 import TimerIcon from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/icons/TimerIcon.vue";
 
-import type { BasePage } from "@mr-hope/vuepress-types";
+import type { BasePage } from "vuepress-typings";
 import type { PropType } from "vue";
 
 export default Vue.extend({

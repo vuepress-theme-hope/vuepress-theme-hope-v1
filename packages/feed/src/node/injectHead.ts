@@ -1,7 +1,7 @@
 import { getFilename } from "./options";
 import { resolveUrl } from "./utils";
 
-import type { Context, HeadItem } from "@mr-hope/vuepress-types";
+import type { Context, HeadItem } from "vuepress-typings";
 import type { ResolvedFeedOptionsMap } from "./options";
 
 export const injectLinkstoHead = (

@@ -1,4 +1,4 @@
-import type { PageFrontmatter } from "@mr-hope/vuepress-types";
+import type { PageFrontmatter } from "vuepress-typings";
 import type { Author } from "./author";
 
 export interface BasePageFrontmatterInfo {

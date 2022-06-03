@@ -1,4 +1,4 @@
-import type { Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin } from "vuepress-typings";
 import type { ChunkRenameOptions } from "../types";
 
 export const chunkRenamePlugin: Plugin<ChunkRenameOptions> = (

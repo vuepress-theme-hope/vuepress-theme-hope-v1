@@ -1,4 +1,4 @@
-import type { Page } from "@mr-hope/vuepress-types";
+import type { Page } from "vuepress-typings";
 
 export type ModifyTimeGetter = (page: Page) => string;
 

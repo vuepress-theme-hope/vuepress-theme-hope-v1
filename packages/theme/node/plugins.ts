@@ -12,7 +12,7 @@ import type { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import type { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
 import type { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
 import type { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll";
-import type { PluginConfig } from "@mr-hope/vuepress-types";
+import type { PluginConfig } from "vuepress-typings";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
 import type { ResolvedHopeThemeConfig } from "../types";

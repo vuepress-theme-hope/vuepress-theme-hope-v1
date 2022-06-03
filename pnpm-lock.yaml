@@ -12,7 +12,6 @@ importers:
       '@commitlint/cli': 17.0.2
       '@commitlint/config-conventional': 17.0.2
       '@mr-hope/vuepress-plugin-components': workspace:*
-      'vuepress-plugin-copy-code1': workspace:*
       '@mr-hope/vuepress-plugin-feed': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
@@ -21,7 +20,6 @@ importers:
       '@mr-hope/vuepress-plugin-sitemap': workspace:*
       '@mr-hope/vuepress-plugin-smooth-scroll': workspace:*
       '@mr-hope/vuepress-theme-types': workspace:*
-      '@mr-hope/vuepress-types': workspace:*
       '@types/inquirer': 8.2.1
       '@types/node': 17.0.35
       '@typescript-eslint/eslint-plugin': 5.27.0
@@ -58,14 +56,15 @@ importers:
       vuepress-plugin-active-hash: workspace:*
       vuepress-plugin-add-this: workspace:*
       vuepress-plugin-comment1: workspace:*
+      vuepress-plugin-copy-code1: workspace:*
       vuepress-plugin-md-enhance: workspace:*
       vuepress-plugin-photo-swipe: workspace:*
       vuepress-shared: workspace:*
+      vuepress-typings: workspace:*
     devDependencies:
       '@commitlint/cli': 17.0.2
       '@commitlint/config-conventional': 17.0.2
       '@mr-hope/vuepress-plugin-components': link:packages/components
-      'vuepress-plugin-copy-code1': link:packages/copy-code
       '@mr-hope/vuepress-plugin-feed': link:packages/feed
       '@mr-hope/vuepress-plugin-git': link:packages/git
       '@mr-hope/vuepress-plugin-pwa': link:packages/pwa
@@ -74,7 +73,6 @@ importers:
       '@mr-hope/vuepress-plugin-sitemap': link:packages/sitemap
       '@mr-hope/vuepress-plugin-smooth-scroll': link:packages/smooth-scroll
       '@mr-hope/vuepress-theme-types': link:packages/theme-types
-      '@mr-hope/vuepress-types': link:packages/vuepress-types
       '@types/inquirer': 8.2.1
       '@types/node': 17.0.35
       '@typescript-eslint/eslint-plugin': 5.27.0_dszb5tb7atwkjjijmmov4qhi7i
@@ -111,9 +109,11 @@ importers:
       vuepress-plugin-active-hash: link:packages/active-hash
       vuepress-plugin-add-this: link:packages/add-this
       vuepress-plugin-comment1: link:packages/comment
+      vuepress-plugin-copy-code1: link:packages/copy-code
       vuepress-plugin-md-enhance: link:packages/md-enhance
       vuepress-plugin-photo-swipe: link:packages/photo-swipe
       vuepress-shared: link:packages/shared
+      vuepress-typings: link:packages/vuepress-typings
 
   demo:
     specifiers:
@@ -265,23 +265,22 @@ importers:
 
   packages/active-hash:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       ts-debounce: ^4.0.0
+      vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       ts-debounce: 4.0.0
+      vuepress-typings: link:../vuepress-typings
 
   packages/add-this:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
+      vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
+      vuepress-typings: link:../vuepress-typings
 
   packages/comment:
     specifiers:
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-reading-time': workspace:*
-      '@mr-hope/vuepress-types': workspace:*
       '@vssue/api-bitbucket-v2': ^1.4.7
       '@vssue/api-gitea-v1': ^1.4.7
       '@vssue/api-gitee-v5': ^1.4.7
@@ -295,10 +294,10 @@ importers:
       valine: ^1.4.18
       vssue: ^1.4.8
       vuepress-shared: workspace:*
+      vuepress-typings: workspace:*
     dependencies:
       '@mr-hope/vuepress-plugin-git': link:../git
       '@mr-hope/vuepress-plugin-reading-time': link:../reading-time
-      '@mr-hope/vuepress-types': link:../vuepress-types
       '@vssue/api-bitbucket-v2': 1.4.7
       '@vssue/api-gitea-v1': 1.4.7
       '@vssue/api-gitee-v5': 1.4.7
@@ -312,32 +311,33 @@ importers:
       valine: 1.4.18
       vssue: 1.4.8
       vuepress-shared: link:../shared
+      vuepress-typings: link:../vuepress-typings
 
   packages/components:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       balloon-css: ^1.2.0
       screenfull: ^5.2.0
       ts-debounce: ^4.0.0
       vue-router: ^3.5.4
       vuepress-shared: workspace:*
+      vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       balloon-css: 1.2.0
       screenfull: 5.2.0
       ts-debounce: 4.0.0
       vue-router: 3.5.4
       vuepress-shared: link:../shared
+      vuepress-typings: link:../vuepress-typings
 
   packages/copy-code:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       balloon-css: ^1.2.0
       vuepress-shared: workspace:*
+      vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       balloon-css: 1.2.0
       vuepress-shared: link:../shared
+      vuepress-typings: link:../vuepress-typings
 
   packages/create:
     specifiers:
@@ -355,34 +355,33 @@ importers:
 
   packages/feed:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       '@types/fs-extra': 9.0.13
       chalk: ^4.1.2
       fs-extra: ^10.1.0
       vuepress-shared: workspace:*
+      vuepress-typings: workspace:*
       xml-js: ^1.6.11
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       '@types/fs-extra': 9.0.13
       chalk: 4.1.2
       fs-extra: 10.1.0
       vuepress-shared: link:../shared
+      vuepress-typings: link:../vuepress-typings
       xml-js: 1.6.11
 
   packages/git:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       dayjs: ^1.11.2
       execa: ^5.1.1
+      vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       dayjs: 1.11.2
       execa: 5.1.1
+      vuepress-typings: link:../vuepress-typings
 
   packages/md-enhance:
     specifiers:
       '@babel/core': '*'
-      '@mr-hope/vuepress-types': workspace:*
       '@types/babel__core': 7.1.19
       '@types/hash-sum': ^1.0.0
       '@types/katex': ^0.14.0
@@ -399,9 +398,9 @@ importers:
       upath: ^2.0.1
       vuepress-plugin-container: ^2.1.5
       vuepress-shared: workspace:*
+      vuepress-typings: workspace:*
     dependencies:
       '@babel/core': 7.18.2
-      '@mr-hope/vuepress-types': link:../vuepress-types
       '@types/hash-sum': 1.0.0
       '@types/katex': 0.14.0
       '@types/markdown-it': 10.0.3
@@ -417,64 +416,64 @@ importers:
       upath: 2.0.1
       vuepress-plugin-container: 2.1.5
       vuepress-shared: link:../shared
+      vuepress-typings: link:../vuepress-typings
     devDependencies:
       '@types/babel__core': 7.1.19
 
   packages/photo-swipe:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       '@types/photoswipe': ^4.1.2
       photoswipe: ^4.1.3
       vuepress-shared: workspace:*
+      vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       '@types/photoswipe': 4.1.2
       photoswipe: 4.1.3
       vuepress-shared: link:../shared
+      vuepress-typings: link:../vuepress-typings
 
   packages/pwa:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       '@types/fs-extra': ^9.0.13
       chalk: ^4.1.2
       fs-extra: ^10.1.0
       mitt: ^3.0.0
       register-service-worker: ^1.7.2
       vuepress-shared: workspace:*
+      vuepress-typings: workspace:*
       workbox-build: ^6.5.3
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       '@types/fs-extra': 9.0.13
       chalk: 4.1.2
       fs-extra: 10.1.0
       mitt: 3.0.0
       register-service-worker: 1.7.2
       vuepress-shared: link:../shared
+      vuepress-typings: link:../vuepress-typings
       workbox-build: 6.5.3
 
   packages/reading-time:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       vuepress-shared: workspace:*
+      vuepress-typings: workspace:*
     devDependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       vuepress-shared: link:../shared
+      vuepress-typings: link:../vuepress-typings
 
   packages/seo:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       '@types/fs-extra': ^9.0.13
       chalk: ^4.1.2
       fs-extra: ^10.1.0
+      vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       '@types/fs-extra': 9.0.13
       chalk: 4.1.2
       fs-extra: 10.1.0
+      vuepress-typings: link:../vuepress-typings
 
   packages/shared:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       chalk: ^4.1.2
       cpx2: 4.2.0
       dayjs: ^1.11.2
@@ -482,50 +481,49 @@ importers:
       ora: ^5.4.1
       rimraf: 3.0.2
       vue: 2.7.0-alpha.4
+      vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       chalk: 4.1.2
       dayjs: 1.11.2
       execa: 5.1.1
       ora: 5.4.1
       vue: 2.7.0-alpha.4
+      vuepress-typings: link:../vuepress-typings
     devDependencies:
       cpx2: 4.2.0
       rimraf: 3.0.2
 
   packages/sitemap:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
       '@types/fs-extra': ^9.0.13
       chalk: ^4.1.2
       fs-extra: ^10.1.0
       sitemap: ^7.1.1
+      vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
       '@types/fs-extra': 9.0.13
       chalk: 4.1.2
       fs-extra: 10.1.0
       sitemap: 7.1.1
+      vuepress-typings: link:../vuepress-typings
 
   packages/smooth-scroll:
     specifiers:
-      '@mr-hope/vuepress-types': workspace:*
+      vuepress-typings: workspace:*
     dependencies:
-      '@mr-hope/vuepress-types': link:../vuepress-types
+      vuepress-typings: link:../vuepress-typings
 
   packages/theme:
     specifiers:
       '@docsearch/css': ^3.1.0
       '@docsearch/js': ^3.1.0
       '@mr-hope/vuepress-plugin-components': workspace:*
-      'vuepress-plugin-copy-code1': workspace:*
       '@mr-hope/vuepress-plugin-feed': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
       '@mr-hope/vuepress-plugin-seo': workspace:*
       '@mr-hope/vuepress-plugin-sitemap': workspace:*
       '@mr-hope/vuepress-plugin-smooth-scroll': workspace:*
-      '@mr-hope/vuepress-types': workspace:*
       '@types/react': ^18.0.10
       '@vuepress/plugin-blog': ^1.9.4
       bcrypt-ts: ^1.0.0
@@ -537,23 +535,23 @@ importers:
       vuepress-plugin-add-this: workspace:*
       vuepress-plugin-comment1: workspace:*
       vuepress-plugin-container: ^2.1.5
+      vuepress-plugin-copy-code1: workspace:*
       vuepress-plugin-copyright: ^1.0.2
       vuepress-plugin-md-enhance: workspace:*
       vuepress-plugin-photo-swipe: workspace:*
       vuepress-plugin-typescript: ^0.3.1
       vuepress-shared: workspace:*
+      vuepress-typings: workspace:*
     dependencies:
       '@docsearch/css': 3.1.0
       '@docsearch/js': 3.1.0_@types+react@18.0.10
       '@mr-hope/vuepress-plugin-components': link:../components
-      'vuepress-plugin-copy-code1': link:../copy-code
       '@mr-hope/vuepress-plugin-feed': link:../feed
       '@mr-hope/vuepress-plugin-git': link:../git
       '@mr-hope/vuepress-plugin-pwa': link:../pwa
       '@mr-hope/vuepress-plugin-seo': link:../seo
       '@mr-hope/vuepress-plugin-sitemap': link:../sitemap
       '@mr-hope/vuepress-plugin-smooth-scroll': link:../smooth-scroll
-      '@mr-hope/vuepress-types': link:../vuepress-types
       '@types/react': 18.0.10
       '@vuepress/plugin-blog': 1.9.4_chalk@4.1.2
       bcrypt-ts: 1.0.0
@@ -565,11 +563,13 @@ importers:
       vuepress-plugin-add-this: link:../add-this
       vuepress-plugin-comment1: link:../comment
       vuepress-plugin-container: 2.1.5
+      vuepress-plugin-copy-code1: link:../copy-code
       vuepress-plugin-copyright: 1.0.2
       vuepress-plugin-md-enhance: link:../md-enhance
       vuepress-plugin-photo-swipe: link:../photo-swipe
       vuepress-plugin-typescript: 0.3.1
       vuepress-shared: link:../shared
+      vuepress-typings: link:../vuepress-typings
 
   packages/theme-types:
     specifiers:
@@ -577,23 +577,23 @@ importers:
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
       '@mr-hope/vuepress-plugin-reading-time': workspace:*
-      '@mr-hope/vuepress-types': workspace:*
       vuepress-plugin-comment1: workspace:*
       vuepress-plugin-md-enhance: workspace:*
       vuepress-plugin-photo-swipe: workspace:*
       vuepress-theme-hope: workspace:*
+      vuepress-typings: workspace:*
     dependencies:
       '@mr-hope/vuepress-plugin-feed': link:../feed
       '@mr-hope/vuepress-plugin-git': link:../git
       '@mr-hope/vuepress-plugin-pwa': link:../pwa
       '@mr-hope/vuepress-plugin-reading-time': link:../reading-time
-      '@mr-hope/vuepress-types': link:../vuepress-types
       vuepress-plugin-comment1: link:../comment
       vuepress-plugin-md-enhance: link:../md-enhance
       vuepress-plugin-photo-swipe: link:../photo-swipe
       vuepress-theme-hope: link:../theme
+      vuepress-typings: link:../vuepress-typings
 
-  packages/vuepress-types:
+  packages/vuepress-typings:
     specifiers:
       '@types/express': ^4.17.13
       '@types/markdown-it': ^10.0.3

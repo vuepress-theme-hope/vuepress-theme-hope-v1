@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { resolveVuePressConfig } from "../node/config";
 
-import type { Config } from "@mr-hope/vuepress-types";
+import type { Config } from "vuepress-typings";
 import type { HopeThemeConfig } from "../types";
 
 describe("Test resolveTheme function", () => {

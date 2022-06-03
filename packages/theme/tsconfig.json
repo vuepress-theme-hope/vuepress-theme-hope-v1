@@ -24,7 +24,7 @@
     { "path": "../sitemap/tsconfig.json" },
     { "path": "../smooth-scroll/tsconfig.json" },
     { "path": "../theme-types/tsconfig.json" },
-    { "path": "../vuepress-types/tsconfig.json" },
+    { "path": "../vuepress-typings/tsconfig.json" },
     { "path": "./tsconfig.cjs.json" },
     { "path": "./tsconfig.esm.json" }
   ],

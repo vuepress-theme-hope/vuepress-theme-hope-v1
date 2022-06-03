@@ -3,7 +3,7 @@ import SidebarGroup from "@theme/components/Sidebar/SidebarGroup.vue";
 import SidebarLink from "@theme/components/Sidebar/SidebarLink.vue";
 import { isActive } from "@theme/utils/path";
 
-import type { BasePage } from "@mr-hope/vuepress-types";
+import type { BasePage } from "vuepress-typings";
 import type { PropType } from "vue";
 import type { Route } from "vue-router";
 import type { SidebarHeaderItem, SidebarItem } from "@theme/utils/sidebar";

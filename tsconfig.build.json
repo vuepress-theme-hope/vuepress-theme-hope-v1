@@ -19,7 +19,7 @@
     { "path": "./packages/smooth-scroll/tsconfig.json" },
     { "path": "./packages/theme/tsconfig.json" },
     { "path": "./packages/theme-types/tsconfig.json" },
-    { "path": "./packages/vuepress-types/tsconfig.json" }
+    { "path": "./packages/vuepress-typings/tsconfig.json" }
   ],
   "include": []
 }

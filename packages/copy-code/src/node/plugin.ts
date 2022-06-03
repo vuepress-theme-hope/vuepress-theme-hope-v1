@@ -2,7 +2,7 @@ import { getLocales } from "vuepress-shared";
 import { resolve } from "path";
 import { copyCodeLocales } from "./locales";
 
-import type { Plugin } from "@mr-hope/vuepress-types";
+import type { Plugin } from "vuepress-typings";
 import type { CopyCodeOptions } from "../types";
 
 export const copyCodePlugin: Plugin<CopyCodeOptions> = (options, context) => {

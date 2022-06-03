@@ -39,7 +39,6 @@
     "@mr-hope/vuepress-plugin-seo": "workspace:*",
     "@mr-hope/vuepress-plugin-sitemap": "workspace:*",
     "@mr-hope/vuepress-plugin-smooth-scroll": "workspace:*",
-    "@mr-hope/vuepress-types": "workspace:*",
     "@types/react": "^18.0.10",
     "@vuepress/plugin-blog": "^1.9.4",
     "bcrypt-ts": "^1.0.0",
@@ -56,7 +55,8 @@
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-plugin-photo-swipe": "workspace:*",
     "vuepress-plugin-typescript": "^0.3.1",
-    "vuepress-shared": "workspace:*"
+    "vuepress-shared": "workspace:*",
+    "vuepress-typings": "workspace:*"
   },
   "peerDependencies": {
     "typescript": "^4.4.4",

@@ -47,7 +47,7 @@ files.forEach((pkgName) => {
         copy: 'cpx "src/**/*.{d.ts,vue,styl}" lib',
       },
       dependencies: {
-        "@mr-hope/vuepress-types": `^${version}`,
+        "vuepress-typings": `^${version}`,
       },
       publishConfig: {
         access: "public",

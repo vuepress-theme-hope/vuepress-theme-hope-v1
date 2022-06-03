@@ -32,7 +32,7 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "dependencies": {
-    "@mr-hope/vuepress-types": "workspace:*"
+    "vuepress-typings": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

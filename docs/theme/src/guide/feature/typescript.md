@@ -51,9 +51,9 @@ At the same time, you need to ensure that your workspace contains a valid `tscon
 {
   "compilerOptions": {
     "target": "ES6", // Any target not lower than 'es6'
-    "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-types
+    "allowSyntheticDefaultImports": true, // Avoiding some issues related to vuepress-typings
     "experimentalDecorators": true, // TypeScript files for '.vue' needs this option
-    "module": "commonjs", // Avoiding some issues related to vuepress-types
+    "module": "commonjs", // Avoiding some issues related to vuepress-typings
     "types": ["@mr-hope/vuepress-theme-types"]
   },
   // At least one ts file should be included in the project (empty files are also acceptable)

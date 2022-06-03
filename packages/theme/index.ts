@@ -5,7 +5,7 @@ import { eject } from "./node/eject";
 
 import { getPluginConfig } from "./node/plugins";
 
-import type { Context, PluginEntry } from "@mr-hope/vuepress-types";
+import type { Context, PluginEntry } from "vuepress-typings";
 import type {
   HopeNavBarConfig,
   HopeSideBarConfig,

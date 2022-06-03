@@ -7,7 +7,7 @@ import SearchBox from "@SearchBox";
 import SidebarButton from "@theme/components/Navbar/SidebarButton.vue";
 import ThemeColor from "@ThemeColor";
 
-import type { AlgoliaOption } from "@mr-hope/vuepress-types";
+import type { AlgoliaOption } from "vuepress-typings";
 
 let handler: () => void;
 
