@@ -21,24 +21,28 @@
 <script src="./ScreenFull" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/reset'
+@require '~@mr-hope/vuepress-shared/styles/reset';
 
-.full-screen, .cancel-full-screen
-  button()
-  width 1.8rem
-  height 1.8rem
-  padding 4px
-  color #aaa
-  outline none
+.full-screen, .cancel-full-screen {
+  button();
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 4px;
+  color: #aaa;
+  outline: none;
 
-  & svg
-    width 100%
-    height 100%
-    fill currentcolor
+  & svg {
+    width: 100%;
+    height: 100%;
+    fill: currentcolor;
+  }
+}
 
-.full-screen:hover, .cancel-full-screen
-  color var(--accent-color, $accentColor)
+.full-screen:hover, .cancel-full-screen {
+  color: var(--accent-color, $accentColor);
+}
 
-.cancel-full-screen:hover
-  color #aaa
+.cancel-full-screen:hover {
+  color: #aaa;
+}
 </style>

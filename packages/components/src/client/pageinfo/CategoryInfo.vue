@@ -16,7 +16,8 @@
 <script src="./CategoryInfo" />
 
 <style lang="stylus">
-.category-info.enable > span:hover
-  cursor pointer
-  color var(--accent-color, $accentColor)
+.category-info.enable > span:hover {
+  cursor: pointer;
+  color: var(--accent-color, $accentColor);
+}
 </style>

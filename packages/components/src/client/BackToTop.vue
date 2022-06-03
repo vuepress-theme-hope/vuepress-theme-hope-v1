@@ -26,33 +26,38 @@
 <script src="./BackToTop" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/reset'
+@require '~@mr-hope/vuepress-shared/styles/reset';
 
-.back-to-top
-  button()
-  position fixed !important
-  right 1rem
-  bottom 4rem
-  z-index 10
-  width 3rem
-  height 3rem
-  padding 8px
+.back-to-top {
+  button();
+  position: fixed !important;
+  right: 1rem;
+  bottom: 4rem;
+  z-index: 10;
+  width: 3rem;
+  height: 3rem;
+  padding: 8px;
 
-  &:hover
-    color var(--accent-color-l25, lighten($accentColor, 25%))
-    cursor pointer
+  &:hover {
+    color: var(--accent-color-l25, lighten($accentColor, 25%));
+    cursor: pointer;
+  }
 
-  svg
-    width 100%
-    border-radius 50%
-    background var(--bgcolor, #fff)
-    color var(--accent-color, $accentColor)
-    overflow hidden
-    fill currentcolor
+  svg {
+    width: 100%;
+    border-radius: 50%;
+    background: var(--bgcolor, #fff);
+    color: var(--accent-color, $accentColor);
+    overflow: hidden;
+    fill: currentcolor;
+  }
+}
 
-.fade-enter-active, .fade-leave-active
-  transition opacity 0.3s
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s;
+}
 
-.fade-enter, .fade-leave-to
-  opacity 0
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 </style>

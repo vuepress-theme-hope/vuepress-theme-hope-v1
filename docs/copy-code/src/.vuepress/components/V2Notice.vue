@@ -75,58 +75,61 @@ export default Vue.extend({
 </script>
 
 <style lang="stylus" scoped>
-.v2-notice-wrapper
-  position fixed
-  top 80px
-  right 20px
-  z-index 500
-  width 250px
+.v2-notice-wrapper {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 500;
+  width: 250px;
+  border-radius: 8px;
+  background: var(--bgcolor);
+  box-shadow: 0 2px 6px 0 var(--card-shadow-color);
+  overflow: hidden;
 
-  border-radius 8px
-  background var(--bgcolor)
-  box-shadow 0 2px 6px 0 var(--card-shadow-color)
-  overflow hidden
+  .title {
+    position: relative;
+    padding: 10px;
+    margin: 0;
+    background: var(--accent-color);
+    color: var(--white);
 
-  .title
-    position relative
-    padding 10px
-    margin 0
-    background var(--accent-color)
-    color var(--white)
+    .icon-close {
+      display: inline-block;
+      vertical-align: middle;
+      float: right;
+      width: 22px;
+      height: 22px;
+      margin: auto;
+      cursor: pointer;
+    }
+  }
 
+  .content {
+    padding: 10px 15px 0;
+    font-size: 14px;
+  }
 
-    .icon-close
-      display inline-block
-      vertical-align middle
-      float right
-      width 22px
-      height 22px
-      margin auto
+  .footer {
+    padding-bottom: 12px;
+    text-align: center;
 
-      cursor pointer
-
-  .content
-    padding 10px 15px 0
-    font-size 14px
-
-
-  .footer
-    padding-bottom 12px
-    text-align center
-
-    .action
-      display inline-block
-      background-color var(--accent-color)
-      padding 6px 12px
-      border-radius 8px
-      border none
-      color var(--white)
-      box-shadow var(--box-shadow)
-      cursor pointer
+    .action {
+      display: inline-block;
+      background-color: var(--accent-color);
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: none;
+      color: var(--white);
+      box-shadow: var(--box-shadow);
+      cursor: pointer;
+    }
+  }
+}
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity 0.5s;
 }
+
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
