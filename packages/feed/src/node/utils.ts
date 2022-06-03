@@ -63,4 +63,4 @@ export const getImageMineType = (ext = ""): string =>
       : ""
   }`;
 
-export const FEED_GENERATOR = "vuepress-plugin-feed2";
+export const FEED_GENERATOR = "vuepress-plugin-feed1";

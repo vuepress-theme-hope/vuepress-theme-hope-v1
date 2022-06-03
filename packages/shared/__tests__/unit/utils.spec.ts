@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { encodeXML } from "../src/node/utils";
+import { encodeXML } from "../../src/node";
 
 describe("Encode XML", () => {
   it("should encode", () => {
