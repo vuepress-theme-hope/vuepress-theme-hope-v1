@@ -1,3 +1,41 @@
 {
-  "extends": ["config:base"]
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["@types/markdown-it"],
+      "allowedVersions": "10"
+    },
+    {
+      "matchPackageNames": ["@types/webpack-dev-server"],
+      "allowedVersions": "v3"
+    },
+    {
+      "matchPackageNames": ["chalk"],
+      "allowedVersions": "v4"
+    },
+    {
+      "matchPackageNames": ["execa"],
+      "allowedVersions": "v5"
+    },
+    {
+      "matchPackageNames": ["photoswipe"],
+      "allowedVersions": "v4"
+    },
+    {
+      "matchPackageNames": ["screenfull"],
+      "allowedVersions": "v5"
+    },
+    {
+      "matchPackageNames": ["readable-stream"],
+      "allowedVersions": "v2"
+    },
+    {
+      "matchPackageNames": ["vue"],
+      "allowedVersions": "v2"
+    },
+    {
+      "matchPackageNames": ["vue-router"],
+      "allowedVersions": "v3"
+    }
+  ]
 }
