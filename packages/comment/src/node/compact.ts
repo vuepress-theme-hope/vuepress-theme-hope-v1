@@ -1,3 +1,4 @@
+import { logger } from "./utils";
 import type { CommentOptions } from "../types";
 
 /** @deprecated */
@@ -5,7 +6,7 @@ export const covertOptions = (
   options: CommentOptions & Record<string, unknown>
 ): void => {
   if ("type" in options) {
-    console.warn(`"type" is deprecated, please use "provider".`);
+    logger.warn(`"type" is deprecated, please use "provider".`);
     if (options["type"] === "waline") options.provider = "Waline";
     else if (options["type"] === "vssue") options.provider = "Vssue";
     else if (options["type"] === "valine") options.provider = "Valine";
@@ -32,7 +33,7 @@ export const covertOptions = (
       ["copyRight", "copyright"],
     ].forEach(([oldOptions, newOptions]) => {
       if (oldOptions in options) {
-        console.warn(
+        logger.warn(
           `"${oldOptions}" is deprecated in @waline/client@v2, you should use "${newOptions}" instead.`
         );
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -59,7 +60,7 @@ export const covertOptions = (
       "mathTagSupport",
     ].forEach((option) => {
       if (option in options) {
-        console.warn(
+        logger.error(
           `"${option}" is no longer supported in @waline/client@v2.`
         );
 
