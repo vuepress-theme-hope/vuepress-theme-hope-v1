@@ -95,7 +95,7 @@ export default hope.config({
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-reading-time",
+        name: "vuepress-plugin-reading-time1",
         short_name: "reading-time plugin",
         icons: [
           {

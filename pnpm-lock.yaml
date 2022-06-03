@@ -15,7 +15,7 @@ importers:
       'vuepress-plugin-feed1': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
-      '@mr-hope/vuepress-plugin-reading-time': workspace:*
+      'vuepress-plugin-reading-time1': workspace:*
       '@mr-hope/vuepress-plugin-seo': workspace:*
       '@mr-hope/vuepress-plugin-sitemap': workspace:*
       '@mr-hope/vuepress-plugin-smooth-scroll': workspace:*
@@ -68,7 +68,7 @@ importers:
       'vuepress-plugin-feed1': link:packages/feed
       '@mr-hope/vuepress-plugin-git': link:packages/git
       '@mr-hope/vuepress-plugin-pwa': link:packages/pwa
-      '@mr-hope/vuepress-plugin-reading-time': link:packages/reading-time
+      'vuepress-plugin-reading-time1': link:packages/reading-time
       '@mr-hope/vuepress-plugin-seo': link:packages/seo
       '@mr-hope/vuepress-plugin-sitemap': link:packages/sitemap
       '@mr-hope/vuepress-plugin-smooth-scroll': link:packages/smooth-scroll
@@ -280,7 +280,7 @@ importers:
   packages/comment:
     specifiers:
       '@mr-hope/vuepress-plugin-git': workspace:*
-      '@mr-hope/vuepress-plugin-reading-time': workspace:*
+      'vuepress-plugin-reading-time1': workspace:*
       '@vssue/api-bitbucket-v2': ^1.4.7
       '@vssue/api-gitea-v1': ^1.4.7
       '@vssue/api-gitee-v5': ^1.4.7
@@ -297,7 +297,7 @@ importers:
       vuepress-typings: workspace:*
     dependencies:
       '@mr-hope/vuepress-plugin-git': link:../git
-      '@mr-hope/vuepress-plugin-reading-time': link:../reading-time
+      'vuepress-plugin-reading-time1': link:../reading-time
       '@vssue/api-bitbucket-v2': 1.4.7
       '@vssue/api-gitea-v1': 1.4.7
       '@vssue/api-gitee-v5': 1.4.7
@@ -576,7 +576,7 @@ importers:
       'vuepress-plugin-feed1': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
-      '@mr-hope/vuepress-plugin-reading-time': workspace:*
+      'vuepress-plugin-reading-time1': workspace:*
       vuepress-plugin-comment1: workspace:*
       vuepress-plugin-md-enhance: workspace:*
       vuepress-plugin-photo-swipe: workspace:*
@@ -586,7 +586,7 @@ importers:
       'vuepress-plugin-feed1': link:../feed
       '@mr-hope/vuepress-plugin-git': link:../git
       '@mr-hope/vuepress-plugin-pwa': link:../pwa
-      '@mr-hope/vuepress-plugin-reading-time': link:../reading-time
+      'vuepress-plugin-reading-time1': link:../reading-time
       vuepress-plugin-comment1: link:../comment
       vuepress-plugin-md-enhance: link:../md-enhance
       vuepress-plugin-photo-swipe: link:../photo-swipe

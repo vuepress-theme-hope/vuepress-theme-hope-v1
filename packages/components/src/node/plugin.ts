@@ -15,7 +15,7 @@ export const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
   if (options.pageinfo)
     plugins.push(
       ["@mr-hope/git", true],
-      ["@mr-hope/reading-time", { wordPerminute: options.wordPerminute }]
+      ["reading-time1", { wordPerminute: options.wordPerminute }]
     );
 
   const PLUGIN_NAME = "@mr-hope/vuepress-plugin-components";

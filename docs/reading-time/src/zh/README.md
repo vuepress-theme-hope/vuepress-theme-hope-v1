@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-reading-time"
+heroText: "vuepress-plugin-reading-time1"
 tagline: 预计阅读时间与字数统计生成
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyrightText: false
@@ -31,7 +31,7 @@ interface ReadingTime {
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-reading-time
+yarn add -D vuepress-plugin-reading-time1
 ```
 
 :::
@@ -39,7 +39,7 @@ yarn add -D @mr-hope/vuepress-plugin-reading-time
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-reading-time
+npm i -D vuepress-plugin-reading-time1
 ```
 
 :::
@@ -57,7 +57,7 @@ npm i -D @mr-hope/vuepress-plugin-reading-time
 export default {
   plugins: [
     [
-      "@mr-hope/reading-time",
+      "reading-time1",
       {
         // 配置选项
       },
@@ -75,7 +75,7 @@ export default {
 module.exports = {
   plugins: [
     [
-      "@mr-hope/reading-time",
+      "reading-time1",
       {
         // 你的选项
       },

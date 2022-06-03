@@ -50,7 +50,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-pwa][pwa]: PWA 支持
 
-- [@mr-hope/vuepress-plugin-reading-time][reading-time]: 阅读时间与字数统计
+- [vuepress-plugin-reading-time1][reading-time]: 阅读时间与字数统计
 
 - [@mr-hope/vuepress-plugin-seo][seo]: SEO 增强插件
 

@@ -1,9 +1,9 @@
 import type { ConvertLocaleConfig } from "vuepress-shared";
 
 /**
- * Muti language config for `@mr-hope/vuepress-plugin-reading-time` plugin
+ * Muti language config for `vuepress-plugin-reading-time1` plugin
  *
- * `@mr-hope/vuepress-plugin-reading-time` 插件的多语言配置
+ * `vuepress-plugin-reading-time1` 插件的多语言配置
  */
 export interface ReadingTimeLocaleData {
   /**

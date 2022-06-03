@@ -8,7 +8,7 @@
 
 /// <reference types="@mr-hope/vuepress-plugin-pwa" />
 
-/// <reference types="@mr-hope/vuepress-plugin-reading-time" />
+/// <reference types="vuepress-plugin-reading-time1" />
 
 /// <reference types="vuepress-plugin-md-enhance" />
 

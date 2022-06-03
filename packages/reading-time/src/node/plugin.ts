@@ -9,7 +9,7 @@ export const readingTimePlugin: Plugin<ReadingTimeOptions> = (
   options,
   context
 ) => {
-  const PLUGIN_NAME = "@mr-hope/vuepress-plugin-reading-time";
+  const PLUGIN_NAME = "vuepress-plugin-reading-time1";
 
   return {
     name: PLUGIN_NAME,

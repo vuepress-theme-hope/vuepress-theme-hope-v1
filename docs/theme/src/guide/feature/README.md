@@ -50,7 +50,7 @@ The theme includes the following plugins, you can use them directly in other the
 
 - [@mr-hope/vuepress-plugin-pwa][pwa]: PWA support
 
-- [@mr-hope/vuepress-plugin-reading-time][reading-time]: Expect reading time and words count
+- [vuepress-plugin-reading-time1][reading-time]: Expect reading time and words count
 
 - [@mr-hope/vuepress-plugin-seo][seo]: SEO Enhancement Plugin
 

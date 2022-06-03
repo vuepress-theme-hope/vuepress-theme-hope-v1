@@ -27,7 +27,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-pwa][pwa]: Powerful PWA support
 
-- [@mr-hope/vuepress-plugin-reading-time][reading-time]: Expect reading time and words count
+- [vuepress-plugin-reading-time1][reading-time]: Expect reading time and words count
 
 - [@mr-hope/vuepress-plugin-seo][seo]: SEO Enhancement Plugin
 
