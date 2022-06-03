@@ -25,7 +25,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-git][git]: Info plugin based on git
 
-- [@mr-hope/vuepress-plugin-pwa][pwa]: Powerful PWA support
+- [vuepress-plugin-pwa1][pwa]: Powerful PWA support
 
 - [vuepress-plugin-reading-time1][reading-time]: Expect reading time and words count
 

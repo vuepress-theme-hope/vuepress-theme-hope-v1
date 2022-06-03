@@ -125,7 +125,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-git][git]: Info plugin based on git
 
-- [@mr-hope/vuepress-plugin-pwa][pwa]: PWA support
+- [vuepress-plugin-pwa1][pwa]: PWA support
 
 - [vuepress-plugin-reading-time1][reading-time]: Expect reading time and words count
 

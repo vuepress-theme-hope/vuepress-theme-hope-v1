@@ -3,7 +3,7 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-pwa"
+heroText: "vuepress-plugin-pwa1"
 tagline: A powerfull PWA plugin
 action:
   - text: Guide 💡
@@ -28,7 +28,7 @@ This plugin will turn on Progressive Web App Support.
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-pwa
+yarn add -D vuepress-plugin-pwa1
 ```
 
 :::
@@ -36,7 +36,7 @@ yarn add -D @mr-hope/vuepress-plugin-pwa
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-pwa
+npm i -D vuepress-plugin-pwa1
 ```
 
 :::
@@ -54,7 +54,7 @@ npm i -D @mr-hope/vuepress-plugin-pwa
 export default {
   plugins: [
     [
-      "@mr-hope/pwa",
+      "pwa1",
       {
         // your options
       },
@@ -72,7 +72,7 @@ export default {
 module.exports = {
   plugins: [
     [
-      "@mr-hope/pwa",
+      "pwa1",
       {
         // your options
       },

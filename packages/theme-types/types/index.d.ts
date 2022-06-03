@@ -6,7 +6,7 @@
 
 /// <reference types="@mr-hope/vuepress-plugin-git" />
 
-/// <reference types="@mr-hope/vuepress-plugin-pwa" />
+/// <reference types="vuepress-plugin-pwa1" />
 
 /// <reference types="vuepress-plugin-reading-time1" />
 

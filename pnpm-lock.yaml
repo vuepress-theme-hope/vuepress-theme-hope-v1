@@ -14,7 +14,7 @@ importers:
       '@mr-hope/vuepress-plugin-components': workspace:*
       'vuepress-plugin-feed1': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
-      '@mr-hope/vuepress-plugin-pwa': workspace:*
+      'vuepress-plugin-pwa1': workspace:*
       'vuepress-plugin-reading-time1': workspace:*
       'vuepress-plugin-seo1': workspace:*
       '@mr-hope/vuepress-plugin-sitemap': workspace:*
@@ -67,7 +67,7 @@ importers:
       '@mr-hope/vuepress-plugin-components': link:packages/components
       'vuepress-plugin-feed1': link:packages/feed
       '@mr-hope/vuepress-plugin-git': link:packages/git
-      '@mr-hope/vuepress-plugin-pwa': link:packages/pwa
+      'vuepress-plugin-pwa1': link:packages/pwa
       'vuepress-plugin-reading-time1': link:packages/reading-time
       'vuepress-plugin-seo1': link:packages/seo
       '@mr-hope/vuepress-plugin-sitemap': link:packages/sitemap
@@ -520,7 +520,7 @@ importers:
       '@mr-hope/vuepress-plugin-components': workspace:*
       'vuepress-plugin-feed1': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
-      '@mr-hope/vuepress-plugin-pwa': workspace:*
+      'vuepress-plugin-pwa1': workspace:*
       'vuepress-plugin-seo1': workspace:*
       '@mr-hope/vuepress-plugin-sitemap': workspace:*
       '@mr-hope/vuepress-plugin-smooth-scroll': workspace:*
@@ -548,7 +548,7 @@ importers:
       '@mr-hope/vuepress-plugin-components': link:../components
       'vuepress-plugin-feed1': link:../feed
       '@mr-hope/vuepress-plugin-git': link:../git
-      '@mr-hope/vuepress-plugin-pwa': link:../pwa
+      'vuepress-plugin-pwa1': link:../pwa
       'vuepress-plugin-seo1': link:../seo
       '@mr-hope/vuepress-plugin-sitemap': link:../sitemap
       '@mr-hope/vuepress-plugin-smooth-scroll': link:../smooth-scroll
@@ -575,7 +575,7 @@ importers:
     specifiers:
       'vuepress-plugin-feed1': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
-      '@mr-hope/vuepress-plugin-pwa': workspace:*
+      'vuepress-plugin-pwa1': workspace:*
       'vuepress-plugin-reading-time1': workspace:*
       vuepress-plugin-comment1: workspace:*
       vuepress-plugin-md-enhance: workspace:*
@@ -585,7 +585,7 @@ importers:
     dependencies:
       'vuepress-plugin-feed1': link:../feed
       '@mr-hope/vuepress-plugin-git': link:../git
-      '@mr-hope/vuepress-plugin-pwa': link:../pwa
+      'vuepress-plugin-pwa1': link:../pwa
       'vuepress-plugin-reading-time1': link:../reading-time
       vuepress-plugin-comment1: link:../comment
       vuepress-plugin-md-enhance: link:../md-enhance

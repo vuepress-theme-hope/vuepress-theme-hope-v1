@@ -129,7 +129,7 @@ export default hope.config({
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-pwa",
+        name: "vuepress-plugin-pwa1",
         short_name: "pwa plugin",
         icons: [
           {

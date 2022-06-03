@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-pwa"
+heroText: "vuepress-plugin-pwa1"
 tagline: 一个强大的 PWA 插件
 action:
   - text: 快速上手 💡
@@ -28,7 +28,7 @@ copyrightText: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-pwa
+yarn add -D vuepress-plugin-pwa1
 ```
 
 :::
@@ -36,7 +36,7 @@ yarn add -D @mr-hope/vuepress-plugin-pwa
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-pwa
+npm i -D vuepress-plugin-pwa1
 ```
 
 :::
@@ -54,7 +54,7 @@ npm i -D @mr-hope/vuepress-plugin-pwa
 export default {
   plugins: [
     [
-      "@mr-hope/pwa",
+      "pwa1",
       {
         // 配置选项
       },
@@ -72,7 +72,7 @@ export default {
 module.exports = {
   plugins: [
     [
-      "@mr-hope/pwa",
+      "pwa1",
       {
         // 你的选项
       },

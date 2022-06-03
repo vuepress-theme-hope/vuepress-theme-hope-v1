@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { getRootLang } from "vuepress-shared";
-import { black, blue, cyan } from "chalk";
+import { cyan } from "chalk";
 import { existsSync, readFile, writeJSON } from "fs-extra";
 import { relative, resolve } from "path";
+import { getRootLang } from "vuepress-shared";
+
+import { logger } from "./utils";
 
 import type { Context } from "vuepress-typings";
 import type { ManifestOption, PWAOptions } from "../types";
@@ -14,13 +16,12 @@ export const getManifest = async (
   const { base, sourceDir, siteConfig } = context;
   const userManifestPath = resolve(
     sourceDir,
-    "./.vuepress/public/manifest.webmanifest"
+    ".vuepress/public/manifest.webmanifest"
   );
   const userManifestJSONPath = resolve(
     sourceDir,
-    "./.vuepress/public/manifest.json"
+    ".vuepress/public/manifest.json"
   );
-
   const optionManifest = options.manifest || {};
 
   const userManifest = JSON.parse(
@@ -56,25 +57,19 @@ export const getManifest = async (
 };
 
 export const generateManifest = async (
-  context: Context,
+  { cwd, outDir }: Context,
   manifest: Promise<ManifestOption>
 ): Promise<void> => {
-  console.log(
-    blue("PWA:"),
-    black.bgYellow("wait"),
-    "Generating manifest.webmanifest..."
-  );
+  logger.load("Generating manifest.webmanifest");
 
-  const { cwd, outDir } = context;
   const manifestPath = resolve(outDir, "manifest.webmanifest");
 
   await writeJSON(manifestPath, await manifest, {
     flag: "w",
   });
 
-  console.log(
-    blue("PWA:"),
-    black.bgGreen("Success"),
-    `Manifest generated and saved to ${cyan(relative(cwd, manifestPath))}`
+  logger.succeed();
+  logger.update(
+    `Manifest generated and saved to ${cyan(relative(cwd, manifestPath))}!`
   );
 };

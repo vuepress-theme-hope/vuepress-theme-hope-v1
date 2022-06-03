@@ -7,7 +7,7 @@ tags:
   - pwa
 ---
 
-The theme will enable progressive web app support[^pwa-intro] by including [`@mr-hope/vuepress-plugin-pwa`](https://vuepress-theme-hope.github.io/v1/pwa/).
+The theme will enable progressive web app support[^pwa-intro] by including [`vuepress-plugin-pwa1`](https://vuepress-theme-hope.github.io/v1/pwa/).
 
 [^pwa-intro]: **PWA introduction**
 

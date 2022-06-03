@@ -8,7 +8,7 @@ import type { CommentOptions } from "vuepress-plugin-comment1";
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
 import type { CopyCodeOptions } from "vuepress-plugin-copy-code1";
 import type { FeedOptions } from "vuepress-plugin-feed1";
-import type { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
+import type { PWAOptions } from "vuepress-plugin-pwa1";
 import type { SeoOptions } from "vuepress-plugin-seo1";
 import type { SitemapOptions } from "@mr-hope/vuepress-plugin-sitemap";
 import type { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll";
@@ -133,7 +133,7 @@ export const getPluginConfig = (
 
     ["@mr-hope/git", themeConfig.git],
 
-    ["@mr-hope/pwa", resolvePwaOptions(themeConfig)],
+    ["pwa1", resolvePwaOptions(themeConfig)],
 
     ["seo1", resolveSeoOptions(themeConfig)],
 

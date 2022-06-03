@@ -48,7 +48,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-git][git]: 基于 Git 的页面信息插件
 
-- [@mr-hope/vuepress-plugin-pwa][pwa]: PWA 支持
+- [vuepress-plugin-pwa1][pwa]: PWA 支持
 
 - [vuepress-plugin-reading-time1][reading-time]: 阅读时间与字数统计
 

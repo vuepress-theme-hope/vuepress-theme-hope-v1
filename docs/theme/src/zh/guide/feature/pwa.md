@@ -7,7 +7,7 @@ tags:
   - pwa
 ---
 
-默认情况下，该主题将通过内置 [`@mr-hope/vuepress-plugin-pwa`](https://vuepress-theme-hope.github.io/v1/pwa/zh/) 启用渐进式 Web 应用程序支持[^pwa-intro]。
+默认情况下，该主题将通过内置 [`vuepress-plugin-pwa1`](https://vuepress-theme-hope.github.io/v1/pwa/zh/) 启用渐进式 Web 应用程序支持[^pwa-intro]。
 
 如果你不需要此功能或想使用其他 pwa 插件，则可以将 `themeConfig.pwa` 设置为 `false` 来禁用该插件。
 

@@ -1,5 +1,4 @@
 import { getLocales } from "vuepress-shared";
-import { black, blue } from "chalk";
 import { resolve } from "path";
 
 import { covertOptions } from "./compact";
@@ -8,6 +7,7 @@ import { generateServiceWorker } from "./generateServiceWorker";
 import { appendBase } from "./helper";
 import { injectLinkstoHead } from "./injectHead";
 import { pwaLocales } from "./locales";
+import { logger } from "./utils";
 
 import type { Plugin, PluginEntry } from "vuepress-typings";
 import type { PWAOptions } from "../types";
@@ -15,17 +15,13 @@ import type { PWAOptions } from "../types";
 export const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
   covertOptions(options as PWAOptions & Record<string, unknown>);
   const { base } = context;
-  const { shouldPrefetch = true } = context.siteConfig;
-
-  const PLUGIN_NAME = "@mr-hope/vuepress-plugin-pwa";
+  const { shouldPrefetch } = context.siteConfig;
 
   if (options.appendBase) appendBase(base, options);
 
-  if (shouldPrefetch === true)
-    console.log(
-      blue("PWA:"),
-      black.bgYellow("warn"),
-      'The plugin will register service worker to handle assets, so we recommend you to set "shouldPrefetch: false" in VuePress config file.'
+  if (!shouldPrefetch)
+    logger.warn(
+      'The plugin will register service worker to handle assets, so we recommend you to set "shouldPrefetch: ()=> false" in VuePress config file.'
     );
 
   const manifest = getManifest(context, options);
@@ -35,6 +31,8 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
     base,
     context.siteConfig.head
   );
+
+  const PLUGIN_NAME = "vuepress-plugin-pwa1";
 
   const config: PluginEntry = {
     name: PLUGIN_NAME,
