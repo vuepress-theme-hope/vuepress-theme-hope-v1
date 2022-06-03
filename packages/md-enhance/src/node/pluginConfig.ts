@@ -16,11 +16,12 @@ export const getPluginConfig = (
     "danger",
   ];
 
-  const locales = getLocales(
+  const locales = getLocales({
     context,
-    markdownEnhanceLocales,
-    markdownOptions.locales
-  );
+    name: "vuepress-plugin-md-enhance",
+    config: markdownOptions.locales,
+    default: markdownEnhanceLocales,
+  });
 
   const getContainterLocale = (
     key: MarkdownContainerName

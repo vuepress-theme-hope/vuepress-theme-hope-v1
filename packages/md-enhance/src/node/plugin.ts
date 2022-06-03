@@ -1,3 +1,4 @@
+import { noopModule } from "@mr-hope/vuepress-shared";
 import { resolve } from "path";
 import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 
@@ -29,8 +30,6 @@ import { getPluginConfig } from "./pluginConfig";
 import type { Plugin } from "@mr-hope/vuepress-types";
 import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../types";
-
-const noopModule = "@mr-hope/vuepress-shared/lib/esm/noopModule";
 
 export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
   options,

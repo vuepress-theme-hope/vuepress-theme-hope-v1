@@ -72,7 +72,12 @@ export const resolveThemeConfig = (
   deepAssignReverse(defaultThemeConfig, themeConfig);
 
   // inject locales
-  themeConfig.locales = getLocales(context, themeLocales, themeConfig.locales);
+  themeConfig.locales = getLocales({
+    context,
+    name: "vuepress-theme-hope",
+    config: themeConfig.locales,
+    default: themeLocales,
+  });
   // handle encrypt options
   if (themeConfig.encrypt) resolveEncrypt(themeConfig.encrypt);
 

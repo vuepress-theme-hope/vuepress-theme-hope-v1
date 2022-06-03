@@ -1,9 +1,10 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.build.base.json",
   "compilerOptions": {
-    "module": "ESNext",
+    "lib": ["dom", "esnext"],
+    "module": "ES6",
     "rootDir": "./src",
-    "outDir": "./lib/esm"
+    "outDir": "./lib"
   },
-  "include": ["./src"]
+  "include": ["./src/client", "./src/shared"]
 }

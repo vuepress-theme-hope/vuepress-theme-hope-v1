@@ -44,7 +44,7 @@ export default Vue.extend({
       if (!this.enable) return false;
 
       const globalEnable = this.config.pageview !== false;
-      const pageEnable = this.$page.frontmatter.visitor;
+      const pageEnable = this.$page.frontmatter.pageview;
 
       return (globalEnable && pageEnable !== false) || pageEnable === true;
     },

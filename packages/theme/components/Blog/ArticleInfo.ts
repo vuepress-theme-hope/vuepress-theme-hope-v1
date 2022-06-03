@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { capitalize } from "@mr-hope/vuepress-shared";
+import { capitalize, getAuthor } from "@mr-hope/vuepress-shared/lib/client";
 import AuthorIcon from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/icons/AuthorIcon.vue";
 import CalendarIcon from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/icons/CalendarIcon.vue";
 import CategoryInfo from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/CategoryInfo.vue";
@@ -26,12 +26,12 @@ export default Vue.extend({
 
   computed: {
     author(): string {
-      return (
-        this.article.frontmatter.author ||
-        (this.$themeConfig.author && this.article.frontmatter.author !== false
-          ? this.$themeConfig.author
-          : "")
-      );
+      return this.article.frontmatter["author"]
+        ? getAuthor(this.article.frontmatter["author"])[0]?.name
+        : this.$themeConfig.author &&
+          this.article.frontmatter["author"] !== false
+        ? this.$themeConfig.author
+        : "";
     },
 
     time(): string {

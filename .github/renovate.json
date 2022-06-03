@@ -18,6 +18,10 @@
       "allowedVersions": "v5"
     },
     {
+      "matchPackageNames": ["ora"],
+      "allowedVersions": "v5"
+    },
+    {
       "matchPackageNames": ["photoswipe"],
       "allowedVersions": "v4"
     },

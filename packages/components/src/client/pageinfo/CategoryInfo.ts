@@ -1,4 +1,4 @@
-import { capitalize } from "@mr-hope/vuepress-shared";
+import { capitalize } from "@mr-hope/vuepress-shared/lib/client";
 import Vue from "vue";
 import CategoryIcon from "./icons/CategoryIcon.vue";
 import { pageInfoLocales } from "../define";
@@ -19,7 +19,12 @@ export default Vue.extend({
 
       const { category } = this.$frontmatter;
 
-      return category ? capitalize(category) : "";
+      // FIXME: Support mutiple categories
+      return Array.isArray(category)
+        ? capitalize(category[0] || "")
+        : category
+        ? capitalize(category)
+        : "";
     },
 
     path(): string {

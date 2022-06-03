@@ -82,7 +82,7 @@ export default Vue.extend({
     },
 
     isOriginal(): boolean {
-      return this.$frontmatter.original === true;
+      return this.$frontmatter.isOriginal === true;
     },
 
     originText(): string {

@@ -37,7 +37,7 @@ export default Vue.extend({
     enablePageview(): boolean {
       if (!this.enable) return false;
       const globalEnable = this.config.visitor !== false;
-      const pageEnable = this.$page.frontmatter.visitor;
+      const pageEnable = this.$page.frontmatter.pageview;
 
       return (globalEnable && pageEnable !== false) || pageEnable === true;
     },

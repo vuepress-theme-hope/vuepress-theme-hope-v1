@@ -1,3 +1,4 @@
+import { noopModule } from "@mr-hope/vuepress-shared";
 import { resolve } from "path";
 
 import type { Context } from "@mr-hope/vuepress-types";
@@ -25,8 +26,6 @@ export const getAlias = (
     themeConfig.themeColor === false && themeConfig.darkmode === "disable"
   );
   const { custom = {} } = themeConfig;
-
-  const noopModule = "@mr-hope/vuepress-shared/lib/esm/noopModule";
 
   return {
     "@AlgoliaSearchBox": isAlgoliaSearch

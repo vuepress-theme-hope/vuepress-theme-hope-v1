@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { config } from "../";
+import { resolveVuePressConfig } from "../node/config";
 
 import type { HopeVuePressConfig } from "../types";
 
@@ -334,7 +334,7 @@ describe("Test resolveTheme function", () => {
     },
   };
 
-  const resolvedConfig = config(vuepressConfig);
+  const resolvedConfig = resolveVuePressConfig(vuepressConfig);
 
   it("should resolve locates for vuepress", () => {
     expect(resolvedConfig.locales).toHaveProperty("/");

@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.build.base.json",
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
@@ -20,7 +20,7 @@
     { "path": "../pwa/tsconfig.json" },
     { "path": "../reading-time/tsconfig.json" },
     { "path": "../seo/tsconfig.json" },
-    { "path": "../shared/tsconfig.json" },
+    { "path": "../shared/tsconfig.build.json" },
     { "path": "../sitemap/tsconfig.json" },
     { "path": "../smooth-scroll/tsconfig.json" },
     { "path": "../theme-types/tsconfig.json" },

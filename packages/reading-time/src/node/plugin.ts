@@ -9,15 +9,18 @@ export const readingTimePlugin: Plugin<ReadingTimeOptions> = (
   options,
   context
 ) => {
+  const PLUGIN_NAME = "@mr-hope/vuepress-plugin-reading-time";
+
   return {
-    name: "@mr-hope/vuepress-plugin-reading-time",
+    name: PLUGIN_NAME,
 
     define: (): Record<string, unknown> => ({
-      READING_TIME_LOCALES: getLocales(
+      READING_TIME_LOCALES: getLocales({
         context,
-        readingTimeLocales,
-        options.locales
-      ),
+        name: PLUGIN_NAME,
+        config: options.locales,
+        default: readingTimeLocales,
+      }),
     }),
 
     extendPageData($page): void {
