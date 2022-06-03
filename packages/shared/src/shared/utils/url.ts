@@ -22,3 +22,15 @@ export const isUrl = (test: string): boolean => {
 };
 
 export const isAbsoluteUrl = (test: string): boolean => test.startsWith("/");
+
+export const ensureEndingSlash = (str: string): string =>
+  str.replace(/\/?$/, "/");
+
+export const ensureLeadingSlash = (str: string): string =>
+  str.replace(/^\/?/, "/");
+
+export const removeEndingSlash = (str: string): string =>
+  str.replace(/\/$/, "");
+
+export const removeLeadingSlash = (str: string): string =>
+  str.replace(/^\//, "");

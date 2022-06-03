@@ -7,5 +7,9 @@ export {
   getTag,
   isAbsoluteUrl,
   isUrl,
+  ensureEndingSlash,
+  ensureLeadingSlash,
+  removeEndingSlash,
+  removeLeadingSlash,
   timeTransformer,
 } from "../shared";
