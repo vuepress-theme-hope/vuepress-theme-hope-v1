@@ -1,8 +1,8 @@
 ---
 home: true
-title: "@mr-hope/vuepress-plugin-copy-code"
+title: "vuepress-plugin-copy-code1"
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-copy-code"
+heroText: "vuepress-plugin-copy-code1"
 tagline: 为 VuePress 提供一键复制代码支持
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
@@ -12,7 +12,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ### 安装
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-copy-code
+npm i -D vuepress-plugin-copy-code1
 ```
 
 ### 使用
@@ -22,7 +22,7 @@ npm i -D @mr-hope/vuepress-plugin-copy-code
 module.exports = {
   plugins: [
     [
-      "@mr-hope/copy-code",
+      "copy-code1",
       {
         // 你的配置选项
       },

@@ -22,7 +22,7 @@ icon: creative
 export default {
   plugins: [
     [
-      "@mr-hope/copy-code",
+      "copy-code1",
       {
         // 插件选项
       },
@@ -40,7 +40,7 @@ export default {
 module.exports = {
   plugins: [
     [
-      "@mr-hope/copy-code",
+      "copy-code1",
       {
         // 插件选项
       },

@@ -3,7 +3,7 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-copy-code"
+heroText: "vuepress-plugin-copy-code1"
 tagline: Code Copy plugin for vuepress
 action:
   - text: Guide 💡
@@ -26,7 +26,7 @@ copyrightText: false
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-copy-code
+yarn add -D vuepress-plugin-copy-code1
 ```
 
 :::
@@ -34,7 +34,7 @@ yarn add -D @mr-hope/vuepress-plugin-copy-code
 ::: code-group-item npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-copy-code
+npm i -D vuepress-plugin-copy-code1
 ```
 
 :::
@@ -52,7 +52,7 @@ npm i -D @mr-hope/vuepress-plugin-copy-code
 export default {
   plugins: [
     [
-      "@mr-hope/copy-code",
+      "copy-code1",
       {
         // your options
       },
@@ -70,7 +70,7 @@ export default {
 module.exports = {
   plugins: [
     [
-      "@mr-hope/copy-code",
+      "copy-code1",
       {
         // your options
       },

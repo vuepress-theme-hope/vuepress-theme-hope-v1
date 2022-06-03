@@ -6,7 +6,7 @@ import type { Plugin } from "@mr-hope/vuepress-types";
 import type { CopyCodeOptions } from "../types";
 
 export const copyCodePlugin: Plugin<CopyCodeOptions> = (options, context) => {
-  const PLUGIN_NAME = "@mr-hope/vuepress-plugin-copy-code";
+  const PLUGIN_NAME = "vuepress-plugin-copy-code1";
   const userCopyCodeLocales = getLocales({
     context,
     name: PLUGIN_NAME,
@@ -17,7 +17,7 @@ export const copyCodePlugin: Plugin<CopyCodeOptions> = (options, context) => {
   delete options.locales;
 
   return {
-    name: "@mr-hope/vuepress-plugin-copy-code",
+    name: "vuepress-plugin-copy-code1",
 
     define: (): Record<string, unknown> => ({
       CODE_COPY_OPIONS: options,

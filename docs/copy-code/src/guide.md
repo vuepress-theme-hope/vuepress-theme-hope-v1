@@ -22,7 +22,7 @@ After user press the copy button, a success hint will display on the screen. The
 export default {
   plugins: [
     [
-      "@mr-hope/copy-code",
+      "copy-code1",
       {
         // your options
       },
@@ -40,7 +40,7 @@ export default {
 module.exports = {
   plugins: [
     [
-      "@mr-hope/copy-code",
+      "copy-code1",
       {
         // your options
       },

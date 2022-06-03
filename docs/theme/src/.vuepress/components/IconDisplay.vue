@@ -14,8 +14,8 @@
 
 <script>
 import axios from "axios";
-import Message from "@mr-hope/vuepress-plugin-copy-code/lib/client/message";
-import { copyCodeLocales } from "@mr-hope/vuepress-plugin-copy-code/lib/node/locales";
+import Message from "vuepress-plugin-copy-code1/lib/client/message";
+import { copyCodeLocales } from "vuepress-plugin-copy-code1/lib/node/locales";
 
 let message;
 

@@ -9,7 +9,7 @@ tags:
 
 If you are a programmer, you may want your users to be able to copy the code you show in the text with one click.
 
-For this, `vuepress-theme-hope` includes [@mr-hope/vuepress-plugin-copy-code](https://vuepress-theme-hope.github.io/v1/copy-code/), which provides a copy button on code blocks.
+For this, `vuepress-theme-hope` includes [vuepress-plugin-copy-code1](https://vuepress-theme-hope.github.io/v1/copy-code/), which provides a copy button on code blocks.
 
 <!-- more -->
 

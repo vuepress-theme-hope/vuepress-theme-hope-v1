@@ -68,6 +68,6 @@ module.exports = {
 
   plugins: [
     /** Copy Code plugin */
-    ["@mr-hope/copy-code"],
+    ["copy-code1"],
   ],
 };

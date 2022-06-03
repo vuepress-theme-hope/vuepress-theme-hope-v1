@@ -1,7 +1,7 @@
 import { ActiveHashOptions } from "vuepress-plugin-active-hash";
 import { CommentOptions } from "vuepress-plugin-comment1";
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
-import { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
+import { CopyCodeOptions } from "vuepress-plugin-copy-code1";
 import { FeedOptions } from "@mr-hope/vuepress-plugin-feed";
 import { GitOptions } from "@mr-hope/vuepress-plugin-git";
 import { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";

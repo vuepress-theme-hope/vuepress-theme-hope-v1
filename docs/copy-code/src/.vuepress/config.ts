@@ -122,7 +122,7 @@ export default hope.config({
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-copy-code",
+        name: "vuepress-plugin-copy-code1",
         short_name: "copy-code plugin",
         icons: [
           {

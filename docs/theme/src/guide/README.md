@@ -119,7 +119,7 @@ The theme also includes the following plugins, you can use them in other themes 
 
 - [@mr-hope/vuepress-plugin-components][components]: Provide some out of box plugins
 
-- [@mr-hope/vuepress-plugin-copy-code][copy-code]: Provide copy button for code blocks
+- [vuepress-plugin-copy-code1][copy-code]: Provide copy button for code blocks
 
 - [@mr-hope/vuepress-plugin-feed][feed]: Feed support
 

@@ -12,7 +12,7 @@ importers:
       '@commitlint/cli': 17.0.2
       '@commitlint/config-conventional': 17.0.2
       '@mr-hope/vuepress-plugin-components': workspace:*
-      '@mr-hope/vuepress-plugin-copy-code': workspace:*
+      'vuepress-plugin-copy-code1': workspace:*
       '@mr-hope/vuepress-plugin-feed': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
@@ -65,7 +65,7 @@ importers:
       '@commitlint/cli': 17.0.2
       '@commitlint/config-conventional': 17.0.2
       '@mr-hope/vuepress-plugin-components': link:packages/components
-      '@mr-hope/vuepress-plugin-copy-code': link:packages/copy-code
+      'vuepress-plugin-copy-code1': link:packages/copy-code
       '@mr-hope/vuepress-plugin-feed': link:packages/feed
       '@mr-hope/vuepress-plugin-git': link:packages/git
       '@mr-hope/vuepress-plugin-pwa': link:packages/pwa
@@ -518,7 +518,7 @@ importers:
       '@docsearch/css': ^3.1.0
       '@docsearch/js': ^3.1.0
       '@mr-hope/vuepress-plugin-components': workspace:*
-      '@mr-hope/vuepress-plugin-copy-code': workspace:*
+      'vuepress-plugin-copy-code1': workspace:*
       '@mr-hope/vuepress-plugin-feed': workspace:*
       '@mr-hope/vuepress-plugin-git': workspace:*
       '@mr-hope/vuepress-plugin-pwa': workspace:*
@@ -546,7 +546,7 @@ importers:
       '@docsearch/css': 3.1.0
       '@docsearch/js': 3.1.0_@types+react@18.0.10
       '@mr-hope/vuepress-plugin-components': link:../components
-      '@mr-hope/vuepress-plugin-copy-code': link:../copy-code
+      'vuepress-plugin-copy-code1': link:../copy-code
       '@mr-hope/vuepress-plugin-feed': link:../feed
       '@mr-hope/vuepress-plugin-git': link:../git
       '@mr-hope/vuepress-plugin-pwa': link:../pwa

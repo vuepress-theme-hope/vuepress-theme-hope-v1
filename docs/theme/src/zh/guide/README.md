@@ -119,7 +119,7 @@ tags:
 
 - [@mr-hope/vuepress-plugin-components][components]: 提供一些开箱即用的插件
 
-- [@mr-hope/vuepress-plugin-copy-code][copy-code]: 提供一键复制代码块功能。
+- [vuepress-plugin-copy-code1][copy-code]: 提供一键复制代码块功能。
 
 - [@mr-hope/vuepress-plugin-feed][feed]: Feed 支持
 

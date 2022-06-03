@@ -6,7 +6,7 @@ import { chunkRenamePlugin } from "./chunk-rename";
 import type { AddThisOptions } from "vuepress-plugin-add-this";
 import type { CommentOptions } from "vuepress-plugin-comment1";
 import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
-import type { CopyCodeOptions } from "@mr-hope/vuepress-plugin-copy-code";
+import type { CopyCodeOptions } from "vuepress-plugin-copy-code1";
 import type { FeedOptions } from "@mr-hope/vuepress-plugin-feed";
 import type { PWAOptions } from "@mr-hope/vuepress-plugin-pwa";
 import type { SeoOptions } from "@mr-hope/vuepress-plugin-seo";
@@ -196,7 +196,7 @@ export const getPluginConfig = (
 
     ["md-enhance", resolveMarkdownEnhanceOptions(themeConfig)],
 
-    ["@mr-hope/copy-code", resolveCopyCodeOptions(themeConfig)],
+    ["copy-code1", resolveCopyCodeOptions(themeConfig)],
 
     ["photo-swipe", resolvePhotoSwipeOptions(themeConfig)],
 
