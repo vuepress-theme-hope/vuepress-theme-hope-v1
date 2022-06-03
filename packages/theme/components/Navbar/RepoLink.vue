@@ -15,14 +15,17 @@
 <script src="./RepoLink" />
 
 <style lang="stylus">
-.repo-link
-  .navbar &
-    color var(--dark-grey)
-    margin-left 1rem
+.repo-link {
+  .navbar & {
+    color: var(--dark-grey);
+    margin-left: 1rem;
+  }
 
-  .sidebar-nav-links &
-    display block
-    padding 0.5rem 0 0.5rem 1.5rem
-    font-size 1.1em
-    line-height 1.25rem
+  .sidebar-nav-links & {
+    display: block;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    font-size: 1.1em;
+    line-height: 1.25rem;
+  }
+}
 </style>

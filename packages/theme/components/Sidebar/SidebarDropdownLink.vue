@@ -68,83 +68,99 @@
 <script src="./SidebarDropdownLink" />
 
 <style lang="stylus">
-@require '~vuepress-shared/styles/arrow'
-@require '~vuepress-shared/styles/reset'
+@require '~vuepress-shared/styles/arrow';
+@require '~vuepress-shared/styles/reset';
 
-.mobile-dropdown-wrapper
-  cursor pointer
+.mobile-dropdown-wrapper {
+  cursor: pointer;
 
-  .dropdown-title
-    button()
-    cursor inherit
-    padding inherit
-    color var(--text-color)
-    font-family inherit
-    font-size inherit
-    line-height 1.4rem
+  .dropdown-title {
+    button();
+    cursor: inherit;
+    padding: inherit;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.4rem;
 
-    &:hover
-      color var(--accent-color)
+    &:hover {
+      color: var(--accent-color);
+    }
 
-    .arrow
-      arrow()
+    .arrow {
+      arrow();
+    }
+  }
 
-  .nav-dropdown
-    margin-top 0.25rem
-    transition height 0.1s ease-out
-    overflow hidden
+  .nav-dropdown {
+    margin-top: 0.25rem;
+    transition: height 0.1s ease-out;
+    overflow: hidden;
+  }
 
-  .dropdown-item
-    color inherit
-    line-height 1.7rem
+  .dropdown-item {
+    color: inherit;
+    line-height: 1.7rem;
 
-    h4
-      margin 0
-      padding-left 1.25rem
-      font-size 15px
-      line-height 1.7
+    h4 {
+      margin: 0;
+      padding-left: 1.25rem;
+      font-size: 15px;
+      line-height: 1.7;
 
-      .nav-link
-        padding 0
+      .nav-link {
+        padding: 0;
 
-        &:before
-          display none
+        &:before {
+          display: none;
+        }
+      }
+    }
 
-    .nav-link
-      display block
-      position relative
-      margin-bottom 0
-      padding 0 1.5rem 0 1.25rem
-      border-bottom none
-      font-weight 400
-      line-height 1.7rem
+    .nav-link {
+      display: block;
+      position: relative;
+      margin-bottom: 0;
+      padding: 0 1.5rem 0 1.25rem;
+      border-bottom: none;
+      font-weight: 400;
+      line-height: 1.7rem;
 
-      &:hover
-        color var(--accent-color)
+      &:hover {
+        color: var(--accent-color);
+      }
 
-      &.active
-        color var(--accent-color)
+      &.active {
+        color: var(--accent-color);
 
-        &::before
-          content ''
-          position absolute
-          top calc(50% - 3px)
-          left 9px
-          width 0
-          height 0
-          border-top 3px solid transparent
-          border-left 5px solid var(--accent-color)
-          border-bottom 3px solid transparent
+        &::before {
+          content: '';
+          position: absolute;
+          top: calc(50% - 3px);
+          left: 9px;
+          width: 0;
+          height: 0;
+          border-top: 3px solid transparent;
+          border-left: 5px solid var(--accent-color);
+          border-bottom: 3px solid transparent;
+        }
+      }
+    }
 
-    & > .nav-link
-      font-size 15px
-      line-height 2rem
+    & > .nav-link {
+      font-size: 15px;
+      line-height: 2rem;
+    }
 
-    .dropdown-subitem-wrapper
-      padding 0
-      list-style none
+    .dropdown-subitem-wrapper {
+      padding: 0;
+      list-style: none;
+    }
 
-    .dropdown-subitem
-      font-size 0.9em
-      padding-left 0.5rem
+    .dropdown-subitem {
+      font-size: 0.9em;
+      padding-left: 0.5rem;
+    }
+  }
+}
 </style>

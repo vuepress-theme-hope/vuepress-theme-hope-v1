@@ -21,17 +21,20 @@
 <script src="./ArticleList" />
 
 <style lang="stylus">
-.article-wrapper
-  margin-top -0.5rem - $navbarHeight
-  padding-top: $navbarHeight + 0.5rem
-  text-align center
+.article-wrapper {
+  margin-top: -0.5rem - $navbarHeight;
+  padding-top: $navbarHeight + 0.5rem;
+  text-align: center;
 
-  @media (max-width $MQMobile)
-    margin-top -0.5rem - $navbarMobileHeight
-    padding-top: $navbarMobileHeight + 0.5rem
+  @media (max-width: $MQMobile) {
+    margin-top: -0.5rem - $navbarMobileHeight;
+    padding-top: $navbarMobileHeight + 0.5rem;
+  }
 
-  .empty
-    max-width 560px
-    margin 0 auto
-    text-align center
+  .empty {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
 </style>

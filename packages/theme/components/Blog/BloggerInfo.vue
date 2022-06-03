@@ -53,46 +53,57 @@
 <script src="./BloggerInfo" />
 
 <style lang="stylus">
-.blogger-info
-  .page &
-    background var(--bgcolor)
+.blogger-info {
+  .page & {
+    background: var(--bgcolor);
+  }
 
-  .blogger
-    padding 8px 0
-    text-align center
+  .blogger {
+    padding: 8px 0;
+    text-align: center;
 
-    &.hasIntro
-      cursor pointer
+    &.hasIntro {
+      cursor: pointer;
+    }
 
-    .avatar
-      width 128px
-      height 128px
-      margin 0 auto
+    .avatar {
+      width: 128px;
+      height: 128px;
+      margin: 0 auto;
 
-      &.round
-        border-radius 50%
+      &.round {
+        border-radius: 50%;
+      }
+    }
 
-    .name
-      margin 16px auto
-      font-size 22px
+    .name {
+      margin: 16px auto;
+      font-size: 22px;
+    }
+  }
 
-  .num-wrapper
-    display flex
-    margin 0 auto 16px
-    width 80%
+  .num-wrapper {
+    display: flex;
+    margin: 0 auto 16px;
+    width: 80%;
 
-    > div
-      width 25%
-      text-align center
-      font-size 13px
-      cursor pointer
+    > div {
+      width: 25%;
+      text-align: center;
+      font-size: 13px;
+      cursor: pointer;
 
-      &:hover
-        color var(--accent-color)
+      &:hover {
+        color: var(--accent-color);
+      }
 
-      .num
-        position relative
-        margin-bottom 8px
-        font-weight 600
-        font-size 20px
+      .num {
+        position: relative;
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 20px;
+      }
+    }
+  }
+}
 </style>

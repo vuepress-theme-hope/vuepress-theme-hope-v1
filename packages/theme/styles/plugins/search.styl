@@ -1,77 +1,100 @@
-.navbar
-  .search-box
-    height calc(2rem + 4px)
-    margin-left 0.25rem
+.navbar {
+  .search-box {
+    height: calc(2rem + 4px);
+    margin-left: 0.25rem;
 
-    input
-      margin-top 1px
-      margin-bottom 1px
-      border-color transparent
-      border-radius 0.25em
+    input {
+      margin-top: 1px;
+      margin-bottom: 1px;
+      border-color: transparent;
+      border-radius: 0.25em;
 
-      @media (max-width $MQMobile)
-        left 0
-        background-color transparent
+      @media (max-width: $MQMobile) {
+        left: 0;
+        background-color: transparent;
+      }
 
-      @media (min-width $MQNarrow)
-        background-color #efeef4
+      @media (min-width: $MQNarrow) {
+        background-color: #efeef4;
 
-        &:focus
-          width 15rem
+        &:focus {
+          width: 15rem;
+        }
+      }
 
-      &:focus
-        background-color var(--bgcolor)
-        border-color var(--accent-color)
+      &:focus {
+        background-color: var(--bgcolor);
+        border-color: var(--accent-color);
+      }
 
-      .theme-dark &
-        color var(--text-color)
-        background-color transparent
+      .theme-dark & {
+        color: var(--text-color);
+        background-color: transparent;
 
-        @media (min-width $MQNarrow)
-          background-color lighten($darkBgColor, 10%) !important
-          border-color var(--border-color)
+        @media (min-width: $MQNarrow) {
+          background-color: lighten($darkBgColor, 10%) !important;
+          border-color: var(--border-color);
+        }
 
-        &:focus
-          background-color lighten($darkBgColor, 10%) !important
+        &:focus {
+          background-color: lighten($darkBgColor, 10%) !important;
+        }
+      }
+    }
 
-    .theme-dark &
-      .suggestion
-        a
-          color darken($darkTextColor, 35%)
+    .theme-dark & {
+      .suggestion {
+        a {
+          color: darken($darkTextColor, 35%);
+        }
 
-        &.focused
-          background #0c0b0a
+        &.focused {
+          background: #0c0b0a;
 
-          a
-            color var(--accent-color)
-            border-color var(--accent-color)
+          a {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+          }
+        }
+      }
 
-      .suggestions
-        border-color var(--border-color)
-        background var(--white)
+      .suggestions {
+        border-color: var(--border-color);
+        background: var(--white);
+      }
+    }
+  }
 
-  #docsearch button
-    background-color transparent
-    border-color transparent
-    border-radius 0.25em
+  #docsearch button {
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 0.25em;
 
-    .mobile &
-      left 0
-      background-color transparent
+    .mobile & {
+      left: 0;
+      background-color: transparent;
+    }
 
-    @media (min-width $MQNarrow)
-      background-color #efeef4
+    @media (min-width: $MQNarrow) {
+      background-color: #efeef4;
+    }
 
-    &:focus
-      background-color var(--bgcolor)
-      border-color var(--accent-color)
+    &:focus {
+      background-color: var(--bgcolor);
+      border-color: var(--accent-color);
+    }
 
-    .theme-dark &
-      color var(--text-color)
+    .theme-dark & {
+      color: var(--text-color);
 
-      @media (min-width $MQNarrow)
-        background-color lighten($darkBgColor, 10%) !important
-        border-color var(--border-color)
+      @media (min-width: $MQNarrow) {
+        background-color: lighten($darkBgColor, 10%) !important;
+        border-color: var(--border-color);
+      }
 
-      &:focus
-        background-color lighten($darkBgColor, 10%) !important
+      &:focus {
+        background-color: lighten($darkBgColor, 10%) !important;
+      }
+    }
+  }
+}

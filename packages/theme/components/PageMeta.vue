@@ -37,55 +37,67 @@
 <script src="./PageMeta" />
 
 <style lang="stylus">
-@require '~vuepress-shared/styles/wrapper'
+@require '~vuepress-shared/styles/wrapper';
 
-.page-meta
-  @extend $wrapper
-  padding-top 12px
-  padding-bottom 12px
-  font-family Arial, Helvetica, sans-serif
-  overflow auto
+.page-meta {
+  @extend $wrapper;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: auto;
 
-  .meta-item
-    .label
-      font-weight 500
-      color var(--text-color-l25)
+  .meta-item {
+    .label {
+      font-weight: 500;
+      color: var(--text-color-l25);
+    }
 
-    .info
-      font-weight 400
-      color var(--dark-grey)
+    .info {
+      font-weight: 400;
+      color: var(--dark-grey);
+    }
+  }
 
-  .edit-link
-    display inline-block
-    font-size 14px
+  .edit-link {
+    display: inline-block;
+    font-size: 14px;
 
-    .icon
-      position relative
-      bottom -0.125em
-      width 1em
-      height 1em
-      color var(--accent-color)
+    .icon {
+      position: relative;
+      bottom: -0.125em;
+      width: 1em;
+      height: 1em;
+      color: var(--accent-color);
+    }
 
-    @media (max-width $MQMobile)
-      margin-bottom 8px
+    @media (max-width: $MQMobile) {
+      margin-bottom: 8px;
+    }
 
-    a
-      color var(--accent-color-l10)
+    a {
+      color: var(--accent-color-l10);
+    }
+  }
 
-  .update-time
-    float right
-    font-size 14px
+  .update-time {
+    float: right;
+    font-size: 14px;
 
-    @media (max-width $MQMobile)
-      float none
-      font-size 13px
-      text-align left
+    @media (max-width: $MQMobile) {
+      float: none;
+      font-size: 13px;
+      text-align: left;
+    }
+  }
 
-  .contributors
-    font-size 14px
-    text-align right
+  .contributors {
+    font-size: 14px;
+    text-align: right;
 
-    @media (max-width $MQMobile)
-      font-size 13px
-      text-align left
+    @media (max-width: $MQMobile) {
+      font-size: 13px;
+      text-align: left;
+    }
+  }
+}
 </style>

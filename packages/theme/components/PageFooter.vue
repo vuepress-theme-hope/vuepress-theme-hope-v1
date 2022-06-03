@@ -11,37 +11,46 @@
 <script src="./PageFooter" />
 
 <style lang="stylus">
-.footer-wrapper
-  display flex
-  flex-wrap wrap
-  justify-content space-evenly
-  align-items center
-  padding 12px 30px
-  border-top 1px solid var(--border-color)
-  background var(--bgcolor)
-  color var(--dark-color, #666)
-  text-align center
+.footer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px 30px;
+  border-top: 1px solid var(--border-color);
+  background: var(--bgcolor);
+  color: var(--dark-color, #666);
+  text-align: center;
 
-  @media (min-width $MQMobile)
-    .has-sidebar &
-      padding-left $sidebarWidth
-      border-left 30px solid transparent
+  @media (min-width: $MQMobile) {
+    .has-sidebar & {
+      padding-left: $sidebarWidth;
+      border-left: 30px solid transparent;
+    }
+  }
 
-  & > div
-    @media (max-width $MQMobileNarrow)
-      width 100%
+  & > div {
+    @media (max-width: $MQMobileNarrow) {
+      width: 100%;
+    }
+  }
 
-  .media-links-wrapper
-    margin 0
+  .media-links-wrapper {
+    margin: 0;
+  }
 
-  .footer
-    margin 8px 16px
-    font-size 14px
+  .footer {
+    margin: 8px 16px;
+    font-size: 14px;
+  }
 
-  .copyright
-    margin 6px 0
-    font-size 13px
+  .copyright {
+    margin: 6px 0;
+    font-size: 13px;
+  }
+}
 
-.page:not(.not-found) + .footer-wrapper
-  margin-top -2rem
+.page:not(.not-found) + .footer-wrapper {
+  margin-top: -2rem;
+}
 </style>

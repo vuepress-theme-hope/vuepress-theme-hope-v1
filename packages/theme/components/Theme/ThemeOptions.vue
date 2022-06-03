@@ -23,39 +23,49 @@
 <script src="./ThemeOptions" />
 
 <style lang="stylus">
-.theme-options
-  font-size 14px
+.theme-options {
+  font-size: 14px;
 
-  .themecolor-select
-    display flex
-    justify-content space-around
+  .themecolor-select {
+    display: flex;
+    justify-content: space-around;
 
-    label
-      padding-right 8px
+    label {
+      padding-right: 8px;
+    }
 
-    li
-      &:first-child
-        margin-right 8px
+    li {
+      &:first-child {
+        margin-right: 8px;
+      }
 
-      span
-        vertical-align middle
-        width 15px
-        height 15px
-        margin 0 2px
-        border-radius 2px
+      span {
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        margin: 0 2px;
+        border-radius: 2px;
 
-        &.default-theme
-          background $accentColor // must be fixed to the original accent-color
+        &.default-theme {
+          background: $accentColor; // must be fixed to the original accent-color
+        }
+      }
+    }
+  }
 
-  .darkmode-toggle
-    display flex
-    align-items center
-    margin-top 8px
+  .darkmode-toggle {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
 
-    .desc
-      padding-right 8px
-      line-height 1.5
+    .desc {
+      padding-right: 8px;
+      line-height: 1.5;
+    }
 
-    .full-screen, .cancel-full-screen
-      margin-left 0.5em
+    .full-screen, .cancel-full-screen {
+      margin-left: 0.5em;
+    }
+  }
+}
 </style>

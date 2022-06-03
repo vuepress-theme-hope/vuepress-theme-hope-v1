@@ -44,18 +44,21 @@
 <script src="./Common" />
 
 <style lang="stylus">
-.theme-container
-  min-height 100vh
+.theme-container {
+  min-height: 100vh;
+}
 
-.sidebar-mask
-  position fixed
-  z-index 9
-  top 0
-  left 0
-  width 100vw
-  height 100vh
-  display none
+.sidebar-mask {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
 
-  .theme-container.sidebar-open &
-    display block
+  .theme-container.sidebar-open & {
+    display: block;
+  }
+}
 </style>

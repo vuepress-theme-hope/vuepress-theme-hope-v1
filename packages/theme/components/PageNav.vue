@@ -43,28 +43,32 @@
 <script src="./PageNav" />
 
 <style lang="stylus">
-@require '~vuepress-shared/styles/wrapper'
+@require '~vuepress-shared/styles/wrapper';
 
-.page-nav
-  @extend $wrapper
-  padding-top 12px
-  padding-bottom 0
-  font-family Arial, Helvetica, sans-serif
+.page-nav {
+  @extend $wrapper;
+  padding-top: 12px;
+  padding-bottom: 0;
+  font-family: Arial, Helvetica, sans-serif;
 
-  .inner
-    min-height 32px
-    margin-top 0
-    border-top 1px solid var(--border-color)
-    padding-top 16px
-    overflow auto // clear float
+  .inner {
+    min-height: 32px;
+    margin-top: 0;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+    overflow: auto; // clear float
+  }
 
-  .prev .icon, .next .icon
-    position relative
-    top 0.125em
-    width 1em
-    height 1em
-    color var(--accent-color)
+  .prev .icon, .next .icon {
+    position: relative;
+    top: 0.125em;
+    width: 1em;
+    height: 1em;
+    color: var(--accent-color);
+  }
 
-  .next
-    float right
+  .next {
+    float: right;
+  }
+}
 </style>

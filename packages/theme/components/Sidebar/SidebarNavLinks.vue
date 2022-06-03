@@ -13,26 +13,31 @@
 <script src="./SidebarNavLinks" />
 
 <style lang="stylus">
-.sidebar-nav-links
-  display none
-  padding 0.5rem 0 0.75rem 0
-  border-bottom 1px solid var(--border-color)
+.sidebar-nav-links {
+  display: none;
+  padding: 0.5rem 0 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
 
-  @media (max-width $MQMobile)
-    display block
+  @media (max-width: $MQMobile) {
+    display: block;
+  }
 
-  ul
-    padding 0
-    margin 0.25rem 0 0
-    list-style-type none
+  ul {
+    padding: 0;
+    margin: 0.25rem 0 0;
+    list-style-type: none;
+  }
 
-  .nav-item
-    position relative
-    display block
-    padding 0.5rem 0 0.5rem 1.5rem
-    font-size 1.1em
-    line-height 1.25rem
+  .nav-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    font-size: 1.1em;
+    line-height: 1.25rem;
 
-    &:first-child
-      margin-left 0
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
 </style>
