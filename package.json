@@ -112,6 +112,11 @@
     "pnpm": ">=6"
   },
   "pnpm": {
+    "overrides": {
+      "vue": "2.7.0-alpha.4",
+      "vue-server-renderer": "2.7.0-alpha.4",
+      "vue-template-compiler": "2.7.0-alpha.4"
+    },
     "peerDependencyRules": {
       "allowedVersions": {
         "chalk": "4"
