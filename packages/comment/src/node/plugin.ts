@@ -1,19 +1,17 @@
 import { getLocales, noopModule } from "vuepress-shared";
 import { resolve } from "path";
-import { covertWalineOptions } from "./compact";
+import { covertOptions } from "./compact";
 import { walineLocales, valineLocales } from "./locales";
 
-import type { CommentOptions, WalineOptions } from "../types";
+import type { CommentOptions } from "../types";
 import type { Plugin, PluginEntry } from "@mr-hope/vuepress-types";
 
 export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
-  // FIXME: This is a compact code
-  if (options.type === "waline")
-    covertWalineOptions(options as WalineOptions & Record<string, unknown>);
+  covertOptions(options as CommentOptions & Record<string, unknown>);
 
   const PLUGIN_NAME = "vuepress-plugin-comment1";
   const userValineLocales =
-    options.type === "valine"
+    options.provider === "Valine"
       ? getLocales({
           context,
           config: options.valineLocales,
@@ -22,7 +20,7 @@ export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
         })
       : {};
   const userWalineLocales =
-    options.type === "waline"
+    options.provider === "Waline"
       ? getLocales({
           context,
           config: options.walineLocales,
@@ -46,11 +44,15 @@ export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
 
     alias: {
       "@CommentService":
-        options.type === "valine"
+        options.provider === "Giscus"
+          ? resolve(__dirname, "../client/components/Giscus.js")
+          : options.provider === "Waline"
+          ? resolve(__dirname, "../client/components/Waline.js")
+          : options.provider === "Valine"
           ? resolve(__dirname, "../client/components/Valine.vue")
-          : options.type === "waline"
-          ? resolve(__dirname, "../client/components/Waline.vue")
-          : options.type === "vssue"
+          : options.provider === "Twikoo"
+          ? resolve(__dirname, "../client/components/Twikoo.js")
+          : options.provider === "Vssue"
           ? resolve(__dirname, "../client/components/Vssue.js")
           : noopModule,
     },
@@ -58,7 +60,7 @@ export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
   };
 
-  if (options.type === "vssue")
+  if (options.provider === "Vssue")
     config.plugins = [["@vssue/vuepress-plugin-vssue", options]];
 
   return config;

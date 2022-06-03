@@ -1,5 +1,6 @@
 import type { BaseCommentOptions } from "./base";
 
 export interface DisableCommentOptions extends BaseCommentOptions {
-  type: "disable";
+  provider?: "None";
+  comment?: never;
 }

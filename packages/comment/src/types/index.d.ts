@@ -1,13 +1,11 @@
 import type { CommentOptions } from "./options";
-import type { WalineLocaleConfig } from "./waline";
-import type { ValineLocaleConfig } from "./valine";
+import type { WalineLocaleConfig } from "./options/waline";
+import type { ValineLocaleConfig } from "./options/valine";
 
 import "./declare";
 
+export * from "./frontmatter";
 export * from "./options";
-export * from "./waline";
-export * from "./valine";
-export * from "./vssue";
 
 declare global {
   const COMMENT_OPTIONS: CommentOptions;

@@ -19,8 +19,8 @@ export const getAlias = (
   const blogEnabled = themeConfig.blog !== false;
   const commentEnabled =
     themeConfig.comment &&
-    themeConfig.comment.type &&
-    themeConfig.comment.type !== "disable";
+    themeConfig.comment.provider &&
+    themeConfig.comment.provider !== "None";
 
   const themeColorEnabled = !(
     themeConfig.themeColor === false && themeConfig.darkmode === "disable"

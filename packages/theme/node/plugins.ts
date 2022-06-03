@@ -31,7 +31,7 @@ const resolveCommentOptions = (
   return themeConfig.comment === false
     ? false
     : {
-        type: "disable",
+        provider: "None",
         ...(themeConfig.comment || null),
       };
 };

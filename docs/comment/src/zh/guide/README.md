@@ -11,21 +11,26 @@ icon: creative
 
 如果你需要保持全局禁用，请在插件选项中设置 `comment` 为 `false`。这样你可以在特定页面的 frontmatter 中设置 `comment: true` 来局部启用它。
 
-有三个评论插件可以选择: Waline、Vssue 和 Valine。
+目前可以从 Giscus、Waline 和 Twikoo 中选择。
 
-::: tip 评论服务的比较
+::: tip 评论服务选择
 
-- Waline 需要后端服务器以及额外的配置，支持页面访问量统计，无需登录账号即可评论。可以使用 Vercel。
-- Vssue 使用代码平台仓库的 issue 面板，需要用户登录或注册相应平台账号。
-- Valine 使用 leancloud，支持页面访问量统计，无需登录账号即可评论
-
-如果你的站点面向大众而非程序员，推荐使用 Waline；反之推荐 Vssue。
+- 如果你的博客或文档主要面向程序员，建议使用 Giscus。
+- 如果你的博客或文档面向大众，建议使用 Waline。
 
 :::
 
-### Waline
+## Giscus
+
+[详见 Giscus 指南](giscus.md)
+
+## Waline
 
 [详见 Waline 指南](waline.md)
+
+## Twikoo
+
+[详见 Twikoo 指南](twikoo.md)
 
 ### Vssue
 

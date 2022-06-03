@@ -4,6 +4,8 @@ import { Route } from "vue-router";
 import type { WalineLocale, WalineInstance } from "@waline/client";
 import type { WalineOptions } from "../../types";
 
+import "../styles/waline.styl";
+
 let timeout: NodeJS.Timeout | null = null;
 
 const options = COMMENT_OPTIONS as WalineOptions;
@@ -90,5 +92,16 @@ export default Vue.extend({
   beforeDestroy(): void {
     if (timeout) clearTimeout(timeout);
     this.waline?.destroy();
+  },
+
+  render(h) {
+    return h(
+      "div",
+      {
+        class: "waline-wrapper",
+        style: { display: this.enableComment ? "block" : "none" },
+      },
+      [h("div", { attrs: { id: "waline-comment" } })]
+    );
   },
 });

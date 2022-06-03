@@ -1,10 +1,20 @@
-import type { WalineOptions } from "../types";
+import type { CommentOptions } from "../types";
 
 /** @deprecated */
-export const covertWalineOptions = (
-  options: WalineOptions & Record<string, unknown>
+export const covertOptions = (
+  options: CommentOptions & Record<string, unknown>
 ): void => {
-  if (options.type === "waline") {
+  if ("type" in options) {
+    console.warn(`"type" is deprecated, please use "provider".`);
+    if (options["type"] === "waline") options.provider = "Waline";
+    else if (options["type"] === "vssue") options.provider = "Vssue";
+    else if (options["type"] === "valine") options.provider = "Valine";
+
+    delete options["type"];
+  }
+
+  // covert Waline options
+  if (options.provider === "Waline") {
     [
       // valine
       ["emojiCDN", "emoji"],

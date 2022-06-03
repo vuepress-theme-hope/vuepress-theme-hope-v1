@@ -8,11 +8,20 @@ export type WalineLocaleConfig = ConvertLocaleConfig<WalineLocaleData>;
 
 export interface WalineOptions
   extends BaseCommentOptions,
-    Omit<WalineInitOptions, "el"> {
-  type: "waline";
+    Omit<WalineInitOptions, "el" | "comment"> {
+  provider: "Waline";
 
   /**
-   * Locales config for waline
+   * 是否启用访问量
+   *
+   * Whether enable page views count by default
+   *
+   * @default true
+   */
+  pageview?: boolean;
+
+  /**
+   * Locale config for waline
    */
   walineLocales?: LocaleConfig<WalineLocaleData>;
 }

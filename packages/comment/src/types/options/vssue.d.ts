@@ -3,7 +3,7 @@ import type { BaseCommentOptions } from "./base";
 
 /** Vssue 配置 */
 export interface VssueOptions extends BaseCommentOptions {
-  type: "vssue";
+  provider: "Vssue";
 
   /**
    * 平台 API 包

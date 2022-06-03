@@ -1,7 +1,9 @@
 import type { DisableCommentOptions } from "./disable";
+import type { GiscusOptions } from "./giscus";
+import type { TwikooOptions } from "./twikoo";
+import type { WalineOptions } from "./waline";
 import type { ValineOptions } from "./valine";
 import type { VssueOptions } from "./vssue";
-import type { WalineOptions } from "./waline";
 
 /**
  * 评论选项
@@ -9,7 +11,9 @@ import type { WalineOptions } from "./waline";
  * Comment options
  */
 export type CommentOptions =
-  | ValineOptions
+  | GiscusOptions
+  | TwikooOptions
   | WalineOptions
+  | ValineOptions
   | VssueOptions
   | DisableCommentOptions;

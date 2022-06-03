@@ -11,6 +11,6 @@ export type ValineLocaleConfig = ConvertLocaleConfig<ValineLocaleData>;
 export interface ValineOptions
   extends BaseCommentOptions,
     Omit<ValineOption, "el"> {
-  type: "valine";
+  provider: "Valine";
   valineLocales?: LocaleConfig<ValineLocaleData>;
 }

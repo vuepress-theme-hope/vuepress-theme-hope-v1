@@ -3,14 +3,12 @@ title: API Config
 icon: config
 ---
 
-## type
+## provider
 
-- Type: `'valine' | 'vssue' | 'disable'`
-- Required: true
+- Type: `"Giscus" | "Twikoo" | "Waline" | 'Valine' | 'Vssue' | "None"`
+- Default: `"None"`
 
 Comment service provider.
-
-Setting it to `'disable'` will only disable the comment feature.
 
 ## comment
 
@@ -19,9 +17,17 @@ Setting it to `'disable'` will only disable the comment feature.
 
 Whether to enable comment feature by default.
 
+## Giscus config
+
+- [See here](giscus.md)
+
 ## Waline config
 
 - [See here](waline.md)
+
+## Twikoo config
+
+- [See here](twikoo.md)
 
 ## Vssue config
 
