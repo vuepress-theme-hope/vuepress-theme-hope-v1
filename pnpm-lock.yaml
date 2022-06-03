@@ -471,8 +471,23 @@ importers:
   packages/shared:
     specifiers:
       '@mr-hope/vuepress-types': workspace:*
+      chalk: ^4.1.2
+      cpx2: 4.2.0
+      dayjs: ^1.11.2
+      execa: ^5.1.1
+      ora: ^5.4.1
+      rimraf: 3.0.2
+      vue: 2.7.0-alpha.4
     dependencies:
       '@mr-hope/vuepress-types': link:../vuepress-types
+      chalk: 4.1.2
+      dayjs: 1.11.2
+      execa: 5.1.1
+      ora: 5.4.1
+      vue: 2.7.0-alpha.4
+    devDependencies:
+      cpx2: 4.2.0
+      rimraf: 3.0.2
 
   packages/sitemap:
     specifiers:

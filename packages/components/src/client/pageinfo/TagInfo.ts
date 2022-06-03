@@ -1,6 +1,6 @@
 import Vue from "vue";
 import TagIcon from "./icons/TagIcon.vue";
-import { capitalize } from "@mr-hope/vuepress-shared";
+import { capitalize } from "@mr-hope/vuepress-shared/lib/client";
 import { pageInfoLocales } from "./../define";
 
 import type { PropType } from "vue";

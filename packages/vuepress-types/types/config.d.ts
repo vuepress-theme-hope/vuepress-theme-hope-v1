@@ -17,7 +17,7 @@ export interface LocaleData extends Record<string, any> {
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ThemeLocaleData extends LocaleData {}
 
-export interface LocaleConfig {
+export interface SiteLocaleConfig {
   [key: string]: LocaleData;
 }
 
@@ -130,7 +130,7 @@ interface BaseSiteConfig {
   dest?: string;
   /** 提供多语言支持的语言配置 */
 
-  locales?: LocaleConfig;
+  locales?: SiteLocaleConfig;
   /** 一个函数，用来控制对于哪些文件，是需要生成 `<link rel="prefetch">` 资源提示的 */
   shouldPrefetch?: (file: string, type: string) => boolean;
   /** 此选项可以用于指定 cache 的路径，同时也可以通过设置为 `false` 来在每次构建之前删除 cache */

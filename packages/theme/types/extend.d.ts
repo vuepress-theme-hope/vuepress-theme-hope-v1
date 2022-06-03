@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { BasePageFrontmatterInfo } from "@mr-hope/vuepress-shared";
 import {
   BlogMedia,
   HopeThemeLocalesConfig,
@@ -19,21 +20,7 @@ declare module "vue/types/vue" {
 }
 
 declare module "@mr-hope/vuepress-types" {
-  interface PageFrontmatter {
-    icon?: string;
-    author?: string | false;
-    original?: boolean;
-    /**
-     * @deprecated
-     */
-    date?: Date | string;
-    time?: Date | string;
-    category?: string;
-    tag?: string[];
-    /**
-     * @deprecated
-     */
-    tags?: string[];
+  interface PageFrontmatter extends BasePageFrontmatterInfo {
     summary?: string;
     sticky?: boolean | number;
     star?: boolean | number;
@@ -48,7 +35,7 @@ declare module "@mr-hope/vuepress-types" {
     };
     feed?: FeedFrontmatterOption;
     pageInfo?: PageInfo[] | false;
-    visitor?: boolean;
+    pageview?: boolean;
     breadcrumb?: boolean;
     breadcrumbIcon?: boolean;
     navbar?: boolean;
@@ -60,8 +47,6 @@ declare module "@mr-hope/vuepress-types" {
     updateTime?: boolean;
     prev?: string | false;
     next?: string | false;
-    footer?: string | boolean;
-    copyrightText?: string | false;
     mediaLink?: BlogMedia;
     search?: boolean;
     backToTop?: boolean;

@@ -11,13 +11,24 @@ export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
   if (options.type === "waline")
     covertWalineOptions(options as WalineOptions & Record<string, unknown>);
 
+  const PLUGIN_NAME = "@mr-hope/vuepress-plugin-comment";
   const userValineLocales =
     options.type === "valine"
-      ? getLocales(context, valineLocales, options.valineLocales)
+      ? getLocales({
+          context,
+          config: options.valineLocales,
+          default: valineLocales,
+          name: PLUGIN_NAME,
+        })
       : {};
   const userWalineLocales =
     options.type === "waline"
-      ? getLocales(context, walineLocales, options.walineLocales)
+      ? getLocales({
+          context,
+          config: options.walineLocales,
+          default: walineLocales,
+          name: PLUGIN_NAME,
+        })
       : {};
 
   // remove locales so that they won't be injected in client twice
@@ -25,7 +36,7 @@ export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
   if ("walineLocales" in options) delete options.walineLocales;
 
   const config: PluginOptionAPI = {
-    name: "@mr-hope/vuepress-plugin-comment",
+    name: PLUGIN_NAME,
 
     define: (): Record<string, unknown> => ({
       COMMENT_OPTIONS: options,

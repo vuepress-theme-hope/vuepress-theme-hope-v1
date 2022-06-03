@@ -17,6 +17,8 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
   const { base } = context;
   const { shouldPrefetch = true } = context.siteConfig;
 
+  const PLUGIN_NAME = "@mr-hope/vuepress-plugin-pwa";
+
   if (options.appendBase) appendBase(base, options);
 
   if (shouldPrefetch === true)
@@ -35,10 +37,15 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
   );
 
   const config: PluginOptionAPI = {
-    name: "@mr-hope/vuepress-plugin-pwa",
+    name: PLUGIN_NAME,
 
     define: () => ({
-      PWA_LOCALES: getLocales(context, pwaLocales, options.locales),
+      PWA_LOCALES: getLocales({
+        context,
+        name: PLUGIN_NAME,
+        config: options.locales,
+        default: pwaLocales,
+      }),
       SW_FORCE_UPDATE: options.update === "force",
       SW_PATH: options.swPath || "service-worker.js",
     }),

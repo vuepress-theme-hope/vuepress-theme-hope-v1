@@ -26,13 +26,69 @@ export interface BasePage {
 }
 
 export interface PageFrontmatter {
-  permalink?: string;
+  /**
+   * 页面标题
+   *
+   * Page title
+   */
   title?: string;
+
+  /**
+   * 页面描述
+   *
+   * Page description
+   */
   description?: string;
+
+  /**
+   * 页面语言
+   *
+   * Page language
+   */
   lang?: string;
+
+  /**
+   * Writting Date
+   *
+   * 写作日期
+   */
+  date?: string | Date;
+
+  /**
+   * 页面布局组件名称
+   *
+   * Page layout component name
+   */
   layout?: string;
+
+  /**
+   * 页面 meta 标题
+   *
+   * Page meta title
+   */
   metaTitle?: string;
+
+  /**
+   * 页面 meta 标签
+   *
+   * Page metas tags
+   */
   meta?: Record<"charset" | "content" | "http-equiv" | "name", string>[];
+
+  /**
+   * 页面永久链接
+   *
+   * Page permalink
+   */
+  permalink?: string;
+
+  /**
+   * Canonical Url
+   *
+   * 规范链接
+   */
+  canonicalUrl?: string;
+
   [key: string]: any;
 }
 

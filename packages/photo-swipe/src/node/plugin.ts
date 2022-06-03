@@ -9,19 +9,22 @@ export const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (
   options,
   context
 ) => {
+  const PLUGIN_NAME = "vuepress-plugin-photo-swipe";
+
   return {
-    name: "vuepress-plugin-photo-swipe",
+    name: PLUGIN_NAME,
 
     define: (): Record<string, unknown> => ({
       PHOTO_SWIPE_SELECTOR:
         options.selector || ".theme-default-content :not(a) > img",
       PHOTO_SWIPE_DELAY: options.delay || 500,
       PHOTO_SWIPE_OPTIONS: options.options || {},
-      PHOTO_SWIPE_LOCALES: getLocales(
+      PHOTO_SWIPE_LOCALES: getLocales({
         context,
-        photoSwipeLocales,
-        options.locales
-      ),
+        name: PLUGIN_NAME,
+        config: options.locales,
+        default: photoSwipeLocales,
+      }),
     }),
 
     enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),

@@ -1,3 +1,4 @@
+import { getAuthor } from "@mr-hope/vuepress-shared/lib/client";
 import Vue from "vue";
 import AuthorIcon from "./icons/AuthorIcon.vue";
 import { pageInfoLocales } from "../define";
@@ -18,7 +19,7 @@ export default Vue.extend({
     author(): string {
       const { author } = this.$frontmatter;
 
-      return author || (author === false ? "" : this.defaultAuthor);
+      return getAuthor(author)[0]?.name || this.defaultAuthor;
     },
 
     hint(): string {
