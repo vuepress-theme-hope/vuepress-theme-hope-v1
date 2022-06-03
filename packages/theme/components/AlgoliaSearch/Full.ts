@@ -35,7 +35,7 @@ export default Vue.extend({
       // eslint-disable-next-line
       (docsearch as (props: DocSearchProps & { container: string }) => void)({
         container: "#docsearch",
-        placeholder: (this.$site.themeConfig.searchPlaceholder as string) || "",
+        placeholder: this.$themeConfig.searchPlaceholder || "",
         ...userOptions,
         searchParameters: userOptions.searchParameters || {},
 

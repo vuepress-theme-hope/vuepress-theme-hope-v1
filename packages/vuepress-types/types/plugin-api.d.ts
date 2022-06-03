@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Plugin, PluginOptionAPI } from "./plugin";
+import type { Plugin, PluginEntry } from "./plugin";
 
 export interface OptionItem<Value = any> {
-  value: Value;
   name: string;
+  value: Value;
 }
 
 export interface Option<Value = any> {
@@ -25,7 +25,7 @@ export interface AsyncOption extends Option {
   pipeline: <T = Promise<void>>(input: any) => T;
 }
 
-export interface NormalizedPlugin<PluginOptions = any> extends PluginOptionAPI {
+export interface NormalizedPlugin<PluginOptions = any> extends PluginEntry {
   name: string;
   shortcut: string | null;
   enabled: boolean;
@@ -47,7 +47,7 @@ export interface PluginAPI {
     pluginRaw: Plugin<PluginOptions>,
     pluginOptions: PluginOptions
   ) => NormalizedPlugin<PluginOptions>;
-  useByPluginsConfig: (pluginConfig: PluginOptionAPI) => PluginAPI;
+  useByPluginsConfig: (pluginConfig: PluginEntry) => PluginAPI;
   initializeOptions: () => void;
   registerOption: (key: string, value: Option, pluginName: string) => PluginAPI;
   applyPlugin: (plugin: NormalizedPlugin) => void;

@@ -6,7 +6,7 @@ import CategoryInfo from "@mr-hope/vuepress-plugin-components/lib/client/pageinf
 import TagInfo from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/TagInfo.vue";
 import TimerIcon from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/icons/TimerIcon.vue";
 
-import type { PageComputed } from "@mr-hope/vuepress-types";
+import type { BasePage } from "@mr-hope/vuepress-types";
 import type { PropType } from "vue";
 
 export default Vue.extend({
@@ -21,15 +21,14 @@ export default Vue.extend({
   },
 
   props: {
-    article: { type: Object as PropType<PageComputed>, required: true },
+    article: { type: Object as PropType<BasePage>, required: true },
   },
 
   computed: {
     author(): string {
-      return this.article.frontmatter["author"]
-        ? getAuthor(this.article.frontmatter["author"])[0]?.name
-        : this.$themeConfig.author &&
-          this.article.frontmatter["author"] !== false
+      return this.article.frontmatter.author
+        ? getAuthor(this.article.frontmatter.author)[0]?.name
+        : this.$themeConfig.author && this.article.frontmatter.author !== false
         ? this.$themeConfig.author
         : "";
     },

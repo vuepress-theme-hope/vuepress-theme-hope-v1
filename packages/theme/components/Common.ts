@@ -56,7 +56,7 @@ export default globalEncryptMixin.extend({
       if (this.sidebar === false) return false;
 
       return (
-        !this.$frontmatter["home"] &&
+        !this.$frontmatter.home &&
         this.$frontmatter.sidebar !== false &&
         this.sidebarItems.length !== 0
       );
@@ -68,8 +68,8 @@ export default globalEncryptMixin.extend({
       return getSidebarItems(this.$page, this.$site, this.$localePath);
     },
 
-    pageClasses(): unknown {
-      const userPageClass = this.$page.frontmatter["pageClass"] as
+    containerClasses(): unknown {
+      const userContainerClass = this.$page.frontmatter.containerClass as
         | string
         | string[]
         | Record<string, boolean>;
@@ -82,7 +82,7 @@ export default globalEncryptMixin.extend({
           "hide-navbar": this.hideNavbar,
           "sidebar-open": this.isSidebarOpen,
         },
-        userPageClass,
+        userContainerClass,
       ];
     },
 

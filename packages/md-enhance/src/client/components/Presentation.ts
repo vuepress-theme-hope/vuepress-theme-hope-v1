@@ -129,7 +129,7 @@ export default Vue.extend({
             transition: "slide",
             slideNumber: true,
             ...REVEAL_CONFIG,
-            ...(this.$frontmatter["reveal"] || {}),
+            ...((this.$frontmatter["reveal"] as Record<string, unknown>) || {}),
             embedded: this.$frontmatter.layout !== "Slide",
           } as Partial<RevealOptions>)
           .then(() => {

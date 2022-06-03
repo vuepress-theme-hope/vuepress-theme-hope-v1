@@ -2,7 +2,7 @@ import type { ReadingTime } from "./extends";
 import type { ReadingTimeLocaleConfig } from "./locales";
 
 declare module "@mr-hope/vuepress-types/types/page" {
-  interface PageComputed {
+  interface BasePage {
     readingTime: ReadingTime;
   }
 

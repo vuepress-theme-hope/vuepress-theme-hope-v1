@@ -1,4 +1,4 @@
-import type { AlgoliaOption, LocaleData } from "@mr-hope/vuepress-types";
+import type { AlgoliaOption } from "@mr-hope/vuepress-types";
 import type { HopeThemeAppearanceConfig } from "./appearance";
 import type { HopeFeatureConfig } from "./feature";
 import type { HopeFooterConfig, HopeLayoutConfig } from "./layout";
@@ -61,7 +61,7 @@ export interface HopeThemeConfig
    *
    * Locales config
    */
-  locales?: Record<string, LocaleData & HopeThemeLocalesConfig>;
+  locales?: Record<string, HopeThemeLocalesConfig>;
 
   /** 站点地址 */
   hostname?: string;
@@ -81,7 +81,7 @@ export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
   /** 图标 FontClass 前缀 */
   iconPrefix: string;
   /** 多语言配置 */
-  locales: Record<string, LocaleData & HopeThemeLocalesConfig>;
+  locales: Record<string, HopeThemeLocalesConfig>;
   /** 页脚配置 */
   footer: HopeFooterConfig;
   /** 显示编辑本页链接 */

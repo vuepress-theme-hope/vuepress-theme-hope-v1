@@ -10,9 +10,15 @@ export const injectLinkstoHead = (
   const linkKeys: string[] = [];
 
   // Generate Hash for Head
-  head.forEach((item) => {
-    if (item[0] === "meta") metaKeys.push(item[1]["name"]);
-    else if (item[0] === "link") linkKeys.push(item[1]["rel"]);
+  head.forEach(([tag, config]) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    if (tag === "meta") metaKeys.push(config["name"]);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    else if (tag === "link") linkKeys.push(config["rel"]);
   });
 
   let fallBackIcon = "";

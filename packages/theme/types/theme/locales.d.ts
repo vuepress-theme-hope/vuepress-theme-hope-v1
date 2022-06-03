@@ -1,7 +1,7 @@
-import { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
-import { AlgoliaOption } from "@mr-hope/vuepress-types";
-import { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
-import { HopeFooterConfig } from "./layout";
+import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { AlgoliaOption } from "@mr-hope/vuepress-types";
+import type { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
+import type { HopeFooterConfig } from "./layout";
 
 export interface HopeThemeLocaleData {
   /** 当前语言代码 */
@@ -78,12 +78,36 @@ export interface HopeThemeLocalesConfig extends Partial<HopeThemeLocaleData> {
   title?: string;
   /** 当前语言下的描述 */
   description?: string;
-  /** 导航栏链接 */
+
+  /**
+   * 导航栏配置
+   *
+   * Navbar configuration
+   */
   nav?: HopeNavBarConfig;
-  /** 侧边栏配置 */
+
+  /**
+   * 侧边栏配置
+   *
+   * Sidebar configuration
+   */
   sidebar?: HopeSideBarConfig;
+
+  /**
+   * 侧边栏嵌套的标题深度
+   *
+   * Nested headings depth in sidebar
+   *
+   * @default 2
+   */
+  sidebarDepth?: number;
+
   /** 当前语言的 algolia 设置 */
   algolia?: AlgoliaOption;
+
   /** 页脚设置 */
   footer?: HopeFooterConfig;
+
+  /** 显示所有页面的标题链接 */
+  displayAllHeaders?: boolean;
 }

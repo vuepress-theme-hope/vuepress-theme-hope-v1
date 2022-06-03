@@ -4,11 +4,7 @@ import PrevIcon from "@theme/icons/PrevIcon.vue";
 import { resolvePath } from "@theme/utils/path";
 import { resolvePageforSidebar } from "@theme/utils/sidebar";
 
-import type {
-  PageComputed,
-  SiteData,
-  ThemeConfig,
-} from "@mr-hope/vuepress-types";
+import type { BasePage, SiteData } from "@mr-hope/vuepress-types";
 import type { PropType } from "vue";
 import type { Route } from "vue-router";
 import type {
@@ -17,6 +13,7 @@ import type {
   SidebarItem,
   SidebarPageItem,
 } from "@theme/utils/sidebar";
+import type { HopeThemeConfig } from "@theme/types";
 
 const getSidebarItems = (
   items: SidebarItem[],
@@ -29,7 +26,7 @@ const getSidebarItems = (
 };
 
 const find = (
-  page: PageComputed,
+  page: BasePage,
   items: SidebarItem[],
   offset: -1 | 1
 ): SidebarItem | false => {
@@ -49,8 +46,8 @@ const find = (
 };
 
 interface LinkOptions {
-  themeConfig: ThemeConfig;
-  page: PageComputed;
+  themeConfig: HopeThemeConfig;
+  page: BasePage;
   route: Route;
   site: SiteData;
   sidebarItems: SidebarItem[];

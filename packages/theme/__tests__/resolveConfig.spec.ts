@@ -1,10 +1,11 @@
 import { describe, it, expect } from "vitest";
 import { resolveVuePressConfig } from "../node/config";
 
-import type { HopeVuePressConfig } from "../types";
+import type { Config } from "@mr-hope/vuepress-types";
+import type { HopeThemeConfig } from "../types";
 
 describe("Test resolveTheme function", () => {
-  const vuepressConfig: HopeVuePressConfig = {
+  const vuepressConfig: Config<HopeThemeConfig> = {
     title: "vuepress-theme-hope",
     description: "A vuepress theme with tons of features✨",
 

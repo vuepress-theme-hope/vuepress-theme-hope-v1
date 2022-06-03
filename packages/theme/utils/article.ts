@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import type { PageComputed } from "@mr-hope/vuepress-types";
+import type { BasePage } from "@mr-hope/vuepress-types";
 
 export const getDate = (
   date: string | number | Date
@@ -82,9 +82,9 @@ export const compareDate = (
 };
 
 export const filterArticle = (
-  pages: PageComputed[],
-  filterFunc?: (page: PageComputed) => boolean
-): PageComputed[] =>
+  pages: BasePage[],
+  filterFunc?: (page: BasePage) => boolean
+): BasePage[] =>
   pages.filter((page) => {
     const {
       frontmatter: { article, blogpage, home },
@@ -101,9 +101,9 @@ export const filterArticle = (
   });
 
 export const sortArticle = (
-  pages: PageComputed[],
+  pages: BasePage[],
   compareKey?: "sticky" | "star"
-): PageComputed[] =>
+): BasePage[] =>
   pages.slice(0).sort((prev, next) => {
     if (compareKey) {
       const prevKey = prev.frontmatter[compareKey];
@@ -124,14 +124,14 @@ export const sortArticle = (
   });
 
 export const generatePagination = (
-  pages: PageComputed[],
+  pages: BasePage[],
   perPage = 10
-): PageComputed[][] => {
-  const result: PageComputed[][] = [];
+): BasePage[][] => {
+  const result: BasePage[][] = [];
   let index = 0;
 
   while (index < pages.length) {
-    const paginationPage: PageComputed[] = [];
+    const paginationPage: BasePage[] = [];
 
     for (let i = 0; i < perPage; i++)
       if (index < pages.length) {

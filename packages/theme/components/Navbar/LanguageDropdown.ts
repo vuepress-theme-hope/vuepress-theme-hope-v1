@@ -32,9 +32,9 @@ export default Vue.extend({
           items: Object.keys(locales).map((path) => {
             const locale = locales[path];
             const text =
-              (themeLocales[path] && themeLocales[path].label) ||
-              locale.lang ||
-              "Unknown Language";
+              themeLocales[path] && "label" in themeLocales[path]
+                ? (themeLocales[path]["label"] as string)
+                : locale.lang || "Unknown Language";
             let link: string;
 
             // Stay on the current page

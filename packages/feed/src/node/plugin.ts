@@ -5,11 +5,11 @@ import { FeedGenerator } from "./generator";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options";
 import { error, info } from "./utils";
 
-import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginEntry } from "@mr-hope/vuepress-types";
 import type { FeedOptions } from "../types";
 
 export const feedPlugin: Plugin<FeedOptions> = (options, context) => {
-  const plugin: PluginOptionAPI = {
+  const plugin: PluginEntry = {
     name: "@mr-hope/vuepress-plugin-feed",
   };
 

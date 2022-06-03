@@ -1,31 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ClientComputedMixin } from "./computed";
+import type { Config } from "./config";
 import type { Context } from "./context";
 import type { Markdown } from "./markdown";
 import type { OptionItem } from "./plugin-api";
+import type { ThemeConfig } from "./theme";
 
-/**
- * @see https://github.com/vuejs/vuepress/blob/master/packages/%40vuepress/core/lib/node/Page.js
- */
-
-/*
- * ==================
- * Page basic properties
- * ==================
- */
-
-export interface BasePage {
-  title: string;
-  frontmatter: PageFrontmatter;
-  key: string;
-  path: string;
-  regularPath: string;
-  relativePath: string;
-  headers?: PageHeader[];
-  excerpt?: string;
-}
-
-export interface PageFrontmatter {
+export interface PageFrontmatter<
+  ExtraFrontmatter extends Record<string, unknown> = Record<string, unknown>
+> extends ExtraFrontmatter {
   /**
    * 页面标题
    *
@@ -88,8 +71,46 @@ export interface PageFrontmatter {
    * 规范链接
    */
   canonicalUrl?: string;
+}
 
-  [key: string]: any;
+/*
+ * ==================
+ * Page basic properties
+ * ==================
+ */
+
+export interface BasePage {
+  /**
+   * Page's title
+   */
+  title: string;
+
+  /**
+   * Page's unique hash key
+   */
+  key: string;
+
+  /**
+   * Page's frontmatter object
+   */
+  frontmatter: PageFrontmatter;
+
+  /**
+   * Current page's real link (use regularPath when permalink does not exist)
+   */
+  path: string;
+
+  /**
+   * Current page's default link (follow the file hierarchy)
+   */
+  regularPath: string;
+
+  /**
+   * Page's relative path
+   */
+  relativePath: string;
+  headers?: PageHeader[];
+  excerpt?: string;
 }
 
 /*
@@ -112,27 +133,78 @@ export interface PageHeader {
   slug: string;
 }
 
-export interface Page extends BasePage {
+export interface Page<
+  T extends ThemeConfig = ThemeConfig,
+  C extends Config<T> = Config<ThemeConfig>
+> extends BasePage {
+  /**
+   * Name of page's parent directory.
+   */
   readonly dirname: string;
+
+  /**
+   * file name of page's source markdown file, or the last cut of regularPath.
+   */
   readonly filename: string;
+
+  /**
+   * slugified file name.
+   */
   readonly slug: string;
+
+  /**
+   * stripped file name.
+   */
   readonly strippedFilename: string;
+
+  /**
+   * date of current page.
+   */
   readonly date: string;
 
-  _context: Context;
+  /**
+   * @private
+   *
+   * VuePress Context
+   */
+  _context: Context<T, C>;
+
+  /**
+   * Page file's raw content string
+   */
   _content: string;
-  _computed: ClientComputedMixin;
+
+  /**
+   * Access the client global computed mixins at build time, e.g _computed.$localePath.
+   */
+  _computed: ClientComputedMixin<T, C>;
+
+  /**
+   * Page Headers
+   */
   _extractHeaders: string[];
+
+  /**
+   * file's absolute path
+   */
   _filePath: string;
+
   _localePath: string;
+
   _meta: Record<string, string>[];
+
   _permalink: string;
+
   _permalinkPattern: string;
+
+  /**
+   * Page file's content string without frontmatter
+   */
   _strippedContent: string;
 
   process: (options: PageProcessOptions) => Promise<void>;
   stripFilename: (fileName: string) => string;
-  toJson: () => PageComputed;
+  toJson: () => BasePage;
   buildPermalink: () => void;
   enhance: (enhancers: PageEnhancer[]) => Promise<void>;
 }
@@ -151,15 +223,4 @@ export interface PageOptions {
 
 export interface PageConstructor {
   new (options: PageOptions, context: Context): Page;
-}
-
-/*
- * ==================
- * Page in computed
- * ==================
- */
-
-export interface PageComputed extends BasePage {
-  // default theme
-  lastUpdated?: string;
 }

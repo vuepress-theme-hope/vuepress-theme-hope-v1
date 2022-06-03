@@ -1,5 +1,5 @@
-import { HopeThemeConfig, ResolvedHopeThemeConfig } from "./theme";
-import { SiteConfig } from "@mr-hope/vuepress-types";
+import type { Config } from "@mr-hope/vuepress-types";
+import type { HopeThemeConfig, ResolvedHopeThemeConfig } from "./theme";
 
 export * from "./appearance";
 export * from "./extends";
@@ -10,7 +10,7 @@ export * from "./plugin";
 export * from "./theme";
 
 /** vuepress-theme-hope 项目配置 */
-export interface HopeVuePressConfig extends SiteConfig {
+export interface HopeVuePressConfig extends Config {
   /** 自定义主题的配置 */
   themeConfig: HopeThemeConfig;
 }

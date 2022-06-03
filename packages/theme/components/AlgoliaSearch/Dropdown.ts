@@ -26,8 +26,7 @@ export default Vue.extend({
 
   mounted(): void {
     this.initialize(this.options, this.$lang);
-    this.placeholder =
-      (this.$site.themeConfig.searchPlaceholder as string) || "";
+    this.placeholder = this.$themeConfig.searchPlaceholder || "";
   },
 
   methods: {

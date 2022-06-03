@@ -32,7 +32,7 @@
     "webpack-chain": "^6.5.1"
   },
   "peerDependencies": {
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.9.7"
   },
   "publishConfig": {
     "access": "public"

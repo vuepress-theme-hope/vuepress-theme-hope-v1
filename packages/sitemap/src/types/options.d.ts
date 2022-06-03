@@ -1,6 +1,6 @@
-import type { PageComputed } from "@mr-hope/vuepress-types";
+import type { Page } from "@mr-hope/vuepress-types";
 
-export type ModifyTimeGetter = (page: PageComputed) => string;
+export type ModifyTimeGetter = (page: Page) => string;
 
 export interface SitemapOptions {
   /**

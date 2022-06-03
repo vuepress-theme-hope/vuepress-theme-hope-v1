@@ -7,8 +7,12 @@ import {
   resolvePath,
 } from "./path";
 
-import type { PageComputed, SiteData } from "@mr-hope/vuepress-types";
-import type { HopeSideBarConfig, HopeSideBarConfigItem } from "../types";
+import type { BasePage, SiteData } from "@mr-hope/vuepress-types";
+import type {
+  HopeSideBarConfig,
+  HopeSideBarConfigItem,
+  HopeThemeConfig,
+} from "../types";
 import type { SidebarHeader } from "./groupHeader";
 
 export type { SidebarHeader } from "./groupHeader";
@@ -33,7 +37,7 @@ export interface SidebarAutoItem {
 
 export const groupSidebarHeaders = groupHeaders;
 
-const resolveSidebarHeaders = (page: PageComputed): SidebarAutoItem[] => {
+const resolveSidebarHeaders = (page: BasePage): SidebarAutoItem[] => {
   const headers = page.headers ? groupSidebarHeaders(page.headers) : [];
   const { icon } = page.frontmatter;
 
@@ -86,7 +90,7 @@ export interface SidebarExternalItem {
   path: string;
 }
 
-export interface SidebarPageItem extends PageComputed {
+export interface SidebarPageItem extends BasePage {
   type: "page";
   icon?: string;
   path: string;
@@ -113,7 +117,7 @@ export interface SidebarErrorItem {
 
 /** sidebarConfig merged with pageObject */
 export const resolvePageforSidebar = (
-  pages: PageComputed[],
+  pages: BasePage[],
   path: string
 ): SidebarPageItem | SidebarExternalItem | SidebarErrorItem => {
   // if it is external link
@@ -157,7 +161,7 @@ const resolve = (prefix: string, path: string, base: string): string =>
  */
 const resolveSidebarItem = (
   sidebarConfigItem: HopeSideBarConfigItem,
-  pages: PageComputed[],
+  pages: BasePage[],
   base: string,
   prefix = ""
 ): SidebarItem => {
@@ -208,8 +212,8 @@ const resolveSidebarItem = (
 };
 
 export const getSidebarItems = (
-  page: PageComputed,
-  site: SiteData,
+  page: BasePage,
+  site: SiteData<HopeThemeConfig>,
   localePath: string
 ): SidebarItem[] => {
   const { themeConfig, pages } = site;

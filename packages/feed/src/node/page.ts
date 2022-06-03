@@ -8,12 +8,7 @@ import {
   isUrl,
 } from "./utils";
 
-import type {
-  Context,
-  Page,
-  PageComputed,
-  PageFrontmatter,
-} from "@mr-hope/vuepress-types";
+import type { Context, Page, PageFrontmatter } from "@mr-hope/vuepress-types";
 import type { Feed } from "./feed";
 import type { AuthorInfo } from "./utils";
 import type {
@@ -36,20 +31,13 @@ export class FeedPage {
   constructor(
     private context: Context,
     private options: FeedOptions,
-    private $page: PageComputed,
+    private page: Page,
     private feed: Feed
   ) {
     this.base = this.context.base;
-    this.frontmatter = $page.frontmatter;
+    this.frontmatter = page.frontmatter;
     this.getter = options.getter || {};
     this.pageFeedOptions = this.frontmatter.feed || {};
-  }
-
-  /** Get current page */
-  private get page(): Page {
-    return this.context.pages.find(
-      (page) => page.key === this.$page.key
-    ) as Page;
   }
 
   get title(): string {
@@ -140,9 +128,8 @@ export class FeedPage {
     if (typeof this.getter.publishDate === "function")
       return this.getter.publishDate(this.page);
 
+    const { createTimeStamp } = this.page;
     const { time, date = time } = this.page.frontmatter;
-
-    const { createTimeStamp } = this.page || {};
 
     return date && date instanceof Date
       ? date
@@ -155,7 +142,7 @@ export class FeedPage {
     if (typeof this.getter.lastUpdateDate === "function")
       return this.getter.lastUpdateDate(this.page);
 
-    const { updateTimeStamp } = this.page || {};
+    const { updateTimeStamp } = this.page;
 
     return updateTimeStamp ? new Date(updateTimeStamp) : new Date();
   }

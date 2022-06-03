@@ -18,7 +18,7 @@ export const getOGP = (
 ): SeoContent => {
   const {
     isArticle = (page): boolean =>
-      Boolean(page._filePath && !page.frontmatter["home"]),
+      Boolean(page._filePath && !page.frontmatter.home),
   } = options;
   const { base, siteConfig } = context;
 

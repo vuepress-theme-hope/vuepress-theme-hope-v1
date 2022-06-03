@@ -1,8 +1,11 @@
 import type { ClientComputedMixin } from "./computed";
-import type { PluginConfig, SiteConfig, ThemeConfig } from "./config";
+import type { Config } from "./config";
 import type { Markdown } from "./markdown";
-import type { Page, PageComputed, PageOptions } from "./page";
+import type { Page, PageOptions } from "./page";
+import type { PluginConfig } from "./plugin";
 import type { PluginAPI } from "./plugin-api";
+import type { SiteConfig } from "./site";
+import type { ThemeConfig } from "./theme";
 import type { ThemeAPI } from "./theme-api";
 
 /**
@@ -16,29 +19,79 @@ export interface ContextConstructor {
 
 export type App = Context;
 
-export interface Context<T = ThemeConfig> {
+/**
+ * Context API
+ *
+ * @see https://vuepress.vuejs.org/plugin/context-api.html
+ */
+export interface Context<
+  T = ThemeConfig,
+  C extends Config<T> = Config<ThemeConfig>
+> {
   /**
-   * Docs
+   * Whether VuePress run in production environment mode.
    */
   isProd: boolean;
-  pages: Page[];
+
+  /**
+   * A list of Page objects
+   */
+  pages: Page<T, C>[];
+
+  /**
+   * Root directory where the documents are located.
+   */
   sourceDir: string;
+
+  /**
+   * Root directory where the temporary files are located.
+   */
   tempPath: string;
+
+  /**
+   * Output path.
+   */
   outDir: string;
+
+  /**
+   * i.e. base at config
+   */
   base: string;
+
+  /**
+   * A utility for writing temporary files to tempPath.
+   */
   writeTemp: (file: string, content: string) => void;
 
   /**
    * Other
    */
   options: ContextOptions;
+
+  /**
+   * Current theme config.
+   */
+  themeConfig: T;
+
+  /**
+   * VuePress Config.
+   */
+  siteConfig: C;
+
   vuepressDir: string;
   libDir: string;
   cwd: string;
-  siteConfig: SiteConfig;
-  themeConfig: T;
+
   markdown: Markdown;
+
+  /**
+   * Plugin API.
+   */
   pluginAPI: PluginAPI;
+
+  /**
+   * Theme API.
+   */
   themeAPI: ThemeAPI;
   ClientComputedMixinConstructor: new () => ClientComputedMixin;
   ssrTemplate: string;
@@ -49,24 +102,45 @@ export interface Context<T = ThemeConfig> {
   cacheIdentifier: string;
 
   // private
+  /** @private */
   resolveConfigAndInitialize: () => void;
+  /** @private */
   process: () => Promise<void>;
+  /** @private */
   applyInternalPlugins: () => void;
+  /** @private */
   applyUserPlugins: () => void;
+  /** @private */
   normalizeHeadTagUrls: () => void;
+  /** @private */
   resolveCacheLoaderOptions: () => void;
+  /** @private */
   resolveTemplates: () => void;
+  /** @private */
   resolveGlobalLayout: () => void;
+  /** @private */
   resolveCommonAgreementFilePath: () => void | string;
+  /** @private */
   resolvePages: () => Promise<void>;
+  /** @private */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getThemeConfigValue: (key: string) => any;
+  /** @private */
   resolveThemeAgreementFile: (filepath: string) => string | void;
+  /** @private */
   resolveSiteAgreementFile: (filepath: string) => string | void;
 
   // public
   addPage: (options: PageOptions) => Promise<void>;
-  getSiteData: () => SiteData;
+
+  /**
+   * Get site data.
+   */
+  getSiteData: () => SiteConfig;
+
+  /**
+   * Get internal file path
+   */
   getLibFilePath: (relative: string) => string;
   dev: () => Promise<Context>;
   build: () => Promise<Context>;
@@ -101,19 +175,5 @@ export interface ContextOptions {
 
   theme?: string;
   plugins?: PluginConfig[];
-  siteConfig?: SiteConfig;
+  siteConfig?: Config;
 }
-
-/**
- * Context.getSiteData()
- */
-export type SiteData =
-  // `locales` directly comes from SiteConfig
-  Pick<SiteConfig, "locales"> &
-    // `title`, `description`, `base`, `themeConfig` are always defined
-    Required<
-      Pick<SiteConfig, "title" | "description" | "base" | "themeConfig">
-    > & {
-      // page.toJson()
-      pages: PageComputed[];
-    };

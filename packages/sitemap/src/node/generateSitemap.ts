@@ -42,7 +42,7 @@ const generatePageMap = (
   const {
     changefreq,
     excludeUrls = ["/404.html"],
-    modifyTimeGetter = (page: Page): string =>
+    modifyTimeGetter = (page): string =>
       page.updateTimeStamp ? new Date(page.updateTimeStamp).toISOString() : "",
   } = options;
 

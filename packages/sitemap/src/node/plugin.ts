@@ -2,13 +2,13 @@ import { black, blue } from "chalk";
 import { covertOptions } from "./compact";
 import { generateSiteMap } from "./generateSitemap";
 
-import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginEntry } from "@mr-hope/vuepress-types";
 import type { SitemapOptions } from "../types";
 
 export const sitemapPlugin: Plugin<SitemapOptions> = (options, context) => {
   covertOptions(options as SitemapOptions & Record<string, unknown>);
 
-  const plugin: PluginOptionAPI = {
+  const plugin: PluginEntry = {
     name: "@mr-hope/vuepress-plugin-sitemap",
   };
 

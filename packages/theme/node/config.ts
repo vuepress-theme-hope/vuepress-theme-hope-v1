@@ -6,10 +6,9 @@ import {
 import { resolveEncrypt } from "./encrypt";
 import { themeLocales } from "./locales";
 
-import type { Context } from "@mr-hope/vuepress-types";
+import type { Config, Context } from "@mr-hope/vuepress-types";
 import type {
   HopeThemeConfig,
-  HopeVuePressConfig,
   ResolvedHopeThemeConfig,
   ResolvedHopeVuePressConfig,
 } from "../types";
@@ -85,7 +84,7 @@ export const resolveThemeConfig = (
 };
 
 export const resolveVuePressConfig = (
-  config: HopeVuePressConfig
+  config: Config<HopeThemeConfig>
 ): ResolvedHopeVuePressConfig => {
   // merge default config
   deepAssignReverse(defaultConfig, config);

@@ -1,6 +1,6 @@
 import { dayjs } from "./dayjs";
 
-import type { Context, SiteLocaleConfig, Page } from "@mr-hope/vuepress-types";
+import type { Context, Lang, Locales, Page } from "@mr-hope/vuepress-types";
 import type { Author, AuthorInfo, SeoOptions } from "../types";
 
 /**
@@ -28,12 +28,10 @@ export const isUrl = (test: string): boolean => {
 
 export const isAbsoluteUrl = (test: string): boolean => test.startsWith("/");
 
-export const getLocales = (lang: string, locales: SiteLocaleConfig): string[] =>
+export const getLocales = (lang: string, locales: Locales): Lang[] =>
   Object.entries(locales)
     .map(([, value]) => value.lang)
-    .filter(
-      (item): item is string => typeof item === "string" && item !== lang
-    );
+    .filter((item): item is Lang => typeof item === "string" && item !== lang);
 
 export interface DateOptions {
   /**

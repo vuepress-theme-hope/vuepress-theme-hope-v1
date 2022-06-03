@@ -1,4 +1,4 @@
-import type { LocaleData } from "./config";
+import type { ThemeLocaleData } from "./theme";
 
 /** 导航栏配置项 */
 export interface NavBarConfigItem {
@@ -49,7 +49,14 @@ export interface AlgoliaOption {
 }
 
 /** 多语言配置 */
-export interface DefaultThemeLangLocaleData extends LocaleData {
+export interface DefaultThemeLangLocaleData extends ThemeLocaleData {
+  /** 当前语言代码 */
+  lang?: string;
+  /** 当前语言下的标题 */
+  title?: string;
+  /** 当前语言下的描述 */
+  description?: string;
+
   /** 当前语言的导航栏链接 */
   nav?: NavBarConfig;
   /** 当前语言的侧边栏配置 */

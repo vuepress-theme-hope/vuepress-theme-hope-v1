@@ -5,7 +5,7 @@ import PresentationIcon from "@theme/icons/PresentationIcon.vue";
 import StickyIcon from "@theme/icons/StickyIcon.vue";
 import { getPathMatchedKeys } from "@theme/utils/encrypt";
 
-import type { PageComputed } from "@mr-hope/vuepress-types";
+import type { BasePage } from "@mr-hope/vuepress-types";
 import type { PropType } from "vue";
 
 export default Vue.extend({
@@ -14,7 +14,7 @@ export default Vue.extend({
   components: { ArticleInfo, LockIcon, StickyIcon, PresentationIcon },
 
   props: {
-    article: { type: Object as PropType<PageComputed>, required: true },
+    article: { type: Object as PropType<BasePage>, required: true },
   },
 
   computed: {

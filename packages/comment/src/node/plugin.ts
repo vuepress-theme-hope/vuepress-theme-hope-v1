@@ -4,7 +4,7 @@ import { covertWalineOptions } from "./compact";
 import { walineLocales, valineLocales } from "./locales";
 
 import type { CommentOptions, WalineOptions } from "../types";
-import type { Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Plugin, PluginEntry } from "@mr-hope/vuepress-types";
 
 export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
   // FIXME: This is a compact cod
@@ -35,7 +35,7 @@ export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
   if ("valineLocales" in options) delete options.valineLocales;
   if ("walineLocales" in options) delete options.walineLocales;
 
-  const config: PluginOptionAPI = {
+  const config: PluginEntry = {
     name: PLUGIN_NAME,
 
     define: (): Record<string, unknown> => ({

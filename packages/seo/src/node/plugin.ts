@@ -3,11 +3,11 @@ import { appendSEO, generateRobotsTxt } from "./seo";
 import { striptags } from "./stripTags";
 import { md2text } from "./utils";
 
-import type { Page, Plugin, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Page, Plugin, PluginEntry } from "@mr-hope/vuepress-types";
 import type { SeoOptions } from "../types";
 
 export const seoPlugin: Plugin<SeoOptions> = (options, context) => {
-  const plugin: PluginOptionAPI = { name: "vuepress-plugin-seo" };
+  const plugin: PluginEntry = { name: "vuepress-plugin-seo" };
 
   if (!options.hostname) {
     console.log(

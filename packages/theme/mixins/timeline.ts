@@ -1,16 +1,16 @@
 import Vue from "vue";
 import { filterArticle, getDate, sortArticle } from "@theme/utils/article";
 
-import type { PageComputed } from "@mr-hope/vuepress-types";
+import type { BasePage } from "@mr-hope/vuepress-types";
 
 export interface TimelineItem {
   year: number;
-  articles: PageComputed[];
+  articles: BasePage[];
 }
 
 export const timelineMixin = Vue.extend({
   computed: {
-    $timelineItems(): PageComputed[] {
+    $timelineItems(): BasePage[] {
       const { pages } = this.$site;
 
       // filter before sort

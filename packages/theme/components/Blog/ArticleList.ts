@@ -6,7 +6,7 @@ import { filterArticle, sortArticle } from "@theme/utils/article";
 import { getPathMatchedKeys } from "@theme/utils/encrypt";
 
 import type { BlogOptions } from "@theme/types";
-import type { PageComputed } from "@mr-hope/vuepress-types";
+import type { BasePage } from "@mr-hope/vuepress-types";
 import type { Route } from "vue-router";
 
 export default Vue.extend({
@@ -16,7 +16,7 @@ export default Vue.extend({
 
   data: () => ({
     currentPage: 1,
-    articleList: [] as PageComputed[],
+    articleList: [] as BasePage[],
   }),
 
   computed: {
@@ -28,24 +28,24 @@ export default Vue.extend({
       return this.blogConfig.perPage || 10;
     },
 
-    filter(): ((page: PageComputed) => boolean) | undefined {
+    filter(): ((page: BasePage) => boolean) | undefined {
       const { path } = this.$route;
 
       return path.includes("/article")
-        ? (page: PageComputed): boolean => page.frontmatter.layout !== "Slide"
+        ? (page: BasePage): boolean => page.frontmatter.layout !== "Slide"
         : path.includes("/star")
-        ? (page: PageComputed): boolean =>
+        ? (page: BasePage): boolean =>
             Boolean(page.frontmatter.star || page.frontmatter.sticky)
         : path.includes("/encrypt")
-        ? (page: PageComputed): boolean =>
+        ? (page: BasePage): boolean =>
             getPathMatchedKeys(this.$themeConfig.encrypt, page.path).length !==
               0 || Boolean(page.frontmatter.password)
         : path.includes("/slide")
-        ? (page: PageComputed): boolean => page.frontmatter.layout === "Slide"
+        ? (page: BasePage): boolean => page.frontmatter.layout === "Slide"
         : undefined;
     },
 
-    $articles(): PageComputed[] {
+    $articles(): BasePage[] {
       // filter then sort
       return sortArticle(
         filterArticle(this.$site.pages, this.filter),
@@ -54,7 +54,7 @@ export default Vue.extend({
     },
 
     /** Articles in this page */
-    articles(): PageComputed[] {
+    articles(): BasePage[] {
       return this.articleList.slice(
         (this.currentPage - 1) * this.articlePerPage,
         this.currentPage * this.articlePerPage
@@ -90,11 +90,11 @@ export default Vue.extend({
   },
 
   methods: {
-    getArticleList(): PageComputed[] {
+    getArticleList(): BasePage[] {
       try {
         return this.$pagination
           ? // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            (this.$pagination._matchedPages as PageComputed[])
+            (this.$pagination._matchedPages as BasePage[])
           : this.$articles;
       } catch (err) {
         return this.$articles;

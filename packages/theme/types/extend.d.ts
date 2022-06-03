@@ -51,15 +51,16 @@ declare module "@mr-hope/vuepress-types" {
     search?: boolean;
     backToTop?: boolean;
     anchorDisplay?: boolean;
+    containerClass?: string | string[] | Record<string, boolean>;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface ThemeLocaleData
+  interface ResolvedThemeLocaleData
     extends HopeThemeLocaleData,
       HopeThemeLocalesConfig {}
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface ThemeConfig extends ResolvedHopeThemeConfig {}
+  interface ThemeData extends ResolvedHopeThemeConfig {}
 
   interface Page {
     _chunkName?: string;

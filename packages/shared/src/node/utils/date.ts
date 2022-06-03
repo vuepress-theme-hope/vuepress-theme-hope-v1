@@ -8,8 +8,8 @@ export const injectLocalizedDate = (
   options: DateOptions
 ): void => {
   if (!page.localizedDate) {
-    if (page.frontmatter["date"]) {
-      const date = getDate(page.frontmatter["date"], options)?.value;
+    if (page.frontmatter.date) {
+      const date = getDate(page.frontmatter.date, options)?.value;
 
       if (date) page.localizedDate = timeTransformer(date, options);
     } else if (page.createTimeStamp)

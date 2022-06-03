@@ -30,7 +30,7 @@ export interface GitOptions {
 }
 
 declare module "@mr-hope/vuepress-types/types/page" {
-  interface PageComputed {
+  interface BasePage {
     contributors?: GitContributor[];
     createTime?: string;
     createTimeStamp?: number;

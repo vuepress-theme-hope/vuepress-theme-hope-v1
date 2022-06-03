@@ -5,7 +5,7 @@ import { eject } from "./node/eject";
 
 import { getPluginConfig } from "./node/plugins";
 
-import type { Context, PluginOptionAPI } from "@mr-hope/vuepress-types";
+import type { Context, PluginEntry } from "@mr-hope/vuepress-types";
 import type {
   HopeNavBarConfig,
   HopeSideBarConfig,
@@ -39,10 +39,12 @@ const blogAddtionalPages = [
 const themeAPI = (
   themeConfig: HopeThemeConfig,
   context: Context
-): PluginOptionAPI => {
+): PluginEntry => {
   const resolvedConfig = resolveThemeConfig(themeConfig, context);
 
   return {
+    name: "vuepress-theme-hope",
+
     alias: getAlias(resolvedConfig, context),
 
     plugins: getPluginConfig(resolvedConfig),
