@@ -42,7 +42,6 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       ? Boolean(options.gfm)
       : options.enableAll || false;
 
-  const alignEnable = getStatus("align");
   const chartEnable = getStatus("chart");
   const containerEnable = getStatus("container");
   const codegroupEnable = getStatus("codegroup");
@@ -102,7 +101,6 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
     },
 
     define: (): Record<string, unknown> => ({
-      MARKDOWN_ENHANCE_ALIGN: alignEnable,
       MARKDOWN_ENHANCE_CONTAINER: containerEnable,
       MARKDOWN_ENHANCE_DELAY: options.delay || 500,
       MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,

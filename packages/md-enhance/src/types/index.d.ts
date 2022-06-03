@@ -15,7 +15,6 @@ export * from "./stylize";
 
 declare global {
   const CODE_DEMO_OPTIONS: CodeDemoOptions;
-  const MARKDOWN_ENHANCE_ALIGN: boolean;
   const MARKDOWN_ENHANCE_CONTAINER: boolean;
   const MARKDOWN_ENHANCE_FOOTNOTE: boolean;
   const MARKDOWN_ENHANCE_TASKLIST: boolean;

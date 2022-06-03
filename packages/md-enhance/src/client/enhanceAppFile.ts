@@ -8,8 +8,6 @@ import Presentation from "@Presentation";
 import type { EnhanceApp } from "vuepress-typings";
 
 const enhanceApp: EnhanceApp = ({ Vue }) => {
-  if (MARKDOWN_ENHANCE_ALIGN) void import("./styles/align.styl");
-
   if (MARKDOWN_ENHANCE_CONTAINER) void import("./styles/container.styl");
 
   if (ChartJS.name) Vue.component("ChartJS", ChartJS);
