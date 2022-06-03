@@ -18,7 +18,7 @@
   align-items: center;
   padding: 12px 30px;
   border-top: 1px solid var(--border-color);
-  background: var(--bgcolor);
+  background: var(--bg-color);
   color: var(--dark-color, #666);
   text-align: center;
 

@@ -31,7 +31,7 @@
   box-sizing: border-box;
   width: $sidebarWidth;
   margin: 0;
-  background: var(--bgcolor-blur);
+  background: var(--bg-color-blur);
   box-shadow: 2px 0 4px var(--card-shadow-color);
   backdrop-filter: saturate(200%) blur(20px);
   font-size: 16px;

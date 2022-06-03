@@ -14,19 +14,33 @@
 <style lang="stylus">
 .page.not-found {
   display: block;
+
   max-width: $homePageWidth;
-  margin: 0px auto;
-  padding: ($navbarHeight + 1rem) 2rem 2rem 2rem !important;
+
+  min-height: 80vh;
+  margin: 0 auto;
+  padding: ($navbarHeight + 1rem) 2rem 0 2rem !important;
+
   text-align: center;
 
+  @media (max-width: $MQMobile) {
+    padding-top: $navbarMobileHeight + 1rem;
+  }
+
   .page-404-icon {
-    width: 50%;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 0 1.5rem;
+
+    .theme-dark & {
+      filter: invert(70%);
+    }
   }
 
   .action-button {
     display: inline-block;
+
     box-sizing: border-box;
+
     margin: 0 0.25rem;
     padding: 0.5rem 1rem;
     border-width: 0;
@@ -34,13 +48,15 @@
     border-radius: 0.25rem;
     background: var(--accent-color);
     color: var(--white);
-    font-size: 1rem;
     outline: none;
+
+    font-size: 1rem;
+
     transition: background 0.1s ease;
 
     &:hover {
-      cursor: pointer;
       background: var(--accent-color-l10);
+      cursor: pointer;
     }
   }
 }

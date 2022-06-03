@@ -46,7 +46,7 @@
   svg {
     width: 100%;
     border-radius: 50%;
-    background: var(--bgcolor, #fff);
+    background: var(--bg-color, #fff);
     color: var(--accent-color, $accentColor);
     overflow: hidden;
     fill: currentcolor;

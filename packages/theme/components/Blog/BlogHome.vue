@@ -33,7 +33,7 @@
   padding-top: $navbarHeight;
   padding-bottom: 2rem;
   margin: 0px auto;
-  background: var(--bgcolor-light);
+  background: var(--bg-color-light);
 
   @media (max-width: $MQMobile) {
     padding: $navbarMobileHeight 1.5rem 2rem;

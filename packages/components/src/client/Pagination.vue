@@ -93,7 +93,7 @@ $bgColor ?= #fff;
       div {
         position: relative;
         padding: 0 0.5rem;
-        background: var(--bgcolor, $bgColor);
+        background: var(--bg-color, $bgColor);
         color: var(--accent-color, $accentColor);
         cursor: pointer;
 
@@ -151,7 +151,7 @@ $bgColor ?= #fff;
         border: 1px solid var(--border-color, $borderColor);
         border-radius: 0.25em;
         color: var(--text-color, $textColor);
-        background: var(--bgcolor, #fff);
+        background: var(--bg-color, #fff);
         text-align: center;
         line-height: 2;
         outline: none;
@@ -162,7 +162,7 @@ $bgColor ?= #fff;
         padding: 0 0.75em;
         border: 1px solid var(--border-color, $borderColor);
         border-radius: 0.25em;
-        background: var(--bgcolor, $bgColor);
+        background: var(--bg-color, $bgColor);
         color: var(--accent-color, $accentColor);
         font-weight: 600;
         font-size: 15px;

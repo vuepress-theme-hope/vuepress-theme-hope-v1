@@ -123,7 +123,7 @@
 
   &.clickable {
     &:hover {
-      background-color: var(--bgcolor-light);
+      background-color: var(--bg-color-light);
     }
 
     &.active {

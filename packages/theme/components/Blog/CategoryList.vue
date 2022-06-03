@@ -78,7 +78,7 @@ for $color, $index in $colors {
 
         .category-num {
           color: var(--accent-color);
-          background: var(--bgcolor-light);
+          background: var(--bg-color-light);
         }
       }
     }

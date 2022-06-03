@@ -30,7 +30,7 @@
   margin: 0px auto;
   padding-top: $navbarHeight;
   padding-bottom: 2rem;
-  background: var(--bgcolor-light);
+  background: var(--bg-color-light);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

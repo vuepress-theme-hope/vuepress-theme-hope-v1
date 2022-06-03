@@ -61,7 +61,7 @@ export default {
 .katex-playground
   textarea
     width 100%
-    background-color var(--bgcolor-light)
+    background-color var(--bg-color-light)
     color var(--text-color)
     font-size 18px
     border-color var(--border-color)

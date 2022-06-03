@@ -30,7 +30,7 @@
       padding: 4px;
       border: 1px solid var(--light-grey);
       border-radius: 4px;
-      background: var(--bgcolor);
+      background: var(--bg-color);
       font-size: 16px;
       text-align: left;
 
@@ -46,7 +46,7 @@
       [class*=ds-dataset-] {
         padding: 0;
         border: none;
-        background: var(--bgcolor);
+        background: var(--bg-color);
       }
 
       .ds-suggestions {
@@ -65,7 +65,7 @@
     .algolia-docsearch-suggestion {
       padding: 0;
       border-color: var(--border-color);
-      background: var(--bgcolor);
+      background: var(--bg-color);
       color: var(--text-color);
 
       .algolia-docsearch-suggestion--category-header {
@@ -98,7 +98,7 @@
         vertical-align: top;
         padding: 5px 7px 5px 5px;
         border-color: var(--border-color);
-        background: var(--bgcolor);
+        background: var(--bg-color);
         color: var(--text-color);
 
         @media (min-width: $MQMobile) {

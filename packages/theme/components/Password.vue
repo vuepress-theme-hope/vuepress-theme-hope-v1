@@ -67,7 +67,7 @@
       width: calc(100% - 60px);
       padding-left: 20px;
       color: var(--black) !important;
-      background: var(--bgcolor) !important;
+      background: var(--bg-color) !important;
       border: 2px solid var(--accent-color);
       border-radius: 22px 0 0 22px;
       font-size: 20px;
@@ -80,7 +80,7 @@
       width: 70px;
       padding-right: 10px;
       background: var(--accent-color);
-      color: var(--bgcolor);
+      color: var(--bg-color);
       border-width: 0;
       border-radius: 0 22px 22px 0;
       font-size: 20px;

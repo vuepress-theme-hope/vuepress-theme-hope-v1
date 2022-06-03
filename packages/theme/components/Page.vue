@@ -70,7 +70,7 @@
   min-height: 100vh;
   padding-left: $sidebarWidth;
   padding-bottom: 2rem;
-  background: var(--bgcolor);
+  background: var(--bg-color);
 
   @media (max-width: $MQMobile) {
     min-height: 100vh;

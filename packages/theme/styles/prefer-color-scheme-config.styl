@@ -1,10 +1,10 @@
-body {
+:root {
   --text-color: $textColor;
-  --bgcolor: $bgColor;
-  --bgcolor-light: $bgColorLight;
+  --bg-color: $bgColor;
+  --bg-color-light: $bgColorLight;
   --border-color: $borderColor;
-  --code-bgcolor: $codeBgColor;
-  --arrow-bgcolor: $arrowBgColor;
+  --code-bg-color: $codeBgColor;
+  --arrow-bg-color: $arrowBgColor;
   --box-shadow-color: $boxShadowColor;
   --card-shadow-color: $cardShadowColor;
   --text-color-l10: lighten($textColor, 10%);
@@ -18,16 +18,17 @@ body {
   --grey3: #333;
   --grey12: #bbb;
   --grey14: #eee;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', STHeiti, 'Microsoft YaHei', SimSun, sans-serif;
 }
 
 body.theme-light {
   --text-color: $textColor;
-  --bgcolor: $bgColor;
-  --bgcolor-light: $bgColorLight;
-  --bgcolor-blur: $bgColorBlur;
+  --bg-color: $bgColor;
+  --bg-color-light: $bgColorLight;
+  --bg-color-blur: $bgColorBlur;
   --border-color: $borderColor;
-  --code-bgcolor: $codeBgColor;
-  --arrow-bgcolor: $arrowBgColor;
+  --code-bg-color: $codeBgColor;
+  --arrow-bg-color: $arrowBgColor;
   --box-shadow-color: $boxShadowColor;
   --card-shadow-color: $cardShadowColor;
   --text-color-l10: lighten($textColor, 10%);
@@ -45,12 +46,12 @@ body.theme-light {
 
 body.theme-dark {
   --text-color: $darkTextColor;
-  --bgcolor: $darkBgColor;
-  --bgcolor-light: $darkBgColorLight;
-  --bgcolor-blur: $darkBgColorBlur;
+  --bg-color: $darkBgColor;
+  --bg-color-light: $darkBgColorLight;
+  --bg-color-blur: $darkBgColorBlur;
   --border-color: $darkBorderColor;
-  --code-bgcolor: $darkCodeBgColor;
-  --arrow-bgcolor: $darkArrowBgColor;
+  --code-bg-color: $darkCodeBgColor;
+  --arrow-bg-color: $darkArrowBgColor;
   --box-shadow-color: $darkBoxShadowColor;
   --card-shadow-color: $darkCardShadowColor;
   --text-color-l10: lighten($darkTextColor, 10%);

@@ -152,7 +152,7 @@
             transition: font-size 0.3s ease-out;
 
             &::before {
-              background-color: var(--bgcolor);
+              background-color: var(--bg-color);
               border-color: var(--accent-color);
             }
           }

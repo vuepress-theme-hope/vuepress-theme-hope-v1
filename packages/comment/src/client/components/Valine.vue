@@ -36,7 +36,7 @@
 
       pre, code {
         color: var(--dark-grey, #666);
-        background: var(--code-bgcolor, #ecf4fa);
+        background: var(--code-bg-color, #ecf4fa);
       }
 
       blockquote {
@@ -70,14 +70,14 @@
         .vmark {
           .valert {
             .vtext {
-              color: var(--bgcolor, #fff);
+              color: var(--bg-color, #fff);
             }
 
             .vcode {
               background: var(--grey12, #bbb);
 
               &:focus {
-                background: var(--bgcolor, #fff);
+                background: var(--bg-color, #fff);
                 border-color: var(--accent-color, $accentColor);
               }
             }
@@ -90,7 +90,7 @@
       }
 
       .vbtn {
-        background: var(--bgcolor, #fff);
+        background: var(--bg-color, #fff);
 
         &:active, &:hover {
           color: var(--white, #fff);

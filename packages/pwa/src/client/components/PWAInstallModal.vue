@@ -147,7 +147,7 @@
     z-index: 999;
     max-width: 56em;
     border-radius: 10px;
-    background: var(--bgcolor, #fff);
+    background: var(--bg-color, #fff);
     font-family: sans-serif;
     animation: 0.15s opened;
 

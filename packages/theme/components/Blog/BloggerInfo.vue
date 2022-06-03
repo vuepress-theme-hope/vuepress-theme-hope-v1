@@ -55,7 +55,7 @@
 <style lang="stylus">
 .blogger-info {
   .page & {
-    background: var(--bgcolor);
+    background: var(--bg-color);
   }
 
   .blogger {

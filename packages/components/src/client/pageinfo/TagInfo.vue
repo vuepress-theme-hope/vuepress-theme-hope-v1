@@ -46,7 +46,7 @@
 
     &.clickable:hover {
       cursor: pointer;
-      background: var(--bgcolor, #fff);
+      background: var(--bg-color, #fff);
       box-shadow: 0 1px 6px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.2));
     }
   }

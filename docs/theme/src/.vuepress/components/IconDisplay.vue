@@ -103,7 +103,7 @@ export default {
       width 33.333%
 
     &:hover
-      background-color var(--bgcolor-light)
+      background-color var(--bg-color-light)
       cursor pointer
 
     .iconfont

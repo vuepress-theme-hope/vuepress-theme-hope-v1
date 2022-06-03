@@ -41,7 +41,7 @@
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   box-shadow: 0 2px 12px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.15));
-  background: var(--bgcolor, #fff);
+  background: var(--bg-color, #fff);
   color: var(--text-color, $textColor);
   line-height: 1.5;
   z-index: 110;

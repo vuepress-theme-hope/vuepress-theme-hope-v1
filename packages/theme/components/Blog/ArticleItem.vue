@@ -27,7 +27,7 @@
   width: 100%;
   margin: 0 auto 20px;
   padding: 16px 20px;
-  background: var(--bgcolor);
+  background: var(--bg-color);
   border-radius: 6px;
   text-align: left;
   box-shadow: 0 1px 3px 0 var(--card-shadow-color);

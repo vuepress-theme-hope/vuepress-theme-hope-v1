@@ -121,7 +121,7 @@
   padding: 8px 16px;
 
   .page & {
-    background: var(--bgcolor);
+    background: var(--bg-color);
     border-radius: 6px;
     box-shadow: 0 1px 3px 0 var(--card-shadow-color);
 

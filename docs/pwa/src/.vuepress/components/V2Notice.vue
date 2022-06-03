@@ -82,7 +82,7 @@ export default Vue.extend({
   z-index: 500;
   width: 250px;
   border-radius: 8px;
-  background: var(--bgcolor);
+  background: var(--bg-color);
   box-shadow: 0 2px 6px 0 var(--card-shadow-color);
   overflow: hidden;
 
