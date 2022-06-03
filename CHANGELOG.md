@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.31.0-beta.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/compare/v1.30.0...v1.31.0-beta.1) (2022-06-03)
+
+### Features
+
+- **comment:** add twikoo and giscus ([417eaa6](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/417eaa6ca528ae1c3c50e1fd96ec3a155fc947b5))
+- **md-enhance:** update locales ([48379be](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/48379be07662d1bee4cfa732bfa321eb3e9a97bf))
+- rebuild shared ([8e7fa87](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/8e7fa87541e159f9eab1355f295b072241c035b3))
+- rebuild types ([98942bc](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/98942bc124ae975486dda8841511e4f33f3aebf4))
+- rename comment plugin ([025a429](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/025a42987ece5e665b990c3c954170ce7bd32756))
+- rename feed plugin ([33e0609](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/33e0609cc6551a8c0d0349ffd9142ef417253f58))
+- rename pwa plugin ([1d341c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/1d341c32317a58886d2a35e3ec6b8494f881ffcd))
+- rename reading-time plugin ([2925689](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/2925689c218d89f350fcb59718074808b897c6ec))
+- rename seo plugin ([a64ff9d](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/a64ff9d48511d28e17c5e6b042c8c99c8ae975f0))
+- rename shared package ([4a1dd18](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/4a1dd184fdfdfb37a9fde217b7d544308b22d82c))
+- rename sitemap ([7048d8b](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/7048d8bfbf4c8e7f4c02ec91ee0acd5b68a723e5))
+- **shared:** add normalize ([e861b23](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/e861b23077ed44f3b2ede97ec31403b4cfa961fe))
+- **shared:** add slash utils ([d265df7](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/d265df7746f490e9971686dd092ef203b39f1822))
+- update typings package name ([448f7cb](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/448f7cbaf1667a581885a39f65f8d3a32271f7db))
+
 ## [1.30.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/compare/v1.29.0...v1.30.0) (2022-06-02)
 
 ### Features
