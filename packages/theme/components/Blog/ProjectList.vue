@@ -85,7 +85,7 @@
       color var(--dark-grey)
       font-size 13px
 
-@require '~@mr-hope/vuepress-shared/styles/colors.styl'
+@require '~vuepress-shared/styles/colors.styl'
 
 for $color, $index in $colors
   .project-list .project{$index}

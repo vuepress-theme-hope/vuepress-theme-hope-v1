@@ -75,7 +75,7 @@ This theme has built-in Fontawesome support.
 Add in `index.styl` of `.vuepress/styles`:
 
 ```styl
-@import "~@mr-hope/vuepress-shared/styles/font-awesome";
+@import "~vuepress-shared/styles/font-awesome";
 ```
 
 > Font-awesome current version is 5.15.3

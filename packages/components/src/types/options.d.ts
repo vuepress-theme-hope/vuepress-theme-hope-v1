@@ -1,4 +1,4 @@
-import type { LocaleConfig } from "@mr-hope/vuepress-shared";
+import type { LocaleConfig } from "vuepress-shared";
 import type { ComponentLocaleData } from "./locales";
 import type { PageInfoLocaleData } from "./pageInfo";
 import type { PaginationLocaleData } from "./pagination";

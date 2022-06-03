@@ -70,8 +70,8 @@
 <script src="./DropdownLink" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/arrow'
-@require '~@mr-hope/vuepress-shared/styles/reset'
+@require '~vuepress-shared/styles/arrow'
+@require '~vuepress-shared/styles/reset'
 
 .dropdown-wrapper
   height 1.8rem

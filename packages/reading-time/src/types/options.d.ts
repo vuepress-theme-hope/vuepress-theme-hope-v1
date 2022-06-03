@@ -1,4 +1,4 @@
-import type { LocaleConfig } from "@mr-hope/vuepress-shared";
+import type { LocaleConfig } from "vuepress-shared";
 import type { ReadingTimeLocaleData } from "./locales";
 
 export interface ReadingTimeOptions {

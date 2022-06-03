@@ -8,7 +8,7 @@ export default Vue.extend({
 
   computed: {
     locales() {
-      return locales[this.$localePath || "/"];
+      return locales[this.$localePath];
     },
   },
 

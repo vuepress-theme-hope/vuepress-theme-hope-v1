@@ -1,4 +1,4 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
+import { getLocales } from "vuepress-shared";
 import { readingTimeLocales } from "./locales";
 import { getReadingTime } from "./reading-time";
 

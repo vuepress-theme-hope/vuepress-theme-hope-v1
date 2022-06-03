@@ -24,7 +24,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return componentLocales[this.$localePath || "/"].backToTop;
+      return componentLocales[this.$localePath].backToTop;
     },
   },
 

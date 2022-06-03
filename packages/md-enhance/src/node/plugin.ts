@@ -1,4 +1,4 @@
-import { noopModule } from "@mr-hope/vuepress-shared";
+import { noopModule } from "vuepress-shared";
 import { resolve } from "path";
 import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 

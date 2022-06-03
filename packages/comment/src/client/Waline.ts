@@ -80,7 +80,7 @@ export default Vue.extend({
             el: "#waline-comment",
             lang: this.$lang === "zh-CN" ? "zh-CN" : "en-US",
             locale: {
-              ...walineLocales[this.$localePath || "/"],
+              ...walineLocales[this.$localePath],
               ...(config.locale || {}),
             } as WalineLocale,
             emoji: [

@@ -52,7 +52,7 @@
   }
 }
 
-@require '~@mr-hope/vuepress-shared/styles/colors.styl';
+@require '~vuepress-shared/styles/colors.styl';
 
 for $color, $index in $colors {
   .tags-wrapper .tag{$index} {

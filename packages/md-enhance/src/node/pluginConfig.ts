@@ -1,4 +1,4 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
+import { getLocales } from "vuepress-shared";
 import { markdownEnhanceLocales } from "./locales";
 
 import type { Context, PluginConfig } from "@mr-hope/vuepress-types";

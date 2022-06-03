@@ -1,4 +1,4 @@
-import type { LocaleConfig } from "@mr-hope/vuepress-shared";
+import type { LocaleConfig } from "vuepress-shared";
 import type { KatexOptions } from "katex";
 import type { CodeDemoOptions } from "./codeDemo";
 import type { ImageMarkOptions } from "./imageMark";

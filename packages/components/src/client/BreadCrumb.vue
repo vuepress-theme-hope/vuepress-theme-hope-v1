@@ -24,7 +24,7 @@
 <script src="./BreadCrumb" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/wrapper';
+@require '~vuepress-shared/styles/wrapper';
 
 $navbarMobileHeight ?= 3.2rem;
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { getRootLang } from "@mr-hope/vuepress-shared";
+import { getRootLang } from "vuepress-shared";
 import { black, blue, cyan } from "chalk";
 import { existsSync, readFile, writeJSON } from "fs-extra";
 import { relative, resolve } from "path";

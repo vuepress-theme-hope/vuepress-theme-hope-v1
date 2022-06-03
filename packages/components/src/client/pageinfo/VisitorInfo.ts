@@ -29,7 +29,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath || "/"].views;
+      return pageInfoLocales[this.$localePath].views;
     },
   },
 

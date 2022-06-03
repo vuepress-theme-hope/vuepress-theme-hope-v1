@@ -1,4 +1,4 @@
-import { getLocales, noopModule } from "@mr-hope/vuepress-shared";
+import { getLocales, noopModule } from "vuepress-shared";
 import { resolve } from "path";
 import { covertWalineOptions } from "./compact";
 import { walineLocales, valineLocales } from "./locales";

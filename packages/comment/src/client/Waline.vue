@@ -7,7 +7,7 @@
 <script src="./Waline" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/wrapper';
+@require '~vuepress-shared/styles/wrapper';
 @require '~@waline/client/dist/waline.css';
 
 .page {

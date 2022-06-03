@@ -30,8 +30,8 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "devDependencies": {
-    "@mr-hope/vuepress-shared": "workspace:*",
-    "@mr-hope/vuepress-types": "workspace:*"
+    "@mr-hope/vuepress-types": "workspace:*",
+    "vuepress-shared": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

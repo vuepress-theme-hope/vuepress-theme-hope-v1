@@ -65,7 +65,6 @@
     "@mr-hope/vuepress-plugin-seo": "workspace:*",
     "@mr-hope/vuepress-plugin-sitemap": "workspace:*",
     "@mr-hope/vuepress-plugin-smooth-scroll": "workspace:*",
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@mr-hope/vuepress-theme-types": "workspace:*",
     "@mr-hope/vuepress-types": "workspace:*",
     "@types/inquirer": "8.2.1",
@@ -104,7 +103,8 @@
     "vuepress-plugin-active-hash": "workspace:*",
     "vuepress-plugin-add-this": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
-    "vuepress-plugin-photo-swipe": "workspace:*"
+    "vuepress-plugin-photo-swipe": "workspace:*",
+    "vuepress-shared": "workspace:*"
   },
   "packageManager": "pnpm@7.1.7",
   "engines": {

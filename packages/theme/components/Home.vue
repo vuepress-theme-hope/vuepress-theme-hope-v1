@@ -276,7 +276,7 @@
   {$contentClass}
     padding-bottom 1.5rem
 
-@require '~@mr-hope/vuepress-shared/styles/colors.styl'
+@require '~vuepress-shared/styles/colors.styl'
 
 for $color, $index in $colors
   .home .features .feature{$index}

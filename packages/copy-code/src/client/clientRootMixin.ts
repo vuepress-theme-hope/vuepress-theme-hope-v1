@@ -26,7 +26,7 @@
  */
 
 import Vue from "vue";
-import { Message } from "./message";
+import { Message } from "vuepress-shared/lib/client";
 import { CHECK_ICON, COPY_BUTTON, PURE_COPY_BUTTON } from "./utils";
 
 import "./style/code.styl";
@@ -91,10 +91,7 @@ const codeCopyMinxin = Vue.extend({
           this.copyToClipboard(codeBlockElement.innerText);
         });
 
-        copyElement.setAttribute(
-          "aria-label",
-          locales[this.$localePath || "/"].hint
-        );
+        copyElement.setAttribute("aria-label", locales[this.$localePath].hint);
         copyElement.setAttribute("data-balloon-pos", "left");
 
         if (codeBlockElement.parentElement)
@@ -126,9 +123,7 @@ const codeCopyMinxin = Vue.extend({
 
       if (!options.pure)
         message.pop(
-          `${CHECK_ICON}<span>${
-            locales[this.$localePath || "/"].copy
-          } 🎉</span>`,
+          `${CHECK_ICON}<span>${locales[this.$localePath].copy} 🎉</span>`,
           options.duration
         );
 

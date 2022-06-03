@@ -1,4 +1,4 @@
-import { capitalize } from "@mr-hope/vuepress-shared/lib/client";
+import { capitalize } from "vuepress-shared/lib/client";
 import Vue from "vue";
 import CategoryIcon from "./icons/CategoryIcon.vue";
 import { pageInfoLocales } from "../define";
@@ -32,7 +32,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath || "/"].category;
+      return pageInfoLocales[this.$localePath].category;
     },
   },
 

@@ -30,7 +30,7 @@ export default Vue.extend({
 
   computed: {
     install(): string {
-      return locales[this.$localePath || "/"].install;
+      return locales[this.$localePath].install;
     },
 
     useHint(): boolean {

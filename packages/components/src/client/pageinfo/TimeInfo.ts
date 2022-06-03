@@ -34,7 +34,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath || "/"].date;
+      return pageInfoLocales[this.$localePath].date;
     },
   },
 });

@@ -1,4 +1,4 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
+import { getLocales } from "vuepress-shared";
 import { resolve } from "path";
 import { photoSwipeLocales } from "./locales";
 

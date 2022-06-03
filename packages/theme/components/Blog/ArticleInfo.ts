@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { capitalize, getAuthor } from "@mr-hope/vuepress-shared/lib/client";
+import { capitalize, getAuthor } from "vuepress-shared/lib/client";
 import AuthorIcon from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/icons/AuthorIcon.vue";
 import CalendarIcon from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/icons/CalendarIcon.vue";
 import CategoryInfo from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/CategoryInfo.vue";
@@ -65,8 +65,7 @@ export default Vue.extend({
     },
 
     readingTime(): string {
-      const { less1Minute, time } =
-        READING_TIME_LOCALES[this.$localePath || "/"];
+      const { less1Minute, time } = READING_TIME_LOCALES[this.$localePath];
 
       return this.article.readingTime.minutes < 1
         ? less1Minute
@@ -77,19 +76,19 @@ export default Vue.extend({
     },
 
     authorText(): string {
-      return PAGE_INFO_LOCALES[this.$localePath || "/"].author;
+      return PAGE_INFO_LOCALES[this.$localePath].author;
     },
 
     timeText(): string {
-      return PAGE_INFO_LOCALES[this.$localePath || "/"].date;
+      return PAGE_INFO_LOCALES[this.$localePath].date;
     },
 
     tagText(): string {
-      return PAGE_INFO_LOCALES[this.$localePath || "/"].tag;
+      return PAGE_INFO_LOCALES[this.$localePath].tag;
     },
 
     readingTimeText(): string {
-      return PAGE_INFO_LOCALES[this.$localePath || "/"].readingTime;
+      return PAGE_INFO_LOCALES[this.$localePath].readingTime;
     },
   },
 });

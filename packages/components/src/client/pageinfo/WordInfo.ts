@@ -9,13 +9,13 @@ export default Vue.extend({
 
   computed: {
     words(): string {
-      const word = readingTimeLocales[this.$localePath || "/"].word;
+      const word = readingTimeLocales[this.$localePath].word;
 
       return word.replace("$word", this.$page.readingTime.words.toString());
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath || "/"].words;
+      return pageInfoLocales[this.$localePath].words;
     },
   },
 });

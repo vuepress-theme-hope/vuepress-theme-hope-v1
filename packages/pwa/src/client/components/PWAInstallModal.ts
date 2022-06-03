@@ -37,7 +37,7 @@ export default Vue.extend({
 
   computed: {
     locales(): PWALocaleData {
-      return locales[this.$localePath || "/"];
+      return locales[this.$localePath];
     },
   },
 

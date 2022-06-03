@@ -13,7 +13,7 @@ export default Vue.extend({
     },
 
     text(): string {
-      const { less1Minute, time } = readingTimeLocales[this.$localePath || "/"];
+      const { less1Minute, time } = readingTimeLocales[this.$localePath];
 
       return this.$page.readingTime.minutes < 1
         ? less1Minute
@@ -24,7 +24,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath || "/"].readingTime;
+      return pageInfoLocales[this.$localePath].readingTime;
     },
   },
 });

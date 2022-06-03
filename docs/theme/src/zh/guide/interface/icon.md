@@ -75,7 +75,7 @@ tags:
 在 `.vuepress/styles` 的 `index.styl` 中添加:
 
 ```styl
-@import "~@mr-hope/vuepress-shared/styles/font-awesome";
+@import "~vuepress-shared/styles/font-awesome";
 ```
 
 > Font-awesome 当前版本为 5.15.3

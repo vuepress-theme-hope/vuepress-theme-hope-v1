@@ -70,7 +70,7 @@ export default Vue.extend({
     },
 
     locales(): PaginationLocaleData {
-      return PAGINATION_LOCALES[this.$localePath || "/"];
+      return PAGINATION_LOCALES[this.$localePath];
     },
   },
 

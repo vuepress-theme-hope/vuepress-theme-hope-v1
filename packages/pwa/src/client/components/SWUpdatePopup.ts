@@ -18,7 +18,7 @@ export default Vue.extend({
     },
 
     message(): string {
-      return locales[this.$localePath || "/"].update;
+      return locales[this.$localePath].update;
     },
   },
 

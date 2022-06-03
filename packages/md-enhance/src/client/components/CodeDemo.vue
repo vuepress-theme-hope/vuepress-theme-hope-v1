@@ -84,8 +84,8 @@
 <script src="./CodeDemo" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/arrow';
-@require '~@mr-hope/vuepress-shared/styles/reset';
+@require '~vuepress-shared/styles/arrow';
+@require '~vuepress-shared/styles/reset';
 
 :root {
   --code-demo-header-bg-color: #eee;

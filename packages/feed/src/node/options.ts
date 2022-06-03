@@ -1,4 +1,4 @@
-import { deepAssign, getRootLang } from "@mr-hope/vuepress-shared";
+import { deepAssign, getRootLang } from "vuepress-shared";
 import { compareDate, resolveUrl } from "./utils";
 
 import type { Context, Page } from "@mr-hope/vuepress-types";

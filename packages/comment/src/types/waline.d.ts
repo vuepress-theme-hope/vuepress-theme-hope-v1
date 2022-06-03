@@ -1,7 +1,4 @@
-import type {
-  ConvertLocaleConfig,
-  LocaleConfig,
-} from "@mr-hope/vuepress-shared";
+import type { ConvertLocaleConfig, LocaleConfig } from "vuepress-shared";
 import type { WalineInitOptions, WalineLocale } from "@waline/client";
 import type { BaseCommentOptions } from "./base";
 

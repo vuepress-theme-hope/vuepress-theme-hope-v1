@@ -78,8 +78,7 @@ export default Vue.extend({
             appId: config.appId, // Your appId
             appKey: config.appKey, // Your appKey
             placeholder:
-              config.placeholder ||
-              valineLocales[this.$localePath || "/"].placeholder,
+              config.placeholder || valineLocales[this.$localePath].placeholder,
             meta: config.meta || ["nick", "mail"],
             requiredFields: config.requiredFields || ["nick"],
             avatar: config.avatar || "retro",

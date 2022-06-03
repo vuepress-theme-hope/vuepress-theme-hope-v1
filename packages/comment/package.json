@@ -38,7 +38,6 @@
   "dependencies": {
     "@mr-hope/vuepress-plugin-git": "workspace:*",
     "@mr-hope/vuepress-plugin-reading-time": "workspace:*",
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@mr-hope/vuepress-types": "workspace:*",
     "@vssue/api-bitbucket-v2": "^1.4.7",
     "@vssue/api-gitea-v1": "^1.4.7",
@@ -49,7 +48,8 @@
     "@vssue/vuepress-plugin-vssue": "^1.4.8",
     "@waline/client": "^2.5.1",
     "valine": "^1.4.18",
-    "vssue": "^1.4.8"
+    "vssue": "^1.4.8",
+    "vuepress-shared": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

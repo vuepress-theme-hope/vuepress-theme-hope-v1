@@ -86,7 +86,7 @@ export default Vue.extend({
     },
 
     originText(): string {
-      return pageInfoLocales[this.$localePath || "/"].origin;
+      return pageInfoLocales[this.$localePath].origin;
     },
   },
 });

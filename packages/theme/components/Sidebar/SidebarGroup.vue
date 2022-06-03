@@ -57,7 +57,7 @@
 <script src="./SidebarGroup" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/arrow'
+@require '~vuepress-shared/styles/arrow'
 
 .sidebar-group
   .sidebar-group

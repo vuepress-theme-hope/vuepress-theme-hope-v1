@@ -19,7 +19,7 @@
 <script src="./PWAInstall" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/reset.styl';
+@require '~vuepress-shared/styles/reset.styl';
 
 .modal-button {
   button();

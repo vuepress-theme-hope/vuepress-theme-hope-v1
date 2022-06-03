@@ -1,8 +1,4 @@
-import {
-  deepAssignReverse,
-  getLocales,
-  path2Lang,
-} from "@mr-hope/vuepress-shared";
+import { deepAssignReverse, getLocales, path2Lang } from "vuepress-shared";
 import { resolveEncrypt } from "./encrypt";
 import { themeLocales } from "./locales";
 

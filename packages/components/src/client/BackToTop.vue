@@ -26,7 +26,7 @@
 <script src="./BackToTop" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/reset';
+@require '~vuepress-shared/styles/reset';
 
 .back-to-top {
   button();

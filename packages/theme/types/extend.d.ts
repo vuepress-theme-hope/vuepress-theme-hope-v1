@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { BasePageFrontmatterInfo } from "@mr-hope/vuepress-shared";
+import { BasePageFrontmatterInfo } from "vuepress-shared";
 import {
   BlogMedia,
   HopeThemeLocalesConfig,

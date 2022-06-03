@@ -30,7 +30,7 @@
 <script src="./CodeGroup" />
 
 <style lang="stylus">
-@require '~@mr-hope/vuepress-shared/styles/reset';
+@require '~vuepress-shared/styles/reset';
 
 .code-group-nav {
   display: flex;

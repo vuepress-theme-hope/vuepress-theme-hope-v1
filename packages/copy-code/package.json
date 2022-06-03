@@ -34,9 +34,9 @@
     "demo:dev": "vuepress dev __tests__/demo"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@mr-hope/vuepress-types": "workspace:*",
-    "balloon-css": "^1.2.0"
+    "balloon-css": "^1.2.0",
+    "vuepress-shared": "workspace:*"
   },
   "publishConfig": {
     "access": "public"
