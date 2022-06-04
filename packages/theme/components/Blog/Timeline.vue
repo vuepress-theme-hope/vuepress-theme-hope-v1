@@ -46,7 +46,7 @@
     margin: 0 1.2rem;
   }
 
-  .theme-dark & {
+  html.dark & {
     --dot-color: #444;
     --dot-bar-color: #333;
     --dot-border-color: #555;

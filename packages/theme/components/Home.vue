@@ -1,58 +1,9 @@
 <template>
   <main
     :aria-labelledby="$frontmatter.heroText !== null ? 'main-title' : null"
-    class="home"
+    class="home project"
   >
-    <header class="hero">
-      <MyTransition>
-        <img
-          v-if="$frontmatter.heroImage"
-          key="light"
-          :class="{ light: Boolean($frontmatter.darkHeroImage) }"
-          :src="$withBase($frontmatter.heroImage)"
-          :alt="$frontmatter.heroAlt || 'HomeLogo'"
-        />
-      </MyTransition>
-      <MyTransition>
-        <img
-          v-if="$frontmatter.darkHeroImage"
-          key="dark"
-          class="dark"
-          :src="$withBase($frontmatter.darkHeroImage)"
-          :alt="$frontmatter.heroAlt || 'HomeLogo'"
-        />
-      </MyTransition>
-      <div class="hero-info">
-        <MyTransition :delay="0.04">
-          <h1
-            v-if="$frontmatter.heroText !== false"
-            id="main-title"
-            v-text="$frontmatter.heroText || $title || 'Hello'"
-          />
-        </MyTransition>
-        <MyTransition :delay="0.08">
-          <p
-            class="description"
-            v-text="
-              $frontmatter.tagline ||
-              $description ||
-              'Welcome to your VuePress site'
-            "
-          />
-        </MyTransition>
-        <MyTransition :delay="0.12">
-          <p v-if="$frontmatter.action" class="action">
-            <NavLink
-              v-for="action in actionLinks"
-              :key="action.text"
-              :item="action"
-              class="action-button"
-              :class="action.type || ''"
-            />
-          </p>
-        </MyTransition>
-      </div>
-    </header>
+    <HomeHero />
 
     <MyTransition :delay="0.16">
       <div
@@ -143,7 +94,7 @@
         margin: 1.5rem auto 1rem;
       }
 
-      .theme-light & {
+      html.light & {
         &.light {
           display: block;
         }
@@ -153,7 +104,7 @@
         }
       }
 
-      .theme-dark & {
+      html.dark & {
         &.light {
           display: none;
         }
@@ -237,7 +188,7 @@
           background-color: var(--accent-color-l10);
         }
 
-        .theme-dark & {
+        html.dark & {
           &:hover {
             border-color: var(--accent-color-d10);
             background-color: var(--accent-color-d10);
@@ -324,11 +275,11 @@
 
 for $color, $index in $colors {
   .home .features .feature{$index} {
-    &, .theme-light & {
+    &, html.light & {
       background: lighten($color, 90%);
     }
 
-    .theme-dark & {
+    html.dark & {
       background: darken($color, 75%);
     }
   }

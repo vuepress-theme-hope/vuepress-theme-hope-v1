@@ -154,7 +154,7 @@
         border-radius: 50%;
         background: rgba(127, 127, 127, 0.15);
 
-        .theme-dark & {
+        html.dark & {
           background: rgba(255, 255, 255, 0.15);
         }
 
@@ -163,11 +163,11 @@
         }
 
         &.active {
-          .theme-light & {
+          html.light & {
             background: var(--accent-color-l10);
           }
 
-          .theme-dark & {
+          html.dark & {
             background: var(--accent-color-d10);
           }
         }

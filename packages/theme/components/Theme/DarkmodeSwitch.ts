@@ -71,10 +71,10 @@ export default Vue.extend({
     },
 
     toggleDarkmode(isDarkmode: boolean): void {
-      const classes = document.body.classList;
+      const classes = document.querySelector("html")!.classList;
 
-      if (isDarkmode) changeClass(classes, ["theme-dark"], ["theme-light"]);
-      else changeClass(classes, ["theme-light"], ["theme-dark"]);
+      if (isDarkmode) changeClass(classes, ["dark"], ["light"]);
+      else changeClass(classes, ["light"], ["dark"]);
     },
   },
 });

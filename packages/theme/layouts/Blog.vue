@@ -24,34 +24,53 @@
 <script src="./Blog" />
 
 <style lang="stylus">
-.page.blog {
-  box-sizing: border-box;
-  min-height: 100vh;
-  margin: 0px auto;
-  padding-top: $navbarHeight;
-  padding-bottom: 2rem;
-  background: var(--bg-color-light);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+{$containerClass} {
+  .page.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-  @media (max-width: $MQMobile) {
-    padding: $navbarMobileHeight 1.5rem 2rem;
+    box-sizing: border-box;
+
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-top: $navbarHeight;
+    padding-bottom: 2rem;
+
+    background: var(--bg-color-back);
+
+    @media (max-width: $MQNarrow) {
+      padding-top: $navbarMobileHeight;
+    }
+
+    @media (max-width: $MQMobile) {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    @media (max-width: $MQMobileNarrow) {
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 
-  @media (max-width: $MQMobileNarrow) {
-    padding-left: 0;
-    padding-right: 0;
+  &.has-toc .page.blog {
+    @media (min-width: $MQWide) {
+      // fix toc padding
+      padding-right: 0;
+    }
   }
 }
 
 .blog-page-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
   box-sizing: border-box;
+
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 
   @media (min-width: $MQMobile) {
     padding: 0 1rem;

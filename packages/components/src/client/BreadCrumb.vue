@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
     &:hover {
       color: var(--accent-color-l10, lighten($accentColor, 10%));
 
-      .theme-dark & {
+      html.dark & {
         color: var(--accent-color-d10, darken($accentColor, 10%));
       }
     }

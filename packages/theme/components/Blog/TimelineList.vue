@@ -42,7 +42,7 @@
   --dot-bar-color: #eaecef;
   --dot-border-color: #ddd;
 
-  .theme-dark & {
+  html.dark & {
     --dot-color: #444;
     --dot-bar-color: #333;
     --dot-border-color: #555;

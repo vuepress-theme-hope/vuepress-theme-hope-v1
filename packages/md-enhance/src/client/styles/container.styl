@@ -25,7 +25,7 @@
   --detail-text-color: inherit;
 }
 
-.theme-dark {
+html.dark {
   // info
   --info-title-color: #eef9fd;
   --info-bg-color: #193c47;
@@ -106,7 +106,7 @@
       &::before {
         background-image: url('../icons/info.svg');
 
-        .theme-dark & {
+        html.dark & {
           background-image: url('../icons/info-dark.svg');
         }
       }
@@ -123,7 +123,7 @@
       &::before {
         background-image: url('../icons/note.svg');
 
-        .theme-dark & {
+        html.dark & {
           background-image: url('../icons/note-dark.svg');
         }
       }
@@ -139,10 +139,10 @@
 
       &::before {
         background-image: url('../icons/tip.svg');
-      }
 
-      .theme-dark & {
-        background-image: url('../icons/tip-dark.svg');
+        html.dark & {
+          background-image: url('../icons/tip-dark.svg');
+        }
       }
     }
   }
@@ -157,7 +157,7 @@
       &::before {
         background-image: url('../icons/warning.svg');
 
-        .theme-dark & {
+        html.dark & {
           background-image: url('../icons/warning-dark.svg');
         }
       }
@@ -174,7 +174,7 @@
       &::before {
         background-image: url('../icons/danger.svg');
 
-        .theme-dark & {
+        html.dark & {
           background-image: url('../icons/danger-dark.svg');
         }
       }
@@ -233,7 +233,7 @@
         background: #ccc;
         transition: all var(--transform-transition);
 
-        .theme-dark & {
+        html.dark & {
           background: #555;
         }
       }
@@ -244,7 +244,7 @@
         transition: all var(--transform-transition);
         transform: rotate(90deg);
 
-        .theme-dark & {
+        html.dark & {
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(255,255,255,0.5)' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'/%3E%3C/svg%3E");
         }
       }

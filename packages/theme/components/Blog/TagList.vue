@@ -55,7 +55,7 @@
 
 for $color, $index in $colors {
   .tag-list-wrapper .tag{$index} {
-    .theme-light &, & {
+    html.light &, & {
       background: lighten($color, 10%);
 
       &:hover, &.active {
@@ -63,7 +63,7 @@ for $color, $index in $colors {
       }
     }
 
-    .theme-dark & {
+    html.dark & {
       background: darken($color, 5%);
 
       &:hover, &.active {

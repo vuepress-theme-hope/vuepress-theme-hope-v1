@@ -30,10 +30,6 @@
   .page-404-icon {
     max-width: 600px;
     margin: 0 1.5rem;
-
-    .theme-dark & {
-      filter: invert(70%);
-    }
   }
 
   .action-button {

@@ -91,7 +91,7 @@
   --code-demo-header-bg-color: #eee;
 }
 
-.theme-dark {
+html.dark {
   --code-demo-header-bg-color: #333;
 }
 
@@ -142,14 +142,14 @@
     font-size: 24px;
     cursor: pointer;
 
-    .theme-dark & {
+    html.dark & {
       background-color: #555;
     }
 
     &:hover {
       background-color: #aaa;
 
-      .theme-dark & {
+      html.dark & {
         background-color: #777;
       }
     }
@@ -180,7 +180,7 @@
     background-color: #ccc;
     outline: none;
 
-    .theme-dark & {
+    html.dark & {
       background-color: #555;
     }
 
@@ -189,7 +189,7 @@
       height: 1.25rem;
       fill: #777;
 
-      .theme-dark & {
+      html.dark & {
         fill: #aaa;
       }
     }
@@ -197,14 +197,14 @@
     &:hover {
       background-color: #aaa;
 
-      .theme-dark & {
+      html.dark & {
         background-color: #777;
       }
 
       svg {
         fill: #333;
 
-        .theme-dark & {
+        html.dark & {
           fill: #fff;
         }
       }

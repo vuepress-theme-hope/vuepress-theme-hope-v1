@@ -32,6 +32,9 @@ const resolveCommentOptions = (
     ? false
     : {
         provider: "None",
+        ...(themeConfig.comment?.provider === "Waline"
+          ? { dark: "html.dark" }
+          : {}),
         ...(themeConfig.comment || null),
       };
 };

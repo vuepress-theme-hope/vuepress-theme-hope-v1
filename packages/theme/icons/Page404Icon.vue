@@ -183,6 +183,6 @@
 
 <style lang="stylus">
 .page-404-icon
-  .theme-dark &
+  html.dark &
     filter invert(70%)
 </style>

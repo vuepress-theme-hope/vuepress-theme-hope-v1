@@ -42,7 +42,7 @@ body {
   }
 }
 
-body.theme-dark {
+bodyhtml.dark {
   --docsearch-container-background: rgba(9, 10, 17, 0.8);
   --docsearch-modal-shadow: inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309;
   --docsearch-searchbox-background: #090a11;

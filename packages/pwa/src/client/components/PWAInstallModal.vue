@@ -213,7 +213,7 @@
       border-radius: 24px;
       background: #eee;
 
-      .theme-dark & {
+      html.dark & {
         background: #444;
       }
 

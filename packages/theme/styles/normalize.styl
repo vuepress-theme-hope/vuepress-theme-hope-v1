@@ -7,7 +7,7 @@ html, body {
   transition: background-color var(--color-transition);
 }
 
-.theme-dark {
+html.dark {
   color-scheme: dark;
 }
 
@@ -30,7 +30,7 @@ code {
   font-family: var(--font-family-code);
   transition: background-color var(--color-transition), color var(--color-transition);
 
-  .theme-dark & {
+  html.dark & {
     background: #333;
   }
 
@@ -44,7 +44,7 @@ blockquote {
   color: #666;
   transition: border-color var(--color-transition), color var(--color-transition);
 
-  .theme-dark & {
+  html.dark & {
     border-color: #333;
   }
 }
@@ -72,7 +72,7 @@ tr {
   &:nth-child(2n) {
     background: var(--bg-color-light);
 
-    .theme-dark & {
+    html.dark & {
       background: #252322;
     }
   }

@@ -94,7 +94,7 @@
       height: $navbarMobileHeight - $navbarMobileVerticalPadding * 2;
     }
 
-    .theme-light & {
+    html.light & {
       &.light {
         display: inline-block;
       }
@@ -104,7 +104,7 @@
       }
     }
 
-    .theme-dark & {
+    html.dark & {
       &.light {
         display: none;
       }

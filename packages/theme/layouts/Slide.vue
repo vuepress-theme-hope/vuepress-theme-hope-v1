@@ -56,7 +56,7 @@
       background: var(--accent-color);
     }
 
-    .theme-dark & {
+    html.dark & {
       background: #666;
 
       &:hover {

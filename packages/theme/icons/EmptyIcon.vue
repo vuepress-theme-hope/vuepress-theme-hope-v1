@@ -479,7 +479,7 @@
 
 <style lang="stylus">
 .empty-icon
-  .theme-dark &
+  html.dark &
     g.people
       opacity 0.8
 

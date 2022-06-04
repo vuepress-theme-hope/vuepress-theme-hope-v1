@@ -27,7 +27,7 @@
         border-color: var(--accent-color);
       }
 
-      .theme-dark & {
+      html.dark & {
         color: var(--text-color);
         background-color: transparent;
 
@@ -42,7 +42,7 @@
       }
     }
 
-    .theme-dark & {
+    html.dark & {
       .suggestion {
         a {
           color: darken($darkTextColor, 35%);
@@ -84,7 +84,7 @@
       border-color: var(--accent-color);
     }
 
-    .theme-dark & {
+    html.dark & {
       color: var(--text-color);
 
       @media (min-width: $MQNarrow) {

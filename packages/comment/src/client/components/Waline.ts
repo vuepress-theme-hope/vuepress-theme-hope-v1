@@ -79,7 +79,6 @@ export default Vue.extend({
               "//unpkg.com/@waline/emojis@1.0.1/weibo",
               "//unpkg.com/@waline/emojis@1.0.1/bilibili",
             ],
-            dark: "body.theme-dark",
             ...options,
             pageview: this.enablePageview,
             path: this.$withBase(this.$route.path),

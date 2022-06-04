@@ -40,7 +40,7 @@
     overflow: hidden;
     transition: all 0.2s;
 
-    .theme-dark & {
+    html.dark & {
       background: #222;
     }
 
@@ -56,7 +56,7 @@
 
 for $color, $index in $colors {
   .tags-wrapper .tag{$index} {
-    &, .theme-light & {
+    &, html.light & {
       color: lighten($color, 10%);
       border-color: lighten($color, 10%);
 
@@ -66,7 +66,7 @@ for $color, $index in $colors {
       }
     }
 
-    .theme-dark & {
+    html.dark & {
       color: darken($color, 10%);
       border-color: darken($color, 10%);
 

@@ -46,7 +46,7 @@ $headings = 2 3 4 5 6;
   &::-webkit-scrollbar-thumb:vertical {
     background: #ddd;
 
-    .theme-dark & {
+    html.dark & {
       background: #333;
     }
   }

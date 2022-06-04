@@ -65,7 +65,7 @@ $categoryListTextSize ?= 14px;
 
 for $color, $index in $colors {
   .category-list-wrapper .category{$index} {
-    &, .theme-light & {
+    &, html.light & {
       background: lighten($color, 90%);
 
       &:hover {
@@ -83,7 +83,7 @@ for $color, $index in $colors {
       }
     }
 
-    .theme-dark & {
+    html.dark & {
       background: darken($color, 75%);
 
       &:hover {
