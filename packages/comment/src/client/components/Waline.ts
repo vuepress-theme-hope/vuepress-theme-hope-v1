@@ -88,7 +88,6 @@ export default Vue.extend({
       }, options.delay);
   },
 
-  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
   beforeDestroy(): void {
     if (timeout) clearTimeout(timeout);
     this.waline?.destroy();

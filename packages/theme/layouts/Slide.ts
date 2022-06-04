@@ -13,7 +13,6 @@ export default Vue.extend({
     showMenu: false,
   }),
 
-  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
   destroyed(): void {
     document.querySelector("html")!.classList.remove("reveal-full-page");
     document.body.classList.remove("reveal-viewport");

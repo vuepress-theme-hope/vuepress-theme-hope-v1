@@ -64,7 +64,6 @@ export default Vue.extend({
     }
   },
 
-  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
   beforeDestroy() {
     // eslint-disable-next-line no-prototype-builtins
     if (window.hasOwnProperty("BeforeInstallPromptEvent"))

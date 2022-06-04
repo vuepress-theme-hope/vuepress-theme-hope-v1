@@ -130,7 +130,6 @@ export default Vue.extend({
     });
   },
 
-  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
   beforeDestroy() {
     if (this.observer) this.observer.disconnect();
   },

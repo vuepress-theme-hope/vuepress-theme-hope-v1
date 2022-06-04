@@ -122,7 +122,6 @@ export default Vue.extend({
     window.addEventListener("orientationchange", handler);
   },
 
-  // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
   beforeDestroy() {
     window.removeEventListener("resize", handler);
     window.removeEventListener("orientationchange", handler);
