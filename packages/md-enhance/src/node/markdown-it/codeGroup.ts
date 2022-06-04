@@ -13,7 +13,8 @@ export const codeGroup: PluginSimple = (md) => {
 
   md.use(container, {
     name: "code-group-item",
-    openRender: (info: string): string => {
+    openRender: (tokens, index) => {
+      const { info } = tokens[index];
       const isActive = info.split(":").pop() === "active";
 
       return `<CodeGroupItem title="${
