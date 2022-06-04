@@ -1,41 +1,6 @@
 ---
 title: Mermaid
-icon: diagram
 ---
-
-Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/) in your VuePress site.
-
-<!-- more -->
-
-## Configuration
-
-```js {7}
-module.exports = {
-  plugins: [
-    [
-      "md-enhance",
-      {
-        // Enable mermaid
-        mermaid: true,
-      },
-    ],
-  ],
-};
-```
-
-## Syntax
-
-````md
-```mermaid
-
-<!-- Your mermaid code here. -->
-
-```
-````
-
-## Usage
-
-Please see [mermaid](https://mermaid-js.github.io/mermaid/#/).
 
 ## Demo
 
@@ -257,7 +222,7 @@ section Go home
 
 :::
 
-### Gantt diagrams
+### Gantt Diagrams
 
 ```gantt
 dateFormat  YYYY-MM-DD
@@ -327,10 +292,10 @@ Add another diagram to demo page    :48h
 
 :::
 
-### Pie chart diagrams
+### Pie Chart Diagrams
 
 ```pie
-title What Voldemort doesn't have?
+title What Voldemort doesn’t have?
   "FRIENDS" : 2
   "FAMILY" : 3
   "NOSE" : 45
@@ -340,7 +305,7 @@ title What Voldemort doesn't have?
 
 ````md
 ```pie
-title What Voldemort doesn't have?
+title What Voldemort doesn’t have?
   "FRIENDS" : 2
   "FAMILY" : 3
   "NOSE" : 45
@@ -349,7 +314,7 @@ title What Voldemort doesn't have?
 
 :::
 
-### A complex example
+### A Complex Example
 
 ```mermaid
 graph TB

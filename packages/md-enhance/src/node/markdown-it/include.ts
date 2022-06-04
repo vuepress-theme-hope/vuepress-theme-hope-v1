@@ -1,8 +1,8 @@
 import { existsSync, readFileSync } from "fs";
-import { isAbsolute, dirname, resolve } from "upath";
+import { isAbsolute, resolve } from "upath";
 import { NEWLINES_RE } from "./utils";
 
-import type { PluginWithOptions } from "markdown-it";
+import type { PluginWithParams } from "markdown-it";
 import type { RuleCore } from "markdown-it/lib/parser_core";
 import type { IncludeOptions } from "../../types";
 
@@ -86,11 +86,7 @@ export const resolveInclude = (
 
           return options.deep && actualPath.endsWith(".md")
             ? resolveInclude(content, options, {
-                cwd: isAbsolute(actualPath)
-                  ? dirname(actualPath)
-                  : cwd
-                  ? resolve(cwd, dirname(actualPath))
-                  : null,
+                cwd,
                 includedFiles,
               })
             : content;
@@ -102,31 +98,34 @@ export const resolveInclude = (
     .join("\n");
 
 export const createIncludeCoreRule =
-  (options: Required<IncludeOptions>): RuleCore =>
+  (sourceDir: string, options: Required<IncludeOptions>): RuleCore =>
   (state): boolean => {
     const env = state.env as {
-      filePath?: string | null;
       /** Files included */
       includedFiles?: string[];
     };
     const includedFiles = env.includedFiles || (env.includedFiles = []);
 
     state.src = resolveInclude(state.src, options, {
-      cwd: env.filePath ? dirname(env.filePath) : null,
+      cwd: sourceDir,
       includedFiles,
     });
 
     return true;
   };
 
-export const include: PluginWithOptions<IncludeOptions> = (
+export const include: PluginWithParams = (
   md,
-  { getPath = (path: string): string => path, deep = false } = {}
+  sourceDir: string,
+  {
+    getPath = (path: string): string => path,
+    deep = false,
+  }: IncludeOptions = {}
 ): void => {
   // add md_import core rule
   md.core.ruler.after(
     "normalize",
     "md_import",
-    createIncludeCoreRule({ getPath, deep })
+    createIncludeCoreRule(sourceDir, { getPath, deep })
   );
 };

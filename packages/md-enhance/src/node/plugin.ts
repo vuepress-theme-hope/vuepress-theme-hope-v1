@@ -157,9 +157,11 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
         md.use(legacyCodeDemo);
       }
       if (getStatus("include"))
-        md.use(include, [
-          typeof options.include === "function" ? options.include : undefined,
-        ]);
+        md.use(
+          include,
+          context.sourceDir,
+          typeof options.include === "function" ? options.include : undefined
+        );
       if (mermaidEnable) md.use(mermaid);
       if (texEnable) md.use(katex, katexOptions);
       if (presentationEnable) md.use(presentation);
