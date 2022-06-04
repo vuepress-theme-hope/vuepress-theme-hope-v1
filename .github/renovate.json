@@ -14,6 +14,10 @@
       "allowedVersions": "v4"
     },
     {
+      "matchPackageNames": ["echarts"],
+      "allowedVersions": "v4"
+    },
+    {
       "matchPackageNames": ["execa"],
       "allowedVersions": "v5"
     },
