@@ -3,8 +3,7 @@
  ***************************************************/
 import { decode } from "mdurl";
 
-import type MarkdownIt = require("markdown-it");
-
+import type { PluginWithOptions } from "markdown-it";
 export type DecodeURLOption = RegExp | string[] | "*" | "." | "./";
 
 const needDecode = (url: string, config: DecodeURLOption): boolean =>
@@ -22,9 +21,9 @@ const urlDecode = (url: string, config: DecodeURLOption): string => {
   return /^(\w+?:\/)?\.?\//.test(realURL) ? realURL : `./${realURL}`;
 };
 
-export const decodeURL = (
-  md: MarkdownIt,
-  config: DecodeURLOption = "*"
+export const decodeURL: PluginWithOptions<DecodeURLOption> = (
+  md,
+  config = "*"
 ): void => {
   const originalImageRender = md.renderer.rules.image!;
 

@@ -1,8 +1,8 @@
-import hash = require("hash-sum");
+import { hash } from "vuepress-shared";
 import { uml } from "./uml";
 
 import type { PluginSimple } from "markdown-it";
-import type Token = require("markdown-it/lib/token");
+import type { default as Token } from "markdown-it/lib/token";
 
 const flowchartRender = (tokens: Token[], idx: number): string => {
   const token = tokens[idx];

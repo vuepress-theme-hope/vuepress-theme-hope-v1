@@ -1,4 +1,4 @@
-import hash = require("hash-sum");
+import { hash } from "vuepress-shared";
 import { uml } from "./uml";
 
 import type { PluginSimple } from "markdown-it";

@@ -1,10 +1,8 @@
-import type { default as MarkdownIt } from "markdown-it";
 import type { PluginWithOptions } from "markdown-it";
-
 import type { ImageMarkOptions } from "../../types";
 
 export const imageMark: PluginWithOptions<ImageMarkOptions> = (
-  md: MarkdownIt,
+  md,
   {
     light = ["gh-light-mode-only", "light"],
     dark = ["gh-dark-mode-only", "dark"],

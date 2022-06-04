@@ -26,7 +26,7 @@
  */
 
 import type { Options, PluginWithOptions } from "markdown-it";
-import type Token = require("markdown-it/lib/token");
+import type { default as Token } from "markdown-it/lib/token";
 import type { default as Renderer, RenderRule } from "markdown-it/lib/renderer";
 import type { RuleBlock } from "markdown-it/lib/parser_block";
 

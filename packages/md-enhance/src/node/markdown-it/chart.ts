@@ -1,4 +1,4 @@
-import hash = require("hash-sum");
+import { hash } from "vuepress-shared";
 
 import { container } from "./container";
 

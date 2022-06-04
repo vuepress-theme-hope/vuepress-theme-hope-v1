@@ -29,10 +29,10 @@ import Token = require("markdown-it/lib/token");
 import parseLinkLabel = require("markdown-it/lib/helpers/parse_link_label");
 
 import type { PluginSimple } from "markdown-it";
-import type Renderer = require("markdown-it/lib/renderer");
-import type StateBlock = require("markdown-it/lib/rules_block/state_block");
-import type StateCore = require("markdown-it/lib/rules_core/state_core");
-import type StateInline = require("markdown-it/lib/rules_inline/state_inline");
+import type { default as Renderer } from "markdown-it/lib/renderer";
+import type { default as StateBlock } from "markdown-it/lib/rules_block/state_block";
+import type { default as StateCore } from "markdown-it/lib/rules_core/state_core";
+import type { default as StateInline } from "markdown-it/lib/rules_inline/state_inline";
 import type { RuleBlock } from "markdown-it/lib/parser_block";
 import type { RuleInline } from "markdown-it/lib/parser_inline";
 

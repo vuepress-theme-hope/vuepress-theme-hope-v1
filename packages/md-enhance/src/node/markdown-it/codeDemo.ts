@@ -1,9 +1,9 @@
-import hash = require("hash-sum");
+import { hash } from "vuepress-shared";
 
 import { container } from "./container";
 
 import type { PluginSimple } from "markdown-it";
-import type Token = require("markdown-it/lib/token");
+import type { default as Token } from "markdown-it/lib/token";
 import type { CodeDemoOptions } from "../../types";
 
 export const CODE_DEMO_DEFAULT_SETTING: CodeDemoOptions = {

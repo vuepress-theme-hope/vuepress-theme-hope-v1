@@ -6,7 +6,7 @@
  */
 
 import type { PluginWithOptions } from "markdown-it";
-import type Token = require("markdown-it/lib/token");
+import type { default as Token } from "markdown-it/lib/token";
 import type { StylizeOptions } from "../../types";
 
 export interface StylizeFrontmatter {

@@ -27,7 +27,7 @@ import {
 } from "./utils";
 
 import type { PluginWithOptions } from "markdown-it";
-import type StateCore = require("markdown-it/lib/rules_core/state_core");
+import type { default as StateCore } from "markdown-it/lib/rules_core/state_core";
 import type { TaskListOptions } from "../../types";
 
 interface TaskListEnv {
