@@ -1,6 +1,6 @@
 import { getLocales } from "vuepress-shared";
 import { readingTimeLocales } from "./locales";
-import { getReadingTime } from "./reading-time";
+import { getReadingTime } from "./readingTime";
 
 import type { Plugin } from "vuepress-typings";
 import type { ReadingTimeOptions } from "../types";
