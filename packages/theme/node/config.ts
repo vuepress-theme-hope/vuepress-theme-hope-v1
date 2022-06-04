@@ -25,7 +25,7 @@ const defaultConfig = {
 
 const defaultThemeConfig: HopeThemeConfig = {
   sidebarDepth: 2,
-  iconPrefix: "icon-",
+  iconPrefix: "iconfont icon-",
   footer: {},
   editLinks: true,
 };
