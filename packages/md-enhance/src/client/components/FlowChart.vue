@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--grey15, #eee);
+    background: var(--grey14, #eee);
   }
 
   @media (max-width: $MQMobileNarrow) {

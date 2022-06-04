@@ -1,5 +1,4 @@
 :root {
-  --text-color: $textColor;
   --bg-color: $bgColor;
   --bg-color-light: $bgColorLight;
   --border-color: $borderColor;
@@ -7,10 +6,12 @@
   --arrow-bg-color: $arrowBgColor;
   --box-shadow-color: $boxShadowColor;
   --card-shadow-color: $cardShadowColor;
+  --text-color: $textColor;
   --text-color-l10: lighten($textColor, 10%);
   --text-color-l20: lighten($textColor, 20%);
   --text-color-l25: lighten($textColor, 25%);
   --text-color-l40: lighten($textColor, 40%);
+  // constant
   --black: #000;
   --dark-grey: #666;
   --light-grey: #999;
@@ -18,7 +19,12 @@
   --grey3: #333;
   --grey12: #bbb;
   --grey14: #eee;
+  // font
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', STHeiti, 'Microsoft YaHei', SimSun, sans-serif;
+  --font-family-code: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --font-family-fancy: Georgia Pro, Crimson, Georgia, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', STHeiti, 'Microsoft YaHei', SimSun, sans-serif;
+  --color-transition: 0.3s ease;
+  --transform-transition: 0.3s ease;
 }
 
 body.theme-light {

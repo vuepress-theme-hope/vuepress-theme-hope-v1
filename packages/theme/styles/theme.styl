@@ -1,38 +1,71 @@
+@require '~vuepress-shared/styles/wrapper';
 @require './code/index';
 @require './code/light';
 @require './code/dark';
 
-.theme-container:not(.has-navbar) {
-  {$contentClass}:not(.custom) > h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.5rem;
-    padding-top: 0;
-  }
-}
+{$contentClass} {
+  &:not(.custom) {
+    wrapper();
 
-// narrow mobile
-@media (max-width: $MQMobileNarrow) {
-  h1 {
-    font-size: 1.7rem;
-  }
+    > {
+      // heading fix
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: 0.5rem - $navbarHeight;
+        margin-bottom: 0.5rem;
+        padding-top: 1rem + $navbarHeight;
+        outline: none;
 
-  h2 {
-    font-size: 1.5rem;
-  }
+        .theme-container.no-navbar & {
+          margin-top: 1.5rem;
+          padding-top: 0;
+        }
+      }
 
-  h3 {
-    font-size: 1.3rem;
-  }
+      // paragraph fix
+      p, ul p, ol p {
+        text-align: justify;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
 
-  {$contentClass} {
-    div[class*='language-'] {
-      margin: 0.85rem -1.5rem;
-      border-radius: 0;
+        @media (max-width: $MQMobileNarrow) {
+          text-align: left;
+        }
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    img {
+      max-width: 100%;
     }
   }
-}
 
-.iconfont {
-  font-weight: normal;
+  &.custom {
+    margin: 0;
+    padding: 0;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  // md-enhance footnote fix
+  // footnote anchor position
+  .footnote-item {
+    @media (max-width: $MQMobile) {
+      margin-top: 0rem - $navbarMobileHeight;
+      padding-top: $navbarMobileHeight + 0.5rem;
+    }
+  }
+
+  .footnote-anchor {
+    @media (max-width: $MQMobile) {
+      top: -0.5rem - $navbarMobileHeight;
+    }
+  }
 }
 
 [aria-label][data-balloon-pos] {

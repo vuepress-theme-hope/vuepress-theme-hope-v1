@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--grey15);
+  background: var(--grey14, #eee);
 
   .loading-icon {
     width: 4em;
