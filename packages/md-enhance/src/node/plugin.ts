@@ -5,6 +5,7 @@ import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 import {
   CODE_DEMO_DEFAULT_SETTING,
   chart,
+  codeGroup,
   codeTabs,
   decodeURL,
   echarts,
@@ -12,6 +13,7 @@ import {
   footnote,
   katex,
   imageMark,
+  imageSize,
   include,
   lazyLoad,
   mark,
@@ -147,6 +149,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       if (options.lineNumbers !== false) md.use(lineNumbers);
       if (options.imageFix !== false) md.use(decodeURL);
 
+      // syntax
       if (getStatus("gfm")) md.options.linkify = true;
       if (getStatus("align")) md.use(align);
       if (getStatus("lazyLoad")) md.use(lazyLoad);
@@ -155,38 +158,44 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
           imageMark,
           typeof options.imageMark === "object" ? options.imageMark : {}
         );
+      if (getStatus("imageSize")) md.use(imageSize);
       if (getStatus("sup")) md.use(sup);
       if (getStatus("sub")) md.use(sub);
       if (footnoteEnable) md.use(footnote);
-      if (flowchartEnable) {
-        md.use(flowchart);
-        md.use(legacyFlowchart);
-      }
       if (getStatus("mark")) md.use(mark);
       if (tasklistEnable)
         md.use(tasklist, [
           typeof options.tasklist === "object" ? options.tasklist : {},
         ]);
-      if (chartEnable) md.use(chart);
-      if (codeTabsEnable) md.use(codeTabs);
-      if (demoEnable) {
-        md.use(normalDemo);
-        md.use(vueDemo);
-        md.use(reactDemo);
-        md.use(legacyCodeDemo);
-      }
-      if (echartsEnable) md.use(echarts);
+
+      // addtional functions
+      if (texEnable) md.use(katex, katexOptions);
       if (getStatus("include"))
         md.use(
           include,
           context.sourceDir,
           typeof options.include === "function" ? options.include : undefined
         );
-      if (mermaidEnable) md.use(mermaid);
-      if (texEnable) md.use(katex, katexOptions);
-      if (presentationEnable) md.use(presentation);
       if (getStatus("stylize")) md.use(stylize, options.stylize);
+
+      // features
+      if (getStatus("codegroup")) md.use(codeGroup);
+      if (codeTabsEnable) md.use(codeTabs);
       if (tabsEnable) md.use(tabs);
+      if (flowchartEnable) {
+        md.use(flowchart);
+        md.use(legacyFlowchart);
+      }
+      if (chartEnable) md.use(chart);
+      if (echartsEnable) md.use(echarts);
+      if (demoEnable) {
+        md.use(normalDemo);
+        md.use(vueDemo);
+        md.use(reactDemo);
+        md.use(legacyCodeDemo);
+      }
+      if (mermaidEnable) md.use(mermaid);
+      if (presentationEnable) md.use(presentation);
     },
 
     plugins: getPluginConfig(options, context),
