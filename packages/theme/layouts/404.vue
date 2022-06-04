@@ -1,6 +1,6 @@
 <template>
   <Common :sidebar="false">
-    <main class="page not-found">
+    <main id="main-content" class="page not-found">
       <Page404Icon />
       <blockquote v-text="msg" />
       <button class="action-button" @click="back">{{ locales.back }}</button>
@@ -15,17 +15,12 @@
 .page.not-found {
   display: block;
 
-  max-width: $homePageWidth;
-
+  max-width: var(--home-page-width);
   min-height: 80vh;
   margin: 0 auto;
-  padding: ($navbarHeight + 1rem) 2rem 0 2rem !important;
+  padding: calc(var(--navbar-height) + 1rem) 2rem 0 2rem !important;
 
   text-align: center;
-
-  @media (max-width: $MQMobile) {
-    padding-top: $navbarMobileHeight + 1rem;
-  }
 
   .page-404-icon {
     max-width: 600px;
@@ -40,8 +35,9 @@
     margin: 0 0.25rem;
     padding: 0.5rem 1rem;
     border-width: 0;
-    border-bottom: 1px solid var(--accent-color-d10);
+    border-bottom: 1px solid var(--accent-color-dark);
     border-radius: 0.25rem;
+
     background: var(--accent-color);
     color: var(--white);
     outline: none;
@@ -51,7 +47,7 @@
     transition: background 0.1s ease;
 
     &:hover {
-      background: var(--accent-color-l10);
+      background: var(--accent-color-light);
       cursor: pointer;
     }
   }

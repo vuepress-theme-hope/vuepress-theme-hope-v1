@@ -164,11 +164,11 @@
 
         &.active {
           html.light & {
-            background: var(--accent-color-l10);
+            background: var(--accent-color-light);
           }
 
           html.dark & {
-            background: var(--accent-color-d10);
+            background: var(--accent-color-dark);
           }
         }
 

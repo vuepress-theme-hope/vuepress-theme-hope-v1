@@ -40,7 +40,7 @@
 @require '~vuepress-shared/styles/wrapper';
 
 .page-meta {
-  @extend $wrapper;
+  wrapper();
   padding-top: 12px;
   padding-bottom: 12px;
   font-family: Arial, Helvetica, sans-serif;
@@ -49,7 +49,7 @@
   .meta-item {
     .label {
       font-weight: 500;
-      color: var(--text-color-l25);
+      color: var(--text-color-lighter);
     }
 
     .info {
@@ -75,7 +75,7 @@
     }
 
     a {
-      color: var(--accent-color-l10);
+      color: var(--accent-color-light);
     }
   }
 

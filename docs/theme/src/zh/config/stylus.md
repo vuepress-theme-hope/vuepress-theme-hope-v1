@@ -33,7 +33,7 @@ $navbarMobileHorizontalPadding ?= 1rem
 $navbarVerticalPadding ?= 0.7rem
 $navbarMobileVerticalPadding ?= 0.4rem
 $sidebarWidth ?= 18rem
-$mobileSidebarWidth ?= $sidebarWidth
+$sidebarMobileWidth ?= $sidebarWidth
 $contentWidth ?= 740px
 $homePageWidth ?= 960px
 ```
@@ -77,7 +77,7 @@ $badgeErrorColor ?= #DA5961
 $contentClass ?= '.theme-default-content'
 
 /* code block */
-$lineNumbersWrapperWidth ?= 2.5rem
+$lineNumbersWidth ?= 2.5rem
 $codeLang ?= js ts html md vue css sass scss less stylus go java c sh yaml py docker dockerfile makefile
 ```
 

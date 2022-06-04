@@ -20,20 +20,15 @@
 <style lang="stylus">
 .home {
   display: block;
-  max-width: $homePageWidth;
-  min-height: 100vh - $navbarHeight;
-  padding: $navbarHeight 2rem 0;
-  margin: 0px auto;
-  overflow-x: hidden;
 
-  @media (max-width: $MQNarrow) {
-    min-height: 100vh - $navbarMobileHeight;
-    padding-top: $navbarMobileHeight;
-  }
+  max-width: var(--home-page-width);
+  min-height: calc(100vh - var(--navbar-height));
+  margin: 0 auto;
+  padding: var(--navbar-height) 2rem 0;
 
   @media (max-width: $MQMobileNarrow) {
-    padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-left: 1.5rem;
   }
 
   {$contentClass} {

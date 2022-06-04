@@ -136,7 +136,7 @@
     .description {
       max-width: 35rem;
 
-      color: var(--text-color-l40);
+      color: var(--text-color-bright);
 
       font-size: 1.6rem;
       font-family: var(--font-family-fancy);
@@ -187,8 +187,8 @@
         color: var(--white);
 
         &:hover {
-          border-color: var(--accent-color-l10);
-          background-color: var(--accent-color-l10);
+          border-color: var(--accent-color-light);
+          background-color: var(--accent-color-light);
         }
       }
     }

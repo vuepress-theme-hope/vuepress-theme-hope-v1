@@ -25,7 +25,7 @@ This is just a demo, you should add styles according to your own needs.
   text-align center
 
 .content__page-top, .content__page-bottom, .content__content-top, .content__content-bottom
-  @extend $wrapper
+  wrapper()
   padding-top 0
   padding-bottom 0
   text-align center

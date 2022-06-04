@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .breadcrumb {
-  @extend $wrapper;
+  wrapper();
   position: relative;
   margin-top: $navbarHeight + 0.5rem;
   margin-bottom: 0.5rem - $navbarHeight;
@@ -113,10 +113,10 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &:hover {
-      color: var(--accent-color-l10, lighten($accentColor, 10%));
+      color: var(--accent-color-light, lighten($accentColor, 10%));
 
       html.dark & {
-        color: var(--accent-color-d10, darken($accentColor, 10%));
+        color: var(--accent-color-dark, darken($accentColor, 10%));
       }
     }
   }

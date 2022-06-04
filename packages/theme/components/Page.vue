@@ -78,7 +78,7 @@
 
   // narrow desktop / iPad
   @media (max-width: $MQNarrow) {
-    padding-left: $mobileSidebarWidth;
+    padding-left: $sidebarMobileWidth;
   }
 
   // wide mobile

@@ -46,7 +46,7 @@
 @require '~vuepress-shared/styles/wrapper';
 
 .page-nav {
-  @extend $wrapper;
+  wrapper();
   padding-top: 12px;
   padding-bottom: 0;
   font-family: Arial, Helvetica, sans-serif;

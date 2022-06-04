@@ -1,7 +1,4 @@
 @require '~vuepress-shared/styles/wrapper';
-@require './code/index';
-@require './code/light';
-@require './code/dark';
 
 {$contentClass} {
   &:not(.custom) {
@@ -10,9 +7,9 @@
     > {
       // heading fix
       h1, h2, h3, h4, h5, h6 {
-        margin-top: 0.5rem - $navbarHeight;
+        margin-top: calc(0.5rem - var(--navbar-height));
         margin-bottom: 0.5rem;
-        padding-top: 1rem + $navbarHeight;
+        padding-top: calc(1rem + var(--navbar-height));
         outline: none;
 
         .theme-container.no-navbar & {
@@ -51,45 +48,4 @@
       max-width: 100%;
     }
   }
-
-  // md-enhance footnote fix
-  // footnote anchor position
-  .footnote-item {
-    @media (max-width: $MQMobile) {
-      margin-top: 0rem - $navbarMobileHeight;
-      padding-top: $navbarMobileHeight + 0.5rem;
-    }
-  }
-
-  .footnote-anchor {
-    @media (max-width: $MQMobile) {
-      top: -0.5rem - $navbarMobileHeight;
-    }
-  }
-}
-
-[aria-label][data-balloon-pos] {
-  cursor: help;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track-piece {
-  background: rgba(0, 0, 0, 0.1);
-  -webkit-border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:vertical {
-  height: 6px;
-  background: var(--accent-color);
-  -webkit-border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-  width: 6px;
-  background: var(--accent-color);
-  -webkit-border-radius: 6px;
 }

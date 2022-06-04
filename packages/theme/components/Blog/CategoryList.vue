@@ -91,7 +91,7 @@ for $color, $index in $colors {
       }
 
       &.active {
-        background: var(--accent-color-d10);
+        background: var(--accent-color-dark);
         color: var(--white);
       }
     }

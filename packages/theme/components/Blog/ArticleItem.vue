@@ -128,7 +128,7 @@
     // line number fix
     .line-numbers-mode {
       pre {
-        padding-left: ($lineNumbersWrapperWidth + 1) rem;
+        padding-left: ($lineNumbersWidth + 1) rem;
       }
     }
 

@@ -11,7 +11,7 @@
 
 .page {
   .valine-wrapper {
-    @extend $wrapper;
+    wrapper();
 
     .v[data-class=v] {
       * {

@@ -27,7 +27,7 @@
   @media (max-width: $MQNarrow) {
     height: 90vh - $navbarMobileHeight;
     margin-top: $navbarMobileHeight;
-    padding-left: $mobileSidebarWidth;
+    padding-left: $sidebarMobileWidth;
   }
 
   @media (max-width: $MQMobile) {

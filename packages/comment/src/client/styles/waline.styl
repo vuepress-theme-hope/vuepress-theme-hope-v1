@@ -3,15 +3,15 @@
 
 .page {
   .waline-wrapper {
-    @extend $wrapper;
+    wrapper();
     --waline-accent-color: var(--accent-color);
     --waline-text-color: var(--text-color);
-    --waline-active-color: var(--accent-color-l10);
+    --waline-active-color: var(--accent-color-light);
     --waline-border: none;
     --waline-box-shadow: 0 12px 40px rgba(134, 151, 168, 0.25);
 
     html.dark & {
-      --waline-active-color: var(--accent-color-d10);
+      --waline-active-color: var(--accent-color-dark);
       --waline-box-shadow: 0 12px 40px #0f0e0d;
     }
   }

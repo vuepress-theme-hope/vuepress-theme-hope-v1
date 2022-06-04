@@ -34,7 +34,7 @@ $pageInfoTextSize ?= 14px;
 
 .page {
   .page-title {
-    @extend $wrapper;
+    wrapper();
     padding-bottom: 0.2rem;
     position: relative;
     z-index: 1;

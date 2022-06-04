@@ -50,7 +50,6 @@ blockquote {
 }
 
 h1 {
-  // narrow mobile
   @media (max-width: $MQMobileNarrow) {
     font-size: 1.9rem;
   }
@@ -80,29 +79,4 @@ tr {
 
 th, td {
   border-color: var(--grey14);
-}
-
-{$contentClass}:not(.custom) {
-  @extend $wrapper;
-
-  > *:first-child {
-    margin-top: $navbarHeight;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  img {
-    max-width: 100%;
-  }
-}
-
-{$contentClass}.custom {
-  padding: 0;
-  margin: 0;
-
-  img {
-    max-width: 100%;
-  }
 }

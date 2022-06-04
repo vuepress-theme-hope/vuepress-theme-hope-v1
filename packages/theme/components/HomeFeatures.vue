@@ -115,7 +115,7 @@
       margin: 0.25rem 0;
       border-bottom: none;
 
-      color: var(--text-color-l10);
+      color: var(--text-color-light);
 
       font-weight: bold;
       font-size: 1.25rem;
@@ -127,7 +127,7 @@
 
     p {
       margin: 0;
-      color: var(--text-color-l25);
+      color: var(--text-color-lighter);
       line-height: 1.4;
     }
   }

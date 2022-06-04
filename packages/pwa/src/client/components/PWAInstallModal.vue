@@ -406,7 +406,7 @@
     color: var(--white, #fff);
 
     &:hover, &:focus {
-      background: var(--accent-color-l10, $accentColor);
+      background: var(--accent-color-light, $accentColor);
     }
 
     @media (max-width: $MQMobileNarrow) {
@@ -421,7 +421,7 @@
     color: var(--accent-color, $accentColor);
 
     &:hover, &:focus {
-      background: var(--accent-color-l10, $accentColor);
+      background: var(--accent-color-light, $accentColor);
       color: var(--white, #fff);
     }
   }

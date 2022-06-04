@@ -79,7 +79,7 @@
 
   // narrow desktop / iPad
   @media (max-width: $MQNarrow) {
-    width: $mobileSidebarWidth;
+    width: $sidebarMobileWidth;
     font-size: 15px;
   }
 
