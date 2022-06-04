@@ -91,4 +91,6 @@ export default hope.config({
       appendBase: true,
     },
   },
+
+  shouldPrefetch: () => false,
 });

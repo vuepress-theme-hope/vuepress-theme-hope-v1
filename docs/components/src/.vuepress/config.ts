@@ -220,4 +220,6 @@ export default hope.config({
   },
 
   plugins: [{ globalUIComponents: ["V2Notice"] }],
+
+  shouldPrefetch: () => false,
 });
