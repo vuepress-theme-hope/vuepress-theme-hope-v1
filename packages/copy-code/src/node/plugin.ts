@@ -1,5 +1,4 @@
-import { getLocales } from "vuepress-shared";
-import { resolve } from "path";
+import { getLocales, path } from "vuepress-shared";
 import { copyCodeLocales } from "./locales";
 
 import type { Plugin } from "vuepress-typings";
@@ -24,6 +23,6 @@ export const copyCodePlugin: Plugin<CopyCodeOptions> = (options, context) => {
       CODE_COPY_LOCALES: userCopyCodeLocales,
     }),
 
-    clientRootMixin: resolve(__dirname, "../client/clientRootMixin.js"),
+    clientRootMixin: path.resolve(__dirname, "../client/clientRootMixin.js"),
   };
 };

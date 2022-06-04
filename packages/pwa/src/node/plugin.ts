@@ -1,5 +1,4 @@
-import { getLocales } from "vuepress-shared";
-import { resolve } from "path";
+import { getLocales, path } from "vuepress-shared";
 
 import { covertOptions } from "./compact";
 import { getManifest, generateManifest } from "./generateManifest";
@@ -65,7 +64,7 @@ export const pwaPlugin: Plugin<PWAOptions> = (options, context) => {
       await generateServiceWorker(context, options);
     },
 
-    enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
+    enhanceAppFiles: path.resolve(__dirname, "../client/enhanceAppFile.js"),
 
     globalUIComponents: [],
   };

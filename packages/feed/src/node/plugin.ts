@@ -1,4 +1,4 @@
-import { magenta } from "chalk";
+import { chalk } from "vuepress-shared";
 import { covertOptions } from "./compact";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options";
 import { injectLinkstoHead } from "./injectHead";
@@ -16,7 +16,7 @@ export const feedPlugin: Plugin<FeedOptions> = (options, context) => {
   };
 
   if (!ensureHostName(options)) {
-    logger.error(`Option ${magenta("hostname")} is required!`);
+    logger.error(`Option ${chalk.magenta("hostname")} is required!`);
 
     return plugin;
   }

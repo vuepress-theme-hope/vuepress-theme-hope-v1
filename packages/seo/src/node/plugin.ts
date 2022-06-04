@@ -1,5 +1,4 @@
-import { magenta } from "chalk";
-import { stripTags } from "vuepress-shared";
+import { chalk, stripTags } from "vuepress-shared";
 
 import { appendSEO, generateRobotsTxt } from "./seo";
 import { logger, md2text } from "./utils";
@@ -11,7 +10,7 @@ export const seoPlugin: Plugin<SeoOptions> = (options, context) => {
   const plugin: PluginEntry = { name: "vuepress-plugin-seo2" };
 
   if (!options.hostname) {
-    logger.error(`Option ${magenta("hostname")} is required!`);
+    logger.error(`Option ${chalk.magenta("hostname")} is required!`);
 
     return plugin;
   }

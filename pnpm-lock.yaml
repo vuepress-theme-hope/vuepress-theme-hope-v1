@@ -355,16 +355,10 @@ importers:
 
   packages/feed:
     specifiers:
-      '@types/fs-extra': 9.0.13
-      chalk: ^4.1.2
-      fs-extra: ^10.1.0
       vuepress-shared: workspace:*
       vuepress-typings: workspace:*
       xml-js: ^1.6.11
     dependencies:
-      '@types/fs-extra': 9.0.13
-      chalk: 4.1.2
-      fs-extra: 10.1.0
       vuepress-shared: link:../shared
       vuepress-typings: link:../vuepress-typings
       xml-js: 1.6.11
@@ -396,7 +390,6 @@ importers:
       mermaid: ^9.1.1
       reveal.js: ^4.3.1
       ts-debounce: ^4.0.0
-      upath: ^2.0.1
       vuepress-plugin-container: ^2.1.5
       vuepress-shared: workspace:*
       vuepress-typings: workspace:*
@@ -415,7 +408,6 @@ importers:
       mermaid: 9.1.1
       reveal.js: 4.3.1
       ts-debounce: 4.0.0
-      upath: 2.0.1
       vuepress-plugin-container: 2.1.5
       vuepress-shared: link:../shared
       vuepress-typings: link:../vuepress-typings
@@ -436,18 +428,12 @@ importers:
 
   packages/pwa:
     specifiers:
-      '@types/fs-extra': ^9.0.13
-      chalk: ^4.1.2
-      fs-extra: ^10.1.0
       mitt: ^3.0.0
       register-service-worker: ^1.7.2
       vuepress-shared: workspace:*
       vuepress-typings: workspace:*
       workbox-build: ^6.5.3
     dependencies:
-      '@types/fs-extra': 9.0.13
-      chalk: 4.1.2
-      fs-extra: 10.1.0
       mitt: 3.0.0
       register-service-worker: 1.7.2
       vuepress-shared: link:../shared
@@ -464,14 +450,10 @@ importers:
 
   packages/seo:
     specifiers:
-      '@types/fs-extra': ^9.0.13
-      chalk: ^4.1.2
-      fs-extra: ^10.1.0
+      vuepress-shared: workspace:*
       vuepress-typings: workspace:*
     dependencies:
-      '@types/fs-extra': 9.0.13
-      chalk: 4.1.2
-      fs-extra: 10.1.0
+      vuepress-shared: link:../shared
       vuepress-typings: link:../vuepress-typings
 
   packages/shared:
@@ -507,16 +489,12 @@ importers:
 
   packages/sitemap:
     specifiers:
-      '@types/fs-extra': ^9.0.13
-      chalk: ^4.1.2
-      fs-extra: ^10.1.0
       sitemap: ^7.1.1
+      vuepress-shared: workspace:*
       vuepress-typings: workspace:*
     dependencies:
-      '@types/fs-extra': 9.0.13
-      chalk: 4.1.2
-      fs-extra: 10.1.0
       sitemap: 7.1.1
+      vuepress-shared: link:../shared
       vuepress-typings: link:../vuepress-typings
 
   packages/smooth-scroll:
@@ -535,7 +513,6 @@ importers:
       '@types/react': ^18.0.10
       '@vuepress/plugin-blog': ^1.9.4
       bcrypt-ts: ^1.0.0
-      chalk: ^4.1.2
       dayjs: ^1.11.2
       docsearch.js: ^2.6.3
       ts-debounce: ^4.0.0
@@ -561,9 +538,8 @@ importers:
       '@mr-hope/vuepress-plugin-git': link:../git
       '@mr-hope/vuepress-plugin-smooth-scroll': link:../smooth-scroll
       '@types/react': 18.0.10
-      '@vuepress/plugin-blog': 1.9.4_chalk@4.1.2
+      '@vuepress/plugin-blog': 1.9.4
       bcrypt-ts: 1.0.0
-      chalk: 4.1.2
       dayjs: 1.11.2
       docsearch.js: 2.6.3
       ts-debounce: 4.0.0
@@ -3308,7 +3284,7 @@ packages:
       - debug
     dev: true
 
-  /@vuepress/plugin-blog/1.9.4_chalk@4.1.2:
+  /@vuepress/plugin-blog/1.9.4:
     resolution: {integrity: sha512-7A4Y3mYrSOUKdzsTjeVOKt0XgZ0m1Iqq7BeZn7y9YeZfDcZ4Fx6UldsPfK2+THwtYwGzQ7Not3zO8djyk7z3ew==}
     dependencies:
       '@vssue/api-github-v3': 1.4.7
@@ -3318,7 +3294,7 @@ packages:
       vuepress-plugin-disqus: 0.2.0
       vuepress-plugin-feed: 0.1.9
       vuepress-plugin-mailchimp: 1.4.2
-      vuepress-plugin-sitemap: 2.3.1_chalk@4.1.2
+      vuepress-plugin-sitemap: 2.3.1
     transitivePeerDependencies:
       - chalk
       - commander
@@ -15169,7 +15145,7 @@ packages:
       - supports-color
     dev: false
 
-  /vuepress-plugin-sitemap/2.3.1_chalk@4.1.2:
+  /vuepress-plugin-sitemap/2.3.1:
     resolution: {integrity: sha512-n+8lbukhrKrsI9H/EX0EBgkE1pn85LAQFvQ5dIvrZP4Kz6JxPOPPNTQmZMhahQV1tXbLZQCEN7A1WZH4x+arJQ==}
     hasBin: true
     peerDependencies:
@@ -15184,7 +15160,6 @@ packages:
       esm:
         optional: true
     dependencies:
-      chalk: 4.1.2
       sitemap: 3.2.2
     dev: false
 

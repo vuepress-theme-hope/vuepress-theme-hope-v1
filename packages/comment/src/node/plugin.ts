@@ -1,5 +1,4 @@
-import { getLocales, noopModule } from "vuepress-shared";
-import { resolve } from "path";
+import { getLocales, noopModule, path } from "vuepress-shared";
 import { covertOptions } from "./compact";
 import { walineLocales, valineLocales } from "./locales";
 
@@ -45,19 +44,19 @@ export const commentPlugin: Plugin<CommentOptions> = (options, context) => {
     alias: {
       "@CommentService":
         options.provider === "Giscus"
-          ? resolve(__dirname, "../client/components/Giscus.js")
+          ? path.resolve(__dirname, "../client/components/Giscus.js")
           : options.provider === "Waline"
-          ? resolve(__dirname, "../client/components/Waline.js")
+          ? path.resolve(__dirname, "../client/components/Waline.js")
           : options.provider === "Valine"
-          ? resolve(__dirname, "../client/components/Valine.vue")
+          ? path.resolve(__dirname, "../client/components/Valine.vue")
           : options.provider === "Twikoo"
-          ? resolve(__dirname, "../client/components/Twikoo.js")
+          ? path.resolve(__dirname, "../client/components/Twikoo.js")
           : options.provider === "Vssue"
-          ? resolve(__dirname, "../client/components/Vssue.js")
+          ? path.resolve(__dirname, "../client/components/Vssue.js")
           : noopModule,
     },
 
-    enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
+    enhanceAppFiles: path.resolve(__dirname, "../client/enhanceAppFile.js"),
   };
 
   if (options.provider === "Vssue")

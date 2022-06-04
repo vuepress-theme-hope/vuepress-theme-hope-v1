@@ -1,6 +1,4 @@
-import { cyan } from "chalk";
-import { ensureDir, outputFile } from "fs-extra";
-import { dirname, resolve } from "path";
+import { chalk, fs, path } from "vuepress-shared";
 
 import { Feed } from "./feed";
 import { getFeedChannelOption, getFilename, getFeedLinks } from "./options";
@@ -79,9 +77,9 @@ export class FeedGenerator {
     }
 
     logger.succeed(
-      `added ${cyan(`${count} page(s)`)} as feed item(s) in route ${cyan(
-        localePath
-      )}`
+      `added ${chalk.cyan(
+        `${count} page(s)`
+      )} as feed item(s) in route ${chalk.cyan(localePath)}`
     );
   }
 
@@ -100,13 +98,13 @@ export class FeedGenerator {
 
           // generate atom files
           if (localeOptions.atom) {
-            const filePath = resolve(outDir, atomOutputFilename);
+            const filePath = path.resolve(outDir, atomOutputFilename);
 
-            await ensureDir(dirname(filePath));
-            await outputFile(filePath, feed.atom());
+            await fs.ensureDir(path.dirname(filePath));
+            await fs.outputFile(filePath, feed.atom());
 
             logger.succeed(
-              `Atom feed file generated and saved to ${cyan(
+              `Atom feed file generated and saved to ${chalk.cyan(
                 atomOutputFilename
               )}`
             );
@@ -114,13 +112,13 @@ export class FeedGenerator {
 
           // generate json files
           if (localeOptions.json) {
-            const filePath = resolve(outDir, jsonOutputFilename);
+            const filePath = path.resolve(outDir, jsonOutputFilename);
 
-            await ensureDir(dirname(filePath));
-            await outputFile(filePath, feed.json());
+            await fs.ensureDir(path.dirname(filePath));
+            await fs.outputFile(filePath, feed.json());
 
             logger.succeed(
-              `JSON feed file generated and saved to ${cyan(
+              `JSON feed file generated and saved to ${chalk.cyan(
                 jsonOutputFilename
               )}`
             );
@@ -128,13 +126,15 @@ export class FeedGenerator {
 
           // generate rss files
           if (localeOptions.rss) {
-            const filePath = resolve(outDir, rssOutputFilename);
+            const filePath = path.resolve(outDir, rssOutputFilename);
 
-            await ensureDir(dirname(filePath));
-            await outputFile(filePath, feed.rss());
+            await fs.ensureDir(path.dirname(filePath));
+            await fs.outputFile(filePath, feed.rss());
 
             logger.succeed(
-              `RSS feed file generated and saved to ${cyan(rssOutputFilename)}`
+              `RSS feed file generated and saved to ${chalk.cyan(
+                rssOutputFilename
+              )}`
             );
           }
         }

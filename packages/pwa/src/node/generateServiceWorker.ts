@@ -1,7 +1,5 @@
-import { blue, cyan } from "chalk";
-import { statSync } from "fs-extra";
-import { resolve } from "path";
 import { generateSW } from "workbox-build";
+import { chalk, fs, path } from "vuepress-shared";
 import { logger } from "./utils";
 
 import type {
@@ -24,7 +22,7 @@ const imageFilter =
 
     for (const entry of manifestEntries)
       if (imageExtensions.some((ext) => entry.url.endsWith(ext))) {
-        const stats = statSync(resolve(outDir, entry.url));
+        const stats = fs.statSync(path.resolve(outDir, entry.url));
 
         if (stats.size > maxsize * 1024)
           warnings.push(
@@ -43,7 +41,7 @@ export const generateServiceWorker = async (
   logger.load("Generating service worker");
 
   const { title, locales = {} } = siteConfig;
-  const swDest = resolve(outDir, "./service-worker.js");
+  const swDest = path.resolve(outDir, "./service-worker.js");
 
   const globPatterns = ["**/*.{js,css,svg}", "**/*.{woff,woff2,eot,ttf,otf}"];
 
@@ -66,7 +64,7 @@ export const generateServiceWorker = async (
     logger.succeed();
 
     logger.info(
-      `Precache ${cyan(`${count} files`)}, totaling ${cyan(
+      `Precache ${chalk.cyan(`${count} files`)}, totaling ${chalk.cyan(
         `${(size / 1024 / 1024).toFixed(2)} Mb.`
       )}.`
     );
@@ -76,13 +74,13 @@ export const generateServiceWorker = async (
 
     if (size > 104857600)
       logger.error(
-        `Cache Size is larger than 100MB, so that it can not be registerd on all browsers.\n${blue(
+        `Cache Size is larger than 100MB, so that it can not be registerd on all browsers.\n${chalk.blue(
           "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option.\n"
         )}`
       );
     else if (size > 52428800)
       logger.warn(
-        `\nCache Size is larger than 50MB, which will not be registerd on Safari.\n${blue(
+        `\nCache Size is larger than 50MB, which will not be registerd on Safari.\n${chalk.blue(
           "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option.\n"
         )}`
       );

@@ -1,8 +1,11 @@
-import { cyan } from "chalk";
-import { createWriteStream, existsSync, readFile, writeFile } from "fs-extra";
-import { resolve } from "path";
 import { SitemapStream } from "sitemap";
-import { removeEndingSlash, removeLeadingSlash } from "vuepress-shared";
+import {
+  chalk,
+  fs,
+  path,
+  removeEndingSlash,
+  removeLeadingSlash,
+} from "vuepress-shared";
 import { logger } from "./utils";
 
 import type { Context, Page } from "vuepress-typings";
@@ -119,7 +122,7 @@ export const generateSiteMap = async (
     ? removeLeadingSlash(options.sitemapFilename)
     : "sitemap.xml";
 
-  logger.load(`Generating sitemap to ${cyan(sitemapFilename)}`);
+  logger.load(`Generating sitemap to ${chalk.cyan(sitemapFilename)}`);
 
   const { base, outDir } = context;
   const sitemap = new SitemapStream({
@@ -127,8 +130,8 @@ export const generateSiteMap = async (
     ...(xmlns ? { xmlns } : {}),
   });
   const pagesMap = generatePageMap(options, context);
-  const sitemapXMLPath = resolve(outDir, sitemapFilename);
-  const writeStream = createWriteStream(sitemapXMLPath);
+  const sitemapXMLPath = path.resolve(outDir, sitemapFilename);
+  const writeStream = fs.createWriteStream(sitemapXMLPath);
 
   sitemap.pipe(writeStream);
 
@@ -150,19 +153,19 @@ export const generateSiteMap = async (
     });
   });
 
-  const robotTxtPath = resolve(outDir, "robots.txt");
+  const robotTxtPath = path.resolve(outDir, "robots.txt");
 
-  if (existsSync(robotTxtPath)) {
-    logger.load(`Appended sitemap path to ${cyan("robots.txt")}`);
+  if (fs.existsSync(robotTxtPath)) {
+    logger.load(`Appended sitemap path to ${chalk.cyan("robots.txt")}`);
 
-    const robotsTxt = await readFile(robotTxtPath, { encoding: "utf8" });
+    const robotsTxt = await fs.readFile(robotTxtPath, { encoding: "utf8" });
 
     const newRobotsTxtContent = `${robotsTxt.replace(
       /^Sitemap: .*$/u,
       ""
     )}\nSitemap: ${hostname}${base}${sitemapFilename}\n`;
 
-    await writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
+    await fs.writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
 
     logger.succeed();
   }

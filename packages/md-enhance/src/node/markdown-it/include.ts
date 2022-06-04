@@ -1,5 +1,4 @@
-import { existsSync, readFileSync } from "fs";
-import { isAbsolute, resolve } from "upath";
+import { fs, path } from "vuepress-shared";
 import { NEWLINES_RE } from "./utils";
 
 import type { PluginWithParams } from "markdown-it";
@@ -26,7 +25,7 @@ export const handleInclude = (
 ): string => {
   let realPath = filePath;
 
-  if (!isAbsolute(filePath)) {
+  if (!path.isAbsolute(filePath)) {
     // if the importPath is relative path, we need to resolve it
     // according to the markdown filePath
     if (!cwd) {
@@ -35,20 +34,20 @@ export const handleInclude = (
       return "\nError when resolving path\n";
     }
 
-    realPath = resolve(cwd, filePath);
+    realPath = path.resolve(cwd, filePath);
   }
 
   includedFiles.push(realPath);
 
   // check file existence
-  if (!existsSync(realPath)) {
+  if (!fs.existsSync(realPath)) {
     console.error(`Include: ${realPath} not found`);
 
     return "\nFile not found\n";
   }
 
   // read file content
-  const fileContent = readFileSync(realPath).toString();
+  const fileContent = fs.readFileSync(realPath).toString();
 
   // return content
   return fileContent

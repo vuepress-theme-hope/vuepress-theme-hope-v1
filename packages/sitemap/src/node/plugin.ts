@@ -1,4 +1,4 @@
-import { magenta } from "chalk";
+import { chalk } from "vuepress-shared";
 import { covertOptions } from "./compact";
 import { generateSiteMap } from "./generateSitemap";
 import { logger } from "./utils";
@@ -14,7 +14,7 @@ export const sitemapPlugin: Plugin<SitemapOptions> = (options, context) => {
   };
 
   if (!options.hostname) {
-    logger.error(`Option ${magenta("hostname")} is required!`);
+    logger.error(`Option ${chalk.magenta("hostname")} is required!`);
 
     return plugin;
   }

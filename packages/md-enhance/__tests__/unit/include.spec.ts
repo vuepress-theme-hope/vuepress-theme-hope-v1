@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { resolve } from "upath";
+import { path } from "vuepress-shared";
 import MarkdownIt from "markdown-it";
 import MarkdownContainer from "markdown-it-container";
 import { include } from "../../src/node/markdown-it/include";
@@ -13,10 +13,13 @@ interface IncludeEnv {
 }
 
 const mdFixturePathRelative = "./include.md";
-const cwd = resolve(__dirname, "__fixtures__");
-const mdFixturePath = resolve(cwd, mdFixturePathRelative);
+const cwd = path.resolve(__dirname, "__fixtures__");
+const mdFixturePath = path.resolve(cwd, mdFixturePathRelative);
 const mdFixtureDeepIncludeRelative = "./deepInclude.md";
-const mdFixtureDeepIncludePath = resolve(cwd, mdFixtureDeepIncludeRelative);
+const mdFixtureDeepIncludePath = path.resolve(
+  cwd,
+  mdFixtureDeepIncludeRelative
+);
 
 const md = MarkdownIt().use(include, cwd).use(container, "tip");
 
@@ -105,7 +108,10 @@ describe("include", () => {
       const rendered = md.render(source, env);
 
       expect(rendered).toEqual(expected);
-      expect(env.includedFiles).toEqual(["/foo.md", resolve(cwd, "./bar.md")]);
+      expect(env.includedFiles).toEqual([
+        "/foo.md",
+        path.resolve(cwd, "./bar.md"),
+      ]);
     });
 
     it("should resolve absolute path ", () => {
@@ -144,7 +150,10 @@ describe("include", () => {
       const mdWithOptions = MarkdownIt()
         .use(include, cwd, {
           getPath: (str: string): string =>
-            str.replace(/^@fixtures/, resolve(__dirname, "./__fixtures__")),
+            str.replace(
+              /^@fixtures/,
+              path.resolve(__dirname, "./__fixtures__")
+            ),
         })
         .use(container, "tip");
       const env: IncludeEnv = {};

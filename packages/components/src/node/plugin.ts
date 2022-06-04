@@ -1,5 +1,4 @@
-import { getLocales, noopModule } from "vuepress-shared";
-import { resolve } from "path";
+import { getLocales, noopModule, path } from "vuepress-shared";
 import {
   componentLocales,
   paginationLocales,
@@ -25,22 +24,22 @@ export const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
 
     alias: {
       "@BackToTop": options.backToTop
-        ? resolve(__dirname, "../client/BackToTop.vue")
+        ? path.resolve(__dirname, "../client/BackToTop.vue")
         : noopModule,
       "@BreadCrumb": options.breadcrumb
-        ? resolve(__dirname, "../client/BreadCrumb.vue")
+        ? path.resolve(__dirname, "../client/BreadCrumb.vue")
         : noopModule,
       "@Badge": options.badge
-        ? resolve(__dirname, "../client/Badge.vue")
+        ? path.resolve(__dirname, "../client/Badge.vue")
         : noopModule,
       "@PageInfo": options.pageinfo
-        ? resolve(__dirname, "../client/PageInfo.vue")
+        ? path.resolve(__dirname, "../client/PageInfo.vue")
         : noopModule,
       "@Pagination": options.pagination
-        ? resolve(__dirname, "../client/Pagination.vue")
+        ? path.resolve(__dirname, "../client/Pagination.vue")
         : noopModule,
       "@ScreenFull": options.screenFull
-        ? resolve(__dirname, "../client/ScreenFull.vue")
+        ? path.resolve(__dirname, "../client/ScreenFull.vue")
         : noopModule,
     },
 
@@ -66,7 +65,7 @@ export const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
       }),
     }),
 
-    enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
+    enhanceAppFiles: path.resolve(__dirname, "../client/enhanceAppFile.js"),
 
     globalUIComponents: options.backToTop ? "BackToTop" : [],
 

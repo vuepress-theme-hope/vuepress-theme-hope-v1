@@ -1,5 +1,4 @@
-import { noopModule } from "vuepress-shared";
-import { resolve } from "path";
+import { noopModule, path } from "vuepress-shared";
 import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 
 import {
@@ -87,34 +86,34 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
 
     alias: {
       "@ChartJS": chartEnable
-        ? resolve(__dirname, "../client/components/ChartJS.vue")
+        ? path.resolve(__dirname, "../client/components/ChartJS.vue")
         : noopModule,
       "@CodeDemo": demoEnable
-        ? resolve(__dirname, "../client/components/CodeDemo.vue")
+        ? path.resolve(__dirname, "../client/components/CodeDemo.vue")
         : noopModule,
       "@CodeGroup": codegroupEnable
-        ? resolve(__dirname, "../client/components/CodeGroup.vue")
+        ? path.resolve(__dirname, "../client/components/CodeGroup.vue")
         : noopModule,
       "@CodeGroupItem": codegroupEnable
-        ? resolve(__dirname, "../client/components/CodeGroupItem.vue")
+        ? path.resolve(__dirname, "../client/components/CodeGroupItem.vue")
         : noopModule,
       "@CodeTabs": codeTabsEnable
-        ? resolve(__dirname, "../client/components/CodeTabs.js")
+        ? path.resolve(__dirname, "../client/components/CodeTabs.js")
         : noopModule,
       "@ECharts": echartsEnable
-        ? resolve(__dirname, "../client/components/ECharts.vue")
+        ? path.resolve(__dirname, "../client/components/ECharts.vue")
         : noopModule,
       "@FlowChart": flowchartEnable
-        ? resolve(__dirname, "../client/components/FlowChart.vue")
+        ? path.resolve(__dirname, "../client/components/FlowChart.vue")
         : noopModule,
       "@Mermaid": mermaidEnable
-        ? resolve(__dirname, "../client/components/Mermaid.js")
+        ? path.resolve(__dirname, "../client/components/Mermaid.js")
         : noopModule,
       "@Presentation": presentationEnable
-        ? resolve(__dirname, "../client/components/Presentation.vue")
+        ? path.resolve(__dirname, "../client/components/Presentation.vue")
         : noopModule,
       "@Tabs": tabsEnable
-        ? resolve(__dirname, "../client/components/Tabs.js")
+        ? path.resolve(__dirname, "../client/components/Tabs.js")
         : noopModule,
     },
 
@@ -142,7 +141,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       REVEAL_PLUGIN_ZOOM: revealPlugins.includes("zoom"),
     }),
 
-    enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
+    enhanceAppFiles: path.resolve(__dirname, "../client/enhanceAppFile.js"),
 
     extendMarkdown: (md): void => {
       // hack

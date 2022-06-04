@@ -1,5 +1,4 @@
-import { getLocales } from "vuepress-shared";
-import { resolve } from "path";
+import { getLocales, path } from "vuepress-shared";
 import { photoSwipeLocales } from "./locales";
 
 import type { Plugin } from "vuepress-typings";
@@ -27,7 +26,7 @@ export const photoSwipePlugin: Plugin<PhotoSwipeOptions> = (
       }),
     }),
 
-    enhanceAppFiles: resolve(__dirname, "../client/enhanceAppFile.js"),
+    enhanceAppFiles: path.resolve(__dirname, "../client/enhanceAppFile.js"),
 
     globalUIComponents: "PhotoSwipe",
   };

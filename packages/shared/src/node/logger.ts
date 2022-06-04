@@ -1,5 +1,5 @@
-import { default as chalk } from "chalk";
-import { default as ora } from "ora";
+import chalk from "chalk";
+import ora from "ora";
 import type { Ora } from "ora";
 
 /**

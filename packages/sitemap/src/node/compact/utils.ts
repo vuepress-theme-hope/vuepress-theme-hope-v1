@@ -1,4 +1,4 @@
-import { black, blue } from "chalk";
+import { chalk } from "vuepress-shared";
 
 export interface DeprecatedLoggerOptions {
   options: Record<string, unknown>;
@@ -17,8 +17,8 @@ export const deprecatedLogger = ({
 }: DeprecatedLoggerOptions): void => {
   if (deprecatedOption in options) {
     console.warn(
-      blue("Sitemap:"),
-      black.bgYellow("warn"),
+      chalk.blue("Sitemap:"),
+      chalk.black.bgYellow("warn"),
       `"${deprecatedOption}" is deprecated${
         scope ? ` in ${scope}` : ""
       }, please use "${newOption}" instead.${msg ? `\n${msg}` : ""}`
