@@ -27,6 +27,7 @@ import {
   vueDemo,
   legacyCodeDemo,
   legacyFlowchart,
+  align,
 } from "./markdown-it";
 import { getPluginConfig } from "./pluginConfig";
 
@@ -146,6 +147,8 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       if (options.lineNumbers !== false) md.use(lineNumbers);
       if (options.imageFix !== false) md.use(decodeURL);
 
+      if (getStatus("gfm")) md.options.linkify = true;
+      if (getStatus("align")) md.use(align);
       if (getStatus("lazyLoad")) md.use(lazyLoad);
       if (imageMarkEnable)
         md.use(

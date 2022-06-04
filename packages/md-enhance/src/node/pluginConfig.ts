@@ -51,14 +51,6 @@ export const getPluginConfig = (
       ]
     );
 
-  if (markdownOptions.align || markdownOptions.enableAll)
-    config.push(
-      ["container", { type: "left", defaultTitle: "" }],
-      ["container", { type: "center", defaultTitle: "" }],
-      ["container", { type: "right", defaultTitle: "" }],
-      ["container", { type: "justify", defaultTitle: "" }]
-    );
-
   if (markdownOptions.codegroup || markdownOptions.enableAll)
     config.push(
       [
