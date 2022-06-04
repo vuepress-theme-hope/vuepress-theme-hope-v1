@@ -806,6 +806,12 @@ declare module "@CodeGroupItem" {
   export default vue;
 }
 
+declare module "@CodeTabs" {
+  import vue from "vue";
+
+  export default vue;
+}
+
 declare module "@ECharts" {
   import vue from "vue";
 
@@ -825,6 +831,12 @@ declare module "@Mermaid" {
 }
 
 declare module "@Presentation" {
+  import vue from "vue";
+
+  export default vue;
+}
+
+declare module "@Tabs" {
   import vue from "vue";
 
   export default vue;

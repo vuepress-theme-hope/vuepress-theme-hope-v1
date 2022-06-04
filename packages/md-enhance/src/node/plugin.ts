@@ -5,6 +5,7 @@ import lineNumbers = require("@vuepress/markdown/lib/lineNumbers");
 import {
   CODE_DEMO_DEFAULT_SETTING,
   chart,
+  codeTabs,
   decodeURL,
   echarts,
   flowchart,
@@ -21,6 +22,7 @@ import {
   stylize,
   sub,
   sup,
+  tabs,
   tasklist,
   vueDemo,
   legacyCodeDemo,
@@ -45,6 +47,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
 
   const chartEnable = getStatus("chart");
   const containerEnable = getStatus("container");
+  const codeTabsEnable = getStatus("codetabs");
   const codegroupEnable = getStatus("codegroup");
   const demoEnable = getStatus("demo");
   const echartsEnable = getStatus("echarts");
@@ -54,6 +57,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
   const tasklistEnable = getStatus("tasklist", true);
   const mermaidEnable = getStatus("mermaid");
   const presentationEnable = getStatus("presentation");
+  const tabsEnable = getStatus("tabs");
   const texEnable = getStatus("tex");
 
   const katexOptions: KatexOptions = {
@@ -91,6 +95,9 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       "@CodeGroupItem": codegroupEnable
         ? resolve(__dirname, "../client/components/CodeGroupItem.vue")
         : noopModule,
+      "@CodeTabs": codeTabsEnable
+        ? resolve(__dirname, "../client/components/CodeTabs.js")
+        : noopModule,
       "@ECharts": echartsEnable
         ? resolve(__dirname, "../client/components/ECharts.vue")
         : noopModule,
@@ -102,6 +109,9 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
         : noopModule,
       "@Presentation": presentationEnable
         ? resolve(__dirname, "../client/components/Presentation.vue")
+        : noopModule,
+      "@Tabs": tabsEnable
+        ? resolve(__dirname, "../client/components/Tabs.js")
         : noopModule,
     },
 
@@ -155,6 +165,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
           typeof options.tasklist === "object" ? options.tasklist : {},
         ]);
       if (chartEnable) md.use(chart);
+      if (codeTabsEnable) md.use(codeTabs);
       if (demoEnable) {
         md.use(normalDemo);
         md.use(vueDemo);
@@ -172,6 +183,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
       if (texEnable) md.use(katex, katexOptions);
       if (presentationEnable) md.use(presentation);
       if (getStatus("stylize")) md.use(stylize, options.stylize);
+      if (tabsEnable) md.use(tabs);
     },
 
     plugins: getPluginConfig(options, context),

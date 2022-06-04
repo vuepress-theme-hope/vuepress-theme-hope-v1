@@ -23,3 +23,7 @@ packages/theme/**/*d.ts
 
 # Coverage Files
 coverage/
+
+# Cache and Temp files
+**/.vuepress/.cache/
+**/.vuepress/.temp/

@@ -26,6 +26,9 @@ module.exports = {
     ],
   ],
 
+  cache: `${__dirname}/.cache`,
+  temp: `${__dirname}/.temp`,
+
   /** 构建文件输出目录 */
   dest: "./dist",
 

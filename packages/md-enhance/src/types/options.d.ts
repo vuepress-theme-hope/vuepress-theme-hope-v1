@@ -75,23 +75,23 @@ export interface MarkdownEnhanceOptions {
    */
   container?: boolean;
 
-  // /**
-  //  * Whether to enable tabs.
-  //  *
-  //  * 是否启用标签页分组。
-  //  *
-  //  * @default false
-  //  */
-  // tabs?: boolean;
+  /**
+   * Whether to enable tabs.
+   *
+   * 是否启用标签页分组。
+   *
+   * @default false
+   */
+  tabs?: boolean;
 
-  // /**
-  //  * Whether to enable codetabs.
-  //  *
-  //  * 是否启用代码组。
-  //  *
-  //  * @default false
-  //  */
-  // codetabs?: boolean;
+  /**
+   * Whether to enable codetabs.
+   *
+   * 是否启用代码组。
+   *
+   * @default false
+   */
+  codetabs?: boolean;
 
   /**
    * Whether to enable codegroup.
