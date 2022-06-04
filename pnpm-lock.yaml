@@ -37,7 +37,7 @@ importers:
       inquirer: 8.2.4
       lint-staged: 13.0.0
       markdownlint-cli: 0.31.1
-      npm-check-updates: 13.0.4
+      npm-check-updates: 13.1.1
       ora: 6.1.0
       prettier: 2.6.2
       readable-stream: 2.3.7
@@ -90,7 +90,7 @@ importers:
       inquirer: 8.2.4
       lint-staged: 13.0.0
       markdownlint-cli: 0.31.1
-      npm-check-updates: 13.0.4
+      npm-check-updates: 13.1.1
       ora: 6.1.0
       prettier: 2.6.2
       readable-stream: 2.3.7
@@ -5035,7 +5035,7 @@ packages:
     dev: true
 
   /colors/1.0.3:
-    resolution: {integrity: sha1-BDP0TYCWgP3rYO0mDxsMJi6CpAs=}
+    resolution: {integrity: sha512-pFGrxThWcWQ2MsAz6RtgeWe4NK2kUE1WfsrvvlctdII745EW9I0yflqhe7++M5LEc7bV2c/9/5zc8sFcpL0Drw==}
     engines: {node: '>=0.1.90'}
     dev: true
 
@@ -11300,8 +11300,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/13.0.4:
-    resolution: {integrity: sha512-f9xzzSMNsVCXvHAECBU4qloLUKSLRQ3a4sDU0F/b6CnzDAC+NE6obqb4Q2KpO1coQwK6FPQ+UReHZ+iXBTN6bw==}
+  /npm-check-updates/13.1.1:
+    resolution: {integrity: sha512-f4gLbUJJh5qvkNvrSG3b05y3ZvyZ4Sl3Uk95DSyCjIWwpwmAwzU9dMCA/Gg2AmIKqkH4ml6X9kxcZsu+tAd94g==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
