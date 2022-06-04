@@ -9,19 +9,16 @@ import type { PluginWithOptions } from "markdown-it";
 const container = MarkdownContainer as PluginWithOptions;
 
 interface IncludeEnv {
-  filePath: string | null;
   includedFiles?: string[];
 }
 
-const mdFixturePathRelative = "./__fixtures__/include.md";
-const mdFixturePath = resolve(__dirname, mdFixturePathRelative);
-const mdFixtureDeepIncludeRelative = "./__fixtures__/deepInclude.md";
-const mdFixtureDeepIncludePath = resolve(
-  __dirname,
-  mdFixtureDeepIncludeRelative
-);
+const mdFixturePathRelative = "./include.md";
+const cwd = resolve(__dirname, "__fixtures__");
+const mdFixturePath = resolve(cwd, mdFixturePathRelative);
+const mdFixtureDeepIncludeRelative = "./deepInclude.md";
+const mdFixtureDeepIncludePath = resolve(cwd, mdFixtureDeepIncludeRelative);
 
-const md = MarkdownIt().use(include).use(container, "tip");
+const md = MarkdownIt().use(include, cwd).use(container, "tip");
 
 describe("include", () => {
   it("should not be parsed as import markdown syntax", () => {
@@ -38,9 +35,7 @@ describe("include", () => {
       "@include(./foo.js",
     ];
 
-    const env: IncludeEnv = {
-      filePath: __filename,
-    };
+    const env: IncludeEnv = {};
     const rendered = md.render(source.join("\n\n"), env);
 
     expect(rendered).toEqual(
@@ -63,9 +58,7 @@ describe("include", () => {
 </div>
 `;
 
-      const env: IncludeEnv = {
-        filePath: __filename,
-      };
+      const env: IncludeEnv = {};
       const rendered = md.render(source, env);
 
       expect(rendered).toEqual(expected);
@@ -89,9 +82,7 @@ describe("include", () => {
 </div>
 `;
 
-      const env: IncludeEnv = {
-        filePath: __filename,
-      };
+      const env: IncludeEnv = {};
       const rendered = md.render(source, env);
 
       expect(rendered).toEqual(expected);
@@ -110,35 +101,32 @@ describe("include", () => {
 <p>File not found</p>
 `;
 
-      const env: IncludeEnv = {
-        filePath: __filename,
-      };
+      const env: IncludeEnv = {};
       const rendered = md.render(source, env);
 
       expect(rendered).toEqual(expected);
-      expect(env.includedFiles).toEqual([
-        "/foo.md",
-        resolve(__dirname, "./bar.md"),
-      ]);
+      expect(env.includedFiles).toEqual(["/foo.md", resolve(cwd, "./bar.md")]);
     });
 
-    it("should not resolve relative path if filePath is not provided", () => {
+    it("should resolve absolute path ", () => {
       const source = `\
 @include(/foo.md)
-@include(./bar.md)
+@include(${mdFixturePath})
 `;
       const expected = `\
 <p>File not found</p>
-<p>Error when resolving path</p>
+<h2>Heading 2</h2>
+<p>Contents containing bolded text and some markdown enhance features:</p>
+<div class="tip">
+<p>Hey how are <strong>you</strong>? :smile:</p>
+</div>
 `;
 
-      const env: IncludeEnv = {
-        filePath: null,
-      };
+      const env: IncludeEnv = {};
       const rendered = md.render(source, env);
 
       expect(rendered).toEqual(expected);
-      expect(env.includedFiles).toEqual(["/foo.md"]);
+      expect(env.includedFiles).toEqual(["/foo.md", mdFixturePath]);
     });
 
     it("should handle import path correctly", () => {
@@ -154,14 +142,12 @@ describe("include", () => {
 `;
 
       const mdWithOptions = MarkdownIt()
-        .use(include, {
+        .use(include, cwd, {
           getPath: (str: string): string =>
             str.replace(/^@fixtures/, resolve(__dirname, "./__fixtures__")),
         })
         .use(container, "tip");
-      const env: IncludeEnv = {
-        filePath: null,
-      };
+      const env: IncludeEnv = {};
       const rendered = mdWithOptions.render(source, env);
 
       expect(rendered).toEqual(expected);
@@ -180,9 +166,7 @@ foo
 <p>File not found</p>
 `;
 
-      const env: IncludeEnv = {
-        filePath: __filename,
-      };
+      const env: IncludeEnv = {};
       const rendered = md.render(source, env);
 
       expect(rendered).toEqual(expected);
@@ -201,9 +185,7 @@ foo
 <p>File not found</p>
 `;
 
-      const env: IncludeEnv = {
-        filePath: __filename,
-      };
+      const env: IncludeEnv = {};
       const rendered = md.render(source, env);
 
       expect(rendered).toEqual(expected);
@@ -236,14 +218,10 @@ foo
 `;
 
       const mdWithOptions = MarkdownIt()
-        .use(include, { deep: true })
+        .use(include, cwd, { deep: true })
         .use(container, "tip");
-      const env1: IncludeEnv = {
-        filePath: __filename,
-      };
-      const env2: IncludeEnv = {
-        filePath: __filename,
-      };
+      const env1: IncludeEnv = {};
+      const env2: IncludeEnv = {};
 
       expect(mdWithOptions.render(source1, env1)).toEqual(expected1);
       expect(env1.includedFiles).toEqual([
