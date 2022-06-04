@@ -14,43 +14,83 @@ action:
     link: /config.html
 
 features:
-  - title: Superscript and subscript support
-    details: Your Markdown now suppport superscript and subscript
-    link: /guide/sup-sub/
+  - title: Custom Container
+    icon: box
+    details: Decorate Markdown content with styles
+    link: /guide/container.html
 
-  - title: Footnote support
-    details: Your Markdown now suppport footnotes
-    link: /guide/footnote/
+  - title: Tabs
+    icon: tab
+    details: Group similar content with tabs and switch them together
+    link: /guide/tabs.html
+
+  - title: Code Tabs
+    icon: code
+    details: Group similar codes with tabs
+    link: /guide/code-tabs.html
 
   - title: Custom Align
+    icon: align
     details: Let you decide to align paragraphs in the way you like
-    link: /guide/align/
+    link: /guide/align.html
+
+  - title: Superscript and subscript support
+    icon: superscript
+    details: Your Markdown now suppport superscript and subscript
+    link: /guide/sup-sub.html
+
+  - title: Footnote support
+    icon: footnote
+    details: Your Markdown now suppport footnotes
+    link: /guide/footnote.html
 
   - title: Mark Support
+    icon: write
     details: Mark words and sentences in Markdown
-    link: /guide/mark/
+    link: /guide/mark.html
 
   - title: Tasklist Support
+    icon: check
     details: Use tasklist in Markdown
-    link: /guide/tasklist/
+    link: /guide/tasklist.html
+
+  - title: image syntax
+    icon: pic
+    details: improve syntax to specify size and color scheme
+    link: /guide/image.html
+
+  - title: Chart Support
+    icon: rank
+    details: Display charts in Markdown
+    link: /guide/chart.html
 
   - title: Flowchart Support
+    icon: tree
     details: Create your flowchart in Markdown
-    link: /guide/flowchart/
+    link: /guide/flowchart.html
 
   - title: Mermaid Support
+    icon: diagram
     details: Add mermaid diagram in Markdown
-    link: /guide/mermaid/
+    link: /guide/mermaid.html
 
   - title: Tex Support
+    icon: tex
     details: Markdown now have Tex Support so you can write your formula
-    link: /guide/tex/
+    link: /guide/tex.html
+
+  - title: Include snippet Support
+    icon: markdown
+    details: split your docs with different parts and import them in Markdown
+    link: /guide/include.html
 
   - title: Code Demo Support
+    icon: discover
     details: You can insert code demo easily
     link: /guide/demo/
 
   - title: Presentation Support
+    icon: slides
     details: You can insert presentation in Markdown files directly
     link: /guide/presentation/
 

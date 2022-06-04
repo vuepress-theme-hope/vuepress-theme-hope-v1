@@ -27,10 +27,10 @@ module.exports = {
 
 使用 `== ==` 进行标记。请注意两边需要有空格。
 
-## 案例
+## 例子
 
-Mr.Hope ==十分== 帅
+VuePress Theme Hope ==非常== 强大!
 
 ```md
-Mr.Hope ==十分== 帅
+VuePress Theme Hope ==非常== 强大!
 ```

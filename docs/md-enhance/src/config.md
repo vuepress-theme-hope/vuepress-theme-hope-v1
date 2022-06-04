@@ -5,18 +5,18 @@ icon: config
 
 You can pass these options to the plugin:
 
-## Enable all
+## enableAll
 
 - Type: `boolean`
 - Default: `false`
 
-Enable all features.
+Whether to enable all features.
 
 ::: danger
 
 Please use this option ONLY for playing or testing.
 
-As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
+As time grows,`vuepress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
 
@@ -40,23 +40,20 @@ Whether to display the line number to the left of each code block.
 
 Whether to fix image links containing special characters.
 
-## lazyLoad <Badge text="Default behavior changed" type="warning" />
+## gfm
 
 - Type: `boolean`
-- Default: `true`
+- Default: `false`
 
-Whether to lazy load every images in page in native way.
+Whether to support full GFM syntax.
 
-## delay
+::: note
 
-- Type: `number`
-- Default: `500`
+For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-The delay of operating dom, in ms.
+We are not 100% supporting it to be honestly, we only supply it’s syntax inlucding tasklists, footnote and so on.
 
-::: tip
-
-If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
+Some of the behavior might be different, for example to allow Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
 :::
 
@@ -65,7 +62,41 @@ If the theme you are using has a switching animation, it is recommended to confi
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable custom container support.
+Whether to enable custom container including
+
+- info
+- note
+- tip
+- warning
+- danger
+- details
+
+::: warning
+
+The last 4 items conflict with default theme and will override it’s style.
+
+:::
+
+## tabs
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable tabs.
+
+## codegroup
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable codegroup.
+
+## codetabs
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable codetabs.
 
 ## align
 
@@ -95,12 +126,35 @@ Whether to enable the lower corner format support.
 
 Whether to enable footnote format support.
 
+## lazyLoad
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to lazy load every images in page in native way.
+
 ## mark
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable mark support.
+
+## imageMark
+
+- Type: `ImageMarkOptions | boolean`
+- Default: `false`
+
+Whether enable image mark support.
+
+```ts
+interface ImageMarkOptions {
+  /** lightmode only IDs */
+  light?: string[];
+  /** darkmode only IDs */
+  dark?: string[];
+}
+```
 
 ## tasklist
 
@@ -112,17 +166,18 @@ Whether to enable tasklist format support. You can pass an object to config task
 ```ts
 interface TaskListOptions {
   /**
+   * Whether disable checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
    * Whether use `<label>` to wrap text
    *
    * @default true
    */
   label?: boolean;
-  /**
-   * Whether place `<label>` after `<input>` or wrap `<input>`
-   *
-   * @default true
-   */
-  labelAfter?: boolean;
 }
 ```
 
@@ -133,6 +188,48 @@ interface TaskListOptions {
 
 Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTeX$.
 
+Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
+
+## include
+
+- Type: `IncludeOptions | boolean`
+
+  ```ts
+  interface IncludeOptions {
+    /**
+     * handle include filePath
+     *
+     * @default (path) => path
+     */
+    getPath?: (path: string) => string;
+
+    /**
+     * Whether deep include files in included markdown files
+     *
+     * @default false
+     */
+    deep?: boolean;
+  }
+  ```
+
+- Default: `false`
+
+Whether to enable Markdown import support. You can pass in a function for path resolution.
+
+## chart
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable chart support
+
+## flowchart
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable flowchart support
+
 ## mermaid
 
 - Type: `boolean`
@@ -140,12 +237,51 @@ Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTe
 
 Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
 
-## flowchart
+## stylize
 
-- Type: `boolean`
+- Type: `StylizeOptions | false`
+
+  ```ts
+  interface StylizeResult {
+    /**
+     * Tag name
+     */
+    tag: string;
+
+    /**
+     * Attributes settings
+     */
+    attrs: Record<string, string>;
+
+    /**
+     * Tag content
+     */
+    content: string;
+  }
+
+  interface StylizeItem {
+    /**
+     * Inline token matcher
+     */
+    matcher: string | RegExp;
+
+    /**
+     * Content Replacer
+     */
+    replacer: (options: {
+      tag: string;
+      content: string;
+      attrs: Record<string, string>;
+      env?: MarkdownEnv;
+    }) => StylizeResult | void;
+  }
+
+  type StylizeOptions = StylizeItem[];
+  ```
+
 - Default: `false`
 
-Whether to enable flowchart syntax support.
+Stylize inline tokens to create snippet you want.
 
 ## demo
 
@@ -204,7 +340,7 @@ CodePen editor status
 
 ### others
 
-The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, you probably don’t need to override the default values.
+The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don’t need to override the default values.
 
 #### demo.babel
 
@@ -257,40 +393,61 @@ Acceptable values are:
 
 Config which you want to pass to reveal.js.
 
+## delay
+
+- Type: `number`
+- Default: `500`
+
+The delay of operating dom, in ms.
+
+::: tip
+
+If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
+
+:::
+
 ## locales
 
-```ts
-interface MarkdownEnhanceLocaleData {
-  /**
-   * Default Title text for info block
-   */
-  info: string;
+- Type: `MarkdownEnhanceLocaleConfig`
 
-  /**
-   * Default Title text for note block
-   */
-  note: string;
+  ```ts
+  interface MarkdownEnhanceLocaleData {
+    /**
+     * Default Title text for info block
+     */
+    info: string;
 
-  /**
-   * Default Title text for tip block
-   */
-  tip: string;
+    /**
+     * Default Title text for note block
+     */
+    note: string;
 
-  /**
-   * Default Title text for warning block
-   */
-  warning: string;
+    /**
+     * Default Title text for tip block
+     */
+    tip: string;
 
-  /**
-   * Default Title text for danger block
-   */
-  danger: string;
+    /**
+     * Default Title text for warning block
+     */
+    warning: string;
 
-  /**
-   * Default Title text for details block
-   */
-  details: string;
-}
-```
+    /**
+     * Default Title text for danger block
+     */
+    danger: string;
 
-Locales config.
+    /**
+     * Default Title text for details block
+     */
+    details: string;
+  }
+
+  interface MarkdownEnhanceLocaleConfig {
+    [localePath: string]: MarkdownEnhanceLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for Markdown Enhance Plugin.

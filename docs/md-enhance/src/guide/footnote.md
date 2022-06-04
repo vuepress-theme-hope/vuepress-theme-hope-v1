@@ -1,17 +1,13 @@
 ---
 title: Footnote
 icon: footnote
-category: markdown
-tags:
-  - feature
-  - markdown
 ---
 
 Let the Markdown file in your VuePress site support footnotes.
 
 <!-- more -->
 
-## Configuration
+## Config
 
 ```js {7}
 module.exports = {
@@ -35,7 +31,7 @@ module.exports = {
 
 - If there are muti paragraph in footnote, the paragraph show be double indented
 
-## Case
+## Demo
 
 Footnote 1 link[^first].
 

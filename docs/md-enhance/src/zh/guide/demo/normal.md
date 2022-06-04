@@ -41,18 +41,18 @@ icon: code
 
 :::
 
-## 案例
+## 例子
 
 ::: normal-demo Demo 演示
 
 ```html
-<h1>Mr.Hope</h1>
-<p><span id="very">十分</span> 帅</p>
+<h1>VuePress Theme Hope</h1>
+<p><span id="very">非常</span>强大!</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("十分帅");
+  alert("非常强大");
 });
 ```
 
@@ -70,13 +70,13 @@ span {
 ::: normal-demo Demo 演示
 
 ```html
-<h1>Mr.Hope</h1>
-<p><span id="very">十分</span> 帅</p>
+<h1>VuePress Theme Hope</h1>
+<p><span id="very">非常</span>强大!</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("十分帅");
+  alert("非常强大");
 });
 ```
 

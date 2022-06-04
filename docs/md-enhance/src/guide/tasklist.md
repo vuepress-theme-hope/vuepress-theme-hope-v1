@@ -7,7 +7,7 @@ Let the Markdown file in your VuePress site support task list.
 
 <!-- more -->
 
-## Configuration
+## Config
 
 ```js {7}
 module.exports = {
@@ -36,4 +36,26 @@ module.exports = {
 ```md
 - [ ] Plan A
 - [x] Plan B
+```
+
+## Advanced
+
+Besides setting `tasklist: true` in the plugin options, you can also pass objects to it as options. The available options are as follows:
+
+```ts
+interface TaskListOptions {
+  /**
+   * Whether disable checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
+   * Whether use `<label>` to wrap text
+   *
+   * @default true
+   */
+  label?: boolean;
+}
 ```

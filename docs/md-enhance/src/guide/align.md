@@ -1,5 +1,5 @@
 ---
-title: Custom alignment
+title: Alignment
 icon: align
 ---
 
@@ -38,7 +38,7 @@ module.exports = {
 ## Demo
 
 :::: danger
-vuepress-theme-hope v2 is still in W.I.P, the API may have
+VuePress Theme Hope V2 version is still in W.I.P, the API may have
 
 ::: center
 Significant changes.
@@ -47,13 +47,13 @@ Significant changes.
 If you meet a bug during usage, you can
 
 ::: right
-[Mention an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues).
+[open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
 :::
 ::::
 
 ```md
 :::: danger
-vuepress-theme-hope v2 is still in W.I.P, the API may have
+VuePress Theme Hope V2 version is still in W.I.P, the API may have
 
 ::: center
 Significant changes.
@@ -62,7 +62,7 @@ Significant changes.
 If you meet a bug during usage, you can
 
 ::: right
-[Mention an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues).
+[open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
 :::
 ::::
 ```

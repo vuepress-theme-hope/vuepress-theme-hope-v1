@@ -53,7 +53,15 @@ $$
 
 ## 在此尝试
 
+<!-- markdownlint-disable -->
+
 <KatexPlayground />
+
+<!-- markdownlint-restore -->
+
+## 高级
+
+除了在插件选项中设置 `tex: true` 之外，你还可以将对象作为 `KatexOptions` 传递给它。 它将被传递给 katex。 有关可用选项，请参阅 [Katex 文档](https://katex.org/docs/options.html)。
 
 ## 教程
 
@@ -164,7 +172,7 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 - 下标，使用 `_` 来实现
 - 上下标默认只作用于之后的一个字符，如果想对连续的几个字符起作用，请将这些字符用花括号 `{}` 括起来。
 
-#### 案例
+#### 例子
 
 Einstein ’s $E=mc^2$.
 
@@ -285,12 +293,6 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
   d+e+f+g
   $$
   ```
-
-  ::: tip
-
-  请注意，由于 $\KaTeX$ 支持自动换行，所以如果你手动指定换行会在控制台输出一个警告。
-
-  :::
 
 - **对齐**
 

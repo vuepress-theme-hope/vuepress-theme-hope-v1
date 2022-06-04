@@ -40,20 +40,102 @@ export default {
 
 ## Demo
 
-::: vue-demo A Vue Demo
+::: vue-demo A Vue Composition Demo (Vue2.7+)
 
 ```vue
 <template>
   <div class="box">
-    Mr.Hope is <span @click="handler">{{ message }}</span>
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
+  </div>
+</template>
+<script>
+const { ref } = Vue;
+
+export default {
+  setup() {
+    const message = ref("powerful");
+
+    const handler = () => {
+      message.value = "very " + message.value;
+    };
+
+    return {
+      message,
+      handler,
+    };
+  },
+};
+</script>
+<style>
+.box span {
+  color: red;
+}
+</style>
+```
+
+:::
+
+:::: details Code
+
+````md
+::: vue-demo A Vue Composition Demo (Vue2.7+)
+
+```vue
+<template>
+  <div class="box">
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
+  </div>
+</template>
+<script>
+const { ref } = Vue;
+
+export default {
+  setup() {
+    const message = ref("powerful");
+
+    const handler = () => {
+      message.value = "very " + message.value;
+    };
+
+    return {
+      message,
+      handler,
+    };
+  },
+};
+</script>
+<style>
+.box span {
+  color: red;
+}
+</style>
+```
+
+:::
+````
+
+::::
+
+::: vue-demo A Vue Option Demo
+
+```vue
+<template>
+  <div class="box">
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
   </div>
 </template>
 <script>
 export default {
-  data: () => ({ message: "very handsome" }),
+  data: () => ({ message: "powerful" }),
   methods: {
     handler() {
-      alert(this.message);
+      this.message = "very " + this.message;
     },
   },
 };
@@ -70,20 +152,22 @@ export default {
 :::: details Code
 
 ````md
-::: vue-demo A Vue Demo
+::: vue-demo A Vue Option Demo
 
 ```vue
 <template>
   <div class="box">
-    Mr.Hope is <span @click="handler">{{ message }}</span>
+    <code>vuepress-theme-hope</code> is
+    <span @click="handler">{{ message }}</span
+    >!
   </div>
 </template>
 <script>
 export default {
-  data: () => ({ message: "very handsome" }),
+  data: () => ({ message: "powerful" }),
   methods: {
     handler() {
-      alert(this.message);
+      this.message = "very " + this.message;
     },
   },
 };

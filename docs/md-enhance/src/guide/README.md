@@ -1,6 +1,6 @@
 ---
 title: Get Started
-icon: markdown
+icon: creative
 ---
 
 By installing and enableing this plugin, you can use more syntax in your Markdown files.
@@ -13,7 +13,7 @@ At the same time, VuePress itself adds some Markdown syntaxes. You can [view the
 
 :::
 
-## Enable all
+## Enable All
 
 You can set `enableAll: true` in plugin options to enable all features of this plugin.
 
@@ -21,7 +21,7 @@ You can set `enableAll: true` in plugin options to enable all features of this p
 
 Please use this option ONLY for playing or testing.
 
-As time grows, `vupress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
+As time grows, `vuepress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check extra syntax)
 
@@ -32,6 +32,52 @@ Please use the options below and enable ONLY the feature you want to use.
 :::
 
 ## New Feature
+
+### Tabs
+
+::: tabs#fruit
+
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [View Detail](tabs.md)
+
+### Code Tabs
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-md-enhance@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D vuepress-plugin-md-enhance@next
+```
+
+@tab:active npm
+
+```bash
+npm i -D vuepress-plugin-md-enhance@next
+```
+
+:::
+
+- [View Detail](code-tabs.md)
 
 ### Superscript and Subscript
 
@@ -76,6 +122,74 @@ You can mark ==important words== .
 
 - [View Detail](tasklist.md)
 
+### Image Enhancement
+
+Support setting color scheme and size
+
+- [View Detail](image.md)
+
+### Chart
+
+::: chart A Scatter Chart
+
+```json
+{
+  "type": "scatter",
+  "data": {
+    "datasets": [
+      {
+        "label": "Scatter Dataset",
+        "data": [
+          { "x": -10, "y": 0 },
+          { "x": 0, "y": 10 },
+          { "x": 10, "y": 5 },
+          { "x": 0.5, "y": 5.5 }
+        ],
+        "backgroundColor": "rgb(255, 99, 132)"
+      }
+    ]
+  },
+  "options": {
+    "scales": {
+      "x": {
+        "type": "linear",
+        "position": "bottom"
+      }
+    }
+  }
+}
+```
+
+:::
+
+- [View Detail](chart.md)
+
+## Echarts
+
+::: echarts A line chart
+
+```json
+{
+  "xAxis": {
+    "type": "category",
+    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [150, 230, 224, 218, 135, 147, 260],
+      "type": "line"
+    }
+  ]
+}
+```
+
+:::
+
+- [View Detail](echarts.md)
+
 ### Flowchart
 
 ```flow
@@ -119,18 +233,24 @@ $$
 
 - [View Detail](tex.md)
 
+### Include files
+
+@include(.vuepress/include/demo.snippet.md{5,9})
+
+- [View Detail](include.md)
+
 ### Code Demo
 
 ::: normal-demo A normal demo
 
 ```html
-<h1>Mr.Hope</h1>
-<p>Is <span id="very">very</span> handsome</p>
+<h1>VuePress Theme Hope</h1>
+<p>Is <span id="very">very</span> powerful!</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("Very handsome!");
+  alert("Very powerful!");
 });
 ```
 
@@ -142,7 +262,7 @@ span {
 
 :::
 
-- [View Detail](demo/readme.md)
+- [View Detail](demo/README.md)
 
 ### Presentation
 
@@ -177,4 +297,12 @@ $$
 
 @slideend
 
-- [View Detail](presentation/readme.md)
+- [View Detail](presentation/README.md)
+
+### Stylize
+
+<!-- markdownlint-disable MD033 -->
+
+Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+
+- [View Detail](stylize.md)

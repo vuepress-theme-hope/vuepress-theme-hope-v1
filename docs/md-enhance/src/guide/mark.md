@@ -7,7 +7,7 @@ Make Markdown files in your VuePress site support markup.
 
 <!-- more -->
 
-## Configuration
+## Config
 
 ```js {7}
 module.exports = {
@@ -29,8 +29,8 @@ Use `== ==` to mark.
 
 ## Demo
 
-Mr. Hope is ==handsome==.
+VuePress Theme Hope is ==powerful==.
 
 ```md
-Mr. Hope is ==handsome==.
+VuePress Theme Hope is ==powerful==.
 ```

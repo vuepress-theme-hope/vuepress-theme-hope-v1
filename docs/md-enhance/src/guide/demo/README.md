@@ -7,7 +7,7 @@ Let you insert code demos in your Markdown file.
 
 <!-- more -->
 
-## Configuration
+## Config
 
 ```js {7}
 module.exports = {
@@ -28,12 +28,12 @@ module.exports = {
 You should use the following syntax:
 
 ````md
-::: normal-demo Optional title text
+::: [type]-demo Optional title text
 
 ```html
 <!-- ↑ use available ones -->
 <!-- your code here -->
-<!-- you can have mutiple code block, but each language must appear only once. -->
+<!-- you can have multiple code block, but each language must appear only once. -->
 ```
 
 ```json
@@ -58,11 +58,11 @@ The plugin support three types:
 - vue
 - react
 
-## Available languages
+## Available Languages
 
 You can use different language in your demo block.
 
-When you set language which can not run on browers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
+When you set language which can not run on browsers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
 
 Available HTML languages:
 
@@ -93,18 +93,18 @@ Available CSS languages:
 
 > You can also use `styl` in code block.
 
-### Not supported language demo
+### Not Supported Language Demo
 
-::: normal-demo A demo using language not supoprted by browsers
+::: normal-demo A demo using language not supported by browsers
 
 ```md
 # Title
 
-is very handsome.
+is very powerful!
 ```
 
 ```ts
-const message: string = "Mr.Hope";
+const message: string = "VuePress Theme Hope";
 
 document.querySelector("h1").innerHTML = message;
 ```
@@ -129,11 +129,11 @@ h1 {
 ```md
 # Title
 
-is very handsome.
+is very powerful!
 ```
 
 ```ts
-const message: string = "Mr.Hope";
+const message: string = "VuePress Theme Hope";
 
 document.querySelector("h1").innerHTML = message;
 ```

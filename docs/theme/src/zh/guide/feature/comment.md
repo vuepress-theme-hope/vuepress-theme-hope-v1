@@ -24,7 +24,7 @@ import theme from "vuepress-theme-hope";
 export default theme.config({
   themeConfig: {
     comment: {
-      type: "waline", // "waline", "valine" 或 "vssue"
+      provider: "Waline", // "waline", "valine" 或 "vssue"
 
       // waline 模式下
       serverURL: "...", // your serverURL
@@ -44,7 +44,7 @@ const { themeConfig } = require("vuepress-theme-hope");
 module.exports = themeConfig({
   themeConfig: {
     comment: {
-      type: "waline", // "waline", "valine" 或 "vssue"
+      provider: "Waline", // "waline", "valine" 或 "vssue"
 
       // waline 模式下
       serverURL: "...", // your serverURL
@@ -104,7 +104,7 @@ import theme from "vuepress-theme-hope";
 export default theme.config({
   themeConfig: {
     comment: {
-      type: "waline",
+      provider: "Waline",
       serverURL: "YOUR_SERVER_URL", // your server url
     },
   },
@@ -122,7 +122,7 @@ const { config } = require("vuepress-theme-hope");
 module.exports = config({
   themeConfig: {
     comment: {
-      type: "waline",
+      provider: "Waline",
       serverURL: "YOUR_SERVER_URL", // your server url
     },
   },

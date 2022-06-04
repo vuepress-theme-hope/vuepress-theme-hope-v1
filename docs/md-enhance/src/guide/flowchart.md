@@ -9,7 +9,7 @@ Let the Markdown file support flow chart in your VuePress site
 
 This plugin is using [flowchart.js](https://github.com/adrai/flowchart.js) to support this feature.
 
-## Configuration
+## Config
 
 ```js {7}
 module.exports = {
@@ -41,10 +41,47 @@ Available presets for now:
 
 - `vue` (default)
 - `ant`
+- `pie`
 
 ## Demo
 
 ```flow
+st=>start: Start|past:>http://www.google.com[blank]
+e=>end: End|future:>http://www.google.com
+op1=>operation: My Operation|past
+op2=>operation: Stuff|current
+sub1=>subroutine: My Subroutine|invalid
+cond=>condition: Yes
+or No?|approved:>http://www.google.com
+c2=>condition: Good idea|rejected
+io=>inputoutput: catch something...|future
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e
+```
+
+```flow:ant
+st=>start: Start|past:>http://www.google.com[blank]
+e=>end: End|future:>http://www.google.com
+op1=>operation: My Operation|past
+op2=>operation: Stuff|current
+sub1=>subroutine: My Subroutine|invalid
+cond=>condition: Yes
+or No?|approved:>http://www.google.com
+c2=>condition: Good idea|rejected
+io=>inputoutput: catch something...|future
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e
+```
+
+```flow:pie
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
 op1=>operation: My Operation|past
@@ -88,7 +125,7 @@ c2(no)->op2->e
 
 Defines the shape that the node will take.
 
-### start & end
+### Start & End
 
 Used as the first node where flows start from.
 Default text is `Start`.
@@ -116,7 +153,7 @@ e=>end: End
 st->e
 ```
 
-### operation
+### Operation
 
 Indicates that an operation needs to happen in the flow.
 
@@ -138,7 +175,7 @@ e=>end: End
 process->e
 ```
 
-### inputoutput
+### Input / Output
 
 Indicates that IO happens in a flow.
 
@@ -160,7 +197,7 @@ e=>end: End
 process->e
 ```
 
-### subroutine
+### Subroutine
 
 Indicates that a subroutine happens in the flow and that there should be another flowchart that documents this subroutine.
 
@@ -182,7 +219,7 @@ e=>end: End
 process->e
 ```
 
-### condition
+### Condition
 
 Allows for a conditional or logical statement to direct the flow into one of two or more paths.
 
@@ -211,7 +248,7 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-### parallel
+### Parallel
 
 Allows for multiple flows to happen simultaneously.
 

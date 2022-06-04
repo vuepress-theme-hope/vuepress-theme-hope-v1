@@ -25,7 +25,7 @@ icon: react
 
 ::: warning Attention
 
-- Babel must be loaded when using react to parse JSX, this is done by the plugin automaticaly
+- Babel must be loaded when using react to parse JSX, this is done by the plugin automatically
 - You must export your component through `export default`
 - We use "ShadowDOM" to make style isolation, and we already replace `document` with `shadowRoot`. To access the page document, please visit `window.document`.
 
@@ -36,26 +36,28 @@ icon: react
 ::: react-demo A function-based React Demo
 
 ```js
+const { useState } = React;
+
 export default () => {
-  const message = "very handsome";
+  const [message, setMessage] = useState(" powerful");
 
   const handler = () => {
-    alert(message);
+    setMessage(` very${message}`);
   };
 
   return (
     <div className="box">
-      Mr.Hope is
-      <span id="very" onClick={handler}>
+      <code>vuepress-theme-hope</code> is
+      <span id="powerful" onClick={handler}>
         {message}
-      </span>
+      </span>!
     </div>
   );
 };
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```
@@ -68,26 +70,28 @@ export default () => {
 ::: react-demo A function-based React Demo
 
 ```js
+const { useState } = React;
+
 export default () => {
-  const message = "very handsome";
+  const [message, setMessage] = useState(" powerful");
 
   const handler = () => {
-    alert(message);
+    setMessage(` very${message}`);
   };
 
   return (
     <div className="box">
-      Mr.Hope is
-      <span id="very" onClick={handler}>
+      <code>vuepress-theme-hope</code> is
+      <span id="powerful" onClick={handler}>
         {message}
-      </span>
+      </span>!
     </div>
   );
 };
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```
@@ -103,26 +107,28 @@ export default () => {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { message: "very handsome" };
+    this.state = { message: " powerful" };
+  }
+  handler() {
+    this.setState((state) => ({
+      message: ` very${state.message}`,
+    }));
   }
   render() {
     return (
       <div className="box">
-        Mr.Hope is
-        <span id="very" onClick={this.handler}>
-          {this.state.message}
+        <code>vuepress-theme-hope</code> is
+        <span id="powerful" onClick={this.handler.bind(this)}>
+          {this.state.message}!
         </span>
       </div>
     );
-  }
-  handler() {
-    alert(this.state.message);
   }
 }
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```
@@ -138,26 +144,28 @@ export default class App extends React.Component {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { message: "very handsome" };
+    this.state = { message: " powerful" };
+  }
+  handler() {
+    this.setState((state) => ({
+      message: ` very${state.message}`,
+    }));
   }
   render() {
     return (
       <div className="box">
-        Mr.Hope is
-        <span id="very" onClick={this.handler}>
-          {this.state.message}
+        <code>vuepress-theme-hope</code> is
+        <span id="powerful" onClick={this.handler.bind(this)}>
+          {this.state.message}!
         </span>
       </div>
     );
-  }
-  handler() {
-    alert(this.state.message);
   }
 }
 ```
 
 ```css
-.box span {
+.box #powerful {
   color: blue;
 }
 ```

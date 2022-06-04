@@ -7,7 +7,7 @@ Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/)
 
 <!-- more -->
 
-## Configuration
+## Config
 
 ```js {7}
 module.exports = {
@@ -257,7 +257,7 @@ section Go home
 
 :::
 
-### Gantt diagrams
+### Gantt Diagrams
 
 ```gantt
 dateFormat  YYYY-MM-DD
@@ -327,10 +327,10 @@ Add another diagram to demo page    :48h
 
 :::
 
-### Pie chart diagrams
+### Pie Chart Diagrams
 
 ```pie
-title What Voldemort doesn't have?
+title What Voldemort doesn’t have?
   "FRIENDS" : 2
   "FAMILY" : 3
   "NOSE" : 45
@@ -340,7 +340,7 @@ title What Voldemort doesn't have?
 
 ````md
 ```pie
-title What Voldemort doesn't have?
+title What Voldemort doesn’t have?
   "FRIENDS" : 2
   "FAMILY" : 3
   "NOSE" : 45
@@ -349,7 +349,101 @@ title What Voldemort doesn't have?
 
 :::
 
-### A complex example
+### Gitgraph Diagrams
+
+```git-graph
+commit
+branch hotfix
+checkout hotfix
+commit
+branch develop
+checkout develop
+commit id:"ash" tag:"abc"
+branch featureB
+checkout featureB
+commit type:HIGHLIGHT
+checkout main
+checkout hotfix
+commit type:NORMAL
+checkout develop
+commit type:REVERSE
+checkout featureB
+commit
+checkout main
+merge hotfix
+checkout featureB
+commit
+checkout develop
+branch featureA
+commit
+checkout develop
+merge hotfix
+checkout featureA
+commit
+checkout featureB
+commit
+checkout develop
+merge featureA
+branch release
+checkout release
+commit
+checkout main
+commit
+checkout release
+merge main
+checkout develop
+merge release
+```
+
+::: details Code
+
+```git-graph
+commit
+branch hotfix
+checkout hotfix
+commit
+branch develop
+checkout develop
+commit id:"ash" tag:"abc"
+branch featureB
+checkout featureB
+commit type:HIGHLIGHT
+checkout main
+checkout hotfix
+commit type:NORMAL
+checkout develop
+commit type:REVERSE
+checkout featureB
+commit
+checkout main
+merge hotfix
+checkout featureB
+commit
+checkout develop
+branch featureA
+commit
+checkout develop
+merge hotfix
+checkout featureA
+commit
+checkout featureB
+commit
+checkout develop
+merge featureA
+branch release
+checkout release
+commit
+checkout main
+commit
+checkout release
+merge main
+checkout develop
+merge release
+```
+
+:::
+
+### A Complex Example
 
 ```mermaid
 graph TB

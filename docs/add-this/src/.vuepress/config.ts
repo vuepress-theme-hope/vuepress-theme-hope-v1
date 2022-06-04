@@ -91,7 +91,7 @@ export default hope.config({
     addThis: "ra-5f829c59e6c6bc9a",
 
     comment: {
-      type: "waline",
+      provider: "Waline",
       serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 

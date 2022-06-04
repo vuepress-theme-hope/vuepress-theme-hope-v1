@@ -16,7 +16,7 @@ icon: config
 
 请仅将此选项用于体验或测试。
 
-随着时间的增长，`vupress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
+随着时间的增长，`vuepress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
 
 启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
 
@@ -40,23 +40,20 @@ icon: config
 
 是否修复包含特殊字符的图片的引用。
 
-## lazyLoad <Badge text="改变默认行为" type="warn" />
+## gfm
 
 - 类型: `boolean`
-- 默认值: `true`
+- 默认值: `false`
 
-是否使用原生方式懒加载页面图片。
+是否支持完整的 GFM 语法。
 
-## delay
+::: note
 
-- 类型: `number`
-- 默认值: `500`
+有关完整的 GFM 语法，请参阅 [GFM](https://github.github.com/gfm/)。
 
-操作页面 DOM 的延时，单位 ms。
+老实说，我们并不是 100% 支持它，我们只补全了它的语法，包括任务列表、脚注等。
 
-::: tip
-
-如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`。
+某些行为可能会有所不同，例如，为了允许 Vue 语法，我们并没有禁止 `<script>` 标签。 但在大多数情况下，行为应该是相同的。
 
 :::
 
@@ -65,7 +62,41 @@ icon: config
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用自定义容器支持。
+是否启用自定义容器支持:
+
+- info
+- note
+- tip
+- warning
+- danger
+- details
+
+::: warning
+
+最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。
+
+:::
+
+## tabs
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用选项卡。
+
+## codegroup
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用代码组。
+
+## codetabs
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用代码选项卡。
 
 ## align
 
@@ -95,12 +126,35 @@ icon: config
 
 是否启用脚注格式支持。
 
+## lazyLoad
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否使用原生方式懒加载页面图片。
+
 ## mark
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否启用标记格式支持。
+
+## imageMark
+
+- 类型: `ImageMarkOptions | boolean`
+- 默认值: `false`
+
+是否启用图片标注支持
+
+```ts
+interface ImageMarkOptions {
+  /** 日间模式的 ID */
+  light?: string[];
+  /** 夜间模式的 ID */
+  dark?: string[];
+}
+```
 
 ## tasklist
 
@@ -112,19 +166,46 @@ icon: config
 ```ts
 interface TaskListOptions {
   /**
+   * 是否禁用 checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
    * 是否使用 `<label>` 来包裹文字
    *
    * @default true
    */
   label?: boolean;
-  /**
-   * 是否将 `<label>` 放置在 `<input>` 后还是包裹住 `<input>`
-   *
-   * @default true
-   */
-  labelAfter?: boolean;
 }
 ```
+
+## include
+
+- 类型: `IncludeOptions | boolean`
+
+  ```ts
+  interface IncludeOptions {
+    /**
+     * 处理 include 文件路径
+     *
+     * @default (path) => path
+     */
+    getPath?: (path: string) => string;
+
+    /**
+     * 是否深度导入包含的 markdown 文件
+     *
+     * @default false
+     */
+    deep?: boolean;
+  }
+  ```
+
+- 默认值: `false`
+
+是否启用 Markdown 导入支持。你可以传入一个函数进行路径解析。
 
 ## tex
 
@@ -133,12 +214,14 @@ interface TaskListOptions {
 
 是否启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
 
-## mermaid
+可用的选项，详见 [Katex 文档](https://katex.org/docs/options.html)。
+
+## chart
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
+是否启用图表支持。
 
 ## flowchart
 
@@ -146,6 +229,59 @@ interface TaskListOptions {
 - 默认值: `false`
 
 是否启用流程图支持。
+
+## mermaid
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
+
+## stylize
+
+- 类型: `StylizeOptions | false`
+
+  ```ts
+  interface StylizeResult {
+    /**
+     * 渲染的标签名称
+     */
+    tag: string;
+
+    /**
+     * 属性设置
+     */
+    attrs: Record<string, string>;
+
+    /**
+     * 标签内容
+     */
+    content: string;
+  }
+
+  interface StylizeItem {
+    /**
+     * 字符匹配
+     */
+    matcher: string | RegExp;
+
+    /**
+     * 内容替换
+     */
+    replacer: (options: {
+      tag: string;
+      content: string;
+      attrs: Record<string, string>;
+      env?: MarkdownEnv;
+    }) => StylizeResult | void;
+  }
+
+  type StylizeOptions = StylizeItem[];
+  ```
+
+- 默认值: `false`
+
+对行内语法进行样式化以创建代码片段
 
 ## demo
 
@@ -211,7 +347,7 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 ### 其他
 
-以下是第三方代码演示使用的库地址，除非你的环境无法访问 jsdelivr 或访问缓慢，否则无需覆盖默认设置。
+以下是第三方代码演示使用的库地址，除非你的环境无法访问 unpkg 或访问缓慢，否则无需覆盖默认设置。
 
 #### demo.babel
 
@@ -264,40 +400,61 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 你想要传递给 Reveal.js 的配置选项
 
+## delay
+
+- 类型: `number`
+- 默认值: `500`
+
+操作页面 DOM 的延时，单位 ms。
+
+::: tip
+
+如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`。
+
+:::
+
 ## locales
 
-```ts
-interface MarkdownEnhanceLocaleData {
-  /**
-   * 信息块的默认标题
-   */
-  info: string;
+- 类型: `MarkdownEnhanceLocaleConfig`
 
-  /**
-   * 注释块的默认标题
-   */
-  note: string;
+  ```ts
+  interface MarkdownEnhanceLocaleData {
+    /**
+     * 信息块的默认标题
+     */
+    info: string;
 
-  /**
-   * 提示块的默认标题
-   */
-  tip: string;
+    /**
+     * 注释块的默认标题
+     */
+    note: string;
 
-  /**
-   * 注意块的默认标题
-   */
-  warning: string;
+    /**
+     * 提示块的默认标题
+     */
+    tip: string;
 
-  /**
-   * 警告块的默认标题
-   */
-  danger: string;
+    /**
+     * 注意块的默认标题
+     */
+    warning: string;
 
-  /**
-   * 详情块的默认标题
-   */
-  details: string;
-}
-```
+    /**
+     * 警告块的默认标题
+     */
+    danger: string;
 
-国际化配置。
+    /**
+     * 详情块的默认标题
+     */
+    details: string;
+  }
+
+  interface MarkdownEnhanceLocaleConfig {
+    [localePath: string]: MarkdownEnhanceLocaleData;
+  }
+  ```
+
+- 必填: 否
+
+Markdown 增强插件的国际化配置。

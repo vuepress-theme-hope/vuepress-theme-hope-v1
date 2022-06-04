@@ -28,7 +28,7 @@ module.exports = {
         // appId: "GG2VSnGiz09Rx18y2OUzdaHS-gzGzoHsz",
         // appKey: "fBf2dptTBHxNqALKrzUlBXeB",
 
-        type: "waline",
+        provider: "Waline",
         serverURL: "https://vuepress-theme-hope-comment.vercel.app",
       },
     ],

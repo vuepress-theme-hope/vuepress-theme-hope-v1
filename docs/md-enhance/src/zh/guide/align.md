@@ -38,7 +38,7 @@ module.exports = {
 ## 演示
 
 :::: danger W.I.P
-vuepress-theme-hope v2 仍在制作中，API 可能会有
+VuePress Theme Hope V2 版本仍在制作中，API 可能会有
 
 ::: center
 重大的变动。
@@ -47,14 +47,14 @@ vuepress-theme-hope v2 仍在制作中，API 可能会有
 如果你在使用过程中遇到了 bug，可以
 
 ::: right
-[提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues)。
+[提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。
 :::
 
 ::::
 
 ```md
 :::: danger W.I.P
-vuepress-theme-hope v2 仍在制作中，API 可能会有
+VuePress Theme Hope V2 版本仍在制作中，API 可能会有
 
 ::: center
 重大的变动。
@@ -63,7 +63,7 @@ vuepress-theme-hope v2 仍在制作中，API 可能会有
 如果你在使用过程中遇到了 bug，可以
 
 ::: right
-[提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues)。
+[提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。
 :::
 
 ::::

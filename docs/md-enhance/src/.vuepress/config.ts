@@ -1,7 +1,8 @@
 import hope from "vuepress-theme-hope";
+import { enSidebarConfig, zhSidebarConfig } from "./sidebar";
 import { version } from "../../../../package.json";
 
-const base = process.env.BASE || "/";
+const base = (process.env.BASE as `/${string}/`) || "/";
 const hostname =
   process.env.HOSTNAME || "https://vuepress-theme-hope-v1.netlify.app";
 
@@ -45,45 +46,7 @@ export default hope.config({
       },
     ],
 
-    sidebar: {
-      "/": [
-        "",
-        {
-          title: "Guide",
-          icon: "creative",
-          prefix: "guide/",
-          collapsable: false,
-          children: [
-            "",
-            "container",
-            "code-group",
-            "sup-sub",
-            "align",
-            "footnote",
-            "mark",
-            "tasklist",
-            "flowchart",
-            "mermaid",
-            "tex",
-            {
-              title: "Code Demo",
-              icon: "discover",
-              prefix: "demo/",
-              collapsable: false,
-              children: ["", "normal", "vue", "react"],
-            },
-            {
-              title: "Presentation",
-              icon: "slides",
-              prefix: "presentation/",
-              collapsable: false,
-              children: ["", "demo", "themes"],
-            },
-          ],
-        },
-        "config",
-      ],
-    },
+    sidebar: enSidebarConfig,
 
     locales: {
       "/zh/": {
@@ -102,45 +65,7 @@ export default hope.config({
             ],
           },
         ],
-        sidebar: {
-          "/zh/": [
-            "",
-            {
-              title: "指南",
-              icon: "creative",
-              prefix: "guide/",
-              collapsable: false,
-              children: [
-                "",
-                "container",
-                "code-group",
-                "sup-sub",
-                "align",
-                "footnote",
-                "mark",
-                "tasklist",
-                "flowchart",
-                "mermaid",
-                "tex",
-                {
-                  title: "代码演示",
-                  icon: "discover",
-                  prefix: "demo/",
-                  collapsable: false,
-                  children: ["", "normal", "vue", "react"],
-                },
-                {
-                  title: "幻灯片",
-                  icon: "slides",
-                  prefix: "presentation/",
-                  collapsable: false,
-                  children: ["", "demo", "themes"],
-                },
-              ],
-            },
-            "config",
-          ],
-        },
+        sidebar: zhSidebarConfig,
       },
     },
 
@@ -158,7 +83,7 @@ export default hope.config({
     },
 
     comment: {
-      type: "waline",
+      provider: "Waline",
       serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 

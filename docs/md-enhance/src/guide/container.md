@@ -49,28 +49,64 @@ Dangerous container
 Details container
 :::
 
-::: info custom title
-A custom information container
+::: info Custom Title
+
+A custom information container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: note custom title
-A custom note container
+::: note Custom Title
+
+A custom note container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: tip custom title
-A custom tip container
+::: tip Custom Title
+
+A custom tip container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: warning custom title
-A custom warning container
+::: warning Custom Title
+
+A custom warning container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: danger custom Title
-A custom danger container
+::: danger Custom Title
+
+A custom danger container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: details custom title
-A custom details container
+::: details Custom Title
+
+A custom details container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
 ::: info Custom info
@@ -88,7 +124,7 @@ A custom details container
 ::: danger Custom danger
 :::
 
-```md
+````md
 ::: info
 Information container
 :::
@@ -113,28 +149,63 @@ Dangerous container
 Details container
 :::
 
-::: info custom title
-A custom information container
+::: info Custom Title
+
+A custom information container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: note custom title
-A custom note container
+::: note Custom Title
+A custom note container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: tip custom title
-A custom tip container
+::: tip Custom Title
+
+A custom tip container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: warning custom title
-A custom warning container
+::: warning Custom Title
+
+A custom warning container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: danger custom Title
-A custom danger container
+::: danger Custom Title
+
+A custom danger container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: details custom title
-A custom details container
+::: details Custom Title
+
+A custom details container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
 ::: info Custom info
@@ -151,4 +222,4 @@ A custom details container
 
 ::: danger Custom danger
 :::
-```
+````

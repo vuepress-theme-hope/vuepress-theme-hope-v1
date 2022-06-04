@@ -57,7 +57,7 @@ On the project page, you can edit the icons in the project, including adjustment
 1. Import the link in `index.styl` of `.vuepress/styles`. E.g:
 
    ```styl
-   @import "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css";
+   @import "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css";
    ```
 
 ::: tip
@@ -97,7 +97,7 @@ Please follow [fontawesome document](https://fontawesome.com/).
 ## Featured Icons
 
 ```styl
-@import '//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css';
+@import '//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css';
 ```
 
-<IconDisplay  link="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+<IconDisplay  link="//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css" />

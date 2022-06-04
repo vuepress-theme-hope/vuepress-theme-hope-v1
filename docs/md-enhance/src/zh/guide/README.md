@@ -1,6 +1,6 @@
 ---
 title: 快速上手
-icon: markdown
+icon: creative
 ---
 
 通过安装并启用此插件，你可以在 Markdown 中使用更多的语法。
@@ -19,7 +19,7 @@ icon: markdown
 
 ::: danger
 
-请仅将此选项用于体验或测试。随着时间的增长，`vupress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
+请仅将此选项用于体验或测试。随着时间的增长，`vuepress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
 
 启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
 
@@ -30,6 +30,52 @@ icon: markdown
 :::
 
 ## 新增的更多语法
+
+### 选项卡
+
+::: tabs#fruit
+
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [查看详情](tabs.md)
+
+### 代码块
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-md-enhance@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D vuepress-plugin-md-enhance@next
+```
+
+@tab:active npm
+
+```bash
+npm i -D vuepress-plugin-md-enhance@next
+```
+
+:::
+
+- [查看详情](code-tabs.md)
 
 ### 自定义对齐
 
@@ -74,12 +120,80 @@ icon: markdown
 
 - [查看详情](tasklist.md)
 
+### 图片增强
+
+支持设置颜色模式和大小
+
+- [查看详情](image.md)
+
+### 图表
+
+::: chart 一个散点图案例
+
+```json
+{
+  "type": "scatter",
+  "data": {
+    "datasets": [
+      {
+        "label": "散点数据集",
+        "data": [
+          { "x": -10, "y": 0 },
+          { "x": 0, "y": 10 },
+          { "x": 10, "y": 5 },
+          { "x": 0.5, "y": 5.5 }
+        ],
+        "backgroundColor": "rgb(255, 99, 132)"
+      }
+    ]
+  },
+  "options": {
+    "scales": {
+      "x": {
+        "type": "linear",
+        "position": "bottom"
+      }
+    }
+  }
+}
+```
+
+:::
+
+- [查看详情](chart.md)
+
+## Echarts
+
+::: echarts 一个折线图案例
+
+```json
+{
+  "xAxis": {
+    "type": "category",
+    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [150, 230, 224, 218, 135, 147, 260],
+      "type": "line"
+    }
+  ]
+}
+```
+
+:::
+
+- [查看详情](echarts.md)
+
 ### 流程图
 
 ```flow
-cond=>condition: Process?
-process=>operation: Process
-e=>end: End
+cond=>condition: 是否执行操作?
+process=>operation: 操作
+e=>end: 结束
 
 cond(yes)->process->e
 cond(no)->e
@@ -117,18 +231,24 @@ $$
 
 - [查看详情](tex.md)
 
+### 导入文件
+
+@include(.vuepress/include/zh-demo.snippet.md{5,9})
+
+- [查看详情](include.md)
+
 ### 代码演示
 
 ::: normal-demo 一个普通 Demo
 
 ```html
-<h1>Mr.Hope</h1>
-<p><span id="very">十分</span> 帅</p>
+<h1>VuePress Theme Hope</h1>
+<p><span id="very">非常</span>强大!</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("十分帅");
+  alert("非常强大");
 });
 ```
 
@@ -140,7 +260,7 @@ span {
 
 :::
 
-- [查看详情](demo/readme.md)
+- [查看详情](demo/README.md)
 
 ### 幻灯片
 
@@ -175,4 +295,12 @@ $$
 
 @slideend
 
-- [查看详情](presentation/readme.md)
+- [查看详情](presentation/README.md)
+
+### 样式化
+
+<!-- markdownlint-disable MD033 -->
+
+设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用
+
+- [查看详情](stylize.md)

@@ -28,7 +28,7 @@ module.exports = {
 - 使用 `- [ ] 一些文字` 渲染一个未勾选的任务项
 - 使用 `- [x] 一些文字` 渲染一个勾选了的任务项 (我们也支持大写的 `X`)
 
-## 案例
+## 例子
 
 - [ ] Plan A
 - [x] Plan B
@@ -36,4 +36,26 @@ module.exports = {
 ```md
 - [ ] Plan A
 - [x] Plan B
+```
+
+## 高级
+
+除了在插件选项中设置 `tasklist: true` 之外，你还可以将对象作为选项传递给它。可用选项如下:
+
+```ts
+interface TaskListOptions {
+  /**
+   * 是否禁用 checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
+   * 是否使用 `<label>` 来包裹文字
+   *
+   * @default true
+   */
+  label?: boolean;
+}
 ```

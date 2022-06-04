@@ -25,10 +25,10 @@ module.exports = {
 
 ## 语法
 
-请使用以下语法：
+请使用以下语法:
 
 ````md
-::: normal-demo 可选的标题文字
+::: [类型]-demo 可选的标题文字
 
 ```html
 <!-- ↑ 使用可用的语言 -->
@@ -39,7 +39,7 @@ module.exports = {
 ```json
 // json block 作为插件配置存放处
 {
-  // 放置你的配置 (optional)
+  // 放置你的配置 (可选的)
 }
 ```
 
@@ -52,7 +52,7 @@ JSON 块是可选的，可用的配置详见 [配置](../../config.md#demo)。
 
 :::
 
-该插件支持三种类型：
+该插件支持三种类型:
 
 - normal (默认)
 - vue
@@ -100,11 +100,11 @@ JSON 块是可选的，可用的配置详见 [配置](../../config.md#demo)。
 ```md
 # 标题
 
-十分帅
+十分强大
 ```
 
 ```ts
-const message: string = "Mr.Hope";
+const message: string = "VuePress Theme Hope";
 
 document.querySelector("h1").innerHTML = message;
 ```
@@ -129,11 +129,11 @@ h1 {
 ```md
 # 标题
 
-十分帅
+十分强大
 ```
 
 ```ts
-const message: string = "Mr.Hope";
+const message: string = "VuePress Theme Hope";
 
 document.querySelector("h1").innerHTML = message;
 ```
