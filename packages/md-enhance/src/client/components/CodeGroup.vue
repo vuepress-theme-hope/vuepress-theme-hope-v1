@@ -59,7 +59,7 @@
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   background-color: transparent;
-  color: var(--text-color, $textColor);
+  color: var(--text-color, #bbb);
   font-family: Arial;
   font-size: 0.85em;
   font-weight: 600;
@@ -87,19 +87,19 @@
   }
 
   &.active {
-    border-bottom: var(--accent-color, $accentColor) 1px solid;
+    background-color: var(--code-bg-color, #282c34);
 
-    &:before {
+    &::before {
       background: radial-gradient(12px at left top, transparent 50%, #282c34 50%);
     }
 
-    &:after {
+    &::after {
       background: radial-gradient(12px at right top, transparent 50%, #282c34 50%);
     }
   }
 
   &:first-child {
-    &:before {
+    &::before {
       display: none;
     }
   }
