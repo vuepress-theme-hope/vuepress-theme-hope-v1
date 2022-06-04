@@ -2,6 +2,7 @@ import ChartJS from "@ChartJS";
 import CodeDemo from "@CodeDemo";
 import CodeGroup from "@CodeGroup";
 import CodeGroupItem from "@CodeGroupItem";
+import ECharts from "@ECharts";
 import FlowChart from "@FlowChart";
 import Mermaid from "@Mermaid";
 import Presentation from "@Presentation";
@@ -17,6 +18,7 @@ const enhanceApp: EnhanceApp = ({ Vue }) => {
 
   if (MARKDOWN_ENHANCE_FOOTNOTE) void import("./styles/footnote.styl");
 
+  if (ECharts.name) Vue.component("ECharts", ECharts);
   if (FlowChart.name) Vue.component("FlowChart", FlowChart);
 
   if (Mermaid.name) Vue.component("Mermaid", Mermaid);

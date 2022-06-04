@@ -4,7 +4,7 @@ export * from "./codeDemo";
 // export * from "./codeTabs";
 export * from "./container";
 export * from "./decodeUrl";
-// export * from "./echarts";
+export * from "./echarts";
 export * from "./flowchart";
 export * from "./footnote";
 export * from "./imageMark";

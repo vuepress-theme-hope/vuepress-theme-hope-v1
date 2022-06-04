@@ -60,16 +60,13 @@ const getReactTemplate = (code: string): string =>
     )};\nReactDOM.createRoot(document.getElementById("app")).render(React.createElement($reactApp))`;
 
 const getVueJsTemplate = (js: string): string =>
-  js
+  `new Vue({ el: '#app', ${js
+    .replace(/export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u, "$1")
     .replace(
-      /export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u,
-      "Vue.createApp({$1}).mount('#app')"
+      /export\s+default\s*Vue\.extend\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
+      "$1"
     )
-    .replace(
-      /export\s+default\s*define(Async)?Component\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
-      "Vue.createApp({$1}).mount('#app')"
-    )
-    .trim();
+    .trim()} })`;
 
 export const wrapper = (scriptStr: string): string =>
   `(function(exports){var module={};module.exports=exports;${scriptStr};return module.exports.__esModule?module.exports.default:module.exports;})({})`;
@@ -131,12 +128,12 @@ export const getVueCode = (
         ? window.Babel?.transform(js, { presets: ["es2015"] })?.code || ""
         : js.replace(/export\s+default/u, "return");
 
-      return `const app=window.document.createElement('div');document.firstElementChild.appendChild(app);const appOptions=${wrapper(
+      return `const appOptions=${wrapper(
         scriptStr
       )};appOptions.template=\`${html.replace(
         "`",
         '\\`"'
-      )}\`;window.Vue.createApp(appOptions).mount(app);`;
+      )}\`;document.firstElementChild.appendChild(new (window.Vue.extend(appOptions))().$mount().$el);`;
     },
   };
 };

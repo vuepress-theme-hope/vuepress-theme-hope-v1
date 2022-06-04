@@ -6,6 +6,7 @@ import {
   CODE_DEMO_DEFAULT_SETTING,
   chart,
   decodeURL,
+  echarts,
   flowchart,
   footnote,
   katex,
@@ -46,6 +47,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
   const containerEnable = getStatus("container");
   const codegroupEnable = getStatus("codegroup");
   const demoEnable = getStatus("demo");
+  const echartsEnable = getStatus("echarts");
   const flowchartEnable = getStatus("flowchart");
   const footnoteEnable = getStatus("footnote", true);
   const imageMarkEnable = getStatus("imageMark", true);
@@ -88,6 +90,9 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
         : noopModule,
       "@CodeGroupItem": codegroupEnable
         ? resolve(__dirname, "../client/components/CodeGroupItem.vue")
+        : noopModule,
+      "@ECharts": echartsEnable
+        ? resolve(__dirname, "../client/components/ECharts.vue")
         : noopModule,
       "@FlowChart": flowchartEnable
         ? resolve(__dirname, "../client/components/FlowChart.vue")
@@ -156,6 +161,7 @@ export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
         md.use(reactDemo);
         md.use(legacyCodeDemo);
       }
+      if (echartsEnable) md.use(echarts);
       if (getStatus("include"))
         md.use(
           include,

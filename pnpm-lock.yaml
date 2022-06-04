@@ -383,13 +383,14 @@ importers:
     specifiers:
       '@babel/core': '*'
       '@types/babel__core': 7.1.19
+      '@types/echarts': ^4.9.15
       '@types/hash-sum': ^1.0.0
       '@types/katex': ^0.14.0
       '@types/markdown-it': ^10.0.3
       '@types/mermaid': ^8.2.9
       balloon-css: ^1.2.0
       chart.js: ^3.8.0
-      echarts: ^5.3.2
+      echarts: ^4.9.0
       flowchart.js: ^1.17.1
       katex: ^0.15.6
       mermaid: ^9.1.1
@@ -401,13 +402,14 @@ importers:
       vuepress-typings: workspace:*
     dependencies:
       '@babel/core': 7.18.2
+      '@types/echarts': 4.9.15
       '@types/hash-sum': 1.0.0
       '@types/katex': 0.14.0
       '@types/markdown-it': 10.0.3
       '@types/mermaid': 8.2.9
       balloon-css: 1.2.0
       chart.js: 3.8.0
-      echarts: 5.3.2
+      echarts: 4.9.0
       flowchart.js: 1.17.1
       katex: 0.15.6
       mermaid: 9.1.1
@@ -2479,6 +2481,12 @@ packages:
     resolution: {integrity: sha512-t73xJJrvdTjXrn4jLS9VSGRbz0nUY3cl2DMGDU48lKl+HR9dbbjW2A9r3g40VA++mQpy6uuHg33gy7du2BKpog==}
     dev: false
 
+  /@types/echarts/4.9.15:
+    resolution: {integrity: sha512-C+GhOl8jYjpZrPE9JPYgI8pH8+mIfsib2WoE5E+WpM2wRWZDQhaIy6ZZ1HhaZOT1h+QkrHvDVWUoGvXCzcb0rw==}
+    dependencies:
+      '@types/zrender': 4.0.2
+    dev: false
+
   /@types/estree/0.0.39:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: false
@@ -2711,6 +2719,10 @@ packages:
     resolution: {integrity: sha512-JQbbmxZTZehdc2iszGKs5oC3NFnjeay7mtAWrdt7qNtAVK0g19muApzAy4bm9byz79xa2ZnO/BOBC2R8RC5Lww==}
     dependencies:
       '@types/node': 17.0.38
+    dev: false
+
+  /@types/zrender/4.0.2:
+    resolution: {integrity: sha512-Y/3hGzYeFdJUD4yWV0a+jkk3kIjtrbjzxwqkAWRjXLGm6lpL2tckg3vgopkn9KKPK1QyzwGH+JSDvzbKJO59+Q==}
     dev: false
 
   /@typescript-eslint/eslint-plugin/5.27.0_dszb5tb7atwkjjijmmov4qhi7i:
@@ -6978,11 +6990,10 @@ packages:
       jsbn: 0.1.1
       safer-buffer: 2.1.2
 
-  /echarts/5.3.2:
-    resolution: {integrity: sha512-LWCt7ohOKdJqyiBJ0OGBmE9szLdfA9sGcsMEi+GGoc6+Xo75C+BkcT/6NNGRHAWtnQl2fNow05AQjznpap28TQ==}
+  /echarts/4.9.0:
+    resolution: {integrity: sha512-+ugizgtJ+KmsJyyDPxaw2Br5FqzuBnyOWwcxPKO6y0gc5caYcfnEUIlNStx02necw8jmKmTafmpHhGo4XDtEIA==}
     dependencies:
-      tslib: 2.3.0
-      zrender: 5.3.1
+      zrender: 4.3.2
     dev: false
 
   /ee-first/1.1.1:
@@ -14394,10 +14405,6 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tslib/2.3.0:
-    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
-    dev: false
-
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
 
@@ -15937,8 +15944,6 @@ packages:
   /zepto/1.2.0:
     resolution: {integrity: sha1-4Se9nmb9hGvl6rSME5SIL3wOT5g=}
 
-  /zrender/5.3.1:
-    resolution: {integrity: sha512-7olqIjy0gWfznKr6vgfnGBk7y4UtdMvdwFmK92vVQsQeDPyzkHW1OlrLEKg6GHz1W5ePf0FeN1q2vkl/HFqhXw==}
-    dependencies:
-      tslib: 2.3.0
+  /zrender/4.3.2:
+    resolution: {integrity: sha512-bIusJLS8c4DkIcdiK+s13HiQ/zjQQVgpNohtd8d94Y2DnJqgM1yjh/jpDb8DoL6hd7r8Awagw8e3qK/oLaWr3g==}
     dev: false

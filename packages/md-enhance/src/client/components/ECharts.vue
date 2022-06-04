@@ -1,26 +1,29 @@
 <template>
-  <div class="chart-js">
-    <div class="chart-title">{{ decodeURIComponent(title) }}</div>
-    <div v-if="loading" class="chart-loading-wrapper">
+  <div class="echarts">
+    <div class="echarts-title">{{ decodeURIComponent(title) }}</div>
+    <div v-if="loading" class="echarts-loading-wrapper">
       <LoadingIcon />
     </div>
-    <div v-show="!loading" :id="id" ref="chartElement" class="chart-wrapper">
-      <canvas ref="chartCanvasElement" height="400" />
-    </div>
+    <div
+      v-show="!loading"
+      :id="id"
+      ref="echartsWrapper"
+      class="echarts-wrapper"
+    />
   </div>
 </template>
 
-<script src="./ChartJS" />
+<script src="./ECharts" />
 
 <style lang="stylus">
-.chart-title {
+.echarts-title {
   margin: 0.5rem auto;
   font-weight: 600;
   font-size: 18px;
   text-align: center;
 }
 
-.chart-loading-wrapper {
+.echarts-loading-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,14 +37,14 @@
   }
 }
 
-.chart-wrapper {
-  overflow-x: scroll;
+.echarts-wrapper {
+  min-height: 360px;
   padding: 0.6em 0.4em;
   text-align: center;
   transition: all 1s;
 
-  @media (max-width: $MQMobileNarrow) {
-    margin: 0 -1.5rem;
+  @media (max-width: $MQMobile) {
+    margin: 0 -1rem;
     padding: 0.6em 0;
   }
 }

@@ -806,6 +806,12 @@ declare module "@CodeGroupItem" {
   export default vue;
 }
 
+declare module "@ECharts" {
+  import vue from "vue";
+
+  export default vue;
+}
+
 declare module "@FlowChart" {
   import vue from "vue";
 

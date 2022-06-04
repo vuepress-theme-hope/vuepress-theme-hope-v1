@@ -1,6 +1,6 @@
 <template>
   <div :id="id" class="code-demo-wrapper">
-    <div v-if="loading" class="loading">
+    <div v-if="!loaded" class="loading">
       <LoadingIcon />
     </div>
     <div class="code-demo-header">
