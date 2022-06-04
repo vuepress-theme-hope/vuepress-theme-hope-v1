@@ -15,11 +15,12 @@ export const codeGroup: PluginSimple = (md) => {
     name: "code-group-item",
     openRender: (tokens, index) => {
       const { info } = tokens[index];
-      const isActive = info.split(":").pop() === "active";
+      const isActive = info.endsWith(":active");
 
-      return `<CodeGroupItem title="${
-        isActive ? info.replace(/:active$/, "") : info
-      }"${isActive ? " active" : ""}>\n`;
+      return `<CodeGroupItem title="${(isActive
+        ? info.replace(/:active$/, "")
+        : info
+      ).substring(16)}"${isActive ? " active" : ""}>\n`;
     },
     closeRender: () => "</CodeGroupItem>\n",
   });
