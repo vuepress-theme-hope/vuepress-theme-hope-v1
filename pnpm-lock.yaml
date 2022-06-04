@@ -390,7 +390,7 @@ importers:
       '@types/mermaid': ^8.2.9
       balloon-css: ^1.2.0
       chart.js: ^3.8.0
-      echarts: ^4.9.0
+      echarts: ^5.0.0
       flowchart.js: ^1.17.1
       katex: ^0.15.6
       mermaid: ^9.1.1
@@ -409,7 +409,7 @@ importers:
       '@types/mermaid': 8.2.9
       balloon-css: 1.2.0
       chart.js: 3.8.0
-      echarts: 4.9.0
+      echarts: 5.3.2
       flowchart.js: 1.17.1
       katex: 0.15.6
       mermaid: 9.1.1
@@ -6990,10 +6990,11 @@ packages:
       jsbn: 0.1.1
       safer-buffer: 2.1.2
 
-  /echarts/4.9.0:
-    resolution: {integrity: sha512-+ugizgtJ+KmsJyyDPxaw2Br5FqzuBnyOWwcxPKO6y0gc5caYcfnEUIlNStx02necw8jmKmTafmpHhGo4XDtEIA==}
+  /echarts/5.3.2:
+    resolution: {integrity: sha512-LWCt7ohOKdJqyiBJ0OGBmE9szLdfA9sGcsMEi+GGoc6+Xo75C+BkcT/6NNGRHAWtnQl2fNow05AQjznpap28TQ==}
     dependencies:
-      zrender: 4.3.2
+      tslib: 2.3.0
+      zrender: 5.3.1
     dev: false
 
   /ee-first/1.1.1:
@@ -14405,6 +14406,10 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
+  /tslib/2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+    dev: false
+
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
 
@@ -15944,6 +15949,8 @@ packages:
   /zepto/1.2.0:
     resolution: {integrity: sha1-4Se9nmb9hGvl6rSME5SIL3wOT5g=}
 
-  /zrender/4.3.2:
-    resolution: {integrity: sha512-bIusJLS8c4DkIcdiK+s13HiQ/zjQQVgpNohtd8d94Y2DnJqgM1yjh/jpDb8DoL6hd7r8Awagw8e3qK/oLaWr3g==}
+  /zrender/5.3.1:
+    resolution: {integrity: sha512-7olqIjy0gWfznKr6vgfnGBk7y4UtdMvdwFmK92vVQsQeDPyzkHW1OlrLEKg6GHz1W5ePf0FeN1q2vkl/HFqhXw==}
+    dependencies:
+      tslib: 2.3.0
     dev: false

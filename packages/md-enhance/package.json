@@ -51,7 +51,7 @@
     "@types/mermaid": "^8.2.9",
     "balloon-css": "^1.2.0",
     "chart.js": "^3.8.0",
-    "echarts": "^4.9.0",
+    "echarts": "^5.0.0",
     "flowchart.js": "^1.17.1",
     "katex": "^0.15.6",
     "mermaid": "^9.1.1",
