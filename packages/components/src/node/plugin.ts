@@ -5,6 +5,7 @@ import {
   paginationLocales,
   pageInfoLocales,
 } from "./locales";
+import { getIconPrefix } from "./utils";
 
 import type { Plugin, PluginConfig } from "vuepress-typings";
 import type { ComponentOptions } from "../types";
@@ -77,6 +78,10 @@ export const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
         config: options.paginationLocales,
         default: paginationLocales,
       }),
+      ICON_PREFIX:
+        typeof options.iconPrefix === "string"
+          ? options.iconPrefix
+          : getIconPrefix(options.iconAssets),
     }),
 
     enhanceAppFiles: path.resolve(__dirname, "../client/enhanceAppFile.js"),

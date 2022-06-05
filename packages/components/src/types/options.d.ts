@@ -59,6 +59,24 @@ export interface ComponentOptions {
   externalLinkLocales?: LocaleConfig<ExternalLinkLocaleData>;
 
   /**
+   * Link of font icon asset
+   *
+   * 字体图标资源链接
+   *
+   * @description `'iconfont'` and `'font-awesome'` keywords are supported
+   */
+  iconAssets?: string;
+
+  /**
+   * Class prefix of font icon
+   *
+   * 字体图标的 Class 前缀
+   *
+   * @default ''
+   */
+  iconPrefix?: string;
+
+  /**
    * Whether register pageinfo component
    *
    * 是否注册页面信息

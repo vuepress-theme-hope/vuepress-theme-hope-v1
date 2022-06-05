@@ -2,8 +2,6 @@ import Vue from "vue";
 
 import type { VNode } from "vue";
 
-declare const ICON_PREFIX: string;
-
 export interface FontIconProps {
   icon?: string;
   color?: string;

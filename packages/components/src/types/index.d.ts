@@ -18,4 +18,5 @@ declare global {
   const EXTERNAL_LINK_LOCALES: ExternalLinkLocaleConfig;
   const PAGE_INFO_LOCALES: PageInfoLocaleConfig;
   const PAGINATION_LOCALES: PaginationLocaleConfig;
+  const ICON_PREFIX: string;
 }
