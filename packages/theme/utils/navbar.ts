@@ -1,4 +1,4 @@
-import type { HopeNavBarConfigItem } from "../types";
+import type { HopeNavBarConfigItem } from "@theme/types";
 
 export interface NavBarConfigItem extends HopeNavBarConfigItem {
   type: "link" | "links";

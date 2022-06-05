@@ -1,7 +1,7 @@
 import { compareSync } from "bcrypt-ts";
 import { encryptBaseMixin } from "@theme/mixins/encrypt";
 
-import type { EncryptOptions } from "../types";
+import type { EncryptOptions } from "@theme/types";
 
 export const globalEncryptMixin = encryptBaseMixin.extend({
   data: () => ({

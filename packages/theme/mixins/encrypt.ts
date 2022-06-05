@@ -1,6 +1,6 @@
 import Vue from "vue";
 
-import type { EncryptOptions } from "../types";
+import type { EncryptOptions } from "@theme/types";
 
 export const encryptBaseMixin = Vue.extend({
   computed: {

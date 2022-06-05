@@ -2,7 +2,7 @@ import { compareSync } from "bcrypt-ts";
 import { encryptBaseMixin } from "@theme/mixins/encrypt";
 import { getPathMatchedKeys } from "@theme/utils/encrypt";
 
-import type { EncryptOptions } from "../types";
+import type { EncryptOptions } from "@theme/types";
 
 export const pathEncryptMixin = encryptBaseMixin.extend({
   data: () => ({

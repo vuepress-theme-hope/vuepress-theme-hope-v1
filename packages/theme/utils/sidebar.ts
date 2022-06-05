@@ -12,7 +12,7 @@ import type {
   HopeSideBarConfig,
   HopeSideBarConfigItem,
   HopeThemeConfig,
-} from "../types";
+} from "@theme/types";
 import type { SidebarHeader } from "./groupHeader";
 
 export type { SidebarHeader } from "./groupHeader";
