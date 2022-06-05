@@ -2,87 +2,92 @@ import { existsSync, writeFileSync, readdirSync } from "fs";
 import { join, resolve } from "path";
 import { version } from "../package.json";
 
-const packagesDir = resolve(__dirname, "../packages/");
+const packagesDir = resolve(process.cwd(), "packages");
+
 const files = readdirSync(packagesDir);
 
 files.forEach((pkgName) => {
   if (pkgName.charAt(0) === "." || pkgName === "theme") return;
 
-  const desc = `${pkgName} plugin for vuepress-theme-hope`;
+  const desc = `${pkgName} plugin for VuePress`;
   const pkgPath = join(packagesDir, pkgName, "package.json");
 
   // generate package.json
   if (!existsSync(pkgPath)) {
     const pkgJSON = {
-      name: `@mr-hope/vuepress-plugin-${pkgName}`,
+      name: `vuepress-plugin-${pkgName}`,
       version,
       description: desc,
-      keywords: [
-        "vuepress-plugin",
-        "vuepress",
-        pkgName,
-        "vuepress-theme-hope",
-        "mr-hope",
-      ],
-      homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/tree/main/packages/${pkgName}#readme`,
-      bugs: {
-        url: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/issues",
+      main: "lib/node/index.js",
+      types: "lib/node/index.d.ts",
+      publishConfig: {
+        access: "public",
       },
       repository: {
         type: "git",
-        url: "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+        url: "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1.git",
         directory: `packages/${pkgName}`,
       },
-      license: "MIT",
+      keywords: [
+        "vuepress",
+        "vuepress1",
+        "vuepress-plugin",
+        pkgName,
+        "mr-hope",
+      ],
       author: {
         email: "mister-hope@outlook.com",
         name: "Mr.Hope",
         url: "https://mrhope.site",
       },
-      main: "lib/node/index.js",
-      types: "lib/types/index.d.ts",
-      scripts: {
-        build: "tsc -b tsconfig.json",
-        clean: "rimraf lib *.tsbuildinfo",
-        copy: 'cpx "src/**/*.{d.ts,vue,styl}" lib',
+      license: "MIT",
+      bugs: {
+        url: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues",
       },
-      dependencies: {
-        "vuepress-typings": `^${version}`,
-      },
-      publishConfig: {
-        access: "public",
-      },
+      homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/${pkgName}#readme`,
     };
 
     writeFileSync(pkgPath, `${JSON.stringify(pkgJSON, null, 2)}\n`);
   }
 
-  const readmePath = join(packagesDir, pkgName, "readme.md");
+  const readmePath = join(packagesDir, pkgName, "README.md");
 
-  // generate readme.md
+  // generate README.md
   if (!existsSync(readmePath))
     writeFileSync(
       readmePath,
-      `# @mr-hope/vuepress-plugin-${pkgName}
+      `# vuepress-plugin-${pkgName}
 
-[![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-plugin-${pkgName}.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-plugin-${pkgName}.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-plugin-${pkgName}?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-plugin-${pkgName})
+[![Version](https://img.shields.io/npm/v/vuepress-plugin-${pkgName}.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-${pkgName}.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-plugin-${pkgName}?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-${pkgName})
 
 ${desc}.
 
 ## Usage
 
 \`\`\`bash
-npm i @mr-hope/vuepress-plugin-${pkgName}
+yarn add vuepress-plugin-${pkgName}
+\`\`\`
+
+Or
+
+\`\`\`bash
+npm i vuepress-plugin-${pkgName}
 \`\`\`
 
 ---
 
-vuepress-theme-hope 的 ${pkgName} 插件。
+VuePress 的 ${pkgName} 插件。
 
 ## 使用
 
 \`\`\`bash
-npm i @mr-hope/vuepress-plugin-${pkgName}
+yarn add vuepress-plugin-${pkgName}
+\`\`\`
+
+或
+
+\`\`\`bash
+npm i vuepress-plugin-${pkgName}
 \`\`\`
 `
     );
