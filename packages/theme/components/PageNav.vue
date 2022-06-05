@@ -7,7 +7,7 @@
       </div>
     </AutoLink>
     <AutoLink v-if="nextNavLink" class="next" :config="nextNavLink">
-      <div class="hint"><span class="arrow right" />Next</div>
+      <div class="hint">Next<span class="arrow right" /></div>
       <div class="link">
         {{ nextNavLink.text }}<FontIcon :icon="nextNavLink.icon" />
       </div>

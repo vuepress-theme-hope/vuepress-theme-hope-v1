@@ -1,6 +1,6 @@
 <template>
   <footer class="page-meta">
-    <div v-if="editLink" class="edit-link">
+    <div v-if="editLink" class="meta-item edit-link">
       <EditIcon />
       <a :href="editLink" target="_blank" rel="noopener noreferrer">{{
         editLinkText
@@ -18,16 +18,12 @@
     >
       <span class="label">{{ contributorsText }}: </span>
       <span class="info">
-        <template v-for="(contributor, index) in contributors">
+        <template v-for="(contributor, index) in contributors" :key="index">
           <!-- eslint-disable vue/no-v-for-template-key-on-child -->
-          <span
-            :key="index"
-            class="contributor"
-            :title="`email: ${contributor.email}`"
-          >
+          <span class="contributor" :title="`email: ${contributor.email}`">
             {{ contributor.name }}
           </span>
-          <template v-if="index !== contributors.length - 1">, </template>
+          {{ index !== contributors.length - 1 ? ", " : "" }}
         </template>
       </span>
     </div>
@@ -40,42 +36,44 @@
 @require '~vuepress-shared/styles/wrapper';
 
 .page-meta {
-  wrapper();
-  padding-top: 12px;
-  padding-bottom: 12px;
-  font-family: Arial, Helvetica, sans-serif;
+  horizontal-wrapper();
   overflow: auto;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 
   .meta-item {
+    margin-top: 0.5rem;
+
     .label {
       font-weight: 500;
-      color: var(--text-color-lighter);
+
+      &:not(a) {
+        color: var(--text-color-lighter);
+      }
     }
 
     .info {
-      font-weight: 400;
       color: var(--dark-grey);
+      font-weight: 400;
     }
   }
 
   .edit-link {
     display: inline-block;
+    margin-right: 0.25rem;
     font-size: 14px;
-
-    .icon {
-      position: relative;
-      bottom: -0.125em;
-      width: 1em;
-      height: 1em;
-      color: var(--accent-color);
-    }
 
     @media (max-width: $MQMobile) {
       margin-bottom: 8px;
     }
 
-    a {
-      color: var(--accent-color-light);
+    .icon {
+      position: relative;
+      bottom: -0.125em;
+
+      width: 1em;
+      height: 1em;
+      margin-right: 0.25em;
     }
   }
 
@@ -87,6 +85,10 @@
       float: none;
       font-size: 13px;
       text-align: left;
+    }
+
+    &:first-child {
+      float: left;
     }
   }
 

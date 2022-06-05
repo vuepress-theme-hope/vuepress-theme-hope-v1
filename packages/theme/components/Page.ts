@@ -1,9 +1,9 @@
 import Anchor from "@theme/components/Anchor.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 import PageInfo from "@mr-hope/vuepress-plugin-components/lib/client/PageInfo.vue";
-import PageMeta from "@theme/components/PageMeta.vue";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
+import PageMeta from "@theme/components/Info/PageMeta.vue";
 import { pathEncryptMixin } from "@theme/mixins/pathEncrypt";
 
 import type { PageInfoProps } from "@mr-hope/vuepress-plugin-components";

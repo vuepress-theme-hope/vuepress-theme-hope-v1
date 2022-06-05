@@ -1,3 +1,4 @@
+// TODO: Support locales
 import Vue from "vue";
 import AutoLink from "@theme/components/AutoLink";
 import {

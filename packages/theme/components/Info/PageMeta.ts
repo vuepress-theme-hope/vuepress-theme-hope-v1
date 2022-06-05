@@ -1,3 +1,4 @@
+// TODO: Improve script and deprecate options
 import Vue from "vue";
 import EditIcon from "@theme/icons/EditIcon.vue";
 import { endingSlashRE, outboundRE } from "@theme/utils/path";
@@ -47,14 +48,17 @@ export default Vue.extend({
 
     editLink(): string | false {
       const showEditLink =
-        this.$page.frontmatter.editLink ||
-        (this.$themeConfig.editLinks !== false &&
-          this.$page.frontmatter.editLink !== false);
+        this.$page.frontmatter.editLink === false
+          ? false
+          : !(
+              this.$themeConfig.editLinks === false &&
+              !this.$page.frontmatter.editLink
+            );
 
-      const { repo, docsRepo } = this.$themeConfig;
+      const { repo, docsRepo = repo } = this.$themeConfig;
 
-      if (showEditLink && (repo || docsRepo) && this.$page.relativePath)
-        return this.createEditLink();
+      if (showEditLink && docsRepo && this.$page.relativePath)
+        return this.createEditLink(docsRepo);
 
       return false;
     },
@@ -65,13 +69,8 @@ export default Vue.extend({
   },
 
   methods: {
-    createEditLink(): string {
-      const {
-        repo = "",
-        docsRepo = repo,
-        docsDir = "",
-        docsBranch = "main",
-      } = this.$themeConfig;
+    createEditLink(docsRepo: string): string {
+      const { docsDir = "", docsBranch = "main" } = this.$themeConfig;
 
       const bitbucket = /bitbucket.org/u;
 
