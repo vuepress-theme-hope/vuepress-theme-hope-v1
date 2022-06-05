@@ -1,16 +1,24 @@
 import type { AlgoliaOption } from "vuepress-typings";
-import type { HopeThemeAppearanceConfig } from "./appearance";
-import type { HopeFeatureConfig } from "./feature";
+import type {
+  HopeThemeAppearanceOptions,
+  HopeThemeAppearanceRootOptions,
+} from "./appearance";
+import type {
+  HopeThemeFeatureLocaleOptions,
+  HopeThemeFeatureRootOptions,
+} from "./feature";
 import type { HopeLayoutConfig, HopeThemeMetaLocaleOptions } from "./layout";
 import type { HopeThemeLocalesConfig } from "./locales";
-import type { HopeThemePluginConfig } from "./plugin";
+import type { HopeThemePluginOptions } from "./plugin";
 
 /** vuepress-theme-hope 主题配置 */
 export interface HopeThemeConfig
-  extends HopeThemeAppearanceConfig,
-    HopeFeatureConfig,
+  extends HopeThemeAppearanceOptions,
+    HopeThemeAppearanceRootOptions,
+    HopeThemeFeatureLocaleOptions,
+    HopeThemeFeatureRootOptions,
     HopeLayoutConfig,
-    HopeThemePluginConfig,
+    HopeThemePluginOptions,
     HopeThemeMetaLocaleOptions {
   /**
    * Navbar logo

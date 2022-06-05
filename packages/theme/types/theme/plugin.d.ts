@@ -69,7 +69,7 @@ export interface CleanUrlOptions {
  *
  * Copyright Settings
  */
-export interface HopeCopyrightConfig {
+export interface HopeCopyrightPluginOptions {
   /**
    * 功能状态
    *
@@ -104,7 +104,7 @@ export interface HopeCopyrightConfig {
   noSelect?: boolean;
 }
 
-interface HopeThemePluginConfig {
+interface HopeThemePluginOptions {
   /**
    * AddThis 的公共 ID
    * @see http://vuepress-theme-hope.gitee.io/v1/add-this/zh/config.html
@@ -151,7 +151,7 @@ interface HopeThemePluginConfig {
    * 清理插件配置
    * @see https://vuepress-theme-hope.gitee.io/v1/zh/config/theme/plugin/#cleanurl
    *
-   * Clean Url Config
+   * Clean Url options
    * @see https://vuepress-theme-hope.github.io/v1/config/theme/plugin/#cleanurl
    */
   cleanUrl?: CleanUrlOptions | false;
@@ -170,7 +170,7 @@ interface HopeThemePluginConfig {
    *
    * Copyright plugin options
    */
-  copyrightPluginPlugin?: HopeCopyrightConfig;
+  copyrightPluginPlugin?: HopeCopyrightPluginOptions;
 
   /**
    * Feed 插件配置
@@ -235,8 +235,6 @@ interface HopeThemePluginConfig {
    */
   sitemap?: SitemapOptions | false;
 
-  smoothScrollOptions?: SmoothScrollOptions | number | false;
-
   /**
    * ts-loader 选项
    *
@@ -244,4 +242,22 @@ interface HopeThemePluginConfig {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   typescript?: Record<string, any> | boolean;
+
+  /**
+   * 每分钟的阅读字数
+   *
+   * Reading speed of word per minute
+   *
+   * @default 300
+   */
+  wordPerminute?: number;
+
+  /**
+   * 是否启用平滑滚动
+   *
+   * Enable smooth scrolling feature
+   *
+   * @default true
+   */
+  smoothScroll?: SmoothScrollOptions | number | false;
 }

@@ -1,6 +1,8 @@
 import type { ConvertLocaleConfig } from "vuepress-shared";
 import type { AlgoliaOption } from "vuepress-typings";
+import type { HopeThemeAppearanceOptions } from "./appearance";
 import type { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
+import type { HopeThemeFeatureLocaleOptions } from "./feature";
 import type { HopeThemeFooterLocaleOptions } from "./layout/footer";
 import type {
   HopeThemeMetaLocateData,
@@ -72,6 +74,8 @@ export type HopeThemeLocaleConfig = ConvertLocaleConfig<HopeThemeLocaleData>;
 /** vuepress-theme-hope 多语言配置 */
 export interface HopeThemeLocalesConfig
   extends Partial<HopeThemeLocaleData>,
+    HopeThemeAppearanceOptions,
+    HopeThemeFeatureLocaleOptions,
     HopeThemeFooterLocaleOptions,
     HopeThemeMetaLocaleOptions {
   /** 当前语言下的标题 */

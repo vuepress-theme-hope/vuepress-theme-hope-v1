@@ -1,5 +1,3 @@
-import type { SmoothScrollOptions } from "@theme/../smooth-scroll/lib/types";
-
 /**
  * 合法的媒体
  *
@@ -207,7 +205,7 @@ export interface CustomOptions {
   sidebarBottom?: string;
 }
 
-export interface HopeFeatureConfig {
+export interface HopeThemeFeatureLocaleOptions {
   /**
    * 深色模式支持选项:
    *
@@ -226,6 +224,15 @@ export interface HopeFeatureConfig {
    * @default 'auto-switch'
    */
   darkmode?: "auto-switch" | "auto" | "switch" | "disable";
+}
+
+export interface HopeThemeFeatureRootOptions {
+  /**
+   * 博客设置
+   *
+   * Blog configuration
+   */
+  blog?: BlogOptions | false;
 
   /**
    * 主题色选项配置。
@@ -247,13 +254,6 @@ export interface HopeFeatureConfig {
   themeColor?: Record<string, string> | false;
 
   /**
-   * 博客设置
-   *
-   * Blog configuration
-   */
-  blog?: BlogOptions | false;
-
-  /**
    * 加密设置
    *
    * Encrypt Configuration
@@ -264,22 +264,4 @@ export interface HopeFeatureConfig {
    * 自定义组件设置
    */
   custom?: CustomOptions;
-
-  /**
-   * 是否启用平滑滚动
-   *
-   * Enable smooth scrolling feature
-   *
-   * @default true
-   */
-  smoothScroll?: SmoothScrollOptions | number | false;
-
-  /**
-   * 每分钟的阅读字数
-   *
-   * Reading speed of word per minute
-   *
-   * @default 300
-   */
-  wordPerminute?: number;
 }

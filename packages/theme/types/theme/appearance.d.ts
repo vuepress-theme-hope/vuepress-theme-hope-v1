@@ -1,22 +1,4 @@
-export interface HopeThemeAppearanceConfig {
-  /**
-   * Algolia 搜索类型
-   *
-   * Algolia Search Type
-   *
-   * @default 'dropdown'
-   */
-  algoliaType?: "dropdown" | "full";
-
-  /**
-   * 图标前缀
-   *
-   * Prefix of icon class
-   *
-   * @default 'icon-'
-   */
-  iconPrefix?: string;
-
+export interface HopeThemeAppearanceOptions {
   /**
    * 是否在移动视图下隐藏站点名称
    *
@@ -70,6 +52,26 @@ export interface HopeThemeAppearanceConfig {
    * @default true
    */
   breadcrumbIcon?: boolean;
+}
+
+export interface HopeThemeAppearanceRootOptions {
+  /**
+   * Algolia 搜索类型
+   *
+   * Algolia Search Type
+   *
+   * @default 'dropdown'
+   */
+  algoliaType?: "dropdown" | "full";
+
+  /**
+   * 图标前缀
+   *
+   * Prefix of icon class
+   *
+   * @default ''
+   */
+  iconPrefix?: string;
 
   /**
    * 是否显示返回顶部按钮
