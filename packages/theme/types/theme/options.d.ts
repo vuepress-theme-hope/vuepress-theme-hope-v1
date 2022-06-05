@@ -2,6 +2,7 @@ import type { AlgoliaOption } from "vuepress-typings";
 import type { HopeThemeAppearanceConfig } from "./appearance";
 import type { HopeFeatureConfig } from "./feature";
 import type { HopeFooterConfig, HopeLayoutConfig } from "./layout";
+import type { HopeThemeMetaLocaleOptions } from "./layout/meta";
 import type { HopeThemeLocalesConfig } from "./locales";
 import type { HopeThemePluginConfig } from "./plugin";
 
@@ -10,7 +11,8 @@ export interface HopeThemeConfig
   extends HopeThemeAppearanceConfig,
     HopeFeatureConfig,
     HopeLayoutConfig,
-    HopeThemePluginConfig {
+    HopeThemePluginConfig,
+    HopeThemeMetaLocaleOptions {
   /**
    * Navbar logo
    *

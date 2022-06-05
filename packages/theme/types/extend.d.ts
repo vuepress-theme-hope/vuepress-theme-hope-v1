@@ -44,8 +44,8 @@ declare module "vuepress-typings" {
     sidebarDepth?: number;
     comment?: boolean;
     editLink?: boolean;
-    contributor?: boolean;
-    updateTime?: boolean;
+    contributors?: boolean;
+    lastUpdated?: boolean;
     prev?: AutoLink | string | false;
     next?: AutoLink | string | false;
     mediaLink?: BlogMedia;

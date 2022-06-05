@@ -6,11 +6,24 @@ export const themeLocales: HopeThemeLocaleConfig = {
     selectText: "Language",
     label: "English",
     ariaLabel: "Select language",
-    meta: {
-      contributor: "Contributors",
+
+    metaLocales: {
+      author: "Author",
+      date: "Writing Date",
+      origin: "Original",
+      views: "Page views",
+      category: "Category",
+      tag: "Tag",
+      readingTime: "Reading Time",
+      words: "Words",
+      toc: "On This Page",
+      prev: "Prev",
+      next: "Next",
+      lastUpdated: "Last update",
+      contributors: "Contributors",
       editLink: "Edit this page",
-      updateTime: "Last update",
     },
+
     themeColor: {
       themeColor: "Theme Color",
       themeMode: "Theme Mode",
@@ -48,11 +61,24 @@ export const themeLocales: HopeThemeLocaleConfig = {
     lang: "zh-CN",
     selectText: "选择语言",
     label: "简体中文",
-    meta: {
-      contributor: "贡献者",
+
+    metaLocales: {
+      author: "作者",
+      date: "写作日期",
+      origin: "原创",
+      views: "访问量",
+      category: "分类",
+      tag: "标签",
+      readingTime: "阅读时间",
+      words: "字数",
+      toc: "此页内容",
+      prev: "上一页",
+      next: "下一页",
+      lastUpdated: "上次编辑于",
+      contributors: "贡献者",
       editLink: "编辑此页",
-      updateTime: "上次编辑于",
     },
+
     themeColor: {
       themeColor: "主题色",
       themeMode: "主题模式",
@@ -90,11 +116,24 @@ export const themeLocales: HopeThemeLocaleConfig = {
     lang: "zh-TW",
     selectText: "選擇語言",
     label: "繁體中文",
-    meta: {
-      contributor: "貢獻者",
+
+    metaLocales: {
+      author: "作者",
+      date: "寫作日期",
+      origin: "原創",
+      views: "訪問量",
+      category: "分類",
+      tag: "標籤",
+      readingTime: "閱讀時間",
+      words: "字數",
+      toc: "此頁內容",
+      prev: "上一頁",
+      next: "下一頁",
+      lastUpdated: "上次編輯於",
+      contributors: "貢獻者",
       editLink: "編輯此頁",
-      updateTime: "上次編輯於",
     },
+
     themeColor: {
       themeColor: "主題色",
       themeMode: "主題模式",
@@ -133,11 +172,24 @@ export const themeLocales: HopeThemeLocaleConfig = {
     selectText: "Sprache",
     label: "Deutsch",
     ariaLabel: "Sprache wählen",
-    meta: {
-      contributor: "Mitwirkende",
+
+    metaLocales: {
+      author: "Autor",
+      date: "Datum",
+      origin: "Original",
+      views: "Besucher",
+      category: "Kategorie",
+      tag: "Tag",
+      readingTime: "Lesezeit",
+      words: "Wörter",
+      toc: "On This Page",
+      prev: "Prev",
+      next: "Next",
+      lastUpdated: "Zuletzt geändert",
+      contributors: "Mitwirkende",
       editLink: "Diese Seite barbeiten",
-      updateTime: "Zuletzt geändert",
     },
+
     themeColor: {
       themeColor: "Design-Farbe",
       themeMode: "Design-Modus",
@@ -176,11 +228,24 @@ export const themeLocales: HopeThemeLocaleConfig = {
     selectText: "Ngôn ngữ",
     label: "Tiếng Việt",
     ariaLabel: "Chọn ngôn ngữ",
-    meta: {
-      contributor: "Người đóng góp",
+
+    metaLocales: {
+      author: "Người viết",
+      date: "Ngày viết",
+      origin: "Nguồn",
+      views: "Views của trang",
+      category: "Category",
+      tag: "Tag",
+      readingTime: "Thời gian đọc",
+      words: "Words",
+      toc: "On This Page",
+      prev: "Prev",
+      next: "Next",
+      lastUpdated: "Cập nhật gần nhất lúc",
+      contributors: "Người đóng góp",
       editLink: "Chỉnh sửa trang này",
-      updateTime: "Cập nhật gần nhất lúc",
     },
+
     themeColor: {
       themeColor: "Màu nền",
       themeMode: "Theme Mode",
@@ -219,11 +284,24 @@ export const themeLocales: HopeThemeLocaleConfig = {
     selectText: "Язык",
     label: "Русский",
     ariaLabel: "Выберите язык",
-    meta: {
-      contributor: "Авторы",
+
+    metaLocales: {
+      author: "Автор",
+      date: "Дата написания",
+      origin: "Оригинал",
+      views: "Просмотры страницы",
+      category: "Категория",
+      tag: "Тэги",
+      readingTime: "Время чтения",
+      words: "Слова",
+      toc: "На этой странице",
+      prev: "Предыдущая",
+      next: "Следующая",
+      lastUpdated: "Последнее обновление",
+      contributors: "Контрибьюторы",
       editLink: "Редактировать эту страницу",
-      updateTime: "Последнее обновление",
     },
+
     themeColor: {
       themeColor: "Цвет темы",
       themeMode: "Режим темы",
@@ -262,11 +340,24 @@ export const themeLocales: HopeThemeLocaleConfig = {
     selectText: "Мова",
     label: "Українська",
     ariaLabel: "Оберіть мову",
-    meta: {
-      contributor: "Автори",
+
+    metaLocales: {
+      author: "Автор",
+      date: "Дата написання",
+      origin: "Оригінал",
+      views: "Перегляди сторінки",
+      category: "Категорія",
+      tag: "Теги",
+      readingTime: "Час читання",
+      words: "Слова",
+      toc: "On This Page",
+      prev: "Prev",
+      next: "Next",
+      lastUpdated: "Останнє оновлення",
+      contributors: "Автори",
       editLink: "Редагувати цю сторінку",
-      updateTime: "Останнє оновлення",
     },
+
     themeColor: {
       themeColor: "Колір теми",
       themeMode: "Тематичний режим",
@@ -305,11 +396,24 @@ export const themeLocales: HopeThemeLocaleConfig = {
     selectText: "Língua",
     label: "Português",
     ariaLabel: "Selecione a língua",
-    meta: {
-      contributor: "Contribuidores",
+
+    metaLocales: {
+      author: "Autor",
+      date: "Escrito em",
+      origin: "Original",
+      views: "Visualizações",
+      category: "Categoria",
+      tag: "Tag",
+      readingTime: "Tempo de Leitura",
+      words: "Palavras",
+      toc: "On This Page",
+      prev: "Prev",
+      next: "Next",
+      lastUpdated: "Última atualização",
       editLink: "Editar esta página",
-      updateTime: "Última atualização",
+      contributors: "Contribuidores",
     },
+
     themeColor: {
       themeColor: "Cor do Tema",
       themeMode: "Modo do Tema",

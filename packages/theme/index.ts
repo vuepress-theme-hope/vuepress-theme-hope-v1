@@ -1,8 +1,8 @@
 import { CAC } from "cac";
 import { getAlias } from "./node/alias";
+import { covertFrontmatter } from "./node/compact";
 import { resolveThemeConfig, resolveVuePressConfig } from "./node/config";
 import { eject } from "./node/eject";
-
 import { getPluginConfig } from "./node/plugins";
 
 import type { Context, PluginEntry } from "vuepress-typings";
@@ -50,6 +50,10 @@ const themeAPI = (
     plugins: getPluginConfig(resolvedConfig),
 
     additionalPages: resolvedConfig.blog === false ? [] : blogAddtionalPages,
+
+    extendPageData: (page): void => {
+      covertFrontmatter(page.frontmatter, page._filePath);
+    },
 
     extendCli: (cli: CAC): void => {
       cli

@@ -72,33 +72,6 @@ export interface HopeThemeAppearanceConfig {
   breadcrumbIcon?: boolean;
 
   /**
-   * 是否显示当前页面贡献者
-   *
-   * Whether show contributors in each page
-   *
-   * @default true
-   */
-  contributor?: boolean;
-
-  /**
-   * 显示编辑本页链接
-   *
-   * Whether show edit link on each page
-   *
-   * @default true
-   */
-  editLinks?: boolean;
-
-  /**
-   * 显示更新时间
-   *
-   * Whether show update time on each page
-   *
-   * @default true
-   */
-  updateTime?: boolean;
-
-  /**
    * 是否显示返回顶部按钮
    *
    * 如果设置为数字，则该数字为触发临界值 (默认临界值为 300px)

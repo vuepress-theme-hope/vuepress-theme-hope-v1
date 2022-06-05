@@ -12,38 +12,34 @@ export default Vue.extend({
   components: { EditIcon },
 
   computed: {
-    locales(): HopeThemeLocaleData["meta"] {
-      return (
-        this.$themeLocaleConfig.meta || {
-          contributor: "Contributors",
-          editLink: "Edit this page",
-          updateTime: "Last Updated",
-        }
-      );
+    locales(): HopeThemeLocaleData["metaLocales"] {
+      return this.$themeLocaleConfig.metaLocales;
     },
 
     contributors(): GitContributor[] {
-      return this.$page.frontmatter.contributor === false ||
-        (this.$themeConfig.contributor === false &&
-          !this.$page.frontmatter.contributor)
+      const pageConfig = this.$frontmatter.contributors;
+      const themeConfig = this.$themeConfig.contributors;
+
+      return pageConfig === false || (themeConfig === false && !pageConfig)
         ? []
         : this.$page.contributors || [];
     },
 
     contributorsText(): string {
-      return this.locales.contributor;
+      return this.locales.contributors;
     },
 
     updateTime(): string {
-      return this.$page.frontmatter.updateTime === false ||
-        (this.$themeConfig.updateTime === false &&
-          !this.$page.frontmatter.updateTime)
+      const pageConfig = this.$frontmatter.lastUpdated;
+      const themeConfig = this.$themeConfig.lastUpdated;
+
+      return pageConfig === false || (themeConfig === false && !pageConfig)
         ? ""
         : this.$page.updateTime || "";
     },
 
     updateTimeText(): string {
-      return this.locales.updateTime;
+      return this.locales.lastUpdated;
     },
 
     editLink(): string | false {

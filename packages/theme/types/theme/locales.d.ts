@@ -2,6 +2,10 @@ import type { ConvertLocaleConfig } from "vuepress-shared";
 import type { AlgoliaOption } from "vuepress-typings";
 import type { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
 import type { HopeFooterConfig } from "./layout";
+import type {
+  HopeThemeMetaLocateData,
+  HopeThemeMetaLocaleOptions,
+} from "./layout/meta";
 
 export interface HopeThemeLocaleData {
   /** 当前语言代码 */
@@ -13,15 +17,8 @@ export interface HopeThemeLocaleData {
   /** 辅助标签 */
   ariaLabel?: string;
 
-  /** 页面信息 */
-  meta: {
-    /** 贡献者文字 */
-    contributor: string;
-    /** 编辑链接文字 */
-    editLink: string;
-    /** 该语言下的更新时间文字 */
-    updateTime: string;
-  };
+  metaLocales: HopeThemeMetaLocateData;
+
   /** 主题色配置 */
   themeColor: {
     /** 颜色提示文字 */
@@ -73,7 +70,9 @@ export interface HopeThemeLocaleData {
 export type HopeThemeLocaleConfig = ConvertLocaleConfig<HopeThemeLocaleData>;
 
 /** vuepress-theme-hope 多语言配置 */
-export interface HopeThemeLocalesConfig extends Partial<HopeThemeLocaleData> {
+export interface HopeThemeLocalesConfig
+  extends Partial<HopeThemeLocaleData>,
+    HopeThemeMetaLocaleOptions {
   /** 当前语言下的标题 */
   title?: string;
   /** 当前语言下的描述 */
