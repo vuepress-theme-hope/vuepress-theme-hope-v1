@@ -1,46 +1,43 @@
 import Vue from "vue";
 import MediaLinks from "@theme/components/MediaLinks.vue";
 
-import type { HopeFooterConfig } from "@theme/types";
-
 export default Vue.extend({
   name: "PageFooter",
 
   components: { MediaLinks },
 
   computed: {
-    footerConfig(): HopeFooterConfig {
-      return this.$themeLocaleConfig.footer || this.$themeConfig.footer;
-    },
-
     enable(): boolean {
       const { copyrightText, footer, medialink } = this.$page.frontmatter;
 
       return (
         footer !== false &&
         Boolean(
-          copyrightText || footer || medialink || this.footerConfig.display
+          copyrightText ||
+            footer ||
+            medialink ||
+            this.$themeLocaleConfig.displayFooter
         )
       );
     },
 
     footerContent(): string | false {
-      const { footer } = this.$page.frontmatter;
+      const { footer } = this.$frontmatter;
 
       return footer === false
         ? false
         : typeof footer === "string"
         ? footer
-        : this.footerConfig.content || "";
+        : this.$themeLocaleConfig.footer || "";
     },
 
     copyright(): string | false {
       return this.$frontmatter.copyrightText === false
         ? false
         : this.$frontmatter.copyrightText ||
-            (this.footerConfig.copyright === false
+            (this.$themeLocaleConfig.copyright === false
               ? false
-              : this.footerConfig.copyright ||
+              : this.$themeLocaleConfig.copyright ||
                 (this.$themeConfig.author
                   ? `Copyright © ${new Date().getFullYear()} ${
                       this.$themeConfig.author

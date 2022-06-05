@@ -74,7 +74,7 @@ const resolveFeedOptions = (
           ...(themeConfig.author
             ? { author: { name: themeConfig.author } }
             : {}),
-          copyright: themeConfig.footer.copyright || "",
+          copyright: themeConfig.copyright || "",
           ...(themeConfig.feed?.channel || null),
         },
       };
@@ -188,15 +188,15 @@ export const getPluginConfig = (
 
     [
       "copyright",
-      typeof themeConfig.copyright === "object"
+      typeof themeConfig.copyrightPluginPlugin === "object"
         ? {
             minLength: 100,
-            disable: themeConfig.copyright.status === "local",
+            disable: themeConfig.copyrightPluginPlugin.status === "local",
             clipboardComponent: resolve(
               __dirname,
               "../components/Clipboard.vue"
             ),
-            ...themeConfig.copyright,
+            ...themeConfig.copyrightPluginPlugin,
           }
         : false,
     ],

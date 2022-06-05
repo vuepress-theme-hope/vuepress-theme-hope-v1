@@ -1,7 +1,7 @@
 // import { covertNavbarConfig } from "./navbar";
 // import { convertSidebarConfig } from "./sidebar";
 import { droppedLogger, deprecatedLogger } from "./utils";
-// import { logger } from "../utils";
+import { logger } from "../utils";
 
 import type { HopeThemeConfig } from "../../types";
 
@@ -101,44 +101,44 @@ const DROPPED_THEME_OPTIONS: [string, string?, string?][] = [
 //   }
 // };
 
-// /**
-//  * @deprecated You should use V2 standard options and avoid using it
-//  */
-// const handleFooterOptions = (options: Record<string, unknown>): void => {
-//   if (typeof options["footer"] === "object" && options["footer"]) {
-//     const footer = options["footer"];
+/**
+ * @deprecated You should use standard options and avoid using it
+ */
+const handleFooterOptions = (options: Record<string, unknown>): void => {
+  if (typeof options["footer"] === "object" && options["footer"]) {
+    const footer = options["footer"];
 
-//     if ("copyright" in footer) {
-//       logger.warn(
-//         '"footer.copyright" options is deprecated, please use "copyright" instead'
-//       );
+    if ("copyright" in footer) {
+      logger.warn(
+        '"footer.copyright" options is deprecated, please use "copyright" instead'
+      );
 
-//       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//       // @ts-ignore
-//       options["copyright"] = footer["copyright"];
-//     }
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      options["copyright"] = footer["copyright"];
+    }
 
-//     if ("display" in footer) {
-//       logger.warn(
-//         '"footer.display" options is deprecated, please use "displayFooter" instead'
-//       );
+    if ("display" in footer) {
+      logger.warn(
+        '"footer.display" options is deprecated, please use "displayFooter" instead'
+      );
 
-//       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//       // @ts-ignore
-//       options["displayFooter"] = footer["display"];
-//     }
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      options["displayFooter"] = footer["display"];
+    }
 
-//     if ("content" in footer) {
-//       logger.warn(
-//         '"footer.content" options is deprecated, please use "footer" instead'
-//       );
+    if ("content" in footer) {
+      logger.warn(
+        '"footer.content" options is deprecated, please use "footer" instead'
+      );
 
-//       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//       // @ts-ignore
-//       options["footer"] = footer["content"];
-//     } else delete options["footer"];
-//   }
-// };
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      options["footer"] = footer["content"];
+    } else delete options["footer"];
+  }
+};
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
@@ -178,8 +178,8 @@ export const covertThemeConfig = (
   // if ("sidebar" in themeOptions)
   //   themeOptions["sidebar"] = convertSidebarConfig(themeOptions["sidebar"]);
 
-  // // handle footer
-  // handleFooterOptions(themeOptions);
+  // handle footer
+  handleFooterOptions(themeOptions);
 
   // // handle blog
   // if (typeof themeOptions["blog"] === "object" && themeOptions["blog"]) {
@@ -238,7 +238,7 @@ export const covertThemeConfig = (
         //   );
 
         // handle footer
-        // handleFooterOptions(localeConfig);
+        handleFooterOptions(localeConfig);
 
         // handle blog
         // if (typeof localeConfig["blog"] === "object" && localeConfig["blog"]) {

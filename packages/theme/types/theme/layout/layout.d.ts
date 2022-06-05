@@ -1,5 +1,6 @@
-import { PageInfo } from "vuepress-plugin-comment1";
-import { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
+import type { PageInfo } from "vuepress-plugin-comment1";
+import type { HopeNavBarConfig, HopeSideBarConfig } from "../extends";
+import type { HopeThemeFooterLocaleOptions } from "./footer";
 
 /**
  * 页脚配置
@@ -29,7 +30,7 @@ export interface HopeFooterConfig {
   display?: boolean;
 }
 
-export interface HopeLayoutConfig {
+export interface HopeLayoutConfig extends HopeThemeFooterLocaleOptions {
   /**
    * 导航栏配置
    *
@@ -98,11 +99,4 @@ export interface HopeLayoutConfig {
    * @default ['author', 'visitor', 'time', 'category', 'tag', 'reading-time']
    */
   pageInfo?: PageInfo[] | false;
-
-  /**
-   * 页脚配置
-   *
-   * Footer Configuration
-   */
-  footer?: HopeFooterConfig;
 }

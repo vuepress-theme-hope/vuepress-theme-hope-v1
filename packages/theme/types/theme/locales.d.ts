@@ -1,7 +1,7 @@
 import type { ConvertLocaleConfig } from "vuepress-shared";
 import type { AlgoliaOption } from "vuepress-typings";
 import type { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
-import type { HopeFooterConfig } from "./layout";
+import type { HopeThemeFooterLocaleOptions } from "./layout/footer";
 import type {
   HopeThemeMetaLocateData,
   HopeThemeMetaLocaleOptions,
@@ -72,6 +72,7 @@ export type HopeThemeLocaleConfig = ConvertLocaleConfig<HopeThemeLocaleData>;
 /** vuepress-theme-hope 多语言配置 */
 export interface HopeThemeLocalesConfig
   extends Partial<HopeThemeLocaleData>,
+    HopeThemeFooterLocaleOptions,
     HopeThemeMetaLocaleOptions {
   /** 当前语言下的标题 */
   title?: string;
@@ -103,9 +104,6 @@ export interface HopeThemeLocalesConfig
 
   /** 当前语言的 algolia 设置 */
   algolia?: AlgoliaOption;
-
-  /** 页脚设置 */
-  footer?: HopeFooterConfig;
 
   /** 显示所有页面的标题链接 */
   displayAllHeaders?: boolean;

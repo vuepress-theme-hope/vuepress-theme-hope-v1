@@ -89,6 +89,7 @@ export interface HopeThemeMetaLocaleOptions {
    * @default true
    */
   lastUpdated?: boolean;
+
   /**
    * Whether to show "Contributors" or not
    *
@@ -97,6 +98,7 @@ export interface HopeThemeMetaLocaleOptions {
    * @default true
    */
   contributors?: boolean;
+
   /**
    * Whether to show "Edit this page" or not
    *

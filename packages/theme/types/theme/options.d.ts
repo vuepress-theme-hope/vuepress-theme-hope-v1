@@ -1,8 +1,7 @@
 import type { AlgoliaOption } from "vuepress-typings";
 import type { HopeThemeAppearanceConfig } from "./appearance";
 import type { HopeFeatureConfig } from "./feature";
-import type { HopeFooterConfig, HopeLayoutConfig } from "./layout";
-import type { HopeThemeMetaLocaleOptions } from "./layout/meta";
+import type { HopeLayoutConfig, HopeThemeMetaLocaleOptions } from "./layout";
 import type { HopeThemeLocalesConfig } from "./locales";
 import type { HopeThemePluginConfig } from "./plugin";
 
@@ -84,8 +83,6 @@ export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
   iconPrefix: string;
   /** 多语言配置 */
   locales: Record<string, HopeThemeLocalesConfig>;
-  /** 页脚配置 */
-  footer: HopeFooterConfig;
   /** 显示编辑本页链接 */
   editLinks: boolean;
 }
