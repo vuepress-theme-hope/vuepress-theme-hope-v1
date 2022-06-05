@@ -1,10 +1,11 @@
 import Vue from "vue";
 import { debounce } from "ts-debounce";
-import { componentLocales } from "./define";
 
 import type { DebouncedFunction } from "ts-debounce";
 
 let onScroll: DebouncedFunction<[], () => void>;
+
+const backToTopLocales = BACK_TO_TOP_LOCALES;
 
 export default Vue.extend({
   name: "BackToTop",
@@ -24,7 +25,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return componentLocales[this.$localePath].backToTop;
+      return backToTopLocales[this.$localePath].backToTop;
     },
   },
 

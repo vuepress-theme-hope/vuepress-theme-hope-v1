@@ -5,17 +5,10 @@ icon: config
 
 ## backToTop
 
-- Type: `boolean`
+- Type: `boolean | number`
 - Default: `false`
 
-Whether enabling backToTop button
-
-## backToTopThreshold
-
-- Type: `number`
-- Default: `300`
-
-backToTop button threshold distance (in pixels)
+Whether enabling backToTop button. When setting a number, it will be used as BackToTop button threshold distance (in pixels), default is 300.
 
 ## breadcrumb
 

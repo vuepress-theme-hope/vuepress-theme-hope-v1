@@ -1,48 +1,107 @@
 import type {
-  ComponentLocaleConfig,
+  BackToTopLocaleConfig,
+  ExternalLinkLocaleConfig,
   PageInfoLocaleConfig,
   PaginationLocaleConfig,
 } from "../types";
 
-export const componentLocales: ComponentLocaleConfig = {
+export const backToTopLocales: BackToTopLocaleConfig = {
   "/en/": {
     backToTop: "Back to top",
-    openInNewWindow: "Open in new window",
   },
 
   "/zh/": {
     backToTop: "返回顶部",
-    openInNewWindow: "在新窗口中打开",
   },
 
   "/zh-tw/": {
     backToTop: "返回頂部",
-    openInNewWindow: "在新窗口中打開",
   },
 
   "/de/": {
     backToTop: "Zurück nach oben.",
-    openInNewWindow: "In einem neuen Fenster öffnen",
   },
 
   "/vi/": {
     backToTop: "Trở lại đầu trang",
-    openInNewWindow: "Mở trong cửa sổ mới",
   },
 
   "/uk/": {
     backToTop: "Повернутися до початку",
-    openInNewWindow: "Open in new window",
   },
 
   "/ru/": {
     backToTop: "Вернуться к началу",
-    openInNewWindow: "Open in new window",
   },
 
   "/br/": {
     backToTop: "Volta ao topo",
+  },
+
+  "/pl/": {
+    backToTop: "Wróć na górę",
+  },
+
+  "/sk/": {
+    backToTop: "Back to top",
+  },
+
+  "/fr/": {
+    backToTop: "Back to top",
+  },
+
+  "/es/": {
+    backToTop: "Volver arriba",
+  },
+};
+
+export const externallinkLocales: ExternalLinkLocaleConfig = {
+  "/en/": {
     openInNewWindow: "Open in new window",
+  },
+
+  "/zh/": {
+    openInNewWindow: "在新窗口中打开",
+  },
+
+  "/zh-tw/": {
+    openInNewWindow: "在新窗口中打開",
+  },
+
+  "/de/": {
+    openInNewWindow: "In einem neuen Fenster öffnen",
+  },
+
+  "/vi/": {
+    openInNewWindow: "Mở trong cửa sổ mới",
+  },
+
+  "/uk/": {
+    openInNewWindow: "Open in new window",
+  },
+
+  "/br/": {
+    openInNewWindow: "Open in new window",
+  },
+
+  "/es/": {
+    openInNewWindow: "Abrir en nueva ventana",
+  },
+
+  "/fr/": {
+    openInNewWindow: "Ouvrir une nouvelle fenêtre",
+  },
+
+  "/pl/": {
+    openInNewWindow: "Otwórz w nowym oknie",
+  },
+
+  "/ru/": {
+    openInNewWindow: "Открыть в новом окне",
+  },
+
+  "/sk/": {
+    openInNewWindow: "Otvoriť v novom okne",
   },
 };
 

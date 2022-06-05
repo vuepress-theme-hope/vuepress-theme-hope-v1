@@ -1,15 +1,15 @@
-import { ActiveHashOptions } from "vuepress-plugin-active-hash";
-import { CommentOptions } from "vuepress-plugin-comment1";
-import type { ComponentOptions } from "@mr-hope/vuepress-plugin-components";
-import { CopyCodeOptions } from "vuepress-plugin-copy-code1";
-import { FeedOptions } from "vuepress-plugin-feed1";
-import { GitOptions } from "@mr-hope/vuepress-plugin-git";
-import { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
-import { PWAOptions } from "vuepress-plugin-pwa1";
-import { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
-import { SeoOptions } from "vuepress-plugin-seo1";
-import { SitemapOptions } from "vuepress-plugin-sitemap1";
-import { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll";
+import type { GitOptions } from "@mr-hope/vuepress-plugin-git";
+import type { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll";
+import type { ActiveHashOptions } from "vuepress-plugin-active-hash";
+import type { CommentOptions } from "vuepress-plugin-comment1";
+import type { AvailableComponent } from "@mr-hope/vuepress-plugin-components";
+import type { CopyCodeOptions } from "vuepress-plugin-copy-code1";
+import type { FeedOptions } from "vuepress-plugin-feed1";
+import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
+import type { PWAOptions } from "vuepress-plugin-pwa1";
+import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
+import type { SeoOptions } from "vuepress-plugin-seo1";
+import type { SitemapOptions } from "vuepress-plugin-sitemap1";
 
 import type { Page, ResolvedComponent } from "vuepress-typings";
 
@@ -131,11 +131,10 @@ interface HopeThemePluginConfig {
    *
    * Comment plugin options
    * @see http://vuepress-theme-hope.github.io/v1/components/config.html
+   *
+   * @default ['Badge']
    */
-  components?: Pick<
-    ComponentOptions,
-    "locales" | "pageInfoLocales" | "paginationLocales"
-  >;
+  components?: AvailableComponent[];
 
   /**
    * chunk 重命名

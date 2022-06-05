@@ -1,13 +1,17 @@
 import type { ConvertLocaleConfig } from "vuepress-shared";
 
-export interface ComponentLocaleData {
+export interface BackToTopLocaleData {
   /**
    * Back to top button label text
    *
    * 返回顶部文字
    */
   backToTop: string;
+}
 
+export type BackToTopLocaleConfig = ConvertLocaleConfig<BackToTopLocaleData>;
+
+export interface ExternalLinkLocaleData {
   /**
    * Open in new window text
    *
@@ -16,4 +20,5 @@ export interface ComponentLocaleData {
   openInNewWindow: string;
 }
 
-export type ComponentLocaleConfig = ConvertLocaleConfig<ComponentLocaleData>;
+export type ExternalLinkLocaleConfig =
+  ConvertLocaleConfig<ExternalLinkLocaleData>;

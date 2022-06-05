@@ -42,12 +42,16 @@ const resolveCommentOptions = (
 const resolveComponentsOptions = (
   themeConfig: ResolvedHopeThemeConfig
 ): ComponentOptions => ({
-  ...(themeConfig.components || null),
-  backToTop: themeConfig.backToTop !== false,
-  backToTopThreshold:
-    typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
+  components: [
+    ...(themeConfig.components || ["Badge"]),
+    "ExternalLinkIcon",
+    "FontIcon",
+  ],
+  backToTop:
+    typeof themeConfig.backToTop === "number"
+      ? themeConfig.backToTop
+      : themeConfig.backToTop !== false,
   breadcrumb: true,
-  badge: true,
   pageinfo: true,
   pagination: true,
   screenFull: true,

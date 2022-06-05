@@ -1,26 +1,46 @@
 import type { LocaleConfig } from "vuepress-shared";
-import type { ComponentLocaleData } from "./locales";
+import type { BackToTopLocaleData, ExternalLinkLocaleData } from "./locales";
 import type { PageInfoLocaleData } from "./pageInfo";
 import type { PaginationLocaleData } from "./pagination";
 
+export type AvailableComponent =
+  | "Badge"
+  // | "CodePen"
+  | "ExternalLinkIcon"
+  | "FontIcon";
+// | "PDF"
+// | "StackBlitz";
+
 export interface ComponentOptions {
+  /**
+   * Components to be registered
+   *
+   * 需要被注册的组件
+   *
+   * @default []
+   */
+  components: AvailableComponent[];
+
   /**
    * Whether enabling backToTop button
    *
+   *
+   * @description When setting a number, it will be used as backToTop button threshold distance (in pixels)
+   *
    * 是否启用返回顶部按钮
+   *
+   * @description 当设置为数字时，将会作为返回顶部按钮距离阈值 (单位: 像素)
    *
    * @default false
    */
-  backToTop?: boolean;
+  backToTop?: number | boolean;
 
   /**
-   * backToTop button threshold distance (in pixels)
+   * backToTop button Locales config
    *
-   * 返回顶部按钮触发距离 (单位：像素)
-   *
-   * @default 300
+   * 返回顶部按钮国际化配置
    */
-  backToTopThreshold?: number;
+  backToTopLocales?: LocaleConfig<BackToTopLocaleData>;
 
   /**
    * Whether register breadcrumb component
@@ -32,13 +52,11 @@ export interface ComponentOptions {
   breadcrumb?: boolean;
 
   /**
-   * Whether register badge component
+   * Locales config for external link
    *
-   * 是否注册徽章组件
-   *
-   * @default false
+   * 国际化配置
    */
-  badge?: boolean;
+  externalLinkLocales?: LocaleConfig<ExternalLinkLocaleData>;
 
   /**
    * Whether register pageinfo component
@@ -75,13 +93,6 @@ export interface ComponentOptions {
    * @default 300
    */
   wordPerminute?: number;
-
-  /**
-   * Locales config
-   *
-   * 国际化配置
-   */
-  locales?: LocaleConfig<ComponentLocaleData>;
 
   /**
    * Locales config for pageInfo
