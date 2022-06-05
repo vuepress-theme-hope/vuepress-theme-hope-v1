@@ -1,5 +1,10 @@
 import Vue from "vue";
-import { ensureExt, isExternal, isMailto, isTel } from "@theme/utils/path";
+import {
+  ensureExt,
+  isExternal,
+  isLinkMailto,
+  isLinkTel,
+} from "@theme/utils/path";
 
 import type { PropType } from "vue";
 import type { NavBarConfigItem } from "@theme/utils/navbar";
@@ -33,7 +38,7 @@ export default Vue.extend({
     },
 
     isNonHttpURI(): boolean {
-      return isMailto(this.link) || isTel(this.link);
+      return isLinkMailto(this.link) || isLinkTel(this.link);
     },
 
     isBlankTarget(): boolean {

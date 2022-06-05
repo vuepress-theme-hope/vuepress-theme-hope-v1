@@ -2,6 +2,7 @@ import type { Config } from "vuepress-typings";
 import type { HopeThemeConfig, ResolvedHopeThemeConfig } from "./theme";
 
 export * from "./appearance";
+export * from "./autolink";
 export * from "./extends";
 export * from "./feature";
 export * from "./layout";

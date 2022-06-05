@@ -1,19 +1,21 @@
 import Vue from "vue";
-import NextIcon from "@theme/icons/NextIcon.vue";
-import PrevIcon from "@theme/icons/PrevIcon.vue";
-import { resolvePath } from "@theme/utils/path";
-import { resolvePageforSidebar } from "@theme/utils/sidebar";
+import AutoLink from "@theme/components/AutoLink";
+import {
+  isExternal,
+  ensureExt,
+  normalize,
+  resolvePath,
+} from "@theme/utils/path";
 
-import type { BasePage, SiteData } from "vuepress-typings";
+import type { BasePage, PageFrontmatter } from "vuepress-typings";
 import type { PropType } from "vue";
-import type { Route } from "vue-router";
 import type {
   SidebarErrorItem,
   SidebarExternalItem,
   SidebarItem,
   SidebarPageItem,
 } from "@theme/utils/sidebar";
-import type { HopeThemeConfig } from "@theme/types";
+import type { AutoLink as AutoLinkType } from "@theme/types";
 
 const getSidebarItems = (
   items: SidebarItem[],
@@ -45,38 +47,10 @@ const find = (
   return false;
 };
 
-interface LinkOptions {
-  themeConfig: HopeThemeConfig;
-  page: BasePage;
-  route: Route;
-  site: SiteData;
-  sidebarItems: SidebarItem[];
-}
-
-const resolvePageLink = (
-  linkType: "prev" | "next",
-  { themeConfig, page, route, site, sidebarItems }: LinkOptions
-): SidebarItem | false => {
-  const themeLinkConfig =
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
-    themeConfig[`${linkType}Links` as "prevLinks" | "nextLinks"];
-  const pageLinkConfig = page.frontmatter[linkType];
-
-  if (themeLinkConfig === false || pageLinkConfig === false) return false;
-
-  if (typeof pageLinkConfig === "string")
-    return resolvePageforSidebar(
-      site.pages,
-      resolvePath(pageLinkConfig, route.path)
-    );
-
-  return find(page, sidebarItems, linkType === "prev" ? -1 : 1);
-};
-
 export default Vue.extend({
   name: "PageNav",
 
-  components: { NextIcon, PrevIcon },
+  components: { AutoLink },
 
   props: {
     sidebarItems: {
@@ -86,24 +60,71 @@ export default Vue.extend({
   },
 
   computed: {
-    prev(): SidebarItem | false {
-      return resolvePageLink("prev", {
-        sidebarItems: this.sidebarItems,
-        themeConfig: this.$themeConfig,
-        page: this.$page,
-        route: this.$route,
-        site: this.$site,
-      });
+    prevNavLink(): AutoLinkType | false {
+      return this.getAutoLink("prev");
     },
 
-    next(): SidebarItem | false {
-      return resolvePageLink("next", {
-        sidebarItems: this.sidebarItems,
-        themeConfig: this.$themeConfig,
-        page: this.$page,
-        route: this.$route,
-        site: this.$site,
-      });
+    nextNavLink(): AutoLinkType | false {
+      return this.getAutoLink("next");
+    },
+  },
+
+  methods: {
+    getAutoLink(linkType: "prev" | "next"): AutoLinkType | false {
+      const themeLinkConfig =
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+        this.$themeConfig[`${linkType}Links` as "prevLinks" | "nextLinks"];
+      const pageLinkConfig = this.$frontmatter[linkType];
+
+      if (typeof pageLinkConfig === "object") return pageLinkConfig;
+
+      if (
+        pageLinkConfig === false ||
+        (themeLinkConfig === false && !pageLinkConfig)
+      )
+        return false;
+
+      if (typeof pageLinkConfig === "string") {
+        const path = resolvePath(pageLinkConfig, this.$route.path);
+
+        // if it is external link
+        if (isExternal(path))
+          return {
+            text: path,
+            link: path,
+          };
+
+        const realPath = normalize(path);
+
+        // find matches in all pages
+        for (const page of this.$site.pages)
+          if (normalize(page.regularPath) === realPath)
+            // return sidebarConfig merged with pageObject
+            return {
+              text: page.title,
+              icon: page.frontmatter.icon || "",
+              link: ensureExt(page.path),
+            };
+
+        return false;
+      }
+
+      const sidebarItem = find(
+        this.$page,
+        this.sidebarItems,
+        linkType === "prev" ? -1 : 1
+      );
+
+      return sidebarItem && "path" in sidebarItem
+        ? {
+            text: "title" in sidebarItem ? sidebarItem.title : sidebarItem.path,
+            icon:
+              "frontmatter" in sidebarItem
+                ? (sidebarItem.frontmatter as PageFrontmatter).icon || ""
+                : "",
+            link: sidebarItem.path as string,
+          }
+        : false;
     },
   },
 });

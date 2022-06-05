@@ -17,14 +17,18 @@ export const getHash = (path: string): string | void => {
   return "";
 };
 
+export const isLinkHttp = (link: string): boolean =>
+  /^(https?:)?\/\//.test(link);
+
 /** Judge whether a path is external */
 export const isExternal = (path: string): boolean => outboundRE.test(path);
 
 /** Judge whether a path is `mailto:` link */
-export const isMailto = (path: string): boolean => path.startsWith("mailto:");
+export const isLinkMailto = (path: string): boolean =>
+  path.startsWith("mailto:");
 
 /** Judge whether a path is `tel:` link */
-export const isTel = (path: string): boolean => path.startsWith("tel:");
+export const isLinkTel = (path: string): boolean => path.startsWith("tel:");
 
 export const ensureExt = (path: string): string => {
   // do not resolve external links

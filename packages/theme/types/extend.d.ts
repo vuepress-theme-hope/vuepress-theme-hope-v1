@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { BasePageFrontmatterInfo } from "vuepress-shared";
 import {
+  AutoLink,
   BlogMedia,
   HopeThemeLocalesConfig,
   HopeThemeLocaleData,
@@ -45,8 +46,8 @@ declare module "vuepress-typings" {
     editLink?: boolean;
     contributor?: boolean;
     updateTime?: boolean;
-    prev?: string | false;
-    next?: string | false;
+    prev?: AutoLink | string | false;
+    next?: AutoLink | string | false;
     mediaLink?: BlogMedia;
     search?: boolean;
     backToTop?: boolean;

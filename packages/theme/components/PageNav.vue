@@ -1,74 +1,72 @@
 <template>
-  <div v-if="prev || next" class="page-nav">
-    <p class="inner">
-      <span v-if="prev" class="prev">
-        <a
-          v-if="prev.type === 'external'"
-          class="prev"
-          :href="prev.path"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <PrevIcon />
-          {{ prev.title || prev.path }}
-          <OutboundLink />
-        </a>
-
-        <RouterLink v-else class="prev" :to="prev.path">
-          <PrevIcon />
-          {{ prev.title || prev.path }}
-        </RouterLink>
-      </span>
-
-      <span v-if="next" class="next">
-        <a
-          v-if="next.type === 'external'"
-          :href="next.path"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ next.title || next.path }}
-          <OutboundLink />
-          <NextIcon />
-        </a>
-        <RouterLink v-else :to="next.path">
-          {{ next.title || next.path }}
-          <NextIcon />
-        </RouterLink>
-      </span>
-    </p>
+  <div v-if="prevNavLink || nextNavLink" class="page-nav">
+    <AutoLink v-if="prevNavLink" class="prev" :config="prevNavLink">
+      <div class="hint"><span class="arrow left" />Prev</div>
+      <div class="link">
+        <FontIcon :icon="prevNavLink.icon" />{{ prevNavLink.text }}
+      </div>
+    </AutoLink>
+    <AutoLink v-if="nextNavLink" class="next" :config="nextNavLink">
+      <div class="hint"><span class="arrow right" />Next</div>
+      <div class="link">
+        {{ nextNavLink.text }}<FontIcon :icon="nextNavLink.icon" />
+      </div>
+    </AutoLink>
   </div>
 </template>
 
 <script src="./PageNav" />
 
 <style lang="stylus">
+@require '~vuepress-shared/styles/arrow';
 @require '~vuepress-shared/styles/wrapper';
 
 .page-nav {
-  wrapper();
-  padding-top: 12px;
-  padding-bottom: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  horizontal-wrapper();
 
-  .inner {
-    min-height: 32px;
-    margin-top: 0;
-    border-top: 1px solid var(--border-color);
-    padding-top: 16px;
-    overflow: auto; // clear float
+  // clear float
+  overflow: auto;
+
+  min-height: 2rem;
+  margin-top: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top: 1px solid var(--border-color);
+
+  transition: border-top var(--color-transition);
+
+  .nav-link {
+    display: inline-block;
+    padding: 0.25rem;
+
+    .hint {
+      color: var(--light-grey);
+      font-size: 0.875rem;
+      line-height: 2;
+    }
+
+    .arrow {
+      arrow();
+
+      font-size: 0.75rem;
+    }
   }
 
-  .prev .icon, .next .icon {
-    position: relative;
-    top: 0.125em;
-    width: 1em;
-    height: 1em;
-    color: var(--accent-color);
+  .prev {
+    text-align: left;
+
+    .icon {
+      margin-right: 0.25em;
+    }
   }
 
   .next {
     float: right;
+    text-align: right;
+
+    .icon {
+      margin-left: 0.25em;
+    }
   }
 }
 </style>
