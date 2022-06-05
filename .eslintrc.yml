@@ -104,6 +104,12 @@ overrides:
       vue/no-deprecated-destroyed-lifecycle:
         - off
 
+      vue/no-deprecated-dollar-scopedslots-api:
+        - off
+
+      vue/require-explicit-emits:
+        - off
+
   - files:
       - "*.ts"
 
@@ -191,6 +197,12 @@ overrides:
         - off
 
       vue/no-deprecated-destroyed-lifecycle:
+        - off
+
+      vue/no-deprecated-dollar-scopedslots-api:
+        - off
+
+      vue/require-explicit-emits:
         - off
 
   - files:
