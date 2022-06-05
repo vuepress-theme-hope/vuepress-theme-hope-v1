@@ -102,7 +102,7 @@ html.dark {
   transition: all 0.2s;
 
   &:hover {
-    box-shadow: 0 2px 12px var(--card-shadow);
+    box-shadow: 0 2px 12px 0 var(--card-shadow-color, rgba(0, 0, 0, 0.15));
   }
 
   .loading {
