@@ -37,11 +37,11 @@
         />
       </MyTransition>
       <MyTransition :delay="0.12">
-        <p v-if="$frontmatter.action" class="action">
-          <NavLink
+        <p v-if="$frontmatter.actions" class="action">
+          <AutoLink
             v-for="action in actionLinks"
             :key="action.text"
-            :item="action"
+            :config="action"
             class="action-button"
             :class="action.type || ''"
           />

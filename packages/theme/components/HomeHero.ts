@@ -1,6 +1,6 @@
 import Vue from "vue";
+import AutoLink from "@theme/components/AutoLink";
 import MyTransition from "@theme/components/MyTransition.vue";
-import NavLink from "@theme/components/Navbar/NavLink.vue";
 
 interface ActionConfig {
   text: string;
@@ -10,7 +10,7 @@ interface ActionConfig {
 export default Vue.extend({
   name: "HomeHero",
 
-  components: { MyTransition, NavLink },
+  components: { AutoLink, MyTransition },
 
   computed: {
     actionLinks(): ActionConfig[] {
