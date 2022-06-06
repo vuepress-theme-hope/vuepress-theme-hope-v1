@@ -1,9 +1,8 @@
 import Vue from "vue";
-import CalendarIcon from "./icons/CalendarIcon.vue";
-import { pageInfoLocales } from "../define";
+import CalendarIcon from "@theme/icons/CalendarIcon.vue";
 
 export default Vue.extend({
-  name: "TimeInfo",
+  name: "DateInfo",
 
   components: { CalendarIcon },
 
@@ -34,7 +33,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath].date;
+      return this.$themeLocaleConfig.metaLocales.date;
     },
   },
 });

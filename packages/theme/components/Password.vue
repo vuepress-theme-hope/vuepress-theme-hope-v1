@@ -1,7 +1,7 @@
 <template>
   <div class="password" :class="{ expand: page || isMainPage }">
     <div class="hint" :class="{ hasTried }">
-      {{ hasTried ? encrypt.errorHint : encrypt.title }}
+      {{ hasTried ? locale.errorHint : locale.title }}
     </div>
     <div class="input">
       <input v-model="password" type="password" @keypress.enter="verify" />

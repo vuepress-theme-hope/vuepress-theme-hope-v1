@@ -315,15 +315,11 @@ importers:
 
   packages/components:
     specifiers:
-      balloon-css: ^1.2.0
-      screenfull: ^5.2.0
       ts-debounce: ^4.0.0
       vue-router: ^3.5.4
       vuepress-shared: workspace:*
       vuepress-typings: workspace:*
     dependencies:
-      balloon-css: 1.2.0
-      screenfull: 5.2.0
       ts-debounce: 4.0.0
       vue-router: 3.5.4
       vuepress-shared: link:../shared
@@ -514,6 +510,7 @@ importers:
       '@vuepress/plugin-blog': ^1.9.4
       bcrypt-ts: ^1.0.0
       dayjs: ^1.11.2
+      screenfull: ^5.2.0
       ts-debounce: ^4.0.0
       vuepress-plugin-active-hash: workspace:*
       vuepress-plugin-add-this: workspace:*
@@ -540,6 +537,7 @@ importers:
       '@vuepress/plugin-blog': 1.9.4
       bcrypt-ts: 1.0.0
       dayjs: 1.11.2
+      screenfull: 5.2.0
       ts-debounce: 4.0.0
       vuepress-plugin-active-hash: link:../active-hash
       vuepress-plugin-add-this: link:../add-this

@@ -11,10 +11,9 @@ export default timelineMixin.extend({
 
   computed: {
     hint(): string {
-      return (
-        (this.$themeConfig.blog && this.$themeConfig.blog.timeline) ||
-        this.$themeLocaleConfig.blog.timelineText
-      );
+      return this.$themeConfig.blog && this.$themeConfig.blog.timeline
+        ? this.$themeLocaleConfig.blogLocales.timelineTitle
+        : "";
     },
 
     anchorConfig(): SidebarHeader[] {

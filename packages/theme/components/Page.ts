@@ -1,14 +1,15 @@
 import Anchor from "@theme/components/Anchor.vue";
+import BreadCrumb from "@theme/components/Info/BreadCrumb.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
-import PageInfo from "@mr-hope/vuepress-plugin-components/lib/client/PageInfo.vue";
+import PageInfo from "@theme/components/Info/PageInfo.vue";
 import PageNav from "@theme/components/PageNav.vue";
 import Password from "@theme/components/Password.vue";
 import PageMeta from "@theme/components/Info/PageMeta.vue";
 import { pathEncryptMixin } from "@theme/mixins/pathEncrypt";
 
-import type { PageInfoProps } from "@mr-hope/vuepress-plugin-components";
 import type { PageHeader } from "vuepress-typings";
 import type { PropType } from "vue";
+import type { PageInfoProps } from "@theme/components/Info/PageInfo";
 import type { SidebarItem } from "@theme/utils/sidebar";
 
 export default pathEncryptMixin.extend({
@@ -16,6 +17,7 @@ export default pathEncryptMixin.extend({
 
   components: {
     Anchor,
+    BreadCrumb,
     MyTransition,
     PageInfo,
     PageMeta,

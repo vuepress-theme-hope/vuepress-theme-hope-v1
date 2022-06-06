@@ -1,7 +1,6 @@
 import { capitalize } from "vuepress-shared/lib/client";
 import Vue from "vue";
-import CategoryIcon from "./icons/CategoryIcon.vue";
-import { pageInfoLocales } from "../define";
+import CategoryIcon from "@theme/icons/CategoryIcon.vue";
 
 export default Vue.extend({
   name: "CategoryInfo",
@@ -32,7 +31,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath].category;
+      return this.$themeLocaleConfig.metaLocales.category;
     },
   },
 

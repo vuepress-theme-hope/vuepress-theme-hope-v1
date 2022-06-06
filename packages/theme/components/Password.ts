@@ -1,6 +1,6 @@
 import Vue from "vue";
 
-import type { HopeThemeLocaleData } from "@theme/types";
+import type { HopeThemeEncryptLocaleData } from "@theme/types";
 
 export default Vue.extend({
   name: "Password",
@@ -19,8 +19,8 @@ export default Vue.extend({
       return this.$frontmatter["home"] === true;
     },
 
-    encrypt(): HopeThemeLocaleData["encrypt"] {
-      return this.$themeLocaleConfig.encrypt;
+    locale(): HopeThemeEncryptLocaleData {
+      return this.$themeLocaleConfig.encryptLocales;
     }
   },
 

@@ -1,7 +1,7 @@
 <template>
   <span
     v-if="time"
-    class="time-info"
+    class="date-info"
     :aria-label="hint"
     data-balloon-pos="down"
   >
@@ -10,4 +10,4 @@
   </span>
 </template>
 
-<script src="./TimeInfo" />
+<script src="./DateInfo" />

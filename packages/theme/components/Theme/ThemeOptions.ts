@@ -1,5 +1,6 @@
 import Vue from "vue";
 import DarkmodeSwitch from "@theme/components/Theme/DarkmodeSwitch.vue";
+import ScreenFull from "@theme/components/Theme/ScreenFull.vue";
 
 import type { HopeThemeLocaleData } from "@theme/types";
 
@@ -21,7 +22,7 @@ interface ThemeColor {
 export default Vue.extend({
   name: "ThemeOptions",
 
-  components: { DarkmodeSwitch },
+  components: { DarkmodeSwitch, ScreenFull },
 
   data: () => ({
     themeColor: {} as ThemeColor,
@@ -30,8 +31,8 @@ export default Vue.extend({
   }),
 
   computed: {
-    text(): HopeThemeLocaleData["themeColor"] {
-      return this.$themeLocaleConfig.themeColor;
+    locale(): HopeThemeLocaleData["outlookLocales"] {
+      return this.$themeLocaleConfig.outlookLocales;
     },
 
     themeColorEnabled(): boolean {

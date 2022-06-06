@@ -1,10 +1,10 @@
 import Vue from "vue";
 import { capitalize, getAuthor } from "vuepress-shared/lib/client";
-import AuthorIcon from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/icons/AuthorIcon.vue";
-import CalendarIcon from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/icons/CalendarIcon.vue";
-import CategoryInfo from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/CategoryInfo.vue";
-import TagInfo from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/TagInfo.vue";
-import TimerIcon from "@mr-hope/vuepress-plugin-components/lib/client/pageinfo/icons/TimerIcon.vue";
+import CategoryInfo from "@theme/components/Info/CategoryInfo.vue";
+import TagInfo from "@theme/components/Info/TagInfo.vue";
+import AuthorIcon from "@theme/icons/AuthorIcon.vue";
+import CalendarIcon from "@theme/icons/CalendarIcon.vue";
+import TimerIcon from "@theme/icons/TimerIcon.vue";
 
 import type { BasePage } from "vuepress-typings";
 import type { PropType } from "vue";
@@ -76,19 +76,19 @@ export default Vue.extend({
     },
 
     authorText(): string {
-      return PAGE_INFO_LOCALES[this.$localePath].author;
+      return this.$themeLocaleConfig.metaLocales.author;
     },
 
     timeText(): string {
-      return PAGE_INFO_LOCALES[this.$localePath].date;
+      return this.$themeLocaleConfig.metaLocales.date;
     },
 
     tagText(): string {
-      return PAGE_INFO_LOCALES[this.$localePath].tag;
+      return this.$themeLocaleConfig.metaLocales.tag;
     },
 
     readingTimeText(): string {
-      return PAGE_INFO_LOCALES[this.$localePath].readingTime;
+      return this.$themeLocaleConfig.metaLocales.readingTime;
     },
   },
 });

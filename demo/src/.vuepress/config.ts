@@ -1,6 +1,6 @@
 import hope from "vuepress-theme-hope";
 
-const base = process.env.BASE || "/";
+const base = (process.env.BASE as `/${string}/`) || "/";
 const hostname =
   process.env.HOSTNAME || "https://vuepress-theme-hope-v1-demo.netlify.app";
 
@@ -103,17 +103,15 @@ export default hope.config({
       },
     },
 
-    footer: {
-      display: true,
-      content: "默认页脚",
-    },
+    footer: "默认页脚",
+    displayFooter: true,
 
     comment: {
       provider: "Waline",
       serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
-    copyright: {
+    copyrightPlugin: {
       status: "global",
     },
 
@@ -206,4 +204,6 @@ export default hope.config({
       appendBase: true,
     },
   },
+
+  shouldPrefetch: () => false,
 });

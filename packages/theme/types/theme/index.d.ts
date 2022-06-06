@@ -6,6 +6,7 @@ export * from "./autolink";
 export * from "./extends";
 export * from "./feature";
 export * from "./frontmatter";
+export * from "./info";
 export * from "./layout";
 export * from "./locales";
 export * from "./plugin";

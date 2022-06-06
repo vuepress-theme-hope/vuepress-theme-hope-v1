@@ -1,5 +1,6 @@
 import Vue from "vue";
 import ArticleItem from "@theme/components/Blog/ArticleItem.vue";
+import Pagination from "@theme/components/Blog/Pagination.vue";
 import EmptyIcon from "@theme/icons/EmptyIcon.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 import { filterArticle, sortArticle } from "@theme/utils/article";
@@ -12,7 +13,7 @@ import type { Route } from "vue-router";
 export default Vue.extend({
   name: "ArticleList",
 
-  components: { ArticleItem, EmptyIcon, MyTransition },
+  components: { ArticleItem, EmptyIcon, MyTransition, Pagination },
 
   data: () => ({
     currentPage: 1,

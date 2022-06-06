@@ -1,7 +1,7 @@
 /* eslint-disable vue/require-explicit-emits */
 import Vue from "vue";
 
-import type { PaginationLocaleData } from "../types";
+import type { HopeThemePaginationLocaleData } from "@theme/types";
 
 export default Vue.extend({
   name: "Pagination",
@@ -69,8 +69,8 @@ export default Vue.extend({
       return arr;
     },
 
-    locales(): PaginationLocaleData {
-      return PAGINATION_LOCALES[this.$localePath];
+    locales(): HopeThemePaginationLocaleData {
+      return this.$themeLocaleConfig.paginationLocales;
     },
   },
 

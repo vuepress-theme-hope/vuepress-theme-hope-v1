@@ -1,7 +1,6 @@
 import Vue from "vue";
-import TagIcon from "./icons/TagIcon.vue";
+import TagIcon from "@theme/icons/TagIcon.vue";
 import { capitalize } from "vuepress-shared/lib/client";
-import { pageInfoLocales } from "./../define";
 
 import type { PropType } from "vue";
 
@@ -36,7 +35,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath].tag;
+      return this.$themeLocaleConfig.metaLocales.tag;
     },
   },
 

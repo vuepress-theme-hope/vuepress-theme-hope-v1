@@ -28,7 +28,7 @@ interface BaseSiteConfig {
    * @default '/'
    * @see https://vuepress.vuejs.org/config/#base
    */
-  base?: `/${string}/`;
+  base?: `/${string}/` | "/";
 
   /**
    * 网站的标题

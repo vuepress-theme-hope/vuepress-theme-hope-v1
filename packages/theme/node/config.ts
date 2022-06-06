@@ -1,7 +1,7 @@
 import { deepAssignReverse, getLocales, path2Lang } from "vuepress-shared";
 import { covertThemeConfig } from "./compact";
 import { resolveEncrypt } from "./encrypt";
-import { themeLocales } from "./locales";
+import { themeLocalesData } from "./locales";
 
 import type { Config, Context } from "vuepress-typings";
 import type {
@@ -44,7 +44,7 @@ export const resolveThemeConfig = (
     context,
     name: "vuepress-theme-hope",
     config: themeConfig.locales,
-    default: themeLocales,
+    default: themeLocalesData,
   });
   // handle encrypt options
   if (themeConfig.encrypt) resolveEncrypt(themeConfig.encrypt);

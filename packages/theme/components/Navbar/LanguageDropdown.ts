@@ -27,14 +27,16 @@ export default Vue.extend({
         ).options;
         const themeLocales = this.$themeConfig.locales || {};
         const languageDropdown = {
-          text: this.$themeLocaleConfig.selectText || "Languages",
-          ariaLabel: this.$themeLocaleConfig.ariaLabel || "Select language",
+          text:
+            this.$themeLocaleConfig.navbarLocales.selectLangText || "Languages",
+          ariaLabel:
+            this.$themeLocaleConfig.navbarLocales.selectLangAriaLabel ||
+            "Select language",
           items: Object.keys(locales).map((path) => {
             const locale = locales[path];
-            const text =
-              themeLocales[path] && "label" in themeLocales[path]
-                ? (themeLocales[path]["label"] as string)
-                : locale.lang || "Unknown Language";
+            const text = themeLocales[path]
+              ? themeLocales[path].navbarLocales?.langName || ""
+              : locale.lang || "Unknown Language";
             let link: string;
 
             // Stay on the current page

@@ -3,7 +3,7 @@ import { timelineMixin } from "@theme/mixins/timeline";
 import { filterArticle } from "@theme/utils/article";
 import { navigate } from "@theme/utils/navigate";
 
-import type { BlogOptions, HopeThemeLocaleData } from "@theme/types";
+import type { BlogOptions, HopeThemeBlogLocaleData } from "@theme/types";
 
 export default timelineMixin.extend({
   name: "BloggerInfo",
@@ -36,8 +36,8 @@ export default timelineMixin.extend({
       return this.hasIntro ? "aria-label" : "";
     },
 
-    locales(): HopeThemeLocaleData["blog"] {
-      return this.$themeLocaleConfig.blog;
+    locale(): HopeThemeBlogLocaleData {
+      return this.$themeLocaleConfig.blogLocales;
     },
 
     articleNumber(): number {

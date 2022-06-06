@@ -2,7 +2,7 @@ import Vue from "vue";
 import Common from "@theme/components/Common.vue";
 import Page404Icon from "@theme/icons/Page404Icon.vue";
 
-import type { HopeThemeLocaleData } from "@theme/types";
+import type { HopeThemeRouteLocaleData } from "@theme/types";
 
 export default Vue.extend({
   name: "NotFound",
@@ -13,13 +13,13 @@ export default Vue.extend({
   },
 
   computed: {
-    locales(): HopeThemeLocaleData["error404"] {
-      return this.$themeLocaleConfig.error404;
+    locale(): HopeThemeRouteLocaleData {
+      return this.$themeLocaleConfig.routeLocales;
     },
 
     msg(): string {
-      return this.locales.hint[
-        Math.floor(Math.random() * this.locales.hint.length)
+      return this.locale["404msg"][
+        Math.floor(Math.random() * this.locale["404msg"].length)
       ];
     },
   },

@@ -1,12 +1,11 @@
 import Vue from "vue";
-import EyeIcon from "./icons/EyeIcon.vue";
-import FireIcon from "./icons/FireIcon.vue";
-import { pageInfoLocales } from "../define";
+import EyeIcon from "@theme/icons/EyeIcon.vue";
+import FireIcon from "@theme/icons/FireIcon.vue";
 
 import type { Route } from "vue-router";
 
 export default Vue.extend({
-  name: "VisitorInfo",
+  name: "PageViewInfo",
 
   components: { EyeIcon, FireIcon },
 
@@ -29,7 +28,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath].views;
+      return this.$themeLocaleConfig.metaLocales.views;
     },
   },
 

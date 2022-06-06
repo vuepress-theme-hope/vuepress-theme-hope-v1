@@ -13,7 +13,7 @@ export default Vue.extend({
     tagList(): TagOption[] {
       return [
         {
-          name: this.$themeLocaleConfig.blog.allText,
+          name: this.$themeLocaleConfig.blogLocales.all,
           path: "/tag/",
         },
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -28,7 +28,7 @@ export default Vue.extend({
         name ===
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         ((this.$currentTag && this.$currentTag.key) ||
-          this.$themeLocaleConfig.blog.allText)
+          this.$themeLocaleConfig.blogLocales.all)
       );
     },
 

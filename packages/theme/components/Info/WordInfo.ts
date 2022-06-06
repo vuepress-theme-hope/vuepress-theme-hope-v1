@@ -1,6 +1,7 @@
 import Vue from "vue";
-import WordIcon from "./icons/WordIcon.vue";
-import { pageInfoLocales, readingTimeLocales } from "../define";
+import WordIcon from "@theme/icons/WordIcon.vue";
+
+const readingTimeLocales = READING_TIME_LOCALES;
 
 export default Vue.extend({
   name: "ReadTimeInfo",
@@ -15,7 +16,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath].words;
+      return this.$themeLocaleConfig.metaLocales.words;
     },
   },
 });

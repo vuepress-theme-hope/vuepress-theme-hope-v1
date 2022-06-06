@@ -3,7 +3,7 @@
     <div
       class="blogger"
       :class="{ hasIntro }"
-      :[hintAttr]="hasIntro ? locales.intro : ''"
+      :[hintAttr]="hasIntro ? locale.intro : ''"
       :data-balloon-pos="hasIntro ? 'down' : ''"
       role="navigation"
       @click="jumpIntro"
@@ -31,19 +31,19 @@
     <div class="num-wrapper">
       <div @click="navigate('/article/')">
         <div class="num">{{ articleNumber }}</div>
-        <div>{{ locales.article }}</div>
+        <div>{{ locale.article }}</div>
       </div>
       <div @click="navigate('/category/')">
         <div class="num">{{ $category.list.length }}</div>
-        <div>{{ locales.category }}</div>
+        <div>{{ locale.category }}</div>
       </div>
       <div @click="navigate('/tag/')">
         <div class="num">{{ $tag.list.length }}</div>
-        <div>{{ locales.tag }}</div>
+        <div>{{ locale.tag }}</div>
       </div>
       <div @click="navigate('/timeline/')">
         <div class="num">{{ $timelineItems.length }}</div>
-        <div>{{ locales.timeline }}</div>
+        <div>{{ locale.timeline }}</div>
       </div>
     </div>
     <MediaLinks />

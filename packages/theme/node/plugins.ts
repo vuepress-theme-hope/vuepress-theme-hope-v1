@@ -51,10 +51,6 @@ const resolveComponentsOptions = (
     typeof themeConfig.backToTop === "number"
       ? themeConfig.backToTop
       : themeConfig.backToTop !== false,
-  breadcrumb: true,
-  pageinfo: true,
-  pagination: true,
-  screenFull: true,
 });
 
 const resolveCopyCodeOptions = (
@@ -132,21 +128,23 @@ export const getPluginConfig = (
     themeConfig.comment.author = themeConfig.author;
 
   return [
-    ["comment1", resolveCommentOptions(themeConfig)],
-
     ["@mr-hope/components", resolveComponentsOptions(themeConfig)],
 
-    ["feed1", resolveFeedOptions(themeConfig)],
-
     ["@mr-hope/git", themeConfig.git],
+
+    ["@mr-hope/smooth-scroll", resolveSmmothScrollOptions(themeConfig)],
+
+    ["reading-time1", { wordPerminute: themeConfig.wordPerminute }],
+
+    ["comment1", resolveCommentOptions(themeConfig)],
+
+    ["feed1", resolveFeedOptions(themeConfig)],
 
     ["pwa1", resolvePwaOptions(themeConfig)],
 
     ["seo1", resolveSeoOptions(themeConfig)],
 
     ["sitemap1", resolveSitemapOptions(themeConfig)],
-
-    ["@mr-hope/smooth-scroll", resolveSmmothScrollOptions(themeConfig)],
 
     [
       "@vuepress/blog",

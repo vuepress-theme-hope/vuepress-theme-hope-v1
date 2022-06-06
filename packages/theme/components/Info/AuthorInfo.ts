@@ -1,7 +1,6 @@
 import { getAuthor } from "vuepress-shared/lib/client";
 import Vue from "vue";
-import AuthorIcon from "./icons/AuthorIcon.vue";
-import { pageInfoLocales } from "../define";
+import AuthorIcon from "@theme/icons/AuthorIcon.vue";
 
 export default Vue.extend({
   name: "AuthorInfo",
@@ -23,7 +22,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath].author;
+      return this.$themeLocaleConfig.metaLocales.author;
     },
   },
 });

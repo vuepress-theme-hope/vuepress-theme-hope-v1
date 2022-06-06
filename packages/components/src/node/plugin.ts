@@ -1,24 +1,11 @@
 import { getLocales, noopModule, path } from "vuepress-shared";
-import {
-  backToTopLocales,
-  externallinkLocales,
-  paginationLocales,
-  pageInfoLocales,
-} from "./locales";
+import { backToTopLocales, externallinkLocales } from "./locales";
 import { getIconPrefix } from "./utils";
 
-import type { Plugin, PluginConfig } from "vuepress-typings";
+import type { Plugin } from "vuepress-typings";
 import type { ComponentOptions } from "../types";
 
 export const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
-  const plugins: PluginConfig<unknown>[] = [];
-
-  if (options.pageinfo)
-    plugins.push(
-      ["@mr-hope/git", true],
-      ["reading-time1", { wordPerminute: options.wordPerminute }]
-    );
-
   const PLUGIN_NAME = "@mr-hope/vuepress-plugin-components";
 
   return {
@@ -28,9 +15,6 @@ export const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
       "@BackToTop": options.backToTop
         ? path.resolve(__dirname, "../client/components/BackToTop.vue")
         : noopModule,
-      "@BreadCrumb": options.breadcrumb
-        ? path.resolve(__dirname, "../client/BreadCrumb.vue")
-        : noopModule,
       "@Badge": options.components?.includes("Badge")
         ? path.resolve(__dirname, "../client/components/Badge.vue")
         : noopModule,
@@ -39,15 +23,6 @@ export const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
         : noopModule,
       "@FontIcon": options.components?.includes("FontIcon")
         ? path.resolve(__dirname, "../client/components/FontIcon.js")
-        : noopModule,
-      "@PageInfo": options.pageinfo
-        ? path.resolve(__dirname, "../client/PageInfo.vue")
-        : noopModule,
-      "@Pagination": options.pagination
-        ? path.resolve(__dirname, "../client/Pagination.vue")
-        : noopModule,
-      "@ScreenFull": options.screenFull
-        ? path.resolve(__dirname, "../client/ScreenFull.vue")
         : noopModule,
     },
 
@@ -66,18 +41,6 @@ export const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
         default: externallinkLocales,
         config: options.externalLinkLocales,
       }),
-      PAGE_INFO_LOCALES: getLocales({
-        context,
-        name: PLUGIN_NAME,
-        config: options.pageInfoLocales,
-        default: pageInfoLocales,
-      }),
-      PAGINATION_LOCALES: getLocales({
-        context,
-        name: PLUGIN_NAME,
-        config: options.paginationLocales,
-        default: paginationLocales,
-      }),
       ICON_PREFIX:
         typeof options.iconPrefix === "string"
           ? options.iconPrefix
@@ -87,7 +50,5 @@ export const componentPlugin: Plugin<ComponentOptions> = (options, context) => {
     enhanceAppFiles: path.resolve(__dirname, "../client/enhanceAppFile.js"),
 
     globalUIComponents: options.backToTop ? "BackToTop" : [],
-
-    plugins,
   };
 };

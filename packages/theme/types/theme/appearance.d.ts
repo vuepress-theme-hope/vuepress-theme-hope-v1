@@ -1,3 +1,28 @@
+export interface HopeThemeAppearanceLocaleData {
+  outlookLocales: {
+    /**
+     * Theme Color
+     *
+     * 主题色
+     */
+    themeColor: string;
+
+    /**
+     * Theme mode
+     *
+     * 夜间模式
+     */
+    darkmode: string;
+
+    /**
+     * Fullscreen text
+     *
+     * 全屏文字
+     */
+    fullscreen: string;
+  };
+}
+
 export interface HopeThemeAppearanceOptions {
   /**
    * 是否在移动视图下隐藏站点名称

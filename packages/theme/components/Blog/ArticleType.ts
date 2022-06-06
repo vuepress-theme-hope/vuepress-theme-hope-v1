@@ -11,13 +11,13 @@ export default Vue.extend({
 
   computed: {
     types(): ArticleTypeItem[] {
-      const locales = this.$themeLocaleConfig.blog;
+      const { blogLocales } = this.$themeLocaleConfig;
 
       return [
-        { text: locales.allText, path: "/article/" },
-        { text: locales.star, path: "/star/" },
-        { text: locales.slides, path: "/slide/" },
-        { text: locales.encrypt, path: "/encrypt/" },
+        { text: blogLocales.all, path: "/article/" },
+        { text: blogLocales.star, path: "/star/" },
+        { text: blogLocales.slides, path: "/slide/" },
+        { text: blogLocales.encrypt, path: "/encrypt/" },
       ];
     },
   },

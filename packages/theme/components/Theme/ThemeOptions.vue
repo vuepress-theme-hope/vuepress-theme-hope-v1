@@ -1,7 +1,7 @@
 <template>
   <div class="theme-options">
     <ul v-if="themeColorEnabled" class="themecolor-select">
-      <label for="themecolor-select" v-text="`${text.themeColor}:`" />
+      <label for="themecolor-select" v-text="`${locale.themeColor}:`" />
       <li>
         <span class="default-theme" @click="setTheme()" />
       </li>
@@ -13,7 +13,11 @@
       </li>
     </ul>
     <div v-if="switchEnabled" class="darkmode-toggle">
-      <label class="desc" for="darkmode-toggle" v-text="`${text.themeMode}:`" />
+      <label
+        class="desc"
+        for="darkmode-toggle"
+        v-text="`${locale.darkmode}:`"
+      />
       <DarkmodeSwitch />
       <ScreenFull :enable="$themeConfig.fullscreen !== false" />
     </div>

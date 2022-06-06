@@ -1,3 +1,20 @@
+import type {
+  HopeThemeBlogLocaleData,
+  HopeThemePaginationLocaleData,
+} from "./blog";
+import type { HopeThemeEncryptLocaleData } from "./encrypt";
+
+export interface HopeThemeFeatureLocaleData {
+  blogLocales: HopeThemeBlogLocaleData;
+
+  paginationLocales: HopeThemePaginationLocaleData;
+
+  /**
+   * Encrypt
+   */
+  encryptLocales: HopeThemeEncryptLocaleData;
+}
+
 /**
  * 合法的媒体
  *

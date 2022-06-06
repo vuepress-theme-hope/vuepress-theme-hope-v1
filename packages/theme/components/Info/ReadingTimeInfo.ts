@@ -1,6 +1,7 @@
 import Vue from "vue";
-import TimerIcon from "./icons/TimerIcon.vue";
-import { pageInfoLocales, readingTimeLocales } from "../define";
+import TimerIcon from "@theme/icons/TimerIcon.vue";
+
+const readingTimeLocales = READING_TIME_LOCALES;
 
 export default Vue.extend({
   name: "ReadingTimeInfo",
@@ -24,7 +25,7 @@ export default Vue.extend({
     },
 
     hint(): string {
-      return pageInfoLocales[this.$localePath].readingTime;
+      return this.$themeLocaleConfig.metaLocales.readingTime;
     },
   },
 });
