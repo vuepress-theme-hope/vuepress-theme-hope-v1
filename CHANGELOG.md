@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.31.0-beta.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/compare/v1.31.0-beta.1...v1.31.0-beta.2) (2022-06-06)
+
+### Features
+
+- **components:** update components ([366f308](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/366f308cbbe3f00d81b957f04456f98d1031bbb1))
+- **md-enhance:** add CodeTabs and Tabs ([81fcd85](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/81fcd858104f12e3a9b6bd65e3d565332d0ac88a))
+- **md-enhance:** add imageSize ([0e4c35e](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/0e4c35e8fa66480667ee05ab509286a23a30f6d3))
+- **md-enhance:** improve container style ([1438956](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/1438956c5374868de975d3c284de5842d335c32a))
+- **md-enhance:** support echarts and fix code demo and chartjs ([f10e68c](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/f10e68c8e22838f511dc18e0ff154035fc3bf182))
+- **md-enhance:** update align ([00d158a](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/00d158aba460b28cb001deab2b30e5e3b1e4a00c))
+- rebuild Anchor with TOC ([e4c4884](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/e4c4884b586aa9278a0528251fa31611be5d8d1d))
+- rebuild theme locale ([d179605](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/d17960585bae831bf6ad4b3e98258848cae47ff0))
+- **theme:** add AutoLink and rebuild pagenav ([4499f14](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/4499f14cba4b2c9752a10bc9682a165365b9b7b6))
+- **theme:** improve PageMeta ([7955546](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/79555466be366b677a9d1834cccc670be56de4b1))
+- **theme:** rebuild HomePage ([7c3f866](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/7c3f866504b20d2747956ce787c1d0b217d24302))
+- **theme:** update docsearch ([0450746](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/0450746821eddc327cf2cd778db06b47a83aef86))
+- **theme:** update footer config ([a4ca2bb](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/a4ca2bb47e9a2f2cb5f2c9a98007261dee5e5418))
+- **theme:** update HomeHero ([122f0e2](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/122f0e2b56501ae1a2307a40b7fc9ace32f0d000))
+- **theme:** update style ([48fc224](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/48fc224fdb8288c37b340356c9324d179e319b68))
+- update css variable name ([ffc61a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/ffc61a9b68e211107d5c5313958650cec33ee37d))
+- update locales and compack code ([9ee2011](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/9ee2011bc17d8a88614b1fe5edde2e9729a8f9e0))
+- update style ([d7b44a5](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/d7b44a5330c98d74707dc296098d12ae467055b8))
+- update styles ([b6c2b92](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/b6c2b9207e20b989a328ca8fa9bd3d2088b39288))
+
+### Bug Fixes
+
+- **components:** fix iconPrefix ([5f1ef7f](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/5f1ef7fa99cff922f69a884a99dd3ec43aa4183c))
+- **md-enhance:** fix codegroup ([fadef4d](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/fadef4dc3935c9ef881a30cf6fd7f50a81f90cc9))
+- **md-enhance:** fix codegroup ([1a25241](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/1a2524104bca75aa4ccde7284203690abf2f1768))
+- **md-enhance:** fix codegroup style ([bdcf2f4](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/bdcf2f4c3a20f90e597fd0b9dff5a482acee0f09))
+- **md-enhance:** fix css var fallback ([daa01fc](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/daa01fc3fa4cb15fdd6f4a7867f83417b7c6ff0d))
+- **md-enhance:** fix include ([8fdffd9](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/8fdffd998a9624c8204b39b4cdf5c543caef35e8))
+- **reading-time:** add support for Cyrillic ([337e04d](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/commit/337e04d8cf8ed933eacbe60171900255cbd7ac9e))
+
 ## [1.31.0-beta.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/compare/v1.30.0...v1.31.0-beta.1) (2022-06-03)
 
 ### Features
