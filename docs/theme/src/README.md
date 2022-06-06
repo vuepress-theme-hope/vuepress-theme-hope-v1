@@ -5,7 +5,7 @@ title: Home
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
 tagline: A vuepress theme with tons of features✨
-action:
+actions:
   - text: Get Started 💡
     link: /guide/
     type: primary

@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-components"
 tagline: 组件库插件
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide/
     type: primary

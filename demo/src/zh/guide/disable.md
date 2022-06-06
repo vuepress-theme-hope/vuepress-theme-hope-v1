@@ -8,9 +8,9 @@ sidebar: false
 
 breadcrumb: false
 pageInfo: false
-contributor: false
 editLink: false
-updateTime: false
+contributors: false
+lastUpdated: false
 prev: false
 next: false
 comment: false

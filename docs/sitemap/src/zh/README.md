@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-sitemap1"
 tagline: 自动在你构建网页时为你生成网页的 sitemap。
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide.html
     type: primary

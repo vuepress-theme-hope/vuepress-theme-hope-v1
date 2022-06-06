@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-sitemap1"
 tagline: Automatically generate a sitemap for your website when you build it.
-action:
+actions:
   - text: Guide 💡
     link: /guide.html
     type: primary

@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-copy-code1"
 tagline: Code Copy plugin for vuepress
-action:
+actions:
   - text: Guide 💡
     link: /guide.html
     type: primary

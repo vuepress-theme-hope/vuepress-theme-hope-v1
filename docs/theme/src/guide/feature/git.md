@@ -13,8 +13,8 @@ By default, the plugin will get the UNIX timestamp(ms) of each file’s fist and
 
 At the same time, all contributors to the page will be displayed at the bottom of the page.
 
-- If you don’t want to show last update time, please set `themeConfig.updateTime` to `false`.
-- If you don’t want to show contributors, please set `themeConfig.contributor` to `false`.
+- If you don’t want to show last update time, please set `themeConfig.lastUpdated` to `false`.
+- If you don’t want to show contributors, please set `themeConfig.contributors` to `false`.
 
 <!-- more -->
 

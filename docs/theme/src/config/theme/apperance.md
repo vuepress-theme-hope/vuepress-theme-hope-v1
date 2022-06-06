@@ -65,26 +65,26 @@ Nested headings depth in sidebar
 
 Whether show icons in route navigation
 
-## contributor
-
-- Type: `boolean`
-- Default: `true`
-
-Whether show contributors in each page
-
-## editLinks
+## editLink
 
 - Type: `boolean`
 - Default: `true`
 
 Whether show edit link on each page
 
-## updateTime
+## lastUpdated
 
 - Type: `boolean`
 - Default: `true`
 
 Whether show update time on each page
+
+## contributors
+
+- Type: `boolean`
+- Default: `true`
+
+Whether show contributors in each page
 
 ## backToTop
 

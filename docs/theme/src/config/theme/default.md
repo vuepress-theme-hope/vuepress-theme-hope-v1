@@ -110,21 +110,21 @@ The folder which the document belongs to, the default is the root directory of t
 
 Document branch
 
-## editLinks <Badge text="Change default value" type="error" />
-
-- Type: `boolean`
-- Default: `true`
-
-Show edit page link
-
-## contributor <Badge text="New" />
+## contributors <Badge text="New" />
 
 - Type: `boolean`
 - Default: `true`
 
 Show contributors of this page
 
-## updateTime <Badge text="New" />
+## editLink
+
+- Type: `boolean`
+- Default: `true`
+
+Show edit page link
+
+## lastUpdated <Badge text="New" />
 
 - Type: `boolean`
 - Default: `true`

@@ -188,15 +188,15 @@ export const getPluginConfig = (
 
     [
       "copyright",
-      typeof themeConfig.copyrightPluginPlugin === "object"
+      typeof themeConfig.copyrightPlugin === "object"
         ? {
             minLength: 100,
-            disable: themeConfig.copyrightPluginPlugin.status === "local",
+            disable: themeConfig.copyrightPlugin.status === "local",
             clipboardComponent: resolve(
               __dirname,
               "../components/Clipboard.vue"
             ),
-            ...themeConfig.copyrightPluginPlugin,
+            ...themeConfig.copyrightPlugin,
           }
         : false,
     ],

@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-pwa1"
 tagline: A powerfull PWA plugin
-action:
+actions:
   - text: Guide 💡
     link: /guide.html
     type: primary

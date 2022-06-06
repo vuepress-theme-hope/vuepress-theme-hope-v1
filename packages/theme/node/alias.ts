@@ -29,9 +29,7 @@ export const getAlias = (
 
   return {
     "@AlgoliaSearchBox": isAlgoliaSearch
-      ? themeConfig.algoliaType === "full"
-        ? resolve(__dirname, "../components/AlgoliaSearch/Full.vue")
-        : resolve(__dirname, "../components/AlgoliaSearch/Dropdown.vue")
+      ? resolve(__dirname, "../components/Navbar/DocSearch.vue")
       : noopModule,
     "@BlogInfo": blogEnabled
       ? resolve(__dirname, "../components/Blog/BlogInfo.vue")

@@ -39,7 +39,6 @@
     "@vuepress/plugin-blog": "^1.9.4",
     "bcrypt-ts": "^1.0.0",
     "dayjs": "^1.11.2",
-    "docsearch.js": "^2.6.3",
     "ts-debounce": "^4.0.0",
     "vuepress-plugin-active-hash": "workspace:*",
     "vuepress-plugin-add-this": "workspace:*",

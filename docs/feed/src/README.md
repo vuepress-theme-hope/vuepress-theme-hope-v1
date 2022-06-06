@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-feed1"
 tagline: Feed plugin for vuepress
-action:
+actions:
   - text: Guide 💡
     link: /guide.html
     type: primary

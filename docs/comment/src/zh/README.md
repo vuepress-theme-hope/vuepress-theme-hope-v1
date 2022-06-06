@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-comment1"
 tagline: 评论与阅读量插件
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide/
     type: primary

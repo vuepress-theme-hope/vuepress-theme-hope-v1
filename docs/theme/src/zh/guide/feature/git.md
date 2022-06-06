@@ -13,8 +13,8 @@ tags:
 
 同时，页面的底部也会显示该页面的所有贡献者。
 
-- 如果你不希望显示最后更新时间，请设置 `themeConfig.updateTime` 为 `false`。
-- 如果你不希望显示贡献者，请设置 `themeConfig.contributor` 为 `false`。
+- 如果你不希望显示最后更新时间，请设置 `themeConfig.lastUpdated` 为 `false`。
+- 如果你不希望显示贡献者，请设置 `themeConfig.contributors` 为 `false`。
 
 <!-- more -->
 

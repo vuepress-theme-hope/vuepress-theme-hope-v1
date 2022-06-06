@@ -170,7 +170,7 @@ interface HopeThemePluginOptions {
    *
    * Copyright plugin options
    */
-  copyrightPluginPlugin?: HopeCopyrightPluginOptions;
+  copyrightPlugin?: HopeCopyrightPluginOptions;
 
   /**
    * Feed 插件配置

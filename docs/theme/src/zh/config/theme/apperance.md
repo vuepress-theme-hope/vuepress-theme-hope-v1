@@ -67,21 +67,21 @@ Algolia 搜索框类型
 
 是否在路径导航显示图标
 
-## contributor
+## contributors
 
 - 类型: `boolean`
 - 默认值: `true`
 
 是否显示当前页面贡献者
 
-## editLinks
+## editLink
 
 - 类型: `boolean`
 - 默认值: `true`
 
 显示编辑此页链接
 
-## updateTime
+## lastUpdated
 
 - 类型: `boolean`
 - 默认值: `true`

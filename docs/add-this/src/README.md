@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-add-this
 tagline: AddThis plugin for vuepress
-action:
+actions:
   - text: Guide 💡
     link: /guide.html
     type: primary

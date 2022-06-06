@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-md-enhance
 tagline: Enhancement for Markdown in VuePress
-action:
+actions:
   - text: Get Started 💡
     link: /guide/
     type: primary

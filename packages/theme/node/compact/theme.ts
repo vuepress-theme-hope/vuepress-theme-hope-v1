@@ -47,10 +47,10 @@ const DROPPED_THEME_OPTIONS: [string, string?, string?][] = [
   //   "algolia",
   //   'The theme no longer bundles docsearch package, you should install and use "@vuepress/plugin-docsearch".',
   // ],
-  // [
-  //   "algoliaType",
-  //   'The theme no longer bundles docsearch package, you should install and use "@vuepress/plugin-docsearch".',
-  // ],
+  [
+    "algoliaType",
+    'The theme is using "@docsearch/js" package because "docsearch.js" is deprecated.',
+  ],
   // [
   //   "custom",
   //   "VuePress2 remove markdown slot support, you should extend theme layout to support similar feature.",

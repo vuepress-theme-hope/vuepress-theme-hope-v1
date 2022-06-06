@@ -3,13 +3,14 @@ import Vue from "vue";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: docsearch type issue
 import docsearch from "@docsearch/js";
+import "@docsearch/css";
 
 import type { AlgoliaOption } from "vuepress-typings";
 import type { DocSearchProps } from "@docsearch/react";
 import type { PropType } from "vue";
 
 export default Vue.extend({
-  name: "AlgoliaSearchFull",
+  name: "DocSearch",
 
   props: {
     options: { type: Object as PropType<AlgoliaOption>, required: true },

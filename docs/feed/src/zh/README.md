@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-feed1"
 tagline: 为 VuePress 提供 Feed 生成
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide.html
     type: primary

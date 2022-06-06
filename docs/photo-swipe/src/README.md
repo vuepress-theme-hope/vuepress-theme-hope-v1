@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-photo-swipe
 tagline: Photo swipe plugin for vuepress
-action:
+actions:
   - text: Guide 💡
     link: /guide.html
     type: primary

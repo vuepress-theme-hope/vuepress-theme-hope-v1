@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-comment1"
 tagline: Comment and visitors plugin for vuepress
-action:
+actions:
   - text: Get Started 💡
     link: /guide/
     type: primary

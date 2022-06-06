@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-copy-code1"
 tagline: 为 VuePress 提供代码块一键复制
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide.html
     type: primary

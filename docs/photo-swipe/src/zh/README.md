@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-photo-swipe
 tagline: 为 VuePress 提供图片预览支持
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide.html
     type: primary

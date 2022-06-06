@@ -57,19 +57,15 @@ export default hope.config({
       indexName: "vuepress-theme-hope-v1",
     },
 
-    algoliaType: "full",
-
-    footer: {
-      display: true,
-      copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    },
+    copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+    displayFooter: true,
 
     comment: {
       provider: "Waline",
       serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
-    copyright: {
+    copyrightPlugin: {
       status: "local",
     },
 

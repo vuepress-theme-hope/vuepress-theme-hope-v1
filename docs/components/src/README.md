@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "@mr-hope/vuepress-plugin-components"
 tagline: Components lib plugin for vuepress
-action:
+actions:
   - text: Get Started 💡
     link: /guide/
     type: primary

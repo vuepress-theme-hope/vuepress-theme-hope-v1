@@ -56,15 +56,6 @@ export interface HopeThemeAppearanceOptions {
 
 export interface HopeThemeAppearanceRootOptions {
   /**
-   * Algolia 搜索类型
-   *
-   * Algolia Search Type
-   *
-   * @default 'dropdown'
-   */
-  algoliaType?: "dropdown" | "full";
-
-  /**
    * 图标前缀
    *
    * Prefix of icon class

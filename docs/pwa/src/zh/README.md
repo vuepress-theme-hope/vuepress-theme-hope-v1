@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-pwa1"
 tagline: 一个强大的 PWA 插件
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide.html
     type: primary

@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: "vuepress-plugin-seo1"
 tagline: 向你的网页注入 <meta>，来增强你网页的 SEO。
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide.html
     type: primary

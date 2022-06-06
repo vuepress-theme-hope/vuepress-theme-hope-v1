@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
 tagline: 一个具有强大功能的 vuepress 主题✨
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide/
     type: primary
