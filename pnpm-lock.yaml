@@ -47,7 +47,7 @@ importers:
       tslib: 2.4.0
       typescript: 4.7.3
       vite: 2.9.9
-      vitest: 0.13.1
+      vitest: 0.14.1
       vuepress-plugin-active-hash: workspace:*
       vuepress-plugin-add-this: workspace:*
       vuepress-plugin-comment1: workspace:*
@@ -100,7 +100,7 @@ importers:
       tslib: 2.4.0
       typescript: 4.7.3
       vite: 2.9.9
-      vitest: 0.13.1_c8@7.11.3
+      vitest: 0.14.1_c8@7.11.3
       vuepress-plugin-active-hash: link:packages/active-hash
       vuepress-plugin-add-this: link:packages/add-this
       vuepress-plugin-comment1: link:packages/comment
@@ -14895,8 +14895,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.13.1_c8@7.11.3:
-    resolution: {integrity: sha512-CfSBf7YFw/i8HumSUQRtZKs0aV91DC9WU8nAgIJAlawKHaFuPHQohDwOTPIFgrxySiuFYUa0Yohf9gDFfBwjxA==}
+  /vitest/0.14.1_c8@7.11.3:
+    resolution: {integrity: sha512-2UUm6jYgkwh7Y3VKSRR8OuaNCm+iA5LPDnal7jyITN39maZK9L+JVxqjtQ39PSFo5Fl3/BgaJvER6GGHX9JLxg==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
