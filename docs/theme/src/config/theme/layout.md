@@ -21,7 +21,7 @@ Whether disable navbar
 
 Whether to hide navbar when scrolling down
 
-## anchorDisplay
+## toc
 
 - Type: `boolean`
 - Default: `true`

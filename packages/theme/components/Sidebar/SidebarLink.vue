@@ -13,7 +13,7 @@ $headings = 3 4 5 6;
       padding-left: 1rem;
       font-size: 0.95em;
 
-      .has-anchor & {
+      .has-toc & {
         @media (min-width: $MQWide) {
           display: none;
         }

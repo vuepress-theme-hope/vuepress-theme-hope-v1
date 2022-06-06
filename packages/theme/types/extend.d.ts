@@ -51,7 +51,7 @@ declare module "vuepress-typings" {
     mediaLink?: BlogMedia;
     search?: boolean;
     backToTop?: boolean;
-    anchorDisplay?: boolean;
+    toc?: boolean;
     containerClass?: string | string[] | Record<string, boolean>;
   }
 

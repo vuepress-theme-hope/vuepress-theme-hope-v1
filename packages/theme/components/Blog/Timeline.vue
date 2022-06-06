@@ -4,7 +4,7 @@
       <MyTransition>
         <li class="desc">{{ hint }}</li>
       </MyTransition>
-      <Anchor :items="anchorConfig" />
+      <TOC :items="tocConfig" />
       <MyTransition
         v-for="(item, index) in $timeline"
         :key="index"

@@ -41,9 +41,9 @@ icon: home
 
 在桌面模式下，文章的标题列表会自动显示在屏幕的右侧。(在移动视图下它们会放置在侧边栏里)
 
-如果你不希望在桌面模式下显示右侧的标题列表，请将 `themeConfig.anchorDisplay` 设置为 `false`。
+如果你不希望在桌面模式下显示右侧的标题列表，请将 `themeConfig.toc` 设置为 `false`。
 
-你也可以在特定页面的 frontmatter 中通过 `anchorDisplay` 来指定它。
+你也可以在特定页面的 frontmatter 中通过 `toc` 来指定它。
 
 ## 贡献者与最后更新时间
 

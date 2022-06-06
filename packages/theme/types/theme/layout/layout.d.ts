@@ -70,7 +70,7 @@ export interface HopeLayoutConfig extends HopeThemeFooterLocaleOptions {
    *
    * @default true
    */
-  anchorDisplay?: boolean;
+  toc?: boolean;
 
   /**
    * 是否全局启用路径导航

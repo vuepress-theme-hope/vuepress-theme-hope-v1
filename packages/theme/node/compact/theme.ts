@@ -15,7 +15,7 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   ["editLinks", "editLink"],
   ["updateTime", "lastUpdated"],
   ["contributor", "contributors"],
-  // ["anchorDisplay", "toc"],
+  ["anchorDisplay", "toc"],
   // ["nav", "navbar"],
   // ["activeHash", "plugins.activeHeaderLinks"],
   // ["comment", "plugins.comment"],

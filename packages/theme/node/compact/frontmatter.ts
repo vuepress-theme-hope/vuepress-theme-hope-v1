@@ -11,7 +11,7 @@ const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [
   // ["visitor", "pageview"],
   // ["sidebarDepth", "headerDepth"],
   // ["copyrightText", "copyright"],
-  // ["anchorDisplay", "toc"],
+  ["anchorDisplay", "toc"],
   ["updateTime", "lastUpdated"],
   ["contributor", "contributors"],
   ["editLinks", "editLink"],

@@ -310,7 +310,7 @@ Whether display search box on current page
 
 Whether display the back to top button on current page
 
-### anchorDisplay
+### toc
 
 - Type: `boolean`
 - Default value: Globally configured value (global default is `true`)

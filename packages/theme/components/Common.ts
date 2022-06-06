@@ -78,7 +78,7 @@ export default globalEncryptMixin.extend({
         {
           "has-navbar": this.enableNavbar,
           "has-sidebar": this.enableSidebar,
-          "has-anchor": this.enableAnchor,
+          "has-toc": this.enableTOC,
           "hide-navbar": this.hideNavbar,
           "sidebar-open": this.isSidebarOpen,
         },
@@ -90,11 +90,10 @@ export default globalEncryptMixin.extend({
       return this.getHeader(this.sidebarItems);
     },
 
-    enableAnchor(): boolean {
+    enableTOC(): boolean {
       return (
-        this.$frontmatter.anchorDisplay ||
-        (this.$themeConfig.anchorDisplay !== false &&
-          this.$frontmatter.anchorDisplay !== false)
+        this.$frontmatter.toc ||
+        (this.$themeConfig.toc !== false && this.$frontmatter.toc !== false)
       );
     },
   },

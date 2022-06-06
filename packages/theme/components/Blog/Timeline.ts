@@ -1,13 +1,13 @@
-import Anchor from "@theme/components/Anchor.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
+import TOC from "@theme/components/Info/TOC.vue";
 import { timelineMixin } from "@theme/mixins/timeline";
 
-import type { SidebarHeader } from "@theme/utils/groupHeader";
+import type { PageHeader } from "vuepress-typings";
 
 export default timelineMixin.extend({
   name: "Timeline",
 
-  components: { Anchor, MyTransition },
+  components: { MyTransition, TOC },
 
   computed: {
     hint(): string {
@@ -16,7 +16,7 @@ export default timelineMixin.extend({
         : "";
     },
 
-    anchorConfig(): SidebarHeader[] {
+    tocConfig(): PageHeader[] {
       return this.$timeline.map((item) => ({
         title: item.year.toString(),
         level: 2,

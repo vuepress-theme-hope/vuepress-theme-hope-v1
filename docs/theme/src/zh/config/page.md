@@ -314,7 +314,7 @@ tags:
 
 设置当前页面是否显示返回顶部按钮
 
-### anchorDisplay
+### toc
 
 - 类型: `boolean`
 - 默认值: 全局中配置的值 (全局默认为 `true`)

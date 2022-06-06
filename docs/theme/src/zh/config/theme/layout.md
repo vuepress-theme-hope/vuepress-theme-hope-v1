@@ -21,7 +21,7 @@ tags:
 
 是否在向下滚动时自动隐藏导航栏
 
-## anchorDisplay
+## toc
 
 - 类型: `boolean`
 - 默认值: `true`

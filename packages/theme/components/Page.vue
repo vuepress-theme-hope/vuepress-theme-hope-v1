@@ -33,7 +33,7 @@
 
     <template v-else>
       <MyTransition :delay="0.12">
-        <Anchor :key="$route.path" />
+        <TOC :key="$route.path" />
       </MyTransition>
 
       <slot v-if="!pagePassword || pageDescrypted" name="content-top" />
@@ -65,6 +65,7 @@
 
 <style lang="stylus">
 .page {
+  position: relative;
   display: block;
   box-sizing: border-box;
   min-height: 100vh;
@@ -93,7 +94,7 @@
   }
 
   @media (min-width: $MQWide) {
-    .has-anchor &:not(.blog) {
+    .has-toc &:not(.blog) {
       padding-right: 16rem;
     }
   }

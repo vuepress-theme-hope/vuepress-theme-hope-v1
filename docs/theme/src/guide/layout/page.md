@@ -41,9 +41,9 @@ Please see [Breadcrumb](breadcrumb.md).
 
 In desktop mode, a list of article headings will automatically be displayed on the right side of the screen. (They will be placed in the sidebar on mobile devices)
 
-If you don’t want to display the title list on the right in desktop mode, please set `themeConfig.anchorDisplay` to `false`.
+If you don’t want to display the title list on the right in desktop mode, please set `themeConfig.toc` to `false`.
 
-You can also set it in `Front matter` on specific pages.
+You can also set `toc` in `Front matter` on specific pages.
 
 ## Contributors and Last Updated Time
 

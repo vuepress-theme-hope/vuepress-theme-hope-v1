@@ -1,8 +1,8 @@
-import Anchor from "@theme/components/Anchor.vue";
 import BreadCrumb from "@theme/components/Info/BreadCrumb.vue";
 import MyTransition from "@theme/components/MyTransition.vue";
 import PageInfo from "@theme/components/Info/PageInfo.vue";
 import PageNav from "@theme/components/PageNav.vue";
+import TOC from "@theme/components/Info/TOC.vue";
 import Password from "@theme/components/Password.vue";
 import PageMeta from "@theme/components/Info/PageMeta.vue";
 import { pathEncryptMixin } from "@theme/mixins/pathEncrypt";
@@ -16,13 +16,13 @@ export default pathEncryptMixin.extend({
   name: "Page",
 
   components: {
-    Anchor,
     BreadCrumb,
     MyTransition,
     PageInfo,
     PageMeta,
     PageNav,
     Password,
+    TOC,
   },
 
   props: {
