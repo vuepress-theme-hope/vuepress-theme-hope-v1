@@ -1,31 +1,43 @@
 <template>
-  <!-- repo link -->
-  <a
-    v-if="repoLink && $themeConfig.repoDisplay !== false"
-    class="repo-link"
-    rel="noopener noreferrer"
-    :href="repoLink"
-    target="_blank"
-  >
-    {{ repoLabel }}
-    <OutboundLink />
-  </a>
+  <div v-if="repo && $themeLocaleConfig.repoDisplay !== false" class="nav-item">
+    <a
+      class="repo-link"
+      :href="repoLink"
+      rel="noopener noreferrer"
+      target="_blank"
+      :aria-label="repoLabel"
+    >
+      <Component
+        :is="`${repoType}Icon`"
+        :style="{
+          width: '1.25rem',
+          height: '1.25rem',
+          verticalAlign: 'middle',
+        }"
+      />
+    </a>
+  </div>
 </template>
 
 <script src="./RepoLink" />
 
 <style lang="stylus">
-.repo-link {
-  .navbar & {
-    color: var(--dark-grey);
-    margin-left: 1rem;
-  }
+.navbar {
+  .repo-link {
+    display: inline-block;
 
-  .sidebar-nav-links & {
-    display: block;
-    padding: 0.5rem 0 0.5rem 1.5rem;
-    font-size: 1.1em;
-    line-height: 1.25rem;
+    margin: auto;
+    padding: 6px;
+
+    color: var(--dark-grey);
+
+    // fix icon position
+    line-height: 1;
+
+    &:hover,
+    &:active {
+      color: var(--accent-color);
+    }
   }
 }
 </style>

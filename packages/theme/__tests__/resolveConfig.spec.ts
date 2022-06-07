@@ -29,7 +29,7 @@ describe("Test resolveTheme function", () => {
       repoDisplay: false,
       docsDir: "docs/theme/src",
 
-      nav: [
+      navbar: [
         { text: "Home", link: "/en/", icon: "home" },
         { text: "Guide", link: "/en/guide/", icon: "creative" },
         { text: "Config", link: "/en/config/", icon: "code" },
@@ -118,7 +118,7 @@ describe("Test resolveTheme function", () => {
 
       locales: {
         "/zh/": {
-          nav: [
+          navbar: [
             { text: "主页", link: "/", icon: "home" },
             { text: "指南", link: "/guide/", icon: "creative" },
             { text: "配置", link: "/config/", icon: "code" },

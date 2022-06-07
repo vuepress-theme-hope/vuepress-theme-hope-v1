@@ -1,0 +1,120 @@
+<template>
+  <button
+    class="toggle-navbar-button"
+    :class="{ 'is-active': active }"
+    aria-label="Toggle Navbar"
+    :aria-expanded="active"
+    aria-controls="nav-screen"
+    @click="$emit('toggle')"
+  >
+    <span class="button-container">
+      <span class="button-top" />
+      <span class="button-middle" />
+      <span class="button-bottom" />
+    </span>
+  </button>
+</template>
+
+<style lang="stylus">
+@require "~vuepress-shared/styles/reset";
+
+.toggle-navbar-button {
+  button();
+
+  position: relative;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px;
+
+  @media screen and (max-width: $MQMobile) {
+    display: flex;
+  }
+
+  .button-container {
+    position: relative;
+    overflow: hidden;
+    width: 16px;
+    height: 14px;
+  }
+
+  .button-top,
+  .button-middle,
+  .button-bottom {
+    position: absolute;
+
+    width: 16px;
+    height: 2px;
+
+    background-color: var(--dark-grey);
+
+    transition: top 0.25s, background-color 0.5s, transform 0.25s;
+  }
+
+  .button-top {
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .button-middle {
+    top: 6px;
+    left: 0;
+    transform: translateX(8px);
+  }
+
+  .button-bottom {
+    top: 12px;
+    left: 0;
+    transform: translateX(4px);
+  }
+
+  &:hover {
+    .button-top {
+      top: 0;
+      left: 0;
+      transform: translateX(4px);
+    }
+
+    .button-middle {
+      top: 6;
+      left: 0;
+      transform: translateX(0);
+    }
+
+    .button-bottom {
+      top: 12px;
+      left: 0;
+      transform: translateX(8px);
+    }
+  }
+
+  &.is-active {
+    .button-top {
+      top: 6px;
+      transform: translateX(0) rotate(225deg);
+    }
+
+    .button-middle {
+      top: 6px;
+      transform: translateX(16px);
+    }
+
+    .button-bottom {
+      top: 6px;
+      transform: translateX(0) rotate(135deg);
+    }
+
+    &:hover {
+      .button-top,
+      .button-middle,
+      .button-bottom {
+        background-color: var(--theme-color);
+        transition: top 0.25s, background-color 0.25s, transform 0.25s;
+      }
+    }
+  }
+}
+</style>

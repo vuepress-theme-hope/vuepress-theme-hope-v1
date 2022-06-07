@@ -1,12 +1,8 @@
 // TODO: Support locales
 import Vue from "vue";
+import { isLinkExternal, normalizePath } from "vuepress-shared/lib/client";
 import AutoLink from "@theme/components/AutoLink";
-import {
-  isExternal,
-  ensureExt,
-  normalize,
-  resolvePath,
-} from "@theme/utils/path";
+import { ensureExt, resolvePath } from "@theme/utils/path";
 
 import type { BasePage, PageFrontmatter } from "vuepress-typings";
 import type { PropType } from "vue";
@@ -89,17 +85,17 @@ export default Vue.extend({
         const path = resolvePath(pageLinkConfig, this.$route.path);
 
         // if it is external link
-        if (isExternal(path))
+        if (isLinkExternal(path))
           return {
             text: path,
             link: path,
           };
 
-        const realPath = normalize(path);
+        const realPath = normalizePath(path);
 
         // find matches in all pages
         for (const page of this.$site.pages)
-          if (normalize(page.regularPath) === realPath)
+          if (normalizePath(page.regularPath) === realPath)
             // return sidebarConfig merged with pageObject
             return {
               text: page.title,

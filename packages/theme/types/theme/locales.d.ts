@@ -4,15 +4,14 @@ import type {
   HopeThemeAppearanceLocaleData,
   HopeThemeAppearanceOptions,
 } from "./appearance";
-import type { HopeNavBarConfig, HopeSideBarConfig } from "./extends";
+import type { HopeSideBarConfig } from "./extends";
 import type {
   HopeThemeFeatureLocaleData,
   HopeThemeFeatureLocaleOptions,
 } from "./feature";
 import type {
-  HopeThemeMetaLocaleOptions,
-  HopeThemeFooterLocaleOptions,
   HopeThemeLayoutLocaleData,
+  HopeThemeLayoutLocaleOptions,
 } from "./layout";
 
 export interface HopeThemeLocaleData
@@ -30,19 +29,11 @@ export interface HopeThemeLocalesConfig
   extends Partial<HopeThemeLocaleData>,
     HopeThemeAppearanceOptions,
     HopeThemeFeatureLocaleOptions,
-    HopeThemeFooterLocaleOptions,
-    HopeThemeMetaLocaleOptions {
+    HopeThemeLayoutLocaleOptions {
   /** 当前语言下的标题 */
   title?: string;
   /** 当前语言下的描述 */
   description?: string;
-
-  /**
-   * 导航栏配置
-   *
-   * Navbar configuration
-   */
-  nav?: HopeNavBarConfig;
 
   /**
    * 侧边栏配置

@@ -27,7 +27,6 @@ const defaultConfig = {
 const defaultThemeConfig: HopeThemeConfig = {
   sidebarDepth: 2,
   iconPrefix: "iconfont icon-",
-  editLink: true,
 };
 
 export const resolveThemeConfig = (

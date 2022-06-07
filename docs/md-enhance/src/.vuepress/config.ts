@@ -30,14 +30,14 @@ export default hope.config({
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/",
     docsDir: "docs/md-enhance/src",
 
-    nav: [
+    navbar: [
       { text: "Home", icon: "home", link: "/" },
       { text: "Guide", icon: "creative", link: "/guide/" },
       { text: "Config", icon: "config", link: "/config.html" },
       {
         text: version,
         icon: "note",
-        items: [
+        children: [
           {
             text: "V2 Docs",
             link: "https://vuepress-theme-hope.github.io/v2/md-enhance/",
@@ -50,14 +50,14 @@ export default hope.config({
 
     locales: {
       "/zh/": {
-        nav: [
+        navbar: [
           { text: "主页", icon: "home", link: "/zh/" },
           { text: "指南", icon: "creative", link: "/zh/guide/" },
           { text: "配置", icon: "config", link: "/zh/config.html" },
           {
             text: version,
             icon: "note",
-            items: [
+            children: [
               {
                 text: "V2 文档",
                 link: "https://vuepress-theme-hope.github.io/v2/md-enhance/zh/",

@@ -1,9 +1,13 @@
 <template>
   <nav class="nav-links">
     <!-- user links -->
-    <div v-for="item in navLinks" :key="item.link" class="nav-item">
-      <DropdownLink v-if="item.type === 'links'" :item="item" />
-      <NavLink v-else :item="item" />
+    <div
+      v-for="config in navbarLinks"
+      :key="config.link"
+      class="nav-item hide-in-mobile"
+    >
+      <DropdownLink v-if="'children' in config" :config="config" />
+      <AutoLink v-else :config="config" />
     </div>
   </nav>
 </template>
@@ -11,32 +15,44 @@
 <script src="./NavLinks" />
 
 <style lang="stylus">
-.nav-links {
-  display: inline-block;
+.navbar {
+  .nav-links {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+  }
 
   .nav-item {
     position: relative;
-    display: inline-block;
+    margin: 0 0.25rem;
     line-height: 2rem;
-    margin-left: 1rem;
 
     &:first-child {
       margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
 
     > .nav-link {
       color: var(--dark-grey);
 
       &::after {
+        content: " ";
+
         position: absolute;
-        content: ' ';
-        left: 50%;
         right: 50%;
-        bottom: 0px;
+        bottom: 0;
+        left: 50%;
+
         height: 2px;
-        background: var(--accent-color-light);
         border-radius: 1px;
+
+        background: var(--accent-color-light);
+
         visibility: hidden;
+
         transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
       }
 
@@ -44,10 +60,11 @@
         color: var(--accent-color);
       }
 
-      &:hover, &.active {
+      &:hover,
+      &.active {
         &::after {
-          left: 0;
           right: 0;
+          left: 0;
           visibility: visible;
         }
       }

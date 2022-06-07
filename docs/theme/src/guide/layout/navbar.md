@@ -27,7 +27,7 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       { text: "Guide", link: "/guide/", icon: "creative" },
       { text: "Config", link: "/config/", icon: "config" },
       { text: "FAQ", link: "/FAQ/", icon: "question" },
@@ -46,7 +46,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       { text: "Guide", link: "/guide/", icon: "creative" },
       { text: "Config", link: "/config/", icon: "config" },
       { text: "FAQ", link: "/FAQ/", icon: "question" },
@@ -71,11 +71,11 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "Basic",
         icon: "info",
-        items: [
+        children: [
           { text: "Markdown", link: "/basic/markdown/", icon: "markdown" },
           { text: "VuePress", link: "/basic/vuepress/", icon: "vue" },
         ],
@@ -95,11 +95,11 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "Basic",
         icon: "info",
-        items: [
+        children: [
           { text: "Markdown", link: "/basic/markdown/", icon: "markdown" },
           { text: "VuePress", link: "/basic/vuepress/", icon: "vue" },
         ],
@@ -125,12 +125,12 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "Basic",
         icon: "info",
         prefix: "/basic/",
-        items: [
+        children: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },
           { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
@@ -150,12 +150,12 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "Basic",
         icon: "info",
         prefix: "/basic/",
-        items: [
+        children: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },
           { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
@@ -181,22 +181,22 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "Project",
         icon: "info",
-        items: [
+        children: [
           {
             text: "Built in Plugins",
             icon: "plugin",
-            items: [
+            children: [
               /* Some items */
             ],
           },
           {
             text: "Third party Plugins",
             icon: "plugin",
-            items: [
+            children: [
               /* Some items */
             ],
           },
@@ -217,22 +217,22 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "Project",
         icon: "info",
-        items: [
+        children: [
           {
             text: "Built in Plugins",
             icon: "plugin",
-            items: [
+            children: [
               /* Some items */
             ],
           },
           {
             text: "Third party Plugins",
             icon: "plugin",
-            items: [
+            children: [
               /* Some items */
             ],
           },
@@ -259,11 +259,11 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "Project",
         icon: "info",
-        items: [
+        children: [
           {
             text: "Changelog",
             link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
@@ -279,7 +279,7 @@ export default theme.config({
           {
             text: "Plugins",
             icon: "plugin",
-            items: [
+            children: [
               {
                 text: "AddThis Plugin",
                 link: "https://vuepress-theme-hope.github.io/v1/add-this/",
@@ -343,11 +343,11 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "Project",
         icon: "info",
-        items: [
+        children: [
           {
             text: "Changelog",
             link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
@@ -363,7 +363,7 @@ module.exports = config({
           {
             text: "Plugins",
             icon: "plugin",
-            items: [
+            children: [
               {
                 text: "AddThis Plugin",
                 link: "https://vuepress-theme-hope.github.io/v1/add-this/",
@@ -817,7 +817,7 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       { text: "Guide", link: "/guide/", icon: "creative" },
       { text: "Config", link: "/config/", icon: "config" },
       { text: "FAQ", link: "/FAQ/", icon: "question" },
@@ -825,7 +825,7 @@ export default theme.config({
         text: "Basic",
         icon: "info",
         prefix: "/basic/",
-        items: [
+        children: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },
           { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
@@ -833,7 +833,7 @@ export default theme.config({
       {
         text: "Project",
         icon: "info",
-        items: [
+        children: [
           {
             text: "Changelog",
             link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
@@ -849,7 +849,7 @@ export default theme.config({
           {
             text: "Plugins",
             icon: "plugin",
-            items: [
+            children: [
               {
                 text: "AddThis Plugin",
                 link: "https://vuepress-theme-hope.github.io/v1/add-this/",
@@ -913,7 +913,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       { text: "Guide", link: "/guide/", icon: "creative" },
       { text: "Config", link: "/config/", icon: "config" },
       { text: "FAQ", link: "/FAQ/", icon: "question" },
@@ -921,7 +921,7 @@ module.exports = config({
         text: "Basic",
         icon: "info",
         prefix: "/basic/",
-        items: [
+        children: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },
           { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
@@ -929,7 +929,7 @@ module.exports = config({
       {
         text: "Project",
         icon: "info",
-        items: [
+        children: [
           {
             text: "Changelog",
             link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
@@ -945,7 +945,7 @@ module.exports = config({
           {
             text: "Plugins",
             icon: "plugin",
-            items: [
+            children: [
               {
                 text: "AddThis Plugin",
                 link: "https://vuepress-theme-hope.github.io/v1/add-this/",

@@ -1,7 +1,6 @@
 import Vue from "vue";
 import BlogInfo from "@BlogInfo";
 import BloggerInfo from "@BloggerInfo";
-import SidebarNavLinks from "@theme/components/Sidebar/SidebarNavLinks.vue";
 import SidebarLinks from "@theme/components/Sidebar/SidebarLinks.vue";
 
 import type { PropType } from "vue";
@@ -15,7 +14,6 @@ export default Vue.extend({
     BlogInfo,
     BloggerInfo,
     SidebarLinks,
-    SidebarNavLinks,
   },
 
   props: {

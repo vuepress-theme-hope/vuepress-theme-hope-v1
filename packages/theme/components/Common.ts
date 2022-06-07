@@ -40,15 +40,17 @@ export default globalEncryptMixin.extend({
 
       const { frontmatter } = this.$page;
 
-      if (frontmatter.navbar === false || this.$themeConfig.navbar === false)
+      if (
+        frontmatter.navbar === false ||
+        this.$themeLocaleConfig.navbar === false
+      )
         return false;
 
       return Boolean(
         this.$title ||
-          this.$themeConfig.logo ||
-          this.$themeConfig.repo ||
-          this.$themeConfig.nav ||
-          this.$themeLocaleConfig.nav
+          this.$themeLocaleConfig.logo ||
+          this.$themeLocaleConfig.repo ||
+          this.$themeLocaleConfig.navbar
       );
     },
 
@@ -93,7 +95,8 @@ export default globalEncryptMixin.extend({
     enableTOC(): boolean {
       return (
         this.$frontmatter.toc ||
-        (this.$themeConfig.toc !== false && this.$frontmatter.toc !== false)
+        (this.$themeLocaleConfig.toc !== false &&
+          this.$frontmatter.toc !== false)
       );
     },
   },

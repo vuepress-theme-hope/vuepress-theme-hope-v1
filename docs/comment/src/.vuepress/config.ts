@@ -29,12 +29,12 @@ export default hope.config({
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1",
     docsDir: "docs/comment/src",
 
-    nav: [
+    navbar: [
       { text: "Home", icon: "home", link: "/" },
       {
         text: "Guide",
         icon: "creative",
-        items: [
+        children: [
           {
             text: "Guide",
             icon: "creative",
@@ -48,7 +48,7 @@ export default hope.config({
       {
         text: "Config",
         icon: "config",
-        items: [
+        children: [
           { text: "Config", icon: "config", link: "/config/" },
           {
             text: "Waline",
@@ -66,7 +66,7 @@ export default hope.config({
       {
         text: version,
         icon: "note",
-        items: [
+        children: [
           {
             text: "V2 Docs",
             link: "https://vuepress-theme-hope.github.io/v2/comment/",
@@ -107,12 +107,12 @@ export default hope.config({
 
     locales: {
       "/zh/": {
-        nav: [
+        navbar: [
           { text: "主页", icon: "home", link: "/zh/" },
           {
             text: "指南",
             icon: "creative",
-            items: [
+            children: [
               {
                 text: "指南",
                 icon: "creative",
@@ -126,7 +126,7 @@ export default hope.config({
           {
             text: "配置",
             icon: "config",
-            items: [
+            children: [
               { text: "配置", icon: "config", link: "/zh/config/" },
               {
                 text: "Waline",
@@ -144,7 +144,7 @@ export default hope.config({
           {
             text: version,
             icon: "note",
-            items: [
+            children: [
               {
                 text: "V2 文档",
                 link: "https://vuepress-theme-hope.github.io/v2/comment/zh/",

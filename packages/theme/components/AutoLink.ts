@@ -1,5 +1,9 @@
 import Vue from "vue";
-import { isLinkHttp, isLinkMailto, isLinkTel } from "@theme/utils/path";
+import {
+  isLinkHttp,
+  isLinkMailto,
+  isLinkTel,
+} from "vuepress-shared/lib/client";
 
 import type { PropType } from "vue";
 import type { AutoLink } from "@theme/types";

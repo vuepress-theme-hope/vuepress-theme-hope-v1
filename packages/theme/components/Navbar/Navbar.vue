@@ -2,7 +2,7 @@
   <header class="navbar" :class="{ 'can-hide': canHide }">
     <slot name="start" />
 
-    <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
+    <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
 
     <RouterLink ref="siteInfo" :to="$localePath" class="home-link">
       <img

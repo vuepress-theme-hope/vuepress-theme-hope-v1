@@ -29,11 +29,11 @@ export default hope.config({
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1",
     docsDir: "docs/reading-time/src",
 
-    nav: [
+    navbar: [
       {
         text: version,
         icon: "note",
-        items: [
+        children: [
           {
             text: "V2 Docs",
             link: "https://vuepress-theme-hope.github.io/v2/reading-time/",
@@ -44,11 +44,11 @@ export default hope.config({
 
     locales: {
       "/zh/": {
-        nav: [
+        navbar: [
           {
             text: version,
             icon: "note",
-            items: [
+            children: [
               {
                 text: "V2 文档",
                 link: "https://vuepress-theme-hope.github.io/v2/reading-time/zh/",

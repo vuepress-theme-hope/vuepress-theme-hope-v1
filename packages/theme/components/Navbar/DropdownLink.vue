@@ -8,178 +8,205 @@
     >
       <slot name="title">
         <span class="title">
-          <i
-            v-if="item.icon"
-            :class="`iconfont ${$themeConfig.iconPrefix}${item.icon}`"
-          />
-          {{ item.text }}
+          <FontIcon :icon="config.icon" />
+          {{ config.text }}
         </span>
       </slot>
       <span class="arrow" />
-    </button>
 
-    <ul class="nav-dropdown">
-      <li
-        v-for="(child, index) in item.items"
-        :key="child.link || index"
-        class="dropdown-item"
-      >
-        <template v-if="child.type === 'links'">
-          <h4 class="dropdown-subtitle">
-            <NavLink
-              v-if="child.link"
-              :item="child"
-              @focusout="
-                isLastItemOfArray(child, item.children) &&
-                  child.children.length === 0 &&
-                  setOpen(false)
-              "
-            />
-
-            <span v-else>{{ child.text }}</span>
-          </h4>
-
-          <ul class="dropdown-subitem-wrapper">
-            <li
-              v-for="grandchild in child.items"
-              :key="grandchild.link"
-              class="dropdown-subitem"
-            >
-              <NavLink
-                :item="grandchild"
+      <ul class="nav-dropdown">
+        <li
+          v-for="(child, index) in config.children"
+          :key="child.link || index"
+          class="dropdown-item"
+        >
+          <template v-if="'children' in child">
+            <h4 class="dropdown-subtitle">
+              <AutoLink
+                v-if="child.link"
+                :cpnfig="child"
                 @focusout="
-                  isLastItemOfArray(grandchild, child.items) &&
-                    isLastItemOfArray(child, item.items) &&
+                  child.children.length === 0 &&
+                    index === config.children.length - 1 &&
                     setOpen(false)
                 "
               />
-            </li>
-          </ul>
-        </template>
 
-        <NavLink
-          v-else
-          :item="child"
-          @focusout="isLastItemOfArray(child, item.items) && setOpen(false)"
-        />
-      </li>
-    </ul>
+              <span v-else>{{ child.text }}</span>
+            </h4>
+
+            <ul class="dropdown-subitem-wrapper">
+              <li
+                v-for="(grandchild, grandIndex) in child.children"
+                :key="grandchild.link"
+                class="dropdown-subitem"
+              >
+                <AutoLink
+                  :config="grandchild"
+                  @focusout="
+                    grandIndex === child.children.length - 1 &&
+                      index === config.children.length - 1 &&
+                      setOpen(false)
+                  "
+                />
+              </li>
+            </ul>
+          </template>
+
+          <AutoLink
+            v-else
+            :config="child"
+            @focusout="index === config.children.length - 1 && setOpen(false)"
+          />
+        </li>
+      </ul>
+    </button>
   </div>
 </template>
 
 <script src="./DropdownLink" />
 
 <style lang="stylus">
-@require '~vuepress-shared/styles/arrow'
-@require '~vuepress-shared/styles/reset'
+@require "~vuepress-shared/styles/arrow";
+@require "~vuepress-shared/styles/reset";
 
-.dropdown-wrapper
-  height 1.8rem
-  cursor pointer
+.dropdown-wrapper {
+  cursor: pointer;
 
-  &:not(:hover)
-    .arrow
-      transform rotate(-180deg)
+  &:not(:hover) {
+    .arrow {
+      transform: rotate(-180deg);
+    }
+  }
 
-  &:hover, &.open
-    .nav-dropdown
-      z-index 2
-      transform scale(1)
-      visibility visible
-      opacity 1
+  .dropdown-title {
+    button();
 
-  .dropdown-title
-    button()
-    cursor inherit
-    padding inherit
-    color var(--dark-grey)
-    font-family inherit
-    font-size 0.9rem
-    font-weight 500
-    line-height 1.4rem
+    padding: 0 0.25rem;
 
-    &::after
-      border-left 5px solid var(--accent-color)
+    color: var(--dark-grey);
 
-    &:hover
-      border-color transparent
+    font-weight: 500;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
 
-    .arrow
-      arrow()
-      font-size 1.2em
+    cursor: inherit;
 
-  .nav-dropdown
-    box-sizing border-box
-    position absolute
-    top 100%
-    right 0
-    max-height 100vh - $navbarHeight
-    margin 0
-    padding 0.6rem 0
-    border 1px solid var(--grey14)
-    border-radius 0.25rem
-    background var(--bg-color)
-    box-shadow 2px 2px 10px var(--card-shadow-color)
-    text-align left
-    white-space nowrap
-    overflow-y auto
-    transform scale(0.8)
-    opacity 0
-    visibility hidden
-    transition all 0.18s ease-out
+    &:hover {
+      border-color: transparent;
+    }
 
-  .dropdown-item
-    color inherit
-    line-height 1.7rem
+    &::after {
+      border-left: 5px solid var(--accent-color);
+    }
 
-    h4
-      margin 0
-      padding 0.75rem 1rem 0.25rem 0.75rem
-      border-top 1px solid var(--grey14)
-      color var(--dark-grey)
-      font-size 0.9rem
+    .icon {
+      margin-right: 0.25em;
+      font-size: 1em;
+    }
 
-      .nav-link
-        padding 0
+    .arrow {
+      arrow();
+      font-size: 1.2em;
+    }
+  }
 
-        &:before
-          display none
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
 
-    &:first-child h4
-      padding-top 0
-      border-top 0
+  .nav-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
 
-    .nav-link
-      display block
-      position relative
-      margin-bottom 0
-      padding 0 1.5rem 0 1.25rem
-      border-bottom none
-      color var(--dark-grey)
-      font-weight 400
-      line-height 1.7rem
+    overflow-y: auto;
+    box-sizing: border-box;
 
-      &:hover
-        color var(--accent-color)
+    max-height: calc(100vh - var(--navbar-height));
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--grey14);
+    border-radius: 0.25rem;
 
-      &.active
-        color var(--accent-color)
+    background: var(--bg-color);
+    box-shadow: 2px 2px 10px var(--card-shadow);
 
-        &::before
-          content ''
-          position absolute
-          top calc(50% - 3px)
-          left 9px
-          width 0
-          height 0
-          border-top 3px solid transparent
-          border-left 5px solid var(--accent-color)
-          border-bottom 3px solid transparent
+    text-align: left;
+    white-space: nowrap;
 
-    .dropdown-subitem-wrapper
-      padding 0
-      list-style none
+    opacity: 0;
+    visibility: hidden;
 
-    .dropdown-subitem
-      font-size 0.9em
+    transition: all 0.18s ease-out;
+    transform: scale(0.8);
+  }
+
+  &:hover,
+  &.open {
+    .nav-dropdown {
+      z-index: 2;
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+  }
+
+  .nav-link {
+    position: relative;
+
+    display: block;
+
+    margin-bottom: 0;
+    border-bottom: none;
+
+    color: var(--dark-grey);
+
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.7rem;
+
+    transition: color var(--color-transition);
+
+    &:hover {
+      color: var(--accent-color);
+    }
+
+    &.active {
+      color: var(--accent-color);
+    }
+  }
+
+  .dropdown-subtitle {
+    margin: 0;
+    padding: 0 0.25rem;
+
+    color: var(--light-grey);
+
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 2;
+    text-transform: uppercase;
+
+    transition: color var(--color-transition);
+  }
+
+  .dropdown-subitem-wrapper {
+    padding: 0 0 0.5rem;
+    border-bottom: 1px solid var(--grey14);
+  }
+
+  .dropdown-item {
+    color: inherit;
+    line-height: 1.7rem;
+
+    &:last-child .dropdown-subitem-wrapper {
+      padding-bottom: 0;
+      border-bottom-width: 0;
+    }
+  }
+}
 </style>

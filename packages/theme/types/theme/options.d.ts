@@ -7,7 +7,7 @@ import type {
   HopeThemeFeatureLocaleOptions,
   HopeThemeFeatureRootOptions,
 } from "./feature";
-import type { HopeLayoutConfig, HopeThemeMetaLocaleOptions } from "./layout";
+import type { HopeLayoutOptions } from "./layout";
 import type { HopeThemeLocalesConfig } from "./locales";
 import type { HopeThemePluginOptions } from "./plugin";
 
@@ -17,7 +17,7 @@ export interface HopeThemeConfig
     HopeThemeAppearanceRootOptions,
     HopeThemeFeatureLocaleOptions,
     HopeThemeFeatureRootOptions,
-    HopeLayoutConfig,
+    HopeLayoutOptions,
     HopeThemePluginOptions,
     HopeThemeMetaLocaleOptions {
   /**

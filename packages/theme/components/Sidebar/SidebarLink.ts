@@ -1,5 +1,6 @@
 import Vue from "vue";
-import { hashRE, isActive } from "@theme/utils/path";
+import { isActiveLink } from "vuepress-shared/lib/client";
+import { hashRE } from "@theme/utils/path";
 import { groupSidebarHeaders } from "@theme/utils/sidebar";
 
 import type { CreateElement, PropType, VNode } from "vue";
@@ -83,7 +84,7 @@ const renderChildren = (
     "ul",
     { class: "sidebar-sub-headers" },
     children.map((child: SidebarHeader) => {
-      const active = isActive(route, `${path}#${child.slug}`);
+      const active = isActiveLink(route, `${path}#${child.slug}`);
 
       return h("li", { class: "sidebar-sub-header" }, [
         renderLink(h, {
@@ -139,7 +140,7 @@ export default Vue.extend({
      * Use custom active class matching logic
      * Due to edge case of paths ending with / + hash
      */
-    const selfActive = isActive($route, item.path);
+    const selfActive = isActiveLink($route, item.path);
 
     /** whether the item is active */
     const active =
@@ -147,7 +148,7 @@ export default Vue.extend({
       item.type === "header"
         ? selfActive ||
           (item.children || []).some((child) =>
-            isActive($route, `${item.basePath}#${child.slug}`)
+            isActiveLink($route, `${item.basePath}#${child.slug}`)
           )
         : selfActive;
 

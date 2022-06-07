@@ -1,32 +1,53 @@
 import Vue from "vue";
+import { isLinkHttp } from "vuepress-shared/lib/client";
+
+import BitbucketIcon from "@theme/icons/repo/BitbucketIcon.vue";
+import GiteeIcon from "@theme/icons/repo/GiteeIcon.vue";
+import GitHubIcon from "@theme/icons/repo/GitHubIcon.vue";
+import GitlabIcon from "@theme/icons/repo/GitlabIcon.vue";
+import SourceIcon from "@theme/icons/repo/SourceIcon.vue";
+
+type RepoType = "GitHub" | "GitLab" | "Gitee" | "Bitbucket" | null;
 
 export default Vue.extend({
   name: "RepoLink",
 
+  components: { BitbucketIcon, GiteeIcon, GitHubIcon, GitlabIcon, SourceIcon },
+
   computed: {
-    repoLink(): string {
-      const { repo } = this.$themeConfig;
-
-      if (repo)
-        return /^https?:/u.test(repo) ? repo : `https://github.com/${repo}`;
-
-      return "";
+    repo(): string | null {
+      return this.$themeLocaleConfig.repo || null;
     },
 
-    repoLabel(): string {
-      if (!this.repoLink) return "";
-      if (this.$themeConfig.repoLabel) return this.$themeConfig.repoLabel;
+    repoType(): string | null {
+      return this.repo ? this.resolveRepoType(this.repo) : null;
+    },
 
-      const [repoHost] = /^https?:\/\/[^/]+/u.exec(this.repoLink) || [""];
-      const platforms = ["GitHub", "GitLab", "Bitbucket"];
+    repoLink(): string | null {
+      return this.repo && !isLinkHttp(this.repo)
+        ? `https://github.com/${this.repo}`
+        : this.repo;
+    },
 
-      for (let index = 0; index < platforms.length; index++) {
-        const platform = platforms[index];
+    repoLabel(): string | null {
+      return !this.repoLink
+        ? null
+        : this.$themeLocaleConfig.repoLabel ??
+            (this.repoType === null ? "Source" : this.repoType);
+    },
+  },
 
-        if (new RegExp(platform, "iu").test(repoHost)) return platform;
-      }
-
-      return "Source";
+  methods: {
+    resolveRepoType(repo: string): RepoType {
+      return isLinkHttp(repo) || /github\.com/.test(repo)
+        ? "GitHub"
+        : /bitbucket\.org/.test(repo)
+        ? "Bitbucket"
+        : /gitlab\.com/.test(repo)
+        ? "GitLab"
+        : /gitee\.com/.test(repo)
+        ? "Gitee"
+        : null;
     },
   },
 });

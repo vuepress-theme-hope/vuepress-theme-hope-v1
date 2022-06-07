@@ -41,12 +41,12 @@ export default hope.config({
     repoDisplay: false,
     docsDir: "docs/theme/src",
 
-    nav: navBarConfig.en,
+    navbar: navBarConfig.en,
     sidebar: sideBarConfig.en,
 
     locales: {
       "/zh/": {
-        nav: navBarConfig.zh,
+        navbar: navBarConfig.zh,
         sidebar: sideBarConfig.zh,
       },
     },

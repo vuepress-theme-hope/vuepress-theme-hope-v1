@@ -1,7 +1,7 @@
 import Vue from "vue";
+import { isActiveLink } from "vuepress-shared/lib/client";
 import SidebarGroup from "@theme/components/Sidebar/SidebarGroup.vue";
 import SidebarLink from "@theme/components/Sidebar/SidebarLink.vue";
-import { isActive } from "@theme/utils/path";
 
 import type { BasePage } from "vuepress-typings";
 import type { PropType } from "vue";
@@ -13,7 +13,7 @@ const descendantIsActive = (route: Route, item: SidebarItem): boolean => {
     return item.children.some((child: SidebarHeaderItem | SidebarItem) => {
       if (child.type === "group") return descendantIsActive(route, child);
 
-      return child.type === "page" && isActive(route, child.path);
+      return child.type === "page" && isActiveLink(route, child.path);
     });
 
   return false;
@@ -65,7 +65,7 @@ export default Vue.extend({
     },
 
     isActive(page: BasePage): boolean {
-      return isActive(this.$route, page.regularPath);
+      return isActiveLink(this.$route, page.regularPath);
     },
   },
 });

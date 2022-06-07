@@ -9,7 +9,7 @@ export default {
       text: "Basic",
       icon: "info",
       prefix: "/basic/",
-      items: [
+      children: [
         { text: "Tutorial", link: "tutorial", icon: "creative" },
         { text: "Markdown", link: "markdown/", icon: "markdown" },
         { text: "VuePress", link: "vuepress/", icon: "vue" },
@@ -18,7 +18,7 @@ export default {
     {
       text: "Project",
       icon: "info",
-      items: [
+      children: [
         {
           text: "Changelog",
           link: "/changelog.html",
@@ -38,7 +38,7 @@ export default {
         {
           text: "Plugins",
           icon: "plugin",
-          items: [
+          children: [
             {
               text: "Active Hash Plugin",
               link: "https://vuepress-theme-hope.github.io/v1/active-hash/",
@@ -105,7 +105,7 @@ export default {
       text: "基础",
       icon: "info",
       prefix: "/zh/basic/",
-      items: [
+      children: [
         { text: "小白指南", link: "tutorial", icon: "creative" },
         { text: "Markdown", link: "markdown/", icon: "markdown" },
         { text: "VuePress", link: "vuepress/", icon: "vue" },
@@ -114,7 +114,7 @@ export default {
     {
       text: "项目",
       icon: "info",
-      items: [
+      children: [
         {
           text: "变更日志",
           link: "/zh/changelog.html",
@@ -134,7 +134,7 @@ export default {
         {
           text: "插件",
           icon: "plugin",
-          items: [
+          children: [
             {
               text: "自动激活锚点插件",
               link: "https://vuepress-theme-hope.github.io/v1/active-hash/zh/",

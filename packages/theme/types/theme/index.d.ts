@@ -8,6 +8,7 @@ export * from "./feature";
 export * from "./frontmatter";
 export * from "./info";
 export * from "./layout";
+export * from "./navbar";
 export * from "./locales";
 export * from "./plugin";
 export * from "./options";

@@ -1,65 +1,41 @@
-import type { Route } from "vue-router";
+import {
+  isLinkExternal,
+  normalizePath,
+  resolveRouteWithRedirect,
+} from "vuepress-shared/lib/client";
+
+import type VueRouter from "vue-router";
+
+/**
+ * Resolve AutoLink props from string
+ *
+ * @example
+ * - Input: '/README.md'
+ * - Output: { text: 'Home', link: '/' }
+ */
+export const getLink = (router: VueRouter, item: string): string => {
+  const { fullPath, name } = resolveRouteWithRedirect(router, encodeURI(item));
+
+  return name === "404" ? item : fullPath;
+};
 
 export const hashRE = /#.*$/u;
-export const extRE = /\.(md|html)$/u;
 export const endingSlashRE = /\/$/u;
 export const outboundRE = /^[a-z]+:/iu;
 
-/** Remove hash and ext in a link */
-export const normalize = (path: string): string =>
-  decodeURI(path).replace(hashRE, "").replace(extRE, "");
-
-export const getHash = (path: string): string | void => {
-  const match = hashRE.exec(path);
-
-  if (match) return match[0];
-
-  return "";
-};
-
-export const isLinkHttp = (link: string): boolean =>
-  /^(https?:)?\/\//.test(link);
-
-/** Judge whether a path is external */
-export const isExternal = (path: string): boolean => outboundRE.test(path);
-
-/** Judge whether a path is `mailto:` link */
-export const isLinkMailto = (path: string): boolean =>
-  path.startsWith("mailto:");
-
-/** Judge whether a path is `tel:` link */
-export const isLinkTel = (path: string): boolean => path.startsWith("tel:");
-
 export const ensureExt = (path: string): string => {
   // do not resolve external links
-  if (isExternal(path)) return path;
+  if (isLinkExternal(path)) return path;
 
   const hashMatch = hashRE.exec(path);
   const hash = hashMatch ? hashMatch[0] : "";
-  const normalized = normalize(path);
+  const normalized = normalizePath(path);
 
   // do not resolve links ending with `/`
   if (normalized.endsWith("/")) return path;
 
   // add `.html` ext
   return `${normalized}.html${hash}`;
-};
-
-export const ensureEndingSlash = (path: string): string =>
-  /(\.html|\/)$/u.test(path) ? path : `${path}/`;
-
-/** Judge whether a route match a link */
-export const isActive = (route: Route, path: string): boolean => {
-  const routeHash = decodeURIComponent(route.hash);
-  const linkHash = getHash(path);
-
-  // compare the hash only if the link has a hash
-  if (linkHash && routeHash !== linkHash) return false;
-
-  const routePath = normalize(route.path);
-  const pagePath = normalize(path);
-
-  return routePath === pagePath;
 };
 
 /**
@@ -73,7 +49,7 @@ export const resolvePath = (
   append?: boolean
 ): string => {
   // do not resolve external links
-  if (isExternal(path)) return path;
+  if (isLinkExternal(path)) return path;
 
   const firstChar = path.charAt(0);
 

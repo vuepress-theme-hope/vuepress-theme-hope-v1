@@ -1,7 +1,9 @@
-// TODO: Improve script and deprecate options
+// TODO: Improve script
 import Vue from "vue";
+import { removeEndingSlash } from "vuepress-shared/lib/client";
+
 import EditIcon from "@theme/icons/EditIcon.vue";
-import { endingSlashRE, outboundRE } from "@theme/utils/path";
+import { outboundRE } from "@theme/utils/path";
 
 import type { HopeThemeLocaleData } from "@theme/types";
 import type { GitContributor } from "@mr-hope/vuepress-plugin-git";
@@ -18,7 +20,7 @@ export default Vue.extend({
 
     contributors(): GitContributor[] {
       const pageConfig = this.$frontmatter.contributors;
-      const themeConfig = this.$themeConfig.contributors;
+      const themeConfig = this.$themeLocaleConfig.contributors;
 
       return pageConfig === false || (themeConfig === false && !pageConfig)
         ? []
@@ -31,7 +33,7 @@ export default Vue.extend({
 
     updateTime(): string {
       const pageConfig = this.$frontmatter.lastUpdated;
-      const themeConfig = this.$themeConfig.lastUpdated;
+      const themeConfig = this.$themeLocaleConfig.lastUpdated;
 
       return pageConfig === false || (themeConfig === false && !pageConfig)
         ? ""
@@ -71,8 +73,8 @@ export default Vue.extend({
       const bitbucket = /bitbucket.org/u;
 
       if (bitbucket.test(docsRepo))
-        return `${docsRepo.replace(endingSlashRE, "")}/src/${docsBranch}/${
-          docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
+        return `${removeEndingSlash(docsRepo)}/src/${docsBranch}/${
+          docsDir ? `${removeEndingSlash(docsDir)}/` : ""
         }${
           this.$page.relativePath
         }?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`;
@@ -80,16 +82,16 @@ export default Vue.extend({
       const gitlab = /gitlab.com/u;
 
       if (gitlab.test(docsRepo))
-        return `${docsRepo.replace(endingSlashRE, "")}/-/edit/${docsBranch}/${
-          docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
+        return `${removeEndingSlash(docsRepo)}/-/edit/${docsBranch}/${
+          docsDir ? `${removeEndingSlash(docsDir)}/` : ""
         }${this.$page.relativePath}`;
 
       const base = outboundRE.test(docsRepo)
         ? docsRepo
         : `https://github.com/${docsRepo}`;
 
-      return `${base.replace(endingSlashRE, "")}/edit/${docsBranch}/${
-        docsDir ? `${docsDir.replace(endingSlashRE, "")}/` : ""
+      return `${removeEndingSlash(base)}/edit/${docsBranch}/${
+        docsDir ? `${removeEndingSlash(docsDir)}/` : ""
       }${this.$page.relativePath}`;
     },
   },

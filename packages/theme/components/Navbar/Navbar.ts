@@ -4,7 +4,7 @@ import LanguageDropdown from "@theme/components/Navbar/LanguageDropdown";
 import NavLinks from "@theme/components/Navbar/NavLinks.vue";
 import RepoLink from "@theme/components/Navbar/RepoLink.vue";
 import SearchBox from "@SearchBox";
-import SidebarButton from "@theme/components/Navbar/SidebarButton.vue";
+import ToggleSidebarButton from "@theme/components/Navbar/ToggleSidebarButton.vue";
 import ThemeColor from "@ThemeColor";
 
 import type { AlgoliaOption } from "vuepress-typings";
@@ -40,8 +40,8 @@ export default Vue.extend({
     NavLinks,
     RepoLink,
     SearchBox,
-    SidebarButton,
     ThemeColor,
+    ToggleSidebarButton,
   },
 
   data: () => ({
@@ -88,7 +88,7 @@ export default Vue.extend({
     },
 
     canHide(): boolean {
-      const autoHide = this.$themeConfig.navAutoHide;
+      const autoHide = this.$themeLocaleConfig.navbarAutoHide;
 
       return autoHide !== "none" && (autoHide === "always" || this.isMobile);
     },

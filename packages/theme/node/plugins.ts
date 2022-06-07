@@ -51,6 +51,7 @@ const resolveComponentsOptions = (
     typeof themeConfig.backToTop === "number"
       ? themeConfig.backToTop
       : themeConfig.backToTop !== false,
+  iconPrefix: themeConfig.iconPrefix,
 });
 
 const resolveCopyCodeOptions = (

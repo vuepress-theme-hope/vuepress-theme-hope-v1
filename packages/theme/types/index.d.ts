@@ -1,6 +1,6 @@
 import type { Config } from "vuepress-typings";
 import type {
-  HopeNavBarConfig,
+  HopeThemeNavbarConfig,
   HopeSideBarConfig,
   HopeThemeConfig,
   ResolvedHopeVuePressConfig,
@@ -15,7 +15,9 @@ export const config: (
 ) => ResolvedHopeVuePressConfig;
 
 export const themeConfig: (themeConfig: HopeThemeConfig) => HopeThemeConfig;
-export const navbarConfig: (navbarConfig: HopeNavBarConfig) => HopeNavBarConfig;
+export const navbarConfig: (
+  navbarConfig: HopeThemeNavbarConfig
+) => HopeThemeNavbarConfig;
 export const sidebarConfig: (
   sidebarConfig: HopeSideBarConfig
 ) => HopeSideBarConfig;

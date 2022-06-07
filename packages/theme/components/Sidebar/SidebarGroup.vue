@@ -13,7 +13,7 @@
       v-if="item.path"
       :class="{
         open,
-        active: isActive($route, item.path),
+        active: isActiveLink($route, item.path),
       }"
       class="sidebar-heading clickable"
       :to="item.path"

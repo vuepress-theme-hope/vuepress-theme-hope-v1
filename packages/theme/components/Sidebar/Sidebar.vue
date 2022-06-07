@@ -7,10 +7,6 @@
 
     <slot name="top" />
 
-    <SidebarNavLinks />
-
-    <slot name="center" />
-
     <SidebarLinks :depth="0" :items="items" />
 
     <slot name="bottom" />

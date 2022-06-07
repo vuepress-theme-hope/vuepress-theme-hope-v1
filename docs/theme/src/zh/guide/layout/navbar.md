@@ -27,7 +27,7 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       { text: "指南", link: "/zh/guide/", icon: "creative" },
       { text: "配置", link: "/zh/config/", icon: "config" },
       { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
@@ -46,7 +46,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       { text: "指南", link: "/zh/guide/", icon: "creative" },
       { text: "配置", link: "/zh/config/", icon: "config" },
       { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
@@ -71,11 +71,11 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "基础",
         icon: "info",
-        items: [
+        children: [
           { text: "Markdown", link: "/zh/basic/markdown/", icon: "markdown" },
           { text: "VuePress", link: "/zh/basic/vuepress/", icon: "vue" },
         ],
@@ -95,11 +95,11 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "基础",
         icon: "info",
-        items: [
+        children: [
           { text: "Markdown", link: "/zh/basic/markdown/", icon: "markdown" },
           { text: "VuePress", link: "/zh/basic/vuepress/", icon: "vue" },
         ],
@@ -125,12 +125,12 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "基础",
         icon: "info",
         prefix: "/basic/",
-        items: [
+        children: [
           { text: "Markdown", link: "markdown", icon: "markdown" },
           { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
@@ -150,12 +150,12 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "基础",
         icon: "info",
         prefix: "/basic/",
-        items: [
+        children: [
           { text: "Markdown", link: "markdown", icon: "markdown" },
           { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
@@ -181,22 +181,22 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "项目",
         icon: "info",
-        items: [
+        children: [
           {
             text: "内置插件",
             icon: "plugin",
-            items: [
+            children: [
               /* 一些子项目 */
             ],
           },
           {
             text: "引入插件",
             icon: "plugin",
-            items: [
+            children: [
               /* 一些子项目 */
             ],
           },
@@ -217,22 +217,22 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "项目",
         icon: "info",
-        items: [
+        children: [
           {
             text: "内置插件",
             icon: "plugin",
-            items: [
+            children: [
               /* 一些子项目 */
             ],
           },
           {
             text: "引入插件",
             icon: "plugin",
-            items: [
+            children: [
               /* 一些子项目 */
             ],
           },
@@ -259,11 +259,11 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "项目",
         icon: "info",
-        items: [
+        children: [
           {
             text: "更新日志",
             link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
@@ -279,7 +279,7 @@ export default theme.config({
           {
             text: "插件",
             icon: "plugin",
-            items: [
+            children: [
               {
                 text: "AddThis 插件",
                 link: "https://vuepress-theme-hope.github.io/v1/add-this/zh/",
@@ -343,11 +343,11 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       {
         text: "项目",
         icon: "info",
-        items: [
+        children: [
           {
             text: "更新日志",
             link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
@@ -363,7 +363,7 @@ module.exports = config({
           {
             text: "插件",
             icon: "plugin",
-            items: [
+            children: [
               {
                 text: "AddThis 插件",
                 link: "https://vuepress-theme-hope.github.io/v1/add-this/zh/",
@@ -808,7 +808,7 @@ import theme from "vuepress-theme-hope";
 
 export default theme.config({
   themeConfig: {
-    nav: [
+    navbar: [
       { text: "指南", link: "/zh/guide/", icon: "creative" },
       { text: "配置", link: "/zh/config/", icon: "config" },
       { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
@@ -816,7 +816,7 @@ export default theme.config({
         text: "基础",
         icon: "info",
         prefix: "/zh/basic/",
-        items: [
+        children: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },
           { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
@@ -824,7 +824,7 @@ export default theme.config({
       {
         text: "项目",
         icon: "info",
-        items: [
+        children: [
           {
             text: "更新日志",
             link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
@@ -840,7 +840,7 @@ export default theme.config({
           {
             text: "插件",
             icon: "plugin",
-            items: [
+            children: [
               {
                 text: "AddThis 插件",
                 link: "https://vuepress-theme-hope.github.io/v1/add-this/zh/",
@@ -904,7 +904,7 @@ const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
   themeConfig: {
-    nav: [
+    navbar: [
       { text: "指南", link: "/zh/guide/", icon: "creative" },
       { text: "配置", link: "/zh/config/", icon: "config" },
       { text: "常见问题", link: "/zh/FAQ/", icon: "question" },
@@ -912,7 +912,7 @@ module.exports = config({
         text: "基础",
         icon: "info",
         prefix: "/zh/basic/",
-        items: [
+        children: [
           { text: "Markdown", link: "markdown/", icon: "markdown" },
           { text: "VuePress", link: "vuepress/", icon: "vue" },
         ],
@@ -920,7 +920,7 @@ module.exports = config({
       {
         text: "项目",
         icon: "info",
-        items: [
+        children: [
           {
             text: "更新日志",
             link: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/blob/main/CHANGELOG.md",
@@ -936,7 +936,7 @@ module.exports = config({
           {
             text: "插件",
             icon: "plugin",
-            items: [
+            children: [
               {
                 text: "AddThis 插件",
                 link: "https://vuepress-theme-hope.github.io/v1/add-this/zh/",

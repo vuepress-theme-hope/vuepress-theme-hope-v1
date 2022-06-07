@@ -1,16 +1,21 @@
 import Vue from "vue";
-import NavLink from "@theme/components/Navbar/NavLink.vue";
+import AutoLink from "@theme/components/AutoLink";
 
 import type { PropType } from "vue";
-import type { NavBarConfigItem } from "@theme/utils/navbar";
+import type { AutoLink as AutoLinkType, HopeThemeNavGroup } from "@theme/types";
 
 export default Vue.extend({
-  name: "DropdownLink",
+  name: "NavbarDropdownLink",
 
-  components: { NavLink },
+  components: { AutoLink },
 
   props: {
-    item: { type: Object as PropType<NavBarConfigItem>, required: true },
+    config: {
+      type: Object as PropType<
+        HopeThemeNavGroup<AutoLinkType | HopeThemeNavGroup<AutoLinkType>>
+      >,
+      required: true,
+    },
   },
 
   data: () => ({
@@ -19,7 +24,7 @@ export default Vue.extend({
 
   computed: {
     dropdownAriaLabel(): string {
-      return this.item.ariaLabel || this.item.text;
+      return this.config.ariaLabel || this.config.text;
     },
   },
 
@@ -38,15 +43,6 @@ export default Vue.extend({
       const isTriggerByTab = event.detail === 0;
 
       if (isTriggerByTab) this.setOpen(!this.open);
-    },
-
-    isLastItemOfArray(
-      item: NavBarConfigItem,
-      array: NavBarConfigItem[]
-    ): boolean {
-      if (Array.isArray(array)) return item === array[array.length - 1];
-
-      return false;
     },
   },
 });

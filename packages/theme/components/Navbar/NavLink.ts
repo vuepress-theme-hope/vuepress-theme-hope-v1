@@ -1,13 +1,19 @@
 import Vue from "vue";
 import {
-  ensureExt,
-  isExternal,
+  isLinkExternal,
   isLinkMailto,
   isLinkTel,
-} from "@theme/utils/path";
+} from "vuepress-shared/lib/client";
+import { ensureExt } from "@theme/utils/path";
 
 import type { PropType } from "vue";
-import type { NavBarConfigItem } from "@theme/utils/navbar";
+
+import { HopeNavBarConfigItem } from "@theme/types";
+
+export interface NavBarConfigItem extends HopeNavBarConfigItem {
+  type: "link" | "links";
+  items: NavBarConfigItem[];
+}
 
 export default Vue.extend({
   name: "NavLink",
@@ -46,7 +52,7 @@ export default Vue.extend({
     },
 
     isInternal(): boolean {
-      return !isExternal(this.link) && !this.isBlankTarget;
+      return !isLinkExternal(this.link) && !this.isBlankTarget;
     },
 
     target(): string | null {
@@ -54,7 +60,7 @@ export default Vue.extend({
 
       if (this.item.target) return this.item.target;
 
-      return isExternal(this.link) ? "_blank" : "";
+      return isLinkExternal(this.link) ? "_blank" : "";
     },
 
     rel(): string | null {

@@ -1,11 +1,10 @@
-import { groupHeaders } from "./groupHeader";
 import {
   ensureEndingSlash,
-  ensureExt,
-  isExternal,
-  normalize,
-  resolvePath,
-} from "./path";
+  isLinkExternal,
+  normalizePath,
+} from "vuepress-shared/lib/client";
+import { groupHeaders } from "./groupHeader";
+import { ensureExt, resolvePath } from "./path";
 
 import type { BasePage, SiteData } from "vuepress-typings";
 import type {
@@ -46,7 +45,7 @@ const resolveSidebarHeaders = (page: BasePage): SidebarAutoItem[] => {
       type: "group",
       collapsable: false,
       title: page.title,
-      ...(icon ? { icon } : {}),
+      ...(icon ? { icon: icon } : {}),
       path: "",
       children: headers.map<SidebarHeaderItem>((header) => ({
         ...header,
@@ -121,17 +120,17 @@ export const resolvePageforSidebar = (
   path: string
 ): SidebarPageItem | SidebarExternalItem | SidebarErrorItem => {
   // if it is external link
-  if (isExternal(path))
+  if (isLinkExternal(path))
     return {
       type: "external",
       path,
     };
 
-  const realPath = normalize(path);
+  const realPath = normalizePath(path);
 
   // find matches in all pages
   for (const page of pages)
-    if (normalize(page.regularPath) === realPath)
+    if (normalizePath(page.regularPath) === realPath)
       // return sidebarConfig merged with pageObject
       return {
         ...page,

@@ -30,7 +30,7 @@ export default hope.config({
     author: "Mr.Hope",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1",
 
-    nav: [
+    navbar: [
       { text: "Blog Home", link: "/", icon: "home" },
       { text: "Project Home", link: "/home/", icon: "home" },
       {
@@ -62,7 +62,7 @@ export default hope.config({
 
     locales: {
       "/zh/": {
-        nav: [
+        navbar: [
           { text: "博客主页", link: "/zh/", icon: "home" },
           { text: "项目主页", link: "/zh/home/", icon: "home" },
           {

@@ -1,62 +1,68 @@
 import Vue from "vue";
 import DropdownLink from "@theme/components/Navbar/DropdownLink.vue";
 import I18nIcon from "@theme/icons/I18nIcon.vue";
-import NavLink from "@theme/components/Navbar/NavLink.vue";
-import { getNavLinkItem } from "@theme/utils/navbar";
 
 import type { VNode } from "vue";
-import type VueRouter from "vue-router";
-import type { RouterOptions } from "vue-router";
-import type { NavBarConfigItem as ResolvedNavbarConfigItem } from "@theme/utils/navbar";
+import type { AutoLink, HopeThemeNavGroup } from "@theme/types";
 
 export default Vue.extend({
   name: "LanguageDropdown",
 
-  components: { NavLink, DropdownLink },
+  components: { DropdownLink, I18nIcon },
 
   computed: {
-    dropdown(): ResolvedNavbarConfigItem | false {
-      const { locales } = this.$site;
+    dropdown(): HopeThemeNavGroup<AutoLink> | null {
+      const localePaths = Object.keys(this.$site.locales);
 
-      if (locales && Object.keys(locales).length > 1) {
-        const currentLink = this.$page.path;
-        const { routes } = (
-          this.$router as unknown as VueRouter & {
-            options: RouterOptions;
+      // do not display language selection dropdown if there is only one language
+      if (localePaths.length < 2) return null;
+
+      const currentPath = this.$route.path;
+      const { navbarLocales } = this.$themeLocaleConfig;
+
+      const languageDropdown: HopeThemeNavGroup<AutoLink> = {
+        text: navbarLocales?.selectLangText,
+        ariaLabel: navbarLocales?.selectLangAriaLabel,
+        children: localePaths.map((targetLocalePath) => {
+          // target locale config of this langauge link
+          const targetSiteLocale = this.$site.locales?.[targetLocalePath] ?? {};
+          const targetThemeLocale =
+            this.$themeConfig.locales?.[targetLocalePath] ?? {};
+          const targetLang = targetSiteLocale.lang || "";
+
+          const text = targetThemeLocale.navbarLocales?.langName ?? targetLang;
+          let link;
+
+          // if the target language is current language
+          if (targetLang === this.$lang) {
+            // stay at current link
+            link = currentPath;
           }
-        ).options;
-        const themeLocales = this.$themeConfig.locales || {};
-        const languageDropdown = {
-          text:
-            this.$themeLocaleConfig.navbarLocales.selectLangText || "Languages",
-          ariaLabel:
-            this.$themeLocaleConfig.navbarLocales.selectLangAriaLabel ||
-            "Select language",
-          items: Object.keys(locales).map((path) => {
-            const locale = locales[path];
-            const text = themeLocales[path]
-              ? themeLocales[path].navbarLocales?.langName || ""
-              : locale.lang || "Unknown Language";
-            let link: string;
+          // if the target language is not current language
+          else {
+            const targetLocalePage = currentPath.replace(
+              this.$localePath,
+              targetLocalePath
+            );
 
-            // Stay on the current page
-            if (locale.lang === this.$lang) link = currentLink;
-            else {
-              // Try to stay on the same page
-              link = currentLink.replace(this.$localeConfig.path, path);
-              // Fallback to homepage
-              if (!(routes || []).some((route) => route.path === link))
-                link = path;
-            }
+            link =
+              // try to link to the corresponding page of current page
+              this.$router
+                .getRoutes()
+                .some((item) => item.path === targetLocalePage)
+                ? targetLocalePage
+                : // or fallback to homepage
+                  targetThemeLocale.home ?? targetLocalePath;
+          }
 
-            return { text, link };
-          }),
-        };
+          return {
+            text,
+            link,
+          };
+        }),
+      };
 
-        return getNavLinkItem(languageDropdown);
-      }
-
-      return false;
+      return languageDropdown;
     },
   },
 
@@ -64,17 +70,23 @@ export default Vue.extend({
     return this.dropdown
       ? h("div", { class: "nav-links" }, [
           h("div", { class: "nav-item" }, [
-            h(DropdownLink, { props: { item: this.dropdown } }, [
-              h(I18nIcon, {
-                slot: "title",
-                style: {
-                  width: "1rem",
-                  height: "1rem",
-                  verticalAlign: "middle",
-                  marginLeft: "1rem",
-                },
-              }),
-            ]),
+            h(
+              DropdownLink,
+              { class: "i18n-dropdown", props: { config: this.dropdown } },
+              [
+                h(I18nIcon, {
+                  slot: "title",
+                  attrs: {
+                    "aria-label": this.dropdown?.ariaLabel,
+                  },
+                  style: {
+                    width: "1rem",
+                    height: "1rem",
+                    verticalAlign: "middle",
+                  },
+                }),
+              ]
+            ),
           ]),
         ])
       : (null as unknown as VNode);

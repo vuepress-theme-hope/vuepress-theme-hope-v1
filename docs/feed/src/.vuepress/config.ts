@@ -30,7 +30,7 @@ export default hope.config({
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1",
     docsDir: "docs/feed/src",
 
-    nav: [
+    navbar: [
       { text: "Home", icon: "home", link: "/" },
       {
         text: "Guide",
@@ -45,7 +45,7 @@ export default hope.config({
       {
         text: version,
         icon: "note",
-        items: [
+        children: [
           {
             text: "V2 Docs",
             link: "https://vuepress-theme-hope.github.io/v2/feed/",
@@ -70,7 +70,7 @@ export default hope.config({
 
     locales: {
       "/zh/": {
-        nav: [
+        navbar: [
           { text: "主页", icon: "home", link: "/zh/" },
           {
             text: "指南",
@@ -85,7 +85,7 @@ export default hope.config({
           {
             text: version,
             icon: "note",
-            items: [
+            children: [
               {
                 text: "V2 文档",
                 link: "https://vuepress-theme-hope.github.io/v2/feed/zh/",

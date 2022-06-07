@@ -23,6 +23,20 @@ export const isUrl = (test: string): boolean => {
 
 export const isAbsoluteUrl = (test: string): boolean => test.startsWith("/");
 
+export const isLinkHttp = (link: string): boolean =>
+  /^(https?:)?\/\//.test(link);
+
+/** Judge whether a path is external */
+export const isLinkExternal = (path: string): boolean =>
+  /^[a-z]+:/iu.test(path);
+
+/** Judge whether a path is `mailto:` link */
+export const isLinkMailto = (path: string): boolean =>
+  path.startsWith("mailto:");
+
+/** Judge whether a path is `tel:` link */
+export const isLinkTel = (path: string): boolean => path.startsWith("tel:");
+
 export const ensureEndingSlash = (str: string): string =>
   str.replace(/\/?$/, "/");
 

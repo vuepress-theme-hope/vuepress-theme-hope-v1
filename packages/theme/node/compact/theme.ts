@@ -1,4 +1,4 @@
-// import { covertNavbarConfig } from "./navbar";
+import { covertNavbarConfig } from "./navbar";
 // import { convertSidebarConfig } from "./sidebar";
 import { droppedLogger, deprecatedLogger } from "./utils";
 import { logger } from "../utils";
@@ -170,9 +170,9 @@ export const covertThemeConfig = (
 
   DROPPED_THEME_OPTIONS.forEach((item) => droppedLogger(themeOptions, ...item));
 
-  // // handle navbar
-  // if ("navbar" in themeOptions)
-  //   themeOptions["navbar"] = covertNavbarConfig(themeOptions["navbar"]);
+  // handle navbar
+  if ("navbar" in themeOptions)
+    themeOptions["navbar"] = covertNavbarConfig(themeOptions["navbar"]);
 
   // // handle sidebar
   // if ("sidebar" in themeOptions)
@@ -227,9 +227,9 @@ export const covertThemeConfig = (
           droppedLogger(localeConfig, ...item)
         );
 
-        // // handle navbar
-        // if ("navbar" in localeConfig)
-        //   localeConfig["navbar"] = covertNavbarConfig(localeConfig["navbar"]);
+        // handle navbar
+        if ("navbar" in localeConfig)
+          localeConfig["navbar"] = covertNavbarConfig(localeConfig["navbar"]);
 
         // // handle sidebar
         // if ("sidebar" in localeConfig)
