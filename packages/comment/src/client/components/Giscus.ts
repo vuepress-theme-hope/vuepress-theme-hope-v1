@@ -105,7 +105,11 @@ export default Vue.extend({
           display: this.enableComment ? "block" : "none",
         },
       },
-      [this.loaded ? h("giscus-widget", { props: this.config }) : ""]
+      [
+        this.loaded
+          ? h("giscus-widget", { props: this.config })
+          : h("div", { style: "text-align:center" }, "Loading..."),
+      ]
     );
   },
 });
