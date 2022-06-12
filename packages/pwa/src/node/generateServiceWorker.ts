@@ -43,7 +43,7 @@ export const generateServiceWorker = async (
   const { title, locales = {} } = siteConfig;
   const swDest = path.resolve(outDir, "./service-worker.js");
 
-  const globPatterns = ["**/*.{js,css,svg}", "**/*.{woff,woff2,eot,ttf,otf}"];
+  const globPatterns = ["**/*.{js,css,svg,woff,woff2,eot,ttf,otf}"];
 
   if (options.cacheHTML) globPatterns.push("**/*.html");
   else globPatterns.push("./index.html", "./404.html");
@@ -70,7 +70,9 @@ export const generateServiceWorker = async (
     );
 
     if (warnings.length)
-      logger.warn(`${warnings.map((warning) => `  · ${warning}`).join("\n")}`);
+      logger.warn(
+        `\n${warnings.map((warning) => `  · ${warning}`).join("\n")}`
+      );
 
     if (size > 104857600)
       logger.error(
