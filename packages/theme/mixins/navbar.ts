@@ -1,7 +1,5 @@
 import Vue from "vue";
 import { isLinkExternal, normalizePath } from "vuepress-shared/lib/client";
-import AutoLink from "@theme/components/AutoLink";
-import DropdownLink from "@theme/components/Navbar/DropdownLink.vue";
 import { getLink } from "@theme/utils/path";
 
 import type {
@@ -12,14 +10,7 @@ import type {
   ResolvedHopeThemeNavbarItem,
 } from "@theme/types";
 
-export default Vue.extend({
-  name: "NavLinks",
-
-  components: {
-    AutoLink,
-    DropdownLink,
-  },
-
+export const navbarMixin = Vue.extend({
   computed: {
     navbarLinks(): ResolvedHopeThemeNavbarItem[] {
       const navbar =

@@ -1,51 +1,35 @@
 <template>
-  <header class="navbar" :class="{ 'can-hide': canHide }">
-    <slot name="start" />
-
-    <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
-
-    <RouterLink ref="siteInfo" :to="$localePath" class="home-link">
-      <img
-        v-if="siteBrandLogo"
-        class="logo"
-        :class="{ light: Boolean(siteBrandDarkLogo) }"
-        :src="siteBrandLogo"
-        :alt="siteBrandTitle"
+  <header class="navbar" :class="{ 'auto-hide': autoHide }">
+    <div class="navbar-left">
+      <ToggleSidebarButton @toggle="toggleSidebar" />
+      <slot name="left-start" />
+      <Component
+        :is="component"
+        v-for="component in leftComponents"
+        :key="component"
       />
-      <img
-        v-if="siteBrandDarkLogo"
-        class="logo dark"
-        :src="siteBrandDarkLogo"
-        :alt="siteBrandTitle"
+      <slot name="left-end" />
+    </div>
+
+    <div class="navbar-center">
+      <slot name="center-start" />
+      <Component
+        :is="component"
+        v-for="component in centerComponents"
+        :key="component"
       />
-      <span
-        v-if="siteBrandTitle"
-        class="site-name"
-        :class="{ 'can-hide': canHideSiteBrandTitle }"
-        >{{ siteBrandTitle }}</span
-      >
-    </RouterLink>
+      <slot name="center-end" />
+    </div>
 
-    <slot name="center" />
-
-    <div
-      :style="
-        linksWrapMaxWidth ? { 'max-width': `${linksWrapMaxWidth}px` } : {}
-      "
-      class="links"
-    >
-      <ThemeColor />
-      <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algoliaConfig" />
-      <SearchBox
-        v-else-if="
-          $themeConfig.search !== false && $page.frontmatter.search !== false
-        "
+    <div class="navbar-right">
+      <slot name="right-start" />
+      <Component
+        :is="component"
+        v-for="component in rightComponents"
+        :key="component"
       />
-      <NavLinks class="can-hide" />
-      <LanguageDropdown />
-      <RepoLink class="can-hide" />
-
-      <slot name="end" />
+      <slot name="right-end" />
+      <ToggleNavbarButton :active="showScreen" @toggle="toggleNavScreen" />
     </div>
   </header>
 </template>
@@ -54,101 +38,84 @@
 
 <style lang="stylus">
 .navbar {
+  --navbar-line-height: calc(
+    var(--navbar-height) - var(--navbar-vertical-padding) * 2
+  );
+
   position: fixed;
-  z-index: 200;
   top: 0;
-  left: 0;
   right: 0;
-  height: $navbarHeight;
-  padding: $navbarVerticalPadding $navbarHorizontalPadding;
-  background: var(--bg-color-blur);
+  left: 0;
+  z-index: 175;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   box-sizing: border-box;
+
+  height: var(--navbar-height);
+  padding: var(--navbar-vertical-padding) var(--navbar-horizontal-padding);
+
+  background: var(--navbar-bg-color);
   box-shadow: 0 2px 8px var(--card-shadow-color);
-  backdrop-filter: saturate(200%) blur(20px);
-  line-height: $navbarHeight - $navbarVerticalPadding * 2;
-  transition: transform 0.3s ease-in-out;
 
-  @media (max-width: $MQMobile) {
-    height: $navbarMobileHeight;
-    padding: $navbarMobileVerticalPadding $navbarMobileHorizontalPadding;
-    padding-left: $navbarMobileHorizontalPadding + 2.4rem;
-    line-height: $navbarMobileHeight - $navbarMobileVerticalPadding * 2;
-  }
+  line-height: var(--navbar-line-height);
+  white-space: nowrap;
 
-  .hide-navbar &.can-hide {
+  transition: transform ease-in-out 0.3s,
+    background-color var(--color-transition), box-shadow var(--color-transition);
+
+  backdrop-filter: saturate(150%) blur(12px);
+
+  .hide-navbar &.auto-hide {
     transform: translateY(-100%);
   }
 
-  a, span, img {
-    display: inline-block;
-  }
+  .nav-link {
+    padding: 0 0.25rem;
+    color: var(--dark-grey);
 
-  .logo {
-    min-width: $navbarHeight - $navbarVerticalPadding * 2;
-    height: $navbarHeight - $navbarVerticalPadding * 2;
-    margin-right: 0.8rem;
-    vertical-align: top;
-
-    @media (max-width: $MQMobile) {
-      min-width: $navbarMobileHeight - $navbarMobileVerticalPadding * 2;
-      height: $navbarMobileHeight - $navbarMobileVerticalPadding * 2;
+    &.active {
+      color: var(--theme-color);
     }
 
-    html.light & {
-      &.light {
-        display: inline-block;
-      }
-
-      &.dark {
-        display: none;
-      }
-    }
-
-    html.dark & {
-      &.light {
-        display: none;
-      }
-
-      &.dark {
-        display: inline-block;
-      }
+    .icon {
+      margin-right: 0.25em;
+      font-size: 1em;
     }
   }
+}
 
-  .can-hide {
-    @media (max-width: $MQMobile) {
-      display: none;
-    }
-  }
+.navbar-left,
+.navbar-right,
+.navbar-center {
+  display: flex;
+  align-items: center;
 
-  .site-name {
-    font-size: 1.5rem;
-    color: var(--text-color);
+  > * {
     position: relative;
+    margin: 0 0.25rem !important;
 
-    @media (max-width: $MQMobile) {
-      width: calc(100vw - 9.4rem);
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+    &:first-child {
+      margin-left: 0 !important;
+    }
+
+    &:last-child {
+      margin-right: 0 !important;
     }
   }
+}
 
-  .links {
-    position: absolute;
-    top: $navbarVerticalPadding;
-    right: $navbarHorizontalPadding;
-    display: flex;
-    box-sizing: border-box;
-    padding-left: 1.5rem;
-    font-size: 0.9rem;
-    white-space: nowrap;
+// docsearch fix
+.DocSearch {
+  &.DocSearch-Button {
+    margin-left: 0;
+  }
 
-    @media (max-width: $MQMobile) {
-      padding-left: 0;
-      top: $navbarMobileVerticalPadding;
-      right: $navbarMobileHorizontalPadding;
-    }
+
+  &.DocSearch-Container {
+    position: fixed !important;
   }
 }
 </style>

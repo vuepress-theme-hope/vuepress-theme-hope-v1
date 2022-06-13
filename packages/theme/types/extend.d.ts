@@ -3,7 +3,7 @@ import { BasePageFrontmatterInfo } from "vuepress-shared";
 import {
   AutoLink,
   BlogMedia,
-  HopeThemeLocalesConfig,
+  HopeThemeLocaleOptions,
   HopeThemeLocaleData,
   ResolvedHopeThemeConfig,
 } from "./theme";
@@ -58,7 +58,7 @@ declare module "vuepress-typings" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface ResolvedThemeLocaleData
     extends HopeThemeLocaleData,
-      HopeThemeLocalesConfig {}
+      HopeThemeLocaleOptions {}
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface ThemeData extends ResolvedHopeThemeConfig {}

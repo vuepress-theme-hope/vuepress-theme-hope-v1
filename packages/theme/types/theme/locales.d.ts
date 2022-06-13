@@ -25,7 +25,7 @@ export interface HopeThemeLocaleData
 export type HopeThemeLocaleConfig = ConvertLocaleConfig<HopeThemeLocaleData>;
 
 /** vuepress-theme-hope 多语言配置 */
-export interface HopeThemeLocalesConfig
+export interface HopeThemeLocaleOptions
   extends Partial<HopeThemeLocaleData>,
     HopeThemeAppearanceOptions,
     HopeThemeFeatureLocaleOptions,

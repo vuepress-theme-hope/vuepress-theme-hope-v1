@@ -1,9 +1,10 @@
 import { CAC } from "cac";
 import { getAlias } from "./node/alias";
 import { covertFrontmatter } from "./node/compact";
-import { resolveThemeConfig, resolveVuePressConfig } from "./node/config";
+import { resolveVuePressConfig } from "./node/config";
 import { eject } from "./node/eject";
 import { getPluginConfig } from "./node/plugins";
+import { resolveThemeConfig } from "./node/themeConfig";
 
 import type { Context, PluginEntry } from "vuepress-typings";
 import type {

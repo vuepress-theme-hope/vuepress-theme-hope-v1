@@ -133,7 +133,7 @@
     border-radius: 0.25rem;
 
     background: var(--bg-color);
-    box-shadow: 2px 2px 10px var(--card-shadow);
+    box-shadow: 2px 2px 10px var(--card-shadow-color);
 
     text-align: left;
     white-space: nowrap;

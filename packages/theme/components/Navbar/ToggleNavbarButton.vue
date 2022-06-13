@@ -15,6 +15,8 @@
   </button>
 </template>
 
+<script src="./ToggleNavbarButton" />
+
 <style lang="stylus">
 @require "~vuepress-shared/styles/reset";
 

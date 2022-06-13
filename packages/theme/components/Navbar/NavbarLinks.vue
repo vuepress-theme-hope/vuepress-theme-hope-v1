@@ -1,5 +1,8 @@
 <template>
-  <nav class="nav-links">
+  <nav
+    class="nav-links"
+    :class="{ 'hide-icon': $themeLocaleConfig.navbarIcon === false }"
+  >
     <!-- user links -->
     <div
       v-for="config in navbarLinks"
@@ -12,7 +15,7 @@
   </nav>
 </template>
 
-<script src="./NavLinks" />
+<script src="./NavbarLinks" />
 
 <style lang="stylus">
 .navbar {
@@ -20,6 +23,10 @@
     display: flex;
     align-items: center;
     font-size: 0.875rem;
+
+    &.hide-icon .icon {
+      display: none !important;
+    }
   }
 
   .nav-item {

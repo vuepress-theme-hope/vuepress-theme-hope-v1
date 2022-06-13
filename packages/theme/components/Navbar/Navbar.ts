@@ -1,85 +1,51 @@
-import Vue from "vue";
-import AlgoliaSearchBox from "@AlgoliaSearchBox";
+import DocSearch from "@DocSearch";
 import LanguageDropdown from "@theme/components/Navbar/LanguageDropdown";
-import NavLinks from "@theme/components/Navbar/NavLinks.vue";
+import NavbarBrand from "@theme/components/Navbar/NavbarBrand.vue";
+import NavbarLinks from "@theme/components/Navbar/NavbarLinks.vue";
+import NavScreen from "@theme/components/Navbar/NavScreen.vue";
 import RepoLink from "@theme/components/Navbar/RepoLink.vue";
 import SearchBox from "@SearchBox";
+// import OutlookButton from "@theme-hope/module/outlook/components/OutlookButton";
+import ToggleNavbarButton from "@theme/components/Navbar/ToggleNavbarButton.vue";
 import ToggleSidebarButton from "@theme/components/Navbar/ToggleSidebarButton.vue";
 import ThemeColor from "@ThemeColor";
+import { mobileMixin } from "@theme/mixins/mobile";
 
 import type { AlgoliaOption } from "vuepress-typings";
+import type {
+  HopeThemeNavbarComponent,
+  HopeThemeNavbarLocaleOptions,
+} from "@theme/types";
 
-let handler: () => void;
-
-const css = (
-  el: Element,
-  property: keyof Omit<
-    CSSStyleDeclaration,
-    | "getPropertyPriority"
-    | "getPropertyValue"
-    | "item"
-    | "removeProperty"
-    | "setProperty"
-    | number
-  >
-): string => {
-  // NOTE: Known bug, will return 'auto' if style value is 'auto'
-  const window = el.ownerDocument.defaultView;
-
-  // `null` means not to return pseudo styles
-
-  return window!.getComputedStyle(el, null)[property] as string;
-};
-
-export default Vue.extend({
-  name: "Navbar",
+export default mobileMixin.extend({
+  name: "NavBar",
 
   components: {
-    AlgoliaSearchBox,
+    DocSearch,
     LanguageDropdown,
-    NavLinks,
+    NavbarBrand,
+    NavbarLinks,
+    NavScreen,
     RepoLink,
     SearchBox,
     ThemeColor,
+    ToggleNavbarButton,
     ToggleSidebarButton,
   },
 
   data: () => ({
-    linksWrapMaxWidth: 0,
-    isMobile: false,
+    showScreen: false,
   }),
 
   computed: {
-    siteBrandTitle(): string {
-      return this.$siteTitle;
-    },
-
-    canHideSiteBrandTitle(): boolean {
-      return (
-        Boolean(this.siteBrandTitle) &&
-        this.$themeConfig.hideSiteTitleonMobile !== false
-      );
-    },
-
-    siteBrandLogo(): string {
-      const { logo } = this.$themeConfig;
-
-      return logo ? this.$withBase(logo) : "";
-    },
-
-    siteBrandDarkLogo(): string {
-      const { darkLogo } = this.$themeConfig;
-
-      return darkLogo ? this.$withBase(darkLogo) : "";
-    },
-
     algoliaConfig(): AlgoliaOption | false {
       return (
         this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || false
       );
     },
 
-    isAlgoliaSearch(): boolean {
+    // TODO: Improve
+    isDocSearch(): boolean {
       return Boolean(
         this.algoliaConfig &&
           this.algoliaConfig.apiKey &&
@@ -87,43 +53,68 @@ export default Vue.extend({
       );
     },
 
-    canHide(): boolean {
+    isSearch(): boolean {
+      return (
+        this.$themeConfig.search !== false && this.$frontmatter.search !== false
+      );
+    },
+
+    autoHide(): boolean {
       const autoHide = this.$themeLocaleConfig.navbarAutoHide;
 
       return autoHide !== "none" && (autoHide === "always" || this.isMobile);
     },
+
+    navbarLayout(): Exclude<
+      HopeThemeNavbarLocaleOptions["navbarLayout"],
+      undefined
+    > {
+      return (
+        this.$themeLocaleConfig.navbarLayout || {
+          left: ["Brand"],
+          center: ["Links"],
+          right: ["Language", "Repo", "Outlook", "Search"],
+        }
+      );
+    },
+
+    map(): Record<HopeThemeNavbarComponent, string> {
+      return {
+        Brand: "NavbarBrand",
+        Language: "LanguageDropdown",
+        Links: "NavbarLinks",
+        Repo: "RepoLink",
+        // Outlook: "OutlookButton",
+        Outlook: "",
+        Search: this.isDocSearch
+          ? "DocSearch"
+          : this.isSearch
+          ? "SearchBox"
+          : "",
+      };
+    },
+
+    leftComponents(): string[] {
+      return this.navbarLayout.left.map((component) => this.map[component]);
+    },
+
+    centerComponents(): string[] {
+      return this.navbarLayout.center.map((component) => this.map[component]);
+    },
+
+    rightComponents(): string[] {
+      return this.navbarLayout.right.map((component) => this.map[component]);
+    },
   },
 
-  mounted(): void {
-    // Refer to config.styl
-    const MOBILE_DESKTOP_BREAKPOINT = 719;
-    const NAVBAR_HORIZONTAL_PADDING =
-      parseInt(css(this.$el, "paddingLeft")) +
-      parseInt(css(this.$el, "paddingRight"));
+  methods: {
+    toggleSidebar() {
+      if (this.showScreen) this.showScreen = false;
+      this.$emit("toggle-sidebar");
+    },
 
-    handler = (): void => {
-      if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) {
-        this.isMobile = true;
-        this.linksWrapMaxWidth = 0;
-      } else {
-        this.isMobile = false;
-        this.linksWrapMaxWidth =
-          (this.$el as HTMLElement).offsetWidth -
-          NAVBAR_HORIZONTAL_PADDING -
-          ((this.$refs["siteInfo"] &&
-            (this.$refs["siteInfo"] as Vue).$el &&
-            ((this.$refs["siteInfo"] as Vue).$el as HTMLElement).offsetWidth) ||
-            0);
-      }
-    };
-
-    handler();
-    window.addEventListener("resize", handler);
-    window.addEventListener("orientationchange", handler);
-  },
-
-  beforeDestroy() {
-    window.removeEventListener("resize", handler);
-    window.removeEventListener("orientationchange", handler);
+    toggleNavScreen() {
+      this.showScreen = !this.showScreen;
+    },
   },
 });

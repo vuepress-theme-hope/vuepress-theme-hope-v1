@@ -10,7 +10,7 @@ declare module "docsearch.js/dist/cdn/docsearch.min.js" {
   export default docsearch;
 }
 
-declare module "@AlgoliaSearchBox" {
+declare module "@DocSearch" {
   import vue from "vue";
 
   export default vue;

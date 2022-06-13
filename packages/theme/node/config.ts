@@ -1,16 +1,9 @@
-import { deepAssignReverse, getLocales, path2Lang } from "vuepress-shared";
-import { covertThemeConfig } from "./compact";
-import { resolveEncrypt } from "./encrypt";
-import { themeLocalesData } from "./locales";
+import { deepAssignReverse, path2Lang } from "vuepress-shared";
 
-import type { Config, Context } from "vuepress-typings";
-import type {
-  HopeThemeConfig,
-  ResolvedHopeThemeConfig,
-  ResolvedHopeVuePressConfig,
-} from "../types";
+import type { Config } from "vuepress-typings";
+import type { HopeThemeConfig, ResolvedHopeVuePressConfig } from "../types";
 
-const defaultConfig = {
+const DEFAULT_SITE_CONFIG = {
   base: process.env["VuePress_BASE"] || "/",
 
   temp: "./node_modules/.temp",
@@ -24,38 +17,11 @@ const defaultConfig = {
   evergreen: true,
 };
 
-const defaultThemeConfig: HopeThemeConfig = {
-  sidebarDepth: 2,
-  iconPrefix: "iconfont icon-",
-};
-
-export const resolveThemeConfig = (
-  themeConfig: HopeThemeConfig,
-  context: Context
-): ResolvedHopeThemeConfig => {
-  covertThemeConfig(themeConfig as HopeThemeConfig & Record<string, unknown>);
-
-  // merge default themeConfig
-  deepAssignReverse(defaultThemeConfig, themeConfig);
-
-  // inject locales
-  themeConfig.locales = getLocales({
-    context,
-    name: "vuepress-theme-hope",
-    config: themeConfig.locales,
-    default: themeLocalesData,
-  });
-  // handle encrypt options
-  if (themeConfig.encrypt) resolveEncrypt(themeConfig.encrypt);
-
-  return themeConfig as ResolvedHopeThemeConfig;
-};
-
 export const resolveVuePressConfig = (
   config: Config<HopeThemeConfig>
 ): ResolvedHopeVuePressConfig => {
   // merge default config
-  deepAssignReverse(defaultConfig, config);
+  deepAssignReverse(DEFAULT_SITE_CONFIG, config);
 
   // assign lang to locales
   for (const path in config.locales) {

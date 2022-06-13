@@ -10,7 +10,7 @@ export const getAlias = (
 ): Record<string, string> => {
   const { siteConfig } = ctx;
   // Resolve algolia
-  const isAlgoliaSearch =
+  const isDocSearch =
     Boolean(themeConfig.algolia) ||
     Object.keys((siteConfig.locales && themeConfig.locales) || {}).some(
       (base) => themeConfig.locales[base].algolia
@@ -28,7 +28,7 @@ export const getAlias = (
   const { custom = {} } = themeConfig;
 
   return {
-    "@AlgoliaSearchBox": isAlgoliaSearch
+    "@DocSearch": isDocSearch
       ? resolve(__dirname, "../components/Navbar/DocSearch.vue")
       : noopModule,
     "@BlogInfo": blogEnabled

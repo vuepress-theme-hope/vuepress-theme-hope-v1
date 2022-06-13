@@ -88,17 +88,4 @@ export interface HopeThemeAppearanceRootOptions {
    * @default ''
    */
   iconPrefix?: string;
-
-  /**
-   * 是否显示返回顶部按钮
-   *
-   * 如果设置为数字，则该数字为触发临界值 (默认临界值为 300px)
-   *
-   * Wether display backto top button
-   *
-   * If it’s set with a number, then it will be the threshold
-   *
-   * @default true
-   */
-  backToTop?: boolean | number;
 }

@@ -7,8 +7,8 @@ import type {
   HopeThemeFeatureLocaleOptions,
   HopeThemeFeatureRootOptions,
 } from "./feature";
-import type { HopeLayoutOptions } from "./layout";
-import type { HopeThemeLocalesConfig } from "./locales";
+import type { HopeThemeLayoutOptions, HopeLayoutOptions } from "./layout";
+import type { HopeThemeLocaleOptions } from "./locales";
 import type { HopeThemePluginOptions } from "./plugin";
 
 /** vuepress-theme-hope 主题配置 */
@@ -17,6 +17,7 @@ export interface HopeThemeConfig
     HopeThemeAppearanceRootOptions,
     HopeThemeFeatureLocaleOptions,
     HopeThemeFeatureRootOptions,
+    HopeThemeLayoutOptions,
     HopeLayoutOptions,
     HopeThemePluginOptions,
     HopeThemeMetaLocaleOptions {
@@ -70,7 +71,7 @@ export interface HopeThemeConfig
    *
    * Locales config
    */
-  locales?: Record<string, HopeThemeLocalesConfig>;
+  locales?: Record<string, HopeThemeLocaleOptions>;
 
   /** 站点地址 */
   hostname?: string;
@@ -90,7 +91,7 @@ export interface ResolvedHopeThemeConfig extends HopeThemeConfig {
   /** 图标 FontClass 前缀 */
   iconPrefix: string;
   /** 多语言配置 */
-  locales: Record<string, HopeThemeLocalesConfig>;
+  locales: Record<string, HopeThemeLocaleOptions>;
   /** 显示编辑本页链接 */
   editLinks: boolean;
 }

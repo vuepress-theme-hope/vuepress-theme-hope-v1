@@ -98,3 +98,28 @@ export interface HopeThemeLayoutLocaleOptions
   //  */
   // prevLink?: boolean;
 }
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface HopeThemeLayoutOptions {
+  /**
+   * Wether display back to top button
+   *
+   * If it’s set with a number, then it will be the threshold
+   *
+   * 是否显示返回顶部按钮
+   *
+   * 如果设置为数字，则该数字为触发临界值 (默认临界值为 300px)
+   *
+   * @default true
+   */
+  backToTop?: boolean | number;
+
+  /**
+   * Window width switching mobile view and desktop view in pixels.
+   *
+   * 切换桌面布局和移动布局的窗口宽度，单位像素。
+   *
+   * @default 719
+   */
+  mobileBreakPoint?: number;
+}

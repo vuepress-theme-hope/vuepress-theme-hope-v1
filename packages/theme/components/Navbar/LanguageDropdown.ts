@@ -68,26 +68,24 @@ export default Vue.extend({
 
   render(h): VNode {
     return this.dropdown
-      ? h("div", { class: "nav-links" }, [
-          h("div", { class: "nav-item" }, [
-            h(
-              DropdownLink,
-              { class: "i18n-dropdown", props: { config: this.dropdown } },
-              [
-                h(I18nIcon, {
-                  slot: "title",
-                  attrs: {
-                    "aria-label": this.dropdown?.ariaLabel,
-                  },
-                  style: {
-                    width: "1rem",
-                    height: "1rem",
-                    verticalAlign: "middle",
-                  },
-                }),
-              ]
-            ),
-          ]),
+      ? h("div", { class: "nav-item" }, [
+          h(
+            DropdownLink,
+            { class: "i18n-dropdown", props: { config: this.dropdown } },
+            [
+              h(I18nIcon, {
+                slot: "title",
+                attrs: {
+                  "aria-label": this.dropdown?.ariaLabel,
+                },
+                style: {
+                  width: "1rem",
+                  height: "1rem",
+                  verticalAlign: "middle",
+                },
+              }),
+            ]
+          ),
         ])
       : (null as unknown as VNode);
   },
