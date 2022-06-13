@@ -21,7 +21,7 @@ export default Vue.extend({
 
     locale(): HopeThemeEncryptLocaleData {
       return this.$themeLocaleConfig.encryptLocales;
-    }
+    },
   },
 
   methods: {
