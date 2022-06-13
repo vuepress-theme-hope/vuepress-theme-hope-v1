@@ -49,11 +49,11 @@ export default Vue.extend({
         this.$page.frontmatter.editLink === false
           ? false
           : !(
-              this.$themeConfig.editLinks === false &&
+              this.$themeConfig.editLink === false &&
               !this.$page.frontmatter.editLink
             );
 
-      const { repo, docsRepo = repo } = this.$themeConfig;
+      const { repo, docsRepo = repo } = this.$themeLocaleConfig;
 
       if (showEditLink && docsRepo && this.$page.relativePath)
         return this.createEditLink(docsRepo);

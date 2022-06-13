@@ -4,6 +4,8 @@ import DarkIcon from "@theme/icons/DarkIcon.vue";
 import LightIcon from "@theme/icons/LightIcon.vue";
 import { changeClass } from "@theme/utils/dom";
 
+import type { HopeThemeDarkmodeStatus } from "@theme/types";
+
 export default Vue.extend({
   name: "DarkmodeSwitch",
 
@@ -14,8 +16,8 @@ export default Vue.extend({
   }),
 
   computed: {
-    darkmodeConfig(): "auto-switch" | "auto" | "switch" | "disable" {
-      return this.$themeConfig.darkmode || "auto-switch";
+    darkmodeConfig(): HopeThemeDarkmodeStatus {
+      return this.$themeConfig.darkmode || "switch";
     },
   },
 
@@ -24,11 +26,11 @@ export default Vue.extend({
       (localStorage.getItem("darkmode") as "auto" | "on" | "off" | null) ||
       "auto";
 
-    if (this.darkmodeConfig === "auto-switch")
+    if (this.darkmodeConfig === "switch")
       if (this.darkmode === "auto") this.setDarkmode("auto");
       else this.setDarkmode(this.darkmode);
     else if (this.darkmodeConfig === "auto") this.setDarkmode("auto");
-    else if (this.darkmodeConfig === "switch") this.setDarkmode(this.darkmode);
+    else if (this.darkmodeConfig === "toggle") this.setDarkmode(this.darkmode);
     // disabled
     else this.setDarkmode("off");
   },

@@ -1,7 +1,7 @@
 import { deepAssignReverse, path2Lang } from "vuepress-shared";
 
 import type { Config } from "vuepress-typings";
-import type { HopeThemeConfig, ResolvedHopeVuePressConfig } from "../types";
+import type { HopeThemeOptions, HopeVuePressConfig } from "../types";
 
 const DEFAULT_SITE_CONFIG = {
   base: process.env["VuePress_BASE"] || "/",
@@ -18,8 +18,8 @@ const DEFAULT_SITE_CONFIG = {
 };
 
 export const resolveVuePressConfig = (
-  config: Config<HopeThemeConfig>
-): ResolvedHopeVuePressConfig => {
+  config: Config<HopeThemeOptions>
+): HopeVuePressConfig => {
   // merge default config
   deepAssignReverse(DEFAULT_SITE_CONFIG, config);
 
@@ -29,5 +29,5 @@ export const resolveVuePressConfig = (
       config.locales[path].lang = path2Lang(path);
   }
 
-  return config as ResolvedHopeVuePressConfig;
+  return config as HopeVuePressConfig;
 };

@@ -5,74 +5,87 @@ export interface HopeThemeMetaLocateData {
    * 作者文字
    */
   author: string;
+
   /**
    * Writing date label text
    *
    * 写作日期文字
    */
   date: string;
+
   /**
    * Label text marked as original
    *
    * 标记原创的文字
    */
   origin: string;
+
   /**
    * Page views label text
    *
    * 访问量文字
    */
   views: string;
+
   /**
    * Tag label text
    *
    * 标签文字
    */
   tag: string;
+
   /**
    * Category label text
    *
    * 分类文字
    */
   category: string;
+
   /**
    * Expect reading time label text
    *
    * 期望阅读时间文字
    */
   readingTime: string;
+
   /**
    * Words label Text
    *
    * 文章字数
    */
   words: string;
+
   /**
    * Table of contents
    *
    * 此页内容
    */
   toc: string;
+
   /**
    * Page nav - previous link
    */
   prev: string;
+
   /**
    * Page nav - next link
    */
   next: string;
+
   /**
    * Page meta - last updated config
    *
    * The text to replace the default "Last Updated"
    */
   lastUpdated: string;
+
   /**
    * Page meta - contributors config
    *
    * The text to replace the default "Contributors"
    */
   contributors: string;
+
   /**
    * Page meta - contributors config
    *
@@ -80,6 +93,7 @@ export interface HopeThemeMetaLocateData {
    */
   editLink: string;
 }
+
 export interface HopeThemeMetaLocaleOptions {
   /**
    * Whether to show "Last Updated" or not

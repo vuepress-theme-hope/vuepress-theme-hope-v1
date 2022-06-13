@@ -15,10 +15,10 @@ import type { SmoothScrollOptions } from "@mr-hope/vuepress-plugin-smooth-scroll
 import type { PluginConfig } from "vuepress-typings";
 import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 import type { PhotoSwipeOptions } from "vuepress-plugin-photo-swipe";
-import type { ResolvedHopeThemeConfig } from "../types";
+import type { HopeThemeConfig } from "../types";
 
 const resolveAddThisOptions = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: HopeThemeConfig
 ): AddThisOptions | false => {
   const { addThis } = themeConfig;
 
@@ -26,7 +26,7 @@ const resolveAddThisOptions = (
 };
 
 const resolveCommentOptions = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: HopeThemeConfig
 ): CommentOptions | false => {
   return themeConfig.comment === false
     ? false
@@ -40,7 +40,7 @@ const resolveCommentOptions = (
 };
 
 const resolveComponentsOptions = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: HopeThemeConfig
 ): ComponentOptions => ({
   components: [
     ...(themeConfig.components || ["Badge"]),
@@ -55,12 +55,12 @@ const resolveComponentsOptions = (
 });
 
 const resolveCopyCodeOptions = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: HopeThemeConfig
 ): CopyCodeOptions | false =>
   themeConfig.copyCode === false ? false : themeConfig.copyCode || {};
 
 const resolveFeedOptions = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: HopeThemeConfig
 ): FeedOptions | false => {
   return themeConfig.feed === false
     ? false
@@ -78,25 +78,21 @@ const resolveFeedOptions = (
 };
 
 const resolveMarkdownEnhanceOptions = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: HopeThemeConfig
 ): MarkdownEnhanceOptions => ({
   container: true,
   ...(themeConfig.mdEnhance || {}),
 });
 
 const resolvePhotoSwipeOptions = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: HopeThemeConfig
 ): PhotoSwipeOptions | false =>
   themeConfig.photoSwipe === false ? false : themeConfig.photoSwipe || {};
 
-const resolvePwaOptions = (
-  themeConfig: ResolvedHopeThemeConfig
-): PWAOptions | false =>
+const resolvePwaOptions = (themeConfig: HopeThemeConfig): PWAOptions | false =>
   themeConfig.pwa === false ? false : themeConfig.pwa || {};
 
-const resolveSeoOptions = (
-  themeConfig: ResolvedHopeThemeConfig
-): SeoOptions | false =>
+const resolveSeoOptions = (themeConfig: HopeThemeConfig): SeoOptions | false =>
   themeConfig.seo === false
     ? false
     : {
@@ -106,14 +102,14 @@ const resolveSeoOptions = (
       };
 
 const resolveSitemapOptions = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: HopeThemeConfig
 ): SitemapOptions | false =>
   themeConfig.sitemap === false
     ? false
     : { hostname: themeConfig.hostname || "", ...themeConfig.sitemap };
 
 const resolveSmmothScrollOptions = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: HopeThemeConfig
 ): SmoothScrollOptions | false =>
   themeConfig.smoothScroll === false
     ? false
@@ -122,7 +118,7 @@ const resolveSmmothScrollOptions = (
     : { delay: 500, ...(themeConfig.smoothScroll || {}) };
 
 export const getPluginConfig = (
-  themeConfig: ResolvedHopeThemeConfig
+  themeConfig: HopeThemeConfig
 ): PluginConfig[] => {
   // set author for comment plugin
   if (themeConfig.comment && themeConfig.author)

@@ -1,13 +1,17 @@
+import type { HopeThemeCustomOptions } from "./custom";
+import type { HopeThemeFooterLocaleOptions } from "./footer";
+import type { HopeThemeDocsLocaleOptions } from "./info";
 import type {
   HopeThemeMetaLocateData,
   HopeThemeMetaLocaleOptions,
 } from "./meta";
-import type { HopeThemeFooterLocaleOptions } from "./footer";
 import type {
   HopeThemeNavbarLocaleData,
   HopeThemeNavbarLocaleOptions,
 } from "./navbar";
+import type { HopeThemeSidebarLocaleOptions } from "./sidebar";
 import type { HopeThemeRouteLocaleData } from "./route";
+import type { PageInfo } from "../../info";
 
 export interface HopeThemeLayoutLocaleData {
   navbarLocales: HopeThemeNavbarLocaleData;
@@ -18,11 +22,11 @@ export interface HopeThemeLayoutLocaleData {
 }
 
 export interface HopeThemeLayoutLocaleOptions
-  extends HopeThemeFooterLocaleOptions,
+  extends HopeThemeNavbarLocaleOptions,
+    HopeThemeSidebarLocaleOptions,
+    HopeThemeDocsLocaleOptions,
     HopeThemeMetaLocaleOptions,
-    // HopeThemeSidebarLocaleOptions,
-    // HopeThemeDocsLocaleOptions,
-    HopeThemeNavbarLocaleOptions {
+    HopeThemeFooterLocaleOptions {
   /**
    * Home path of current locale
    *
@@ -43,22 +47,23 @@ export interface HopeThemeLayoutLocaleOptions
    */
   breadcrumb?: boolean;
 
-  // /**
-  //  * Whether display icon in breadcrumb
-  //  *
-  //  * 是否在路径导航显示图标
-  //  *
-  //  * @default true
-  //  */
-  // breadcrumbIcon?: boolean;
-  // /**
-  //  * Whether display icon besides page title
-  //  *
-  //  * 是否在页面标题旁显示图标
-  //  *
-  //  * @default true
-  //  */
-  // titleIcon?: boolean;
+  /**
+   * Whether display icon in breadcrumb
+   *
+   * 是否在路径导航显示图标
+   *
+   * @default true
+   */
+  breadcrumbIcon?: boolean;
+
+  /**
+   * Whether display icon besides page title
+   *
+   * 是否在页面标题旁显示图标
+   *
+   * @default true
+   */
+  titleIcon?: boolean;
 
   /**
    * Article Info display configuration
@@ -80,27 +85,28 @@ export interface HopeThemeLayoutLocaleOptions
    */
   toc?: boolean;
 
-  // /**
-  //  * Whether display nextLink
-  //  *
-  //  * 是否显示 下一篇 链接
-  //  *
-  //  * @default true
-  //  */
-  // nextLink?: boolean;
+  /**
+   * Whether display nextLink
+   *
+   * 是否显示 下一篇 链接
+   *
+   * @default true
+   */
+  nextLink?: boolean;
 
-  // /**
-  //  * Whether display prevLink
-  //  *
-  //  * 是否显示 上一篇 链接
-  //  *
-  //  * @default true
-  //  */
-  // prevLink?: boolean;
+  /**
+   * Whether display prevLink
+   *
+   * 是否显示 上一篇 链接
+   *
+   * @default true
+   */
+  prevLink?: boolean;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface HopeThemeLayoutOptions {
+export type HopeThemeLayoutLocaleConfig = HopeThemeLayoutLocaleOptions;
+
+export interface HopeThemeLayoutRootOptions {
   /**
    * Wether display back to top button
    *
@@ -113,6 +119,13 @@ export interface HopeThemeLayoutOptions {
    * @default true
    */
   backToTop?: boolean | number;
+
+  /**
+   * 自定义组件设置
+   *
+   * Custom slot optoins
+   */
+  custom?: HopeThemeCustomOptions;
 
   /**
    * Window width switching mobile view and desktop view in pixels.

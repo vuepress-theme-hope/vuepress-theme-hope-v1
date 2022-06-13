@@ -2,10 +2,10 @@ import { noopModule } from "vuepress-shared";
 import { resolve } from "path";
 
 import type { Context } from "vuepress-typings";
-import type { ResolvedHopeThemeConfig } from "../types";
+import type { HopeThemeConfig } from "../types";
 
 export const getAlias = (
-  themeConfig: ResolvedHopeThemeConfig,
+  themeConfig: HopeThemeConfig,
   ctx: Context
 ): Record<string, string> => {
   const { siteConfig } = ctx;

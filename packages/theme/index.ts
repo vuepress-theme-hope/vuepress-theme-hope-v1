@@ -8,9 +8,9 @@ import { resolveThemeConfig } from "./node/themeConfig";
 
 import type { Context, PluginEntry } from "vuepress-typings";
 import type {
-  HopeNavBarConfig,
-  HopeSideBarConfig,
-  HopeThemeConfig,
+  HopeThemeNavbarConfig,
+  HopeThemeSidebarConfig,
+  HopeThemeOptions,
 } from "./types";
 
 const blogAddtionalPages = [
@@ -38,7 +38,7 @@ const blogAddtionalPages = [
 
 // Theme API.
 const themeAPI = (
-  themeConfig: HopeThemeConfig,
+  themeConfig: HopeThemeOptions,
   context: Context
 ): PluginEntry => {
   const resolvedConfig = resolveThemeConfig(themeConfig, context);
@@ -73,12 +73,23 @@ const themeAPI = (
 themeAPI.config = resolveVuePressConfig;
 
 // helper functions
-themeAPI.themeConfig = (themeConfig: HopeThemeConfig): HopeThemeConfig =>
+themeAPI.themeConfig = (themeConfig: HopeThemeOptions): HopeThemeOptions =>
   themeConfig;
-themeAPI.navbarConfig = (navbarConfig: HopeNavBarConfig): HopeNavBarConfig =>
-  navbarConfig;
+
+themeAPI.navbar = (
+  navbarConfig: HopeThemeNavbarConfig
+): HopeThemeNavbarConfig => navbarConfig;
+
+themeAPI.navbarConfig = (
+  navbarConfig: HopeThemeNavbarConfig
+): HopeThemeNavbarConfig => navbarConfig;
+
+themeAPI.sidebar = (
+  sidebarConfig: HopeThemeSidebarConfig
+): HopeThemeSidebarConfig => sidebarConfig;
+
 themeAPI.sidebarConfig = (
-  sidebarConfig: HopeSideBarConfig
-): HopeSideBarConfig => sidebarConfig;
+  sidebarConfig: HopeThemeSidebarConfig
+): HopeThemeSidebarConfig => sidebarConfig;
 
 export = themeAPI;

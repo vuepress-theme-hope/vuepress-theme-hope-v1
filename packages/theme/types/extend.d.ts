@@ -3,9 +3,8 @@ import { BasePageFrontmatterInfo } from "vuepress-shared";
 import {
   AutoLink,
   BlogMedia,
-  HopeThemeLocaleOptions,
-  HopeThemeLocaleData,
-  ResolvedHopeThemeConfig,
+  HopeThemeConfig,
+  HopeThemeLocaleConfig,
 } from "./theme";
 import { PageInfo } from "vuepress-plugin-comment1";
 import { FeedFrontmatterOption } from "vuepress-plugin-feed1";
@@ -56,12 +55,10 @@ declare module "vuepress-typings" {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface ResolvedThemeLocaleData
-    extends HopeThemeLocaleData,
-      HopeThemeLocaleOptions {}
+  interface ResolvedThemeLocaleData extends HopeThemeLocaleConfig {}
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface ThemeData extends ResolvedHopeThemeConfig {}
+  interface ThemeData extends HopeThemeConfig {}
 
   interface Page {
     _chunkName?: string;

@@ -3,12 +3,13 @@ import { covertNavbarConfig } from "./navbar";
 import { droppedLogger, deprecatedLogger } from "./utils";
 import { logger } from "../utils";
 
-import type { HopeThemeConfig } from "../../types";
+import type { HopeThemeOptions } from "../../types";
 
 const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   // v1
-  // ["darkLogo", "logoDark"],
-  // ["navAutoHide", "navbarAutoHide"],
+  ["nav", "navbar"],
+  ["navAutoHide", "navbarAutoHide"],
+  ["darkLogo", "logoDark"],
   // ["sidebarDepth ", "headerDepth"],
   // ["prevLinks", "prevLink"],
   // ["nextLinks", "nextLink"],
@@ -16,7 +17,6 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   ["updateTime", "lastUpdated"],
   ["contributor", "contributors"],
   ["anchorDisplay", "toc"],
-  // ["nav", "navbar"],
   // ["activeHash", "plugins.activeHeaderLinks"],
   // ["comment", "plugins.comment"],
   // ["copyCode", "plugins.copyCode"],
@@ -73,33 +73,33 @@ const DROPPED_THEME_OPTIONS: [string, string?, string?][] = [
   // ],
 ];
 
-// /**
-//  * @deprecated You should use V2 standard options and avoid using it
-//  */
-// const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
-//   if ("links" in blogOptions) {
-//     logger.warn(
-//       '"blog.links" options is deprecated, please use "blog.medias" instead'
-//     );
-//     blogOptions["medias"] = blogOptions["links"];
-//     delete blogOptions["links"];
-//   }
+/**
+ * @deprecated You should use V2 standard options and avoid using it
+ */
+const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
+  if ("links" in blogOptions) {
+    logger.warn(
+      '"blog.links" options is deprecated, please use "blog.medias" instead'
+    );
+    blogOptions["medias"] = blogOptions["links"];
+    delete blogOptions["links"];
+  }
 
-//   if ("perPage" in blogOptions) {
-//     logger.warn(
-//       '"blog.perPage" options is deprecated, please use "blog.articlePerPage" instead'
-//     );
-//     blogOptions["articlePerPage"] = blogOptions["perPage"];
-//     delete blogOptions["perPage"];
-//   }
+  if ("perPage" in blogOptions) {
+    logger.warn(
+      '"blog.perPage" options is deprecated, please use "blog.articlePerPage" instead'
+    );
+    blogOptions["articlePerPage"] = blogOptions["perPage"];
+    delete blogOptions["perPage"];
+  }
 
-//   if ("autoExcerpt" in blogOptions) {
-//     logger.error(
-//       '"blog.autoExcerpt" options is no longer supported, please use "plugins.blog.autoExcerpt" instead'
-//     );
-//     delete blogOptions["autoExcerpt"];
-//   }
-// };
+  if ("autoExcerpt" in blogOptions) {
+    logger.error(
+      '"blog.autoExcerpt" options is no longer supported, please use "plugins.blog.autoExcerpt" instead'
+    );
+    delete blogOptions["autoExcerpt"];
+  }
+};
 
 /**
  * @deprecated You should use standard options and avoid using it
@@ -145,7 +145,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
  */
 export const covertThemeConfig = (
   themeOptions: Record<string, unknown>
-): HopeThemeConfig => {
+): HopeThemeOptions => {
   // ensure plugins
   // const plugins = (themeOptions["plugins"] =
   //   (themeOptions["plugins"] as Record<string, unknown>) || {});
@@ -181,33 +181,33 @@ export const covertThemeConfig = (
   // handle footer
   handleFooterOptions(themeOptions);
 
-  // // handle blog
-  // if (typeof themeOptions["blog"] === "object" && themeOptions["blog"]) {
-  //   handleBlogOptions(themeOptions["blog"] as Record<string, unknown>);
-  //   if (!plugins["blog"]) plugins["blog"] = true;
-  // }
+  // handle blog
+  if (typeof themeOptions["blog"] === "object" && themeOptions["blog"]) {
+    handleBlogOptions(themeOptions["blog"] as Record<string, unknown>);
+    // if (!plugins["blog"]) plugins["blog"] = true;
+  }
 
-  // // handle encrypt
-  // if (typeof themeOptions["encrypt"] === "object" && themeOptions["encrypt"]) {
-  //   const encrypt = themeOptions["ecrypt"] as Record<string, unknown>;
+  // handle encrypt
+  if (typeof themeOptions["encrypt"] === "object" && themeOptions["encrypt"]) {
+    const encrypt = themeOptions["ecrypt"] as Record<string, unknown>;
 
-  //   if ("global" in encrypt && typeof encrypt["global"] !== "boolean") {
-  //     logger.warn(
-  //       'Setting admin password with "encrypt.global" in V1 is deprecated in V2, please use "encrypt.admin" instead.'
-  //     );
+    if ("global" in encrypt && typeof encrypt["global"] !== "boolean") {
+      logger.warn(
+        'Setting admin password with "encrypt.global" in V1 is deprecated in V2, please use "encrypt.admin" instead.'
+      );
 
-  //     encrypt["admin"] = encrypt["global"];
-  //   }
+      encrypt["admin"] = encrypt["global"];
+    }
 
-  //   if ("status" in encrypt) {
-  //     logger.warn(
-  //       '"encrypt.status" is deprecated, please use "encrypt.global" instead.'
-  //     );
+    if ("status" in encrypt) {
+      logger.warn(
+        '"encrypt.status" is deprecated, please use "encrypt.global" instead.'
+      );
 
-  //     encrypt["gloabl"] = encrypt["status"] === "global";
-  //     delete encrypt["status"];
-  //   }
-  // }
+      encrypt["gloabl"] = encrypt["status"] === "global";
+      delete encrypt["status"];
+    }
+  }
 
   if (
     "locales" in themeOptions &&
@@ -241,10 +241,10 @@ export const covertThemeConfig = (
         handleFooterOptions(localeConfig);
 
         // handle blog
-        // if (typeof localeConfig["blog"] === "object" && localeConfig["blog"]) {
-        //   handleBlogOptions(localeConfig["blog"] as Record<string, unknown>);
-        //   if (!plugins["blog"]) plugins["blog"] = true;
-        // }
+        if (typeof localeConfig["blog"] === "object" && localeConfig["blog"]) {
+          handleBlogOptions(localeConfig["blog"] as Record<string, unknown>);
+          // if (!plugins["blog"]) plugins["blog"] = true;
+        }
       }
     );
   }

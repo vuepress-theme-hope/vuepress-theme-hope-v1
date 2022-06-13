@@ -10,7 +10,7 @@ import type { BasePage, SiteData } from "vuepress-typings";
 import type {
   HopeSideBarConfig,
   HopeSideBarConfigItem,
-  HopeThemeConfig,
+  HopeThemeOptions,
 } from "@theme/types";
 import type { SidebarHeader } from "./groupHeader";
 
@@ -212,7 +212,7 @@ const resolveSidebarItem = (
 
 export const getSidebarItems = (
   page: BasePage,
-  site: SiteData<HopeThemeConfig>,
+  site: SiteData<HopeThemeOptions>,
   localePath: string
 ): SidebarItem[] => {
   const { themeConfig, pages } = site;

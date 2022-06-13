@@ -1,3 +1,27 @@
+export type HopeThemeDarkmodeStatus =
+  | "switch"
+  | "auto"
+  | "toggle"
+  | "enable"
+  | "disable";
+
+export interface HopeThemeOutlookLocaleData {
+  /**
+   * Theme Color
+   */
+  themeColor: string;
+
+  /**
+   * Theme mode
+   */
+  darkmode: string;
+
+  /**
+   * Theme mode
+   */
+  fullscreen: string;
+}
+
 export interface HopeThemeAppearanceLocaleData {
   outlookLocales: {
     /**
@@ -23,69 +47,78 @@ export interface HopeThemeAppearanceLocaleData {
   };
 }
 
-export interface HopeThemeAppearanceOptions {
+export interface HopeThemeAppearanceRootOptions {
   /**
-   * 是否在移动视图下隐藏站点名称
+   * Whether enable pure mode
    *
-   * Whether hide site title on mobile
+   * 是否开启纯净模式
    *
-   * @default true
+   * @default false
    */
-  hideSiteTitleonMobile?: boolean;
+  pure?: boolean;
 
   /**
-   * 是否在导航栏显示仓库链接
+   * Dark mode support options:
    *
-   * Whether display repo link in navbar
+   * - `"switch"`: switch between dark, light and auto (default)
+   * - `"toggle"`: toggle between lightmode and darkmode
+   * - `"auto"`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
+   * - `"enable"`: only dark mode
+   * - `"disable"`: disable dark mode
    *
-   * @default true
+   * 深色模式支持选项:
+   *
+   * - `"switch"`: 在深色模式，浅色模式和自动之间切换 (默认)
+   * - `"toggle"`: 在深色模式和浅色模式之间切换
+   * - `"auto"`: 自动根据用户设备主题或当前时间决定是否应用深色模式
+   * - `"enable"`: 强制深色模式
+   * - `"disable"`: 禁用深色模式
+   *
+   * @default 'auto-switch'
    */
-  repoDisplay?: boolean;
+  darkmode?: HopeThemeDarkmodeStatus;
 
   /**
-   * 是否显示 ”全屏“ 按钮
+   * Theme color configuration
    *
-   * Whether show fullscreen button in navbar
+   * 主题色选项配置
    *
-   * @default true
+   * @default false
+   */
+  themeColor?: Record<string, string> | false;
+
+  /**
+   * Full screen button
+   *
+   * 全屏按钮
+   *
+   * @default false
    */
   fullscreen?: boolean;
 
   /**
-   * 是否在侧边栏显示图标
+   * Link of font icon asset
    *
-   * Whether show icons in the sidebar
+   * 字体图标资源链接
    *
-   * @default true
+   * @description `'iconfont'` and `'font-awesome'` keywords are supported
    */
-  sidebarIcon?: boolean;
+  iconAssets?: string;
 
   /**
-   * 侧边栏嵌套的标题深度
+   * Font Icon class prefix
    *
-   * Nested headings depth in sidebar
-   *
-   * @default 2
-   */
-  sidebarDepth?: number;
-
-  /**
-   * 是否在路径导航显示图标
-   *
-   * Whether display icon in breadcrumb
-   *
-   * @default true
-   */
-  breadcrumbIcon?: boolean;
-}
-
-export interface HopeThemeAppearanceRootOptions {
-  /**
-   * 图标前缀
-   *
-   * Prefix of icon class
+   * 字体图标 class 前缀
    *
    * @default ''
    */
   iconPrefix?: string;
 }
+
+export type HopeThemeAppearanceRootConfig = HopeThemeAppearanceRootOptions &
+  Required<
+    Pick<
+      HopeThemeAppearanceRootOptions,
+      "darkmode" | "fullscreen" | "pure" | "themeColor"
+    >
+  >;

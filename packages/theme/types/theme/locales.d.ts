@@ -1,16 +1,15 @@
-import type { ConvertLocaleConfig } from "vuepress-shared";
+import type { Author } from "vuepress-shared";
 import type { AlgoliaOption } from "vuepress-typings";
+import type { HopeThemeAppearanceLocaleData } from "./appearance";
 import type {
-  HopeThemeAppearanceLocaleData,
-  HopeThemeAppearanceOptions,
-} from "./appearance";
-import type { HopeSideBarConfig } from "./extends";
-import type {
+  HopeThemeFeatureLocaleConfig,
   HopeThemeFeatureLocaleData,
   HopeThemeFeatureLocaleOptions,
 } from "./feature";
+import type { LocaleData2Option } from "./helpers";
 import type {
   HopeThemeLayoutLocaleData,
+  HopeThemeLayoutLocaleConfig,
   HopeThemeLayoutLocaleOptions,
 } from "./layout";
 
@@ -18,42 +17,45 @@ export interface HopeThemeLocaleData
   extends HopeThemeAppearanceLocaleData,
     HopeThemeFeatureLocaleData,
     HopeThemeLayoutLocaleData {
-  /** 当前语言代码 */
+  /**
+   * Current lang code
+   */
   lang: string;
 }
 
-export type HopeThemeLocaleConfig = ConvertLocaleConfig<HopeThemeLocaleData>;
+export type HopeThemeLocaleOptions =
+  LocaleData2Option<HopeThemeAppearanceLocaleData> &
+    LocaleData2Option<HopeThemeFeatureLocaleData> &
+    HopeThemeFeatureLocaleOptions &
+    LocaleData2Option<HopeThemeLayoutLocaleData> &
+    HopeThemeLayoutLocaleOptions & {
+      /**
+       * Global default author
+       *
+       * 全局默认作者
+       */
+      author?: Author;
 
-/** vuepress-theme-hope 多语言配置 */
-export interface HopeThemeLocaleOptions
-  extends Partial<HopeThemeLocaleData>,
-    HopeThemeAppearanceOptions,
-    HopeThemeFeatureLocaleOptions,
-    HopeThemeLayoutLocaleOptions {
-  /** 当前语言下的标题 */
-  title?: string;
-  /** 当前语言下的描述 */
-  description?: string;
+      /** 当前语言的 algolia 设置 */
+      algolia?: AlgoliaOption;
 
-  /**
-   * 侧边栏配置
-   *
-   * Sidebar configuration
-   */
-  sidebar?: HopeSideBarConfig;
+      /** 显示所有页面的标题链接 */
+      displayAllHeaders?: boolean;
+    } & LocaleData;
 
-  /**
-   * 侧边栏嵌套的标题深度
-   *
-   * Nested headings depth in sidebar
-   *
-   * @default 2
-   */
-  sidebarDepth?: number;
+export type HopeThemeLocaleConfig = HopeThemeLocaleData &
+  HopeThemeFeatureLocaleConfig &
+  HopeThemeLayoutLocaleConfig & {
+    /**
+     * Global default author
+     *
+     * 全局默认作者
+     */
+    author?: Author;
 
-  /** 当前语言的 algolia 设置 */
-  algolia?: AlgoliaOption;
+    /** 当前语言的 algolia 设置 */
+    algolia?: AlgoliaOption;
 
-  /** 显示所有页面的标题链接 */
-  displayAllHeaders?: boolean;
-}
+    /** 显示所有页面的标题链接 */
+    displayAllHeaders?: boolean;
+  } & LocaleData;
