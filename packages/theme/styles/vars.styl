@@ -1,6 +1,11 @@
 :root {
   --bg-color: $bgColor;
   --bg-color-light: $bgColorLight;
+  --bg-color-active: $bgColorActive;
+  --bg-color-back: $bgColorBlur;
+  --bg-color-float: $bgColorFloat;
+  --bg-color-blur: $bgColorBlur;
+  --bg-color-float-blur: $bgColorFloatBlur;
   --border-color: $borderColor;
   --box-shadow-color: $boxShadowColor;
   --card-shadow-color: $cardShadowColor;
@@ -27,9 +32,11 @@
   --grey12: #bbb;
   --grey14: #eee;
   // layout
+  --navbar-bg-color: var(--bg-color-float-blur);
   --navbar-height: $navbarHeight;
   --navbar-vertical-padding: $navbarVerticalPadding;
   --navbar-horizontal-padding: $navbarHorizontalPadding;
+  --sidebar-bg-color: var(--bg-color-blur);
   --sidebar-width: $sidebarWidth;
   --content-width: $contentWidth;
   --home-page-width: $homePageWidth;
@@ -47,7 +54,11 @@
 html.dark {
   --bg-color: $darkBgColor;
   --bg-color-light: $darkBgColorLight;
+  --bg-color-active: $darkBgColorActive;
+  --bg-color-back: $darkBgColorBlur;
   --bg-color-blur: $darkBgColorBlur;
+  --bg-color-float: $darkBgColorFloat;
+  --bg-color-float-blur: $darkBgColorFloatBlur;
   --border-color: $darkBorderColor;
   --box-shadow-color: $darkBoxShadowColor;
   --card-shadow-color: $darkCardShadowColor;
@@ -56,6 +67,9 @@ html.dark {
   --text-color-light: lighten($darkTextColor, 10%);
   --text-color-lighter: lighten($darkTextColor, 25%);
   --text-color-bright: lighten($darkTextColor, 40%);
+  // layout
+  --navbar-bg-color: var(--bg-color-float-blur);
+  --sidebar-bg-color: var(--bg-color-blur);
   // code
   --code-bg-color: $darkCodeBgColor;
   // constant
