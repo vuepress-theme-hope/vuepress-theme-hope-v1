@@ -40,10 +40,6 @@
     "*.{md,json,yml}": [
       "prettier --write"
     ],
-    "*.scss": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
     "package.json": [
       "sort-package-json"
     ]
