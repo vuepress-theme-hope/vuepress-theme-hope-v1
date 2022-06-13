@@ -37,7 +37,7 @@ importers:
       inquirer: 8.2.4
       lint-staged: 13.0.0
       markdownlint-cli: 0.31.1
-      npm-check-updates: 13.1.1
+      npm-check-updates: 13.1.5
       ora: 6.1.0
       prettier: 2.6.2
       readable-stream: 2.3.7
@@ -90,7 +90,7 @@ importers:
       inquirer: 8.2.4
       lint-staged: 13.0.0
       markdownlint-cli: 0.31.1
-      npm-check-updates: 13.1.1
+      npm-check-updates: 13.1.5
       ora: 6.1.0
       prettier: 2.6.2
       readable-stream: 2.3.7
@@ -11336,8 +11336,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/13.1.1:
-    resolution: {integrity: sha512-f4gLbUJJh5qvkNvrSG3b05y3ZvyZ4Sl3Uk95DSyCjIWwpwmAwzU9dMCA/Gg2AmIKqkH4ml6X9kxcZsu+tAd94g==}
+  /npm-check-updates/13.1.5:
+    resolution: {integrity: sha512-vAVYlrrxJIPH/R5mxMzrNwP33hYflvk7oQqPjPOySCavCFwhXKmfK5sn/rogyebg7cLnECiDxsczGqvTOEBRAA==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -13922,7 +13922,7 @@ packages:
       ansi-regex: 2.1.1
 
   /strip-ansi/4.0.0:
-    resolution: {integrity: sha1-qEeQIusaw2iocTibY1JixQXuNo8=}
+    resolution: {integrity: sha512-4XaJ2zQdCzROZDivEVIDPkcQn8LMFSa8kj8Gxb/Lnwzv9A8VctNZ+lfivC/sV3ivW8ElJTERXZoPBRrZKkNKow==}
     engines: {node: '>=4'}
     dependencies:
       ansi-regex: 3.0.1
