@@ -18,7 +18,7 @@ dist/
 
 # Theme Output Files
 packages/theme/**/*.js
-packages/theme/**/*d.ts
+packages/theme/**/*.d.ts
 !packages/theme/types/**/*.d.ts
 
 # Coverage Files
