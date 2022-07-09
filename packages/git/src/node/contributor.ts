@@ -1,5 +1,5 @@
-import { basename, dirname } from "path";
 import execa = require("execa");
+import { basename, dirname } from "path";
 import type { GitContributor } from "../types";
 
 export const getContributors = async (

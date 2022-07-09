@@ -1,9 +1,9 @@
-import { basename, dirname } from "path";
-import execa = require("execa");
 import dayjs = require("dayjs");
 import localizedFormat = require("dayjs/plugin/localizedFormat");
 import utc = require("dayjs/plugin/utc"); // dependent on utc plugin
+import execa = require("execa");
 import timezone = require("dayjs/plugin/timezone");
+import { basename, dirname } from "path";
 
 import "dayjs/locale/en";
 import "dayjs/locale/zh";
