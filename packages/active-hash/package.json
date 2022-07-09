@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "ts-debounce": "^4.0.0",
+    "vue": "^2.7.4",
     "vuepress-typings": "workspace:*"
   },
   "publishConfig": {

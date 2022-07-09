@@ -1,7 +1,7 @@
 import Vue from "vue";
-import { Route } from "vue-router";
 
 import type { WalineLocale, WalineInstance } from "@waline/client";
+import type { Route } from "vue-router";
 import type { WalineOptions } from "../../types";
 
 import "../styles/waline.styl";

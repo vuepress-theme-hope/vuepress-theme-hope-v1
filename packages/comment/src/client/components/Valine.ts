@@ -1,6 +1,6 @@
 import Vue from "vue";
-import { Route } from "vue-router";
-import { ValineOptions } from "../../types";
+import type { Route } from "vue-router";
+import type { ValineOptions } from "../../types";
 
 let timeout: NodeJS.Timeout | null = null;
 const options = COMMENT_OPTIONS as ValineOptions;
