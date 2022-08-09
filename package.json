@@ -88,7 +88,7 @@
     "tslib": "2.4.0",
     "typescript": "4.7.3",
     "vite": "2.9.9",
-    "vitest": "0.14.1",
+    "vitest": "0.21.1",
     "vuepress-plugin-active-hash": "workspace:*",
     "vuepress-plugin-add-this": "workspace:*",
     "vuepress-plugin-comment1": "workspace:*",
