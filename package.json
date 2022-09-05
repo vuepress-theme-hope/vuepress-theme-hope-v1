@@ -114,6 +114,7 @@
         "chalk": "4"
       },
       "ignoreMissing": [
+        "@algolia/client-search",
         "chalk",
         "commander",
         "esm",
