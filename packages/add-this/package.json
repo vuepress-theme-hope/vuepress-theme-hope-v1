@@ -34,6 +34,7 @@
     "demo:dev": "vuepress dev __tests__/demo"
   },
   "dependencies": {
+    "vue": "^2.7.10",
     "vuepress-typings": "workspace:*"
   }
 }

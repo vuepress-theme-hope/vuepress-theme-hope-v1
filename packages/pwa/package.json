@@ -36,7 +36,7 @@
     "register-service-worker": "^1.7.2",
     "vuepress-shared": "workspace:*",
     "vuepress-typings": "workspace:*",
-    "workbox-build": "^6.5.3"
+    "workbox-build": "^6.5.4"
   },
   "publishConfig": {
     "access": "public"

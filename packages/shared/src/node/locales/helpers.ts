@@ -4,7 +4,11 @@ import { deepAssign } from "../utils";
 
 import type { Context } from "vuepress-typings";
 import type { HopeLang } from "./types";
-import type { ConvertLocaleConfig, LocaleConfig } from "../../shared";
+import type {
+  ConvertLocaleConfig,
+  LocaleConfig,
+  LocaleData,
+} from "../../shared";
 
 const reportStatus: Record<string, boolean> = {};
 
@@ -78,7 +82,7 @@ export const getRootLangPath = (context: Context): string =>
 export const getLocalePaths = (context: Context): string[] =>
   Array.from(new Set([...Object.keys(context.siteConfig.locales || {})]));
 
-export interface GetLocalesOptions<T> {
+export interface GetLocalesOptions<T extends LocaleData> {
   context: Context;
   default: ConvertLocaleConfig<T>;
   config?: LocaleConfig<T> | undefined;
@@ -93,7 +97,7 @@ export interface GetLocalesOptions<T> {
  * @param userLocalesConfig user locale config
  * @returns final locale config
  */
-export const getLocales = <T>({
+export const getLocales = <T extends LocaleData>({
   context,
   name,
   default: defaultLocalesConfig,

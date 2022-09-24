@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Loading from "../icons/LoadingIcon.vue";
 
-import type mermaidAPI from "mermaid/mermaidAPI";
+import type { Config } from "mermaid";
 
 import "../styles/mermaid.styl";
 
@@ -103,7 +103,7 @@ export default Vue.extend({
           themeVariables: getThemeVariables(isDarkTheme),
           ...MERMAID_OPTIONS,
           startOnLoad: false,
-        } as mermaidAPI.Config);
+        } as Config);
 
         // clear SVG Code
         this.svgCode = "";

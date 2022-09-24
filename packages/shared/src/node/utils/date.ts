@@ -4,7 +4,7 @@ import type { Page } from "vuepress-typings";
 import type { DateOptions } from "../../shared";
 
 export const injectLocalizedDate = (
-  page: Page & { localizedDate?: string },
+  page: Page & { localizedDate?: string; createTimeStamp?: number },
   options: DateOptions
 ): void => {
   if (!page.localizedDate) {

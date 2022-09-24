@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "ts-debounce": "^4.0.0",
-    "vue-router": "^3.5.4",
+    "vue": "^2.7.10",
+    "vue-router": "^3.6.5",
     "vuepress-shared": "workspace:*",
     "vuepress-typings": "workspace:*"
   },
