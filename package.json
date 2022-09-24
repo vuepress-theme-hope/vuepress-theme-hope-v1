@@ -103,7 +103,7 @@
     "vuepress-shared": "workspace:*",
     "vuepress-typings": "workspace:*"
   },
-  "packageManager": "pnpm@7.12.1",
+  "packageManager": "pnpm@7.12.2",
   "engines": {
     "node": ">=12",
     "pnpm": ">=6"
