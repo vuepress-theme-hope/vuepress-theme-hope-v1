@@ -51,8 +51,10 @@
     "diagnostics": false,
     "listEmittedFiles": false,
 
+    "jsx": "preserve",
     "skipLibCheck": true,
-    "pretty": true
+    "pretty": true,
+    "preserveSymlinks": true
   },
   "vueCompilerOptions": {
     "experimentalCompatMode": 2,
