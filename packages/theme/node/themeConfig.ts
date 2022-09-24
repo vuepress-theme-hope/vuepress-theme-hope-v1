@@ -6,7 +6,7 @@ import { themeLocalesData } from "./locales";
 import type { Context } from "vuepress-typings";
 import type {
   HopeThemeConfig,
-  HopeThemeLocaleOptions,
+  // HopeThemeLocaleOptions,
   ResolvedHopeThemeConfig,
 } from "../types";
 
@@ -15,19 +15,19 @@ const defaultThemeConfig: HopeThemeConfig = {
   iconPrefix: "iconfont icon-",
 };
 
-const defaultLocaleOptions: HopeThemeLocaleOptions = {
-  // features
-  // blog: {},
-  // layouts
-  repoDisplay: true,
-  navbarIcon: true,
-  navbarAutoHide: "mobile",
-  hideSiteNameonMobile: true,
-  sidebar: "auto",
-  sidebarIcon: true,
-  // headerDepth: 2,
-  sidebarDepth: 2,
-};
+// const defaultLocaleOptions: HopeThemeLocaleOptions = {
+//   // features
+//   // blog: {},
+//   // layouts
+//   repoDisplay: true,
+//   navbarIcon: true,
+//   navbarAutoHide: "mobile",
+//   hideSiteNameonMobile: true,
+//   sidebar: "auto",
+//   sidebarIcon: true,
+//   // headerDepth: 2,
+//   sidebarDepth: 2,
+// };
 
 export const resolveThemeConfig = (
   themeConfig: HopeThemeConfig,
