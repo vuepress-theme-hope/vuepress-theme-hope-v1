@@ -82,7 +82,7 @@
     "ora": "6.1.2",
     "prettier": "2.7.1",
     "readable-stream": "2.3.7",
-    "sort-package-json": "1.57.0",
+    "sort-package-json": "2.1.0",
     "standard-version": "9.5.0",
     "ts-node": "10.9.1",
     "tslib": "2.4.0",
