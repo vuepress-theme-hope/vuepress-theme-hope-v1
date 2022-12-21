@@ -412,7 +412,7 @@ importers:
       '@types/markdown-it': ^10.0.3
       '@types/mermaid': ^9.2.0
       balloon-css: ^1.2.0
-      chart.js: ^3.9.1
+      chart.js: ^4.0.0
       echarts: ^4.9.0
       flowchart.js: ^1.17.1
       katex: ^0.16.4
@@ -431,7 +431,7 @@ importers:
       '@types/markdown-it': 10.0.3
       '@types/mermaid': 9.2.0
       balloon-css: 1.2.0
-      chart.js: 3.9.1
+      chart.js: 4.1.1
       echarts: 4.9.0
       flowchart.js: 1.17.1
       katex: 0.16.4
@@ -2374,6 +2374,10 @@ packages:
       string-argv: 0.3.1
       type-detect: 4.0.8
     dev: true
+
+  /@kurkle/color/0.3.1:
+    resolution: {integrity: sha512-hW0GwZj06z/ZFUW2Espl7toVDjghJN+EKqyXzPSV8NV89d5BYp5rRMBJoc+aUN0x5OXDMeRQHazejr2Xmqj2tw==}
+    dev: false
 
   /@leancloud/adapter-types/3.0.0:
     resolution: {integrity: sha512-/1l2PWJ6pXizHphBorMN7B0d2YjmxZJf1s+bitvLALt7wBid5qbGpHqGGKE/yRdNlCKwl9FbXG1x5wUFZfQwHQ==}
@@ -4826,8 +4830,11 @@ packages:
     resolution: {integrity: sha512-yrLQ/yVUFXkzg7EDQsPieE/53+0RlaWTs+wBrvW36cyilJ2SaDWfl4Yj7MtLTXleV9uEKefbAGUPv2/iWSooRA==}
     dev: false
 
-  /chart.js/3.9.1:
-    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
+  /chart.js/4.1.1:
+    resolution: {integrity: sha512-P0pCosNXp+LR8zO/QTkZKT6Hb7p0DPFtypEeVOf+6x06hX13NIb75R0DXUA4Ksx/+48chDQKtCCmRCviQRTqsA==}
+    engines: {pnpm: ^7.0.0}
+    dependencies:
+      '@kurkle/color': 0.3.1
     dev: false
 
   /check-error/1.0.2:

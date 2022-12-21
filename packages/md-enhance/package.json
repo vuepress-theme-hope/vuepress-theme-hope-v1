@@ -51,7 +51,7 @@
     "@types/markdown-it": "^10.0.3",
     "@types/mermaid": "^9.2.0",
     "balloon-css": "^1.2.0",
-    "chart.js": "^3.9.1",
+    "chart.js": "^4.0.0",
     "echarts": "^4.9.0",
     "flowchart.js": "^1.17.1",
     "katex": "^0.16.4",
