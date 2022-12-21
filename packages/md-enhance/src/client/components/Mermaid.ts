@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Loading from "../icons/LoadingIcon.vue";
 
-import type { Config } from "mermaid";
+import type { MermaidConfig } from "mermaid";
 
 import "../styles/mermaid.styl";
 
@@ -79,7 +79,12 @@ export default Vue.extend({
     const code = decodeURIComponent(this.code);
 
     void Promise.all([
-      import(/* webpackChunkName: "mermaid" */ "mermaid"),
+      import(
+        /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.min.mjs"
+      ),
+      import(
+        /* webpackChunkName: "mermaid" */ "@mermaid-js/mermaid-mindmap/dist/mermaid-mindmap.esm.min.mjs"
+      ),
       // add a delay
       new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
     ]).then(([mermaid]) => {
@@ -103,7 +108,7 @@ export default Vue.extend({
           themeVariables: getThemeVariables(isDarkTheme),
           ...MERMAID_OPTIONS,
           startOnLoad: false,
-        } as Config);
+        } as MermaidConfig);
 
         // clear SVG Code
         this.svgCode = "";

@@ -25,15 +25,19 @@
   "bin": {
     "create-vuepress-theme-hope": "lib/index.js"
   },
+  "files": [
+    "lib",
+    "template"
+  ],
   "scripts": {
     "build": "tsc -b tsconfig.json",
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@types/inquirer": "^8.2.1",
+    "@types/inquirer": "^8.2.5",
     "cac": "^6.7.14",
     "execa": "^5.1.1",
-    "inquirer": "^8.2.4",
+    "inquirer": "^8.2.5",
     "vuepress-shared": "workspace:*"
   }
 }

@@ -26,6 +26,9 @@
   },
   "main": "lib/node/index.js",
   "types": "lib/types/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc -b tsconfig.json",
     "clean": "rimraf lib *.tsbuildinfo",
@@ -33,10 +36,7 @@
   },
   "dependencies": {
     "ts-debounce": "^4.0.0",
-    "vue": "^2.7.10",
+    "vue": "2.6.14",
     "vuepress-typings": "workspace:*"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

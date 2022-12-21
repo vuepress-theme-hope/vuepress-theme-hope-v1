@@ -23,13 +23,9 @@ module.exports = {
     [
       "comment1",
       {
-        // type: "valine",
-        // author: "Mr.Hope",
-        // appId: "GG2VSnGiz09Rx18y2OUzdaHS-gzGzoHsz",
-        // appKey: "fBf2dptTBHxNqALKrzUlBXeB",
-
-        provider: "Waline",
-        serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+        provider: "Valine",
+        appId: "GG2VSnGiz09Rx18y2OUzdaHS-gzGzoHsz",
+        appKey: "fBf2dptTBHxNqALKrzUlBXeB",
       },
     ],
   ],

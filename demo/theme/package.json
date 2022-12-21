@@ -1,0 +1,18 @@
+{
+  "name": "theme-demo",
+  "version": "1.31.0-beta.2",
+  "private": true,
+  "description": "Demo for vuepress-theme-hope",
+  "license": "MIT",
+  "author": "Mr.Hope",
+  "scripts": {
+    "demo:build": "vuepress build src",
+    "demo:clean-dev": "vuepress dev src --no-cache",
+    "demo:dev": "vuepress dev src",
+    "demo:eject": "vuepress eject-hope src"
+  },
+  "devDependencies": {
+    "vuepress": "1.9.7",
+    "vuepress-theme-hope": "workspace:*"
+  }
+}

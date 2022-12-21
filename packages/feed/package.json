@@ -1,7 +1,7 @@
 {
   "name": "vuepress-plugin-feed1",
   "version": "1.31.0-beta.2",
-  "description": "Feed plugin for vuepress-theme-hope",
+  "description": "Feed plugin for vuepress",
   "keywords": [
     "vuepress-plugin",
     "vuepress",
@@ -24,6 +24,9 @@
   },
   "main": "lib/node/index.js",
   "types": "lib/types/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc -b tsconfig.json",
     "clean": "rimraf lib *.tsbuildinfo",

@@ -15,9 +15,9 @@ VuePress add-this plugin💌 / VuePress AddThis 插件 💌
 
 ## V2 Version / V2 版本
 
-VuePress 2 is recommanded to start new project. You should use [`vuepress-plugin-add-this@next`](https://vuepress-theme-hope.github.io/v2/add-this/).
+VuePress 2 is recommanded to start new project. You should use [`vuepress-plugin-components@next`](https://vuepress-theme-hope.github.io/v2/components/).
 
-建议在新项目中使用 VuePress 2。你应该使用 [`vuepress-plugin-add-this@next`](https://vuepress-theme-hope.gitee.io/v2/add-this/zh/).
+建议在新项目中使用 VuePress 2。你应该使用 [`vuepress-plugin-components@next`](https://vuepress-theme-hope.gitee.io/v2/components/zh/).
 
 ## Install / 安装
 

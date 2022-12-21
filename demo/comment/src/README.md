@@ -9,4 +9,4 @@ actionLink: https://vuepress-theme-hope.github.io/v1/comment/
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-This page should not have page info or comment.
+This page should not have comment.

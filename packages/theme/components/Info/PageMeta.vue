@@ -18,9 +18,12 @@
     >
       <span class="label">{{ contributorsText }}: </span>
       <span class="info">
-        <template v-for="(contributor, index) in contributors" :key="index">
-          <!-- eslint-disable vue/no-v-for-template-key-on-child -->
-          <span class="contributor" :title="`email: ${contributor.email}`">
+        <template v-for="(contributor, index) in contributors">
+          <span
+            class="contributor"
+            :title="`email: ${contributor.email}`"
+            :key="index"
+          >
             {{ contributor.name }}
           </span>
           {{ index !== contributors.length - 1 ? ", " : "" }}

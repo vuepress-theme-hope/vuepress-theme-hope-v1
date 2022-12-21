@@ -1,7 +1,7 @@
 {
   "name": "vuepress-plugin-copy-code1",
   "version": "1.31.0-beta.2",
-  "description": "Copy Code plugin for vuepress",
+  "description": "Copy Code plugin for VuePress",
   "keywords": [
     "vuepress-plugin",
     "vuepress",
@@ -25,21 +25,18 @@
   },
   "main": "lib/node/index.js",
   "types": "lib/types/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc -b tsconfig.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib",
-    "demo:build": "vuepress build __tests__/demo",
-    "demo:clean-dev": "vuepress dev __tests__/demo --no-cache",
-    "demo:dev": "vuepress dev __tests__/demo"
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "dependencies": {
     "balloon-css": "^1.2.0",
-    "vue": "^2.7.10",
+    "vue": "2.6.14",
     "vuepress-shared": "workspace:*",
     "vuepress-typings": "workspace:*"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

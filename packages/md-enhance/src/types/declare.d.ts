@@ -6,6 +6,18 @@ declare module "@vuepress/markdown/lib/lineNumbers" {
   export = lineNumbers;
 }
 
+declare module "@mermaid-js/mermaid-mindmap/dist/mermaid-mindmap.esm.min.mjs" {
+  import MermaidMindmap from "@mermaid-js/mermaid-mindmap";
+
+  export default MermaidMindmap;
+}
+
+declare module "mermaid/dist/mermaid.esm.min.mjs" {
+  import Mermaid from "mermaid";
+
+  export default Mermaid;
+}
+
 declare module "reveal.js" {
   export interface RevealOptions {
     /**

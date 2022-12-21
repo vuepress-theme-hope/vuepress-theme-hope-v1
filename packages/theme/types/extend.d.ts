@@ -34,7 +34,7 @@ declare module "vuepress-typings" {
       noCopy?: boolean;
       noSelect?: boolean;
     };
-    feed?: FeedFrontmatterOption;
+    feed?: FeedFrontmatterOption | false;
     pageInfo?: PageInfo[] | false;
     pageview?: boolean;
     breadcrumb?: boolean;

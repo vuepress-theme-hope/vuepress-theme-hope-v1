@@ -102,8 +102,11 @@ export default hope.config({
     },
 
     comment: {
-      provider: "Waline",
-      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+      provider: "Giscus",
+      repo: "vuepress-theme-hope/giscus-discussions",
+      repoId: "R_kgDOG_Pt2A",
+      category: "Announcements",
+      categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
     copyright: {

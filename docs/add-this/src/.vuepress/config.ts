@@ -91,8 +91,11 @@ export default hope.config({
     addThis: "ra-5f829c59e6c6bc9a",
 
     comment: {
-      provider: "Waline",
-      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+      provider: "Giscus",
+      repo: "vuepress-theme-hope/giscus-discussions",
+      repoId: "R_kgDOG_Pt2A",
+      category: "Announcements",
+      categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
     cleanUrl: false,

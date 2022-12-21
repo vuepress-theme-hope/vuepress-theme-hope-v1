@@ -1,5 +1,5 @@
 declare module "@vuepress/core" {
-  import { Context, ContextOptions } from "vuepress-typings/types/context";
+  import type { Context, ContextOptions } from "vuepress-typings/types/context";
 
   export const version: string;
 

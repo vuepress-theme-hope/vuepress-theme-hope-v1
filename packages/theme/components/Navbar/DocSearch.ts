@@ -1,7 +1,5 @@
 import { createElement } from "preact";
 import Vue from "vue";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: docsearch type issue
 import docsearch from "@docsearch/js";
 import "@docsearch/css";
 
@@ -33,7 +31,6 @@ export default Vue.extend({
   methods: {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     initialize(userOptions: AlgoliaOption, _lang: string): void {
-      // eslint-disable-next-line
       (docsearch as (props: DocSearchProps & { container: string }) => void)({
         container: "#docsearch",
         placeholder: this.$themeConfig.searchPlaceholder || "",
@@ -50,6 +47,9 @@ export default Vue.extend({
           })),
 
         // render the hit component with custom `onClick` handler
+        // FIXME: Check this
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         hitComponent: ({ hit, children }) =>
           createElement(
             "a",

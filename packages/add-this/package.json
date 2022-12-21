@@ -25,16 +25,16 @@
   },
   "main": "lib/node/index.js",
   "types": "lib/types/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc -b tsconfig.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib",
-    "demo:build": "vuepress build __tests__/demo",
-    "demo:clean-dev": "vuepress dev __tests__/demo --no-cache",
-    "demo:dev": "vuepress dev __tests__/demo"
+    "copy": "cpx \"src/**/*.{d.ts,vue,styl}\" lib"
   },
   "dependencies": {
-    "vue": "^2.7.10",
+    "vue": "2.6.14",
     "vuepress-typings": "workspace:*"
   }
 }
