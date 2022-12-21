@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "ts-debounce": "^4.0.0",
-    "vue": "2.6.14",
+    "vue": "2.7.14",
     "vue-router": "^3.6.5",
     "vuepress-shared": "workspace:*",
     "vuepress-typings": "workspace:*"
