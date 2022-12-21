@@ -37,7 +37,7 @@
     "@mr-hope/vuepress-plugin-smooth-scroll": "workspace:*",
     "@types/react": "^18.0.26",
     "@vuepress/plugin-blog": "^1.9.4",
-    "bcrypt-ts": "^1.0.1",
+    "bcrypt-ts": "^3.0.0",
     "dayjs": "^1.11.7",
     "screenfull": "^5.2.0",
     "ts-debounce": "^4.0.0",

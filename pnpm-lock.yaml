@@ -542,7 +542,7 @@ importers:
       '@mr-hope/vuepress-plugin-smooth-scroll': workspace:*
       '@types/react': ^18.0.26
       '@vuepress/plugin-blog': ^1.9.4
-      bcrypt-ts: ^1.0.1
+      bcrypt-ts: ^3.0.0
       dayjs: ^1.11.7
       screenfull: ^5.2.0
       ts-debounce: ^4.0.0
@@ -569,7 +569,7 @@ importers:
       '@mr-hope/vuepress-plugin-smooth-scroll': link:../smooth-scroll
       '@types/react': 18.0.26
       '@vuepress/plugin-blog': 1.9.4
-      bcrypt-ts: 1.0.1
+      bcrypt-ts: 3.0.0
       dayjs: 1.11.7
       screenfull: 5.2.0
       ts-debounce: 4.0.0
@@ -4266,8 +4266,8 @@ packages:
       tweetnacl: 0.14.5
     dev: true
 
-  /bcrypt-ts/1.0.1:
-    resolution: {integrity: sha512-bVa9P5QEuvbe5tP64FmdLW452znY3cSUclzHD012dMCYRHIu06jB/uqadTJNMTJgr1Y8XyLCXoJJgnov6+CGNQ==}
+  /bcrypt-ts/3.0.0:
+    resolution: {integrity: sha512-z4pqdPaAuuvBsHCwb77bisxT9qo5hRSbn78FXNhhTywHabqMzcIosDxjnKUrkPQbMyz2curUT+fJRith57rIvg==}
     dev: false
 
   /big.js/3.2.0:
