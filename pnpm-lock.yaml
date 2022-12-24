@@ -408,7 +408,7 @@ importers:
       '@types/babel__core': 7.1.20
       '@types/echarts': ^4.9.16
       '@types/hash-sum': ^1.0.0
-      '@types/katex': ^0.14.0
+      '@types/katex': ^0.16.0
       '@types/markdown-it': ^10.0.3
       '@types/mermaid': ^9.2.0
       balloon-css: ^1.2.0
@@ -427,7 +427,7 @@ importers:
       '@mermaid-js/mermaid-mindmap': 9.3.0
       '@types/echarts': 4.9.16
       '@types/hash-sum': 1.0.0
-      '@types/katex': 0.14.0
+      '@types/katex': 0.16.0
       '@types/markdown-it': 10.0.3
       '@types/mermaid': 9.2.0
       balloon-css: 1.2.0
@@ -2708,8 +2708,8 @@ packages:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
 
-  /@types/katex/0.14.0:
-    resolution: {integrity: sha512-+2FW2CcT0K3P+JMR8YG846bmDwplKUTsWgT2ENwdQ1UdVfRk3GQrh6Mi4sTopy30gI8Uau5CEqHTDZ6YvWIUPA==}
+  /@types/katex/0.16.0:
+    resolution: {integrity: sha512-hz+S3nV6Mym5xPbT9fnO8dDhBFQguMYpY0Ipxv06JMi1ORgnEM4M1ymWDUhUNer3ElLmT583opRo4RzxKmh9jw==}
     dev: false
 
   /@types/keyv/3.1.4:
