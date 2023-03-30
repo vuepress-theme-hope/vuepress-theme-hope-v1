@@ -34,10 +34,10 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@types/inquirer": "^8.2.5",
+    "@types/inquirer": "^9.0.0",
     "cac": "^6.7.14",
     "execa": "^5.1.1",
-    "inquirer": "^8.2.5",
+    "inquirer": "^9.0.0",
     "vuepress-shared": "workspace:*"
   }
 }
