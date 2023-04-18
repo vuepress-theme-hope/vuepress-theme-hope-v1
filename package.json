@@ -88,7 +88,7 @@
     "vuepress-shared": "workspace:*",
     "vuepress-typings": "workspace:*"
   },
-  "packageManager": "pnpm@7.18.2",
+  "packageManager": "pnpm@7.32.1",
   "engines": {
     "node": ">=12",
     "pnpm": ">=6"
